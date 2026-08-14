@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0f1115" />
+<link rel="manifest" href="manifest.webmanifest" />
+<title>Painel de Saúde</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #171a21; --panel2: #1e222b; --line: #2a2f3a;
+    --txt: #e7e9ee; --dim: #9aa3b2; --accent: #7aa2ff;
+    --g: #46c08a; --y: #e8b73a; --r: #e3604f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--txt);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 20px 16px 64px; }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
+  h1 { font-size: 21px; margin: 0; letter-spacing: -0.01em; }
+  .sub { color: var(--dim); font-size: 14px; }
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(15,17,21,.92);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .navin { max-width: 880px; margin: 0 auto; display: flex; gap: 6px; padding: 10px 16px; overflow-x: auto; }
+  .navin a { flex: 0 0 auto; font-size: 13px; padding: 6px 12px; border-radius: 999px;
+    color: var(--dim); text-decoration: none; border: 1px solid transparent; white-space: nowrap; }
+  .navin a.active { color: var(--txt); background: var(--panel2); border-color: var(--line); }
+  .navin a.train::after { content: "•"; color: var(--accent); margin-left: 5px; }
+  /* chips & sections */
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 20px; }
+  .chip { font-size: 12px; padding: 3px 10px; border-radius: 999px; background: var(--panel2);
+    border: 1px solid var(--line); color: var(--dim); }
+  .chip.ok { color: var(--g); } .chip.pend { color: var(--y); } .chip.obj { color: var(--accent); border-color: var(--accent); }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); margin: 0 0 14px; font-weight: 600; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .stat { background: var(--panel2); border-radius: 10px; padding: 12px; text-align: center; }
+  .stat .v { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
+  .stat .v small { font-size: 12px; color: var(--dim); font-weight: 600; }
+  .stat .k { font-size: 11px; color: var(--dim); margin-top: 2px; }
+  /* bars */
+  .bars { display: flex; align-items: flex-end; gap: 4px; }
+  .bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 0; }
+  .colwrap { width: 100%; height: 120px; position: relative; display: flex; align-items: flex-end; }
+  .bar .col { width: 100%; border-radius: 4px 4px 2px 2px; }
+  .bar .me { position: absolute; left: 8%; right: 8%; height: 0; border-top: 2px dashed rgba(231,233,238,.7); }
+  .bar .lbl { font-size: 9px; color: var(--dim); white-space: nowrap; transform: rotate(-90deg); height: 22px; }
+  .col.g { background: var(--g); } .col.y { background: var(--y); } .col.r { background: var(--r); }
+  /* week overview */
+  .wk { display: flex; flex-direction: column; gap: 8px; }
+  .wkrow { display: flex; align-items: center; gap: 12px; background: var(--panel2); border-radius: 10px; padding: 10px 12px;
+    text-decoration: none; color: var(--txt); }
+  .wkrow .d { font-weight: 700; width: 64px; flex: 0 0 auto; }
+  .wkrow .f { color: var(--dim); font-size: 14px; flex: 1; }
+  .tag { font-size: 11px; padding: 2px 8px; border-radius: 999px; flex: 0 0 auto; }
+  .tag.t { background: rgba(122,162,255,.15); color: var(--accent); }
+  .tag.rest { background: var(--panel); color: var(--dim); border: 1px solid var(--line); }
+  /* shopping */
+  .shop { columns: 2; column-gap: 18px; }
+  .shop .cat { break-inside: avoid; margin-bottom: 14px; }
+  .shop .cn { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-bottom: 6px; }
+  .shop label { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; padding: 2px 0; color: var(--dim); cursor: pointer; }
+  .shop input { margin-top: 4px; accent-color: var(--accent); }
+  /* day */
+  .ex { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; padding: 7px 0; border-top: 1px solid var(--line); }
+  .ex:first-of-type { border-top: 0; }
+  .ex .p { color: var(--dim); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .daytot { display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
+    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 11px 14px; margin-bottom: 12px; }
+  .daytot span { font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .daytot small { color: var(--dim); font-size: 12px; font-weight: 600; white-space: nowrap; }
+  .meal { background: var(--panel2); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
+  .meal .mh { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+  .meal .mt { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+  .meal .mm { font-size: 12px; color: var(--dim); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .meal .mn { font-weight: 600; margin: 3px 0; }
+  .meal .mo { font-size: 12.5px; color: var(--dim); }
+  details.recipe { background: var(--panel2); border-radius: 10px; padding: 0 14px; margin-bottom: 10px; }
+  details.recipe summary { cursor: pointer; padding: 12px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 10px; }
+  details.recipe summary::-webkit-details-marker { display: none; }
+  details.recipe summary .meta { font-size: 12px; color: var(--dim); font-weight: 400; }
+  .recipe .body { padding: 0 0 14px; border-top: 1px solid var(--line); }
+  .recipe h4 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); margin: 12px 0 6px; }
+  .recipe ul, .recipe ol { margin: 0; padding-left: 18px; font-size: 14px; color: var(--dim); }
+  .recipe li { padding: 2px 0; }
+  .note { font-size: 13px; color: var(--dim); margin-top: 12px; padding: 10px 12px; background: var(--panel2); border-radius: 10px; border-left: 3px solid var(--accent); }
+  .note.flex { border-left-color: var(--y); }
+  .plate { list-style: none; margin: 0; padding: 0; }
+  .plate li { font-size: 14.5px; padding: 7px 0; border-top: 1px solid var(--line); color: var(--txt); }
+  .plate li:first-child { border-top: 0; }
+  .flexbadge { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(232,183,58,.15); color: var(--y); margin-left: 8px; vertical-align: middle; }
+  .report p { margin: 0 0 10px; font-size: 14.5px; color: var(--dim); }
+  .report p:last-child { margin-bottom: 0; }
+  .navin a.reg { color: var(--accent); font-weight: 600; }
+  .form { display: flex; flex-direction: column; gap: 13px; }
+  .form label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); display: block; margin-bottom: 5px; }
+  .form select, .form textarea, .form input[type=date] { width: 100%; background: var(--panel2); color: var(--txt); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font: inherit; }
+  .form textarea { min-height: 88px; resize: vertical; }
+  .form .photo { display: flex; align-items: center; gap: 12px; }
+  .form .photo img { width: 60px; height: 60px; object-fit: cover; border-radius: 10px; display: none; }
+  .filebtn { display: inline-block; background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 11px 14px; cursor: pointer; }
+  .filebtn input { display: none; }
+  .btn { background: var(--accent); color: #0b0e14; border: 0; border-radius: 10px; padding: 13px; font: inherit; font-weight: 700; cursor: pointer; }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .status { font-size: 14px; padding: 10px 12px; border-radius: 10px; }
+  .status.ok { background: rgba(70,192,138,.15); color: var(--g); }
+  .status.err { background: rgba(227,96,79,.15); color: var(--r); }
+  .fab { position: fixed; right: 16px; bottom: 18px; z-index: 50; background: var(--accent); color: #0b0e14;
+    font-weight: 700; font-size: 15px; padding: 13px 18px; border-radius: 999px; text-decoration: none;
+    box-shadow: 0 6px 22px rgba(0,0,0,.5); }
+  .seg { display: flex; gap: 6px; background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 4px; }
+  .seg button { flex: 1; background: none; border: 0; color: var(--dim); font: inherit; font-weight: 600; padding: 9px; border-radius: 8px; cursor: pointer; }
+  .seg button.on { background: var(--accent); color: #0b0e14; }
+  /* lista de correção de registros */
+  .rlist { display: flex; flex-direction: column; gap: 8px; }
+  .ritem { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; }
+  .ritem .rhead { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .ritem .rd { font-weight: 700; font-size: 14px; }
+  .ritem .rk { font-size: 12px; color: var(--dim); }
+  .ritem .rtxt { font-size: 14px; color: var(--dim); margin-top: 4px; word-break: break-word; }
+  .ritem .ract { display: flex; gap: 8px; margin-top: 10px; }
+  .ritem .ract button { flex: 0 0 auto; background: var(--panel); color: var(--dim); border: 1px solid var(--line);
+    border-radius: 8px; padding: 7px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+  .ritem .ract button.danger { color: var(--r); border-color: rgba(227,96,79,.4); }
+  .ritem .ract button:disabled { opacity: .5; cursor: default; }
+  .ritem.editing { border-color: var(--accent); }
+  .ritem .redit { display: flex; flex-direction: column; gap: 10px; margin-top: 11px; }
+  .ritem .redit select, .ritem .redit textarea, .ritem .redit input[type=date] {
+    width: 100%; background: var(--panel); color: var(--txt); border: 1px solid var(--line);
+    border-radius: 8px; padding: 9px 11px; font: inherit; font-size: 14px; }
+  .ritem .redit textarea { min-height: 64px; resize: vertical; }
+  .rdays { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .rdays button { background: var(--panel2); color: var(--dim); border: 1px solid var(--line);
+    border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+  .rdays button.on { background: var(--accent); color: #0b0e14; border-color: var(--accent); }
+  .legend { display: flex; gap: 14px; margin-top: 14px; font-size: 12px; color: var(--dim); flex-wrap: wrap; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+  footer { text-align: center; color: var(--dim); font-size: 12px; margin-top: 24px; }
+  @media (max-width: 560px) { .grid4, .grid5 { grid-template-columns: repeat(3, 1fr); } .shop { columns: 1; } }
+</style>
+</head>
+<body>
+<nav><div class="navin" id="nav"></div></nav>
+<div class="wrap">
+  <header><h1>Painel de Saúde</h1><span class="sub" id="semana"></span></header>
+  <div class="chips" id="chips"></div>
+  <div id="view"></div>
+  <footer id="foot"></footer>
+</div>
+<a class="fab" id="fab" href="#reg" title="Registrar refeição">＋ Refeição</a>
+
+<script>
+let DATA = null, REGISTROS = [];
+const $ = id => document.getElementById(id);
+const isoDDMM = s => s ? s.slice(8, 10) + '/' + s.slice(5, 7) : '';
+const bars = (arr) => `<div class="bars">` + arr.map(p =>
+  `<div class="bar"><div class="colwrap"><div class="col ${p.banda}" style="height:${Math.max(4, p.valor)}%"></div>${p.meu != null ? `<div class="me" style="bottom:${Math.max(2, p.meu)}%"></div>` : ''}</div><div class="lbl">${p.data}</div></div>`).join("") + `</div>`;
+
+function plateGuide(d) {
+  if (!DATA.regra_prato) return "";
+  const rp = DATA.regra_prato, flex = d && d.flex;
+  let g = null;
+  if (d) g = flex
+    ? "Fim de semana flexível (controle de dano) — proteína em toda refeição, vegetais à vontade, modere carbo, álcool e doces. Não precisa pesar; só não exagerar."
+    : d.treino
+      ? "Dia de treino — garanta ~50 g de proteína no almoço (mesmo comendo fora) e reforce o carbo no pós-treino."
+      : "Dia de descanso — mantenha a proteína, segure no carbo e capriche nos vegetais.";
+  return `<section><h2>${rp.titulo}${flex ? '<span class="flexbadge">fim de semana · flexível</span>' : ''}</h2>
+    <ul class="plate">${rp.linhas.map(l => `<li>${l}</li>`).join("")}</ul>
+    ${g ? `<div class="note${flex ? ' flex' : ''}">${g}</div>` : ''}</section>`;
+}
+
+function renderNav(active) {
+  const links = [
+    `<a href="#home" class="${active === 'home' ? 'active' : ''}">Início</a>`,
+    `<a href="#reg" class="reg ${active === 'reg' ? 'active' : ''}">＋ Registrar</a>`]
+    .concat(DATA.dias.map(d =>
+      `<a href="#${d.id}" class="${active === d.id ? 'active' : ''} ${d.tipo === 'treino' ? 'train' : ''}">${d.nome.slice(0,3)} ${d.data.slice(0,2)}</a>`));
+  $("nav").innerHTML = links.join("");
+}
+
+function renderHome() {
+  const t = DATA.tendencias, st = DATA.status_treino;
+  const v = x => x == null ? "—" : x;
+  let h = `<section><h2>Prontidão · Garmin (principal) + índice agudo</h2><div class="grid4">
+    <div class="stat"><div class="v">${v(t.prontidao_garmin_hoje)}</div><div class="k">Garmin hoje</div></div>
+    <div class="stat"><div class="v">${v(t.prontidao_media_7d)}</div><div class="k">Garmin méd. 7d</div></div>
+    <div class="stat"><div class="v">${v(t.indice_agudo_hoje)}</div><div class="k">Meu índice hoje</div></div>
+    <div class="stat"><div class="v">${v(t.sono_score_hoje)}</div><div class="k">Sono score</div></div>
+  </div>${bars(t.prontidao)}
+  <div class="legend"><span><span class="dot" style="background:var(--g)"></span>≥75</span>
+    <span><span class="dot" style="background:var(--y)"></span>50–74</span>
+    <span><span class="dot" style="background:var(--r)"></span>&lt;50</span>
+    <span>┈ meu índice agudo</span></div>
+  <div class="note">Barras = <b>Prontidão Garmin</b> (validada). Traço ┈ = seu índice agudo (sono/HRV), mais reativo. Status Garmin: <b>${t.training_status || '—'}</b>${t.training_status === 'DETRAINING' ? ' — ⚠️ mede fitness AERÓBICO (VO₂max, que só sobe com corrida/bike). Como o tornozelo proíbe corrida, fica vermelho por definição e NÃO reflete sua musculação. Lever: Zona 2 sem impacto. Progresso real de treino = Fitbod (força).' : ''}</div></section>`;
+
+  if (DATA.relatorio) h += `<section><h2>Relatório · calibração</h2><div class="report">` +
+    DATA.relatorio.map(p => `<p>${p}</p>`).join("") + `</div></section>`;
+
+  h += `<section><h2>Status do treino · esta semana</h2>
+    <div class="grid4"><div class="stat"><div class="v">${st.feito}<small>/${st.planejado}</small></div><div class="k">Treinos feitos</div></div>
+    <div class="stat" style="grid-column: span 3; text-align:left; display:flex; align-items:center;">
+      <span style="color:var(--dim); font-size:14px">${st.feito === 0 ? 'Semana ainda não iniciada — 4 sessões planejadas (Upper/Lower).' : st.dias_feitos.join(', ')}</span></div></div></section>`;
+
+  h += `<section><h2>Visão geral da semana</h2><div class="wk">` + DATA.dias.map(d =>
+    `<a class="wkrow" href="#${d.id}"><span class="d">${d.nome.slice(0,3)} ${d.data}</span>
+      <span class="f">${d.treino ? d.treino.foco : (d.cardio || 'Descanso')}</span>
+      <span class="tag ${d.tipo==='treino'?'t':'rest'}">${d.tipo==='treino'?'Treino':'Descanso'}</span></a>`).join("") + `</div></section>`;
+
+  h += `<section><h2>Lista de compras · semana</h2><div class="shop">` + DATA.lista_compra.map(c =>
+    `<div class="cat"><div class="cn">${c.cat}</div>` + c.itens.map(i =>
+      `<label><input type="checkbox"><span>${i}</span></label>`).join("") + `</div>`).join("") + `</div></section>`;
+
+  h += plateGuide(null);
+  $("view").innerHTML = h;
+}
+
+function renderDay(d) {
+  let h = `<section><h2>${d.nome} ${d.data} · ${d.tipo === 'treino' ? d.treino.foco : 'Descanso'}</h2>`;
+  if (d.treino) {
+    h += d.treino.exercicios.map(e =>
+      `<div class="ex"><span>${e.nome}</span><span class="p">${e.series}×${e.reps}</span></div>`).join("");
+  } else {
+    h += `<div class="note">🚴 ${d.cardio}</div>`;
+  }
+  h += `</section>`;
+
+  const r = d.refeicoes, isTrain = d.tipo === 'treino';
+  const slots = [['almoco', 'Almoço'], ['pre_lanche', 'Pré-lanche'],
+    ['lanche_pre_treino', isTrain ? 'Lanche · pré-treino' : 'Lanche · tarde'],
+    ['janta', 'Janta'], ['petisco', 'Distração · pós-janta']];
+  let totK = 0, totP = 0;
+  const mealRows = slots.map(([key, label]) => {
+    const m = r[key]; if (!m) return '';
+    totK += m.kcal || 0; totP += m.prot || 0;
+    return `<div class="meal"><div class="mh"><span class="mt">${label}</span>
+      <span class="mm">${m.peso_g ? `≈ ${m.peso_g} g · ` : ''}${m.kcal} kcal · ${m.prot} g prot</span></div><div class="mn">${m.nome}</div>
+      ${m.origem ? `<div class="mo">↺ ${m.origem}</div>` : ''}
+      ${m.nota ? `<div class="mo">↳ ${m.nota}</div>` : ''}</div>`;
+  }).join("");
+  h += `<section><h2>Plano alimentar do dia</h2>
+    <div class="daytot"><span>≈ ${totK} kcal · ${totP} g proteína</span><small>meta ${DATA.dieta.calorias} / ${DATA.dieta.proteina} g${DATA.dieta.proteina_piso ? ` · piso ${DATA.dieta.proteina_piso} g` : ''}</small></div>
+    ${mealRows}
+    <div class="note">Janela alimentar começa no almoço (11–12h) — sem café da manhã. Tudo que você come está aqui, inclusive a distração adocicada pós-janta. Se bater fome fora de hora, adiante o próximo item da lista em vez de beliscar solto; o que não está no plano fica de fora. Almoço = sobra da janta da véspera (cozinha-se uma vez).</div></section>`;
+
+  const regs = (REGISTROS || []).filter(x => isoDDMM(x.data) === d.data);
+  const ordem = { 'Café': 0, 'Almoço': 1, 'Lanche': 2, 'Jantar': 3, 'Outro': 4 };
+  regs.sort((a, b) => (ordem[a.refeicao] ?? 9) - (ordem[b.refeicao] ?? 9));
+  h += `<section><h2>✅ Registrado neste dia</h2>` + (regs.length
+    ? regs.map(x => `<div class="meal"><div class="mh"><span class="mt">${x.tipo === 'Treino' ? '🏋️ Treino' : x.tipo === 'Observação' ? '📝 Observação' : (x.refeicao || '—')}</span>${x.foto ? '<span class="mm">📷 foto</span>' : ''}</div><div class="mo">${x.texto || (x.foto ? '(screenshot)' : '(sem texto)')}</div></div>`).join("")
+    : `<div class="note">Nada registrado ainda. Toque em <b>＋ Refeição</b> pra lançar.</div>`) + `</section>`;
+  h += plateGuide(d);
+
+  // receita do dia (a janta cozida hoje)
+  if (r.janta && r.janta.receita && DATA.receitas[r.janta.receita]) {
+    const rec = DATA.receitas[r.janta.receita];
+    h += `<section><h2>Receita pra executar · janta</h2>
+      <details class="recipe" open><summary>${rec.nome}<span class="meta">${rec.tempo} · ${rec.kcal} kcal · ${rec.prot} g</span></summary>
+      <div class="body"><h4>Rende</h4><div style="font-size:14px;color:var(--dim)">${rec.rende}</div>
+      <h4>Ingredientes</h4><ul>${rec.ingredientes.map(i=>`<li>${i}</li>`).join("")}</ul>
+      <h4>Modo de fazer</h4><ol>${rec.passos.map(p=>`<li>${p}</li>`).join("")}</ol></div></details></section>`;
+  }
+  $("view").innerHTML = h;
+}
+
+let PHOTO_DATA = null, REG_TIPO = 'refeicao';
+function resizeImage(dataUrl, maxDim, quality, cb) {
+  const im = new Image();
+  im.onload = () => {
+    let w = im.width, h = im.height;
+    if (w > h && w > maxDim) { h = Math.round(h * maxDim / w); w = maxDim; }
+    else if (h > maxDim) { w = Math.round(w * maxDim / h); h = maxDim; }
+    const c = document.createElement('canvas'); c.width = w; c.height = h;
+    c.getContext('2d').drawImage(im, 0, 0, w, h);
+    cb(c.toDataURL('image/jpeg', quality));
+  };
+  im.src = dataUrl;
+}
+function previewPhoto(e) {
+  const f = e.target.files[0]; if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => resizeImage(reader.result, 1000, 0.6, (url) => {
+    PHOTO_DATA = url;
+    const img = document.getElementById('rg-prev'); img.src = url; img.style.display = 'block';
+  });
+  reader.readAsDataURL(f);
+}
+async function submitLog() {
+  const btn = document.getElementById('rg-send'), st = document.getElementById('rg-status');
+  const tipo = REG_TIPO;
+  const treino = tipo === 'treino';
+  const refEl = document.getElementById('rg-ref');
+  const payload = {
+    tipo,
+    refeicao: tipo === 'refeicao' ? (refEl ? refEl.value : 'Outro') : undefined,
+    data: document.getElementById('rg-data').value,
+    texto: document.getElementById('rg-txt').value.trim(),
+    photoBase64: PHOTO_DATA || undefined,
+  };
+  if (!payload.texto && !payload.photoBase64) { st.className = 'status err'; st.textContent = treino ? 'Anexe a screenshot do treino (ou escreva as notas).' : 'Escreva algo ou anexe uma foto.'; return; }
+  btn.disabled = true; st.className = 'status'; st.textContent = 'Enviando…';
+  try {
+    const r = await fetch('/api/log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    const j = await r.json().catch(() => ({}));
+    if (r.ok && j.ok) {
+      st.className = 'status ok'; st.textContent = `✓ Anotado — ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} ${j.dia}${j.foto ? ' (com foto)' : ''}`;
+      document.getElementById('rg-txt').value = ''; PHOTO_DATA = null;
+      const img = document.getElementById('rg-prev'); img.style.display = 'none'; document.getElementById('rg-foto').value = '';
+      // mantém a aba Corrigir em dia — se a data saiu errada, o conserto está a um toque
+      fetch('/api/registros').then((x) => x.ok ? x.json() : { items: [] })
+        .then((jj) => { REGISTROS = jj.items || []; }).catch(() => {});
+    } else { st.className = 'status err'; st.textContent = 'Erro: ' + (j.error || r.status) + (j.detail ? ' — ' + String(j.detail).slice(0, 140) : ''); }
+  } catch (e) { st.className = 'status err'; st.textContent = 'Falha de rede: ' + e; }
+  btn.disabled = false;
+}
+// ---- correção de registros já gravados (o erro comum é a data errada) ----
+let EDIT_ID = null, RFILTRO = 7;
+const REFS = ['Café', 'Almoço', 'Jantar', 'Lanche', 'Outro'];
+
+function diasAtras(n) {
+  const d = new Date(); d.setDate(d.getDate() - n);
+  return d.toISOString().slice(0, 10);
+}
+function rotuloData(iso) {
+  const hoje = new Date().toISOString().slice(0, 10);
+  if (iso === hoje) return 'hoje';
+  if (iso === diasAtras(1)) return 'ontem';
+  const [, m, dd] = iso.split('-');
+  return `${dd}/${m}`;
+}
+async function acaoRegistro(id, metodo, corpo, st) {
+  st.className = 'status'; st.textContent = metodo === 'DELETE' ? 'Excluindo…' : 'Salvando…';
+  try {
+    const r = await fetch('/api/registro', {
+      method: metodo,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, ...(corpo || {}) }),
+    });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.ok) {
+      st.className = 'status err';
+      st.textContent = 'Erro: ' + (j.error || r.status) + (j.detail ? ' — ' + String(j.detail).slice(0, 120) : '');
+      return false;
+    }
+    // recarrega do servidor em vez de mexer no array local — a lista tem que
+    // refletir o Notion, não o que a gente acha que aconteceu
+    const rr = await fetch('/api/registros').then((x) => x.ok ? x.json() : { items: [] }).catch(() => ({ items: [] }));
+    REGISTROS = rr.items || [];
+    EDIT_ID = null;
+    renderReg();
+    const st2 = document.getElementById('rg-status');
+    if (st2) { st2.className = 'status ok'; st2.textContent = j.acao === 'excluido' ? '✓ Registro excluído (foi pra lixeira do Notion, dá pra recuperar)' : `✓ Corrigido — ${j.refeicao || j.tipo} ${j.dia}`; }
+    return true;
+  } catch (e) {
+    st.className = 'status err'; st.textContent = 'Falha de rede: ' + e;
+    return false;
+  }
+}
+function renderListaRegistros() {
+  const corte = diasAtras(RFILTRO);
+  const itens = (REGISTROS || []).filter((x) => x.data >= corte);
+  const chips = [3, 7, 30].map((n) =>
+    `<button data-dias="${n}" class="${RFILTRO === n ? 'on' : ''}">${n} dias</button>`).join('');
+
+  if (!itens.length)
+    return `<div class="rdays">${chips}</div><div class="note">Nenhum registro nos últimos ${RFILTRO} dias.</div>`;
+
+  const linhas = itens.map((x) => {
+    const rotulo = x.tipo === 'Refeição' ? (x.refeicao || 'Refeição') : x.tipo;
+    const marcas = [x.foto ? '📷' : '', x.processado ? '✓ lido' : '⏳ na fila'].filter(Boolean).join(' · ');
+    if (EDIT_ID === x.id) {
+      const opts = REFS.map((r) => `<option${r === x.refeicao ? ' selected' : ''}>${r}</option>`).join('');
+      return `<div class="ritem editing" data-id="${x.id}">
+        <div class="rhead"><span class="rd">Corrigindo ${rotulo}</span><span class="rk">${marcas}</span></div>
+        <div class="redit">
+          <div><label style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);display:block;margin-bottom:5px">Data</label>
+            <input type="date" class="e-data" value="${x.data}"></div>
+          ${x.tipo === 'Refeição' ? `<div><label style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);display:block;margin-bottom:5px">Refeição</label>
+            <select class="e-ref">${opts}</select></div>` : ''}
+          <div><label style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);display:block;margin-bottom:5px">Texto</label>
+            <textarea class="e-txt">${(x.texto || '').replace(/</g, '&lt;')}</textarea></div>
+          <div class="ract">
+            <button class="e-save" style="background:var(--accent);color:#0b0e14;border-color:var(--accent);font-weight:700">Salvar</button>
+            <button class="e-cancel">Cancelar</button>
+          </div>
+        </div></div>`;
+    }
+    return `<div class="ritem" data-id="${x.id}">
+      <div class="rhead"><span class="rd">${rotulo} · ${rotuloData(x.data)}</span><span class="rk">${marcas}</span></div>
+      ${x.texto ? `<div class="rtxt">${x.texto.slice(0, 160).replace(/</g, '&lt;')}${x.texto.length > 160 ? '…' : ''}</div>`
+                : `<div class="rtxt" style="opacity:.6">— sem texto${x.foto ? ', só foto' : ''} —</div>`}
+      <div class="ract"><button class="r-edit">✏️ Corrigir</button><button class="r-del danger">🗑️ Excluir</button></div>
+    </div>`;
+  }).join('');
+
+  return `<div class="rdays">${chips}</div><div class="rlist">${linhas}</div>`;
+}
+function ligarListaRegistros() {
+  const st = document.getElementById('rg-status');
+  document.querySelectorAll('.rdays button').forEach((b) =>
+    b.addEventListener('click', () => { RFILTRO = +b.dataset.dias; EDIT_ID = null; renderReg(); }));
+  document.querySelectorAll('.ritem').forEach((el) => {
+    const id = el.dataset.id;
+    el.querySelector('.r-edit')?.addEventListener('click', () => { EDIT_ID = id; renderReg(); });
+    el.querySelector('.r-del')?.addEventListener('click', () => {
+      if (!confirm('Excluir este registro?\n\nEle vai pra lixeira do Notion — dá pra recuperar por 30 dias.')) return;
+      el.querySelectorAll('button').forEach((b) => b.disabled = true);
+      acaoRegistro(id, 'DELETE', null, st);
+    });
+    el.querySelector('.e-cancel')?.addEventListener('click', () => { EDIT_ID = null; renderReg(); });
+    el.querySelector('.e-save')?.addEventListener('click', () => {
+      const corpo = {
+        data: el.querySelector('.e-data').value,
+        texto: el.querySelector('.e-txt').value.trim(),
+      };
+      const ref = el.querySelector('.e-ref');
+      if (ref) corpo.refeicao = ref.value;
+      if (!corpo.data) { st.className = 'status err'; st.textContent = 'Escolha uma data.'; return; }
+      el.querySelectorAll('button').forEach((b) => b.disabled = true);
+      acaoRegistro(id, 'PATCH', corpo, st);
+    });
+  });
+}
+
+function renderReg() {
+  const tipo = REG_TIPO;
+  const treino = tipo === 'treino';
+  const obs = tipo === 'observacao';
+  const corrigir = tipo === 'corrigir';
+  const label = treino ? 'treino' : obs ? 'observação' : 'refeição';
+
+  if (corrigir) {
+    $("view").innerHTML = `<section><h2>Corrigir registros</h2>
+      <div class="seg">
+        <button id="tab-ref">🍽️ Refeição</button>
+        <button id="tab-tre">🏋️ Treino</button>
+        <button id="tab-obs">📝 Observação</button>
+        <button id="tab-fix" class="on">✏️ Corrigir</button>
+      </div>
+      <div style="margin-top:13px">${renderListaRegistros()}</div>
+      <div id="rg-status" style="margin-top:12px"></div>
+      <div class="note">Mudar a data devolve o registro pra fila — eu releio na próxima análise, porque a leitura anterior estava no dia errado. Excluir manda pra lixeira do Notion, recuperável por 30 dias.</div>
+    </section>`;
+    document.getElementById('tab-ref').addEventListener('click', () => { REG_TIPO = 'refeicao'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
+    document.getElementById('tab-tre').addEventListener('click', () => { REG_TIPO = 'treino'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
+    document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
+    ligarListaRegistros();
+    return;
+  }
+
+  $("view").innerHTML = `<section><h2>Registrar · cru</h2>
+    <div class="seg">
+      <button id="tab-ref" class="${tipo === 'refeicao' ? 'on' : ''}">🍽️ Refeição</button>
+      <button id="tab-tre" class="${treino ? 'on' : ''}">🏋️ Treino</button>
+      <button id="tab-obs" class="${obs ? 'on' : ''}">📝 Observação</button>
+      <button id="tab-fix">✏️ Corrigir</button>
+    </div>
+    <div class="form" style="margin-top:13px">
+      ${tipo === 'refeicao' ? `<div><label>Refeição</label><select id="rg-ref">
+        <option>Café</option><option selected>Almoço</option><option>Jantar</option><option>Lanche</option><option>Outro</option></select></div>` : ''}
+      <div><label>Data</label><input type="date" id="rg-data"></div>
+      <div><label>${treino ? 'Notas (opcional)' : obs ? 'Observação' : 'O que comeu (texto)'}</label>
+        <textarea id="rg-txt" placeholder="${treino ? 'ex.: Lower A · RPE 7 · tornozelo ok' : obs ? 'ex.: dor no ombro direito ao levantar peso, começou hoje' : 'ex.: 150g frango grelhado, arroz, salada'}"></textarea></div>
+      <div><label>${treino ? '📸 Screenshot do treino (Fitbod)' : obs ? 'Foto (opcional)' : 'Foto do prato (opcional)'}</label><div class="photo">
+        <label class="filebtn">📷 ${treino ? 'Anexar screenshot' : 'Tirar / escolher'}<input type="file" id="rg-foto" accept="image/*"></label>
+        <img id="rg-prev" alt=""></div></div>
+      <button class="btn" id="rg-send">Registrar ${label}</button>
+      <div id="rg-status"></div>
+      <div class="note">${treino ? 'Sem análise agora — a screenshot vai crua. No sábado eu extraio exercícios/séries/carga pra 💪 Força (fallback do Fitbod).' : obs ? 'Sem análise agora — fica na caixa bruta pra eu considerar no próximo resumo.' : 'Sem análise agora — vai cru pra caixa. No sábado eu estimo os macros.'}</div>
+    </div></section>`;
+  document.getElementById('rg-data').value = new Date().toISOString().slice(0, 10);
+  document.getElementById('rg-foto').addEventListener('change', previewPhoto);
+  document.getElementById('rg-send').addEventListener('click', submitLog);
+  document.getElementById('tab-ref').addEventListener('click', () => { REG_TIPO = 'refeicao'; PHOTO_DATA = null; renderReg(); });
+  document.getElementById('tab-tre').addEventListener('click', () => { REG_TIPO = 'treino'; PHOTO_DATA = null; renderReg(); });
+  document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; PHOTO_DATA = null; renderReg(); });
+  document.getElementById('tab-fix').addEventListener('click', () => { REG_TIPO = 'corrigir'; PHOTO_DATA = null; EDIT_ID = null; renderReg(); });
+}
+function route() {
+  const id = (location.hash || "#home").slice(1);
+  const fab = document.getElementById('fab'); if (fab) fab.style.display = id === 'reg' ? 'none' : '';
+  if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
+  const day = DATA.dias.find(d => d.id === id);
+  renderNav(day ? id : 'home');
+  if (day) renderDay(day); else renderHome();
+  window.scrollTo(0, 0);
+}
+
+fetch("data/semana.json").then(r => r.json()).then(d => {
+  DATA = d;
+  $("semana").textContent = "Semana " + d.semana;
+  const chips = [`<span class="chip obj">${d.objetivo}</span>`, `<span class="chip">${d.peso_atual} kg</span>`,
+    `<span class="chip">${d.dieta.calorias} kcal · ${d.dieta.proteina} g prot</span>`];
+  for (const [k, val] of Object.entries(d.fontes_status || {}))
+    chips.push(`<span class="chip ${val === 'ok' ? 'ok' : 'pend'}">${k}: ${val === 'ok' ? '✓' : '…'}</span>`);
+  $("chips").innerHTML = chips.join("");
+  $("foot").textContent = "Gerado em " + d.gerado_em + " · dados via Notion";
+  window.addEventListener("hashchange", route);
+  route();
+  fetch("/api/registros").then(r => r.ok ? r.json() : { items: [] }).then(j => { REGISTROS = j.items || []; route(); }).catch(() => {});
+});
+</script>
+</body>
+</html>

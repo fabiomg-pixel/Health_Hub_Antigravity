@@ -1,0 +1,939 @@
+{
+ "gerado_em": "2026-08-10",
+ "semana": "10/ago a 16/ago · SEMANA 2 DE AGOSTO — consolidação",
+ "objetivo": "Descarregar a carga (ACWR 1,8) e chegar inteiro no CAMPEONATO de sábado. Corrida diária curta e fácil, zero intensidade, força curta em 2 dias.",
+ "peso_atual": 94.0,
+ "fontes_status": {
+  "strava": "ok",
+  "garmin": "ok",
+  "peso": "ok",
+  "nutricao": "sem registro na semana de congresso",
+  "fitbod": "pendente"
+ },
+ "dieta": {
+  "calorias": 2200,
+  "proteina": 160,
+  "proteina_piso": 140,
+  "gordura": 70,
+  "carbo": 200,
+  "fibra": 30
+ },
+ "regra_prato": {
+  "titulo": "Semana de consolidação · almoço de marmita, tarde de carne fatiada",
+  "linhas": [
+   "🎯 Proteína: meta 160 g, piso 140. Entre os dois o dia foi bom.",
+   "🧊 ALMOÇO = marmita. Confere o rótulo: <35 g de proteína pede 2 ovos junto.",
+   "🥩 TARDE = 100 g de rosbife/frango fatiado (30 g de proteína). É comida, não suplemento — e é a dose que fechava o buraco.",
+   "🍳 JANTA = cozinhada rendendo 2. A extra vai pro freezer ANTES de servir — e é ela que salva a quinta pós-futebol.",
+   "🍽️ UMA refeição livre no fim de semana. Uma."
+  ]
+ },
+ "tendencias": {
+  "prontidao_media_7d": 54,
+  "prontidao_garmin_hoje": 5,
+  "indice_agudo_hoje": null,
+  "sono_media_7d": 6.9,
+  "sono_score_hoje": 78,
+  "rem_hoje": 2.0,
+  "training_status": "PRODUCTIVE",
+  "peso_delta_kg": -0.7,
+  "volume_series_semana": 12,
+  "prontidao": [
+   {
+    "data": "03/08",
+    "valor": 44,
+    "banda": "y",
+    "meu": null
+   },
+   {
+    "data": "04/08",
+    "valor": 62,
+    "banda": "g",
+    "meu": null
+   },
+   {
+    "data": "05/08",
+    "valor": 57,
+    "banda": "y",
+    "meu": null
+   },
+   {
+    "data": "06/08",
+    "valor": 50,
+    "banda": "y",
+    "meu": null
+   },
+   {
+    "data": "07/08",
+    "valor": 51,
+    "banda": "y",
+    "meu": null
+   },
+   {
+    "data": "08/08",
+    "valor": 59,
+    "banda": "y",
+    "meu": null
+   },
+   {
+    "data": "09/08",
+    "valor": 5,
+    "banda": "r",
+    "meu": null
+   }
+  ]
+ },
+ "status_treino": {
+  "planejado": 7,
+  "feito": 0,
+  "dias_feitos": []
+ },
+ "relatorio": [
+  "🍽️ QUINTA, VERSÃO FINAL: como a família janta antes e você come sozinho às 21h45, a janta deixa de ser negociação de mesa e vira decisão só sua. O melhor movimento então é o mesmo que funcionou no almoço — TIRAR A DECISÃO DO MOMENTO DE FOME. Peça que sua esposa separe a sua porção já montada: proteína cheia, acompanhamento pela metade, fritura de fora. Combinado uma vez, vale todas as quintas.",
+  "🥤 E COMER SOZINHO TORNA O SHAKE DAS 21h15 MAIS IMPORTANTE, não menos: às 21h45 você está com fome, cansado do jogo e com o prato pronto na frente, sem ninguém na mesa pra diluir o ritmo da refeição. Chegar sem fome é o que segura a porção — 220 kcal comprando 400.",
+  "🍽️ QUINTA MUDOU DE PROBLEMA: com a sua esposa cozinhando, a comida deixa de ser a questão — e o RELÓGIO passa a ser. O jogo é 20h–21h (os três de quinta na série: 20h01, 20h01, 19h58, todos terminando entre 20h55 e 21h05), você chega em casa ~21h30 e janta ~21h45. Sobram ~1h15 até a cama.",
+  "🔄 A SOLUÇÃO É INVERTER O PESO DAS REFEIÇÕES. A refeição PRINCIPAL da quinta passa pras 18h, antes do jogo — carboidrato de verdade, proteína, gordura baixa, 2 h antes do apito. E a janta das 21h45 vira a refeição SOCIAL: você come o que ela fez, mas em porção moderada, priorizando proteína e vegetais.",
+  "🥤 O SHAKE DAS 21h15 É A PEÇA QUE FAZ ISSO FUNCIONAR — e não é pela recuperação. É porque chegar em casa faminto às 21h30 é o que transforma a janta de 450 kcal numa de 900. Whey com água ou um Yopro na mochila, tomado antes de sair do clube, resolve isso por 220 kcal.",
+  "😴 POR QUE ESSE CUIDADO TODO NUMA REFEIÇÃO SÓ: o sono é a variável mais bem documentada dos seus dados. Três noites de 6,4 h e o futebol de 06/08 saiu com esforço relativo 20; noites de 7,9 h e 7,2 h e vieram os dois melhores treinos do ciclo. Refeição grande e gordurosa às 22h é a forma mais fácil de estragar a noite de quinta — e quinta é véspera de sexta, que é véspera do campeonato.",
+  "🧊 EFEITO COLATERAL BOM: a porção extra da segunda deixa de estar comprometida com a quinta. Ela vira estoque de emergência de verdade, pro dia em que tudo der errado — que é o que um freezer deveria ser.",
+  "🔧 CORREÇÃO — EU CLASSIFIQUEI OS JOGOS ERRADO ONTEM. Você esclareceu: só o 23/07 foi campo de 11; todos os outros foram campo curto, INCLUSIVE os matinais. A separação manhã/noite que eu tinha achado era coincidência, não causa. O que campo grande depende é de calendário de campeonato.",
+  "📊 O QUE OS DADOS DIZEM COM A CLASSIFICAÇÃO CERTA: o único jogo de campo de 11 (23/07) tem o SEU MAIOR PICO — 20,3 km/h. Então ontem eu errei duas vezes: primeiro classifiquei o campo errado, depois usei isso pra chamar o 20,3 de artefato. É provavelmente real, e é a evidência de que espaço maior libera velocidade.",
+  "⏱️ E O QUE REALMENTE PREVÊ A CARGA É A DURAÇÃO, NÃO O CAMPO. Jogos de 35–41 min deram esforço relativo de 10 a 20 (16/07, 23/07, 06/08). Jogos de 55–77 min deram 81 e 99 (09/08, 01/08). O salto não é gradual — acima de ~50 min o custo explode. Ou seja: a quinta à noite custa pouco; a pelada longa de fim de semana é que carrega.",
+  "🏆 SÁBADO É CAMPEONATO — E A SEMANA INTEIRA PASSA A EXISTIR PRA PROTEGER ISSO. Campo de 11 + demanda competitiva vai ser a maior exigência de velocidade que você enfrenta, em cima de um ACWR que já está em 1,8.",
+  "❌ POR ISSO O TESTE DE SPRINTS SAIU DA SEXTA. Fazer 10 arrancadas máximas na véspera de um campeonato é o mesmo erro da semana passada (intervalado na quarta, futebol fraco na quinta) — só que com uma partida de verdade no lugar da pelada. Sexta virou 20 min bem fáceis e dormir cedo.",
+  "💡 E O TESTE PODE NEM SER NECESSÁRIO: o jogo de sábado JÁ É o teste de pico em campo grande, com a vantagem de ser esforço real de jogo em vez de protocolo. Se o pico passar de 20 km/h, confirma que é o campo que libera a velocidade — e aí o campo de 11 vira a ferramenta de treino de pico, melhor que sprint de esteira, porque é o gesto específico do seu esporte.",
+  "🔄 SEMANA DE CONSOLIDAÇÃO, NÃO DE PROGRESSÃO — e é o oposto do que eu teria dito na quarta passada. Motivo: ACWR em 1,8 (conforto é 0,8–1,3), anaeróbico 88% acima do teto (396 contra 211) e aeróbico baixo 56% acima (522 contra 334). Todos os compartimentos estão cheios, menos o aeróbico alto — que subiu de 78 pra 243 e está a 21 pontos do alvo.",
+  "📉 O QUE ISSO SIGNIFICA NA PRÁTICA: zero intervalado, zero teste na esteira, força curta em 2 dias só. A corrida diária continua, mas toda ela FÁCIL. O único estímulo alto da semana é o futebol — e ele já entrega ~19 min em Z3+ por jogo, seis vezes mais que o intervalado entregou.",
+  "🚗 A LOGÍSTICA ENTROU NO PLANO. Corrida na rua do trabalho é o treino de MENOR atrito que você tem: linha reta, fim de tarde, sem deslocamento. Academia custa 40–50 min de trânsito e por isso está em 2 dias apenas (seg e qua), com teto rígido de 30 min de sala. Terça e sexta são só corrida — e são os dias com maior chance real de acontecer.",
+  "🍱 A QUINTA É O DIA QUE O FREEZER EXISTE PRA RESOLVER: você chega do futebol às 22h. Se a porção extra da segunda foi congelada, a janta está pronta. Se não foi, vira delivery. É literalmente o único dia da semana em que o estoque decide o resultado.",
+  "☕ CONTINUA EM ABERTO: o café da manhã de sábado (smoothie com whey, ~35 g de proteína). Se isso vale pra fim de semana ou pra dia de treino de manhã, viram 35 g fora da conta e eu redistribuo a meta. Me diz.",
+  "🦶 E O QUE AINDA FALTA: como o tornozelo respondeu ao teste de sábado e ao jogo de ontem. Foi a maior carga de velocidade do ciclo em dois dias seguidos, e é o dado que decide se a sexta pode ser a Opção B."
+ ],
+ "lista_compra": [
+  {
+   "cat": "🧊 Marmitas congeladas — 4 (almoço de ter a sex)",
+   "itens": [
+    "4 marmitas de proteína magra IDENTIFICÁVEL: frango, peixe ou patinho",
+    "⚠️ Evite base arroz-feijão-embutido (a N20 tutu com calabresa deu 26 g de proteína e 1084 mg de sódio)",
+    "Referência boa: N64 frango com creme de espinafre — 45 g de proteína, 603 mg de sódio",
+    "1 dúzia de ovos — reforço pra marmita fraca e pro lanche pré-treino"
+   ]
+  },
+  {
+   "cat": "🥩 Bloco de proteína (os 4 lanches da tarde — receita rI)",
+   "itens": [
+    "700 g de coxão mole ou alcatra em peça (rosbife)",
+    "2 latas de atum — o plano B sem preparo, pros dias em que o rosbife não acontecer",
+    "Alecrim, tomilho, sal grosso, mostarda",
+    "Pão integral ou 4 wraps",
+    "⏰ O preparo era do domingo. Se não rolou, assa hoje à noite — ou começa a semana no atum."
+   ]
+  },
+  {
+   "cat": "🍖 Proteína das jantas",
+   "itens": [
+    "440 g de filé de peito de frango — TER (piccata)",
+    "440 g de filé de peixe branco, pescada ou tilápia — QUA (peixe à espanhola)",
+    "700 g de peito de frango em tiras — QUI (estrogonofe, rende 4)",
+    "400 g de patinho moído — SEX (bolonhesa)"
+   ]
+  },
+  {
+   "cat": "🥬 Hortifruti",
+   "itens": [
+    "400 g de batata (qua)",
+    "300 g de champignon fresco (qui) — ou 2 vidros em conserva",
+    "2 brócolis (ter)",
+    "2 cenouras (ter e sex)",
+    "4 cebolas, 2 cabeças de alho",
+    "4 tomates (qua)",
+    "1 pimentão vermelho (qua)",
+    "2 limões sicilianos (ter) + 2 limões comuns (qua)",
+    "Salsinha e manjericão",
+    "Folhas para salada",
+    "Frutas: banana, maçã, mamão"
+   ]
+  },
+  {
+   "cat": "🥛 Laticínios",
+   "itens": [
+    "Iogurte grego natural — 10 potes (200 g vão pro estrogonofe de quinta; o resto é pré-lanche e petisco)",
+    "Whey — confere se o pote aguenta 4 dias + o shake pós-jogo de quinta",
+    "Manteiga (ter, piccata) e parmesão ralado (sex)"
+   ]
+  },
+  {
+   "cat": "🍚 Despensa",
+   "itens": [
+    "Arroz · macarrão integral 160 g (sex)",
+    "Alcaparras (ter) · azeitona preta e páprica (qua)",
+    "Extrato de tomate, mostarda Dijon, molho inglês (qui)",
+    "1 lata de tomate pelado (sex) · louro e orégano",
+    "Batata palha (qui — serve À PARTE, não por cima)",
+    "Farinha de trigo (ter, pra selar o frango) · azeite",
+    "Castanhas porcionadas · chocolate 70%"
+   ]
+  }
+ ],
+ "receitas": {
+  "rA": {
+   "nome": "Frango piccata (limão siciliano e alcaparras) com arroz e brócolis",
+   "tempo": "25 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 700,
+   "prot": 54,
+   "ingredientes": [
+    "440 g filé de peito de frango em bifes finos",
+    "Suco de 1 limão siciliano",
+    "2 col. sopa alcaparras",
+    "3 dentes de alho",
+    "1 col. manteiga + azeite",
+    "Farinha de trigo (leve, pra selar)",
+    "Salsinha",
+    "1 xíc arroz",
+    "Brócolis no vapor"
+   ],
+   "passos": [
+    "Cozinhe o arroz e o brócolis no vapor.",
+    "Passe os bifes levemente na farinha e sele dos dois lados (~3 min/lado). Reserve.",
+    "Na mesma frigideira, refogue o alho, junte limão, alcaparras e um pouco de água; deixe encorpar.",
+    "Volte o frango ao molho por 2 min, finalize com manteiga e salsinha.",
+    "Divida em 2 — o molho cítrico segura a umidade. Congele a 2ª porção."
+   ]
+  },
+  "rB": {
+   "nome": "Galinhada mineira (arroz com frango e açafrão)",
+   "tempo": "35 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 720,
+   "prot": 52,
+   "ingredientes": [
+    "440 g frango em pedaços (coxa/sobrecoxa sem pele ou peito)",
+    "1,5 xíc arroz",
+    "1 cebola, 3 alhos, 1 tomate",
+    "1 col. chá açafrão-da-terra (cúrcuma)",
+    "Cheiro-verde, pimenta",
+    "Caldo de galinha ~3 xíc",
+    "Cenoura em cubos"
+   ],
+   "passos": [
+    "Doure o frango temperado com alho, sal e açafrão.",
+    "Junte cebola e tomate, refogue.",
+    "Adicione o arroz, envolva, e cubra com o caldo quente.",
+    "Cozinhe ~18 min em fogo baixo, tampado; junte a cenoura na metade.",
+    "Finalize com cheiro-verde. Divida em 2 e congele a 2ª."
+   ]
+  },
+  "rC": {
+   "nome": "Peixe à espanhola (assado com batata, pimentão e azeitona)",
+   "tempo": "30 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 680,
+   "prot": 50,
+   "ingredientes": [
+    "440 g filé de peixe branco (pescada/tilápia)",
+    "400 g batata em rodelas finas",
+    "1 pimentão, 1 cebola, 2 tomates",
+    "Azeitonas pretas, páprica, azeite",
+    "Suco de 1 limão, salsinha"
+   ],
+   "passos": [
+    "Forre a assadeira com a batata em rodelas, tempere e asse 15 min a 200 °C.",
+    "Cubra com cebola, pimentão e tomate em rodelas.",
+    "Ponha o peixe por cima, regue com azeite, limão e páprica; espalhe as azeitonas.",
+    "Asse mais ~15 min. Divida em 2 — o molho da assadeira mantém tudo úmido."
+   ]
+  },
+  "rD": {
+   "nome": "Frango teriyaki com brócolis e arroz",
+   "tempo": "25 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 710,
+   "prot": 52,
+   "ingredientes": [
+    "440 g peito de frango em cubos",
+    "Molho: shoyu, mel, gengibre, alho, 1 col. maisena",
+    "Brócolis, cenoura",
+    "Gergelim",
+    "1 xíc arroz"
+   ],
+   "passos": [
+    "Cozinhe o arroz.",
+    "Sele o frango em fogo alto.",
+    "Junte o molho (shoyu+mel+gengibre+alho+maisena dissolvida) e deixe engrossar e brilhar.",
+    "Adicione brócolis e cenoura no vapor, envolva.",
+    "Finalize com gergelim. Divida em 2 e congele a 2ª."
+   ]
+  },
+  "rE": {
+   "nome": "Caldo de carne com abóbora e couve (inverno)",
+   "tempo": "35 min (pressão)",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 650,
+   "prot": 50,
+   "ingredientes": [
+    "440 g músculo ou patinho em cubos",
+    "500 g abóbora cabotiá",
+    "1 maço de couve fatiada fina",
+    "1 cebola, 3 alhos, 1 tomate",
+    "Louro, cominho, pimenta",
+    "Caldo de carne"
+   ],
+   "passos": [
+    "Sele a carne na pressão com cebola e alho.",
+    "Cubra com água/caldo e cozinhe ~20 min na pressão.",
+    "Abra, junte a abóbora e cozinhe até desmanchar e engrossar o caldo.",
+    "Desligue e junte a couve fatiada (murcha no calor).",
+    "Divida em 2 — caldo é a melhor comida pra congelar e requentar."
+   ]
+  },
+  "rF": {
+   "nome": "Macarrão à bolonhesa de carne moída",
+   "tempo": "30 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 730,
+   "prot": 52,
+   "ingredientes": [
+    "400 g patinho moído",
+    "1 lata de tomate pelado (ou 4 tomates)",
+    "1 cebola, 3 alhos, 1 cenoura ralada",
+    "Manjericão, orégano, louro",
+    "Macarrão integral 160 g",
+    "Parmesão ralado"
+   ],
+   "passos": [
+    "Refogue cebola, alho e cenoura ralada; doure a carne.",
+    "Junte o tomate e as ervas, apure ~20 min em fogo baixo.",
+    "Cozinhe o macarrão al dente.",
+    "Sirva com parmesão. Divida em 2 — guarde o molho separado do macarrão pra congelar melhor."
+   ]
+  },
+  "rG": {
+   "nome": "Paella mista (frango e frutos do mar) — pra fazer a dois",
+   "tempo": "50 min",
+   "rende": "2 porções generosas — pra comer na hora",
+   "kcal": 800,
+   "prot": 58,
+   "ingredientes": [
+    "250 g peito de frango em cubos",
+    "300 g frutos do mar (camarão, lula, mexilhão)",
+    "1,5 xíc arroz (bomba ou arbóreo)",
+    "1 pimentão vermelho, 1 cebola, 2 tomates",
+    "Açafrão (ou cúrcuma), páprica",
+    "Caldo quente ~3,5 xíc",
+    "Ervilha, limão, salsinha, azeite"
+   ],
+   "passos": [
+    "Doure o frango temperado; reserve.",
+    "Refogue cebola, pimentão e tomate com páprica e açafrão.",
+    "Junte o arroz, envolva, e adicione o caldo quente. Não mexa depois disso.",
+    "Aos 12 min, distribua o frango e os frutos do mar por cima; cozinhe mais ~8 min.",
+    "Descanse 5 min tampado. Sirva com limão e salsinha."
+   ]
+  },
+  "rH": {
+   "nome": "Moqueca de peixe e camarão (capixaba, sem dendê)",
+   "tempo": "35 min",
+   "rende": "3 porções — a 3ª vai pro FREEZER (começa o estoque de agosto)",
+   "kcal": 620,
+   "prot": 52,
+   "ingredientes": [
+    "500 g filé de peixe branco firme (badejo, pescada, robalo)",
+    "300 g camarão limpo",
+    "2 tomates, 1 cebola grande, 1 pimentão vermelho (tudo em rodelas)",
+    "200 ml leite de coco",
+    "3 alhos, suco de 2 limões, coentro e cebolinha",
+    "Azeite, colorau (urucum), sal, pimenta",
+    "Acompanhar: arroz (1 xíc crua) + pirão feito com o caldo"
+   ],
+   "passos": [
+    "Tempere peixe e camarão com limão, alho, sal e pimenta — deixe 15 min enquanto corta o resto.",
+    "Na panela larga, faça CAMADAS: azeite, metade da cebola/tomate/pimentão, o peixe, o resto dos legumes por cima. Não mexa.",
+    "Regue com o leite de coco e um fio de azeite com colorau. Tampe e cozinhe 12–15 min em fogo médio-baixo.",
+    "Jogue o camarão por cima nos ÚLTIMOS 4 min — mais que isso ele borracha.",
+    "Coentro no fim, fora do fogo. Separe 1 porção ainda quente pro pote do freezer ANTES de servir — o que fica na mesa some."
+   ]
+  },
+  "rI": {
+   "nome": "Bloco de proteína do domingo (rosbife + frango fatiados pra semana)",
+   "tempo": "50 min no domingo — resolve os 5 lanches da semana",
+   "rende": "~7 porções de 100 g · guarda fatiado em potes de 2 porções",
+   "kcal": 190,
+   "prot": 30,
+   "ingredientes": [
+    "700 g de coxão mole ou alcatra em peça (o rosbife)",
+    "600 g de peito de frango inteiro",
+    "2 latas de atum (pra pasta)",
+    "3 col. sopa de iogurte grego + mostarda (a pasta de atum SEM maionese)",
+    "Alho, alecrim, tomilho, pimenta-do-reino, sal grosso, azeite",
+    "Pão integral ou wrap, folhas, tomate (a montagem do sanduíche)"
+   ],
+   "passos": [
+    "ROSBIFE: tempere a peça com sal grosso, alho e alecrim. Sele em fogo ALTO nos 4 lados (~2 min cada) até criar crosta.",
+    "Leve ao forno a 200 °C por 20–25 min (mal passado por dentro — é o que mantém suculento depois de frio).",
+    "⚠️ Deixe esfriar COMPLETAMENTE antes de fatiar, de preferência na geladeira. Fatiar quente esfarela e resseca.",
+    "FRANGO: tempere com limão, alho e tomilho; asse a 200 °C por 30 min. Esfrie e fatie ou desfie.",
+    "PASTA DE ATUM: atum escorrido + iogurte grego + mostarda + cebolinha. Nada de maionese — troca 0 g de proteína por gordura.",
+    "Guarde em potes de 2 porções (100 g cada) etiquetados. Rosbife e frango aguentam 4 dias na geladeira; congele metade.",
+    "Na hora do lanche: 100 g de rosbife ou frango = 30 g de proteína. É a dose que fechava o buraco do dia."
+   ]
+  },
+  "rJ": {
+   "nome": "Estrogonofe de frango com iogurte grego (a versão que reaquece bem)",
+   "tempo": "35 min",
+   "rende": "4 porções — família + a sua separada",
+   "kcal": 640,
+   "prot": 54,
+   "ingredientes": [
+    "700 g de peito de frango em tiras",
+    "300 g de champignon fatiado (fresco ou em conserva bem escorrido)",
+    "1 cebola grande e 3 dentes de alho",
+    "3 col. sopa de extrato de tomate",
+    "200 g de iogurte grego natural (substitui o creme de leite)",
+    "1 col. sopa de mostarda Dijon + 1 col. sopa de molho inglês",
+    "Páprica doce, sal, pimenta-do-reino, azeite",
+    "Arroz (1,5 xíc cru) · batata palha SERVIDA À PARTE"
+   ],
+   "passos": [
+    "Tempere o frango com sal, pimenta e páprica. Sele em fogo ALTO, em duas levas — panela cheia cozinha no vapor e o frango solta água em vez de dourar.",
+    "Reserve o frango. Na mesma panela, refogue cebola e alho; junte o champignon e deixe soltar e evaporar a água dele.",
+    "Volte o frango, adicione o extrato de tomate, a mostarda e o molho inglês. Um dedo de água se ficar seco. Cozinhe 5 min.",
+    "⚠️ DESLIGUE O FOGO. Espere baixar a fervura e SÓ ENTÃO misture o iogurte grego. Iogurte fervido talha e vira grumo — é o único jeito de errar esta receita.",
+    "Acerte o sal. A batata palha vai numa tigela à parte, nunca por cima da travessa.",
+    "🍱 SEPARE A PORÇÃO DELE ANTES de levar à mesa: frango cheio, arroz pela metade, sem batata palha. Guarde tampada — reaquece bem no micro-ondas em 2 min."
+   ]
+  }
+ },
+ "dias": [
+  {
+   "id": "seg",
+   "nome": "Segunda",
+   "data": "10/08",
+   "tipo": "treino",
+   "treino": {
+    "foco": "🏃 Corrida fácil 25 min na rua (trabalho) + 💪 força LOWER curta na academia — dia de logística",
+    "exercicios": [
+     {
+      "nome": "🏃 Corrida 25 min FÁCIL na rua, fim de tarde (8–8,5 km/h). Semana de descarga: nada de ritmo.",
+      "series": 1,
+      "reps": "25 min"
+     },
+     {
+      "nome": "🚗 Depois: trânsito pra casa + academia. Só faz se sair do trabalho a tempo — senão fica só a corrida, e tudo bem.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Leg press — carga alta, poucas reps",
+      "series": 4,
+      "reps": "5"
+     },
+     {
+      "nome": "Agachamento (Smith ou livre)",
+      "series": 3,
+      "reps": "5"
+     },
+     {
+      "nome": "Mesa flexora ou stiff",
+      "series": 3,
+      "reps": "8"
+     },
+     {
+      "nome": "Panturrilha em pé, descida lenta (tornozelo)",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "⏱️ TETO DE 30 MIN de sala. Entra, faz, sai — o custo aqui é o trânsito, não o treino.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Marmita congelada — proteína magra identificável",
+     "kcal": 500,
+     "prot": 45,
+     "peso_g": 400,
+     "origem": "marmita congelada (comprada)",
+     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
+    },
+    "pre_lanche": {
+     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
+     "kcal": 400,
+     "prot": 34,
+     "peso_g": 260,
+     "receita": "rI",
+     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+    },
+    "lanche_pre_treino": {
+     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "kcal": 300,
+     "prot": 30,
+     "peso_g": 230,
+     "nota": "Come antes de sair do trabalho — entre a corrida e a academia tem 40-50 min de trânsito."
+    },
+    "janta": {
+     "nome": "Caldo de carne com abóbora e couve (inverno)",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": 480,
+     "receita": "rE",
+     "nota": "Rende 2 — a extra vai pro freezer ANTES de servir. Com a quinta resolvida pela sua esposa, essa porção deixa de ter dono: vira estoque de emergência pro dia em que tudo der errado."
+    },
+    "petisco": {
+     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
+     "kcal": 210,
+     "prot": 14,
+     "peso_g": 180
+    }
+   }
+  },
+  {
+   "id": "ter",
+   "nome": "Terça",
+   "data": "11/08",
+   "tipo": "treino",
+   "treino": {
+    "foco": "🏃 Só corrida — 30 min fácil na rua do trabalho, em linha reta",
+    "exercicios": [
+     {
+      "nome": "🏃 30 min contínuo fácil (8–8,5 km/h). O dia sem academia é o dia de alongar a corrida.",
+      "series": 1,
+      "reps": "30 min"
+     },
+     {
+      "nome": "Sem trânsito, sem sala: o treino de menor atrito da semana. É o que tem mais chance de acontecer.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Mobilidade de tornozelo em casa, 5 min",
+      "series": 3,
+      "reps": "45 s"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Marmita congelada — proteína magra identificável",
+     "kcal": 500,
+     "prot": 45,
+     "peso_g": 400,
+     "origem": "marmita congelada (comprada)",
+     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
+    },
+    "pre_lanche": {
+     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
+     "kcal": 400,
+     "prot": 34,
+     "peso_g": 260,
+     "receita": "rI",
+     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+    },
+    "lanche_pre_treino": {
+     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "kcal": 300,
+     "prot": 30,
+     "peso_g": 230
+    },
+    "janta": {
+     "nome": "Frango piccata (limão siciliano e alcaparras) com arroz e brócolis",
+     "kcal": 700,
+     "prot": 54,
+     "peso_g": 480,
+     "receita": "rA",
+     "nota": "Rende 2 — a extra vai pro freezer ANTES de servir."
+    },
+    "petisco": {
+     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
+     "kcal": 210,
+     "prot": 14,
+     "peso_g": 180
+    }
+   }
+  },
+  {
+   "id": "qua",
+   "nome": "Quarta",
+   "data": "12/08",
+   "tipo": "treino",
+   "treino": {
+    "foco": "🏃 Corrida fácil 20 min + 💪 força UPPER curta na academia",
+    "exercicios": [
+     {
+      "nome": "🏃 20 min fácil — véspera de futebol, corrida é aquecimento e nada mais",
+      "series": 1,
+      "reps": "20 min"
+     },
+     {
+      "nome": "⚠️ NADA de intensidade hoje. Foi exatamente o erro da semana passada: intervalado na quarta, futebol fraco na quinta.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Supino (máquina ou reto) — carga alta",
+      "series": 4,
+      "reps": "5"
+     },
+     {
+      "nome": "Remada ou puxada",
+      "series": 4,
+      "reps": "6"
+     },
+     {
+      "nome": "Desenvolvimento halter",
+      "series": 3,
+      "reps": "6"
+     },
+     {
+      "nome": "⏱️ Teto de 30 min de sala.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Marmita congelada — proteína magra identificável",
+     "kcal": 500,
+     "prot": 45,
+     "peso_g": 400,
+     "origem": "marmita congelada (comprada)",
+     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
+    },
+    "pre_lanche": {
+     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
+     "kcal": 400,
+     "prot": 34,
+     "peso_g": 260,
+     "receita": "rI",
+     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+    },
+    "lanche_pre_treino": {
+     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "kcal": 300,
+     "prot": 30,
+     "peso_g": 230
+    },
+    "janta": {
+     "nome": "Peixe à espanhola (assado com batata, pimentão e azeitona)",
+     "kcal": 680,
+     "prot": 50,
+     "peso_g": 480,
+     "receita": "rC",
+     "nota": "Rende 2 — a extra vai pro freezer. Véspera de futebol: prato leve, sem fritura."
+    },
+    "petisco": {
+     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
+     "kcal": 210,
+     "prot": 14,
+     "peso_g": 180
+    }
+   }
+  },
+  {
+   "id": "qui",
+   "nome": "Quinta",
+   "data": "13/08",
+   "tipo": "treino",
+   "treino": {
+    "foco": "⚽ FUTEBOL (curto, 20h–21h) — o fixo da semana. Hoje o desafio é o RELÓGIO, não o treino.",
+    "exercicios": [
+     {
+      "nome": "🕕 18h00 — refeição pré-jogo. Sair do trabalho comido é o que decide a quinta inteira.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🏃 19h45 — aquecimento correndo 10-12 min + mobilidade de tornozelo",
+      "series": 1,
+      "reps": "12 min"
+     },
+     {
+      "nome": "⚽ 20h00–21h00 — jogo (campo curto: mais mudança de direção por minuto, menos corrida longa)",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🥤 21h15 — shake antes de sair do clube. Não espera chegar em casa.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🍽️ 21h45 — sua porção (separada antes), comendo sozinho",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🛌 23h00 — LIMITE PRA DORMIR. Esta é a restrição real da quinta: são só ~1h15 entre a janta e a cama, e é por isso que a porção das 21h45 precisa ser moderada e sem gordura pesada.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Sem força hoje, sem corrida extra.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "12h30 · Marmita congelada",
+     "kcal": 500,
+     "prot": 45,
+     "peso_g": 400,
+     "origem": "marmita congelada (comprada)",
+     "nota": "Regra do rótulo: <35 g de proteína pede 2 ovos junto."
+    },
+    "pre_lanche": {
+     "nome": "15h30 · Sanduíche com 100 g de rosbife ou frango fatiado",
+     "kcal": 400,
+     "prot": 34,
+     "peso_g": 260,
+     "receita": "rI",
+     "nota": "Em dia de jogo essa dose importa mais: é ela que evita você chegar às 18h com fome de comer demais."
+    },
+    "lanche_pre_treino": {
+     "nome": "18h00 · REFEIÇÃO PRÉ-JOGO — a principal do dia",
+     "kcal": 520,
+     "prot": 36,
+     "peso_g": 420,
+     "nota": "Arroz + frango grelhado + legumes, ou massa com proteína magra. Carboidrato de verdade, gordura BAIXA (gordura atrasa o esvaziamento gástrico e você joga pesado). 2 h antes do apito é a janela certa."
+    },
+    "janta": {
+     "nome": "21h45 · Estrogonofe de frango com iogurte grego — sua porção separada antes",
+     "kcal": 520,
+     "prot": 44,
+     "peso_g": 380,
+     "receita": "rJ",
+     "nota": "Sua esposa faz o prato inteiro; a sua porção sai da panela ANTES de ir pra mesa — frango cheio, arroz pela metade, sem batata palha. O iogurte grego no lugar do creme de leite corta a gordura quase pela metade, que é o que faz esse prato caber às 21h45 sem estragar o sono."
+    },
+    "petisco": {
+     "nome": "21h15 · Shake pós-jogo (ainda no clube ou no carro)",
+     "kcal": 220,
+     "prot": 28,
+     "peso_g": 300,
+     "nota": "Whey com água ou um Yopro na mochila, antes de sair do clube. Aqui ele importa MAIS do que se você jantasse acompanhado: às 21h45 você está sozinho, com fome e com o prato pronto na frente — não tem ninguém na mesa pra diluir o ritmo. Chegar sem fome de assalto é o que segura a porção."
+    }
+   }
+  },
+  {
+   "id": "sex",
+   "nome": "Sexta",
+   "data": "14/08",
+   "tipo": "treino",
+   "treino": {
+    "foco": "🌀 Regenerativo curto — véspera de CAMPEONATO. Hoje o objetivo é chegar inteiro amanhã.",
+    "exercicios": [
+     {
+      "nome": "🏃 20 min BEM fácil (7,5–8 km/h). Soltar as pernas, nada além disso.",
+      "series": 1,
+      "reps": "20 min"
+     },
+     {
+      "nome": "Mobilidade de tornozelo e quadril — 8 min",
+      "series": 3,
+      "reps": "45 s"
+     },
+     {
+      "nome": "❌ SEM força. SEM sprints. O teste de campo saiu daqui (motivo no relatório).",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🛌 Dormir cedo hoje vale mais que qualquer treino desta semana. Os dois melhores desempenhos do ciclo vieram depois de noites de 7,2–7,9 h; o futebol fraco de 06/08 veio depois de três noites de 6,4 h.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Marmita congelada — proteína magra identificável",
+     "kcal": 500,
+     "prot": 45,
+     "peso_g": 400,
+     "origem": "marmita congelada (comprada)",
+     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
+    },
+    "pre_lanche": {
+     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
+     "kcal": 400,
+     "prot": 34,
+     "peso_g": 260,
+     "receita": "rI",
+     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+    },
+    "lanche_pre_treino": {
+     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "kcal": 300,
+     "prot": 30,
+     "peso_g": 230
+    },
+    "janta": {
+     "nome": "Macarrão à bolonhesa de patinho",
+     "kcal": 730,
+     "prot": 52,
+     "peso_g": 500,
+     "receita": "rF",
+     "nota": "Véspera de CAMPEONATO — massa aqui é escolha, não indulgência: carga de carboidrato na noite anterior ao jogo. Rende 2, a extra vai pro freezer."
+    },
+    "petisco": {
+     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
+     "kcal": 210,
+     "prot": 14,
+     "peso_g": 180
+    }
+   }
+  },
+  {
+   "id": "sab",
+   "nome": "Sábado",
+   "data": "15/08",
+   "tipo": "treino",
+   "flex": true,
+   "treino": {
+    "foco": "🏆 CAMPEONATO — campo de 11. É o pico de carga da semana e o evento que ela inteira protege.",
+    "exercicios": [
+     {
+      "nome": "Aquecimento completo antes do jogo: 12 min progressivos + mobilidade de tornozelo",
+      "series": 1,
+      "reps": "12 min"
+     },
+     {
+      "nome": "🏆 Jogo de campeonato",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "⚠️ Campo de 11 + demanda competitiva = a maior exigência de velocidade que você enfrenta. O único jogo de campo grande da série (23/07) tem o teu maior pico registrado: 20,3 km/h.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🔬 PREDIÇÃO TESTÁVEL: se o pico de amanhã passar de 20 km/h, confirma que é o CAMPO que libera velocidade — e aí o campo de 11 vira a ferramenta de treino de pico, no lugar dos sprints de esteira.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📋 Anote depois: duração do jogo e como o tornozelo respondeu às arrancadas e mudanças de direção.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "🍽️ REFEIÇÃO LIVRE da semana — uma só",
+     "kcal": 900,
+     "prot": 45,
+     "peso_g": 600,
+     "nota": "A refeição livre da semana — e hoje ela cai bem, é pós-campeonato. UMA só. No fim de semana passado saíram três e é isso que apaga a semana."
+    },
+    "pre_lanche": {
+     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
+     "kcal": 400,
+     "prot": 34,
+     "peso_g": 260,
+     "receita": "rI",
+     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+    },
+    "lanche_pre_treino": {
+     "nome": "Pré-jogo: banana + pão com pasta de amendoim (90 min antes)",
+     "kcal": 340,
+     "prot": 20,
+     "peso_g": 260,
+     "nota": "Dia de campeonato pede carboidrato disponível. Não é dia de jogar em jejum."
+    },
+    "janta": {
+     "nome": "🧊 Porção do freezer + salada grande",
+     "kcal": 620,
+     "prot": 48,
+     "peso_g": 450,
+     "origem": "freezer — estoque próprio"
+    },
+    "petisco": {
+     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
+     "kcal": 210,
+     "prot": 14,
+     "peso_g": 180
+    }
+   }
+  },
+  {
+   "id": "dom",
+   "nome": "Domingo",
+   "data": "16/08",
+   "tipo": "treino",
+   "flex": true,
+   "treino": {
+    "foco": "🌀 Recuperação pós-campeonato + preparo da semana",
+    "exercicios": [
+     {
+      "nome": "🏃 20 min muito fácil — ou caminhada, se o jogo tiver cobrado caro",
+      "series": 1,
+      "reps": "20 min"
+     },
+     {
+      "nome": "Mobilidade e alongamento de posterior, panturrilha e quadril",
+      "series": 3,
+      "reps": "45 s"
+     },
+     {
+      "nome": "🥩 PREPARO: rosbife + frango assados e fatiados (receita rI) — são os 5 lanches da semana.",
+      "series": 1,
+      "reps": "50 min"
+     },
+     {
+      "nome": "🧊 Compra as 5 marmitas e confere o freezer.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📋 Pesa em jejum (não depois de atividade) e me chama pra revisão.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Almoço de domingo em casa — proteína + salada grande",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": 500
+    },
+    "pre_lanche": {
+     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
+     "kcal": 400,
+     "prot": 34,
+     "peso_g": 260,
+     "receita": "rI",
+     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+    },
+    "lanche_pre_treino": {
+     "nome": "Iogurte + fruta",
+     "kcal": 260,
+     "prot": 24,
+     "peso_g": 250
+    },
+    "janta": {
+     "nome": "Macarrão à bolonhesa de carne moída",
+     "kcal": 730,
+     "prot": 52,
+     "peso_g": 480,
+     "receita": "rF",
+     "nota": "Rende porção extra — separa e congela ANTES de sentar à mesa."
+    },
+    "petisco": {
+     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
+     "kcal": 210,
+     "prot": 14,
+     "peso_g": 180
+    }
+   }
+  }
+ ]
+}

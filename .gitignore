@@ -1,0 +1,18 @@
+# Credenciais — nunca versionar
+.env
+.env.local
+
+# Saídas cruas dos pulls (regeneráveis a cada execução)
+garmin_out.json
+renpho_out.json
+resumo_diario.json
+
+# Passagem de bastão entre a avaliação da noite e o brief da manhã
+carryover.txt
+
+# Deploy
+.vercel/
+
+# Python
+__pycache__/
+*.pyc
