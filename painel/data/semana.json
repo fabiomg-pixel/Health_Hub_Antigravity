@@ -1,177 +1,128 @@
 {
- "gerado_em": "2026-08-10",
- "semana": "10/ago a 16/ago · SEMANA 2 DE AGOSTO — consolidação",
- "objetivo": "Descarregar a carga (ACWR 1,8) e chegar inteiro no CAMPEONATO de sábado. Corrida diária curta e fácil, zero intensidade, força curta em 2 dias.",
+ "gerado_em": "2026-08-18",
+ "semana": "18/ago a 24/ago · ✈️ MODO VIAGEM — manter, não progredir",
+ "objetivo": "Semana de viagem: as regras quebram e isso está previsto. Manter a corrida de 20 min (que é o hábito que sobrevive), proteína no piso de 140 g, e voltar sem dívida a pagar.",
  "peso_atual": 94.0,
  "fontes_status": {
   "strava": "ok",
   "garmin": "ok",
-  "peso": "ok",
-  "nutricao": "sem registro na semana de congresso",
+  "peso": "sem .env",
+  "nutricao": "pendente",
   "fitbod": "pendente"
  },
  "dieta": {
   "calorias": 2200,
-  "proteina": 160,
-  "proteina_piso": 140,
+  "proteina": 140,
+  "proteina_piso": 120,
   "gordura": 70,
   "carbo": 200,
-  "fibra": 30
+  "fibra": 25
  },
  "regra_prato": {
-  "titulo": "Semana de consolidação · almoço de marmita, tarde de carne fatiada",
+  "titulo": "✈️ Modo viagem · heurística, não cardápio",
   "linhas": [
-   "🎯 Proteína: meta 160 g, piso 140. Entre os dois o dia foi bom.",
-   "🧊 ALMOÇO = marmita. Confere o rótulo: <35 g de proteína pede 2 ovos junto.",
-   "🥩 TARDE = 100 g de rosbife/frango fatiado (30 g de proteína). É comida, não suplemento — e é a dose que fechava o buraco.",
-   "🍳 JANTA = cozinhada rendendo 2. A extra vai pro freezer ANTES de servir — e é ela que salva a quinta pós-futebol.",
-   "🍽️ UMA refeição livre no fim de semana. Uma."
+   "🥩 Proteína PRIMEIRO em todo prato de buffet — encha metade antes de olhar o resto.",
+   "🥗 Metade do prato de salada/legumes. Segura frito, empanado e sobremesa de coffee-break.",
+   "🎒 Kit portátil salva o dia: Yopro, sachê de whey, castanhas porcionadas, barra, banana.",
+   "🎯 Meta desta semana é 140 g de proteína, não 160. Comendo fora o tempo todo, esse é o teto honesto — e bater isso é sucesso.",
+   "📸 UMA foto por dia já é vitória. Na viagem de julho ficamos 6 dias cegos; qualquer registro é melhor que zero.",
+   "⚖️ Peso medido em viagem NÃO entra na série. Rotina, sal e sono são outros."
   ]
  },
  "tendencias": {
-  "prontidao_media_7d": 54,
-  "prontidao_garmin_hoje": 5,
+  "prontidao_media_7d": 60,
+  "prontidao_garmin_hoje": 88,
   "indice_agudo_hoje": null,
-  "sono_media_7d": 6.9,
-  "sono_score_hoje": 78,
-  "rem_hoje": 2.0,
-  "training_status": "PRODUCTIVE",
-  "peso_delta_kg": -0.7,
-  "volume_series_semana": 12,
+  "sono_media_7d": 6.7,
+  "sono_score_hoje": 84,
+  "rem_hoje": null,
+  "training_status": "RECOVERY",
+  "peso_delta_kg": 0.0,
+  "volume_series_semana": 0,
   "prontidao": [
    {
-    "data": "03/08",
-    "valor": 44,
+    "data": "12/08",
+    "valor": 43,
     "banda": "y",
     "meu": null
    },
    {
-    "data": "04/08",
-    "valor": 62,
-    "banda": "g",
+    "data": "13/08",
+    "valor": 21,
+    "banda": "r",
     "meu": null
    },
    {
-    "data": "05/08",
-    "valor": 57,
-    "banda": "y",
-    "meu": null
-   },
-   {
-    "data": "06/08",
+    "data": "14/08",
     "valor": 50,
     "banda": "y",
     "meu": null
    },
    {
-    "data": "07/08",
-    "valor": 51,
-    "banda": "y",
-    "meu": null
-   },
-   {
-    "data": "08/08",
+    "data": "15/08",
     "valor": 59,
     "banda": "y",
     "meu": null
    },
    {
-    "data": "09/08",
-    "valor": 5,
-    "banda": "r",
+    "data": "16/08",
+    "valor": 64,
+    "banda": "g",
+    "meu": null
+   },
+   {
+    "data": "17/08",
+    "valor": 77,
+    "banda": "g",
+    "meu": null
+   },
+   {
+    "data": "18/08",
+    "valor": 88,
+    "banda": "g",
     "meu": null
    }
   ]
  },
  "status_treino": {
   "planejado": 7,
-  "feito": 0,
-  "dias_feitos": []
+  "feito": 1,
+  "dias_feitos": [
+   "Sáb 15/08 (🏆 Campeonato — 110 min: campo de 11 pela manhã 60 min + campo de 7 à tarde 50 min)"
+  ]
  },
  "relatorio": [
-  "🍽️ QUINTA, VERSÃO FINAL: como a família janta antes e você come sozinho às 21h45, a janta deixa de ser negociação de mesa e vira decisão só sua. O melhor movimento então é o mesmo que funcionou no almoço — TIRAR A DECISÃO DO MOMENTO DE FOME. Peça que sua esposa separe a sua porção já montada: proteína cheia, acompanhamento pela metade, fritura de fora. Combinado uma vez, vale todas as quintas.",
-  "🥤 E COMER SOZINHO TORNA O SHAKE DAS 21h15 MAIS IMPORTANTE, não menos: às 21h45 você está com fome, cansado do jogo e com o prato pronto na frente, sem ninguém na mesa pra diluir o ritmo da refeição. Chegar sem fome é o que segura a porção — 220 kcal comprando 400.",
-  "🍽️ QUINTA MUDOU DE PROBLEMA: com a sua esposa cozinhando, a comida deixa de ser a questão — e o RELÓGIO passa a ser. O jogo é 20h–21h (os três de quinta na série: 20h01, 20h01, 19h58, todos terminando entre 20h55 e 21h05), você chega em casa ~21h30 e janta ~21h45. Sobram ~1h15 até a cama.",
-  "🔄 A SOLUÇÃO É INVERTER O PESO DAS REFEIÇÕES. A refeição PRINCIPAL da quinta passa pras 18h, antes do jogo — carboidrato de verdade, proteína, gordura baixa, 2 h antes do apito. E a janta das 21h45 vira a refeição SOCIAL: você come o que ela fez, mas em porção moderada, priorizando proteína e vegetais.",
-  "🥤 O SHAKE DAS 21h15 É A PEÇA QUE FAZ ISSO FUNCIONAR — e não é pela recuperação. É porque chegar em casa faminto às 21h30 é o que transforma a janta de 450 kcal numa de 900. Whey com água ou um Yopro na mochila, tomado antes de sair do clube, resolve isso por 220 kcal.",
-  "😴 POR QUE ESSE CUIDADO TODO NUMA REFEIÇÃO SÓ: o sono é a variável mais bem documentada dos seus dados. Três noites de 6,4 h e o futebol de 06/08 saiu com esforço relativo 20; noites de 7,9 h e 7,2 h e vieram os dois melhores treinos do ciclo. Refeição grande e gordurosa às 22h é a forma mais fácil de estragar a noite de quinta — e quinta é véspera de sexta, que é véspera do campeonato.",
-  "🧊 EFEITO COLATERAL BOM: a porção extra da segunda deixa de estar comprometida com a quinta. Ela vira estoque de emergência de verdade, pro dia em que tudo der errado — que é o que um freezer deveria ser.",
-  "🔧 CORREÇÃO — EU CLASSIFIQUEI OS JOGOS ERRADO ONTEM. Você esclareceu: só o 23/07 foi campo de 11; todos os outros foram campo curto, INCLUSIVE os matinais. A separação manhã/noite que eu tinha achado era coincidência, não causa. O que campo grande depende é de calendário de campeonato.",
-  "📊 O QUE OS DADOS DIZEM COM A CLASSIFICAÇÃO CERTA: o único jogo de campo de 11 (23/07) tem o SEU MAIOR PICO — 20,3 km/h. Então ontem eu errei duas vezes: primeiro classifiquei o campo errado, depois usei isso pra chamar o 20,3 de artefato. É provavelmente real, e é a evidência de que espaço maior libera velocidade.",
-  "⏱️ E O QUE REALMENTE PREVÊ A CARGA É A DURAÇÃO, NÃO O CAMPO. Jogos de 35–41 min deram esforço relativo de 10 a 20 (16/07, 23/07, 06/08). Jogos de 55–77 min deram 81 e 99 (09/08, 01/08). O salto não é gradual — acima de ~50 min o custo explode. Ou seja: a quinta à noite custa pouco; a pelada longa de fim de semana é que carrega.",
-  "🏆 SÁBADO É CAMPEONATO — E A SEMANA INTEIRA PASSA A EXISTIR PRA PROTEGER ISSO. Campo de 11 + demanda competitiva vai ser a maior exigência de velocidade que você enfrenta, em cima de um ACWR que já está em 1,8.",
-  "❌ POR ISSO O TESTE DE SPRINTS SAIU DA SEXTA. Fazer 10 arrancadas máximas na véspera de um campeonato é o mesmo erro da semana passada (intervalado na quarta, futebol fraco na quinta) — só que com uma partida de verdade no lugar da pelada. Sexta virou 20 min bem fáceis e dormir cedo.",
-  "💡 E O TESTE PODE NEM SER NECESSÁRIO: o jogo de sábado JÁ É o teste de pico em campo grande, com a vantagem de ser esforço real de jogo em vez de protocolo. Se o pico passar de 20 km/h, confirma que é o campo que libera a velocidade — e aí o campo de 11 vira a ferramenta de treino de pico, melhor que sprint de esteira, porque é o gesto específico do seu esporte.",
-  "🔄 SEMANA DE CONSOLIDAÇÃO, NÃO DE PROGRESSÃO — e é o oposto do que eu teria dito na quarta passada. Motivo: ACWR em 1,8 (conforto é 0,8–1,3), anaeróbico 88% acima do teto (396 contra 211) e aeróbico baixo 56% acima (522 contra 334). Todos os compartimentos estão cheios, menos o aeróbico alto — que subiu de 78 pra 243 e está a 21 pontos do alvo.",
-  "📉 O QUE ISSO SIGNIFICA NA PRÁTICA: zero intervalado, zero teste na esteira, força curta em 2 dias só. A corrida diária continua, mas toda ela FÁCIL. O único estímulo alto da semana é o futebol — e ele já entrega ~19 min em Z3+ por jogo, seis vezes mais que o intervalado entregou.",
-  "🚗 A LOGÍSTICA ENTROU NO PLANO. Corrida na rua do trabalho é o treino de MENOR atrito que você tem: linha reta, fim de tarde, sem deslocamento. Academia custa 40–50 min de trânsito e por isso está em 2 dias apenas (seg e qua), com teto rígido de 30 min de sala. Terça e sexta são só corrida — e são os dias com maior chance real de acontecer.",
-  "🍱 A QUINTA É O DIA QUE O FREEZER EXISTE PRA RESOLVER: você chega do futebol às 22h. Se a porção extra da segunda foi congelada, a janta está pronta. Se não foi, vira delivery. É literalmente o único dia da semana em que o estoque decide o resultado.",
-  "☕ CONTINUA EM ABERTO: o café da manhã de sábado (smoothie com whey, ~35 g de proteína). Se isso vale pra fim de semana ou pra dia de treino de manhã, viram 35 g fora da conta e eu redistribuo a meta. Me diz.",
-  "🦶 E O QUE AINDA FALTA: como o tornozelo respondeu ao teste de sábado e ao jogo de ontem. Foi a maior carga de velocidade do ciclo em dois dias seguidos, e é o dado que decide se a sexta pode ser a Opção B."
+  "✈️ MODO VIAGEM ATIVADO — 18 a 24/08. As regras quebram nesta semana e isso está previsto no protocolo, não é falha. O objetivo aqui é MANTER, não progredir: corrida de 20 min, proteína no piso de 140 g, e voltar sem dívida a pagar.",
+  "🦶 O TORNOZELO PASSOU NO TESTE MAIS DURO DO CICLO. Você registrou em 16/08: 'tornozelo ok, cansaço muscular'. Em nove dias ele levou o teste de potência (13 km/h na esteira + tiros), o futebol de 09/08 e 110 min de campeonato — incluindo 60 min em campo de 11. Cansaço muscular é resposta de carga; é outra categoria de coisa que dor articular. Era a pendência aberta desde 08/08 e ela fechou bem.",
+  "💚 E VOCÊ ESTÁ NO MELHOR ESTADO DA SÉRIE INTEIRA. Hoje: prontidão 88 (a maior desde 14/07), FC de repouso 48 — MÍNIMO absoluto —, HRV 39, body battery 95, sono 6,97 h com score 84. Dois dias depois de 110 min de competição.",
+  "📉 A QUEDA DA FC DE REPOUSO É O DADO MAIS SÓLIDO DO PROJETO: 55 bpm em julho → 52 no início de agosto → 48 hoje. Sete batimentos em cinco semanas. Isso é adaptação cardiovascular real, não flutuação — e não depende de interpretação nem de balança.",
+  "🏆 O CAMPEONATO FOI SÁBADO (15/08), não domingo: 60 min em campo de 11 pela manhã + 50 min em campo de 7 à tarde. Sua leitura: 'boa performance, intensidade ok'.",
+  "📵 MAS O RELÓGIO NÃO FOI JUNTO — não há nada no Strava entre 14 e 18/08. A predição que a gente tinha deixado registrada ficou sem resposta: era ver se o pico em campo de 11 passava de 20 km/h, o que confirmaria que é o CAMPO que libera velocidade. Fica pra próxima oportunidade de campo grande — e aí vale lembrar do relógio.",
+  "⚠️ O ANAERÓBICO ESTOUROU DE VEZ: 376 (13/08) → 459 hoje, contra teto de 211. Está 117% acima. Duas sessões competitivas cheias de arrancada explicam. O aeróbico alto segue parado em 243 (falta 21 pro alvo) e o baixo caiu pra 444.",
+  "🔻 E O ACWR DESABOU PRA 0,4 (aguda 149 ÷ crônica 306). A faixa de conforto é 0,8–1,3 — abaixo de 0,8 já é descarga excessiva. Dois dias parados depois do campeonato derrubaram a carga aguda enquanto a crônica ficou alta.",
+  "💡 ISSO MUDA O SENTIDO DA CORRIDA NESTA SEMANA: os 20 min diários deixam de ser só manutenção de hábito e viram manutenção de CARGA. Se você passar a viagem inteira parado e voltar com futebol e força de uma vez, o ACWR salta de 0,4 pra ~1,8 num pulo — que é exatamente a zona de lesão. Correr leve todo dia é o que evita esse salto.",
+  "🎯 VOCÊ MESMO IDENTIFICOU AS DUAS ALAVANCAS: 'arrancada e redução de peso para aumentar velocidade máxima e aceleração'. É a leitura certa, e a segunda é a mais poderosa — a 95 kg cada passada bate 2,5–3× o peso corporal no tornozelo. Sair de 95 pra 90 vale ~20 s/km de graça E reduz a carga articular por passo.",
+  "⚖️ PESO: sem leitura válida desde 07/08 (94,0 kg, jejum). O Renpho está fora porque o .env se perdeu na movimentação do repositório e ainda está vazio. Duas linhas resolvem, mas só quando você voltar — peso de viagem não entraria na série de qualquer jeito.",
+  "🍽️ NUTRIÇÃO: nenhum registro de refeição desde 12/08. É o mesmo padrão do congresso de julho — a semana difícil é a que fica sem dado. Não vou cobrar cardápio nesta semana; o pedido é UMA foto por dia. Foto de rótulo vale por três."
  ],
  "lista_compra": [
   {
-   "cat": "🧊 Marmitas congeladas — 4 (almoço de ter a sex)",
+   "cat": "🎒 Kit portátil (o que cabe na mala e resolve a semana)",
    "itens": [
-    "4 marmitas de proteína magra IDENTIFICÁVEL: frango, peixe ou patinho",
-    "⚠️ Evite base arroz-feijão-embutido (a N20 tutu com calabresa deu 26 g de proteína e 1084 mg de sódio)",
-    "Referência boa: N64 frango com creme de espinafre — 45 g de proteína, 603 mg de sódio",
-    "1 dúzia de ovos — reforço pra marmita fraca e pro lanche pré-treino"
+    "Yopro ou similar — 2 por dia de viagem",
+    "Sachês de whey (1 dose cada) — não precisa de coqueteleira, dissolve na garrafinha",
+    "Castanhas em saquinhos JÁ porcionados — solto vira beliscada infinita",
+    "Barras de proteína com ≥20 g",
+    "Chocolate 70% em barra pequena"
    ]
   },
   {
-   "cat": "🥩 Bloco de proteína (os 4 lanches da tarde — receita rI)",
+   "cat": "🛒 Comprar no destino (mercado perto do hotel, 10 min resolvem)",
    "itens": [
-    "700 g de coxão mole ou alcatra em peça (rosbife)",
-    "2 latas de atum — o plano B sem preparo, pros dias em que o rosbife não acontecer",
-    "Alecrim, tomilho, sal grosso, mostarda",
-    "Pão integral ou 4 wraps",
-    "⏰ O preparo era do domingo. Se não rolou, assa hoje à noite — ou começa a semana no atum."
-   ]
-  },
-  {
-   "cat": "🍖 Proteína das jantas",
-   "itens": [
-    "440 g de filé de peito de frango — TER (piccata)",
-    "440 g de filé de peixe branco, pescada ou tilápia — QUA (peixe à espanhola)",
-    "700 g de peito de frango em tiras — QUI (estrogonofe, rende 4)",
-    "400 g de patinho moído — SEX (bolonhesa)"
-   ]
-  },
-  {
-   "cat": "🥬 Hortifruti",
-   "itens": [
-    "400 g de batata (qua)",
-    "300 g de champignon fresco (qui) — ou 2 vidros em conserva",
-    "2 brócolis (ter)",
-    "2 cenouras (ter e sex)",
-    "4 cebolas, 2 cabeças de alho",
-    "4 tomates (qua)",
-    "1 pimentão vermelho (qua)",
-    "2 limões sicilianos (ter) + 2 limões comuns (qua)",
-    "Salsinha e manjericão",
-    "Folhas para salada",
-    "Frutas: banana, maçã, mamão"
-   ]
-  },
-  {
-   "cat": "🥛 Laticínios",
-   "itens": [
-    "Iogurte grego natural — 10 potes (200 g vão pro estrogonofe de quinta; o resto é pré-lanche e petisco)",
-    "Whey — confere se o pote aguenta 4 dias + o shake pós-jogo de quinta",
-    "Manteiga (ter, piccata) e parmesão ralado (sex)"
-   ]
-  },
-  {
-   "cat": "🍚 Despensa",
-   "itens": [
-    "Arroz · macarrão integral 160 g (sex)",
-    "Alcaparras (ter) · azeitona preta e páprica (qua)",
-    "Extrato de tomate, mostarda Dijon, molho inglês (qui)",
-    "1 lata de tomate pelado (sex) · louro e orégano",
-    "Batata palha (qui — serve À PARTE, não por cima)",
-    "Farinha de trigo (ter, pra selar o frango) · azeite",
-    "Castanhas porcionadas · chocolate 70%"
+    "Bananas e maçãs",
+    "Iogurte grego natural, se houver frigobar",
+    "Ovos cozidos prontos, se encontrar",
+    "Garrafa de água grande — hidratação em viagem é a primeira coisa que cai"
    ]
   }
  ],
@@ -406,110 +357,31 @@
  },
  "dias": [
   {
-   "id": "seg",
-   "nome": "Segunda",
-   "data": "10/08",
-   "tipo": "treino",
-   "treino": {
-    "foco": "🏃 Corrida fácil 25 min na rua (trabalho) + 💪 força LOWER curta na academia — dia de logística",
-    "exercicios": [
-     {
-      "nome": "🏃 Corrida 25 min FÁCIL na rua, fim de tarde (8–8,5 km/h). Semana de descarga: nada de ritmo.",
-      "series": 1,
-      "reps": "25 min"
-     },
-     {
-      "nome": "🚗 Depois: trânsito pra casa + academia. Só faz se sair do trabalho a tempo — senão fica só a corrida, e tudo bem.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Leg press — carga alta, poucas reps",
-      "series": 4,
-      "reps": "5"
-     },
-     {
-      "nome": "Agachamento (Smith ou livre)",
-      "series": 3,
-      "reps": "5"
-     },
-     {
-      "nome": "Mesa flexora ou stiff",
-      "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "Panturrilha em pé, descida lenta (tornozelo)",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "⏱️ TETO DE 30 MIN de sala. Entra, faz, sai — o custo aqui é o trânsito, não o treino.",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
-     "kcal": 500,
-     "prot": 45,
-     "peso_g": 400,
-     "origem": "marmita congelada (comprada)",
-     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
-    },
-    "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
-    },
-    "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
-     "kcal": 300,
-     "prot": 30,
-     "peso_g": 230,
-     "nota": "Come antes de sair do trabalho — entre a corrida e a academia tem 40-50 min de trânsito."
-    },
-    "janta": {
-     "nome": "Caldo de carne com abóbora e couve (inverno)",
-     "kcal": 650,
-     "prot": 50,
-     "peso_g": 480,
-     "receita": "rE",
-     "nota": "Rende 2 — a extra vai pro freezer ANTES de servir. Com a quinta resolvida pela sua esposa, essa porção deixa de ter dono: vira estoque de emergência pro dia em que tudo der errado."
-    },
-    "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
-    }
-   }
-  },
-  {
    "id": "ter",
    "nome": "Terça",
-   "data": "11/08",
+   "data": "18/08",
    "tipo": "treino",
+   "flex": true,
    "treino": {
-    "foco": "🏃 Só corrida — 30 min fácil na rua do trabalho, em linha reta",
+    "foco": "🏃 Corrida leve na esteira — e você está no melhor estado da série",
     "exercicios": [
      {
-      "nome": "🏃 30 min contínuo fácil (8–8,5 km/h). O dia sem academia é o dia de alongar a corrida.",
+      "nome": "🏃 Corrida 20 min FÁCIL (esteira do hotel ou rua) — 8 km/h, dá pra conversar",
       "series": 1,
-      "reps": "30 min"
+      "reps": "20 min"
      },
      {
-      "nome": "Sem trânsito, sem sala: o treino de menor atrito da semana. É o que tem mais chance de acontecer.",
+      "nome": "💚 Prontidão 88 hoje (a maior desde 14/07), FC repouso 48 (MÍNIMO da série), body battery 95. Se o corpo pedir mais, tem margem — mas leve já cumpre o objetivo da semana.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Mobilidade de tornozelo em casa, 5 min",
+      "nome": "Se quiser um tempero sem custo: 4–6 strides de 20 s progressivos no fim. Não é intervalado, é educativo de passada.",
+      "series": 6,
+      "reps": "20 s"
+     },
+     {
+      "nome": "Mobilidade de tornozelo + panturrilha",
       "series": 3,
       "reps": "45 s"
      }
@@ -517,78 +389,62 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
-     "kcal": 500,
-     "prot": 45,
-     "peso_g": 400,
-     "origem": "marmita congelada (comprada)",
-     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
+     "nome": "Buffet/restaurante — proteína primeiro",
+     "kcal": 600,
+     "prot": 42,
+     "peso_g": 450,
+     "nota": "Metade do prato de proteína grelhada/assada + salada ANTES de olhar o resto."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+     "nome": "🎒 Kit portátil: Yopro + castanhas",
+     "kcal": 330,
+     "prot": 22,
+     "peso_g": 250,
+     "nota": "1 Yopro = 15 g. Se levou dois, são 30 — e é o que segura a conta do dia."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "nome": "Sachê de whey ou barra de proteína + fruta",
      "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
+     "prot": 28,
+     "peso_g": 220
     },
     "janta": {
-     "nome": "Frango piccata (limão siciliano e alcaparras) com arroz e brócolis",
-     "kcal": 700,
-     "prot": 54,
-     "peso_g": 480,
-     "receita": "rA",
-     "nota": "Rende 2 — a extra vai pro freezer ANTES de servir."
+     "nome": "Jantar fora — proteína + vegetais, sem massa pesada",
+     "kcal": 650,
+     "prot": 45,
+     "peso_g": 450,
+     "nota": "Grelhado/assado + legumes. Se for social, escolhe UMA indulgência e ancora o resto na proteína."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Castanhas porcionadas ou chocolate 70%",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": 50,
+     "nota": "Porção fechada — evita o beliscar solto do minibar."
     }
    }
   },
   {
    "id": "qua",
    "nome": "Quarta",
-   "data": "12/08",
+   "data": "19/08",
    "tipo": "treino",
+   "flex": true,
    "treino": {
-    "foco": "🏃 Corrida fácil 20 min + 💪 força UPPER curta na academia",
+    "foco": "🏃 Corrida 20 min fácil",
     "exercicios": [
      {
-      "nome": "🏃 20 min fácil — véspera de futebol, corrida é aquecimento e nada mais",
+      "nome": "🏃 Corrida 20 min FÁCIL (esteira do hotel ou rua) — 8 km/h, dá pra conversar",
       "series": 1,
       "reps": "20 min"
      },
      {
-      "nome": "⚠️ NADA de intensidade hoje. Foi exatamente o erro da semana passada: intervalado na quarta, futebol fraco na quinta.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Supino (máquina ou reto) — carga alta",
-      "series": 4,
-      "reps": "5"
-     },
-     {
-      "nome": "Remada ou puxada",
-      "series": 4,
-      "reps": "6"
-     },
-     {
-      "nome": "Desenvolvimento halter",
+      "nome": "Mobilidade de tornozelo + panturrilha",
       "series": 3,
-      "reps": "6"
+      "reps": "45 s"
      },
      {
-      "nome": "⏱️ Teto de 30 min de sala.",
+      "nome": "❌ Sem intervalado, sem teste, sem força pesada. Esta semana é manutenção de carga, não progressão.",
       "series": 1,
       "reps": "—"
      }
@@ -596,83 +452,62 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
-     "kcal": 500,
-     "prot": 45,
-     "peso_g": 400,
-     "origem": "marmita congelada (comprada)",
-     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
+     "nome": "Buffet/restaurante — proteína primeiro",
+     "kcal": 600,
+     "prot": 42,
+     "peso_g": 450,
+     "nota": "Metade do prato de proteína grelhada/assada + salada ANTES de olhar o resto."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+     "nome": "🎒 Kit portátil: Yopro + castanhas",
+     "kcal": 330,
+     "prot": 22,
+     "peso_g": 250,
+     "nota": "1 Yopro = 15 g. Se levou dois, são 30 — e é o que segura a conta do dia."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "nome": "Sachê de whey ou barra de proteína + fruta",
      "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
+     "prot": 28,
+     "peso_g": 220
     },
     "janta": {
-     "nome": "Peixe à espanhola (assado com batata, pimentão e azeitona)",
-     "kcal": 680,
-     "prot": 50,
-     "peso_g": 480,
-     "receita": "rC",
-     "nota": "Rende 2 — a extra vai pro freezer. Véspera de futebol: prato leve, sem fritura."
+     "nome": "Jantar fora — proteína + vegetais, sem massa pesada",
+     "kcal": 650,
+     "prot": 45,
+     "peso_g": 450,
+     "nota": "Grelhado/assado + legumes. Se for social, escolhe UMA indulgência e ancora o resto na proteína."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Castanhas porcionadas ou chocolate 70%",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": 50,
+     "nota": "Porção fechada — evita o beliscar solto do minibar."
     }
    }
   },
   {
    "id": "qui",
    "nome": "Quinta",
-   "data": "13/08",
+   "data": "20/08",
    "tipo": "treino",
+   "flex": true,
    "treino": {
-    "foco": "⚽ FUTEBOL (curto, 20h–21h) — o fixo da semana. Hoje o desafio é o RELÓGIO, não o treino.",
+    "foco": "🏃 Corrida 20 min fácil",
     "exercicios": [
      {
-      "nome": "🕕 18h00 — refeição pré-jogo. Sair do trabalho comido é o que decide a quinta inteira.",
+      "nome": "🏃 Corrida 20 min FÁCIL (esteira do hotel ou rua) — 8 km/h, dá pra conversar",
       "series": 1,
-      "reps": "—"
+      "reps": "20 min"
      },
      {
-      "nome": "🏃 19h45 — aquecimento correndo 10-12 min + mobilidade de tornozelo",
-      "series": 1,
-      "reps": "12 min"
+      "nome": "Mobilidade de tornozelo + panturrilha",
+      "series": 3,
+      "reps": "45 s"
      },
      {
-      "nome": "⚽ 20h00–21h00 — jogo (campo curto: mais mudança de direção por minuto, menos corrida longa)",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🥤 21h15 — shake antes de sair do clube. Não espera chegar em casa.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🍽️ 21h45 — sua porção (separada antes), comendo sozinho",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🛌 23h00 — LIMITE PRA DORMIR. Esta é a restrição real da quinta: são só ~1h15 entre a janta e a cama, e é por isso que a porção das 21h45 precisa ser moderada e sem gordura pesada.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Sem força hoje, sem corrida extra.",
+      "nome": "❌ Sem intervalado, sem teste, sem força pesada. Esta semana é manutenção de carga, não progressão.",
       "series": 1,
       "reps": "—"
      }
@@ -680,70 +515,62 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · Marmita congelada",
-     "kcal": 500,
-     "prot": 45,
-     "peso_g": 400,
-     "origem": "marmita congelada (comprada)",
-     "nota": "Regra do rótulo: <35 g de proteína pede 2 ovos junto."
+     "nome": "Buffet/restaurante — proteína primeiro",
+     "kcal": 600,
+     "prot": 42,
+     "peso_g": 450,
+     "nota": "Metade do prato de proteína grelhada/assada + salada ANTES de olhar o resto."
     },
     "pre_lanche": {
-     "nome": "15h30 · Sanduíche com 100 g de rosbife ou frango fatiado",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "Em dia de jogo essa dose importa mais: é ela que evita você chegar às 18h com fome de comer demais."
+     "nome": "🎒 Kit portátil: Yopro + castanhas",
+     "kcal": 330,
+     "prot": 22,
+     "peso_g": 250,
+     "nota": "1 Yopro = 15 g. Se levou dois, são 30 — e é o que segura a conta do dia."
     },
     "lanche_pre_treino": {
-     "nome": "18h00 · REFEIÇÃO PRÉ-JOGO — a principal do dia",
-     "kcal": 520,
-     "prot": 36,
-     "peso_g": 420,
-     "nota": "Arroz + frango grelhado + legumes, ou massa com proteína magra. Carboidrato de verdade, gordura BAIXA (gordura atrasa o esvaziamento gástrico e você joga pesado). 2 h antes do apito é a janela certa."
+     "nome": "Sachê de whey ou barra de proteína + fruta",
+     "kcal": 300,
+     "prot": 28,
+     "peso_g": 220
     },
     "janta": {
-     "nome": "21h45 · Estrogonofe de frango com iogurte grego — sua porção separada antes",
-     "kcal": 520,
-     "prot": 44,
-     "peso_g": 380,
-     "receita": "rJ",
-     "nota": "Sua esposa faz o prato inteiro; a sua porção sai da panela ANTES de ir pra mesa — frango cheio, arroz pela metade, sem batata palha. O iogurte grego no lugar do creme de leite corta a gordura quase pela metade, que é o que faz esse prato caber às 21h45 sem estragar o sono."
+     "nome": "Jantar fora — proteína + vegetais, sem massa pesada",
+     "kcal": 650,
+     "prot": 45,
+     "peso_g": 450,
+     "nota": "Grelhado/assado + legumes. Se for social, escolhe UMA indulgência e ancora o resto na proteína."
     },
     "petisco": {
-     "nome": "21h15 · Shake pós-jogo (ainda no clube ou no carro)",
-     "kcal": 220,
-     "prot": 28,
-     "peso_g": 300,
-     "nota": "Whey com água ou um Yopro na mochila, antes de sair do clube. Aqui ele importa MAIS do que se você jantasse acompanhado: às 21h45 você está sozinho, com fome e com o prato pronto na frente — não tem ninguém na mesa pra diluir o ritmo. Chegar sem fome de assalto é o que segura a porção."
+     "nome": "Castanhas porcionadas ou chocolate 70%",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": 50,
+     "nota": "Porção fechada — evita o beliscar solto do minibar."
     }
    }
   },
   {
    "id": "sex",
    "nome": "Sexta",
-   "data": "14/08",
+   "data": "21/08",
    "tipo": "treino",
+   "flex": true,
    "treino": {
-    "foco": "🌀 Regenerativo curto — véspera de CAMPEONATO. Hoje o objetivo é chegar inteiro amanhã.",
+    "foco": "🏃 Corrida 20 min fácil",
     "exercicios": [
      {
-      "nome": "🏃 20 min BEM fácil (7,5–8 km/h). Soltar as pernas, nada além disso.",
+      "nome": "🏃 Corrida 20 min FÁCIL (esteira do hotel ou rua) — 8 km/h, dá pra conversar",
       "series": 1,
       "reps": "20 min"
      },
      {
-      "nome": "Mobilidade de tornozelo e quadril — 8 min",
+      "nome": "Mobilidade de tornozelo + panturrilha",
       "series": 3,
       "reps": "45 s"
      },
      {
-      "nome": "❌ SEM força. SEM sprints. O teste de campo saiu daqui (motivo no relatório).",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🛌 Dormir cedo hoje vale mais que qualquer treino desta semana. Os dois melhores desempenhos do ciclo vieram depois de noites de 7,2–7,9 h; o futebol fraco de 06/08 veio depois de três noites de 6,4 h.",
+      "nome": "❌ Sem intervalado, sem teste, sem força pesada. Esta semana é manutenção de carga, não progressão.",
       "series": 1,
       "reps": "—"
      }
@@ -751,148 +578,188 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
-     "kcal": 500,
-     "prot": 45,
-     "peso_g": 400,
-     "origem": "marmita congelada (comprada)",
-     "nota": "Regra do rótulo: ≥35 g de proteína. A N64 (frango/espinafre) tem 45 g e passa; a N20 (tutu com calabresa) tem 26 g e 1084 mg de sódio — essa pede 2 ovos junto."
+     "nome": "Buffet/restaurante — proteína primeiro",
+     "kcal": 600,
+     "prot": 42,
+     "peso_g": 450,
+     "nota": "Metade do prato de proteína grelhada/assada + salada ANTES de olhar o resto."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+     "nome": "🎒 Kit portátil: Yopro + castanhas",
+     "kcal": 330,
+     "prot": 22,
+     "peso_g": 250,
+     "nota": "1 Yopro = 15 g. Se levou dois, são 30 — e é o que segura a conta do dia."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "nome": "Sachê de whey ou barra de proteína + fruta",
      "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
+     "prot": 28,
+     "peso_g": 220
     },
     "janta": {
-     "nome": "Macarrão à bolonhesa de patinho",
-     "kcal": 730,
-     "prot": 52,
-     "peso_g": 500,
-     "receita": "rF",
-     "nota": "Véspera de CAMPEONATO — massa aqui é escolha, não indulgência: carga de carboidrato na noite anterior ao jogo. Rende 2, a extra vai pro freezer."
+     "nome": "Jantar fora — proteína + vegetais, sem massa pesada",
+     "kcal": 650,
+     "prot": 45,
+     "peso_g": 450,
+     "nota": "Grelhado/assado + legumes. Se for social, escolhe UMA indulgência e ancora o resto na proteína."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Castanhas porcionadas ou chocolate 70%",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": 50,
+     "nota": "Porção fechada — evita o beliscar solto do minibar."
     }
    }
   },
   {
    "id": "sab",
    "nome": "Sábado",
-   "data": "15/08",
+   "data": "22/08",
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "🏆 CAMPEONATO — campo de 11. É o pico de carga da semana e o evento que ela inteira protege.",
+    "foco": "🏃 Corrida 25–30 min se der — o dia mais livre da viagem",
     "exercicios": [
      {
-      "nome": "Aquecimento completo antes do jogo: 12 min progressivos + mobilidade de tornozelo",
+      "nome": "🏃 25–30 min contínuo fácil. Se a agenda deixar, é o dia de alongar um pouco.",
       "series": 1,
-      "reps": "12 min"
+      "reps": "25–30 min"
      },
      {
-      "nome": "🏆 Jogo de campeonato",
+      "nome": "Alternativa: caminhada longa explorando a cidade. Conta como volume.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚠️ Campo de 11 + demanda competitiva = a maior exigência de velocidade que você enfrenta. O único jogo de campo grande da série (23/07) tem o teu maior pico registrado: 20,3 km/h.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🔬 PREDIÇÃO TESTÁVEL: se o pico de amanhã passar de 20 km/h, confirma que é o CAMPO que libera velocidade — e aí o campo de 11 vira a ferramenta de treino de pico, no lugar dos sprints de esteira.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "📋 Anote depois: duração do jogo e como o tornozelo respondeu às arrancadas e mudanças de direção.",
-      "series": 1,
-      "reps": "—"
+      "nome": "Mobilidade de tornozelo + panturrilha",
+      "series": 3,
+      "reps": "45 s"
      }
     ]
    },
    "refeicoes": {
     "almoco": {
-     "nome": "🍽️ REFEIÇÃO LIVRE da semana — uma só",
-     "kcal": 900,
-     "prot": 45,
-     "peso_g": 600,
-     "nota": "A refeição livre da semana — e hoje ela cai bem, é pós-campeonato. UMA só. No fim de semana passado saíram três e é isso que apaga a semana."
+     "nome": "Buffet/restaurante — proteína primeiro",
+     "kcal": 600,
+     "prot": 42,
+     "peso_g": 450,
+     "nota": "Metade do prato de proteína grelhada/assada + salada ANTES de olhar o resto."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+     "nome": "🎒 Kit portátil: Yopro + castanhas",
+     "kcal": 330,
+     "prot": 22,
+     "peso_g": 250,
+     "nota": "1 Yopro = 15 g. Se levou dois, são 30 — e é o que segura a conta do dia."
     },
     "lanche_pre_treino": {
-     "nome": "Pré-jogo: banana + pão com pasta de amendoim (90 min antes)",
-     "kcal": 340,
-     "prot": 20,
-     "peso_g": 260,
-     "nota": "Dia de campeonato pede carboidrato disponível. Não é dia de jogar em jejum."
+     "nome": "Sachê de whey ou barra de proteína + fruta",
+     "kcal": 300,
+     "prot": 28,
+     "peso_g": 220
     },
     "janta": {
-     "nome": "🧊 Porção do freezer + salada grande",
-     "kcal": 620,
-     "prot": 48,
+     "nome": "Jantar fora — proteína + vegetais, sem massa pesada",
+     "kcal": 650,
+     "prot": 45,
      "peso_g": 450,
-     "origem": "freezer — estoque próprio"
+     "nota": "Grelhado/assado + legumes. Se for social, escolhe UMA indulgência e ancora o resto na proteína."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Castanhas porcionadas ou chocolate 70%",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": 50,
+     "nota": "Porção fechada — evita o beliscar solto do minibar."
     }
    }
   },
   {
    "id": "dom",
    "nome": "Domingo",
-   "data": "16/08",
+   "data": "23/08",
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "🌀 Recuperação pós-campeonato + preparo da semana",
+    "foco": "🌀 Livre — corrida 20 min ou descanso",
     "exercicios": [
      {
-      "nome": "🏃 20 min muito fácil — ou caminhada, se o jogo tiver cobrado caro",
+      "nome": "🏃 20 min fáceis, ou descanso se a viagem tiver cobrado. Sem culpa nas duas opções.",
       "series": 1,
       "reps": "20 min"
      },
      {
-      "nome": "Mobilidade e alongamento de posterior, panturrilha e quadril",
+      "nome": "Mobilidade de tornozelo + panturrilha",
       "series": 3,
       "reps": "45 s"
-     },
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Buffet/restaurante — proteína primeiro",
+     "kcal": 600,
+     "prot": 42,
+     "peso_g": 450,
+     "nota": "Metade do prato de proteína grelhada/assada + salada ANTES de olhar o resto."
+    },
+    "pre_lanche": {
+     "nome": "🎒 Kit portátil: Yopro + castanhas",
+     "kcal": 330,
+     "prot": 22,
+     "peso_g": 250,
+     "nota": "1 Yopro = 15 g. Se levou dois, são 30 — e é o que segura a conta do dia."
+    },
+    "lanche_pre_treino": {
+     "nome": "Sachê de whey ou barra de proteína + fruta",
+     "kcal": 300,
+     "prot": 28,
+     "peso_g": 220
+    },
+    "janta": {
+     "nome": "Jantar fora — proteína + vegetais, sem massa pesada",
+     "kcal": 650,
+     "prot": 45,
+     "peso_g": 450,
+     "nota": "Grelhado/assado + legumes. Se for social, escolhe UMA indulgência e ancora o resto na proteína."
+    },
+    "petisco": {
+     "nome": "Castanhas porcionadas ou chocolate 70%",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": 50,
+     "nota": "Porção fechada — evita o beliscar solto do minibar."
+    }
+   }
+  },
+  {
+   "id": "seg2",
+   "nome": "Segunda",
+   "data": "24/08",
+   "tipo": "treino",
+   "flex": true,
+   "treino": {
+    "foco": "🔄 RETOMADA — volta o plano normal",
+    "exercicios": [
      {
-      "nome": "🥩 PREPARO: rosbife + frango assados e fatiados (receita rI) — são os 5 lanches da semana.",
+      "nome": "🏃 Corrida 20 min fácil + força Lower curta, se já estiver em casa",
       "series": 1,
-      "reps": "50 min"
+      "reps": "20 min"
      },
      {
-      "nome": "🧊 Compra as 5 marmitas e confere o freezer.",
+      "nome": "⚖️ PESA EM JEJUM. É a primeira leitura válida desde 07/08 (94,0 kg).",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📋 Pesa em jejum (não depois de atividade) e me chama pra revisão.",
+      "nome": "🔑 Preenche RENPHO_EMAIL e RENPHO_PASSWORD no .env — sem isso o peso continua fora do sistema.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📋 Me chama pra montar a semana de verdade: cardápio, marmitas e lista de compras.",
       "series": 1,
       "reps": "—"
      }
@@ -900,38 +767,38 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Almoço de domingo em casa — proteína + salada grande",
-     "kcal": 650,
-     "prot": 50,
-     "peso_g": 500
+     "nome": "Buffet/restaurante — proteína primeiro",
+     "kcal": 600,
+     "prot": 42,
+     "peso_g": 450,
+     "nota": "Metade do prato de proteína grelhada/assada + salada ANTES de olhar o resto."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo, montada em 2 min."
+     "nome": "🎒 Kit portátil: Yopro + castanhas",
+     "kcal": 330,
+     "prot": 22,
+     "peso_g": 250,
+     "nota": "1 Yopro = 15 g. Se levou dois, são 30 — e é o que segura a conta do dia."
     },
     "lanche_pre_treino": {
-     "nome": "Iogurte + fruta",
-     "kcal": 260,
-     "prot": 24,
-     "peso_g": 250
+     "nome": "Sachê de whey ou barra de proteína + fruta",
+     "kcal": 300,
+     "prot": 28,
+     "peso_g": 220
     },
     "janta": {
-     "nome": "Macarrão à bolonhesa de carne moída",
-     "kcal": 730,
-     "prot": 52,
-     "peso_g": 480,
-     "receita": "rF",
-     "nota": "Rende porção extra — separa e congela ANTES de sentar à mesa."
+     "nome": "Jantar fora — proteína + vegetais, sem massa pesada",
+     "kcal": 650,
+     "prot": 45,
+     "peso_g": 450,
+     "nota": "Grelhado/assado + legumes. Se for social, escolhe UMA indulgência e ancora o resto na proteína."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Castanhas porcionadas ou chocolate 70%",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": 50,
+     "nota": "Porção fechada — evita o beliscar solto do minibar."
     }
    }
   }
