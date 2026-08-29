@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-08-29",
- "semana": "29/ago a 06/set · CAMPEONATO hoje + SEMANA 1 DE RECONSTRUÇÃO",
+ "semana": "29/ago a 06/set · SEMANA 1 DE RECONSTRUÇÃO",
  "objetivo": "Reconstruir base aeróbica depois de 12 dias de destreino (ACWR 0,1). Volume fácil todo dia, zero intensidade, força curta 2×. A capacidade não sumiu — o que caiu foi volume.",
  "peso_atual": 94.3,
  "fontes_status": {
@@ -94,8 +94,8 @@
   "🎯 SUA PERCEPÇÃO DE QUINTA ESTÁ CORRETA — E O DADO É A FREQUÊNCIA CARDÍACA. No jogo de 27/08 sua FC média foi 119 e a máxima 161. Compare: em 01/08 foi 139 de média com pico de 189; em 09/08, 141 com pico de 179. A FC MÁXIMA CAIU 28 BATIMENTOS em quatro semanas.",
   "🔬 O QUE ISSO SIGNIFICA EXATAMENTE: FC média de 119 é Z1 — abaixo da Z2, que começa em 125. Nos jogos anteriores você passava a partida inteira em Z2 com picos em Z4/Z5. Quinta você NÃO SAIU DE Z3 em nenhum momento. Não é impressão: a capacidade de produzir esforço de alta intensidade é a primeira coisa que o destreino leva, e ela sumiu do registro.",
   "🏃 CURIOSAMENTE, VOCÊ COBRIU DISTÂNCIA: 2,28 km em 40,8 min = 55,9 m/min, o segundo maior da série de campo curto. Ou seja — você se deslocou bem, mas em intensidade baixa. Bate exatamente com 'a musculatura com dificuldade para acelerar': o motor de base está lá, o de arrancada não respondeu.",
-  "🏆 SOBRE HOJE: você tem razão que não há o que fazer sobre o preparo. Mas há sobre COMO entrar. ACWR em 0,1 mais jogo competitivo é o cenário clássico de lesão — carga alta sobre base baixa. O que muda o risco hoje é aquecimento longo (15–20 min, não 10), ativação de tornozelo, e não tentar compensar nos primeiros 10 minutos.",
-  "⚠️ E O ÍNDICE DE HOJE ESTÁ 🔴 48, apesar do Garmin marcar 99. FC de repouso em 56 (era 48 anteontem), HRV caiu de 46 pra 34, body battery em 59 mesmo com 8,17 h de sono. Não é impeditivo — é mais um motivo pra entrar com calma e sair na primeira sensação estranha.",
+  "✅ NÃO ENTRAR NO CAMPEONATO HOJE FOI A DECISÃO CERTA, e o dado sustenta: ACWR em 0,1 somado a jogo competitivo é carga alta sobre base vazia — o padrão mais associado a lesão que existe, e você ainda carrega histórico de tornozelo. Não é perder uma semana; é não perder seis.",
+  "⚠️ O ÍNDICE DE HOJE ESTÁ 🔴 48 apesar do Garmin marcar 99. FC de repouso em 56 (era 48 anteontem), HRV caiu de 46 pra 34, body battery em 59 mesmo com 8,17 h de sono. Mais um voto na mesma direção — hoje é dia de tijolo, não de prova.",
   "📉 O DESTREINO É REAL E TEM TAMANHO: carga crônica caiu de 306 (18/08) pra 207 hoje — menos 32% em 11 dias. ACWR em 0,1 (conforto é 0,8–1,3). O Garmin chegou a marcar DETRAINING em 26/08. Foram 5 atividades em 12 dias: duas corridas, uma musculação e um futebol.",
   "💪 MAS A CAPACIDADE NÃO FOI EMBORA — E ISSO MUDA O PLANO. A corrida de 19/08, no meio da viagem, registrou 6 RECORDES PESSOAIS e 7 conquistas: 3,2 km a 8,7 km/h com pico de 12,2 km/h. O que caiu foi VOLUME, não capacidade. Você não está voltando do zero; está com uma máquina boa e um tanque vazio.",
   "⚖️ E VOCÊ TEM RAZÃO SOBRE O PESO — MAS ELE FEZ MAIS DO QUE 'FICAR ESTÁVEL'. Média de julho (descontados os picos de anti-inflamatório): 95,08 kg. Média de agosto: 94,52 kg. São 0,56 kg de queda de PATAMAR, e a faixa estreitou de 94,5–95,8 para 94,0–95,1. Menos oscilação é sinal de rotina mais consistente, não só de peso menor.",
@@ -409,83 +409,62 @@
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "🏆 CAMPEONATO à tarde — jogar dentro do que a máquina tem hoje",
+    "foco": "🌀 Reinício suave — corrida 20 min fácil ou descanso",
     "exercicios": [
      {
-      "nome": "⚠️ CONTEXTO QUE IMPORTA: você está com ACWR em 0,1 (destreino) e vai entrar num jogo competitivo. Carga alta sobre base baixa é o cenário mais associado a lesão que existe. Não dá pra mudar o preparo hoje — dá pra mudar como você entra.",
+      "nome": "✅ Decisão certa não entrar no campeonato. Com ACWR em 0,1 e a FC máxima caindo 28 bpm em quatro semanas, jogo competitivo hoje era carga alta sobre base vazia — o cenário clássico de lesão. Você não perdeu nada; evitou.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🔥 AQUECIMENTO LONGO — 15–20 min, não os 10 de sempre. Músculo destreinado precisa de mais tempo. Trote 6 min → mobilidade → 6 acelerações progressivas (50%, 60%, 70%, 80%, 85%, 90%). NUNCA sair frio pro primeiro sprint.",
-      "series": 6,
-      "reps": "~30 m"
+      "nome": "🏃 20 min BEM fáceis (7,5–8 km/h) — se der vontade. Este é o primeiro tijolo da reconstrução.",
+      "series": 1,
+      "reps": "20 min"
      },
      {
-      "nome": "🦶 Ativação de tornozelo: círculos, dorsiflexão na parede, 10 saltinhos unilaterais em cada pé. É o elo que já te preocupou e o que mais sofre em arrancada.",
-      "series": 2,
+      "nome": "Ou descanso completo, se preferir começar amanhã. Nenhuma das duas opções atrasa nada.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Mobilidade de tornozelo e quadril",
+      "series": 3,
       "reps": "45 s"
-     },
-     {
-      "nome": "⏱️ NÃO TENTE COMPENSAR NOS PRIMEIROS 10 MIN. O impulso de provar que está inteiro é exatamente o que rompe. Entra devagar, deixa o corpo abrir.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🍽️ Almoço 2–3 h antes: arroz + proteína magra + legumes. Carboidrato de verdade, gordura baixa. Hidratação começa de manhã, não no vestiário.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⛔ SAI DO JOGO SE: qualquer incômodo no tornozelo · cãibra · perda de coordenação na passada. Os três são avisos, não frescura.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "📵 LEVA O RELÓGIO. Campo de 11 em campeonato é a chance de medir o pico que a gente persegue desde julho — e em 15/08 ele ficou em casa.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🥤 Pós-jogo: shake + carboidrato na primeira hora. Amanhã é leve de propósito (já está no plano).",
-      "series": 1,
-      "reps": "—"
      }
     ]
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Almoço pré-jogo (2–3 h antes) — arroz + proteína magra + legumes",
-     "kcal": 700,
-     "prot": 45,
-     "peso_g": 520,
-     "nota": "Gordura baixa. Dia de jogo não é dia de fritura no almoço — atrasa o esvaziamento gástrico e você joga pesado."
+     "nome": "Almoço em casa — proteína + salada grande",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": 500
     },
     "pre_lanche": {
-     "nome": "Banana + castanhas (1 h antes, se der fome)",
-     "kcal": 250,
-     "prot": 6,
-     "peso_g": 150
+     "nome": "Iogurte grego + fruta + castanhas",
+     "kcal": 350,
+     "prot": 26,
+     "peso_g": 280
     },
     "lanche_pre_treino": {
-     "nome": "🥤 Pós-jogo imediato: whey + fruta",
+     "nome": "Whey (30 g) + 2 ovos cozidos",
      "kcal": 300,
      "prot": 30,
-     "peso_g": 300,
-     "nota": "Na primeira hora. Depois de jogo competitivo com destreino, a recuperação importa mais que o de costume."
+     "peso_g": 230
     },
     "janta": {
-     "nome": "Janta pós-jogo — proteína + carboidrato, sem economia",
-     "kcal": 700,
-     "prot": 50,
-     "peso_g": 500,
-     "nota": "Hoje não é dia de segurar carboidrato. Repor glicogênio depois de campeonato é o que define como você acorda amanhã."
+     "nome": "🧊 Porção do freezer + salada — ou o que tiver em casa",
+     "kcal": 620,
+     "prot": 48,
+     "peso_g": 450,
+     "origem": "freezer — estoque próprio",
+     "nota": "O preparo de verdade é amanhã. Hoje é resolver com o que já existe."
     },
     "petisco": {
-     "nome": "Iogurte grego + mel",
-     "kcal": 220,
-     "prot": 16,
-     "peso_g": 200
+     "nome": "Iogurte grego + chocolate 70%",
+     "kcal": 210,
+     "prot": 14,
+     "peso_g": 180
     }
    }
   },
