@@ -294,6 +294,11 @@ Cada refeição: `{nome, kcal, prot, peso_g, origem?, receita?, nota?}`.
 
 ## 11. Achados consolidados sobre corrida e futebol
 
+- ⌚ **JOGO DE CAMPEONATO NÃO PERMITE RELÓGIO** (regra da competição). Nunca peça para ele levar,
+  e **nunca trate a ausência de registro como esquecimento** — já errei isso mais de uma vez. Todo
+  jogo oficial é auto-reportado: o relato do Fabio é a fonte primária, não um dado de segunda classe.
+  Consequência: medições de pico de velocidade em campo grande têm de ser feitas em **pelada/treino**
+  em campo de 11, ou na esteira. Não pendure medição em jogo de campeonato.
 - **Fisio LIBEROU retorno gradual ao impacto** (17/07/2026). Corrida e futebol deixam de ser
   proibição e entram como progressão estruturada. Dor → para e fala com o fisio.
 - **O risco está no futebol, não na corrida** — ângulo dos movimentos e rotações (avaliação do

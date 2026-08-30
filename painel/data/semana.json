@@ -91,6 +91,8 @@
   ]
  },
  "relatorio": [
+  "⌚ CORREÇÃO — PARE DE ESPERAR DADO DE CAMPEONATO. Jogo oficial não permite relógio, e eu vinha pedindo isso repetidamente e tratando a ausência de registro como esquecimento. Não é: é regra de competição. Consequência prática: TODO jogo de campeonato vai ser auto-reportado, e o teu relato passa a ser a fonte primária — não um substituto pobre do sensor.",
+  "🔬 E ISSO MUDA ONDE A GENTE MEDE PICO DE VELOCIDADE. A pergunta em aberto desde julho — se campo grande libera velocidade — não pode ser respondida em campeonato. Tem que ser em PELADA ou treino em campo de 11, onde o relógio entra. Ou na esteira, com o teste de potência. Vou parar de pendurar essa medição em jogo oficial.",
   "🛒 A COMPRA FICOU EXCELENTE EM LEGUMES E LEGUMINOSAS — berinjela, abobrinha, batata doce, couve, alface, tomate, e feijão preto + lentilha + ervilha. Isso é fibra, saciedade e micronutriente, e é justamente onde a maioria das compras falha. Montei quatro receitas novas em cima disso.",
   "⚠️ MAS A PROTEÍNA ANIMAL MAGRA FICOU CURTA, e isso importa mais agora que a força pesada entrou. O que chegou de proteína real: patinho moído, 10 ovos e 2 latas de atum. Não veio frango, peixe fresco, peça pra rosbife nem marmita. Fazendo a conta, dá pra cobrir umas 3–4 refeições principais da semana — o resto fica descoberto.",
   "🔎 DOIS ITENS QUE PARECEM PROTEÍNA E NÃO SÃO: o 'petisco de tilápia' é empanado — mais farinha e óleo que peixe, e não substitui um filé. E o iogurte natural integral tem ~5 g de proteína por pote, contra 13–15 g do grego. Trocar de marca no iogurte é a mudança de maior retorno por real gasto na lista.",
@@ -1016,7 +1018,7 @@
       "reps": "—"
      },
      {
-      "nome": "📵 Se for jogo, LEVA O RELÓGIO.",
+      "nome": "📝 Se for JOGO DE CAMPEONATO: relógio não entra em campo (regra da competição). O registro é o seu relato — anote depois se conseguiu arrancar, se o fôlego sustentou e como o tornozelo respondeu. Isso é dado, não é 'menos que dado'.",
       "series": 1,
       "reps": "—"
      }
