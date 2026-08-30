@@ -91,6 +91,13 @@
   ]
  },
  "relatorio": [
+  "🛒 A COMPRA FICOU EXCELENTE EM LEGUMES E LEGUMINOSAS — berinjela, abobrinha, batata doce, couve, alface, tomate, e feijão preto + lentilha + ervilha. Isso é fibra, saciedade e micronutriente, e é justamente onde a maioria das compras falha. Montei quatro receitas novas em cima disso.",
+  "⚠️ MAS A PROTEÍNA ANIMAL MAGRA FICOU CURTA, e isso importa mais agora que a força pesada entrou. O que chegou de proteína real: patinho moído, 10 ovos e 2 latas de atum. Não veio frango, peixe fresco, peça pra rosbife nem marmita. Fazendo a conta, dá pra cobrir umas 3–4 refeições principais da semana — o resto fica descoberto.",
+  "🔎 DOIS ITENS QUE PARECEM PROTEÍNA E NÃO SÃO: o 'petisco de tilápia' é empanado — mais farinha e óleo que peixe, e não substitui um filé. E o iogurte natural integral tem ~5 g de proteína por pote, contra 13–15 g do grego. Trocar de marca no iogurte é a mudança de maior retorno por real gasto na lista.",
+  "🍫 SOBRE OS ULTRAPROCESSADOS: vieram sorvete, dois Pringles, Doritos, quatro lámen, biscoitos, pão de queijo e farofa pronta. Não vou fazer sermão — parte disso é compra de casa, não sua. O que proponho é o que já funcionou antes: concentrar na refeição livre de sábado. Espalhados pela semana eles deslocam proteína e viram o vazamento; concentrados numa ocasião, custam pouco.",
+  "🥤 QUATRO POWERADE: isotônico só faz sentido em esforço acima de ~60 min com suor alto — jogo de campeonato, por exemplo. Nos treinos de 20-30 min desta semana, é açúcar líquido sem função. Guarde pros dias de futebol.",
+  "🍽️ O CARDÁPIO DA SEMANA SAIU TODO DE COISAS QUE VOCÊ JÁ TEM: escondidinho de batata doce com patinho, bolonhesa, berinjela e abobrinha recheadas, feijão preto com couve, e lentilha com ovo poché. Só o almoço depende de compra nova.",
+  "🥚 UMA AÇÃO DE 15 MINUTOS QUE RESOLVE METADE DA SEMANA: cozinhe os 10 ovos hoje. Descascados na geladeira duram 4 dias e viram lanche de 30 segundos — que é exatamente o que falta quando bate fome às 15h30 e não tem nada pronto.",
   "🔍 OS DETALHES DAS SUAS SESSÕES DE FORÇA EXPLICAM A FRAGILIDADE — e o problema NÃO é a carga. Você levanta bem: leg press 200 kg × 6, pec deck 90 × 6, puxada 70 × 6. O problema é FREQUÊNCIA e VOLUME: foram 3 sessões em agosto inteiro (04, 12 e 23), de 17, 20 e 32 min. Isso é manutenção fraca, não construção.",
   "📐 A CONTA QUE IMPORTA: hipertrofia pede 10–20 séries por grupo muscular POR SEMANA. Você fez 3 séries de peito em 23/08 e 3 em 12/08 — seis séries em três semanas. O músculo não tem por que crescer com esse estímulo. Não é falta de esforço na hora; é falta de repetição da hora.",
   "⭐ E FALTA UM EXERCÍCIO ESPECÍFICO, QUE É JUSTAMENTE O DA ARRANCADA: não há UM stiff, terra ou levantamento romeno em todo o histórico. Seu trabalho de perna é leg press, agachamento Smith, leg extension e leg curl leve (40 kg). Leg extension é quadríceps isolado e NÃO transfere para sprint. Quem acelera é a cadeia posterior — glúteo e isquiotibiais.",
@@ -104,65 +111,41 @@
  ],
  "lista_compra": [
   {
-   "cat": "🧊 Marmitas congeladas — 5 (almoço de seg a sex)",
+   "cat": "⚠️ FALTA COMPRAR — sem isso a semana não fecha a proteína",
    "itens": [
-    "5 marmitas de proteína magra IDENTIFICÁVEL: frango, peixe ou patinho",
-    "⚠️ Evite base arroz-feijão-embutido (a N20 tutu com calabresa: 26 g de proteína e 1084 mg de sódio)",
-    "Referência boa: N64 frango com creme de espinafre — 45 g de proteína, 603 mg de sódio",
-    "1 dúzia de ovos"
+    "5 MARMITAS CONGELADAS — é o almoço de seg a sex. Proteína magra identificável, ≥35 g no rótulo.",
+    "700 g de peito de frango OU uma peça de coxão mole — os lanches da tarde precisam disso (2 latas de atum cobrem só 2 dias)",
+    "Iogurte GREGO (6-8 potes) — o natural integral que você comprou tem ~5 g de proteína por pote; o grego tem 13-15 g",
+    "Whey, se o pote acabou — com força 2× por semana ele deixa de ser opcional"
    ]
   },
   {
-   "cat": "🥩 Bloco de proteína do domingo (os 5 lanches da tarde — receita rI)",
+   "cat": "✅ JÁ TEM — proteína",
    "itens": [
-    "700 g de coxão mole ou alcatra em peça (rosbife)",
-    "600 g de peito de frango inteiro",
-    "2 latas de atum",
-    "Alecrim, tomilho, sal grosso, mostarda",
-    "Pão integral ou 5 wraps"
+    "Patinho moído (escondidinho, bolonhesa, recheio dos legumes)",
+    "10 ovos (cozinhe todos no domingo)",
+    "2 latas de atum ralado",
+    "Queijo prato e mussarela fatiados",
+    "Feijão preto 1 kg, lentilha 400 g, ervilhas 500 g",
+    "Paio 370 g — use 150 g no feijão e guarde o resto"
    ]
   },
   {
-   "cat": "🍖 Proteína das jantas",
+   "cat": "✅ JÁ TEM — legumes e verduras (a compra ficou ótima aqui)",
    "itens": [
-    "440 g de músculo ou patinho em cubos — DOM 30 (caldo de carne)",
-    "440 g de filé de peito de frango — SEG (piccata)",
-    "440 g de filé de peixe branco — TER (peixe à espanhola)",
-    "440 g de peito de frango em cubos — QUA (teriyaki)",
-    "400 g de patinho moído — SEX (bolonhesa)",
-    "440 g de frango em pedaços — DOM 06 (galinhada)"
+    "Berinjela, 2 abobrinhas italianas, batata doce",
+    "Couve manteiga, alface crespa",
+    "Tomate italiano, tomate grape",
+    "Cebola roxa, cebola amarela, cheiro-verde",
+    "Cenoura — confere se tem, as receitas pedem"
    ]
   },
   {
-   "cat": "🥬 Hortifruti",
+   "cat": "✅ JÁ TEM — frutas e despensa",
    "itens": [
-    "500 g de abóbora cabotiá + 1 maço de couve",
-    "400 g de batata",
-    "2 brócolis, 4 cenouras",
-    "5 cebolas, 2 cabeças de alho, 6 tomates",
-    "1 pimentão vermelho",
-    "2 limões sicilianos + 3 comuns",
-    "Salsinha, cheiro-verde, manjericão",
-    "Folhas para salada",
-    "Frutas: banana, maçã, mamão"
-   ]
-  },
-  {
-   "cat": "🥛 Laticínios",
-   "itens": [
-    "Iogurte grego natural — 10 potes",
-    "Whey (confere o pote)",
-    "Manteiga, parmesão ralado"
-   ]
-  },
-  {
-   "cat": "🍚 Despensa",
-   "itens": [
-    "Arroz, macarrão integral 160 g",
-    "Alcaparras, azeitona preta, páprica",
-    "Shoyu, mel, gengibre, maisena, gergelim",
-    "1 lata de tomate pelado, louro, cominho, cúrcuma, orégano",
-    "Castanhas porcionadas, chocolate 70%, azeite"
+    "Abacate, tangerina ponkan, uva, banana prata, limão tahiti",
+    "Arroz, extrato de tomate, molho de tomate, leite de coco",
+    "Vinagre de maçã, manteiga, café"
    ]
   }
  ],
@@ -393,6 +376,95 @@
     "Acerte o sal. A batata palha vai numa tigela à parte, nunca por cima da travessa.",
     "🍱 SEPARE A PORÇÃO DELE ANTES de levar à mesa: frango cheio, arroz pela metade, sem batata palha. Guarde tampada — reaquece bem no micro-ondas em 2 min."
    ]
+  },
+  "rK": {
+   "nome": "Escondidinho de batata doce com patinho moído",
+   "tempo": "40 min",
+   "rende": "3 porções — 1 vai pro freezer",
+   "kcal": 620,
+   "prot": 45,
+   "ingredientes": [
+    "500 g de patinho moído",
+    "700 g de batata doce",
+    "1 cebola roxa, 3 alhos, 2 tomates",
+    "2 col. sopa de extrato de tomate",
+    "50 g de queijo prato ou mussarela fatiado (a cobertura)",
+    "Cheiro-verde, azeite, sal, pimenta",
+    "Um fio de leite pra dar liga no purê (sem manteiga extra)"
+   ],
+   "passos": [
+    "Cozinhe a batata doce em cubos até garfo entrar fácil. Amasse ainda quente com um fio de leite e sal — ela já é doce, não precisa de manteiga pra ficar boa.",
+    "Refogue cebola e alho, junte o patinho e sele em fogo ALTO até dourar de verdade (carne moída solta água; espere evaporar antes de temperar).",
+    "Adicione tomate e extrato, cozinhe 8 min. Cheiro-verde no fim.",
+    "Monte: carne embaixo, purê por cima, queijo fatiado no topo. Forno 200 °C por 15 min pra gratinar.",
+    "🧊 Separe 1 porção ANTES de levar à mesa."
+   ]
+  },
+  "rL": {
+   "nome": "Berinjela e abobrinha recheadas com carne moída",
+   "tempo": "45 min",
+   "rende": "3 porções",
+   "kcal": 480,
+   "prot": 42,
+   "ingredientes": [
+    "400 g de patinho moído",
+    "1 berinjela grande",
+    "2 abobrinhas italianas",
+    "1 cebola, 3 alhos, 2 tomates",
+    "3 col. sopa de molho de tomate",
+    "Queijo fatiado pra gratinar",
+    "Orégano, azeite, sal, pimenta"
+   ],
+   "passos": [
+    "Corte berinjela e abobrinha ao meio no comprimento e cave o miolo com colher. Reserve o miolo picado.",
+    "Pincele azeite e sal e asse as 'canoas' 15 min a 200 °C — pré-assar evita o recheio pronto com legume cru.",
+    "Refogue cebola, alho, o miolo picado e o tomate; junte a carne e sele bem. Molho de tomate e orégano no fim.",
+    "Recheie, cubra com queijo e volte ao forno 12 min.",
+    "Acompanhe com arroz. Prato leve o suficiente pra véspera de futebol."
+   ]
+  },
+  "rM": {
+   "nome": "Feijão preto com couve e paio (versão contida)",
+   "tempo": "50 min (panela de pressão)",
+   "rende": "4 porções",
+   "kcal": 600,
+   "prot": 38,
+   "ingredientes": [
+    "400 g de feijão preto seco (deixe de molho de véspera)",
+    "150 g de paio fatiado fino — SÓ 150 g, não os 370 g do pacote",
+    "300 g de patinho em cubos, se tiver",
+    "1 maço de couve manteiga fatiada fina",
+    "1 cebola, 4 alhos, louro",
+    "Arroz, laranja ou tangerina pra acompanhar"
+   ],
+   "passos": [
+    "Feijão de molho na véspera — corta o tempo de panela e melhora a digestão.",
+    "Doure o paio primeiro e ESCORRA a gordura que soltar. É esse passo que separa um feijão de 600 kcal de um de 900.",
+    "Refogue cebola e alho na panela de pressão, junte a carne, o feijão, louro e água. 25 min após pegar pressão.",
+    "Couve refogada rápida à parte, com alho — não cozinhe junto, ela vira papa.",
+    "🍊 A tangerina no fim não é decoração: vitamina C junto com feijão aumenta a absorção do ferro."
+   ]
+  },
+  "rN": {
+   "nome": "Lentilha com legumes e ovo poché",
+   "tempo": "35 min",
+   "rende": "2 porções",
+   "kcal": 520,
+   "prot": 34,
+   "ingredientes": [
+    "200 g de lentilha seca",
+    "2 cenouras, 1 abobrinha, 1 cebola, 3 alhos",
+    "2 tomates ou 3 col. de molho",
+    "2 ovos por porção",
+    "Cheiro-verde, azeite, cominho, louro",
+    "Vinagre de maçã (pro poché)"
+   ],
+   "passos": [
+    "Refogue cebola, alho, cenoura e abobrinha. Junte a lentilha, louro, cominho e água (3 partes pra 1 de lentilha).",
+    "Cozinhe 20-25 min. Lentilha NÃO precisa de molho prévio e cozinha mais rápido que feijão — é o que a torna prática em dia de semana.",
+    "Ovo poché: água fervendo com um fio de vinagre, fogo baixo, 3 min. Ou frite com pouco azeite se preferir.",
+    "Monte a lentilha no prato com os ovos por cima. Cheiro-verde e um fio de azeite cru."
+   ]
   }
  },
  "dias": [
@@ -515,12 +587,12 @@
      "peso_g": 250
     },
     "janta": {
-     "nome": "Caldo de carne com abóbora e couve (inverno)",
-     "kcal": 650,
-     "prot": 50,
+     "nome": "Escondidinho de batata doce com patinho moído",
+     "kcal": 620,
+     "prot": 45,
      "peso_g": 480,
-     "receita": "rE",
-     "nota": "Rende 2 — a extra abre o estoque da semana."
+     "receita": "rK",
+     "nota": "Se preferir começar hoje, o escondidinho já usa o patinho e a batata doce."
     },
     "petisco": {
      "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
@@ -562,40 +634,39 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
+     "nome": "Marmita congelada — A COMPRAR (5 unidades)",
      "kcal": 500,
      "prot": 45,
      "peso_g": 400,
      "origem": "marmita congelada (comprada)",
-     "nota": "Confere o rótulo: ≥35 g de proteína. Prefira frango/peixe/patinho; desconfie de base arroz-feijão-embutido."
+     "nota": "⚠️ Não estava na compra. É o item que sustenta o almoço da semana — sem ele o almoço volta a ser negociação diária no self-service."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
+     "nome": "3 ovos cozidos + queijo prato + fruta",
+     "kcal": 380,
+     "prot": 30,
      "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo."
+     "nota": "Cozinhe os 10 ovos de uma vez no domingo — descascados na geladeira duram 4 dias e viram lanche de 30 segundos."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "nome": "Whey (30 g) + 2 ovos",
      "kcal": 300,
      "prot": 30,
      "peso_g": 230
     },
     "janta": {
-     "nome": "Frango piccata (limão siciliano e alcaparras) com arroz e brócolis",
-     "kcal": 700,
-     "prot": 54,
+     "nome": "Escondidinho de batata doce com patinho moído",
+     "kcal": 620,
+     "prot": 45,
      "peso_g": 480,
-     "receita": "rA",
-     "nota": "Rende 2 — separa e congela ANTES de servir."
+     "receita": "rK",
+     "nota": "Estreia a batata doce e o patinho. Rende 3 — uma vai pro freezer e salva a quinta."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Iogurte natural + banana + castanhas",
+     "kcal": 250,
+     "prot": 12,
+     "peso_g": 250
     }
    }
   },
@@ -651,40 +722,40 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
+     "nome": "Marmita congelada — A COMPRAR (5 unidades)",
      "kcal": 500,
      "prot": 45,
      "peso_g": 400,
      "origem": "marmita congelada (comprada)",
-     "nota": "Confere o rótulo: ≥35 g de proteína. Prefira frango/peixe/patinho; desconfie de base arroz-feijão-embutido."
+     "nota": "⚠️ Não estava na compra. É o item que sustenta o almoço da semana — sem ele o almoço volta a ser negociação diária no self-service."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo."
+     "nome": "Pasta de atum (com iogurte natural, não maionese) no pão",
+     "kcal": 380,
+     "prot": 30,
+     "peso_g": 250,
+     "nota": "Você tem 2 latas de atum ralado — dão 2 lanches. Para os outros 3 dias: ovos cozidos ou o frango/rosbife que ainda falta comprar."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
-     "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
+     "nome": "Whey + banana (dia de FORÇA A — come 60-90 min antes)",
+     "kcal": 320,
+     "prot": 32,
+     "peso_g": 300,
+     "nota": "Dia de perna pesada pede carboidrato disponível. Treinar leg press e stiff em jejum é desperdiçar a sessão."
     },
     "janta": {
-     "nome": "Peixe à espanhola (assado com batata, pimentão e azeitona)",
-     "kcal": 680,
-     "prot": 50,
+     "nome": "Macarrão à bolonhesa de carne moída",
+     "kcal": 730,
+     "prot": 52,
      "peso_g": 480,
-     "receita": "rC",
-     "nota": "Rende 2 — separa e congela ANTES de servir."
+     "receita": "rF",
+     "nota": "Bolonhesa com o patinho moído + molho de tomate que você comprou. Rende 2."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Iogurte natural + banana + castanhas",
+     "kcal": 250,
+     "prot": 12,
+     "peso_g": 250
     }
    }
   },
@@ -715,40 +786,39 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
+     "nome": "Marmita congelada — A COMPRAR (5 unidades)",
      "kcal": 500,
      "prot": 45,
      "peso_g": 400,
      "origem": "marmita congelada (comprada)",
-     "nota": "Confere o rótulo: ≥35 g de proteína. Prefira frango/peixe/patinho; desconfie de base arroz-feijão-embutido."
+     "nota": "⚠️ Não estava na compra. É o item que sustenta o almoço da semana — sem ele o almoço volta a ser negociação diária no self-service."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
+     "nome": "3 ovos cozidos + queijo prato + fruta",
+     "kcal": 380,
+     "prot": 30,
      "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo."
+     "nota": "Cozinhe os 10 ovos de uma vez no domingo — descascados na geladeira duram 4 dias e viram lanche de 30 segundos."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
+     "nome": "Whey (30 g) + 2 ovos",
      "kcal": 300,
      "prot": 30,
      "peso_g": 230
     },
     "janta": {
-     "nome": "Frango teriyaki com brócolis e arroz",
-     "kcal": 710,
-     "prot": 52,
+     "nome": "Berinjela e abobrinha recheadas com carne moída",
+     "kcal": 480,
+     "prot": 42,
      "peso_g": 480,
-     "receita": "rD",
-     "nota": "Rende 2 — separa e congela ANTES de servir."
+     "receita": "rL",
+     "nota": "Prato leve de propósito — véspera de futebol. Usa a berinjela e as abobrinhas."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Iogurte natural + banana + castanhas",
+     "kcal": 250,
+     "prot": 12,
+     "peso_g": 250
     }
    }
   },
@@ -817,11 +887,12 @@
      "nota": "Arroz + frango grelhado + legumes. Carboidrato de verdade, gordura BAIXA — gordura atrasa o esvaziamento e você joga pesado."
     },
     "janta": {
-     "nome": "21h45 · Sua porção — separada ANTES, não montada na hora",
-     "kcal": 450,
-     "prot": 38,
-     "peso_g": 350,
-     "nota": "Combine de véspera: proteína cheia, acompanhamento pela metade, fritura de fora. Mesmo princípio da marmita — a decisão sai do momento de fome."
+     "nome": "21h45 · 🧊 Porção do freezer (o escondidinho de segunda)",
+     "kcal": 620,
+     "prot": 45,
+     "peso_g": 450,
+     "origem": "freezer — estoque próprio",
+     "nota": "Você chega do jogo às 21h30. Se a porção de segunda foi congelada, a janta está pronta. Se não foi, vira delivery."
     },
     "petisco": {
      "nome": "21h15 · Shake pós-jogo (ainda no clube)",
@@ -884,40 +955,39 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
+     "nome": "Marmita congelada — A COMPRAR (5 unidades)",
      "kcal": 500,
      "prot": 45,
      "peso_g": 400,
      "origem": "marmita congelada (comprada)",
-     "nota": "Confere o rótulo: ≥35 g de proteína. Prefira frango/peixe/patinho; desconfie de base arroz-feijão-embutido."
+     "nota": "⚠️ Não estava na compra. É o item que sustenta o almoço da semana — sem ele o almoço volta a ser negociação diária no self-service."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
-     "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo."
+     "nome": "Pasta de atum (com iogurte natural, não maionese) no pão",
+     "kcal": 380,
+     "prot": 30,
+     "peso_g": 250,
+     "nota": "Você tem 2 latas de atum ralado — dão 2 lanches. Para os outros 3 dias: ovos cozidos ou o frango/rosbife que ainda falta comprar."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
-     "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
+     "nome": "Whey + banana (dia de FORÇA B)",
+     "kcal": 320,
+     "prot": 32,
+     "peso_g": 300
     },
     "janta": {
-     "nome": "Macarrão à bolonhesa de carne moída",
-     "kcal": 730,
-     "prot": 52,
+     "nome": "Feijão preto com couve e paio (versão contida)",
+     "kcal": 600,
+     "prot": 38,
      "peso_g": 480,
-     "receita": "rF",
-     "nota": "Rende 2 — separa e congela ANTES de servir."
+     "receita": "rM",
+     "nota": "Feijoada contida — 150 g de paio, não o pacote todo, e escorra a gordura do refogado. Rende 4."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Iogurte natural + banana + castanhas",
+     "kcal": 250,
+     "prot": 12,
+     "peso_g": 250
     }
    }
   },
@@ -958,15 +1028,14 @@
      "kcal": 900,
      "prot": 45,
      "peso_g": 600,
-     "nota": "Uma refeição livre, não um dia livre. É a terceira que apaga a semana."
+     "nota": "Aqui entram o sorvete, o Pringles, o Doritos. Concentrados numa ocasião eles custam pouco; espalhados pela semana é que viram o problema."
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
+     "nome": "3 ovos cozidos + queijo prato + fruta",
+     "kcal": 380,
+     "prot": 30,
      "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo."
+     "nota": "Cozinhe os 10 ovos de uma vez no domingo — descascados na geladeira duram 4 dias e viram lanche de 30 segundos."
     },
     "lanche_pre_treino": {
      "nome": "Fruta + castanhas",
@@ -975,17 +1044,17 @@
      "peso_g": 200
     },
     "janta": {
-     "nome": "🧊 Porção do freezer + salada grande",
-     "kcal": 620,
-     "prot": 48,
+     "nome": "🧊 Sobra do feijão de sexta + couve",
+     "kcal": 600,
+     "prot": 38,
      "peso_g": 450,
-     "origem": "freezer — estoque próprio"
+     "origem": "freezer/geladeira"
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Iogurte natural + banana + castanhas",
+     "kcal": 250,
+     "prot": 12,
+     "peso_g": 250
     }
    }
   },
@@ -1019,36 +1088,35 @@
     "almoco": {
      "nome": "Almoço de domingo em casa — proteína + salada grande",
      "kcal": 650,
-     "prot": 50,
+     "prot": 48,
      "peso_g": 500
     },
     "pre_lanche": {
-     "nome": "🥩 Sanduíche/wrap com 100 g de rosbife, frango fatiado ou pasta de atum",
-     "kcal": 400,
-     "prot": 34,
+     "nome": "3 ovos cozidos + queijo prato + fruta",
+     "kcal": 380,
+     "prot": 30,
      "peso_g": 260,
-     "receita": "rI",
-     "nota": "A dose que fecha o dia. Preparada no domingo."
+     "nota": "Cozinhe os 10 ovos de uma vez no domingo — descascados na geladeira duram 4 dias e viram lanche de 30 segundos."
     },
     "lanche_pre_treino": {
      "nome": "Iogurte + fruta",
      "kcal": 260,
-     "prot": 24,
+     "prot": 20,
      "peso_g": 250
     },
     "janta": {
-     "nome": "Galinhada mineira (arroz com frango e açafrão)",
-     "kcal": 720,
-     "prot": 52,
+     "nome": "Lentilha com legumes e ovo poché",
+     "kcal": 520,
+     "prot": 34,
      "peso_g": 480,
-     "receita": "rB",
-     "nota": "Rende 2 — separa e congela ANTES de servir."
+     "receita": "rN",
+     "nota": "Lentilha com ovo poché — leve, e lentilha não precisa de molho prévio."
     },
     "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
+     "nome": "Iogurte natural + banana + castanhas",
+     "kcal": 250,
+     "prot": 12,
+     "peso_g": 250
     }
    }
   }
