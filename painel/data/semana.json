@@ -91,6 +91,8 @@
   ]
  },
  "relatorio": [
+  "✅ VOCÊ CUMPRIU A SEMANA INTEIRA — e o item mais importante foi feito: STIFF na terça (leg press + stiff + calf press, 35 min). Era exatamente o padrão que não existia em nenhuma sessão do histórico e que sustenta a arrancada. Segunda foi regenerativa de verdade (4,4 km/h, caminhada) e quarta foi corrida fácil a 8,4 km/h. Três de três, do jeito prescrito.",
+  "⚽ SEM FUTEBOL HOJE — e isso deixa um buraco específico. O jogo de quinta era o único estímulo de intensidade da semana (entrega ~19 min em Z3+). Sem substituir, a semana fica 100% fácil e o aeróbico alto continua parado onde está há um mês: 227 contra alvo de 328. Com prontidão 98, a janela pra repor isso é hoje.",
   "🍗 COM FRANGO E TILÁPIA NO FREEZER A SEMANA FECHA — e muda de figura. A proteína animal magra deixa de ser o gargalo: o frango vira a âncora (jantar de domingo + os lanches da tarde da semana inteira + 2 porções de freezer) e a tilápia resolve a quarta.",
   "⭐ A RECEITA MAIS IMPORTANTE DA SEMANA É A DE DOMINGO: frango assado com abobrinha, berinjela e cebola roxa, rendendo 4 porções. Uma pra hoje, uma desfiada pros lanches, duas pro freezer. É o preparo de domingo e o jantar na mesma ação — e é ela que faz as outras seis noites funcionarem.",
   "🛒 A LISTA DE COMPRAS ENCOLHEU PRA QUATRO ITENS, e só um é praticamente obrigatório: o iogurte GREGO. Os 4 potes de natural integral que vieram têm ~5 g de proteína cada, contra 13–15 g do grego — no mesmo preço por pote, é a maior diferença de retorno da lista inteira.",
@@ -864,37 +866,47 @@
    "data": "03/09",
    "tipo": "treino",
    "treino": {
-    "foco": "⚽ FUTEBOL (curto, 20h–21h) — o fixo. Hoje o desafio é o relógio.",
+    "foco": "🏃 SEM FUTEBOL — corrida com 3 blocos moderados substitui o estímulo do jogo",
     "exercicios": [
      {
-      "nome": "🕕 18h00 — refeição pré-jogo. Sair do trabalho comido decide a quinta inteira.",
+      "nome": "💚 Prontidão 98 hoje, sono 6,9 h com score 84, FC repouso 50. Você está pronto — e o futebol era o ÚNICO estímulo de intensidade da semana. Sem ele, a semana fica 100% fácil e o aeróbico alto (227 contra alvo 328) segue parado há um mês.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏃 19h45 — aquecimento correndo 10–12 min + mobilidade de tornozelo",
+      "nome": "🏃 Aquecimento 10 min fácil (8 km/h)",
       "series": 1,
-      "reps": "12 min"
+      "reps": "10 min"
      },
      {
-      "nome": "⚽ 20h–21h — jogo",
+      "nome": "🏃 3× 5 min a 9–9,5 km/h — 'duro mas conversável'. Alvo de FC 155–170.",
+      "series": 3,
+      "reps": "5 min"
+     },
+     {
+      "nome": "♻️ Entre os blocos: 2 min TROTANDO a 8 km/h, não caminhando. A 8 a FC não desce de ~145 e o bloco seguinte parte alto.",
+      "series": 2,
+      "reps": "2 min"
+     },
+     {
+      "nome": "🏃 5 min fáceis pra fechar",
+      "series": 1,
+      "reps": "5 min"
+     },
+     {
+      "nome": "⛔ TETO: 9,5 km/h. Não é dia de teste nem de bater recorde — é repor o que o futebol daria, com controle. Se o segundo bloco vier pesado demais, corta o terceiro e termina fácil.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🥤 21h15 — shake antes de sair do clube. Não espera chegar em casa.",
+      "nome": "❌ Sem força hoje — amanhã é Upper. E sem sprint: a fase de aceleração começa sábado, com strides.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🛌 23h — limite pra dormir. É a restrição real da quinta.",
+      "nome": "🔄 ALTERNATIVA se preferir não subir intensidade: 30 min contínuos fáceis. Mantém o volume e não custa nada. A semana ainda fecha bem.",
       "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Sem força, sem corrida extra.",
-      "series": 1,
-      "reps": "—"
+      "reps": "30 min"
      }
     ]
    },
@@ -916,19 +928,18 @@
      "nota": "Sai da porção que você separa do frango de domingo. 100 g = ~30 g de proteína — resolve a tarde inteira da semana."
     },
     "lanche_pre_treino": {
-     "nome": "18h00 · REFEIÇÃO PRÉ-JOGO — a principal do dia",
-     "kcal": 520,
-     "prot": 36,
-     "peso_g": 420,
-     "nota": "Arroz + frango grelhado + legumes. Carboidrato de verdade, gordura BAIXA — gordura atrasa o esvaziamento e você joga pesado."
+     "nome": "Whey (30 g) + fruta — 60 min antes",
+     "kcal": 300,
+     "prot": 30,
+     "peso_g": 250
     },
     "janta": {
-     "nome": "21h45 · 🧊 Porção do freezer (escondidinho ou frango)",
+     "nome": "🧊 Porção do freezer (escondidinho ou frango) — sem pressa de horário hoje",
      "kcal": 600,
      "prot": 46,
      "peso_g": 450,
      "origem": "freezer — estoque próprio",
-     "nota": "Chegando às 21h30, o freezer decide se a janta é comida ou delivery. Duas porções foram congeladas domingo e uma segunda."
+     "nota": "Sem jogo, a janta volta ao horário normal. A restrição das 21h45 era do futebol."
     },
     "petisco": {
      "nome": "21h15 · Shake pós-jogo (ainda no clube)",
