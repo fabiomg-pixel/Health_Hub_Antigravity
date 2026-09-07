@@ -1,8 +1,8 @@
 {
- "gerado_em": "2026-08-30",
- "semana": "30/ago a 06/set · RECONSTRUÇÃO — força de verdade entra no plano",
- "objetivo": "Reconstruir base com DUAS sessões de força reais (45 min, não 30) com ênfase em cadeia posterior e unilateral — que é o motor da arrancada e o que está faltando. Corrida como volume fácil. Aceleração entra só na fase 3.",
- "peso_atual": 94.3,
+ "gerado_em": "2026-09-07",
+ "semana": "07 a 13/set · FORÇA 4×/SEMANA + déficit — mirando a MÉDIA em 93",
+ "objetivo": "Quatro sessões de força (Lower e Upper 2× cada) porque o volume anterior não construía nada. Déficit moderado com proteína ALTA. A meta é a média móvel de 7 dias chegar a 93 — não o número de um dia.",
+ "peso_atual": 94.5,
  "fontes_status": {
   "strava": "ok",
   "garmin": "ok",
@@ -11,21 +11,22 @@
   "fitbod": "pendente"
  },
  "dieta": {
-  "calorias": 2200,
-  "proteina": 160,
-  "proteina_piso": 140,
-  "gordura": 70,
-  "carbo": 200,
+  "calorias": 1900,
+  "proteina": 175,
+  "proteina_piso": 160,
+  "gordura": 60,
+  "carbo": 150,
   "fibra": 30
  },
  "regra_prato": {
-  "titulo": "Volta ao normal · marmita no almoço, carne fatiada na tarde",
+  "titulo": "Déficit com proteína ALTA · corta carboidrato, não proteína",
   "linhas": [
-   "🎯 Proteína: meta 160 g, piso 140. O plano no papel fecha em ~175 pra aterrissar em 160 real.",
-   "🧊 ALMOÇO = marmita congelada. Rótulo <35 g de proteína pede 2 ovos junto.",
-   "🥩 TARDE = 100 g de rosbife ou frango fatiado (30 g). Preparo de domingo, montagem de 2 min.",
-   "🍳 JANTA = rende 2. A extra vai pro freezer ANTES de sentar à mesa.",
-   "🍽️ UMA refeição livre no fim de semana. Uma."
+   "🎯 1.900 kcal e 175 g de proteína. Em déficit com força pesada a proteína SOBE — é ela que protege a massa magra.",
+   "🍚 Arroz, massa e purê PELA METADE. É onde estão as ~300 kcal sem custo de saciedade.",
+   "🥃 ZERO álcool esta semana. Além das calorias, atrapalha síntese proteica e sono — e você tem 4 sessões de força.",
+   "🍽️ SEM refeição livre. Se precisar de válvula, sábado tem uma sobremesa — não um almoço inteiro.",
+   "🔄 Carboidrato CICLADO: nos dias de força (seg, ter, sex, sáb) mantenha o arroz do almoço; nos leves, metade também no almoço.",
+   "⚖️ Pese todo dia em jejum e IGNORE o número diário. O que vale é a média de 7 dias — hoje em 94,55."
   ]
  },
  "tendencias": {
@@ -36,7 +37,7 @@
   "sono_score_hoje": 82,
   "rem_hoje": null,
   "training_status": "RECOVERY · destreino",
-  "peso_delta_kg": -0.6,
+  "peso_delta_kg": 0.0,
   "volume_series_semana": 0,
   "prontidao": [
    {
@@ -91,32 +92,17 @@
   ]
  },
  "relatorio": [
-  "✅ VOCÊ CUMPRIU A SEMANA INTEIRA — e o item mais importante foi feito: STIFF na terça (leg press + stiff + calf press, 35 min). Era exatamente o padrão que não existia em nenhuma sessão do histórico e que sustenta a arrancada. Segunda foi regenerativa de verdade (4,4 km/h, caminhada) e quarta foi corrida fácil a 8,4 km/h. Três de três, do jeito prescrito.",
-  "⚽ SEM FUTEBOL HOJE — e isso deixa um buraco específico. O jogo de quinta era o único estímulo de intensidade da semana (entrega ~19 min em Z3+). Sem substituir, a semana fica 100% fácil e o aeróbico alto continua parado onde está há um mês: 227 contra alvo de 328. Com prontidão 98, a janela pra repor isso é hoje.",
-  "🍗 COM FRANGO E TILÁPIA NO FREEZER A SEMANA FECHA — e muda de figura. A proteína animal magra deixa de ser o gargalo: o frango vira a âncora (jantar de domingo + os lanches da tarde da semana inteira + 2 porções de freezer) e a tilápia resolve a quarta.",
-  "⭐ A RECEITA MAIS IMPORTANTE DA SEMANA É A DE DOMINGO: frango assado com abobrinha, berinjela e cebola roxa, rendendo 4 porções. Uma pra hoje, uma desfiada pros lanches, duas pro freezer. É o preparo de domingo e o jantar na mesma ação — e é ela que faz as outras seis noites funcionarem.",
-  "🛒 A LISTA DE COMPRAS ENCOLHEU PRA QUATRO ITENS, e só um é praticamente obrigatório: o iogurte GREGO. Os 4 potes de natural integral que vieram têm ~5 g de proteína cada, contra 13–15 g do grego — no mesmo preço por pote, é a maior diferença de retorno da lista inteira.",
-  "🧊 AS MARMITAS VIRARAM OPCIONAIS. Com o frango de domingo cobrindo 2 almoços, elas deixam de ser a única saída. Continuam sendo o caminho mais simples — mas se a semana apertar, dá pra rodar sem.",
-  "❄️ DOIS DETALHES DE CONGELADO QUE MUDAM O RESULTADO: descongele na GELADEIRA, 12 h antes, nunca na pia — é o que separa frango suculento de frango borrachudo. E SEQUE a tilápia com papel-toalha antes de temperar; peixe úmido ferve no próprio caldo em vez de assar.",
-  "⌚ CORREÇÃO — PARE DE ESPERAR DADO DE CAMPEONATO. Jogo oficial não permite relógio, e eu vinha pedindo isso repetidamente e tratando a ausência de registro como esquecimento. Não é: é regra de competição. Consequência prática: TODO jogo de campeonato vai ser auto-reportado, e o teu relato passa a ser a fonte primária — não um substituto pobre do sensor.",
-  "🔬 E ISSO MUDA ONDE A GENTE MEDE PICO DE VELOCIDADE. A pergunta em aberto desde julho — se campo grande libera velocidade — não pode ser respondida em campeonato. Tem que ser em PELADA ou treino em campo de 11, onde o relógio entra. Ou na esteira, com o teste de potência. Vou parar de pendurar essa medição em jogo oficial.",
-  "🛒 A COMPRA FICOU EXCELENTE EM LEGUMES E LEGUMINOSAS — berinjela, abobrinha, batata doce, couve, alface, tomate, e feijão preto + lentilha + ervilha. Isso é fibra, saciedade e micronutriente, e é justamente onde a maioria das compras falha. Montei quatro receitas novas em cima disso.",
-  "⚠️ MAS A PROTEÍNA ANIMAL MAGRA FICOU CURTA, e isso importa mais agora que a força pesada entrou. O que chegou de proteína real: patinho moído, 10 ovos e 2 latas de atum. Não veio frango, peixe fresco, peça pra rosbife nem marmita. Fazendo a conta, dá pra cobrir umas 3–4 refeições principais da semana — o resto fica descoberto.",
-  "🔎 DOIS ITENS QUE PARECEM PROTEÍNA E NÃO SÃO: o 'petisco de tilápia' é empanado — mais farinha e óleo que peixe, e não substitui um filé. E o iogurte natural integral tem ~5 g de proteína por pote, contra 13–15 g do grego. Trocar de marca no iogurte é a mudança de maior retorno por real gasto na lista.",
-  "🍫 SOBRE OS ULTRAPROCESSADOS: vieram sorvete, dois Pringles, Doritos, quatro lámen, biscoitos, pão de queijo e farofa pronta. Não vou fazer sermão — parte disso é compra de casa, não sua. O que proponho é o que já funcionou antes: concentrar na refeição livre de sábado. Espalhados pela semana eles deslocam proteína e viram o vazamento; concentrados numa ocasião, custam pouco.",
-  "🥤 QUATRO POWERADE: isotônico só faz sentido em esforço acima de ~60 min com suor alto — jogo de campeonato, por exemplo. Nos treinos de 20-30 min desta semana, é açúcar líquido sem função. Guarde pros dias de futebol.",
-  "🍽️ O CARDÁPIO DA SEMANA SAIU TODO DE COISAS QUE VOCÊ JÁ TEM: escondidinho de batata doce com patinho, bolonhesa, berinjela e abobrinha recheadas, feijão preto com couve, e lentilha com ovo poché. Só o almoço depende de compra nova.",
-  "🥚 UMA AÇÃO DE 15 MINUTOS QUE RESOLVE METADE DA SEMANA: cozinhe os 10 ovos hoje. Descascados na geladeira duram 4 dias e viram lanche de 30 segundos — que é exatamente o que falta quando bate fome às 15h30 e não tem nada pronto.",
-  "🔍 OS DETALHES DAS SUAS SESSÕES DE FORÇA EXPLICAM A FRAGILIDADE — e o problema NÃO é a carga. Você levanta bem: leg press 200 kg × 6, pec deck 90 × 6, puxada 70 × 6. O problema é FREQUÊNCIA e VOLUME: foram 3 sessões em agosto inteiro (04, 12 e 23), de 17, 20 e 32 min. Isso é manutenção fraca, não construção.",
-  "📐 A CONTA QUE IMPORTA: hipertrofia pede 10–20 séries por grupo muscular POR SEMANA. Você fez 3 séries de peito em 23/08 e 3 em 12/08 — seis séries em três semanas. O músculo não tem por que crescer com esse estímulo. Não é falta de esforço na hora; é falta de repetição da hora.",
-  "⭐ E FALTA UM EXERCÍCIO ESPECÍFICO, QUE É JUSTAMENTE O DA ARRANCADA: não há UM stiff, terra ou levantamento romeno em todo o histórico. Seu trabalho de perna é leg press, agachamento Smith, leg extension e leg curl leve (40 kg). Leg extension é quadríceps isolado e NÃO transfere para sprint. Quem acelera é a cadeia posterior — glúteo e isquiotibiais.",
-  "⭐ TAMBÉM NÃO HÁ NADA UNILATERAL. Nem afundo, nem búlgaro, nem passada. E sprint é um gesto unilateral: você nunca está com os dois pés no chão quando acelera. Treinar só bilateral deixa um buraco que aparece exatamente na arrancada.",
-  "🎯 O PLANO PASSA A TER DUAS SESSÕES DE FORÇA DE 45 MIN — não 30. Com 30 min não cabe volume pra construir; cabe só pra manter, e manter é o que a gente vinha fazendo. Terça é Lower com ênfase posterior (stiff + unilateral entram), sexta é Upper completo.",
-  "🚦 ACELERAÇÃO ENTRA EM TRÊS FASES, E A FASE 1 COMEÇA SÁBADO. Fase 1 (semanas 1–2): strides de 20 s a ~85% no fim do longão — educativo de passada, risco baixo. Fase 2 (semanas 3–4): pliometria bilateral submáxima e acelerações de 30 m. Fase 3 (semana 5+): sprint de verdade. Pular direto pra fase 3 com ACWR em 0,1 e histórico de tornozelo é como você se machuca.",
-  "💡 POR QUE NESSA ORDEM: potência é força × velocidade. Você tem força de base razoável mas sem os padrões que transferem (posterior, unilateral) e sem nenhuma exposição a velocidade nas últimas semanas. Construir potência sobre base ausente é o caminho curto pra lesão — e o tornozelo é o elo que já avisou.",
-  "⚠️ SINAL PRA ACOMPANHAR ESTA SEMANA: sua FC de repouso subiu de 48 (27/08) pra 56 nos dias 29 e 30, e o HRV caiu de 46 pra 34 — com pouquíssimo treino no meio. Três dias de piora sem carga que justifique. Pode ser sono, estresse ou começo de alguma coisa. Segunda regenerativa é a leitura certa; se na terça ainda estiver assim, adiamos a força.",
-  "🍽️ E O QUE SUSTENTA TUDO ISSO É PROTEÍNA. Treino de hipertrofia sem 160 g/dia é treino desperdiçado — o estímulo existe e o material de construção não. As duas sessões novas só valem se a marmita e a carne fatiada da tarde acontecerem.",
-  "📉 Contexto que não mudou: crônica em 207 (era 306), ACWR 0,1, e a FC máxima no futebol caiu de 189 pra 161 em quatro semanas. A capacidade está lá — a corrida de 19/08 deu 6 recordes pessoais. O que falta é volume, e volume leva semanas, não dias."
+  "💪 FORÇA PASSA A 4× POR SEMANA — Lower e Upper duas vezes cada. Você sentiu falta e tem razão: 2 sessões davam ~6 séries por grupo por semana, contra as 10–20 que hipertrofia pede. Agora fica em 10–14 por grupo. É a mudança que torna o estímulo real.",
+  "⚡ ORDEM: FORÇA PRIMEIRO, CORRIDA DEPOIS. Aeróbico antes derruba o desempenho na força — fadiga acumulada e glicogênio gasto. O contrário quase não atrapalha: força antes de corrida FÁCIL custa pouco. Regra geral: faça primeiro o que é prioridade do dia, e hoje a prioridade é construir músculo.",
+  "🚗 EXCEÇÃO PRÁTICA: se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser fácil DE VERDADE (8 km/h, conversável). Corrida moderada antes de força pesada desperdiça a sessão de força.",
+  "📅 A SEMANA FICOU: seg Lower A · ter Upper A · qua aeróbico alto (único dia sem força) · qui futebol · sex Upper B · sáb LOWER B (a garantida) · dom futebol OU corrida de 6 km.",
+  "🔒 SÁBADO É A SESSÃO INEGOCIÁVEL. Se a semana desandar, é ela que não se perde. E o domingo virou flexível de verdade: futebol recreativo OU a corrida de 6 km — não os dois. Depois de um Lower pesado, uma coisa só já basta.",
+  "⚠️ UM AJUSTE DE CARGA NO SÁBADO: se houver futebol no domingo, segure o agachamento (3–4 reps na reserva). Se domingo for corrida, pode ir pesado. Perna destruída no sábado + jogo no domingo é o tipo de empilhamento que machuca.",
+  "⚖️ SOBRE OS 93 kg — E AQUI PRECISO SER DIRETO. Sua média de 7 dias está em 94,55 e não se move há cinco semanas (agosto fechou em 94,52). Perder 1,5 kg em sete dias não acontece como gordura: exigiria déficit de ~1650 kcal/dia. Dá pra derrubar a balança via água cortando carboidrato e sódio, mas volta na semana seguinte — e você pediu 'bater E FICAR'.",
+  "🎯 O PLANO REAL: déficit de ~450 kcal/dia com proteína SUBINDO pra 175 g. Expectativa honesta pra domingo é a média sair de 94,55 pra ~94,1. A média em 93,0 chega até o fim de setembro, em três semanas. É mais lento e é o que fica.",
+  "📊 MUDANÇA DE MÉTRICA: pese todo dia mas IGNORE o número diário. Sua série oscila ±0,7 kg — você viu 94,05 em 30/08 e 95,45 em 04/09 sem nada ter mudado. O número de um dia é ruído; a média de 7 dias é o sinal. Vou reportar ela todo domingo.",
+  "✅ E A SEMANA PASSADA FOI CUMPRIDA INTEIRA: stiff na terça, Upper completo na sexta (40 min) e 5 km contínuos a 8,65 km/h no sábado com cadência 79,9. Primeira semana em muito tempo com o treino todo executado — é sobre essa base que as 4 sessões entram.",
+  "🍚 O DÉFICIT VEM DO CARBOIDRATO DE ACOMPANHAMENTO, não da proteína: arroz, massa e purê pela metade, uma fatia de pão a menos no lanche, zero álcool e sem refeição livre. Proteína sobe porque em déficit com força pesada é ela que protege a massa magra que você está construindo."
  ],
  "lista_compra": [
   {
@@ -509,241 +495,41 @@
  },
  "dias": [
   {
-   "id": "sab29",
-   "nome": "Sábado",
-   "data": "29/08",
-   "tipo": "treino",
-   "flex": true,
-   "treino": {
-    "foco": "🌀 Reinício suave — corrida 20 min fácil ou descanso",
-    "exercicios": [
-     {
-      "nome": "✅ Decisão certa não entrar no campeonato. Com ACWR em 0,1 e a FC máxima caindo 28 bpm em quatro semanas, jogo competitivo hoje era carga alta sobre base vazia — o cenário clássico de lesão. Você não perdeu nada; evitou.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🏃 20 min BEM fáceis (7,5–8 km/h) — se der vontade. Este é o primeiro tijolo da reconstrução.",
-      "series": 1,
-      "reps": "20 min"
-     },
-     {
-      "nome": "Ou descanso completo, se preferir começar amanhã. Nenhuma das duas opções atrasa nada.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Mobilidade de tornozelo e quadril",
-      "series": 3,
-      "reps": "45 s"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "Almoço em casa — proteína + salada grande",
-     "kcal": 650,
-     "prot": 50,
-     "peso_g": 500
-    },
-    "pre_lanche": {
-     "nome": "Iogurte grego + fruta + castanhas",
-     "kcal": 350,
-     "prot": 26,
-     "peso_g": 280
-    },
-    "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos cozidos",
-     "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
-    },
-    "janta": {
-     "nome": "🧊 Porção do freezer + salada — ou o que tiver em casa",
-     "kcal": 620,
-     "prot": 48,
-     "peso_g": 450,
-     "origem": "freezer — estoque próprio",
-     "nota": "O preparo de verdade é amanhã. Hoje é resolver com o que já existe."
-    },
-    "petisco": {
-     "nome": "Iogurte grego + chocolate 70%",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
-    }
-   }
-  },
-  {
-   "id": "dom0",
-   "nome": "Domingo",
-   "data": "30/08",
-   "tipo": "treino",
-   "flex": true,
-   "treino": {
-    "foco": "🧰 Preparo da semana + corrida leve opcional",
-    "exercicios": [
-     {
-      "nome": "🏃 20 min bem fáceis — só se estiver a fim. Você ainda está sentindo carga.",
-      "series": 1,
-      "reps": "20 min"
-     },
-     {
-      "nome": "🥩 Assa o rosbife e o frango (rI) e fatia — são os lanches da semana",
-      "series": 1,
-      "reps": "50 min"
-     },
-     {
-      "nome": "⚖️ Pesa em jejum",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Mobilidade de tornozelo e quadril",
-      "series": 3,
-      "reps": "45 s"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "Almoço de domingo em casa — proteína + salada grande",
-     "kcal": 650,
-     "prot": 50,
-     "peso_g": 500
-    },
-    "pre_lanche": {
-     "nome": "3 ovos cozidos + queijo prato + fruta",
-     "kcal": 380,
-     "prot": 30,
-     "peso_g": 260,
-     "nota": "Cozinhe os 10 ovos de uma vez hoje — duram 4 dias descascados e viram lanche de 30 segundos."
-    },
-    "lanche_pre_treino": {
-     "nome": "Iogurte + fruta",
-     "kcal": 260,
-     "prot": 24,
-     "peso_g": 250
-    },
-    "janta": {
-     "nome": "Frango assado com abobrinha, berinjela e cebola roxa",
-     "kcal": 560,
-     "prot": 52,
-     "peso_g": 480,
-     "receita": "rO",
-     "nota": "⭐ A receita âncora da semana. Rende 4: uma pra hoje, uma desfiada pros lanches, duas pro freezer. É o preparo de domingo em forma de jantar."
-    },
-    "petisco": {
-     "nome": "Iogurte grego + chocolate 70% (2 quadrados)",
-     "kcal": 210,
-     "prot": 14,
-     "peso_g": 180
-    }
-   }
-  },
-  {
    "id": "seg",
    "nome": "Segunda",
-   "data": "31/08",
+   "data": "07/09",
    "tipo": "treino",
+   "flex": true,
    "treino": {
-    "foco": "🌀 REGENERATIVO — você pediu, e a FC de repouso concorda",
+    "foco": "💪 LOWER A + 🏃 20 min fácil — feriado, sessão sem pressa",
     "exercicios": [
      {
-      "nome": "⚠️ Sua FC de repouso subiu de 48 (27/08) pra 56 nos últimos dois dias, e o HRV caiu de 46 pra 34 — com POUCO treino no meio. Piora de três dias sem carga que justifique. Regenerativo é a leitura certa.",
+      "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🚶 Caminhada 30 min OU corrida muito leve 15–20 min (7–7,5 km/h). Sem ambição.",
-      "series": 1,
-      "reps": "30 min"
-     },
-     {
-      "nome": "Mobilidade completa: tornozelo, panturrilha, quadril, posterior",
-      "series": 3,
-      "reps": "45 s"
-     },
-     {
-      "nome": "❌ Sem força hoje. A primeira sessão pesada é amanhã.",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "Marmita congelada — ou sobra do frango assado",
-     "kcal": 520,
-     "prot": 46,
-     "peso_g": 400,
-     "nota": "Se não comprar as marmitas, o frango de domingo cobre 2 almoços. As 5 marmitas continuam sendo o jeito mais simples, mas deixaram de ser a única saída."
-    },
-    "pre_lanche": {
-     "nome": "🍗 Sanduíche/wrap com 100 g de frango desfiado",
-     "kcal": 390,
-     "prot": 32,
-     "peso_g": 260,
-     "receita": "rO",
-     "nota": "Sai da porção que você separa do frango de domingo. 100 g = ~30 g de proteína — resolve a tarde inteira da semana."
-    },
-    "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos",
-     "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
-    },
-    "janta": {
-     "nome": "Escondidinho de batata doce com patinho moído",
-     "kcal": 620,
-     "prot": 45,
-     "peso_g": 480,
-     "receita": "rK",
-     "nota": "Escondidinho com o patinho fresco. Rende 3 — uma congela e salva a quinta."
-    },
-    "petisco": {
-     "nome": "Iogurte + banana + castanhas",
-     "kcal": 250,
-     "prot": 12,
-     "peso_g": 250
-    }
-   }
-  },
-  {
-   "id": "ter",
-   "nome": "Terça",
-   "data": "01/09",
-   "tipo": "treino",
-   "treino": {
-    "foco": "💪 FORÇA A — Lower com ênfase em CADEIA POSTERIOR (45 min) + corrida 20 min",
-    "exercicios": [
-     {
-      "nome": "🏃 Corrida 20 min fácil ANTES ou depois — se for antes, só 10 min de aquecimento pra não comer a força",
-      "series": 1,
-      "reps": "20 min"
-     },
-     {
-      "nome": "1️⃣ Leg press — 4×6-8. Você já fez 200 kg × 6 em 04/08; comece em 160-180 e progrida.",
+      "nome": "1️⃣ Leg press — 4×6-8, carga alta",
       "series": 4,
       "reps": "6–8"
      },
      {
-      "nome": "2️⃣ STIFF (terra romeno) — 4×8. ⭐ O EXERCÍCIO QUE MAIS FALTA NO SEU HISTÓRICO. Isquiotibiais e glúteo são o motor da arrancada; leg extension isolado não transfere pra sprint.",
+      "nome": "2️⃣ STIFF (terra romeno) — 4×8 ⭐ o motor da arrancada",
       "series": 4,
       "reps": "8"
      },
      {
-      "nome": "3️⃣ Afundo ou búlgaro — 3×8 CADA perna. ⭐ Unilateral. Sprint é unilateral e você não tem nada disso no histórico.",
+      "nome": "3️⃣ Búlgaro ou afundo — 3×8 cada perna ⭐ unilateral",
       "series": 3,
       "reps": "8 cada"
      },
      {
-      "nome": "4️⃣ Leg curl — 3×10. Você vinha com 40 kg; sobe.",
+      "nome": "4️⃣ Leg curl — 3×10",
       "series": 3,
       "reps": "10"
      },
      {
-      "nome": "5️⃣ Panturrilha unilateral — 3×12, descida lenta. Protege o tornozelo E participa da arrancada.",
+      "nome": "5️⃣ Panturrilha unilateral — 3×12, descida lenta",
       "series": 3,
       "reps": "12 cada"
      },
@@ -753,139 +539,154 @@
       "reps": "45 s"
      },
      {
-      "nome": "⏱️ 45 min, não 30. Com 30 min não dá volume pra construir músculo — só pra manter. Descanso de 2 min nos três primeiros.",
+      "nome": "🏃 Corrida 20 min fácil DEPOIS da força",
       "series": 1,
-      "reps": "—"
+      "reps": "20 min"
      }
     ]
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — ou sobra do frango assado",
-     "kcal": 520,
+     "nome": "Marmita ou frango + salada grande",
+     "kcal": 500,
      "prot": 46,
-     "peso_g": 400,
-     "nota": "Se não comprar as marmitas, o frango de domingo cobre 2 almoços. As 5 marmitas continuam sendo o jeito mais simples, mas deixaram de ser a única saída."
+     "peso_g": 420,
+     "nota": "Dia de força: arroz normal. Dia leve: metade."
     },
     "pre_lanche": {
-     "nome": "🍗 Sanduíche/wrap com 100 g de frango desfiado",
-     "kcal": 390,
+     "nome": "🍗 100 g de frango desfiado + 1 fatia de pão (não 2)",
+     "kcal": 340,
      "prot": 32,
-     "peso_g": 260,
-     "receita": "rO",
-     "nota": "Sai da porção que você separa do frango de domingo. 100 g = ~30 g de proteína — resolve a tarde inteira da semana."
+     "peso_g": 230,
+     "nota": "A fatia a menos é ~80 kcal por dia sem tocar na proteína."
     },
     "lanche_pre_treino": {
-     "nome": "Whey + banana (FORÇA A — come 60-90 min antes)",
-     "kcal": 320,
+     "nome": "Whey (30 g) + 2 ovos",
+     "kcal": 280,
      "prot": 32,
-     "peso_g": 300,
-     "nota": "Dia de leg press e stiff pede carboidrato disponível. Treinar perna pesada em jejum desperdiça a sessão."
+     "peso_g": 230,
+     "nota": "Come 60-90 min antes. Dia de perna pesada não se treina em jejum."
     },
     "janta": {
-     "nome": "Macarrão à bolonhesa de carne moída",
-     "kcal": 730,
+     "nome": "Frango ou peixe + legumes + meia porção de arroz",
+     "kcal": 560,
      "prot": 52,
-     "peso_g": 480,
-     "receita": "rF",
-     "nota": "Bolonhesa com o patinho + molho de tomate. Carboidrato depois de perna pesada não é indulgência."
+     "peso_g": 450
     },
     "petisco": {
-     "nome": "Iogurte + banana + castanhas",
-     "kcal": 250,
-     "prot": 12,
-     "peso_g": 250
+     "nome": "Iogurte grego + fruta",
+     "kcal": 190,
+     "prot": 14,
+     "peso_g": 220
+    }
+   }
+  },
+  {
+   "id": "ter",
+   "nome": "Terça",
+   "data": "08/09",
+   "tipo": "treino",
+   "treino": {
+    "foco": "💪 UPPER A + 🏃 30 min fácil",
+    "exercicios": [
+     {
+      "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "1️⃣ Supino reto ou máquina — 4×6-8",
+      "series": 4,
+      "reps": "6–8"
+     },
+     {
+      "nome": "2️⃣ Remada curvada ou máquina — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "3️⃣ Desenvolvimento halter — 3×8",
+      "series": 3,
+      "reps": "8"
+     },
+     {
+      "nome": "4️⃣ Puxada alta — 3×8",
+      "series": 3,
+      "reps": "8"
+     },
+     {
+      "nome": "5️⃣ Rosca direta + tríceps corda — 2×10",
+      "series": 2,
+      "reps": "10"
+     },
+     {
+      "nome": "6️⃣ Core",
+      "series": 3,
+      "reps": "45 s"
+     },
+     {
+      "nome": "🏃 Corrida 30 min fácil (8–8,5 km/h) depois",
+      "series": 1,
+      "reps": "30 min"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Marmita ou frango + salada grande",
+     "kcal": 500,
+     "prot": 46,
+     "peso_g": 420,
+     "nota": "Dia de força: arroz normal. Dia leve: metade."
+    },
+    "pre_lanche": {
+     "nome": "🍗 100 g de frango desfiado + 1 fatia de pão (não 2)",
+     "kcal": 340,
+     "prot": 32,
+     "peso_g": 230,
+     "nota": "A fatia a menos é ~80 kcal por dia sem tocar na proteína."
+    },
+    "lanche_pre_treino": {
+     "nome": "Whey (30 g) + 2 ovos",
+     "kcal": 280,
+     "prot": 32,
+     "peso_g": 230
+    },
+    "janta": {
+     "nome": "Escondidinho ou carne moída + legumes",
+     "kcal": 560,
+     "prot": 52,
+     "peso_g": 450
+    },
+    "petisco": {
+     "nome": "Iogurte grego + fruta",
+     "kcal": 190,
+     "prot": 14,
+     "peso_g": 220
     }
    }
   },
   {
    "id": "qua",
    "nome": "Quarta",
-   "data": "02/09",
+   "data": "09/09",
    "tipo": "treino",
    "treino": {
-    "foco": "🏃 Só corrida — 30 min fácil",
+    "foco": "🎯 AERÓBICO ALTO — o único dia sem força, porque a corrida é a prioridade",
     "exercicios": [
      {
-      "nome": "🏃 30 min contínuo fácil (8–8,5 km/h)",
-      "series": 1,
-      "reps": "30 min"
-     },
-     {
-      "nome": "Dia de menor atrito: sem academia, sem deslocamento. Volume fácil é o que reconstrói a base.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚠️ Véspera de futebol — nada de ritmo.",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "Marmita congelada — ou sobra do frango assado",
-     "kcal": 520,
-     "prot": 46,
-     "peso_g": 400,
-     "nota": "Se não comprar as marmitas, o frango de domingo cobre 2 almoços. As 5 marmitas continuam sendo o jeito mais simples, mas deixaram de ser a única saída."
-    },
-    "pre_lanche": {
-     "nome": "Pasta de atum com iogurte natural (sem maionese) no pão",
-     "kcal": 380,
-     "prot": 30,
-     "peso_g": 250,
-     "nota": "Suas 2 latas cobrem 2 dias. Alterne com o frango pra não enjoar."
-    },
-    "lanche_pre_treino": {
-     "nome": "Whey (30 g) + 2 ovos",
-     "kcal": 300,
-     "prot": 30,
-     "peso_g": 230
-    },
-    "janta": {
-     "nome": "Tilápia assada com tomate, cebola roxa e limão",
-     "kcal": 460,
-     "prot": 48,
-     "peso_g": 480,
-     "receita": "rP",
-     "nota": "⭐ Tilápia — leve de propósito, é véspera de futebol."
-    },
-    "petisco": {
-     "nome": "Iogurte + banana + castanhas",
-     "kcal": 250,
-     "prot": 12,
-     "peso_g": 250
-    }
-   }
-  },
-  {
-   "id": "qui",
-   "nome": "Quinta",
-   "data": "03/09",
-   "tipo": "treino",
-   "treino": {
-    "foco": "🏃 SEM FUTEBOL — corrida com 3 blocos moderados substitui o estímulo do jogo",
-    "exercicios": [
-     {
-      "nome": "💚 Prontidão 98 hoje, sono 6,9 h com score 84, FC repouso 50. Você está pronto — e o futebol era o ÚNICO estímulo de intensidade da semana. Sem ele, a semana fica 100% fácil e o aeróbico alto (227 contra alvo 328) segue parado há um mês.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🏃 Aquecimento 10 min fácil (8 km/h)",
+      "nome": "🏃 Aquecimento 10 min fácil",
       "series": 1,
       "reps": "10 min"
      },
      {
-      "nome": "🏃 3× 5 min a 9–9,5 km/h — 'duro mas conversável'. Alvo de FC 155–170.",
-      "series": 3,
+      "nome": "🏃 4× 5 min a 9–9,5 km/h · alvo de FC 155–170",
+      "series": 4,
       "reps": "5 min"
      },
      {
-      "nome": "♻️ Entre os blocos: 2 min TROTANDO a 8 km/h, não caminhando. A 8 a FC não desce de ~145 e o bloco seguinte parte alto.",
-      "series": 2,
+      "nome": "♻️ 2 min TROTANDO a 8 km/h entre os blocos — a 8 a FC não desce de ~145",
+      "series": 3,
       "reps": "2 min"
      },
      {
@@ -894,107 +695,173 @@
       "reps": "5 min"
      },
      {
-      "nome": "⛔ TETO: 9,5 km/h. Não é dia de teste nem de bater recorde — é repor o que o futebol daria, com controle. Se o segundo bloco vier pesado demais, corta o terceiro e termina fácil.",
+      "nome": "❌ Sem força hoje: é a sessão de corrida mais dura da semana e amanhã tem futebol. Empilhar aqui foi o erro de 05-06/08.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "❌ Sem força hoje — amanhã é Upper. E sem sprint: a fase de aceleração começa sábado, com strides.",
+      "nome": "📊 É este treino que fecha o buraco do aeróbico alto — 227 contra alvo de 328, parado há mais de um mês.",
       "series": 1,
       "reps": "—"
-     },
-     {
-      "nome": "🔄 ALTERNATIVA se preferir não subir intensidade: 30 min contínuos fáceis. Mantém o volume e não custa nada. A semana ainda fecha bem.",
-      "series": 1,
-      "reps": "30 min"
      }
     ]
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — proteína magra identificável",
+     "nome": "Marmita ou frango + salada grande",
      "kcal": 500,
-     "prot": 45,
-     "peso_g": 400,
-     "origem": "marmita congelada (comprada)",
-     "nota": "Confere o rótulo: ≥35 g de proteína. Prefira frango/peixe/patinho; desconfie de base arroz-feijão-embutido."
+     "prot": 46,
+     "peso_g": 420,
+     "nota": "Dia de força: arroz normal. Dia leve: metade."
     },
     "pre_lanche": {
-     "nome": "🍗 Sanduíche/wrap com 100 g de frango desfiado",
-     "kcal": 390,
+     "nome": "🍗 100 g de frango desfiado + 1 fatia de pão (não 2)",
+     "kcal": 340,
      "prot": 32,
-     "peso_g": 260,
-     "receita": "rO",
-     "nota": "Sai da porção que você separa do frango de domingo. 100 g = ~30 g de proteína — resolve a tarde inteira da semana."
+     "peso_g": 230,
+     "nota": "A fatia a menos é ~80 kcal por dia sem tocar na proteína."
     },
     "lanche_pre_treino": {
-     "nome": "Whey (30 g) + fruta — 60 min antes",
-     "kcal": 300,
-     "prot": 30,
-     "peso_g": 250
+     "nome": "Whey (30 g) + 2 ovos",
+     "kcal": 280,
+     "prot": 32,
+     "peso_g": 230
     },
     "janta": {
-     "nome": "🧊 Porção do freezer (escondidinho ou frango) — sem pressa de horário hoje",
-     "kcal": 600,
-     "prot": 46,
-     "peso_g": 450,
-     "origem": "freezer — estoque próprio",
-     "nota": "Sem jogo, a janta volta ao horário normal. A restrição das 21h45 era do futebol."
+     "nome": "Tilápia ou frango + salada grande",
+     "kcal": 520,
+     "prot": 50,
+     "peso_g": 450
     },
     "petisco": {
-     "nome": "21h15 · Shake pós-jogo (ainda no clube)",
-     "kcal": 220,
+     "nome": "Iogurte grego + fruta",
+     "kcal": 190,
+     "prot": 14,
+     "peso_g": 220
+    }
+   }
+  },
+  {
+   "id": "qui",
+   "nome": "Quinta",
+   "data": "10/09",
+   "tipo": "treino",
+   "treino": {
+    "foco": "⚽ FUTEBOL (20h–21h) — o fixo",
+    "exercicios": [
+     {
+      "nome": "🕕 18h — refeição pré-jogo. Sair do trabalho comido decide a quinta.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🏃 Aquecimento 10-12 min + mobilidade de tornozelo",
+      "series": 1,
+      "reps": "12 min"
+     },
+     {
+      "nome": "⚽ Jogo",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🥤 21h15 — shake antes de sair do clube",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Sem força hoje.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Marmita ou frango + salada grande",
+     "kcal": 500,
+     "prot": 46,
+     "peso_g": 420,
+     "nota": "Dia de força: arroz normal. Dia leve: metade."
+    },
+    "pre_lanche": {
+     "nome": "🍗 100 g de frango desfiado + 1 fatia de pão (não 2)",
+     "kcal": 340,
+     "prot": 32,
+     "peso_g": 230,
+     "nota": "A fatia a menos é ~80 kcal por dia sem tocar na proteína."
+    },
+    "lanche_pre_treino": {
+     "nome": "18h · Refeição pré-jogo — arroz + proteína magra",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": 400,
+     "nota": "Único dia com carboidrato cheio à noite. Jogo em déficit sem combustível é como você se machuca."
+    },
+    "janta": {
+     "nome": "21h45 · Porção separada antes — proteína cheia, acompanhamento pela metade",
+     "kcal": 480,
+     "prot": 40,
+     "peso_g": 450
+    },
+    "petisco": {
+     "nome": "21h15 · Shake pós-jogo",
+     "kcal": 200,
      "prot": 28,
-     "peso_g": 300,
-     "nota": "Chegar sem fome em casa é o que segura a porção das 21h45. 220 kcal comprando 400."
+     "peso_g": 300
     }
    }
   },
   {
    "id": "sex",
    "nome": "Sexta",
-   "data": "04/09",
+   "data": "11/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 FORÇA B — Upper completo (45 min) + corrida 20 min",
+    "foco": "💪 UPPER B + 🏃 20 min fácil — perna descansa do futebol",
     "exercicios": [
+     {
+      "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "1️⃣ Pec deck ou crucifixo inclinado — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "2️⃣ Puxada alta ou barra assistida — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "3️⃣ Remada unilateral com halter — 3×10 cada",
+      "series": 3,
+      "reps": "10 cada"
+     },
+     {
+      "nome": "4️⃣ Elevação lateral — 3×12",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "5️⃣ Rosca martelo + tríceps testa — 2×10",
+      "series": 2,
+      "reps": "10"
+     },
+     {
+      "nome": "6️⃣ Core",
+      "series": 3,
+      "reps": "45 s"
+     },
      {
       "nome": "🏃 Corrida 20 min fácil",
       "series": 1,
       "reps": "20 min"
      },
      {
-      "nome": "1️⃣ Supino reto ou pec deck — 4×6-8. Você fez pec deck 90 kg × 6 em 12/08.",
-      "series": 4,
-      "reps": "6–8"
-     },
-     {
-      "nome": "2️⃣ Remada máquina ou curvada — 4×8. Vinha com 40 kg; sobe.",
-      "series": 4,
-      "reps": "8"
-     },
-     {
-      "nome": "3️⃣ Puxada alta — 3×8. Você fez 70 kg × 6.",
-      "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "4️⃣ Desenvolvimento (máquina ou halter) — 3×8",
-      "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "5️⃣ Rosca direta + tríceps corda — 2×10 cada",
-      "series": 2,
-      "reps": "10"
-     },
-     {
-      "nome": "6️⃣ Core: prancha e dead bug",
-      "series": 3,
-      "reps": "45 s"
-     },
-     {
-      "nome": "⏱️ 45 min. Mesma lógica de terça.",
+      "nome": "Upper hoje de propósito: a perna jogou ontem e treina de novo amanhã.",
       "series": 1,
       "reps": "—"
      }
@@ -1002,67 +869,89 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Marmita congelada — ou sobra do frango assado",
-     "kcal": 520,
+     "nome": "Marmita ou frango + salada grande",
+     "kcal": 500,
      "prot": 46,
-     "peso_g": 400,
-     "nota": "Se não comprar as marmitas, o frango de domingo cobre 2 almoços. As 5 marmitas continuam sendo o jeito mais simples, mas deixaram de ser a única saída."
+     "peso_g": 420,
+     "nota": "Dia de força: arroz normal. Dia leve: metade."
     },
     "pre_lanche": {
-     "nome": "Pasta de atum com iogurte natural (sem maionese) no pão",
-     "kcal": 380,
-     "prot": 30,
-     "peso_g": 250,
-     "nota": "Suas 2 latas cobrem 2 dias. Alterne com o frango pra não enjoar."
+     "nome": "🍗 100 g de frango desfiado + 1 fatia de pão (não 2)",
+     "kcal": 340,
+     "prot": 32,
+     "peso_g": 230,
+     "nota": "A fatia a menos é ~80 kcal por dia sem tocar na proteína."
     },
     "lanche_pre_treino": {
-     "nome": "Whey + banana (FORÇA B)",
-     "kcal": 320,
+     "nome": "Whey (30 g) + 2 ovos",
+     "kcal": 280,
      "prot": 32,
-     "peso_g": 300
+     "peso_g": 230
     },
     "janta": {
-     "nome": "Feijão preto com couve e paio (versão contida)",
-     "kcal": 600,
-     "prot": 38,
-     "peso_g": 480,
-     "receita": "rM",
-     "nota": "Feijão preto com couve. 150 g de paio, não o pacote — e escorre a gordura do refogado."
+     "nome": "Feijão com couve + proteína, meia porção de arroz",
+     "kcal": 560,
+     "prot": 45,
+     "peso_g": 450
     },
     "petisco": {
-     "nome": "Iogurte + banana + castanhas",
-     "kcal": 250,
-     "prot": 12,
-     "peso_g": 250
+     "nome": "Iogurte grego + fruta",
+     "kcal": 190,
+     "prot": 14,
+     "peso_g": 220
     }
    }
   },
   {
    "id": "sab",
    "nome": "Sábado",
-   "data": "05/09",
+   "data": "12/09",
    "tipo": "treino",
-   "flex": true,
    "treino": {
-    "foco": "🎯 Corrida longa 5 km — ou jogo, se houver",
+    "foco": "💪 LOWER B — A SESSÃO GARANTIDA DO FIM DE SEMANA",
     "exercicios": [
      {
-      "nome": "🏃 5 km contínuo a 8,5–9 km/h. Reconstruir, não bater recorde.",
-      "series": 1,
-      "reps": "5 km"
-     },
-     {
-      "nome": "🏃 6 strides de 20 s progressivos no FIM (até ~85%, não máximo). É o primeiro degrau rumo à arrancada — educativo de passada, risco baixo.",
-      "series": 6,
-      "reps": "20 s"
-     },
-     {
-      "nome": "Alternativa: futebol ou trilha. Impacto é impacto.",
+      "nome": "🔒 Esta é a inegociável. Se a semana desandar, é ela que não se perde.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📝 Se for JOGO DE CAMPEONATO: relógio não entra em campo (regra da competição). O registro é o seu relato — anote depois se conseguiu arrancar, se o fôlego sustentou e como o tornozelo respondeu. Isso é dado, não é 'menos que dado'.",
+      "nome": "1️⃣ Agachamento (Smith ou livre) — 4×6-8",
+      "series": 4,
+      "reps": "6–8"
+     },
+     {
+      "nome": "2️⃣ Levantamento terra ou stiff com halteres — 3×8",
+      "series": 3,
+      "reps": "8"
+     },
+     {
+      "nome": "3️⃣ Passada/afundo caminhando — 3×10 cada perna ⭐",
+      "series": 3,
+      "reps": "10 cada"
+     },
+     {
+      "nome": "4️⃣ Cadeira extensora — 3×12 (única do quadríceps isolado na semana)",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "5️⃣ Elevação de quadril (glúteo) — 3×12",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "6️⃣ Panturrilha sentada — 3×15",
+      "series": 3,
+      "reps": "15"
+     },
+     {
+      "nome": "🏃 15-20 min fáceis depois, se sobrar disposição — opcional",
+      "series": 1,
+      "reps": "20 min"
+     },
+     {
+      "nome": "⚠️ Se amanhã tiver futebol, segure a carga do agachamento (deixe 3-4 reps na reserva). Se amanhã for corrida, pode ir pesado.",
       "series": 1,
       "reps": "—"
      }
@@ -1070,62 +959,71 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "🍽️ REFEIÇÃO LIVRE da semana — uma só",
-     "kcal": 900,
-     "prot": 45,
-     "peso_g": 600,
-     "nota": "Aqui entram sorvete, Pringles, Doritos. Concentrados numa ocasião custam pouco; espalhados pela semana viram o vazamento."
+     "nome": "Marmita ou frango + salada grande",
+     "kcal": 500,
+     "prot": 46,
+     "peso_g": 420,
+     "nota": "Dia de força: arroz normal. Dia leve: metade."
     },
     "pre_lanche": {
-     "nome": "🍗 Sanduíche/wrap com 100 g de frango desfiado",
-     "kcal": 390,
+     "nome": "🍗 100 g de frango desfiado + 1 fatia de pão (não 2)",
+     "kcal": 340,
      "prot": 32,
-     "peso_g": 260,
-     "receita": "rO",
-     "nota": "Sai da porção que você separa do frango de domingo. 100 g = ~30 g de proteína — resolve a tarde inteira da semana."
+     "peso_g": 230,
+     "nota": "A fatia a menos é ~80 kcal por dia sem tocar na proteína."
     },
     "lanche_pre_treino": {
-     "nome": "Fruta + castanhas",
-     "kcal": 250,
-     "prot": 12,
-     "peso_g": 200
+     "nome": "Whey (30 g) + 2 ovos",
+     "kcal": 280,
+     "prot": 32,
+     "peso_g": 230
     },
     "janta": {
-     "nome": "🧊 Sobra do feijão de sexta + couve refogada",
-     "kcal": 600,
-     "prot": 38,
-     "peso_g": 450,
-     "origem": "geladeira"
+     "nome": "Proteína + legumes + salada",
+     "kcal": 560,
+     "prot": 52,
+     "peso_g": 450
     },
     "petisco": {
-     "nome": "Iogurte + banana + castanhas",
-     "kcal": 250,
-     "prot": 12,
-     "peso_g": 250
+     "nome": "Iogurte grego + fruta + 2 quadrados de chocolate 70%",
+     "kcal": 230,
+     "prot": 14,
+     "peso_g": 230,
+     "nota": "A válvula da semana. Uma sobremesa, não um almoço livre."
     }
    }
   },
   {
    "id": "dom",
    "nome": "Domingo",
-   "data": "06/09",
+   "data": "13/09",
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "🌀 Leve + preparo da semana 2",
+    "foco": "⚽ FUTEBOL RECREATIVO ou 🏃 6 km — um dos dois",
     "exercicios": [
      {
-      "nome": "🏃 20 min fáceis",
-      "series": 1,
-      "reps": "20 min"
-     },
-     {
-      "nome": "🥩 Preparo do bloco de proteína + compras",
+      "nome": "OPÇÃO A — ⚽ futebol recreativo. É o impacto do fim de semana e vale mais que a corrida.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📋 Pesa em jejum e me chama — na semana 2 sobe o volume de força e entra 1 sessão de aeróbico alto.",
+      "nome": "OPÇÃO B — 🏃 6 km contínuos a 8,5-9 km/h. Sobe de 5 km, que você fechou em 05/09 a 8,65 km/h.",
+      "series": 1,
+      "reps": "6 km"
+     },
+     {
+      "nome": "🏃 Se for a Opção B: 6 strides de 20 s progressivos no fim (até ~85%). Fase 1 da aceleração.",
+      "series": 6,
+      "reps": "20 s"
+     },
+     {
+      "nome": "❌ Não faça as duas. Depois do Lower de ontem, uma já é suficiente.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📋 Pesa em jejum e me chama — fecho a média de 7 dias e monto a próxima.",
       "series": 1,
       "reps": "—"
      }
@@ -1133,37 +1031,35 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Almoço de domingo em casa — proteína + salada grande",
-     "kcal": 650,
+     "nome": "Almoço de domingo — proteína + salada grande",
+     "kcal": 600,
      "prot": 48,
-     "peso_g": 500
+     "peso_g": 480
     },
     "pre_lanche": {
-     "nome": "3 ovos cozidos + queijo prato + fruta",
-     "kcal": 380,
-     "prot": 30,
-     "peso_g": 260,
-     "nota": "Cozinhe os 10 ovos de uma vez hoje — duram 4 dias descascados e viram lanche de 30 segundos."
+     "nome": "🍗 100 g de frango desfiado + 1 fatia de pão (não 2)",
+     "kcal": 340,
+     "prot": 32,
+     "peso_g": 230,
+     "nota": "A fatia a menos é ~80 kcal por dia sem tocar na proteína."
     },
     "lanche_pre_treino": {
-     "nome": "Iogurte + fruta",
-     "kcal": 260,
-     "prot": 20,
-     "peso_g": 250
+     "nome": "Whey (30 g) + 2 ovos",
+     "kcal": 280,
+     "prot": 32,
+     "peso_g": 230
     },
     "janta": {
-     "nome": "Lentilha com legumes e ovo poché",
+     "nome": "Lentilha com ovo poché ou sobra do freezer",
      "kcal": 520,
-     "prot": 34,
-     "peso_g": 480,
-     "receita": "rN",
-     "nota": "Lentilha com ovo poché — leve, e lentilha não precisa de molho prévio."
+     "prot": 40,
+     "peso_g": 450
     },
     "petisco": {
-     "nome": "Iogurte + banana + castanhas",
-     "kcal": 250,
-     "prot": 12,
-     "peso_g": 250
+     "nome": "Iogurte grego + fruta",
+     "kcal": 190,
+     "prot": 14,
+     "peso_g": 220
     }
    }
   }
