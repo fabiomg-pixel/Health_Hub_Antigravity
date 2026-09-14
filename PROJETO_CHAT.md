@@ -108,6 +108,9 @@ precisa ser redistribuída.
   mais que 2 Yopro. Preparo de domingo (receita `rI`), montagem de 2 min.
 - **JANTA = cozinhada rendendo 2–3.** A porção extra vai pro freezer **antes de sentar à mesa**
   — depois de servida ela some. É o que salva o dia em que tudo dá errado.
+- **COMPLEMENTAÇÃO PROTEICA (decidida em 13/09/2026):** 2 doses de whey por dia — dose 1 no iogurte
+  da tarde, dose 2 na ceia ou logo após o treino. Janta low carb de quentinha (300–380 g) leva 2 ovos de
+  reforço até o rótulo confirmar ≥35 g. Pré-treino fixo: banana + 1 fatia de pão integral + 2 ovos.
 - **Fim de semana = UMA refeição livre calibrada**, não um dia livre. O padrão observado é
   escorregar para três (sexta à noite, sábado, domingo) — e é a terceira que apaga a semana.
 
