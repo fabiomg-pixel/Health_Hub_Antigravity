@@ -92,6 +92,8 @@
   ]
  },
  "relatorio": [
+  "🌦️ PREVISÃO DA SEMANA (Fundão/UFRJ): chuva forte segunda, chuva no fim da tarde de terça, fim de tarde instável na quarta, e sexta a domingo secos. O sol se põe às 17h46–17h48 a semana toda, então corrida na rua depois das 18h é no escuro.",
+  "📍 AJUSTE DE LOCAL: seg, ter e qua a corrida vai pra esteira (chuva, escuro, e na quarta o intervalado pede velocidade controlada). Sexta é o dia da rua: corra às 17h00–17h45 com luz. Sábado Lower B às 8h. Domingo, 6 km entre 6h30 e 8h, antes do UV 7 do meio-dia.",
   "🎯 CONTROLE TOTAL ESTA SEMANA: todas as refeições têm horário, porção e origem definidos no painel, inclusive lanche e pré-treino. Nada fica para decidir com fome. É o formato das semanas em que o peso andou.",
   "💊 COMPLEMENTAÇÃO PROTEICA FIXA: duas doses de whey por dia. A dose 1 vai no iogurte às 15h30; a dose 2 na ceia ou logo após o treino. São ~55 g de proteína garantidos independente do que as quentinhas entregarem.",
   "🧊 AS 10 QUENTINHAS TÊM DIA MARCADO: jantas low carb de segunda a sexta (N06, N44, N41, N39, N06) e almoços com carbo de terça a sábado (N65, N62, N98, N64, N65). Carbo no almoço, quando você treina; low carb à noite, em déficit.",
@@ -505,8 +507,18 @@
    "data": "14/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 LOWER A + 🏃 20 min fácil",
+    "foco": "💪 LOWER A + 🏃 20 min NA ESTEIRA — chuva o dia todo",
     "exercicios": [
+     {
+      "nome": "🌧️ Chuva o dia inteiro (~23 mm, 100%), 19–21 °C. ☀️ Pôr do sol 17h46.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📍 Tudo na academia. A corrida de 20 min vai para a esteira, depois da força.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "🍽️ As quentinhas chegam hoje: a janta já é a N06.",
       "series": 1,
@@ -599,8 +611,18 @@
    "data": "15/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 UPPER A + 🏃 30 min fácil",
+    "foco": "💪 UPPER A + 🏃 30 min na esteira — chuva a partir das 17h",
     "exercicios": [
+     {
+      "nome": "🌦️ Seco até o meio da tarde; chuva de 81–87% das 17h às 20h. ☀️ Pôr do sol 17h47.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📍 Upper na academia e corrida de 30 min na esteira. Rua no fim da tarde hoje é chuva no escuro.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
       "series": 1,
@@ -689,8 +711,18 @@
    "data": "16/09",
    "tipo": "treino",
    "treino": {
-    "foco": "🎯 AERÓBICO ALTO — o único dia sem força, porque a corrida é a prioridade",
+    "foco": "🎯 AERÓBICO ALTO NA ESTEIRA — velocidade controlada",
     "exercicios": [
+     {
+      "nome": "🌥️ Chuva de manhã; fim de tarde mais seco (27–33%), 19–20 °C, úmido. ☀️ Pôr do sol 17h47.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📍 Esteira: intervalado precisa de velocidade exata (convenção: esteira pra prescrever). Às 18h já está escuro no Fundão.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "🏃 Aquecimento 10 min fácil",
       "series": 1,
@@ -769,8 +801,18 @@
    "data": "17/09",
    "tipo": "treino",
    "treino": {
-    "foco": "⚽ FUTEBOL (20h–21h) — o fixo",
+    "foco": "⚽ FUTEBOL 20h — noite seca e fresca",
     "exercicios": [
+     {
+      "nome": "⛅ Noite seca (chuva 21–25%), ~20 °C, umidade 73%. Boa noite de jogo. Garoa só de manhã.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "☀️ Pôr do sol 17h47. Jogo é à noite, sem ajuste.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "🕕 18h — refeição pré-jogo. Sair do trabalho comido decide a quinta.",
       "series": 1,
@@ -844,8 +886,18 @@
    "data": "18/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 UPPER B + 🏃 20 min fácil — perna descansa do futebol",
+    "foco": "💪 UPPER B + 🏃 20 min NA RUA — melhor dia da semana",
     "exercicios": [
+     {
+      "nome": "☀️ Dia aberto, 0% de chuva, 18–23 °C. Pôr do sol 17h47.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📍 Corrida na rua do trabalho às 17h00–17h45, com luz do dia. Depois Upper na academia (a corrida é fácil, então a ordem invertida aqui não atrapalha).",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
       "series": 1,
@@ -939,8 +991,18 @@
    "data": "19/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 LOWER B — a sessão garantida (caiu nos dois últimos sábados)",
+    "foco": "🔒 LOWER B às 8h–9h — antes do calor e da casa",
     "exercicios": [
+     {
+      "nome": "🌤️ Seco. Fresco cedo (18–19 °C), mas meio-dia chega a 25 °C com sensação de 29 °C.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📍 Academia às 8h–9h: fica antes da manutenção da casa e antes do calor.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "⚠️ Os dois últimos sábados foram tomados por casa e trabalho. Faça a sessão ANTES da manutenção da casa, de manhã — depois ela não acontece.",
       "series": 1,
@@ -1038,8 +1100,23 @@
    "data": "20/09",
    "tipo": "treino",
    "treino": {
-    "foco": "⚽ FUTEBOL RECREATIVO ou 🏃 6 km — um dos dois",
+    "foco": "🏃 6 km às 6h30–8h (ou futebol de manhã) — evite o meio do dia",
     "exercicios": [
+     {
+      "nome": "🌤️ Manhã boa: 19,5–20 °C, umidade 73%, 3% de chuva. Sol nasce 5h44.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "⚠️ UV 7,4 ao meio-dia e chance de chuva de 27–33% à tarde. Corrida entre 6h30 e 8h. Se for futebol, que seja de manhã.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📍 6 km na rua (ou orla), com água.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "OPÇÃO A — ⚽ futebol recreativo. É o impacto do fim de semana e vale mais que a corrida.",
       "series": 1,
