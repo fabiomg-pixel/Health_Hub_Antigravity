@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-09-13",
- "semana": "14 a 20/set · CONTROLE TOTAL — toda refeição definida, whey 2×/dia",
+ "semana": "14 a 20/set · CONTROLE TOTAL · replanejada 15/09 (campeonato sáb)",
  "objetivo": "Retomar o controle de todas as refeições: 10 quentinhas com dia marcado, lanches e pré-treino fixos, duas doses de whey por dia. Sem refeição livre e sem álcool nesta semana.",
  "peso_atual": 94.5,
  "fontes_status": {
@@ -92,8 +92,10 @@
   ]
  },
  "relatorio": [
-  "🌦️ PREVISÃO DA SEMANA (Fundão/UFRJ): chuva forte segunda, chuva no fim da tarde de terça, fim de tarde instável na quarta, e sexta a domingo secos. O sol se põe às 17h46–17h48 a semana toda, então corrida na rua depois das 18h é no escuro.",
-  "📍 AJUSTE DE LOCAL: seg, ter e qua a corrida vai pra esteira (chuva, escuro, e na quarta o intervalado pede velocidade controlada). Sexta é o dia da rua: corra às 17h00–17h45 com luz. Sábado Lower B às 8h. Domingo, 6 km entre 6h30 e 8h, antes do UV 7 do meio-dia.",
+  "🔁 REPLANEJADO EM 15/09: segunda não teve academia, e sábado é campeonato. O Lower A vai para terça, o Upper A para quarta (sai o intervalado, que era véspera de futebol) e o Lower B para domingo, depois do jogo, com carga contida.",
+  "📅 SEMANA: ter Lower A + esteira · qua Upper A + 30 min fácil · qui futebol com teto de 60–70 min · sex Upper B sem corrida · sáb 🏆 campeonato · dom Lower B + 30 min fácil.",
+  "🧭 MOLDE NOVO A PARTIR DE 21/09: SEGUNDA LIGHT de manhã, quase opcional (mobilidade + core + 20–30 min fáceis, ou nada se não der). DOMINGO PESADO e garantido: força de perna + o volume aeróbico da semana. A segunda deixa de carregar treino que não pode ser perdido.",
+  "🏆 SEM RELÓGIO NO CAMPEONATO: o seu relato em texto é o registro do jogo. Minutos, posição, arrancadas, tornozelo.",
   "🎯 CONTROLE TOTAL ESTA SEMANA: todas as refeições têm horário, porção e origem definidos no painel, inclusive lanche e pré-treino. Nada fica para decidir com fome. É o formato das semanas em que o peso andou.",
   "💊 COMPLEMENTAÇÃO PROTEICA FIXA: duas doses de whey por dia. A dose 1 vai no iogurte às 15h30; a dose 2 na ceia ou logo após o treino. São ~55 g de proteína garantidos independente do que as quentinhas entregarem.",
   "🧊 AS 10 QUENTINHAS TÊM DIA MARCADO: jantas low carb de segunda a sexta (N06, N44, N41, N39, N06) e almoços com carbo de terça a sábado (N65, N62, N98, N64, N65). Carbo no almoço, quando você treina; low carb à noite, em déficit.",
@@ -507,62 +509,17 @@
    "data": "14/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 LOWER A + 🏃 20 min NA ESTEIRA — chuva o dia todo",
+    "foco": "❌ NÃO FEITO — reunião/sem academia. Lower A foi para terça.",
     "exercicios": [
      {
-      "nome": "🌧️ Chuva o dia inteiro (~23 mm, 100%), 19–21 °C. ☀️ Pôr do sol 17h46.",
+      "nome": "Não se compensa em dobro. O Lower A inteiro vai para terça, e o Upper de terça passa para quarta, no lugar do intervalado.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📍 Tudo na academia. A corrida de 20 min vai para a esteira, depois da força.",
+      "nome": "🧭 A partir de 21/09 a segunda vira dia LIGHT, de manhã e quase opcional. Ver o molde novo no relatório.",
       "series": 1,
       "reps": "—"
-     },
-     {
-      "nome": "🍽️ As quentinhas chegam hoje: a janta já é a N06.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "1️⃣ Leg press — 4×6-8, carga alta",
-      "series": 4,
-      "reps": "6–8"
-     },
-     {
-      "nome": "2️⃣ STIFF (terra romeno) — 4×8 ⭐ o motor da arrancada",
-      "series": 4,
-      "reps": "8"
-     },
-     {
-      "nome": "3️⃣ Búlgaro ou afundo — 3×8 cada perna ⭐ unilateral",
-      "series": 3,
-      "reps": "8 cada"
-     },
-     {
-      "nome": "4️⃣ Leg curl — 3×10",
-      "series": 3,
-      "reps": "10"
-     },
-     {
-      "nome": "5️⃣ Panturrilha unilateral — 3×12, descida lenta",
-      "series": 3,
-      "reps": "12 cada"
-     },
-     {
-      "nome": "6️⃣ Prancha + prancha lateral",
-      "series": 3,
-      "reps": "45 s"
-     },
-     {
-      "nome": "🏃 Corrida 20 min fácil DEPOIS da força",
-      "series": 1,
-      "reps": "20 min"
      }
     ]
    },
@@ -611,57 +568,57 @@
    "data": "15/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 UPPER A + 🏃 30 min na esteira — chuva a partir das 17h",
+    "foco": "💪 LOWER A (veio de segunda) + 🏃 20 min na esteira — chuva a partir das 17h",
     "exercicios": [
      {
-      "nome": "🌦️ Seco até o meio da tarde; chuva de 81–87% das 17h às 20h. ☀️ Pôr do sol 17h47.",
+      "nome": "🌦️ Chuva de 81–87% das 17h às 20h. ☀️ Pôr do sol 17h47. Tudo na academia.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📍 Upper na academia e corrida de 30 min na esteira. Rua no fim da tarde hoje é chuva no escuro.",
+      "nome": "🔁 Troca: hoje é Lower A, não Upper. Com campeonato no sábado, perna pesada tem que ser até terça (4 dias de folga até o jogo). Quarta ou depois já chega no sábado com a perna pesada.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
+      "nome": "⚡ Ordem: força primeiro, esteira depois.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "1️⃣ Supino reto ou máquina — 4×6-8",
+      "nome": "1️⃣ Leg press — 4×6-8, carga alta",
       "series": 4,
       "reps": "6–8"
      },
      {
-      "nome": "2️⃣ Remada curvada ou máquina — 4×8",
+      "nome": "2️⃣ STIFF (terra romeno) — 4×8 ⭐ o motor da arrancada",
       "series": 4,
       "reps": "8"
      },
      {
-      "nome": "3️⃣ Desenvolvimento halter — 3×8",
+      "nome": "3️⃣ Búlgaro ou afundo — 3×8 cada perna ⭐ unilateral",
       "series": 3,
-      "reps": "8"
+      "reps": "8 cada"
      },
      {
-      "nome": "4️⃣ Puxada alta — 3×8",
+      "nome": "4️⃣ Leg curl — 3×10",
       "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "5️⃣ Rosca direta + tríceps corda — 2×10",
-      "series": 2,
       "reps": "10"
      },
      {
-      "nome": "6️⃣ Core",
+      "nome": "5️⃣ Panturrilha unilateral — 3×12, descida lenta",
+      "series": 3,
+      "reps": "12 cada"
+     },
+     {
+      "nome": "6️⃣ Prancha + prancha lateral",
       "series": 3,
       "reps": "45 s"
      },
      {
-      "nome": "🏃 Corrida 30 min fácil (8–8,5 km/h) depois",
+      "nome": "🏃 Esteira 20 min fácil (8–8,5 km/h) DEPOIS da força",
       "series": 1,
-      "reps": "30 min"
+      "reps": "20 min"
      }
     ]
    },
@@ -711,47 +668,57 @@
    "data": "16/09",
    "tipo": "treino",
    "treino": {
-    "foco": "🎯 AERÓBICO ALTO NA ESTEIRA — velocidade controlada",
+    "foco": "💪 UPPER A + 🏃 30 min FÁCIL na esteira",
     "exercicios": [
      {
-      "nome": "🌥️ Chuva de manhã; fim de tarde mais seco (27–33%), 19–20 °C, úmido. ☀️ Pôr do sol 17h47.",
+      "nome": "🌥️ Fim de tarde mais seco, mas úmido e escuro depois das 17h47. Esteira.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📍 Esteira: intervalado precisa de velocidade exata (convenção: esteira pra prescrever). Às 18h já está escuro no Fundão.",
+      "nome": "🔁 Saiu o intervalado. Tiro na véspera de futebol já deu o pior jogo da série (05–06/08), e a semana tem dois jogos. O aeróbico alto da semana vem do próprio futebol: ~19 min acima de FC 155 por jogo.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏃 Aquecimento 10 min fácil",
+      "nome": "⚡ Ordem: força primeiro, esteira depois.",
       "series": 1,
-      "reps": "10 min"
+      "reps": "—"
      },
      {
-      "nome": "🏃 4× 5 min a 9–9,5 km/h · alvo de FC 155–170",
+      "nome": "1️⃣ Supino reto ou máquina — 4×6-8",
       "series": 4,
-      "reps": "5 min"
+      "reps": "6–8"
      },
      {
-      "nome": "♻️ 2 min TROTANDO a 8 km/h entre os blocos — a 8 a FC não desce de ~145",
+      "nome": "2️⃣ Remada curvada ou máquina — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "3️⃣ Desenvolvimento halter — 3×8",
       "series": 3,
-      "reps": "2 min"
+      "reps": "8"
      },
      {
-      "nome": "🏃 5 min fáceis pra fechar",
-      "series": 1,
-      "reps": "5 min"
+      "nome": "4️⃣ Puxada alta — 3×8",
+      "series": 3,
+      "reps": "8"
      },
      {
-      "nome": "❌ Sem força hoje: é a sessão de corrida mais dura da semana e amanhã tem futebol. Empilhar aqui foi o erro de 05-06/08.",
-      "series": 1,
-      "reps": "—"
+      "nome": "5️⃣ Rosca direta + tríceps corda — 2×10",
+      "series": 2,
+      "reps": "10"
      },
      {
-      "nome": "📊 É este treino que fecha o buraco do aeróbico alto — 227 contra alvo de 328, parado há mais de um mês.",
+      "nome": "6️⃣ Core",
+      "series": 3,
+      "reps": "45 s"
+     },
+     {
+      "nome": "🏃 30 min fáceis a 8–8,5 km/h DEPOIS da força",
       "series": 1,
-      "reps": "—"
+      "reps": "30 min"
      }
     ]
    },
@@ -761,7 +728,7 @@
      "kcal": 520,
      "prot": 38,
      "peso_g": 400,
-     "nota": "Almoço com carbo em dia de intervalado — é o combustível dos 4 blocos.",
+     "nota": "Almoço com carbo antes da academia.",
      "origem": "quentinha Food Brasil"
     },
     "pre_lanche": {
@@ -822,6 +789,11 @@
       "nome": "🏃 Aquecimento 10-12 min + mobilidade de tornozelo",
       "series": 1,
       "reps": "12 min"
+     },
+     {
+      "nome": "⏱️ TETO DE 60–70 MIN e sem ir ao limite nas arrancadas finais. O jogo que importa é o de sábado.",
+      "series": 1,
+      "reps": "—"
      },
      {
       "nome": "⚽ Jogo",
@@ -886,20 +858,15 @@
    "data": "18/09",
    "tipo": "treino",
    "treino": {
-    "foco": "💪 UPPER B + 🏃 20 min NA RUA — melhor dia da semana",
+    "foco": "💪 UPPER B — SEM corrida, véspera de campeonato",
     "exercicios": [
      {
-      "nome": "☀️ Dia aberto, 0% de chuva, 18–23 °C. Pôr do sol 17h47.",
+      "nome": "☀️ Dia aberto, 18–23 °C. Não tem corrida hoje, então o horário é livre.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📍 Corrida na rua do trabalho às 17h00–17h45, com luz do dia. Depois Upper na academia (a corrida é fácil, então a ordem invertida aqui não atrapalha).",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚡ ORDEM: FORÇA PRIMEIRO, corrida depois. Aeróbico antes derruba o desempenho na força (fadiga + glicogênio); força antes quase não atrapalha corrida fácil. Se a logística obrigar a correr no trabalho e passar na academia depois, tudo bem — mas aí a corrida tem que ser FÁCIL DE VERDADE.",
+      "nome": "Carga normal, mas sem ir à falha (deixe 2 reps na reserva).",
       "series": 1,
       "reps": "—"
      },
@@ -934,12 +901,12 @@
       "reps": "45 s"
      },
      {
-      "nome": "🏃 Corrida 20 min fácil",
+      "nome": "🦵 10 min de mobilidade de quadril e tornozelo. Nada de perna.",
       "series": 1,
-      "reps": "20 min"
+      "reps": "—"
      },
      {
-      "nome": "Upper hoje de propósito: a perna jogou ontem e treina de novo amanhã.",
+      "nome": "❌ Sem corrida: é véspera de campeonato. Chegar com a perna descansada vale mais que 20 min de rodagem.",
       "series": 1,
       "reps": "—"
      }
@@ -991,25 +958,104 @@
    "data": "19/09",
    "tipo": "treino",
    "treino": {
-    "foco": "🔒 LOWER B às 8h–9h — antes do calor e da casa",
+    "foco": "🏆 CAMPEONATO — sem relógio (regra do campeonato)",
     "exercicios": [
      {
-      "nome": "🌤️ Seco. Fresco cedo (18–19 °C), mas meio-dia chega a 25 °C com sensação de 29 °C.",
+      "nome": "🌤️ Seco. Meio-dia com 25 °C e sensação de 29 °C: se o jogo for à tarde, beba 500 ml de água nas 2h antes.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📍 Academia às 8h–9h: fica antes da manutenção da casa e antes do calor.",
+      "nome": "⌚ Não há registro do relógio. Depois do jogo, me mande um texto: minutos jogados, posição, como a perna respondeu nas arrancadas e se o tornozelo reclamou.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚠️ Os dois últimos sábados foram tomados por casa e trabalho. Faça a sessão ANTES da manutenção da casa, de manhã — depois ela não acontece.",
+      "nome": "🏃 Aquecimento 12–15 min: trote, mobilidade de tornozelo, 4 acelerações progressivas.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🔒 Esta é a inegociável. Se a semana desandar, é ela que não se perde.",
+      "nome": "⚽ Jogo",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🥤 Whey logo após o jogo (dose 2).",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "❌ Sem academia hoje. O Lower B vai para domingo.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "🧊 N65 · Maxi Carbo de Frango",
+     "kcal": 520,
+     "prot": 40,
+     "peso_g": 400,
+     "nota": "Almoço com carbo ~3h antes do jogo. Se o jogo for de manhã, troque por café reforçado (pão + ovos + banana) e deixe a N65 para depois.",
+     "origem": "quentinha Food Brasil"
+    },
+    "pre_lanche": {
+     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
+     "kcal": 330,
+     "prot": 30,
+     "peso_g": 320,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
+    },
+    "lanche_pre_treino": {
+     "nome": "~60–90 min antes do jogo · PRÉ-JOGO · Banana + 2 fatias de pão integral + 2 ovos",
+     "kcal": 400,
+     "prot": 19,
+     "peso_g": null,
+     "nota": "O mesmo pré-jogo de quinta. Isotônico só se o jogo passar de 60 min."
+    },
+    "janta": {
+     "nome": "Casa · Omelete de 4 ovos + legumes refogados + 1 fatia de queijo",
+     "kcal": 500,
+     "prot": 34,
+     "peso_g": 350,
+     "nota": "Controlada, não livre, mesmo depois de jogo. A fome do pós-jogo é o momento em que escorrega."
+    },
+    "petisco": {
+     "nome": "Logo após o jogo · 💊 WHEY DOSE 2 (com água ou leite)",
+     "kcal": 130,
+     "prot": 24,
+     "peso_g": null,
+     "nota": "Ainda no campo. Sem ceia depois."
+    }
+   }
+  },
+  {
+   "id": "dom",
+   "nome": "Domingo",
+   "data": "20/09",
+   "tipo": "treino",
+   "treino": {
+    "foco": "🔒 DOMINGO PESADO: LOWER B + 🏃 30 min fácil — 7h–9h",
+    "exercicios": [
+     {
+      "nome": "🌤️ Manhã boa, 19,5–20 °C. UV 7,4 ao meio-dia. Treine cedo.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🧭 É o molde novo: domingo é o dia pesado e garantido, porque a segunda cai em reunião.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "⚠️ Hoje é o dia depois do campeonato. Carga em RPE 7 (3 reps na reserva) e sem saltos. Se as pernas estiverem destruídas, faça metade das séries, e isso conta como feito.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "❌ Sem futebol hoje: dois jogos na semana já são o impacto.",
       "series": 1,
       "reps": "—"
      },
@@ -1039,106 +1085,12 @@
       "reps": "12"
      },
      {
-      "nome": "6️⃣ Panturrilha sentada — 3×15",
-      "series": 3,
-      "reps": "15"
-     },
-     {
-      "nome": "🏃 15-20 min fáceis depois, se sobrar disposição — opcional",
+      "nome": "🏃 30 min fáceis a 8–8,5 km/h DEPOIS da força (esteira ou rua)",
       "series": 1,
-      "reps": "20 min"
+      "reps": "30 min"
      },
      {
-      "nome": "⚠️ Se amanhã tiver futebol, segure a carga do agachamento (deixe 3-4 reps na reserva). Se amanhã for corrida, pode ir pesado.",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "🧊 N65 · Maxi Carbo de Frango",
-     "kcal": 520,
-     "prot": 40,
-     "peso_g": 400,
-     "nota": "A última quentinha. Almoço com carbo antes do Lower B.",
-     "origem": "quentinha Food Brasil"
-    },
-    "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
-    },
-    "lanche_pre_treino": {
-     "nome": "~60–90 min antes do treino · Banana + 1 fatia de pão integral + 2 ovos cozidos",
-     "kcal": 320,
-     "prot": 17,
-     "peso_g": 230,
-     "nota": "Carboidrato rápido + proteína, gordura baixa. Treino de força em jejum desperdiça a sessão. Cozinhe os ovos da semana no domingo."
-    },
-    "janta": {
-     "nome": "Casa · Omelete de 4 ovos + legumes refogados + 1 fatia de queijo",
-     "kcal": 500,
-     "prot": 34,
-     "peso_g": 350,
-     "nota": "Controlada, não livre. Abobrinha, tomate e cebola que ainda estiverem na geladeira."
-    },
-    "petisco": {
-     "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
-     "kcal": 200,
-     "prot": 31,
-     "peso_g": 230,
-     "nota": "💊 WHEY DOSE 2. Fecha a proteína do dia. Em dia de treino à noite, tome logo depois do treino e pule a ceia."
-    }
-   }
-  },
-  {
-   "id": "dom",
-   "nome": "Domingo",
-   "data": "20/09",
-   "tipo": "treino",
-   "treino": {
-    "foco": "🏃 6 km às 6h30–8h (ou futebol de manhã) — evite o meio do dia",
-    "exercicios": [
-     {
-      "nome": "🌤️ Manhã boa: 19,5–20 °C, umidade 73%, 3% de chuva. Sol nasce 5h44.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚠️ UV 7,4 ao meio-dia e chance de chuva de 27–33% à tarde. Corrida entre 6h30 e 8h. Se for futebol, que seja de manhã.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "📍 6 km na rua (ou orla), com água.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "OPÇÃO A — ⚽ futebol recreativo. É o impacto do fim de semana e vale mais que a corrida.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "OPÇÃO B — 🏃 6 km contínuos a 8,5-9 km/h. Sobe de 5 km, que você fechou em 05/09 a 8,65 km/h.",
-      "series": 1,
-      "reps": "6 km"
-     },
-     {
-      "nome": "🏃 Se for a Opção B: 6 strides de 20 s progressivos no fim (até ~85%). Fase 1 da aceleração.",
-      "series": 6,
-      "reps": "20 s"
-     },
-     {
-      "nome": "❌ Não faça as duas. Depois do Lower de ontem, uma já é suficiente.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "📋 Pesa em jejum e me chama — fecho a média de 7 dias e monto a próxima.",
+      "nome": "📋 Pese em jejum e me chame para fechar a média de 7 dias.",
       "series": 1,
       "reps": "—"
      }
@@ -1150,7 +1102,7 @@
      "kcal": 550,
      "prot": 45,
      "peso_g": 450,
-     "nota": "Proteína do freezer. Descongele na geladeira no sábado à noite."
+     "nota": "Almoço de dia pesado: pode levar 4 colheres de arroz. Descongele a proteína na geladeira no sábado à noite."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
@@ -1181,7 +1133,7 @@
      "nota": "💊 WHEY DOSE 2. Fecha a proteína do dia. Em dia de treino à noite, tome logo depois do treino e pule a ceia."
     }
    },
-   "flex": true
+   "flex": false
   }
  ]
 }

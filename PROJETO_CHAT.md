@@ -323,6 +323,12 @@ Cada refeição: `{nome, kcal, prot, peso_g, origem?, receita?, nota?}`.
   de 55–77 min dão RE 81–99. Acima de ~50 min o custo explode.
 - **O futebol é o melhor estímulo de aeróbico alto que ele tem:** ~19 min acima de FC 155 num
   jogo, contra ~3 min de um intervalado prescrito para isso.
+- 🧭 **MOLDE DA SEMANA (15/09/2026):** a **segunda é LIGHT, de manhã e quase opcional**, porque
+  costuma cair em reunião no fim do dia (mobilidade + core + 20–30 min fáceis, ou nada). O
+  **domingo é o dia PESADO e garantido** (força de perna + volume aeróbico). Nunca ponha na
+  segunda um treino que não pode ser perdido.
+- **Semana com campeonato no sábado:** perna pesada no máximo até terça. Sexta com Upper e sem
+  corrida. O Lower perdido vai para domingo com RPE 7. Não haverá dado de relógio do jogo.
 - **Não empilhar corrida intensa na véspera de futebol.** Intervalado na quarta + jogo na
   quinta (05–06/08) produziu o pior jogo da série.
 - **Recuperação entre blocos:** 7 km/h é a zona morta da marcha (rápido demais para caminhar,
