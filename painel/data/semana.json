@@ -1,144 +1,146 @@
 {
- "gerado_em": "2026-09-13",
- "semana": "14 a 20/set · CONTROLE TOTAL · replanejada 15/09 (campeonato sáb)",
- "objetivo": "Retomar o controle de todas as refeições: 10 quentinhas com dia marcado, lanches e pré-treino fixos, duas doses de whey por dia. Sem refeição livre e sem álcool nesta semana.",
+ "gerado_em": "2026-09-22",
+ "semana": "22 a 28/set · 4 REGRAS — menos prescrição, mais adesão",
+ "objetivo": "Fechar a média de 7 dias abaixo de 94,0 kg com QUATRO regras simples, e fazer as duas sessões de perna que não acontecem há duas semanas. Uma refeição livre marcada: sábado à noite.",
  "peso_atual": 94.5,
  "fontes_status": {
-  "strava": "ok",
+  "strava": "indisponível",
   "garmin": "ok",
   "peso": "ok",
-  "nutricao": "pendente",
+  "nutricao": "ok",
   "fitbod": "pendente"
  },
  "dieta": {
   "calorias": 1900,
-  "proteina": 165,
-  "proteina_piso": 150,
+  "proteina": 160,
+  "proteina_piso": 140,
   "gordura": 60,
-  "carbo": 170,
+  "carbo": 175,
   "fibra": 30
  },
  "regra_prato": {
-  "titulo": "Controle total · nada fica para decidir na hora",
+  "titulo": "As 4 regras da semana (o cardápio minucioso não sobreviveu)",
   "linhas": [
-   "🧊 10 quentinhas com DIA MARCADO: almoço com carbo (ter–sáb), janta low carb (seg–sex). Não troque a ordem.",
-   "💊 WHEY 2× POR DIA: dose 1 no iogurte às 15h30, dose 2 na ceia (ou logo após o treino). São ~55 g de proteína garantidos.",
-   "🥚 Janta low carb leva 2 ovos de reforço FIXO. As porções de 300–380 g não fecham proteína sozinhas.",
-   "🍌 Pré-treino fixo: banana + 1 fatia de pão integral + 2 ovos, 60–90 min antes.",
-   "🚫 SEM refeição livre e SEM álcool esta semana. Powerade só na quinta, no futebol.",
-   "📸 Fotografe o rótulo de N65, N06, N98, N44 e N39 no primeiro dia. Com o número real, os ovos de reforço podem sair."
+   "1️⃣ BUFFET COM REGRA DO PRATO: metade salada e legumes, 1/4 proteína grelhada, 1/4 arroz e feijão. SEM FRITURA E SEM SOBREMESA — foi o padrão de 14, 18 e 21/09 (fritas, pastel de Nutella, pastel de doce de leite, sorvete).",
+   "2️⃣ WHEY 2× POR DIA: dose 1 no iogurte às 15h30, dose 2 na ceia ou logo após o treino. ~55 g de proteína garantidos, aconteça o que acontecer no almoço.",
+   "3️⃣ JANTA EM CASA, sempre proteína + legumes. É a refeição que você controla de verdade.",
+   "4️⃣ UMA REFEIÇÃO LIVRE, MARCADA: sábado à noite. Sexta e domingo voltam a ser dias normais.",
+   "😴 REGRA ZERO desta semana: 7h30 na cama. O índice sintético está vermelho há 5 dias e o sono médio é 6,6 h — nenhuma dieta compensa isso.",
+   "⚖️ Pese todo dia em jejum. O que vale é a média de 7 dias, não o número do dia."
   ]
  },
  "tendencias": {
-  "prontidao_media_7d": 76,
-  "prontidao_garmin_hoje": 99,
-  "indice_agudo_hoje": 48,
-  "sono_media_7d": 6.8,
-  "sono_score_hoje": 82,
+  "prontidao_media_7d": 73,
+  "prontidao_garmin_hoje": 50,
+  "indice_agudo_hoje": 34,
+  "sono_media_7d": 6.6,
+  "sono_score_hoje": 77,
   "rem_hoje": null,
-  "training_status": "RECOVERY · destreino",
-  "peso_delta_kg": 0.0,
+  "training_status": "RECOVERY · índice sintético vermelho há 5 dias",
+  "peso_delta_kg": 0.1,
   "volume_series_semana": 0,
   "prontidao": [
    {
-    "data": "23/08",
+    "data": "16/09",
+    "valor": 92,
+    "banda": "y",
+    "meu": 56
+   },
+   {
+    "data": "17/09",
     "valor": 67,
     "banda": "y",
-    "meu": 41
-   },
-   {
-    "data": "24/08",
-    "valor": 57,
-    "banda": "y",
-    "meu": 42
-   },
-   {
-    "data": "25/08",
-    "valor": 92,
-    "banda": "g",
-    "meu": 68
-   },
-   {
-    "data": "26/08",
-    "valor": 86,
-    "banda": "g",
     "meu": 71
    },
    {
-    "data": "27/08",
-    "valor": 86,
-    "banda": "g",
-    "meu": 86
+    "data": "18/09",
+    "valor": 75,
+    "banda": "r",
+    "meu": 24
    },
    {
-    "data": "28/08",
-    "valor": 95,
-    "banda": "g",
-    "meu": 64
+    "data": "19/09",
+    "valor": 93,
+    "banda": "r",
+    "meu": 11
    },
    {
-    "data": "29/08",
-    "valor": 99,
-    "banda": "g",
-    "meu": 48
+    "data": "20/09",
+    "valor": 70,
+    "banda": "r",
+    "meu": 14
+   },
+   {
+    "data": "21/09",
+    "valor": 65,
+    "banda": "r",
+    "meu": 18
+   },
+   {
+    "data": "22/09",
+    "valor": 50,
+    "banda": "r",
+    "meu": 34
    }
   ]
  },
  "status_treino": {
-  "planejado": 8,
-  "feito": 0,
+  "planejado": 6,
+  "feito": 4,
   "dias_feitos": [
-   "Últimos 12 dias: 5 atividades (2 corridas, 1 força, 1 futebol). O plano pedia corrida diária."
+   "Semana 14–21/09: quarta (força), quinta (futebol, 631 kcal ativas), domingo (jogo, sem relógio) e segunda (academia + corrida leve). Lower A de terça e Upper B de sexta não aconteceram — são DUAS semanas sem treino pesado de perna."
   ]
  },
  "relatorio": [
-  "🔁 REPLANEJADO EM 15/09: segunda não teve academia, e sábado é campeonato. O Lower A vai para terça, o Upper A para quarta (sai o intervalado, que era véspera de futebol) e o Lower B para domingo, depois do jogo, com carga contida.",
-  "📅 SEMANA: ter Lower A + esteira · qua Upper A + 30 min fácil · qui futebol com teto de 60–70 min · sex Upper B sem corrida · sáb 🏆 campeonato · dom Lower B + 30 min fácil.",
-  "🧭 MOLDE NOVO A PARTIR DE 21/09: SEGUNDA LIGHT de manhã, quase opcional (mobilidade + core + 20–30 min fáceis, ou nada se não der). DOMINGO PESADO e garantido: força de perna + o volume aeróbico da semana. A segunda deixa de carregar treino que não pode ser perdido.",
-  "🏆 SEM RELÓGIO NO CAMPEONATO: o seu relato em texto é o registro do jogo. Minutos, posição, arrancadas, tornozelo.",
-  "🎯 CONTROLE TOTAL ESTA SEMANA: todas as refeições têm horário, porção e origem definidos no painel, inclusive lanche e pré-treino. Nada fica para decidir com fome. É o formato das semanas em que o peso andou.",
-  "💊 COMPLEMENTAÇÃO PROTEICA FIXA: duas doses de whey por dia. A dose 1 vai no iogurte às 15h30; a dose 2 na ceia ou logo após o treino. São ~55 g de proteína garantidos independente do que as quentinhas entregarem.",
-  "🧊 AS 10 QUENTINHAS TÊM DIA MARCADO: jantas low carb de segunda a sexta (N06, N44, N41, N39, N06) e almoços com carbo de terça a sábado (N65, N62, N98, N64, N65). Carbo no almoço, quando você treina; low carb à noite, em déficit.",
-  "🥚 REFORÇO NA JANTA: as low carb são porções de 300–380 g e o cardápio não mostra proteína. Até ver o rótulo, a janta leva 2 ovos fixos. Quinta é exceção: a N39 às 21h45 fica sozinha, por causa do sono.",
-  "📊 A CONTA DO DIA TÍPICO: quentinha no almoço (~520 kcal) + iogurte com whey (330) + pré-treino (320) + janta low carb com ovos (520) + ceia com whey (200) = ~1.890 kcal e ~160–165 g de proteína. Os valores das quentinhas são estimados; os rótulos de terça calibram.",
-  "🚫 SEM REFEIÇÃO LIVRE E SEM ÁLCOOL. O fim de semana passado foi poke e fast food na sexta, poke e lámen no sábado, jejum e lasanha no domingo. O jejum compensou parte, mas o sódio de lámen, fast food e lasanha vai inflar a balança até quarta.",
-  "⚖️ NÃO LEIA A PESAGEM DE SEGUNDA NEM A DE TERÇA. A média de 07–10/09 caiu para 94,28 (era 94,70 na semana anterior): o déficit de dia útil funcionou. A primeira leitura limpa desta semana é quarta ou quinta.",
-  "🍽️ SEGUNDA NO ALMOÇO: QUILO, NÃO JEJUM. É dia de Lower A, e jejum até a noite com perna pesada desperdiça a sessão. Metade do prato de proteína, sem fritura nem embutido.",
-  "💪 SÁBADO: o Lower B caiu nos dois últimos sábados (casa e trabalho). Faça a sessão DE MANHÃ, antes da manutenção da casa. Se isso não for possível, me avise e a gente muda o dia da sessão garantida."
+  "🚩 O SINAL MAIS IMPORTANTE DA SEMANA: o índice sintético desabou — 86 (15/09) → 24, 11, 14, 18, 34. Cinco dias no vermelho, enquanto o Garmin ainda marcava 65–93. É exatamente o caso para o qual o índice existe: o Garmin otimista e o corpo não. Causa: HRV de 46 → 32-37 ms, FC de repouso de 47 → 55 bpm e sono de 6,6 h de média.",
+  "⚖️ PESO PAROU: média de 7 dias em 94,4 kg contra 94,3 da semana anterior. Mas na sexta (18/09) a balança marcou 93,65 — o corpo responde quando a semana é limpa. O que aconteceu depois foi feijoada com fritas na sexta, jogo no domingo e festinha na segunda.",
+  "🍟 O PLANO DE 'CONTROLE TOTAL' DUROU UM DIA E MEIO. Os registros mostram buffet no almoço quase todo dia, e sobremesa em 14, 21 e 21/09 (pastel de Nutella, pastel de doce de leite, sorvete). Das 10 quentinhas, aparece UMA nos registros. Prescrever 35 refeições não funcionou — esta semana são 4 regras.",
+  "🦵 DUAS SEMANAS SEM PERNA PESADA. O Lower A caiu na segunda (reunião) e de novo na terça; o Lower B caiu no sábado do campeonato. É o treino que sustenta a arrancada que você sentiu faltar no jogo. Terça e sábado desta semana são inegociáveis.",
+  "✅ O QUE FUNCIONOU: você jogou na quinta e no domingo e ainda foi à academia na segunda mesmo cansado. A frequência de treino não é mais o gargalo — o gargalo é a comida e o sono.",
+  "🌦️ PREVISÃO: segunda e terça com chuva forte (15 mm e 64 mm), quarta ainda chuvosa; de quinta a domingo seco. Sexta é o único dia bom de rua (0% de chuva às 17h). Pôr do sol 17h49–17h51.",
+  "🏆 Se houver jogo de campeonato no domingo, não há relógio — o seu relato em texto é o registro."
  ],
  "lista_compra": [
   {
-   "cat": "🧊 Pedido Food Brasil (amanhã)",
+   "cat": "🥩 Proteína (a janta da semana inteira)",
    "itens": [
-    "2× N65 · 1× N64 · 1× N62 · 1× N98 (+R$ 1,99) — almoços",
-    "2× N06 · 1× N44 · 1× N39 · 1× N41 — jantas",
-    "Total: R$ 228,52",
-    "Observação: 'Se faltar algum prato, trocar por N49, N65 ou N25. Não enviar pratos com calabresa, bacon ou creme de leite.'"
+    "Peito de frango — 1,2 kg (ou o que já está no freezer)",
+    "Tilápia — 6 filés",
+    "Ovos — 3 dúzias (pré-treino, omelete e reforço)",
+    "Carne moída patinho — 500 g (backup de sopa/escondidinho)"
    ]
   },
   {
    "cat": "💊 Complementação proteica",
    "itens": [
-    "Whey — 2 doses/dia = ~420 g na semana. Pote de 900 g dura 2 semanas; se o atual estiver na metade, compre outro",
-    "Leite desnatado 1 L (ceia)"
+    "Whey — 2 doses/dia = ~420 g na semana",
+    "Leite desnatado 1 L",
+    "Iogurte natural 170 g — 7 potes"
    ]
   },
   {
-   "cat": "🛒 Para lanches e pré-treino",
+   "cat": "🥦 Legumes e salada",
    "itens": [
-    "Ovos — 2 dúzias e meia (30 unidades): 2 no pré-treino + 2 de reforço na janta, quase todo dia",
-    "Iogurte natural 170 g — 7 potes (1 por dia com o whey)",
-    "Bananas — 8 (pré-treino, mais uma no jogo)",
+    "Abobrinha, cenoura, berinjela",
+    "Brócolis e couve-flor",
+    "Alface, tomate, pepino",
+    "Cebola, alho, limão"
+   ]
+  },
+  {
+   "cat": "🍞 Carbo e fruta",
+   "itens": [
     "Pão integral — 1 pacote",
-    "Frutas para a tarde: tangerina, uva ou maçã"
+    "Banana — 1 penca",
+    "Tangerina ou uva",
+    "Arroz integral e feijão (conferir estoque)"
    ]
   },
   {
-   "cat": "✅ Já tem em casa",
+   "cat": "🧊 Opcional — quentinhas",
    "itens": [
-    "Frango e tilápia congelados (domingo)",
-    "Abobrinha, tomate, cebola, queijo (omelete de sábado)",
-    "Arroz"
+    "Se pedir de novo, peça 5 (ter–sex + sáb), não 10. Das 10 da semana passada, os registros mostram uma usada.",
+    "Os melhores do cardápio: N65 (Maxi Carbo de Frango), N64 (487 kcal / 45 g), N98 (carne moída), N06 e N44 (low carb para a janta)."
    ]
   }
  ],
@@ -506,18 +508,29 @@
   {
    "id": "seg",
    "nome": "Segunda",
-   "data": "14/09",
-   "tipo": "treino",
+   "data": "22/09",
+   "tipo": "light",
+   "flex": false,
    "treino": {
-    "foco": "❌ NÃO FEITO — reunião/sem academia. Lower A foi para terça.",
+    "foco": "🟦 SEGUNDA LIGHT — chuva o dia todo (15 mm, 100%)",
     "exercicios": [
      {
-      "nome": "Não se compensa em dobro. O Lower A inteiro vai para terça, e o Upper de terça passa para quarta, no lugar do intervalado.",
+      "nome": "🧭 É o molde novo: segunda quase opcional, porque o fim do dia costuma cair em reunião. Hoje ainda chove 90–98% das 18h às 21h.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🧭 A partir de 21/09 a segunda vira dia LIGHT, de manhã e quase opcional. Ver o molde novo no relatório.",
+      "nome": "🛋️ EM CASA, 15 min, sem academia: mobilidade de quadril e tornozelo + prancha 3×45 s + ponte de glúteo 3×15 + 20 flexões.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "😴 A TAREFA REAL DE HOJE É DORMIR. O índice sintético está VERMELHO há 5 dias (11–34) com sono de 6,6 h, HRV de 46 → 37 e FC de repouso de 47 → 54. Cama às 22h30.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Se não der nem isso, tudo bem. Segunda é o dia que pode cair.",
       "series": 1,
       "reps": "—"
      }
@@ -525,63 +538,52 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · QUILO com regra (não jejum)",
+     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
      "kcal": 600,
      "prot": 45,
-     "peso_g": 450,
-     "nota": "Hoje é Lower A: jejum não combina com perna pesada. Metade do prato de proteína grelhada, 1/4 salada, 1/4 arroz. Sem fritura e sem embutido — ainda tem sódio do fim de semana."
+     "peso_g": null,
+     "nota": "Metade do prato de salada e legumes, 1/4 de proteína grelhada, 1/4 de arroz/feijão. Sem fritura e sem sobremesa. Se o almoço já passou, vale para amanhã."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
-    "lanche_pre_treino": {
-     "nome": "~60–90 min antes do treino · Banana + 1 fatia de pão integral + 2 ovos cozidos",
-     "kcal": 320,
-     "prot": 17,
-     "peso_g": 230,
-     "nota": "Carboidrato rápido + proteína, gordura baixa. Treino de força em jejum desperdiça a sessão. Cozinhe os ovos da semana no domingo."
-    },
+    "lanche_pre_treino": null,
     "janta": {
-     "nome": "🧊 N06 · Low Carb de Cenoura com Frango Desfiado + 2 ovos",
-     "kcal": 520,
-     "prot": 44,
-     "peso_g": 480,
-     "nota": "Low carb de 300–380 g é porção pequena: os 2 ovos são reforço FIXO, não opcional. Fotografe o rótulo — se passar de 35 g de proteína, os ovos saem.",
-     "origem": "quentinha Food Brasil"
+     "nome": "Casa · Frango ou tilápia do freezer + legumes refogados",
+     "kcal": 480,
+     "prot": 45,
+     "peso_g": null,
+     "nota": "Descongele hoje. Sem fritura, sem arroz na segunda."
     },
     "petisco": {
      "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
      "kcal": 200,
      "prot": 31,
-     "peso_g": 230,
-     "nota": "💊 WHEY DOSE 2. Fecha a proteína do dia. Em dia de treino à noite, tome logo depois do treino e pule a ceia."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 2. Em dia de treino à noite, tome logo depois e pule a ceia."
     }
    }
   },
   {
    "id": "ter",
    "nome": "Terça",
-   "data": "15/09",
+   "data": "23/09",
    "tipo": "treino",
+   "flex": false,
    "treino": {
-    "foco": "💪 LOWER A (veio de segunda) + 🏃 20 min na esteira — chuva a partir das 17h",
+    "foco": "💪 LOWER A — o treino que sumiu há 2 semanas",
     "exercicios": [
      {
-      "nome": "🌦️ Chuva de 81–87% das 17h às 20h. ☀️ Pôr do sol 17h47. Tudo na academia.",
+      "nome": "⛈️ TEMPORAL: 64 mm e 96–100% de chuva das 16h às 21h. Nada de rua.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🔁 Troca: hoje é Lower A, não Upper. Com campeonato no sábado, perna pesada tem que ser até terça (4 dias de folga até o jogo). Quarta ou depois já chega no sábado com a perna pesada.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚡ Ordem: força primeiro, esteira depois.",
+      "nome": "⚠️ Se o temporal inviabilizar a academia, PLANO B EM CASA (20 min, conta como feito): agachamento búlgaro 3×12 cada perna com mochila carregada + ponte de glúteo unilateral 3×12 + panturrilha unilateral 3×15 + prancha 3×45 s.",
       "series": 1,
       "reps": "—"
      },
@@ -616,72 +618,66 @@
       "reps": "45 s"
      },
      {
-      "nome": "🏃 Esteira 20 min fácil (8–8,5 km/h) DEPOIS da força",
+      "nome": "🏃 Sem corrida hoje. Com o índice em vermelho, é força ou nada.",
       "series": 1,
-      "reps": "20 min"
+      "reps": "—"
      }
     ]
    },
    "refeicoes": {
     "almoco": {
-     "nome": "🧊 N65 · Maxi Carbo de Frango",
-     "kcal": 520,
-     "prot": 40,
-     "peso_g": 400,
-     "nota": "Filé grelhado, arroz integral, brócolis, purê de batata doce. O melhor prato do pedido. Fotografe o rótulo.",
-     "origem": "quentinha Food Brasil"
+     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "kcal": 600,
+     "prot": 45,
+     "peso_g": null,
+     "nota": "Metade do prato de salada e legumes, 1/4 de proteína grelhada, 1/4 de arroz/feijão. Sem fritura e sem sobremesa. Dia de perna: não vá de salada só."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
     "lanche_pre_treino": {
      "nome": "~60–90 min antes do treino · Banana + 1 fatia de pão integral + 2 ovos cozidos",
      "kcal": 320,
      "prot": 17,
-     "peso_g": 230,
-     "nota": "Carboidrato rápido + proteína, gordura baixa. Treino de força em jejum desperdiça a sessão. Cozinhe os ovos da semana no domingo."
+     "peso_g": null,
+     "nota": "Só em dia de treino. Cozinhe os ovos da semana hoje à noite ou na terça."
     },
     "janta": {
-     "nome": "🧊 N44 · Low Carb de Frango com Quiabo + 2 ovos",
-     "kcal": 520,
-     "prot": 44,
-     "peso_g": 450,
-     "nota": "Low carb de 300–380 g é porção pequena: os 2 ovos são reforço FIXO, não opcional. Fotografe o rótulo — se passar de 35 g de proteína, os ovos saem.",
-     "origem": "quentinha Food Brasil"
+     "nome": "Casa · Omelete de 3 ovos + 1 fatia de queijo + salada",
+     "kcal": 450,
+     "prot": 34,
+     "peso_g": null,
+     "nota": "Rápida, para não empurrar a janta para as 22h."
     },
     "petisco": {
      "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
      "kcal": 200,
      "prot": 31,
-     "peso_g": 230,
-     "nota": "💊 WHEY DOSE 2. Fecha a proteína do dia. Em dia de treino à noite, tome logo depois do treino e pule a ceia."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 2. Em dia de treino à noite, tome logo depois e pule a ceia."
     }
    }
   },
   {
    "id": "qua",
    "nome": "Quarta",
-   "data": "16/09",
+   "data": "24/09",
    "tipo": "treino",
+   "flex": false,
    "treino": {
-    "foco": "💪 UPPER A + 🏃 30 min FÁCIL na esteira",
+    "foco": "💪 UPPER A + 🏃 30 min fáceis na esteira",
     "exercicios": [
      {
-      "nome": "🌥️ Fim de tarde mais seco, mas úmido e escuro depois das 17h47. Esteira.",
+      "nome": "🌧️ Ainda chuvoso (8 mm, 64–75% no fim da tarde). Esteira.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🔁 Saiu o intervalado. Tiro na véspera de futebol já deu o pior jogo da série (05–06/08), e a semana tem dois jogos. O aeróbico alto da semana vem do próprio futebol: ~19 min acima de FC 155 por jogo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚡ Ordem: força primeiro, esteira depois.",
+      "nome": "⚡ Ordem: força primeiro, corrida fácil depois.",
       "series": 1,
       "reps": "—"
      },
@@ -716,67 +712,66 @@
       "reps": "45 s"
      },
      {
-      "nome": "🏃 30 min fáceis a 8–8,5 km/h DEPOIS da força",
+      "nome": "🏃 30 min fáceis a 8–8,5 km/h depois da força",
       "series": 1,
       "reps": "30 min"
+     },
+     {
+      "nome": "❌ Sem tiros: amanhã tem futebol, e intervalado na véspera já deu o pior jogo da série (05–06/08).",
+      "series": 1,
+      "reps": "—"
      }
     ]
    },
    "refeicoes": {
     "almoco": {
-     "nome": "🧊 N62 · Frango com Quiabo e arroz integral",
-     "kcal": 520,
-     "prot": 38,
-     "peso_g": 400,
-     "nota": "Almoço com carbo antes da academia.",
-     "origem": "quentinha Food Brasil"
+     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "kcal": 600,
+     "prot": 45,
+     "peso_g": null,
+     "nota": "Metade do prato de salada e legumes, 1/4 de proteína grelhada, 1/4 de arroz/feijão. Sem fritura e sem sobremesa."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
     "lanche_pre_treino": {
      "nome": "~60–90 min antes do treino · Banana + 1 fatia de pão integral + 2 ovos cozidos",
      "kcal": 320,
      "prot": 17,
-     "peso_g": 230,
-     "nota": "Carboidrato rápido + proteína, gordura baixa. Treino de força em jejum desperdiça a sessão. Cozinhe os ovos da semana no domingo."
+     "peso_g": null,
+     "nota": "Só em dia de treino. Cozinhe os ovos da semana hoje à noite ou na terça."
     },
     "janta": {
-     "nome": "🧊 N41 · Salada de Lentilha com Frango Desfiado + 2 ovos",
-     "kcal": 520,
+     "nome": "Casa · Tilápia assada + abobrinha e cenoura no forno",
+     "kcal": 430,
      "prot": 42,
-     "peso_g": 430,
-     "nota": "A lentilha repõe um pouco de carbo depois dos blocos. Ovos como reforço fixo.",
-     "origem": "quentinha Food Brasil"
+     "peso_g": null,
+     "nota": "Assa tudo junto em 25 min."
     },
     "petisco": {
      "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
      "kcal": 200,
      "prot": 31,
-     "peso_g": 230,
-     "nota": "💊 WHEY DOSE 2. Fecha a proteína do dia. Em dia de treino à noite, tome logo depois do treino e pule a ceia."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 2. Em dia de treino à noite, tome logo depois e pule a ceia."
     }
    }
   },
   {
    "id": "qui",
    "nome": "Quinta",
-   "data": "17/09",
-   "tipo": "treino",
+   "data": "25/09",
+   "tipo": "futebol",
+   "flex": false,
    "treino": {
-    "foco": "⚽ FUTEBOL 20h — noite seca e fresca",
+    "foco": "⚽ FUTEBOL 20h — noite seca",
     "exercicios": [
      {
-      "nome": "⛅ Noite seca (chuva 21–25%), ~20 °C, umidade 73%. Boa noite de jogo. Garoa só de manhã.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "☀️ Pôr do sol 17h47. Jogo é à noite, sem ajuste.",
+      "nome": "⛅ Chuva de 13–33% à noite, 18–25 °C. Jogo mantido.",
       "series": 1,
       "reps": "—"
      },
@@ -791,17 +786,12 @@
       "reps": "12 min"
      },
      {
-      "nome": "⏱️ TETO DE 60–70 MIN e sem ir ao limite nas arrancadas finais. O jogo que importa é o de sábado.",
+      "nome": "⚽ Jogo — é o melhor estímulo de aeróbico alto da semana (~19 min acima de FC 155).",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚽ Jogo",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🥤 21h15 — shake antes de sair do clube",
+      "nome": "🥤 Whey logo depois, ainda no clube.",
       "series": 1,
       "reps": "—"
      },
@@ -814,59 +804,58 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "🧊 N98 · Carne Moída com Cenoura e Arroz Integral + 2 ovos",
-     "kcal": 660,
-     "prot": 50,
-     "peso_g": 500,
-     "nota": "Os ovos de reforço vão no ALMOÇO na quinta, porque a janta das 21h45 precisa ser pequena.",
-     "origem": "quentinha Food Brasil"
+     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "kcal": 600,
+     "prot": 45,
+     "peso_g": null,
+     "nota": "Metade do prato de salada e legumes, 1/4 de proteína grelhada, 1/4 de arroz/feijão. Sem fritura e sem sobremesa. Dia de jogo: pode levar arroz e feijão inteiros."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
     "lanche_pre_treino": {
      "nome": "18h00 · PRÉ-JOGO · Banana + 2 fatias de pão integral + 2 ovos",
      "kcal": 400,
      "prot": 19,
-     "peso_g": 300,
-     "nota": "Dia de futebol pede mais carbo que dia de sala. Isotônico (Powerade) só hoje, se o jogo passar de 60 min."
+     "peso_g": null,
+     "nota": "Isotônico só se o jogo passar de 60 min."
     },
     "janta": {
-     "nome": "🧊 21h45 · N39 · Low Carb de Frango Xadrez (300 g)",
-     "kcal": 340,
-     "prot": 28,
-     "peso_g": 300,
-     "nota": "Porção pequena de propósito: janta às 21h45 com cama às 23h. Sem os ovos hoje.",
-     "origem": "quentinha Food Brasil"
+     "nome": "~21h45 · Janta PEQUENA em casa · 2 ovos mexidos + salada",
+     "kcal": 300,
+     "prot": 20,
+     "peso_g": null,
+     "nota": "Porção pequena de propósito: janta tarde com cama às 23h."
     },
     "petisco": {
      "nome": "21h15 · 💊 WHEY DOSE 2 no clube (com água)",
      "kcal": 130,
      "prot": 24,
-     "peso_g": 300,
-     "nota": "Antes de sair do clube. É o que segura a fome até a janta pequena."
+     "peso_g": null,
+     "nota": "Antes de sair. É o que segura a fome até a janta pequena."
     }
    }
   },
   {
    "id": "sex",
    "nome": "Sexta",
-   "data": "18/09",
+   "data": "26/09",
    "tipo": "treino",
+   "flex": false,
    "treino": {
-    "foco": "💪 UPPER B — SEM corrida, véspera de campeonato",
+    "foco": "💪 UPPER B + 🏃 25 min NA RUA — 0% de chuva",
     "exercicios": [
      {
-      "nome": "☀️ Dia aberto, 18–23 °C. Não tem corrida hoje, então o horário é livre.",
+      "nome": "☀️ Dia aberto, 19–24 °C, 0% de chuva das 16h às 21h. ☀️ Pôr do sol 17h50.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Carga normal, mas sem ir à falha (deixe 2 reps na reserva).",
+      "nome": "📍 É o dia da rua: corra no trabalho às 17h00–17h45, com luz.",
       "series": 1,
       "reps": "—"
      },
@@ -901,12 +890,12 @@
       "reps": "45 s"
      },
      {
-      "nome": "🦵 10 min de mobilidade de quadril e tornozelo. Nada de perna.",
+      "nome": "🏃 25 min fáceis + 4 strides de 20 s no fim",
       "series": 1,
-      "reps": "—"
+      "reps": "25 min"
      },
      {
-      "nome": "❌ Sem corrida: é véspera de campeonato. Chegar com a perna descansada vale mais que 20 min de rodagem.",
+      "nome": "🍔 ATENÇÃO: sexta à noite foi feijoada com fritas + hambúrguer na semana passada. A refeição livre desta semana é sábado. Sexta é janta em casa.",
       "series": 1,
       "reps": "—"
      }
@@ -914,148 +903,58 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "🧊 N64 · Peito de Frango com Creme de Espinafre",
-     "kcal": 487,
+     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "kcal": 600,
      "prot": 45,
-     "peso_g": 400,
-     "nota": "Rótulo já conferido: 487 kcal, 45 g de proteína, 603 mg de sódio.",
-     "origem": "quentinha Food Brasil"
+     "peso_g": null,
+     "nota": "Metade do prato de salada e legumes, 1/4 de proteína grelhada, 1/4 de arroz/feijão. Sem fritura e sem sobremesa."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
     "lanche_pre_treino": {
-     "nome": "~60–90 min antes do treino · Banana + 1 fatia de pão integral + 2 ovos cozidos",
+     "nome": "~17h, antes de correr · Banana + 1 fatia de pão integral + 2 ovos cozidos",
      "kcal": 320,
      "prot": 17,
-     "peso_g": 230,
-     "nota": "Carboidrato rápido + proteína, gordura baixa. Treino de força em jejum desperdiça a sessão. Cozinhe os ovos da semana no domingo."
+     "peso_g": null,
+     "nota": "Só em dia de treino. Cozinhe os ovos da semana hoje à noite ou na terça."
     },
     "janta": {
-     "nome": "🧊 N06 · Low Carb de Cenoura com Frango Desfiado + 2 ovos",
+     "nome": "Casa · Frango grelhado + salada grande + 3 col. de arroz",
      "kcal": 520,
-     "prot": 44,
-     "peso_g": 480,
-     "nota": "Low carb de 300–380 g é porção pequena: os 2 ovos são reforço FIXO, não opcional. Fotografe o rótulo — se passar de 35 g de proteína, os ovos saem.",
-     "origem": "quentinha Food Brasil"
+     "prot": 45,
+     "peso_g": null,
+     "nota": "Sexta controlada. É ela que decide o peso de segunda."
     },
     "petisco": {
      "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
      "kcal": 200,
      "prot": 31,
-     "peso_g": 230,
-     "nota": "💊 WHEY DOSE 2. Fecha a proteína do dia. Em dia de treino à noite, tome logo depois do treino e pule a ceia."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 2. Em dia de treino à noite, tome logo depois e pule a ceia."
     }
    }
   },
   {
    "id": "sab",
    "nome": "Sábado",
-   "data": "19/09",
+   "data": "27/09",
    "tipo": "treino",
+   "flex": false,
    "treino": {
-    "foco": "🏆 CAMPEONATO — sem relógio (regra do campeonato)",
+    "foco": "🔒 LOWER B às 8h–9h — a inegociável",
     "exercicios": [
      {
-      "nome": "🌤️ Seco. Meio-dia com 25 °C e sensação de 29 °C: se o jogo for à tarde, beba 500 ml de água nas 2h antes.",
+      "nome": "🌤️ Seco, 19,5–25 °C, UV 8. Academia cedo, antes do calor e da casa.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⌚ Não há registro do relógio. Depois do jogo, me mande um texto: minutos jogados, posição, como a perna respondeu nas arrancadas e se o tornozelo reclamou.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🏃 Aquecimento 12–15 min: trote, mobilidade de tornozelo, 4 acelerações progressivas.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚽ Jogo",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🥤 Whey logo após o jogo (dose 2).",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "❌ Sem academia hoje. O Lower B vai para domingo.",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "🧊 N65 · Maxi Carbo de Frango",
-     "kcal": 520,
-     "prot": 40,
-     "peso_g": 400,
-     "nota": "Almoço com carbo ~3h antes do jogo. Se o jogo for de manhã, troque por café reforçado (pão + ovos + banana) e deixe a N65 para depois.",
-     "origem": "quentinha Food Brasil"
-    },
-    "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
-    },
-    "lanche_pre_treino": {
-     "nome": "~60–90 min antes do jogo · PRÉ-JOGO · Banana + 2 fatias de pão integral + 2 ovos",
-     "kcal": 400,
-     "prot": 19,
-     "peso_g": null,
-     "nota": "O mesmo pré-jogo de quinta. Isotônico só se o jogo passar de 60 min."
-    },
-    "janta": {
-     "nome": "Casa · Omelete de 4 ovos + legumes refogados + 1 fatia de queijo",
-     "kcal": 500,
-     "prot": 34,
-     "peso_g": 350,
-     "nota": "Controlada, não livre, mesmo depois de jogo. A fome do pós-jogo é o momento em que escorrega."
-    },
-    "petisco": {
-     "nome": "Logo após o jogo · 💊 WHEY DOSE 2 (com água ou leite)",
-     "kcal": 130,
-     "prot": 24,
-     "peso_g": null,
-     "nota": "Ainda no campo. Sem ceia depois."
-    }
-   }
-  },
-  {
-   "id": "dom",
-   "nome": "Domingo",
-   "data": "20/09",
-   "tipo": "treino",
-   "treino": {
-    "foco": "🔒 DOMINGO PESADO: LOWER B + 🏃 30 min fácil — 7h–9h",
-    "exercicios": [
-     {
-      "nome": "🌤️ Manhã boa, 19,5–20 °C. UV 7,4 ao meio-dia. Treine cedo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🧭 É o molde novo: domingo é o dia pesado e garantido, porque a segunda cai em reunião.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚠️ Hoje é o dia depois do campeonato. Carga em RPE 7 (3 reps na reserva) e sem saltos. Se as pernas estiverem destruídas, faça metade das séries, e isso conta como feito.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "❌ Sem futebol hoje: dois jogos na semana já são o impacto.",
+      "nome": "⚠️ Foi o treino perdido nas duas últimas semanas. Se a semana desandar, é ela que não se perde.",
       "series": 1,
       "reps": "—"
      },
@@ -1075,22 +974,22 @@
       "reps": "10 cada"
      },
      {
-      "nome": "4️⃣ Cadeira extensora — 3×12 (única do quadríceps isolado na semana)",
+      "nome": "4️⃣ Cadeira extensora — 3×12",
       "series": 3,
       "reps": "12"
      },
      {
-      "nome": "5️⃣ Elevação de quadril (glúteo) — 3×12",
+      "nome": "5️⃣ Elevação de quadril — 3×12",
       "series": 3,
       "reps": "12"
      },
      {
-      "nome": "🏃 30 min fáceis a 8–8,5 km/h DEPOIS da força (esteira ou rua)",
-      "series": 1,
-      "reps": "30 min"
+      "nome": "6️⃣ Panturrilha sentada — 3×15",
+      "series": 3,
+      "reps": "15"
      },
      {
-      "nome": "📋 Pese em jejum e me chame para fechar a média de 7 dias.",
+      "nome": "⚠️ Se amanhã tiver jogo, segure a carga do agachamento (3 reps na reserva).",
       "series": 1,
       "reps": "—"
      }
@@ -1098,42 +997,114 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Casa · Frango ou tilápia do freezer grelhado + salada grande + 3 col. de arroz",
-     "kcal": 550,
+     "nome": "Casa · Proteína grelhada + arroz + feijão + salada",
+     "kcal": 600,
      "prot": 45,
-     "peso_g": 450,
-     "nota": "Almoço de dia pesado: pode levar 4 colheres de arroz. Descongele a proteína na geladeira no sábado à noite."
+     "peso_g": null,
+     "nota": "Almoço normal de sábado, sem fritura."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
-     "peso_g": 320,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte — vira um creme e não precisa de coqueteleira. Fruta: banana, tangerina ou uva (porção de 1 mão)."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
     "lanche_pre_treino": {
-     "nome": "~60–90 min antes do treino · Banana + 1 fatia de pão integral + 2 ovos cozidos",
-     "kcal": 320,
-     "prot": 17,
-     "peso_g": 230,
-     "nota": "Carboidrato rápido + proteína, gordura baixa. Treino de força em jejum desperdiça a sessão. Cozinhe os ovos da semana no domingo."
+     "nome": "7h15 · Café pré-treino · Banana + 1 pão integral + café",
+     "kcal": 250,
+     "prot": 8,
+     "peso_g": null,
+     "nota": "Treino de manhã não precisa dos ovos; eles ficam para o almoço."
     },
     "janta": {
-     "nome": "Casa · Tilápia ou frango assado + legumes (sem arroz)",
-     "kcal": 420,
+     "nome": "🍽️ REFEIÇÃO LIVRE DA SEMANA — sábado à noite",
+     "kcal": 900,
      "prot": 40,
-     "peso_g": 400,
-     "nota": "Janta leve fechando a semana."
+     "peso_g": null,
+     "nota": "UMA, marcada, sem culpa. O problema nunca foi a livre: foi virarem três (sexta, sábado e domingo). Coma devagar e sem repetir."
+    },
+    "petisco": null
+   }
+  },
+  {
+   "id": "dom",
+   "nome": "Domingo",
+   "data": "28/09",
+   "tipo": "flex",
+   "flex": true,
+   "treino": {
+    "foco": "⚽ CAMPEONATO / futebol OU 🏃 7 km — de manhã",
+    "exercicios": [
+     {
+      "nome": "🌤️ Seco, 19–24 °C, UV 7,4 ao meio-dia. Treine antes das 9h.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "OPÇÃO A — ⚽ jogo. Se for campeonato, não tem relógio: me mande o texto depois (minutos, arrancadas, tornozelo).",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "OPÇÃO B — 🏃 7 km contínuos a 8,5–9 km/h. Sobe de 6 km.",
+      "series": 1,
+      "reps": "7 km"
+     },
+     {
+      "nome": "🏃 Se for a Opção B: 6 strides de 20 s progressivos no fim.",
+      "series": 6,
+      "reps": "20 s"
+     },
+     {
+      "nome": "❌ Não faça as duas.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📋 Pese em jejum e me chame: fecho a média de 7 dias e monto a semana seguinte.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "almoco": {
+     "nome": "Casa · Frango ou tilápia + salada + 3 col. de arroz",
+     "kcal": 550,
+     "prot": 45,
+     "peso_g": null,
+     "nota": "Domingo volta ao controle. A livre foi ontem."
+    },
+    "pre_lanche": {
+     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
+     "kcal": 330,
+     "prot": 30,
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
+    },
+    "lanche_pre_treino": {
+     "nome": "Antes do jogo/corrida · Banana + 1 pão integral",
+     "kcal": 200,
+     "prot": 6,
+     "peso_g": null,
+     "nota": "De manhã, leve."
+    },
+    "janta": {
+     "nome": "Casa · Sopa de legumes com frango desfiado ou omelete",
+     "kcal": 400,
+     "prot": 35,
+     "peso_g": null,
+     "nota": "Leve, fechando a semana."
     },
     "petisco": {
      "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
      "kcal": 200,
      "prot": 31,
-     "peso_g": 230,
-     "nota": "💊 WHEY DOSE 2. Fecha a proteína do dia. Em dia de treino à noite, tome logo depois do treino e pule a ceia."
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 2. Em dia de treino à noite, tome logo depois e pule a ceia."
     }
-   },
-   "flex": false
+   }
   }
  ]
 }
