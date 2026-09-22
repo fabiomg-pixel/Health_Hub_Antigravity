@@ -156,6 +156,26 @@ variação intradiária normal é de 1–2 kg.
 
 ---
 
+### Pesagem no dia seguinte a jogo ou corrida longa (22/09/2026 — apontado pelo Fabio)
+
+**A balança responde ao jogo da véspera, não à semana limpa.** Em 58 pesagens desde junho, a
+manhã seguinte a um dia intenso (≥450 kcal ativas no Garmin) vem **0,16 kg abaixo** da média
+local; a manhã seguinte a um dia leve vem **0,10 kg acima**. Degrau artificial de ~0,26 kg. As
+quatro maiores quedas da série (−0,75 a −0,90 kg) são todas no dia seguinte a futebol.
+
+- **Não trate pesagem pós-jogo como progresso** — é glicogênio e água, e volta em 24–48 h.
+  Mesma lógica do protocolo de AINE, com o sinal invertido.
+- **Cuidado com a média de 7 dias quando a pesagem é esparsa:** ela fica refém de QUAIS dias ele
+  subiu na balança. A semana 14–20/09 fechou em 94,43 kg só porque a sexta pós-jogo entrou; sem
+  ela foram 94,83 contra 94,28 da anterior — subiu meio quilo.
+- **Comparação honesta:** mesmo dia da semana contra mesmo dia da semana, ou média de 7 dias com
+  pesagem TODO dia. O padrão dele é sexta artificialmente baixa (futebol na quinta) e segunda
+  alta (fim de semana).
+- ⚠️ Eu já contei a história errada uma vez ("o corpo responde quando a semana é limpa", 22/09).
+  Antes de atribuir uma queda à dieta, **olhe o kcal ativas da véspera**.
+
+---
+
 ## 6. Carga de treino do Garmin: load balance + ACWR
 
 Ambas saem de `get_training_status`.
