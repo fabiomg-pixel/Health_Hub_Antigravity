@@ -575,58 +575,23 @@
    "id": "ter",
    "nome": "Terça",
    "data": "22/09",
-   "tipo": "treino",
+   "tipo": "feito",
    "flex": false,
    "treino": {
-    "foco": "💪 LOWER A — o treino que sumiu há 2 semanas",
+    "foco": "✅ FEITO — Fitbod 28 min, LOWER (7.688 kg de volume)",
     "exercicios": [
      {
-      "nome": "🌧️ Chuva o dia todo (15 mm, 100%), 76–98% das 17h às 21h. Tudo na academia.",
+      "nome": "Leg press 80 kg (1.920 kg) · agachamento com barra 70 kg (1.680 kg) · adutor 68 kg · extensora 61 kg · flexora 50 kg.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚠️ ÍNDICE SINTÉTICO EM 34 (vermelho há 5 dias) e prontidão Garmin 50. Faça a sessão, mas com 2-3 reps na reserva em tudo. É estímulo de perna que falta, não recorde.",
+      "nome": "✅ Quebrou o jejum de perna: foram DUAS semanas sem treino pesado de pernas. Esse é o treino que sustenta a arrancada.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚠️ Se o temporal inviabilizar a academia, PLANO B EM CASA (20 min, conta como feito): agachamento búlgaro 3×12 cada perna com mochila carregada + ponte de glúteo unilateral 3×12 + panturrilha unilateral 3×15 + prancha 3×45 s.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "1️⃣ Leg press — 4×6-8",
-      "series": 4,
-      "reps": "6–8"
-     },
-     {
-      "nome": "2️⃣ STIFF (terra romeno) — 4×8 ⭐ o motor da arrancada",
-      "series": 4,
-      "reps": "8"
-     },
-     {
-      "nome": "3️⃣ Búlgaro ou afundo — 3×8 cada perna ⭐ unilateral",
-      "series": 3,
-      "reps": "8 cada"
-     },
-     {
-      "nome": "4️⃣ Leg curl — 3×10",
-      "series": 3,
-      "reps": "10"
-     },
-     {
-      "nome": "5️⃣ Panturrilha unilateral — 3×12, descida lenta",
-      "series": 3,
-      "reps": "12 cada"
-     },
-     {
-      "nome": "6️⃣ Prancha + prancha lateral",
-      "series": 3,
-      "reps": "45 s"
-     },
-     {
-      "nome": "🏃 SEM corrida hoje. Com o índice no vermelho, é força ou nada.",
+      "nome": "⚠️ O que o Fitbod não deu: STIFF e UNILATERAL (búlgaro/afundo). Tudo foi máquina e bilateral. Posterior de coxa e estabilidade de uma perna só são exatamente o que falta na arrancada e no tornozelo — entram obrigatoriamente no sábado.",
       "series": 1,
       "reps": "—"
      }
@@ -674,28 +639,63 @@
    "id": "qua",
    "nome": "Quarta",
    "data": "23/09",
-   "tipo": "light",
+   "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "🟦 DIA LIGHT — temporal de 64 mm",
+    "foco": "💪 COSTAS E PUXADA + 20 min fáceis — sim, pode ir à academia",
     "exercicios": [
      {
-      "nome": "⛈️ O pior dia da semana: 64 mm e 96–100% de chuva das 16h às 21h. Trânsito e academia ficam caros.",
+      "nome": "🌧️ Chuva fina o dia todo (0,1–1,6 mm/h, 88–100%), 18 °C. Academia e esteira; rua não.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🛋️ EM CASA, 15 min: mobilidade de quadril e tornozelo + prancha 3×45 s + ponte de glúteo 3×15 + 20 flexões.",
+      "nome": "🧠 POR QUE COSTAS: segunda foi só empurrão e bíceps (supino, crucifixo, desenvolvimento, rosca) — nenhuma puxada. Ontem foi perna. Hoje costas fecha o corpo sem tocar na perna, que joga amanhã.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "😴 A TAREFA REAL É DORMIR. O índice está vermelho há 5 dias com sono médio de 6,6 h, HRV de 46 → 37 ms e FC de repouso de 47 → 54. Cama às 22h30 — é a alavanca de maior retorno da semana.",
+      "nome": "📈 O índice sintético subiu de 32 → 46 e a FC de repouso caiu de 54 → 50. Está melhorando: dá para treinar, não para buscar recorde.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Amanhã tem jogo: chegar dormido vale mais que qualquer sessão de hoje.",
+      "nome": "1️⃣ Puxada alta (pronada) — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "2️⃣ Remada curvada ou remada máquina — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "3️⃣ Remada unilateral com halter — 3×10 cada",
+      "series": 3,
+      "reps": "10 cada"
+     },
+     {
+      "nome": "4️⃣ Pulldown com braço estendido ou crucifixo inverso — 3×12",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "5️⃣ Face pull — 3×15 (ombro posterior, contrapeso do supino de segunda)",
+      "series": 3,
+      "reps": "15"
+     },
+     {
+      "nome": "6️⃣ Core — prancha + prancha lateral",
+      "series": 3,
+      "reps": "45 s"
+     },
+     {
+      "nome": "🏃 20 min fáceis na esteira a 8–8,5 km/h. SEM tiros: amanhã tem jogo, e intervalado na véspera já deu o pior jogo da série (05–06/08).",
+      "series": 1,
+      "reps": "20 min"
+     },
+     {
+      "nome": "❌ NADA de perna hoje. Nem agachamento leve, nem leg press 'só para soltar'.",
       "series": 1,
       "reps": "—"
      }
@@ -743,7 +743,7 @@
     "foco": "⚽ FUTEBOL 20h — chuva de 47–64%, tem plano B",
     "exercicios": [
      {
-      "nome": "🌧️ Chove 64% às 19h e 47% às 20h (8 mm no dia). O jogo pode cair.",
+      "nome": "☀️ MELHOROU: a chuva praticamente zera à noite (6% às 19h, 2% às 20h), 20 °C. Jogo confirmado.",
       "series": 1,
       "reps": "—"
      },
