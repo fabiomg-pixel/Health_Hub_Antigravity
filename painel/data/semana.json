@@ -92,6 +92,8 @@
   ]
  },
  "relatorio": [
+  "🏆 SÁBADO É CAMPEONATO E VAI FAZER CALOR: 27,9 °C com sensação de 35 °C ao meio-dia, 0% de chuva. A preparação de quinta a sábado foi montada em torno disso — hidratação a partir de hoje, carga de carboidrato na sexta, véspera sem corrida e sem perna, e refeições de sábado contadas a partir da hora do jogo.",
+  "🍫 PADRÃO NOVO NOS REGISTROS: chocolate em 22/09 ('à tarde') e 23/09 ('ao longo do dia'), depois de sorvete em 21/09 e dois pastéis doces na semana passada. São ~200–300 kcal/dia que não estão no plano e saem justo do lugar onde a proteína deveria estar. O iogurte com whey das 15h30 existe para ocupar essa hora — se quiser chocolate, que seja 2 quadrados de 70% depois do almoço, não 'ao longo do dia'.",
   "🗓️ CORRIGIDO: eu tinha montado esta semana com 22/09 como segunda — 22/09 é TERÇA. Os dias e a previsão de cada data foram realinhados. A segunda (21/09) já está fechada: Fitbod de 29 min + corrida leve.",
   "🚩 O SINAL MAIS IMPORTANTE DA SEMANA: o índice sintético desabou — 86 (15/09) → 24, 11, 14, 18, 34. Cinco dias no vermelho, enquanto o Garmin ainda marcava 65–93. É exatamente o caso para o qual o índice existe: o Garmin otimista e o corpo não. Causa: HRV de 46 → 32-37 ms, FC de repouso de 47 → 55 bpm e sono de 6,6 h de média.",
   "⚖️ CORREÇÃO IMPORTANTE (você apontou, os dados confirmam): a balança NÃO responde à semana limpa — responde ao JOGO DA VÉSPERA. Em 58 pesagens desde junho, a manhã seguinte a um dia intenso (≥450 kcal ativas) vem 0,16 kg ABAIXO da média local, e a manhã seguinte a um dia leve vem 0,10 kg ACIMA: um degrau artificial de ~0,26 kg. As quatro maiores quedas da série inteira (−0,75 a −0,90) são todas no dia seguinte a jogo. Os 93,65 de sexta (18/09) vieram do futebol de quinta, não da dieta.",
@@ -639,11 +641,16 @@
    "id": "qua",
    "nome": "Quarta",
    "data": "23/09",
-   "tipo": "treino",
+   "tipo": "feito",
    "flex": false,
    "treino": {
-    "foco": "💪 COSTAS E PUXADA + 20 min fáceis — sim, pode ir à academia",
+    "foco": "✅ FEITO — costas/puxada + esteira (13.961 passos)",
     "exercicios": [
+     {
+      "nome": "✅ Registrado: 13.961 passos, o dia mais ativo da semana. Três dias seguidos de treino (upper, lower, costas).",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "🌧️ Chuva fina o dia todo (0,1–1,6 mm/h, 88–100%), 18 °C. Academia e esteira; rua não.",
       "series": 1,
@@ -737,43 +744,48 @@
    "id": "qui",
    "nome": "Quinta",
    "data": "24/09",
-   "tipo": "futebol",
+   "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "⚽ FUTEBOL 20h — noite seca, jogo confirmado",
+    "foco": "🏃 30 min FÁCEIS + mobilidade — sem futebol hoje, e o corpo pediu",
     "exercicios": [
      {
-      "nome": "☀️ MELHOROU: a chuva praticamente zera à noite (6% às 19h, 2% às 20h), 20 °C. Jogo confirmado.",
+      "nome": "☀️ Dia seco e ameno (20 °C, 0% de chuva). Pôr do sol 17h50: dá para correr na rua até 17h45.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🔁 SE CANCELAR: esteira, 3× 5 min moderados (9–9,5 km/h) com 2 min a 8 km/h entre eles + 10 min de aquecimento. Repõe o estímulo de aeróbico alto que o jogo daria.",
+      "nome": "🚩 ATENÇÃO AOS NÚMEROS DE HOJE: índice sintético caiu 45 → 28, FC de repouso subiu 50 → 56 (a mais alta da série) e HRV em 34. Três dias seguidos de treino cobraram. O sono foi bom (7,2 h) — é fadiga de carga, não de noite mal dormida.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🕕 18h — refeição pré-jogo. Sair do trabalho comido decide a quinta.",
+      "nome": "❌ POR ISSO NÃO É DIA DE REPOR O JOGO com 3×5 min moderados, como faríamos num quinta-feira normal. Sábado é campeonato: ganhar 1% de aeróbico hoje não muda o jogo, mas chegar cansado muda.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏃 Aquecimento 10-12 min + mobilidade de tornozelo",
+      "nome": "🏃 30 min fáceis a 8–8,5 km/h (rua ou esteira). Conversa fluindo o tempo todo.",
       "series": 1,
-      "reps": "12 min"
+      "reps": "30 min"
      },
      {
-      "nome": "⚽ Jogo — é o melhor estímulo de aeróbico alto da semana (~19 min acima de FC 155).",
+      "nome": "🦵 Mobilidade de tornozelo — 10 min, caprichada. É a articulação que o campeonato castiga.",
+      "series": 1,
+      "reps": "10 min"
+     },
+     {
+      "nome": "🧱 Core — prancha + prancha lateral + ponte",
+      "series": 3,
+      "reps": "45 s"
+     },
+     {
+      "nome": "❌ Sem perna e sem tiros. Nada que deixe DOMS para sábado.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🥤 Whey logo depois, ainda no clube.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚖️ A pesagem de SEXTA vai vir baixa por causa do jogo de hoje. Já sabemos: não é progresso, é água e glicogênio. Não comemore e não relaxe na sexta por causa dela.",
+      "nome": "💧 COMEÇA HOJE a hidratação para sábado: 2,5–3 L de água por dia. Sábado tem sensação térmica de 35 °C ao meio-dia.",
       "series": 1,
       "reps": "—"
      }
@@ -795,11 +807,11 @@
      "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
     "lanche_pre_treino": {
-     "nome": "18h00 · PRÉ-JOGO · Banana + 2 fatias de pão integral + 2 ovos",
-     "kcal": 400,
-     "prot": 19,
+     "nome": "~60–90 min antes · Banana + 1 fatia de pão integral + 2 ovos cozidos",
+     "kcal": 320,
+     "prot": 17,
      "peso_g": null,
-     "nota": "Isotônico só se o jogo passar de 60 min."
+     "nota": "Treino leve também merece pré-treino."
     },
     "janta": {
      "nome": "~21h45 · Janta PEQUENA em casa · 2 ovos mexidos + salada",
@@ -824,26 +836,31 @@
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "💪 UPPER B + 🏃 25 min NA RUA — o melhor fim de tarde da semana",
+    "foco": "💪 UPPER B leve — véspera de campeonato, SEM corrida",
     "exercicios": [
      {
-      "nome": "⛅ 8–18% de chuva das 16h às 18h, 18–25 °C. ☀️ Pôr do sol 17h50.",
+      "nome": "🌡️ Dia quente: 26 °C, sensação de 30 °C ao meio-dia. Chuva só no fim da tarde (17–31%).",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📍 É o dia da rua: corra no trabalho às 17h00–17h45, com luz.",
+      "nome": "🔒 REGRA JÁ ESTABELECIDA: em semana com campeonato, a sexta é Upper e sem corrida. A perna pesada foi na terça e está pronta.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "1️⃣ Pec deck ou crucifixo inclinado — 4×8",
-      "series": 4,
+      "nome": "Carga normal, mas PARE 2-3 reps antes da falha. Nada de recorde na véspera.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "1️⃣ Pec deck ou crucifixo inclinado — 3×8",
+      "series": 3,
       "reps": "8"
      },
      {
-      "nome": "2️⃣ Puxada alta ou barra assistida — 4×8",
-      "series": 4,
+      "nome": "2️⃣ Puxada alta — 3×8",
+      "series": 3,
       "reps": "8"
      },
      {
@@ -852,27 +869,32 @@
       "reps": "10 cada"
      },
      {
-      "nome": "4️⃣ Elevação lateral — 3×12",
-      "series": 3,
+      "nome": "4️⃣ Elevação lateral — 2×12",
+      "series": 2,
       "reps": "12"
      },
      {
-      "nome": "5️⃣ Rosca martelo + tríceps testa — 2×10",
-      "series": 2,
-      "reps": "10"
-     },
-     {
-      "nome": "6️⃣ Core",
+      "nome": "5️⃣ Core",
       "series": 3,
       "reps": "45 s"
      },
      {
-      "nome": "🏃 25 min fáceis + 4 strides de 20 s no fim",
+      "nome": "🦵 Mobilidade de tornozelo e quadril — 10 min.",
       "series": 1,
-      "reps": "25 min"
+      "reps": "—"
      },
      {
-      "nome": "🍔 ATENÇÃO: sexta passada foi feijoada com fritas no almoço e hambúrguer com coca à noite. A refeição livre desta semana é SÁBADO. Sexta é janta em casa.",
+      "nome": "❌ SEM corrida, SEM perna, SEM abdominal até a falha.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "😴 Cama às 22h30. É a noite que decide o jogo — sono é a variável mais bem documentada da sua série (noites de 7,9 h e 7,2 h deram os dois melhores treinos do ciclo).",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "💧 3 L de água hoje e sal normal na comida. Não corte sal na véspera de jogo no calor — você vai suar sódio.",
       "series": 1,
       "reps": "—"
      }
@@ -880,11 +902,11 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
-     "kcal": 600,
+     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO + arroz cheio",
+     "kcal": 650,
      "prot": 45,
      "peso_g": null,
-     "nota": "Metade do prato de salada e legumes, 1/4 de proteína grelhada, 1/4 de arroz e feijão. Sem fritura e sem sobremesa."
+     "nota": "Véspera de jogo: aqui o arroz e o feijão entram inteiros. O que sai é a fritura e a sobremesa."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
@@ -894,18 +916,18 @@
      "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
     },
     "lanche_pre_treino": {
-     "nome": "~17h, antes de correr · Banana + 1 fatia de pão integral + 2 ovos cozidos",
-     "kcal": 320,
-     "prot": 17,
+     "nome": "~17h · Banana + 1 fatia de pão integral",
+     "kcal": 200,
+     "prot": 6,
      "peso_g": null,
-     "nota": "Só em dia de treino. Cozinhe os ovos de uma vez."
+     "nota": "Leve, só para o Upper."
     },
     "janta": {
-     "nome": "Casa · Frango grelhado + salada grande + 3 col. de arroz",
-     "kcal": 520,
+     "nome": "Casa · Macarrão ou arroz com frango grelhado e legumes cozidos",
+     "kcal": 650,
      "prot": 45,
      "peso_g": null,
-     "nota": "Sexta controlada. É ela que decide o peso de segunda."
+     "nota": "CARGA DE CARBOIDRATO da véspera: prato de massa ou arroz cheio, proteína magra, legumes COZIDOS (não salada crua em volume — fibra demais na véspera atrapalha). Sem fritura, sem gordura pesada, sem prato novo. Zero álcool."
     },
     "petisco": {
      "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
@@ -920,53 +942,53 @@
    "id": "sab",
    "nome": "Sábado",
    "data": "26/09",
-   "tipo": "treino",
+   "tipo": "futebol",
    "flex": false,
    "treino": {
-    "foco": "🔒 LOWER B às 8h–9h — a inegociável",
+    "foco": "🏆 CAMPEONATO — calor de 35 °C de sensação, sem relógio",
     "exercicios": [
      {
-      "nome": "🌤️ Seco (0% de chuva), 19–24 °C, UV 8,25. Academia cedo, antes do calor e da casa.",
+      "nome": "🔥 O DADO QUE MAIS IMPORTA HOJE: 0% de chuva, 27,9 °C de máxima e SENSAÇÃO DE 35 °C ao meio-dia. UV 8,25. Se o jogo for entre 11h e 15h, o calor é o adversário principal.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚠️ Foi o treino perdido nas duas últimas semanas. Se a semana desandar, é ele que não se perde.",
+      "nome": "⌚ Sem relógio (regra do campeonato). Depois me manda o texto: minutos jogados, posição, arrancadas e como o tornozelo respondeu.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "1️⃣ Agachamento (Smith ou livre) — 4×6-8",
-      "series": 4,
-      "reps": "6–8"
+      "nome": "💧 HIDRATAÇÃO — 500 ml de água 2 h antes + 300 ml 20 min antes. Durante: 200 ml a cada intervalo. Isotônico HOJE é indicado (calor + jogo longo), não só se passar de 60 min.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "2️⃣ Levantamento terra ou stiff com halteres — 3×8",
-      "series": 3,
-      "reps": "8"
+      "nome": "🧢 Boné e protetor solar se o jogo for antes das 16h. Sombra em todo intervalo.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "3️⃣ Passada/afundo caminhando — 3×10 cada perna ⭐",
-      "series": 3,
-      "reps": "10 cada"
+      "nome": "🏃 AQUECIMENTO 15 min: 5 min de trote leve + mobilidade de tornozelo + 4 acelerações progressivas (60%, 70%, 80%, 85%). No calor, aquecimento curto e sem exagero — você já chega com a temperatura alta.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "4️⃣ Cadeira extensora — 3×12",
-      "series": 3,
-      "reps": "12"
+      "nome": "⚽ Jogo.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "5️⃣ Elevação de quadril — 3×12",
-      "series": 3,
-      "reps": "12"
+      "nome": "🥤 LOGO APÓS: 500–700 ml de água com uma pitada de sal + whey (dose 2) + 1 banana. Repor sódio importa mais que o normal hoje.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "6️⃣ Panturrilha sentada — 3×15",
-      "series": 3,
-      "reps": "15"
+      "nome": "❌ Sem academia hoje. O Lower B vai para domingo, com carga contida.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "⚠️ Se amanhã tiver jogo, segure a carga do agachamento (3 reps na reserva).",
+      "nome": "⚖️ A pesagem de domingo vai vir baixa pelo jogo de hoje — é água, não progresso. Já está na regra.",
       "series": 1,
       "reps": "—"
      }
@@ -974,72 +996,92 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Casa · Proteína grelhada + arroz + feijão + salada",
-     "kcal": 600,
+     "nome": "3h a 3h30 ANTES DO JOGO · Arroz + frango ou carne magra + legumes cozidos",
+     "kcal": 650,
      "prot": 45,
      "peso_g": null,
-     "nota": "Almoço normal de sábado, sem fritura."
+     "nota": "A refeição principal do dia, longe o bastante do jogo para digerir. Sem fritura, sem molho gorduroso, sem feijoada. Se o jogo for de manhã cedo, troque por café reforçado: 2 pães integrais + 2 ovos + banana + café, 2h antes."
     },
     "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
-    },
-    "lanche_pre_treino": {
-     "nome": "7h15 · Café pré-treino · Banana + 1 pão integral + café",
+     "nome": "1h a 1h15 ANTES · Banana + 1 fatia de pão integral com mel + 300 ml de água",
      "kcal": 250,
-     "prot": 8,
+     "prot": 6,
      "peso_g": null,
-     "nota": "Treino de manhã não precisa dos ovos; eles ficam para o almoço."
+     "nota": "Carboidrato rápido e baixo volume. Nada de fibra ou gordura nessa janela."
     },
+    "lanche_pre_treino": null,
     "janta": {
-     "nome": "🍽️ REFEIÇÃO LIVRE DA SEMANA — sábado à noite",
+     "nome": "🍽️ REFEIÇÃO LIVRE DA SEMANA — depois do jogo",
      "kcal": 900,
-     "prot": 40,
+     "prot": 45,
      "peso_g": null,
-     "nota": "UMA, marcada, sem culpa. O problema nunca foi a livre: foi virarem três (sexta, sábado e domingo)."
+     "nota": "Calha bem: a livre cai no dia de maior gasto. Uma, marcada, sem repetir. Comece por água e proteína antes do resto."
     },
-    "petisco": null
+    "petisco": {
+     "nome": "Logo após o jogo · 💊 WHEY DOSE 2 + 1 banana + água com sal",
+     "kcal": 280,
+     "prot": 26,
+     "peso_g": null,
+     "nota": "Ainda no campo. Fecha a proteína e repõe o sódio perdido no calor."
+    }
    }
   },
   {
    "id": "dom",
    "nome": "Domingo",
    "data": "27/09",
-   "tipo": "flex",
-   "flex": true,
+   "tipo": "treino",
+   "flex": false,
    "treino": {
-    "foco": "⚽ JOGO OU 🏃 7 km — de manhã",
+    "foco": "🔒 LOWER B contido — 7h30–9h, antes do calor",
     "exercicios": [
      {
-      "nome": "🌤️ Seco, 19,5–25 °C, UV 8,1 ao meio-dia. Treine antes das 9h.",
+      "nome": "🌤️ Seco, mas 29–30 °C de sensação ao meio-dia e UV 8,2. Academia cedo.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "OPÇÃO A — ⚽ jogo. Se for campeonato, não tem relógio: me mande o texto depois (minutos, arrancadas, tornozelo).",
+      "nome": "🧭 É o Lower B que sairia do sábado. Regra da semana de campeonato: ele vai para domingo com carga contida.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "OPÇÃO B — 🏃 7 km contínuos a 8,5–9 km/h. Sobe de 6 km.",
-      "series": 1,
-      "reps": "7 km"
-     },
-     {
-      "nome": "🏃 Se for a Opção B: 6 strides de 20 s progressivos no fim.",
-      "series": 6,
-      "reps": "20 s"
-     },
-     {
-      "nome": "❌ Não faça as duas — o Lower B foi ontem.",
+      "nome": "⚠️ RPE 7 — 3 reps na reserva em tudo, sem saltos. Se as pernas estiverem destruídas do jogo, faça as 3 primeiras e vá embora: conta como feito.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📋 Pese em jejum e me chame: fecho a semana e monto a seguinte.",
+      "nome": "1️⃣ Agachamento (Smith ou livre) — 3×8, carga moderada",
+      "series": 3,
+      "reps": "8"
+     },
+     {
+      "nome": "2️⃣ STIFF com halteres — 3×10 ⭐ NÃO PULE: faltou na terça (o Fitbod só deu máquina)",
+      "series": 3,
+      "reps": "10"
+     },
+     {
+      "nome": "3️⃣ Búlgaro ou afundo caminhando — 3×10 cada perna ⭐ unilateral, também faltou",
+      "series": 3,
+      "reps": "10 cada"
+     },
+     {
+      "nome": "4️⃣ Elevação de quadril — 3×12",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "5️⃣ Panturrilha sentada — 3×15",
+      "series": 3,
+      "reps": "15"
+     },
+     {
+      "nome": "❌ Sem corrida hoje.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "📋 Pese em jejum e me chame — fecho a semana e monto a próxima. Lembrando: o número de hoje vem deprimido pelo jogo de ontem.",
       "series": 1,
       "reps": "—"
      }
@@ -1047,18 +1089,18 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Casa · Frango ou tilápia + salada + 3 col. de arroz",
-     "kcal": 550,
+     "nome": "Casa · Frango ou tilápia + arroz + salada",
+     "kcal": 600,
      "prot": 45,
      "peso_g": null,
-     "nota": "Domingo volta ao controle. A livre foi ontem."
+     "nota": "Dia seguinte a jogo: reposição, não déficit agressivo."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Misture o whey no iogurte. É a refeição que segura a fome da noite — foi a que mais faltou na semana passada."
+     "nota": "💊 WHEY DOSE 1. É ela que ocupa o lugar do chocolate da tarde."
     },
     "lanche_pre_treino": {
      "nome": "Antes do jogo/corrida · Banana + 1 pão integral",
@@ -1079,7 +1121,7 @@
      "kcal": 200,
      "prot": 31,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 2. Em dia de treino à noite, tome logo depois e pule a ceia."
+     "nota": "💊 WHEY DOSE 2."
     }
    }
   }
