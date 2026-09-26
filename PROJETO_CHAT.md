@@ -176,6 +176,34 @@ quatro maiores quedas da série (−0,75 a −0,90 kg) são todas no dia seguint
 
 ---
 
+### Não prescrever "carga de carboidrato" para jogo amador (26/09/2026 — erro meu)
+
+Prescrevi carga de carboidrato na véspera de um campeonato. Para jogo de 60–90 min isso é
+desnecessário — e, no padrão de buffet do Fabio, **o jargão virou licença**: o almoço de véspera
+foi feijoada com torresmo e batata frita. Somado a um evento na quinta, o peso saltou 94,1 →
+95,25 kg em dois dias (sódio + glicogênio, ~3 g de água por grama de glicogênio).
+
+- Véspera de jogo é **"janta normal com arroz"**, e ponto. Sem termo técnico que autorize volume.
+- Vale como regra geral: **nenhuma instrução deve ter uma leitura que autorize o padrão que
+  estamos tentando quebrar.** Ele executa a leitura mais generosa — e a culpa é da prescrição.
+
+### O lanche da tarde é comida, não suplemento (compra de 26/09/2026)
+
+Chocolate apareceu em 22, 23 e 24/09, sempre à tarde — exatamente o horário em que não existia
+lanche proteico. A correção foi de **compra**, não de regra: rosbife assado no domingo e fatiado
+(100 g ≈ 30 g de proteína), pão integral, queijo; Yopro e similares ficam como **backup de rua**
+(garrafa de 250 ml ≈ 25 g; **pote de 160 g ≈ 15 g** — dois potes para valer uma dose).
+
+### Molde fixo da semana (26/09/2026)
+
+Depois de três semanas perdendo tempo em remontar a semana do zero, o esqueleto passa a ser fixo:
+**seg light (opcional) · ter Lower A · qua costas + 25 min · qui futebol · sex Upper B · sáb
+Lower B (ou campeonato) · dom corrida longa + 45 min de preparo da semana.** Só o jogo e o tempo
+mudam. O preparo de domingo (assar rosbife, 12 ovos cozidos, legumes cortados, potes de iogurte)
+é o que faz a terça acontecer — sem ele a semana desanda na primeira reunião.
+
+---
+
 ## 6. Carga de treino do Garmin: load balance + ACWR
 
 Ambas saem de `get_training_status`.
