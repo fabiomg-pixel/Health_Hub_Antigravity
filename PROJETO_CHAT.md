@@ -401,3 +401,46 @@ peso por impedância. Não tire conclusão de variação de %gordura.
 ⚠️ **Nunca manter o repositório em pasta sincronizada (Google Drive/iCloud).** Foi o que causou
 a perda de 12/08: o `.git` e os arquivos não versionados sumiram durante uma movimentação.
 Trabalhar em `~/Documents`, espelhar no Drive.
+
+---
+
+## 13. Arquitetura em camadas (desenhada em 27/09/2026 com o Fabio)
+
+O laço é: **conselho semanal → personal diário → relato de volta no fim de semana.**
+Os especialistas nunca falam com o Fabio; o personal é a única voz.
+
+| Camada | Quem | Quando | Entrega |
+|---|---|---|---|
+| 0 · Fatos | `fatos.py` (sem LLM) | todo dia | `fatos.json` — a única fonte de número |
+| 1 · Especialistas | `carga`, `força`, `nutrição`, `logística` | domingo | cada um a sua seção, com veto na sua área |
+| 2 · Síntese | o copiloto | domingo | um plano só (`semana.json`) — acoplado, não pode ser paralelo |
+| 3 · Cético | agente `cetico` | antes de todo deploy | lista de violações, bloqueante |
+| 4 · Personal | briefs agendados (manhã e fim do dia) | todo dia | executa, adapta dentro dos limites, coleta |
+| 5 · Fechamento | conselho | domingo | lê o diário de execução e responde as perguntas da semana |
+
+**Contrato de ida (conselho → personal):** o plano, os **limites** (teto de carga,
+o que é intocável, gatilhos de corte) e **2 a 3 perguntas da semana** — hipóteses
+que o personal precisa responder com o que observar. Sem pergunta explícita, o
+fechamento de domingo vira narrativa.
+
+**Contrato de volta (personal → conselho):** o que aconteceu de fato, o que foi
+adaptado e por quê, as respostas das perguntas, e **o que não se sabe** (registro
+esparso não é ausência de refeição).
+
+**Autonomia do personal — o ponto que faz o sistema não virar burocracia:**
+- pode sozinho: trocar dias entre si, cortar volume, mover treino para casa ou
+  esteira, substituir sessão por causa de chuva, calor, reunião ou índice vermelho;
+- precisa do conselho: mudar meta da semana, mexer em macro, mudar o molde fixo;
+- **para tudo e escala:** dor articular, uso de AINE, dois treinos-chave perdidos
+  na mesma semana, ou peso fora da faixa por motivo não explicado por artefato.
+
+**Regra anti-inchaço:** a saída para o Fabio continua do mesmo tamanho de sempre —
+um plano, poucas regras. As camadas existem para tornar o raciocínio auditável,
+não para produzir mais texto. O gargalo dele é adesão, não profundidade de análise.
+
+**Literatura:** não se consulta a cada semana. Quando uma pergunta se repete, um
+agente lento consulta PubMed/Consensus e escreve uma ficha curta e datada —
+pergunta, o que a evidência diz, **limite de aplicabilidade no caso dele**, regra
+prática que sai daí. A ficha vira regra aqui neste arquivo. Fila inicial: carga de
+carboidrato em jogo amador de 60–90 min; treino guiado por HRV; artefato de peso
+pós-exercício; frequência de força para reter massa magra em déficit.

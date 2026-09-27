@@ -1,0 +1,275 @@
+{
+ "gerado_em": "2026-09-27T14:04:19",
+ "janela": {
+  "hoje": "2026-09-27",
+  "dia_semana": "Sunday",
+  "semana_desde": "2026-09-20"
+ },
+ "peso": {
+  "ultima": {
+   "data": "2026-09-27",
+   "peso_kg": 94.35,
+   "pos_esforco": true
+  },
+  "serie_14d": [
+   {
+    "data": "2026-09-04",
+    "peso_kg": 95.45,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-07",
+    "peso_kg": 94.3,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-09",
+    "peso_kg": 94.4,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-10",
+    "peso_kg": 94.15,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-16",
+    "peso_kg": 94.95,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-17",
+    "peso_kg": 94.7,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-18",
+    "peso_kg": 93.65,
+    "pos_esforco": true
+   },
+   {
+    "data": "2026-09-21",
+    "peso_kg": 94.05,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-22",
+    "peso_kg": 94.5,
+    "pos_esforco": true
+   },
+   {
+    "data": "2026-09-23",
+    "peso_kg": 94.2,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-24",
+    "peso_kg": 94.1,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-25",
+    "peso_kg": 94.95,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-26",
+    "peso_kg": 95.25,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-27",
+    "peso_kg": 94.35,
+    "pos_esforco": true
+   }
+  ],
+  "media_7_leituras": 94.49,
+  "media_7_leituras_neutras": 94.51,
+  "media_28d_neutras": 94.54,
+  "n_leituras_pos_esforco_14d": 3,
+  "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
+ },
+ "recuperacao": {
+  "indice_hoje": 30,
+  "banda_hoje": "r",
+  "prontidao_garmin_hoje": 87,
+  "dias_vermelhos_seguidos": 2,
+  "indice_medio_7d": 37.0,
+  "sono_medio_7d": 6.86,
+  "hrv_medio_7d": 37.0,
+  "hrv_medio_28d": 39.0,
+  "fc_repouso_7d": 53.0,
+  "fc_repouso_28d": 52.0
+ },
+ "treino_7d": {
+  "dias_com_gasto_ativo_300+": [
+   {
+    "data": "2026-09-21",
+    "kcal_ativas": 381.0,
+    "passos": 10684
+   },
+   {
+    "data": "2026-09-23",
+    "kcal_ativas": 423.0,
+    "passos": 13961
+   },
+   {
+    "data": "2026-09-26",
+    "kcal_ativas": 397.0,
+    "passos": 13658
+   }
+  ],
+  "registros_de_treino": [
+   {
+    "data": "2026-09-25",
+    "tem_foto": true,
+    "texto": ""
+   },
+   {
+    "data": "2026-09-22",
+    "tem_foto": true,
+    "texto": ""
+   },
+   {
+    "data": "2026-09-21",
+    "tem_foto": true,
+    "texto": ""
+   }
+  ],
+  "sessoes_registradas": 3,
+  "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço."
+ },
+ "alimentacao_7d": {
+  "dias_com_registro": [
+   "2026-09-21",
+   "2026-09-22",
+   "2026-09-23",
+   "2026-09-24",
+   "2026-09-25"
+  ],
+  "n_refeicoes_registradas": 15,
+  "por_dia": {
+   "2026-09-21": 4,
+   "2026-09-22": 3,
+   "2026-09-23": 3,
+   "2026-09-24": 4,
+   "2026-09-25": 1
+  },
+  "ocorrencias": {
+   "fritura": [
+    {
+     "data": "2026-09-25",
+     "refeicao": "Almoço",
+     "texto": "Feijoada (feijão e paio), arroz, torresmo, batata frita"
+    },
+    {
+     "data": "2026-09-24",
+     "refeicao": "Jantar",
+     "texto": "Picanha, batata na airfryer"
+    },
+    {
+     "data": "2026-09-22",
+     "refeicao": "Almoço",
+     "texto": "abacate, tomate, alface, cenoura, bife, berinjela, milanesa, lombo suíno"
+    },
+    {
+     "data": "2026-09-21",
+     "refeicao": "Lanche",
+     "texto": "Festinha com salgados diversos"
+    },
+    {
+     "data": "2026-09-21",
+     "refeicao": "Almoço",
+     "texto": "Abacate, tomate, alface, bata frita, porco, empadão frango. \n\nPastel doce de leite"
+    }
+   ],
+   "doce": [
+    {
+     "data": "2026-09-24",
+     "refeicao": "Outro",
+     "texto": "Chocolate"
+    },
+    {
+     "data": "2026-09-23",
+     "refeicao": "Outro",
+     "texto": "Chocolate ao longo do dia"
+    },
+    {
+     "data": "2026-09-23",
+     "refeicao": "Jantar",
+     "texto": "Capeletii carne a bolonhesa"
+    },
+    {
+     "data": "2026-09-22",
+     "refeicao": "Outro",
+     "texto": "Chocolate a tarde"
+    },
+    {
+     "data": "2026-09-21",
+     "refeicao": "Almoço",
+     "texto": "Abacate, tomate, alface, bata frita, porco, empadão frango. \n\nPastel doce de leite"
+    },
+    {
+     "data": "2026-09-21",
+     "refeicao": "Outro",
+     "texto": "Sorvete"
+    }
+   ],
+   "buffet": [],
+   "alcool": [],
+   "proteina_clara": [
+    {
+     "data": "2026-09-24",
+     "refeicao": "Jantar",
+     "texto": "Picanha, batata na airfryer"
+    },
+    {
+     "data": "2026-09-24",
+     "refeicao": "Almoço",
+     "texto": "Abacate, Tomate, Alface, Filé de Sobrecoxa, quinoa"
+    },
+    {
+     "data": "2026-09-23",
+     "refeicao": "Jantar",
+     "texto": "Capeletii carne a bolonhesa"
+    },
+    {
+     "data": "2026-09-23",
+     "refeicao": "Almoço",
+     "texto": "300g majoritariamente carne"
+    },
+    {
+     "data": "2026-09-22",
+     "refeicao": "Almoço",
+     "texto": "abacate, tomate, alface, cenoura, bife, berinjela, milanesa, lombo suíno"
+    },
+    {
+     "data": "2026-09-21",
+     "refeicao": "Almoço",
+     "texto": "Abacate, tomate, alface, bata frita, porco, empadão frango. \n\nPastel doce de leite"
+    },
+    {
+     "data": "2026-09-21",
+     "refeicao": "Jantar",
+     "texto": "Picanha, bata, pão de alho."
+    }
+   ]
+  },
+  "observacoes": [
+   {
+    "data": "2026-09-25",
+    "texto": "Dia de carga de carboidrato sem doce"
+   },
+   {
+    "data": "2026-09-24",
+    "texto": "Dia em evento, difícil acompanhar o que foi comido ou ser cuidadoso"
+   },
+   {
+    "data": "2026-09-21",
+    "texto": "Dia frouxo na alimentação. Cansaço musculação do futebol mas fui na academia e corrida leve para compensar a alimentação"
+   }
+  ],
+  "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
+ },
+ "lacunas": []
+}

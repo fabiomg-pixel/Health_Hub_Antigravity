@@ -124,6 +124,18 @@ def main():
         log("sem dias no pull e sem histórico — resumo sai vazio")
 
     peso_por_dia = {d["data"]: d for d in (renpho.get("dias") or []) if d.get("data")}
+    # Um pull do Renpho que falha (a lib erra de forma intermitente) não pode APAGAR
+    # o peso já conhecido: sem esta rede, o resumo sai com peso=None em todos os dias
+    # e as médias do fatos.json somem. Aconteceu em 27/09/2026.
+    if not peso_por_dia:
+        anterior = carregar("resumo_diario.json")
+        for linha in (anterior.get("dias") or []) if isinstance(anterior, dict) else []:
+            if linha.get("peso_kg"):
+                peso_por_dia[linha["data"]] = {"peso_kg": linha["peso_kg"],
+                                               "gordura_pct": linha.get("gordura_pct")}
+        if peso_por_dia:
+            log(f"Renpho sem dados ({renpho.get('erro')}) — reaproveitando "
+                f"{len(peso_por_dia)} pesagens já conhecidas")
 
     resumo = []
     for i, dia in enumerate(dias):
