@@ -1,7 +1,7 @@
 {
  "gerado_em": "2026-09-27",
  "semana": "28/set a 4/out · teto de treino e o ritmo novo das refeições",
- "objetivo": "Consolidar em vez de progredir: 3 sessões de força, 2 corridas fáceis, nada intenso — e fechar o buraco da tarde com um ritmo de refeição que não depende de preparo nenhum.",
+ "objetivo": "Consolidar em vez de progredir: 3 sessões de força, 2 corridas fáceis, nada intenso — e um dia alimentar sem ponto de decisão: Yopro às 8h, marmita às 13h, iogurte com whey às 17h, janta em casa.",
  "peso_atual": 94.51,
  "fontes_status": {
   "strava": "indisponível",
@@ -24,7 +24,7 @@
   "linhas": [
    "1️⃣ RITMO NOVO DAS REFEIÇÕES: Yopro de manhã · almoço às 13h · iogurte com whey, granola e banana às 17h, antes da academia · janta. Sem sanduíche: ele dependia de assar e fatiar carne no domingo, e isso não ia acontecer.",
    "2️⃣ TETO DE TREINO: 3 sessões de força e 2 corridas fáceis. Nada intenso esta semana.",
-   "3️⃣ NO BUFFET, O PRATO COMEÇA PELA PROTEÍNA. Fritura fora — foi o padrão de 21, 22 e 25/09.",
+   "3️⃣ O ALMOÇO VOLTA A SER MARMITA (decisão sua, 27/09): 5 unidades, de terça a sexta. O buffet fica como plano B do dia em que a marmita acabar — e aí vale a regra do prato, proteína primeiro e sem fritura.",
    "↩️ O resto continua igual: whey 2×/dia (dose 1 no iogurte das 17h, dose 2 no pós-treino ou na ceia), janta em casa, uma livre no sábado à noite."
   ]
  },
@@ -92,6 +92,7 @@
  "relatorio": [
   "🧠 PRIMEIRA SEMANA MONTADA PELO CONSELHO EM CAMADAS: fatos determinísticos → três especialistas em paralelo (carga, nutrição, logística) → síntese → cético. O cético reprovou a primeira versão deste plano em 9 pontos graves, inclusive eu repetindo o erro do peso pós-jogo. O que você está lendo é a segunda versão.",
   "🥤 MUDANÇA DE RITMO (decidida por você, 27/09): o sanduíche de rosbife saiu antes de estrear — ele dependia de assar e fatiar carne no domingo, e você viu que não ia acontecer. No lugar: Yopro de manhã (~15 g), almoço empurrado para as 13h, iogurte com whey, granola e banana às 17h antes da academia, e a janta fecha. É melhor que a versão anterior por dois motivos: não depende de preparo nenhum, e o almoço mais tarde encurta a distância até as 17h — o buraco onde o doce entrava passa a ter 4 h, não 6.",
+  "🧊 DECISÃO TOMADA: o almoço volta a ser marmita comprada, a partir de terça. São 5, não 10 — das 10 de 14/09 os registros mostram uma usada, e o excesso é o que desmoraliza a ideia. O pedido está na lista de compras do painel e precisa sair hoje para chegar na segunda à noite. Com Yopro às 8h, marmita às 13h e iogurte com whey às 17h, o dia inteiro fica sem ponto de decisão com fome — que era o objetivo desde o começo.",
   "⚖️ PESO, DO JEITO CERTO: média das 7 leituras neutras = 94,51 kg contra 94,53 de 28 dias. ESTÁVEL, dentro do ruído — não em queda. Os 94,35 de hoje são a manhã seguinte ao campeonato e vêm ~0,26 kg abaixo do real; comparar com os 95,25 de sábado seria repetir o erro de 22/09. Nada de corte calórico: o pico de sábado era água.",
   "🛑 TETO DA SEMANA (carga): 3 sessões de força, 2 corridas fáceis de até 35 min, nenhuma intensa. Libera intensa só com HRV ≥42 E FC de repouso ≤50 em dois dias seguidos.",
   "📊 HONESTIDADE SOBRE O TETO: a FC de repouso está em 53 de média de 7 dias contra 52 de 28 — 1 bpm, não os 6 que eu tinha escrito garimpando as melhores leituras do mês. E o índice de HOJE (30) saiu com um componente só, porque o relógio não sincronizou sono, HRV nem FC de repouso. O que sustenta o teto é a média de 7 dias do índice (37) e o acúmulo de 4 sessões + campeonato.",
@@ -104,6 +105,16 @@
   "❓ O QUE NÃO SABEMOS: se o Lower B de hoje aconteceu (0 kcal ativas às 14h); o custo real do campeonato; se há jogo no sábado 03/10; e a alimentação de 26 e 27/09, sem nenhum registro."
  ],
  "lista_compra": [
+  {
+   "cat": "🧊 PEDIDO DE MARMITAS — fazer hoje, para chegar segunda à noite",
+   "itens": [
+    "5 unidades, não 10. Das 10 de 14/09 os registros mostram uma usada — o excesso é o que apodrece a ideia.",
+    "1× N65 (Maxi Carbo de Frango) · 1× N64 (Peito de Frango com Creme de Espinafre) · 1× N98 (Carne Moída com Cenoura) · 1× N62 (Frango com Quiabo) · 1× N65 de reserva",
+    "São os almoços de ter, qua, qui e sex + 1 sobra para a segunda seguinte. Sábado e domingo o almoço é em casa.",
+    "Observação para o pedido: sem calabresa, bacon ou creme de leite. Se faltar algum, trocar por N49 ou N25.",
+    "📸 Fotografe o rótulo de cada um no primeiro dia: com o número real, os ovos de reforço saem."
+   ]
+  },
   {
    "cat": "🥛 O que sustenta o ritmo novo",
    "itens": [
@@ -540,7 +551,7 @@
      "kcal": 650,
      "prot": 50,
      "peso_g": null,
-     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
+     "nota": "Hoje ainda é buffet: as marmitas chegam à noite. Monte na ordem: proteína identificável primeiro, depois salada e legumes, por último arroz e feijão. Fritura fora."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
@@ -632,11 +643,11 @@
      "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
     },
     "almoco": {
-     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 650,
-     "prot": 50,
+     "nome": "13h · 🧊 N65 · Maxi Carbo de Frango + 2 ovos",
+     "kcal": 660,
+     "prot": 52,
      "peso_g": null,
-     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
+     "nota": "Os 2 ovos são reforço FIXO até o rótulo confirmar ≥35 g. Filé grelhado, arroz integral, brócolis, purê de batata doce. O melhor prato do cardápio. 🥚 Regra do rótulo: abaixo de 35 g de proteína, entram 2 ovos cozidos. A N64 dá 45 g e a N20 dá 26 g no mesmo formato de 400 g — fotografe o rótulo no primeiro dia."
     },
     "pre_lanche": {
      "nome": "17h, antes da academia · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
@@ -727,11 +738,11 @@
      "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
     },
     "almoco": {
-     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 650,
-     "prot": 50,
+     "nome": "13h · 🧊 N64 · Peito de Frango com Creme de Espinafre",
+     "kcal": 487,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
+     "nota": "Rótulo já conferido em setembro: 487 kcal, 45 g de proteína, 603 mg de sódio. Não precisa de ovo."
     },
     "pre_lanche": {
      "nome": "17h, antes da academia · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
@@ -793,11 +804,11 @@
      "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
     },
     "almoco": {
-     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 650,
-     "prot": 50,
+     "nome": "13h · 🧊 N98 · Carne Moída com Cenoura e Arroz Integral + 2 ovos",
+     "kcal": 700,
+     "prot": 56,
      "peso_g": null,
-     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora. Dia de jogo: o almoço às 13h já é o combustível."
+     "nota": "Os 2 ovos são reforço FIXO até o rótulo confirmar ≥35 g. Dia de jogo: o almoço às 13h é o combustível. 🥚 Regra do rótulo: abaixo de 35 g de proteína, entram 2 ovos cozidos. A N64 dá 45 g e a N20 dá 26 g no mesmo formato de 400 g — fotografe o rótulo no primeiro dia."
     },
     "pre_lanche": {
      "nome": "16h30 · PRÉ-JOGO · Iogurte + whey + granola + 1 banana + 1 fatia de pão integral",
@@ -863,11 +874,11 @@
      "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
     },
     "almoco": {
-     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 650,
+     "nome": "13h · 🧊 N62 · Frango com Quiabo e Arroz Integral + 2 ovos",
+     "kcal": 660,
      "prot": 50,
      "peso_g": null,
-     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
+     "nota": "Os 2 ovos são reforço FIXO até o rótulo confirmar ≥35 g. 🥚 Regra do rótulo: abaixo de 35 g de proteína, entram 2 ovos cozidos. A N64 dá 45 g e a N20 dá 26 g no mesmo formato de 400 g — fotografe o rótulo no primeiro dia."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",

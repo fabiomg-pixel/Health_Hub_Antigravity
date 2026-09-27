@@ -110,7 +110,12 @@ precisa ser redistribuída.
 ### O modelo que funciona
 
 - **ALMOÇO = marmita congelada comprada.** Foi a mudança que resolveu o vazamento crônico do
-  ano: tira a decisão do momento de fome. Compra 5 no domingo.
+  ano: tira a decisão do momento de fome. **Confirmado por ele em 27/09/2026**, depois de duas
+  semanas de buffet com fritura em 21, 22 e 25/09.
+  ⚠️ **Compre 5, nunca 10.** Das 10 de 14/09 os registros mostram UMA usada: o excesso não vira
+  adesão, vira desmoralização da ideia (e comida parada no freezer). Cinco cobrem ter–sex mais
+  uma de reserva; sábado e domingo o almoço é em casa. O buffet fica como plano B do dia em que
+  a marmita acabar, e aí vale a regra do prato: proteína identificável primeiro, fritura fora.
 - **Regra do rótulo:** ≥35 g de proteína. Abaixo disso, soma 2 ovos ou 80 g de frango. Isso não
   é burocracia — a N64 (frango com espinafre) dá 45 g e 603 mg de sódio; a N20 (tutu com
   calabresa) dá 26 g e 1084 mg. Mesmo formato de 400 g. **Prefira proteína magra identificável
