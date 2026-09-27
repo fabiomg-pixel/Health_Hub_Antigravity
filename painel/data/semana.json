@@ -1,7 +1,7 @@
 {
  "gerado_em": "2026-09-27",
- "semana": "28/set a 4/out · 1º conselho em camadas — teto de treino e o lanche das 16h",
- "objetivo": "Consolidar em vez de progredir: 3 sessões de força, 2 corridas fáceis, nada intenso — e instalar o lanche proteico das 16h, que é o buraco por onde o doce entra.",
+ "semana": "28/set a 4/out · teto de treino e o ritmo novo das refeições",
+ "objetivo": "Consolidar em vez de progredir: 3 sessões de força, 2 corridas fáceis, nada intenso — e fechar o buraco da tarde com um ritmo de refeição que não depende de preparo nenhum.",
  "peso_atual": 94.51,
  "fontes_status": {
   "strava": "indisponível",
@@ -22,10 +22,10 @@
  "regra_prato": {
   "titulo": "Três coisas nesta semana. O resto é o de sempre.",
   "linhas": [
-   "1️⃣ SANDUÍCHE DE ROSBIFE ÀS 16h, todo dia útil. É refeição marcada, não opção — cai na hora em que o doce aparecia.",
+   "1️⃣ RITMO NOVO DAS REFEIÇÕES: Yopro de manhã · almoço às 13h · iogurte com whey, granola e banana às 17h, antes da academia · janta. Sem sanduíche: ele dependia de assar e fatiar carne no domingo, e isso não ia acontecer.",
    "2️⃣ TETO DE TREINO: 3 sessões de força e 2 corridas fáceis. Nada intenso esta semana.",
-   "3️⃣ DOMINGO, 45 MIN DE PREPARO: rosbife assado e fatiado, 12 ovos, legumes cortados, potes montados.",
-   "↩️ O resto continua igual: almoço com regra do prato, whey 2×/dia, janta em casa, uma livre no sábado à noite. Não precisa decidir nada disso de novo."
+   "3️⃣ NO BUFFET, O PRATO COMEÇA PELA PROTEÍNA. Fritura fora — foi o padrão de 21, 22 e 25/09.",
+   "↩️ O resto continua igual: whey 2×/dia (dose 1 no iogurte das 17h, dose 2 no pós-treino ou na ceia), janta em casa, uma livre no sábado à noite."
   ]
  },
  "tendencias": {
@@ -91,6 +91,7 @@
  },
  "relatorio": [
   "🧠 PRIMEIRA SEMANA MONTADA PELO CONSELHO EM CAMADAS: fatos determinísticos → três especialistas em paralelo (carga, nutrição, logística) → síntese → cético. O cético reprovou a primeira versão deste plano em 9 pontos graves, inclusive eu repetindo o erro do peso pós-jogo. O que você está lendo é a segunda versão.",
+  "🥤 MUDANÇA DE RITMO (decidida por você, 27/09): o sanduíche de rosbife saiu antes de estrear — ele dependia de assar e fatiar carne no domingo, e você viu que não ia acontecer. No lugar: Yopro de manhã (~15 g), almoço empurrado para as 13h, iogurte com whey, granola e banana às 17h antes da academia, e a janta fecha. É melhor que a versão anterior por dois motivos: não depende de preparo nenhum, e o almoço mais tarde encurta a distância até as 17h — o buraco onde o doce entrava passa a ter 4 h, não 6.",
   "⚖️ PESO, DO JEITO CERTO: média das 7 leituras neutras = 94,51 kg contra 94,53 de 28 dias. ESTÁVEL, dentro do ruído — não em queda. Os 94,35 de hoje são a manhã seguinte ao campeonato e vêm ~0,26 kg abaixo do real; comparar com os 95,25 de sábado seria repetir o erro de 22/09. Nada de corte calórico: o pico de sábado era água.",
   "🛑 TETO DA SEMANA (carga): 3 sessões de força, 2 corridas fáceis de até 35 min, nenhuma intensa. Libera intensa só com HRV ≥42 E FC de repouso ≤50 em dois dias seguidos.",
   "📊 HONESTIDADE SOBRE O TETO: a FC de repouso está em 53 de média de 7 dias contra 52 de 28 — 1 bpm, não os 6 que eu tinha escrito garimpando as melhores leituras do mês. E o índice de HOJE (30) saiu com um componente só, porque o relógio não sincronizou sono, HRV nem FC de repouso. O que sustenta o teto é a média de 7 dias do índice (37) e o acúmulo de 4 sessões + campeonato.",
@@ -104,32 +105,22 @@
  ],
  "lista_compra": [
   {
-   "cat": "🥛 Iogurte e proteína pronta (o pedido de hoje)",
+   "cat": "🥛 O que sustenta o ritmo novo",
    "itens": [
-    "Iogurte natural 170 g — 7 potes (é a base da dose 1 de whey, às 15h30)",
-    "Yopro ou similar — 5 unidades, para os dias em que você não está em casa às 15h30",
-    "⚠️ CONFIRA O RÓTULO: garrafa de 250 ml costuma dar ~25 g de proteína; POTE de 160 g dá ~15 g. Se for pote, são 2 para valer uma dose. Já erramos essa conta antes.",
-    "Similares que servem: Whey Yogurt Piracanjuba, Verde Campo Proteína, Itambé Protein, Nestlé Protein — o critério é ≥15 g de proteína e ≤8 g de açúcar por unidade",
-    "Leite desnatado 1 L (ceia)",
-    "Whey — confira se o pote dura até 4/10 (2 doses/dia = ~420 g/semana)"
+    "Yopro ou similar — 7 unidades (1 por manhã). Critério: ≥15 g de proteína e ≤8 g de açúcar. Garrafa de 250 ml dá ~25 g; pote de 160 g dá ~15 g.",
+    "Iogurte natural 170 g — 7 potes (a base do whey das 17h)",
+    "Granola sem açúcar — 1 pacote (porção de 30 g, não a tigela cheia)",
+    "Banana — 1 penca e meia (17h todo dia + pré-corrida de domingo)",
+    "Whey — 2 doses/dia; leite desnatado 1 L"
    ]
   },
   {
-   "cat": "🥩 Carne para o sanduíche da tarde",
-   "itens": [
-    "Coxão mole, patinho ou alcatra em peça — 800 g a 1 kg (assar domingo e fatiar fino = rosbife para a semana)",
-    "Alternativa pronta se não quiser assar: rosbife fatiado na frios, ou peito de peru defumado — 400 g (mais sódio, use como plano B)",
-    "Pão integral — 2 pacotes (2 fatias por sanduíche, 4-5 sanduíches na semana)",
-    "Queijo minas padrão ou mussarela light — 300 g",
-    "Mostarda, alface, tomate — o tempero que faz o sanduíche não enjoar"
-   ]
-  },
-  {
-   "cat": "🍗 Proteína das refeições",
+   "cat": "🍗 Proteína das jantas",
    "itens": [
     "Peito de frango — 1,2 kg",
     "Tilápia — 6 filés",
-    "Ovos — 3 dúzias (2 no pré-treino, omelete, 12 cozidos no domingo)"
+    "Ovos — 2 dúzias",
+    "Se a peça de carne já foi comprada: assa e vira proteína da janta, não sanduíche"
    ]
   },
   {
@@ -142,11 +133,10 @@
    ]
   },
   {
-   "cat": "🍌 Carbo e fruta",
+   "cat": "🍚 Base",
    "itens": [
-    "Banana — 1 penca (pré-treino e pré-jogo)",
-    "Tangerina ou uva",
-    "Arroz integral e feijão (conferir estoque)"
+    "Arroz integral e feijão (conferir estoque)",
+    "Pão integral — 1 pacote (só pré-jogo de quinta e domingo)"
    ]
   }
  ],
@@ -538,36 +528,43 @@
     ]
    },
    "refeicoes": {
-    "almoco": {
-     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 600,
-     "prot": 45,
+    "cafe": {
+     "nome": "~8h · 1 Yopro (ou similar ≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
      "peso_g": null,
-     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
+     "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
+    },
+    "almoco": {
+     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": null,
+     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
     },
     "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
-    },
-    "lanche_pre_treino": {
-     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
-     "kcal": 420,
+     "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
+     "kcal": 480,
      "prot": 38,
      "peso_g": null,
-     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
+     "nota": "💊 WHEY DOSE 1 e o pré-treino ao mesmo tempo. Granola sem açúcar ou com pouco mel. É esta refeição que ocupa o horário do doce."
     },
+    "lanche_pre_treino": null,
     "janta": {
-     "nome": "Casa · Frango ou tilápia (180 g) + legumes refogados + 2 ovos",
-     "kcal": 560,
-     "prot": 58,
+     "nome": "Casa · Frango ou tilápia (180 g) + legumes refogados",
+     "kcal": 520,
+     "prot": 50,
      "peso_g": null,
-     "nota": "Dia sem treino: a proteína vem toda da comida. Os 2 ovos são reforço fixo.",
+     "nota": "Dia sem treino: a proteína vem toda da comida.",
      "receita": "rO"
     },
-    "petisco": null
+    "petisco": {
+     "nome": "Ceia · 💊 WHEY DOSE 2 (30 g) + 200 ml de leite desnatado",
+     "kcal": 200,
+     "prot": 31,
+     "peso_g": null,
+     "nota": "Dia sem treino: a dose 2 vai para a ceia."
+    }
    }
   },
   {
@@ -627,40 +624,41 @@
     ]
    },
    "refeicoes": {
-    "almoco": {
-     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 600,
-     "prot": 45,
+    "cafe": {
+     "nome": "~8h · 1 Yopro (ou similar ≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
      "peso_g": null,
-     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
+     "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
+    },
+    "almoco": {
+     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": null,
+     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
     },
     "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
-    },
-    "lanche_pre_treino": {
-     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
-     "kcal": 420,
+     "nome": "17h, antes da academia · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
+     "kcal": 480,
      "prot": 38,
      "peso_g": null,
-     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
+     "nota": "💊 WHEY DOSE 1 e o pré-treino ao mesmo tempo. Granola sem açúcar ou com pouco mel. É esta refeição que ocupa o horário do doce."
     },
+    "lanche_pre_treino": null,
     "janta": {
-     "nome": "Casa · Omelete de 3 ovos + queijo + salada grande",
-     "kcal": 450,
-     "prot": 42,
+     "nome": "Casa · Omelete de 4 ovos + queijo + salada grande",
+     "kcal": 520,
+     "prot": 48,
      "peso_g": null,
-     "nota": "Rápida, para a janta não virar 22h."
+     "nota": "Rápida — janta de pós-academia."
     },
     "petisco": {
-     "nome": "💊 WHEY DOSE 2 (30 g) com água ou leite",
+     "nome": "Pós-treino · 💊 WHEY DOSE 2 (30 g) com água",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "Logo após o treino; em dia sem treino, na ceia."
+     "nota": "Fecha a proteína do dia."
     }
    }
   },
@@ -721,41 +719,42 @@
     ]
    },
    "refeicoes": {
-    "almoco": {
-     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 600,
-     "prot": 45,
+    "cafe": {
+     "nome": "~8h · 1 Yopro (ou similar ≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
      "peso_g": null,
-     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
+     "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
+    },
+    "almoco": {
+     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": null,
+     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
     },
     "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
-    },
-    "lanche_pre_treino": {
-     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
-     "kcal": 420,
+     "nome": "17h, antes da academia · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
+     "kcal": 480,
      "prot": 38,
      "peso_g": null,
-     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
+     "nota": "💊 WHEY DOSE 1 e o pré-treino ao mesmo tempo. Granola sem açúcar ou com pouco mel. É esta refeição que ocupa o horário do doce."
     },
+    "lanche_pre_treino": null,
     "janta": {
-     "nome": "Casa · Tilápia assada + legumes no forno",
-     "kcal": 450,
-     "prot": 45,
+     "nome": "Casa · Tilápia assada + legumes no forno + 1 xíc. de arroz",
+     "kcal": 560,
+     "prot": 50,
      "peso_g": null,
      "nota": "25 min de forno, tudo junto.",
      "receita": "rP"
     },
     "petisco": {
-     "nome": "💊 WHEY DOSE 2 (30 g) com água ou leite",
+     "nome": "Pós-treino · 💊 WHEY DOSE 2 (30 g) com água",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "Logo após o treino; em dia sem treino, na ceia."
+     "nota": "Fecha a proteína do dia."
     }
    }
   },
@@ -786,27 +785,28 @@
     ]
    },
    "refeicoes": {
-    "almoco": {
-     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 600,
-     "prot": 45,
+    "cafe": {
+     "nome": "~8h · 1 Yopro (ou similar ≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
      "peso_g": null,
-     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
+     "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
+    },
+    "almoco": {
+     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": null,
+     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora. Dia de jogo: o almoço às 13h já é o combustível."
     },
     "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
-    },
-    "lanche_pre_treino": {
-     "nome": "16h30 · PRÉ-JOGO · Sanduíche de rosbife + 1 banana",
-     "kcal": 520,
+     "nome": "16h30 · PRÉ-JOGO · Iogurte + whey + granola + 1 banana + 1 fatia de pão integral",
+     "kcal": 580,
      "prot": 40,
      "peso_g": null,
-     "nota": "3h30 antes do jogo. Comer às 18h era tarde demais — esta é a correção que saiu da ficha de evidência de hoje."
+     "nota": "3h30 antes do jogo — o horário que saiu da ficha de evidência. Comer às 18h era tarde demais."
     },
+    "lanche_pre_treino": null,
     "janta": {
      "nome": "~21h45 · Janta pequena · 3 ovos mexidos + queijo + salada",
      "kcal": 380,
@@ -815,11 +815,11 @@
      "nota": "Pequena de propósito: cama às 23h."
     },
     "petisco": {
-     "nome": "21h15 · 💊 WHEY DOSE 2 no clube",
+     "nome": "21h15 · 💊 WHEY DOSE 2 no clube (com água)",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "Antes de sair."
+     "nota": "Antes de sair do clube."
     }
    }
   },
@@ -855,40 +855,41 @@
     ]
    },
    "refeicoes": {
-    "almoco": {
-     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
-     "kcal": 600,
-     "prot": 45,
+    "cafe": {
+     "nome": "~8h · 1 Yopro (ou similar ≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
      "peso_g": null,
-     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
+     "nota": "Proteína logo cedo, sem preparo e sem decisão. Se pegar a garrafa de 250 ml em vez do pote, são ~25 g e o dia fica mais folgado."
+    },
+    "almoco": {
+     "nome": "13h · Buffet/quilo — comece o prato pela PROTEÍNA",
+     "kcal": 650,
+     "prot": 50,
+     "peso_g": null,
+     "nota": "Almoço mais tarde encurta a distância até as 17h. Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fora."
     },
     "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
-    },
-    "lanche_pre_treino": {
-     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
-     "kcal": 420,
+     "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
+     "kcal": 480,
      "prot": 38,
      "peso_g": null,
-     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
+     "nota": "💊 WHEY DOSE 1 e o pré-treino ao mesmo tempo. Granola sem açúcar ou com pouco mel. É esta refeição que ocupa o horário do doce."
     },
+    "lanche_pre_treino": null,
     "janta": {
-     "nome": "Casa · Frango grelhado (150 g) + salada + 2 col. de arroz",
-     "kcal": 450,
-     "prot": 45,
+     "nome": "Casa · Frango grelhado (170 g) + salada + 2 col. de arroz",
+     "kcal": 500,
+     "prot": 48,
      "peso_g": null,
      "nota": "Sexta controlada é o que decide o peso de segunda."
     },
     "petisco": {
-     "nome": "💊 WHEY DOSE 2 (30 g) com água ou leite",
+     "nome": "Ceia · 💊 WHEY DOSE 2 (30 g) com água",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "Logo após o treino; em dia sem treino, na ceia."
+     "nota": "Fecha a proteína do dia."
     }
    }
   },
@@ -944,40 +945,41 @@
     ]
    },
    "refeicoes": {
+    "cafe": {
+     "nome": "7h15 · 1 Yopro + 1 banana",
+     "kcal": 240,
+     "prot": 16,
+     "peso_g": null,
+     "nota": "Treino de manhã: proteína e carbo leves antes de sair."
+    },
     "almoco": {
-     "nome": "Casa · Proteína grelhada (180 g) + arroz + feijão + salada",
-     "kcal": 640,
-     "prot": 52,
+     "nome": "Casa · Proteína grelhada (200 g) + arroz + feijão + salada",
+     "kcal": 660,
+     "prot": 55,
      "peso_g": null,
      "nota": "Sem fritura."
     },
     "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
+     "nome": "17h · Iogurte natural + whey (30 g)",
      "kcal": 330,
-     "prot": 30,
+     "prot": 34,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
+     "nota": "💊 Garante a proteína antes da refeição livre."
     },
-    "lanche_pre_treino": {
-     "nome": "16h · Sanduíche de rosbife (meio) + 1 fruta",
-     "kcal": 300,
-     "prot": 22,
-     "peso_g": null,
-     "nota": "Metade da porção: a refeição livre é logo à noite."
-    },
+    "lanche_pre_treino": null,
     "janta": {
      "nome": "🍽️ REFEIÇÃO LIVRE DA SEMANA",
-     "kcal": 900,
+     "kcal": 800,
      "prot": 40,
      "peso_g": null,
-     "nota": "Uma, marcada, sem repetir."
+     "nota": "Uma, marcada, sem repetir. Comece por água e proteína — o resto vem depois."
     },
     "petisco": {
-     "nome": "Pós-treino da manhã · 💊 WHEY (30 g) + 200 ml de leite",
-     "kcal": 200,
-     "prot": 31,
+     "nome": "Pós-treino da manhã · 💊 WHEY DOSE 2 (30 g) com água",
+     "kcal": 130,
+     "prot": 24,
      "peso_g": null,
-     "nota": "Garante a proteína antes da refeição livre da noite."
+     "nota": "Garante proteína antes da livre da noite."
     }
    }
   },
@@ -1001,7 +1003,7 @@
       "reps": "30–35 min"
      },
      {
-      "nome": "🍳 DEPOIS, 45 min de PREPARO — é a peça que faz a terça acontecer: assar 800 g–1 kg de carne e fatiar como rosbife, cozinhar 12 ovos, lavar e cortar legumes, montar os potes de iogurte.",
+      "nome": "🍳 DEPOIS, 25 min de PREPARO (encolheu: sem rosbife): cozinhar 12 ovos, lavar e cortar os legumes da semana, deixar 7 iogurtes e 7 Yopros na prateleira da frente da geladeira. É o que faz a terça acontecer.",
       "series": 1,
       "reps": "—"
      },
@@ -1013,40 +1015,41 @@
     ]
    },
    "refeicoes": {
-    "almoco": {
-     "nome": "Casa · Frango ou tilápia (180 g) + arroz + salada",
-     "kcal": 620,
-     "prot": 55,
-     "peso_g": null,
-     "nota": "Domingo controlado."
-    },
-    "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
-    },
-    "lanche_pre_treino": {
-     "nome": "Antes da corrida · Banana + 1 pão integral",
+    "cafe": {
+     "nome": "Antes da corrida · 1 banana + 1 fatia de pão integral",
      "kcal": 200,
      "prot": 6,
      "peso_g": null,
-     "nota": "Leve."
+     "nota": "Leve, de manhã cedo."
     },
+    "almoco": {
+     "nome": "Casa · Frango ou tilápia (200 g) + arroz + salada",
+     "kcal": 640,
+     "prot": 58,
+     "peso_g": null,
+     "nota": "Depois da corrida. Domingo controlado."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "💊 WHEY DOSE 1 e o pré-treino ao mesmo tempo. Granola sem açúcar ou com pouco mel. É esta refeição que ocupa o horário do doce."
+    },
+    "lanche_pre_treino": null,
     "janta": {
      "nome": "Casa · Sopa de legumes com frango desfiado (150 g)",
-     "kcal": 480,
-     "prot": 45,
+     "kcal": 420,
+     "prot": 40,
      "peso_g": null,
-     "nota": "Leve, mas com proteína de verdade."
+     "nota": "Leve, fechando a semana."
     },
     "petisco": {
-     "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
+     "nome": "Ceia · 💊 WHEY DOSE 2 (30 g) + 200 ml de leite desnatado",
      "kcal": 200,
      "prot": 31,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 2. Fecha o dia."
+     "nota": "Fecha a semana."
     }
    }
   }

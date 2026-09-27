@@ -87,8 +87,19 @@ reais. A execução entrega historicamente 85–90% do planejado.
 
 ### As 5 ocasiões
 
-O Fabio **não toma café da manhã em dia útil** — a primeira refeição é o almoço. As chaves
-fixas do `semana.json` são `almoco`, `pre_lanche`, `lanche_pre_treino`, `janta`, `petisco`.
+**Mudou em 27/09/2026 (decisão dele):** agora há **proteína de manhã** — 1 Yopro (~15 g, ou a
+garrafa de 250 ml com ~25 g), sem preparo. O almoço foi empurrado para **13h**, e o iogurte com
+whey ganhou granola e banana e virou a refeição das **17h, imediatamente antes da academia**.
+A janta fecha o dia. Chaves do `semana.json`: `cafe` (nova), `almoco`, `pre_lanche`,
+`lanche_pre_treino`, `janta`, `petisco`.
+
+**Por que o sanduíche de rosbife foi aposentado antes de estrear:** ele dependia de assar e
+fatiar carne no domingo. Prescrição que depende de preparo semanal não sobrevive à semana dele —
+o mesmo motivo que derrubou as 35 refeições do "controle total". **Teste de sobrevivência de
+qualquer refeição nova: ela existe mesmo na semana em que nada foi preparado?**
+
+Efeito colateral bom do almoço às 13h: a distância até as 17h cai de ~6 h para 4 h, e é nesse
+vão que o doce entrava.
 
 Distribuição-alvo: almoço 45 · tarde 34 · pré-treino 30 · janta 50 · petisco 14.
 

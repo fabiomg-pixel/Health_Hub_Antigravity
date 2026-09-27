@@ -17,8 +17,8 @@
  "perguntas": [
   {
    "id": "q1",
-   "texto": "O lanche de rosbife das 16h elimina o doce da tarde?",
-   "como_responder": "contar SÓ os dias úteis (seg a sex): em quantos houve o sanduíche das 16h e em quantos houve doce. Comparar com a linha de base de 21 a 24/09, quando houve doce em 4 dos 5 dias com registro.",
+   "texto": "O ritmo novo (Yopro de manhã + almoço 13h + iogurte com whey às 17h) elimina o doce da tarde?",
+   "como_responder": "contar só os dias úteis: em quantos houve o iogurte das 17h e em quantos houve doce registrado. Linha de base: 21 a 24/09, doce em 4 dos 5 dias com registro.",
    "resposta": null
   },
   {
@@ -31,6 +31,12 @@
    "id": "q3",
    "texto": "O stiff e o afundo unilateral melhoram a arrancada no jogo?",
    "como_responder": "relato em texto do jogo de quinta: se houve arrancada sem sensação de fragilidade. Terça e sábado precisam ter os dois exercícios de fato executados — o Fitbod tem cortado.",
+   "resposta": null
+  },
+  {
+   "id": "q4",
+   "texto": "O Yopro de manhã atrapalha o almoço das 13h ou o dia fica mais fácil?",
+   "como_responder": "observação dele em texto na quarta ou quinta: chegou às 13h com mais ou menos fome que o normal.",
    "resposta": null
   }
  ]

@@ -229,9 +229,9 @@ function renderDay(d) {
   h += `</section>`;
 
   const r = d.refeicoes, isTrain = d.tipo === 'treino';
-  const slots = [['almoco', 'Almoço'], ['pre_lanche', 'Pré-lanche'],
+  const slots = [['cafe', 'Manhã · proteína'], ['almoco', 'Almoço'], ['pre_lanche', 'Pré-lanche'],
     ['lanche_pre_treino', isTrain ? 'Lanche · pré-treino' : 'Lanche · tarde'],
-    ['janta', 'Janta'], ['petisco', 'Distração · pós-janta']];
+    ['janta', 'Janta'], ['petisco', isTrain ? 'Pós-treino' : 'Ceia']];
   let totK = 0, totP = 0;
   const mealRows = slots.map(([key, label]) => {
     const m = r[key]; if (!m) return '';
@@ -244,7 +244,7 @@ function renderDay(d) {
   h += `<section><h2>Plano alimentar do dia</h2>
     <div class="daytot"><span>≈ ${totK} kcal · ${totP} g proteína</span><small>meta ${DATA.dieta.calorias} / ${DATA.dieta.proteina} g${DATA.dieta.proteina_piso ? ` · piso ${DATA.dieta.proteina_piso} g` : ''}</small></div>
     ${mealRows}
-    <div class="note">Janela alimentar começa no almoço (11–12h) — sem café da manhã. Tudo que você come está aqui, inclusive a distração adocicada pós-janta. Se bater fome fora de hora, adiante o próximo item da lista em vez de beliscar solto; o que não está no plano fica de fora. Almoço = sobra da janta da véspera (cozinha-se uma vez).</div></section>`;
+    <div class="note">Janela alimentar: proteína leve de manhã (Yopro), almoço às 13h, iogurte com whey às 17h antes da academia, janta. Tudo que você come está aqui, inclusive a distração adocicada pós-janta. Se bater fome fora de hora, adiante o próximo item da lista em vez de beliscar solto; o que não está no plano fica de fora. Almoço = sobra da janta da véspera (cozinha-se uma vez).</div></section>`;
 
   const regs = (REGISTROS || []).filter(x => isoDDMM(x.data) === d.data);
   const ordem = { 'Café': 0, 'Almoço': 1, 'Lanche': 2, 'Jantar': 3, 'Outro': 4 };
