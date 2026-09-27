@@ -124,8 +124,12 @@ def bloco_peso(resumo, garmin_hist, regs):
     return {
         "ultima": serie[-1] if serie else None,
         "serie_14d": ult,
-        "media_7_leituras": media([x["peso_kg"] for x in serie[-7:]]),
-        "media_7_leituras_neutras": media([x["peso_kg"] for x in serie[-7:] if not x["pos_esforco"]]),
+        "media_ultimas_7_leituras": media([x["peso_kg"] for x in serie[-7:]]),
+        # "neutras dentro das últimas 7 leituras" — o n vai junto, porque já
+        # chamamos de "média de 7" o que eram 5 (27/09/2026).
+        "media_neutras_nas_ultimas_7": media([x["peso_kg"] for x in serie[-7:] if not x["pos_esforco"]]),
+        "n_neutras_nas_ultimas_7": sum(1 for x in serie[-7:] if not x["pos_esforco"]),
+        "media_7_neutras_de_verdade": media([x["peso_kg"] for x in serie if not x["pos_esforco"]][-7:]),
         "media_28d_neutras": media(neutras[-28:]),
         "n_leituras_pos_esforco_14d": sum(1 for x in ult if x["pos_esforco"]),
         "aviso": ("Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias "
@@ -216,6 +220,21 @@ def main():
         saida["lacunas"].append("resumo_diario.json ausente — rode synthesize.py")
     if not regs:
         saida["lacunas"].append("registros do Notion indisponíveis")
+    # Um índice calculado com 1 ou 2 componentes é extrapolação, não medida: o
+    # synthesize reescala pelos pesos usados, então um dia só com "estresse" vira
+    # um número de escala cheia. Declarar isso é obrigatório — em 27/09/2026 o teto
+    # de uma semana inteira quase se apoiou num índice de componente único.
+    if resumo:
+        comp = resumo[-1].get("componentes_z") or {}
+        faltando = [k for k, v in comp.items() if v is None]
+        if len(faltando) >= 2:
+            saida["recuperacao"]["indice_hoje_confiavel"] = False
+            saida["recuperacao"]["componentes_faltando_hoje"] = faltando
+            saida["lacunas"].append(
+                f"índice de hoje calculado sem {', '.join(faltando)} — use a média de 7 dias, "
+                f"não o número de hoje")
+        else:
+            saida["recuperacao"]["indice_hoje_confiavel"] = True
     if saida["peso"]["ultima"] and saida["peso"]["ultima"]["data"] != hoje.isoformat():
         saida["lacunas"].append(f"sem pesagem hoje (última: {saida['peso']['ultima']['data']})")
     print(json.dumps(saida, ensure_ascii=False, indent=1))

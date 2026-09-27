@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-09-27T14:04:19",
+ "gerado_em": "2026-09-27T16:42:10",
  "janela": {
   "hoje": "2026-09-27",
   "dia_semana": "Sunday",
@@ -9,7 +9,7 @@
   "ultima": {
    "data": "2026-09-27",
    "peso_kg": 94.35,
-   "pos_esforco": true
+   "pos_esforco": false
   },
   "serie_14d": [
    {
@@ -80,13 +80,15 @@
    {
     "data": "2026-09-27",
     "peso_kg": 94.35,
-    "pos_esforco": true
+    "pos_esforco": false
    }
   ],
-  "media_7_leituras": 94.49,
-  "media_7_leituras_neutras": 94.51,
-  "media_28d_neutras": 94.54,
-  "n_leituras_pos_esforco_14d": 3,
+  "media_ultimas_7_leituras": 94.49,
+  "media_neutras_nas_ultimas_7": 94.48,
+  "n_neutras_nas_ultimas_7": 6,
+  "media_7_neutras_de_verdade": 94.51,
+  "media_28d_neutras": 94.53,
+  "n_leituras_pos_esforco_14d": 2,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
@@ -99,7 +101,14 @@
   "hrv_medio_7d": 37.0,
   "hrv_medio_28d": 39.0,
   "fc_repouso_7d": 53.0,
-  "fc_repouso_28d": 52.0
+  "fc_repouso_28d": 52.0,
+  "indice_hoje_confiavel": false,
+  "componentes_faltando_hoje": [
+   "hrv_ms",
+   "sono_h",
+   "fc_repouso",
+   "body_battery_max"
+  ]
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
@@ -271,5 +280,7 @@
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
- "lacunas": []
+ "lacunas": [
+  "índice de hoje calculado sem hrv_ms, sono_h, fc_repouso, body_battery_max — use a média de 7 dias, não o número de hoje"
+ ]
 }

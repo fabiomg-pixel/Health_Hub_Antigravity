@@ -165,9 +165,9 @@ function plateGuide(d) {
   let g = null;
   if (d) g = flex
     ? "Fim de semana flexível (controle de dano) — proteína em toda refeição, vegetais à vontade, modere carbo, álcool e doces. Não precisa pesar; só não exagerar."
-    : d.treino
-      ? "Dia de treino — garanta ~50 g de proteína no almoço (mesmo comendo fora) e reforce o carbo no pós-treino."
-      : "Dia de descanso — mantenha a proteína, segure no carbo e capriche nos vegetais.";
+    : (d.tipo === 'treino' || d.tipo === 'futebol')
+      ? "Dia de treino — garanta ~45 g de proteína no almoço, mesmo comendo fora."
+      : "Dia leve — mantenha a proteína e capriche nos vegetais. Sem treino, sem reforço de carbo.";
   return `<section><h2>${rp.titulo}${flex ? '<span class="flexbadge">fim de semana · flexível</span>' : ''}</h2>
     <ul class="plate">${rp.linhas.map(l => `<li>${l}</li>`).join("")}</ul>
     ${g ? `<div class="note${flex ? ' flex' : ''}">${g}</div>` : ''}</section>`;
@@ -189,7 +189,7 @@ function renderHome() {
     <div class="stat"><div class="v">${v(t.prontidao_garmin_hoje)}</div><div class="k">Garmin hoje</div></div>
     <div class="stat"><div class="v">${v(t.prontidao_media_7d)}</div><div class="k">Garmin méd. 7d</div></div>
     <div class="stat"><div class="v">${v(t.indice_agudo_hoje)}</div><div class="k">Meu índice hoje</div></div>
-    <div class="stat"><div class="v">${v(t.sono_score_hoje)}</div><div class="k">Sono score</div></div>
+    <div class="stat"><div class="v">${v(t.indice_medio_7d)}</div><div class="k">Meu índice méd. 7d</div></div>
   </div>${bars(t.prontidao)}
   <div class="legend"><span><span class="dot" style="background:var(--g)"></span>≥75</span>
     <span><span class="dot" style="background:var(--y)"></span>50–74</span>
@@ -203,7 +203,7 @@ function renderHome() {
   h += `<section><h2>Status do treino · esta semana</h2>
     <div class="grid4"><div class="stat"><div class="v">${st.feito}<small>/${st.planejado}</small></div><div class="k">Treinos feitos</div></div>
     <div class="stat" style="grid-column: span 3; text-align:left; display:flex; align-items:center;">
-      <span style="color:var(--dim); font-size:14px">${st.feito === 0 ? 'Semana ainda não iniciada — 4 sessões planejadas (Upper/Lower).' : st.dias_feitos.join(', ')}</span></div></div></section>`;
+      <span style="color:var(--dim); font-size:14px">${st.dias_feitos && st.dias_feitos.length ? st.dias_feitos.join(' ') : 'Semana ainda não iniciada.'}</span></div></div></section>`;
 
   h += `<section><h2>Visão geral da semana</h2><div class="wk">` + DATA.dias.map(d =>
     `<a class="wkrow" href="#${d.id}"><span class="d">${d.nome.slice(0,3)} ${d.data}</span>

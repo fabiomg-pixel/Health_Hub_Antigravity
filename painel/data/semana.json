@@ -1,76 +1,44 @@
 {
- "gerado_em": "2026-09-26",
- "semana": "26/set a 4/out · jogo hoje, e a semana que vem com MOLDE FIXO",
- "objetivo": "Parar de reinventar a semana: o molde é sempre o mesmo (seg light · ter Lower A · qua costas + esteira · qui futebol · sex Upper B · sáb Lower B ou campeonato · dom corrida + preparo). Só o jogo e o tempo mudam. Meta de peso: voltar a 94,0 de média até 04/10.",
- "peso_atual": 95.25,
+ "gerado_em": "2026-09-27",
+ "semana": "28/set a 4/out · 1º conselho em camadas — teto de treino e o lanche das 16h",
+ "objetivo": "Consolidar em vez de progredir: 3 sessões de força, 2 corridas fáceis, nada intenso — e instalar o lanche proteico das 16h, que é o buraco por onde o doce entra.",
+ "peso_atual": 94.51,
  "fontes_status": {
   "strava": "indisponível",
   "garmin": "ok",
   "peso": "ok",
-  "nutricao": "ok",
-  "fitbod": "pendente"
+  "nutricao": "parcial — sem registro em 26 e 27/09",
+  "fitbod": "pendente",
+  "clima": "Open-Meteo, puxado em 27/09 (confirmar na manhã dos dias a partir de quarta)"
  },
  "dieta": {
   "calorias": 1900,
-  "proteina": 160,
+  "proteina": 175,
   "proteina_piso": 140,
   "gordura": 60,
   "carbo": 175,
   "fibra": 30
  },
  "regra_prato": {
-  "titulo": "Molde fixo — a semana não se reinventa",
+  "titulo": "Três coisas nesta semana. O resto é o de sempre.",
   "linhas": [
-   "🔁 TREINO, SEMPRE IGUAL: seg light (opcional) · ter Lower A · qua costas + 25 min · qui futebol · sex Upper B · sáb Lower B (ou campeonato) · dom corrida longa + preparo. Só o jogo e o tempo mudam.",
-   "🍽️ COMIDA, SEMPRE IGUAL: almoço com regra do prato · 15h30 iogurte com whey (ou Yopro na rua) · 17h sanduíche de rosbife nos dias de treino · janta em casa · ceia com whey.",
-   "🥩 O LANCHE DA TARDE VIRA COMIDA: 100 g de rosbife = ~30 g de proteína, mais que 2 Yopro. Assado no domingo e fatiado, é montar em 2 min. O Yopro fica como BACKUP de rua.",
-   "🍫 O chocolate 'ao longo do dia' ocupa exatamente o horário do lanche proteico. Se quiser, 2 quadrados de 70% depois do almoço — não solto.",
-   "🍽️ UMA refeição livre marcada: sábado à noite.",
-   "😴 7h30 na cama. A média da semana foi 6,8 h.",
-   "⚖️ Pese todo dia. Manhã seguinte a jogo não conta como progresso."
+   "1️⃣ SANDUÍCHE DE ROSBIFE ÀS 16h, todo dia útil. É refeição marcada, não opção — cai na hora em que o doce aparecia.",
+   "2️⃣ TETO DE TREINO: 3 sessões de força e 2 corridas fáceis. Nada intenso esta semana.",
+   "3️⃣ DOMINGO, 45 MIN DE PREPARO: rosbife assado e fatiado, 12 ovos, legumes cortados, potes montados.",
+   "↩️ O resto continua igual: almoço com regra do prato, whey 2×/dia, janta em casa, uma livre no sábado à noite. Não precisa decidir nada disso de novo."
   ]
  },
  "tendencias": {
-  "prontidao_media_7d": 65,
-  "prontidao_garmin_hoje": 75,
-  "indice_agudo_hoje": 45,
-  "sono_media_7d": 6.8,
-  "sono_score_hoje": 78,
+  "prontidao_media_7d": 68,
+  "prontidao_garmin_hoje": 87,
+  "indice_agudo_hoje": 30,
+  "sono_media_7d": 6.86,
+  "sono_score_hoje": null,
   "rem_hoje": null,
-  "training_status": "força 4×/semana atingida · índice ainda instável",
-  "peso_delta_kg": 0.8,
-  "volume_series_semana": 0,
+  "training_status": "recuperação · índice vermelho 2º dia",
+  "peso_delta_kg": -0.03,
+  "volume_series_semana": null,
   "prontidao": [
-   {
-    "data": "16/09",
-    "valor": 92,
-    "banda": "y",
-    "meu": 56
-   },
-   {
-    "data": "17/09",
-    "valor": 67,
-    "banda": "y",
-    "meu": 71
-   },
-   {
-    "data": "18/09",
-    "valor": 75,
-    "banda": "r",
-    "meu": 24
-   },
-   {
-    "data": "19/09",
-    "valor": 93,
-    "banda": "r",
-    "meu": 11
-   },
-   {
-    "data": "20/09",
-    "valor": 70,
-    "banda": "r",
-    "meu": 14
-   },
    {
     "data": "21/09",
     "valor": 65,
@@ -81,26 +49,58 @@
     "data": "22/09",
     "valor": 50,
     "banda": "r",
+    "meu": 32
+   },
+   {
+    "data": "23/09",
+    "valor": 57,
+    "banda": "r",
+    "meu": 45
+   },
+   {
+    "data": "24/09",
+    "valor": 65,
+    "banda": "r",
     "meu": 34
+   },
+   {
+    "data": "25/09",
+    "valor": 74,
+    "banda": "y",
+    "meu": 55
+   },
+   {
+    "data": "26/09",
+    "valor": 75,
+    "banda": "r",
+    "meu": 42
+   },
+   {
+    "data": "27/09",
+    "valor": 87,
+    "banda": "r",
+    "meu": 30
    }
-  ]
+  ],
+  "indice_medio_7d": 37
  },
  "status_treino": {
-  "planejado": 6,
-  "feito": 5,
-  "dias_feitos": [
-   "Semana 21–27/09: segunda upper + corrida leve · terça LOWER (7.688 kg) · quarta costas/puxada (13.961 passos) · sexta UPPER B (5.680 kg, 2 recordes) · sábado campeonato. Quinta caiu (evento). QUATRO sessões de força na semana — a meta que nunca tinha sido batida."
-  ]
+  "planejado": 5,
+  "feito": 0,
+  "dias_feitos": []
  },
  "relatorio": [
-  "🏋️ A MELHOR NOTÍCIA DO MÊS: quatro sessões de força na semana (seg upper · ter lower 7.688 kg · qua costas · sex Upper B 5.680 kg com dois recordes — remada 45 kg e elevação lateral 10 kg). Era a meta desde agosto e nunca tinha sido batida. Treino deixou de ser o gargalo.",
-  "⚖️ E A PIOR: o peso saltou de 94,1 (24/09) para 95,25 hoje — +1,15 kg em dois dias. Não é gordura: é sódio e glicogênio do evento de quinta (sanduíche de recepção, picanha, batata, chocolate) somado à feijoada com torresmo e batata frita de sexta. Cada grama de glicogênio carrega ~3 g de água.",
-  "🙋 ERRO MEU DE PRESCRIÇÃO, e vale como regra: eu mandei 'carga de carboidrato' na véspera do jogo. Para jogo amador de 60–90 min isso NÃO é necessário — e, no seu padrão de buffet, 'carga de carboidrato' virou licença para feijoada com torresmo. A partir de agora a véspera de jogo é só 'janta normal com arroz'. Sem jargão que autorize o que não queremos.",
-  "📉 TENDÊNCIA REAL, tirando os artefatos: a média de dias neutros foi 94,28 (semana 37) → 94,83 (38) → ~94,3 (39). Andando de lado há três semanas. O treino melhorou, a comida não.",
-  "🍫 O VAZAMENTO TEM HORA MARCADA: chocolate registrado em 22, 23 e 24/09, sempre à tarde. É exatamente o horário do lanche proteico que não existe. Por isso a compra de hoje resolve mais que qualquer regra nova.",
-  "💓 RECUPERAÇÃO: índice sintético oscilando 28–55 e FC de repouso em 53–56 contra 47–48 no início do mês. Sono médio de 6,8 h. O corpo aguentou quatro sessões, mas não sobrou margem — na semana que vem a segunda é light de verdade.",
-  "🔁 A SOLUÇÃO PARA A DESORGANIZAÇÃO NÃO É UM PLANO MELHOR, É UM MOLDE FIXO: os dias da semana passam a ter sempre o mesmo treino e a mesma estrutura de refeição. Só o jogo e o tempo mudam. E o domingo ganha 45 min de preparo (assar o rosbife, cozinhar 12 ovos, cortar legumes) — é isso que faz a terça-feira acontecer.",
-  "🌦️ SEMANA QUE VEM: calor forte até quarta (30,7 °C na terça, 33,9 °C na quarta — corrida só na esteira), chuva de quinta a sábado (72%, 93%, 81% — tenha o plano B do jogo pronto) e domingo seco para os 7 km de manhã."
+  "🧠 PRIMEIRA SEMANA MONTADA PELO CONSELHO EM CAMADAS: fatos determinísticos → três especialistas em paralelo (carga, nutrição, logística) → síntese → cético. O cético reprovou a primeira versão deste plano em 9 pontos graves, inclusive eu repetindo o erro do peso pós-jogo. O que você está lendo é a segunda versão.",
+  "⚖️ PESO, DO JEITO CERTO: média das 7 leituras neutras = 94,51 kg contra 94,53 de 28 dias. ESTÁVEL, dentro do ruído — não em queda. Os 94,35 de hoje são a manhã seguinte ao campeonato e vêm ~0,26 kg abaixo do real; comparar com os 95,25 de sábado seria repetir o erro de 22/09. Nada de corte calórico: o pico de sábado era água.",
+  "🛑 TETO DA SEMANA (carga): 3 sessões de força, 2 corridas fáceis de até 35 min, nenhuma intensa. Libera intensa só com HRV ≥42 E FC de repouso ≤50 em dois dias seguidos.",
+  "📊 HONESTIDADE SOBRE O TETO: a FC de repouso está em 53 de média de 7 dias contra 52 de 28 — 1 bpm, não os 6 que eu tinha escrito garimpando as melhores leituras do mês. E o índice de HOJE (30) saiu com um componente só, porque o relógio não sincronizou sono, HRV nem FC de repouso. O que sustenta o teto é a média de 7 dias do índice (37) e o acúmulo de 4 sessões + campeonato.",
+  "🔒 SOBRE LIBERAR SESSÃO INTENSA: a condição é HRV ≥42 E FC de repouso ≤50 em dois dias seguidos. Sendo honesto com os números, isso é improvável esta semana — o HRV de 7 dias é 37, o de 28 é 39, e o melhor dia recente foi 38. Trate como porta fechada, não como opção viva.",
+  "⚔️ OS ESPECIALISTAS SE CONTRADISSERAM: carga queria cortar a quarta sessão de força; a ficha de evidência sobre HRV mostra suporte para ADIAR sessão intensa, mas nenhum estudo testando corte de musculação. Desempate: a sexta vira manutenção leve em casa, sem carga e fora do teto. A intensidade cai, o estímulo fica.",
+  "⭐ A APOSTA DA SEMANA: o lanche das 16h. Doce apareceu em 4 dos 5 dias com registro (21 a 24/09); em um deles o horário registrado é a tarde. É aposta, não conclusão — e a pergunta 1 da semana existe para testá-la.",
+  "🚫 VETO DA LOGÍSTICA: quarta com sensação de 36,8 °C às 16h, corrida de rua proibida (esteira). Sexta com 12,5 mm, treino em casa se houver.",
+  "📚 DUAS FICHAS DE EVIDÊNCIA (pasta evidencia/): carga de carboidrato não tem benefício em jogo de 60–90 min (Hawley 1997; Jones 2026; McManus 2026) — a prescrição da sexta passada foi erro meu; e treino guiado por HRV tem efeito pequeno em desempenho. O pré-jogo de quinta foi movido para 16h30 (3h30 antes) por causa da primeira ficha.",
+  "❓ PERGUNTA ABERTA PARA VOCÊ: os almoços desta semana são buffet com regra do prato, porque não há marmita comprada — então esta semana segue assim de qualquer forma. Mas o PROJETO_CHAT registra 'almoço = marmita congelada' como a mudança que resolveu o vazamento crônico do ano, e das 10 quentinhas de 14/09 só uma aparece nos registros. A partir de 05/10: voltamos com 5 marmitas ou o buffet com regra vira o modelo? Decisão sua.",
+  "❓ O QUE NÃO SABEMOS: se o Lower B de hoje aconteceu (0 kcal ativas às 14h); o custo real do campeonato; se há jogo no sábado 03/10; e a alimentação de 26 e 27/09, sem nenhum registro."
  ],
  "lista_compra": [
   {
@@ -512,213 +512,26 @@
  },
  "dias": [
   {
-   "id": "sab",
-   "nome": "Sábado",
-   "data": "26/09",
-   "tipo": "futebol",
-   "flex": false,
-   "treino": {
-    "foco": "🏆 CAMPEONATO — calor de 35 °C de sensação, sem relógio",
-    "exercicios": [
-     {
-      "nome": "🔥 O DADO QUE MAIS IMPORTA HOJE: 0% de chuva, 27,9 °C de máxima e SENSAÇÃO DE 35 °C ao meio-dia. UV 8,25. Se o jogo for entre 11h e 15h, o calor é o adversário principal.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⌚ Sem relógio (regra do campeonato). Depois me manda o texto: minutos jogados, posição, arrancadas e como o tornozelo respondeu.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "💧 HIDRATAÇÃO — 500 ml de água 2 h antes + 300 ml 20 min antes. Durante: 200 ml a cada intervalo. Isotônico HOJE é indicado (calor + jogo longo), não só se passar de 60 min.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🧢 Boné e protetor solar se o jogo for antes das 16h. Sombra em todo intervalo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🏃 AQUECIMENTO 15 min: 5 min de trote leve + mobilidade de tornozelo + 4 acelerações progressivas (60%, 70%, 80%, 85%). No calor, aquecimento curto e sem exagero — você já chega com a temperatura alta.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚽ Jogo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🥤 LOGO APÓS: 500–700 ml de água com uma pitada de sal + whey (dose 2) + 1 banana. Repor sódio importa mais que o normal hoje.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "❌ Sem academia hoje. O Lower B vai para domingo, com carga contida.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚖️ A pesagem de domingo vai vir baixa pelo jogo de hoje — é água, não progresso. Já está na regra.",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "3h a 3h30 ANTES DO JOGO · Arroz + frango ou carne magra + legumes cozidos",
-     "kcal": 650,
-     "prot": 45,
-     "peso_g": null,
-     "nota": "A refeição principal do dia, longe o bastante do jogo para digerir. Sem fritura, sem molho gorduroso, sem feijoada. Se o jogo for de manhã cedo, troque por café reforçado: 2 pães integrais + 2 ovos + banana + café, 2h antes."
-    },
-    "pre_lanche": {
-     "nome": "1h a 1h15 ANTES · Banana + 1 fatia de pão integral com mel + 300 ml de água",
-     "kcal": 250,
-     "prot": 6,
-     "peso_g": null,
-     "nota": "Carboidrato rápido e baixo volume. Nada de fibra ou gordura nessa janela."
-    },
-    "lanche_pre_treino": null,
-    "janta": {
-     "nome": "🍽️ REFEIÇÃO LIVRE DA SEMANA — depois do jogo",
-     "kcal": 900,
-     "prot": 45,
-     "peso_g": null,
-     "nota": "Calha bem: a livre cai no dia de maior gasto. Uma, marcada, sem repetir. Comece por água e proteína antes do resto."
-    },
-    "petisco": {
-     "nome": "Logo após o jogo · 💊 WHEY DOSE 2 + 1 banana + água com sal",
-     "kcal": 280,
-     "prot": 26,
-     "peso_g": null,
-     "nota": "Ainda no campo. Fecha a proteína e repõe o sódio perdido no calor."
-    }
-   }
-  },
-  {
-   "id": "dom",
-   "nome": "Domingo",
-   "data": "27/09",
-   "tipo": "treino",
-   "flex": false,
-   "treino": {
-    "foco": "🔒 LOWER B contido — 7h30–9h, antes do calor",
-    "exercicios": [
-     {
-      "nome": "🌤️ Seco, mas 29–30 °C de sensação ao meio-dia e UV 8,2. Academia cedo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🧭 É o Lower B que sairia do sábado. Regra da semana de campeonato: ele vai para domingo com carga contida.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚠️ RPE 7 — 3 reps na reserva em tudo, sem saltos. Se as pernas estiverem destruídas do jogo, faça as 3 primeiras e vá embora: conta como feito.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "1️⃣ Agachamento (Smith ou livre) — 3×8, carga moderada",
-      "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "2️⃣ STIFF com halteres — 3×10 ⭐ NÃO PULE: faltou na terça (o Fitbod só deu máquina)",
-      "series": 3,
-      "reps": "10"
-     },
-     {
-      "nome": "3️⃣ Búlgaro ou afundo caminhando — 3×10 cada perna ⭐ unilateral, também faltou",
-      "series": 3,
-      "reps": "10 cada"
-     },
-     {
-      "nome": "4️⃣ Elevação de quadril — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "5️⃣ Panturrilha sentada — 3×15",
-      "series": 3,
-      "reps": "15"
-     },
-     {
-      "nome": "❌ Sem corrida hoje.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "📋 Pese em jejum e me chame — fecho a semana e monto a próxima. Lembrando: o número de hoje vem deprimido pelo jogo de ontem.",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "almoco": {
-     "nome": "Casa · Frango ou tilápia + arroz + salada",
-     "kcal": 600,
-     "prot": 45,
-     "peso_g": null,
-     "nota": "Dia seguinte a jogo: reposição, não déficit agressivo."
-    },
-    "pre_lanche": {
-     "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
-     "kcal": 330,
-     "prot": 30,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. É ela que ocupa o lugar do chocolate da tarde."
-    },
-    "lanche_pre_treino": {
-     "nome": "Antes do jogo/corrida · Banana + 1 pão integral",
-     "kcal": 200,
-     "prot": 6,
-     "peso_g": null,
-     "nota": "De manhã, leve."
-    },
-    "janta": {
-     "nome": "Casa · Sopa de legumes com frango desfiado ou omelete",
-     "kcal": 400,
-     "prot": 35,
-     "peso_g": null,
-     "nota": "Leve, fechando a semana."
-    },
-    "petisco": {
-     "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
-     "kcal": 200,
-     "prot": 31,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 2."
-    }
-   }
-  },
-  {
-   "id": "s28",
+   "id": "seg",
    "nome": "Segunda",
    "data": "28/09",
    "tipo": "light",
    "flex": false,
    "treino": {
-    "foco": "🟦 SEGUNDA LIGHT (opcional) — 27,6 °C",
+    "foco": "⬜ VAZIO ou 15 min de mobilidade — dia intocável",
     "exercicios": [
      {
-      "nome": "🧭 MOLDE FIXO: segunda é o dia que pode cair. Reunião no fim do dia é a regra, não a exceção.",
+      "nome": "🛑 Dia intocável. O que sustenta isso é a MÉDIA de 7 dias do índice (37) e o acúmulo de 4 sessões + campeonato — não o número de hoje: o índice de 27/09 saiu com um componente só (sono, HRV, FC de repouso e body battery não sincronizaram). O campeonato, por regra, não gera dado de relógio.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🛋️ 15 min em casa: mobilidade de quadril e tornozelo + prancha 3×45 s + ponte de glúteo 3×15 + 20 flexões.",
+      "nome": "🛋️ Se quiser fazer algo: 15 min em casa de mobilidade de quadril e tornozelo + prancha 3×45 s. Nada além disso.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "😴 Prioridade real: dormir 7h30. Você fechou a semana com 6,6–7,2 h.",
+      "nome": "😴 Dormir é a tarefa de hoje. Média de 6,86 h em 6 noites (duas sem dado).",
       "series": 1,
       "reps": "—"
      }
@@ -726,52 +539,53 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
      "kcal": 600,
      "prot": 45,
      "peso_g": null,
-     "nota": "Metade salada e legumes, 1/4 proteína grelhada, 1/4 arroz e feijão. Sem fritura e sem sobremesa."
+     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se estiver na rua, o substituto é 1 Yopro garrafa (250 ml, ~25 g) ou 2 potes (160 g, ~15 g cada)."
+     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
     },
-    "lanche_pre_treino": null,
+    "lanche_pre_treino": {
+     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
+     "kcal": 420,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
+    },
     "janta": {
-     "nome": "Casa · Frango ou tilápia + legumes",
-     "kcal": 480,
-     "prot": 45,
+     "nome": "Casa · Frango ou tilápia (180 g) + legumes refogados + 2 ovos",
+     "kcal": 560,
+     "prot": 58,
      "peso_g": null,
-     "nota": "Proteína descongelada no domingo."
+     "nota": "Dia sem treino: a proteína vem toda da comida. Os 2 ovos são reforço fixo.",
+     "receita": "rO"
     },
-    "petisco": {
-     "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
-     "kcal": 200,
-     "prot": 31,
-     "peso_g": null,
-     "nota": "💊 WHEY DOSE 2."
-    }
+    "petisco": null
    }
   },
   {
-   "id": "t29",
+   "id": "ter",
    "nome": "Terça",
    "data": "29/09",
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "💪 LOWER A — 30,7 °C, academia",
+    "foco": "💪 LOWER A — força 1 de 3",
     "exercicios": [
      {
-      "nome": "🌡️ Quente (30,7 °C, UV 8,4). Perna é na academia mesmo, com ar.",
+      "nome": "🌡️ 30,7 °C. Academia, e só se a agenda fechar até 17h (são 40–50 min de trânsito).",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚠️ O Fitbod tem cortado STIFF e UNILATERAL e entregado só máquina. Force esses dois na sessão — são o motor da arrancada.",
+      "nome": "🏠 Se a agenda ou o trânsito fecharem a academia, o brief da manhã te manda a versão caseira. Não precisa decidir isso agora.",
       "series": 1,
       "reps": "—"
      },
@@ -781,12 +595,12 @@
       "reps": "6–8"
      },
      {
-      "nome": "2️⃣ STIFF com halteres ou barra — 4×8 ⭐ NÃO DEIXE O APP CORTAR",
+      "nome": "2️⃣ STIFF — 4×8 ⭐ o Fitbod corta esse; não deixe",
       "series": 4,
       "reps": "8"
      },
      {
-      "nome": "3️⃣ Búlgaro ou afundo — 3×8 cada perna ⭐ unilateral",
+      "nome": "3️⃣ Búlgaro ou afundo — 3×8 cada ⭐ unilateral",
       "series": 3,
       "reps": "8 cada"
      },
@@ -801,12 +615,12 @@
       "reps": "12 cada"
      },
      {
-      "nome": "6️⃣ Prancha + lateral",
+      "nome": "6️⃣ Core",
       "series": 3,
       "reps": "45 s"
      },
      {
-      "nome": "🏃 Sem corrida. Força completa já basta no calor.",
+      "nome": "❌ Sem corrida hoje.",
       "series": 1,
       "reps": "—"
      }
@@ -814,58 +628,53 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
      "kcal": 600,
      "prot": 45,
      "peso_g": null,
-     "nota": "Metade salada e legumes, 1/4 proteína grelhada, 1/4 arroz e feijão. Sem fritura e sem sobremesa. Dia de perna: não vá de salada só."
+     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se estiver na rua, o substituto é 1 Yopro garrafa (250 ml, ~25 g) ou 2 potes (160 g, ~15 g cada)."
+     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
     },
     "lanche_pre_treino": {
-     "nome": "~17h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
+     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
      "kcal": 420,
      "prot": 38,
      "peso_g": null,
-     "nota": "O lanche que resolve a tarde: 100 g de rosbife = ~30 g de proteína, mais que 2 Yopro. Fatiado no domingo, montagem de 2 min."
+     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
     },
     "janta": {
-     "nome": "Casa · Omelete de 3 ovos + queijo + salada",
+     "nome": "Casa · Omelete de 3 ovos + queijo + salada grande",
      "kcal": 450,
-     "prot": 34,
+     "prot": 42,
      "peso_g": null,
-     "nota": "Rápida."
+     "nota": "Rápida, para a janta não virar 22h."
     },
     "petisco": {
-     "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
-     "kcal": 200,
-     "prot": 31,
+     "nome": "💊 WHEY DOSE 2 (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 2."
+     "nota": "Logo após o treino; em dia sem treino, na ceia."
     }
    }
   },
   {
-   "id": "q30",
+   "id": "qua",
    "nome": "Quarta",
    "data": "30/09",
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "💪 COSTAS/PUXADA + 25 min na esteira — 33,9 °C, o dia mais quente",
+    "foco": "💪 COSTAS + 25 min na esteira — força 2 de 3, corrida 1 de 2",
     "exercicios": [
      {
-      "nome": "🔥 33,9 °C de máxima. Corrida de rua está fora: esteira com ar-condicionado.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "⚡ Ordem: força primeiro, esteira fácil depois.",
+      "nome": "🚫 VETO DA LOGÍSTICA: sensação de 36,8 °C às 16h e 33,7 °C às 17h. Corrida na rua está proibida hoje — esteira com ar.",
       "series": 1,
       "reps": "—"
      },
@@ -880,7 +689,7 @@
       "reps": "8"
      },
      {
-      "nome": "3️⃣ Remada unilateral com halter — 3×10 cada (45 kg foi recorde em 25/09)",
+      "nome": "3️⃣ Remada unilateral com halter — 3×10 cada (45 kg na foto de 25/09, não conferido)",
       "series": 3,
       "reps": "10 cada"
      },
@@ -905,7 +714,7 @@
       "reps": "25 min"
      },
      {
-      "nome": "❌ Sem tiros: quinta tem jogo.",
+      "nome": "❌ Sem tiros: amanhã tem jogo (regra de 05–06/08) e não cabe sessão intensa nesta semana.",
       "series": 1,
       "reps": "—"
      }
@@ -913,63 +722,59 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
      "kcal": 600,
      "prot": 45,
      "peso_g": null,
-     "nota": "Metade salada e legumes, 1/4 proteína grelhada, 1/4 arroz e feijão. Sem fritura e sem sobremesa."
+     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se estiver na rua, o substituto é 1 Yopro garrafa (250 ml, ~25 g) ou 2 potes (160 g, ~15 g cada)."
+     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
     },
     "lanche_pre_treino": {
-     "nome": "~17h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
+     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
      "kcal": 420,
      "prot": 38,
      "peso_g": null,
-     "nota": "O lanche que resolve a tarde: 100 g de rosbife = ~30 g de proteína, mais que 2 Yopro. Fatiado no domingo, montagem de 2 min."
+     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
     },
     "janta": {
      "nome": "Casa · Tilápia assada + legumes no forno",
-     "kcal": 430,
-     "prot": 42,
+     "kcal": 450,
+     "prot": 45,
      "peso_g": null,
-     "nota": "25 min no forno."
+     "nota": "25 min de forno, tudo junto.",
+     "receita": "rP"
     },
     "petisco": {
-     "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
-     "kcal": 200,
-     "prot": 31,
+     "nome": "💊 WHEY DOSE 2 (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 2."
+     "nota": "Logo após o treino; em dia sem treino, na ceia."
     }
    }
   },
   {
-   "id": "q01",
+   "id": "qui",
    "nome": "Quinta",
    "data": "01/10",
    "tipo": "futebol",
    "flex": false,
    "treino": {
-    "foco": "⚽ FUTEBOL 20h — 72% de chuva, tenha o plano B pronto",
+    "foco": "⚽ FUTEBOL 20h — 80% de chuva, plano B pronto",
     "exercicios": [
      {
-      "nome": "🌧️ 72% de chuva e 31 °C. O jogo pode cair.",
+      "nome": "🌧️ 80% de chuva às 20h. Chance real de cancelar.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🔁 SE CANCELAR: esteira, 10 min de aquecimento + 3× 5 min a 9–9,5 km/h com 2 min a 8 km/h entre eles. Repõe o aeróbico alto do jogo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🕕 18h — refeição pré-jogo.",
+      "nome": "🔁 SE CANCELAR: 30 min fáceis na esteira, sem tiros. Nesse caso o domingo vira só o preparo — o teto é de 2 corridas.",
       "series": 1,
       "reps": "—"
      },
@@ -982,32 +787,32 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
      "kcal": 600,
      "prot": 45,
      "peso_g": null,
-     "nota": "Metade salada e legumes, 1/4 proteína grelhada, 1/4 arroz e feijão. Sem fritura e sem sobremesa. Dia de jogo: arroz e feijão inteiros."
+     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se estiver na rua, o substituto é 1 Yopro garrafa (250 ml, ~25 g) ou 2 potes (160 g, ~15 g cada)."
+     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
     },
     "lanche_pre_treino": {
-     "nome": "18h00 · PRÉ-JOGO · Banana + 2 fatias de pão integral + 2 ovos",
-     "kcal": 400,
-     "prot": 19,
+     "nome": "16h30 · PRÉ-JOGO · Sanduíche de rosbife + 1 banana",
+     "kcal": 520,
+     "prot": 40,
      "peso_g": null,
-     "nota": "Isotônico só se passar de 60 min."
+     "nota": "3h30 antes do jogo. Comer às 18h era tarde demais — esta é a correção que saiu da ficha de evidência de hoje."
     },
     "janta": {
-     "nome": "~21h45 · Janta pequena · 2 ovos mexidos + salada",
-     "kcal": 300,
-     "prot": 20,
+     "nome": "~21h45 · Janta pequena · 3 ovos mexidos + queijo + salada",
+     "kcal": 380,
+     "prot": 30,
      "peso_g": null,
-     "nota": "Pequena de propósito."
+     "nota": "Pequena de propósito: cama às 23h."
     },
     "petisco": {
      "nome": "21h15 · 💊 WHEY DOSE 2 no clube",
@@ -1019,51 +824,31 @@
    }
   },
   {
-   "id": "s02",
+   "id": "sex",
    "nome": "Sexta",
    "data": "02/10",
-   "tipo": "treino",
+   "tipo": "light",
    "flex": false,
    "treino": {
-    "foco": "💪 UPPER B — 93% de chuva e frio (22 °C)",
+    "foco": "🟨 MANUTENÇÃO LEVE em casa — não é a 4ª sessão de força",
     "exercicios": [
      {
-      "nome": "🌧️ 10 mm e 93% de chuva. Dia de academia, sem rua.",
+      "nome": "🎚️ CONDIÇÃO (do conselho): só faça se a FC de repouso estiver ≤52 E o índice ≥45 na manhã. Se não bater, é folga — e folga aqui é o plano funcionando, não falhando.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "1️⃣ Supino reto ou inclinado — 4×8",
-      "series": 4,
-      "reps": "8"
+      "nome": "🌧️ 12,5 mm o dia todo. Se fizer, é em casa: flexões 3×10-12 · remada com mochila 3×12 · elevação lateral com garrafa 3×15 · prancha 3×45 s. Sempre com 3 reps na reserva — não vá ao máximo.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "2️⃣ Puxada alta na barra — 4×8",
-      "series": 4,
-      "reps": "8"
+      "nome": "📚 Por que leve e não cortada: a ficha de hoje mostra que HRV serve para ADIAR sessão intensa, não para suprimir musculação. A carga cai, o estímulo fica.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "3️⃣ Desenvolvimento halteres — 3×8",
-      "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "4️⃣ Elevação lateral — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "5️⃣ Rosca W + tríceps corda — 2×10",
-      "series": 2,
-      "reps": "10"
-     },
-     {
-      "nome": "6️⃣ Core",
-      "series": 3,
-      "reps": "45 s"
-     },
-     {
-      "nome": "🍔 Sexta é o dia de risco da dieta: nas duas últimas foi feijoada e hambúrguer. A livre é no sábado.",
+      "nome": "🍔 Sexta é o dia de risco da dieta: nas duas últimas foi feijoada e hambúrguer. A livre é amanhã.",
       "series": 1,
       "reps": "—"
      }
@@ -1071,63 +856,58 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "12h30 · Buffet/quilo COM A REGRA DO PRATO",
+     "nome": "12h30 · Buffet/quilo — comece o prato pela PROTEÍNA",
      "kcal": 600,
      "prot": 45,
      "peso_g": null,
-     "nota": "Metade salada e legumes, 1/4 proteína grelhada, 1/4 arroz e feijão. Sem fritura e sem sobremesa."
+     "nota": "Monte na ordem: proteína identificável primeiro (frango, patinho, peixe), depois salada e legumes, por último arroz e feijão. Fritura fica fora — batata frita, milanesa e torresmo apareceram em 21, 22 e 25/09."
     },
     "pre_lanche": {
      "nome": "15h30 · Iogurte natural (170 g) + 1 dose de whey (30 g) + 1 fruta",
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se estiver na rua, o substituto é 1 Yopro garrafa (250 ml, ~25 g) ou 2 potes (160 g, ~15 g cada)."
+     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
     },
     "lanche_pre_treino": {
-     "nome": "~17h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
+     "nome": "16h · Sanduíche de rosbife · 2 fatias de pão integral + 100 g de rosbife + queijo + alface e tomate",
      "kcal": 420,
      "prot": 38,
      "peso_g": null,
-     "nota": "O lanche que resolve a tarde: 100 g de rosbife = ~30 g de proteína, mais que 2 Yopro. Fatiado no domingo, montagem de 2 min."
+     "nota": "⭐ A mudança da semana: é refeição marcada, não opção. Cai na hora em que o doce aparecia."
     },
     "janta": {
-     "nome": "Casa · Frango grelhado + salada + 3 col. de arroz",
-     "kcal": 520,
+     "nome": "Casa · Frango grelhado (150 g) + salada + 2 col. de arroz",
+     "kcal": 450,
      "prot": 45,
      "peso_g": null,
-     "nota": "Sexta controlada decide o peso de segunda."
+     "nota": "Sexta controlada é o que decide o peso de segunda."
     },
     "petisco": {
-     "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
-     "kcal": 200,
-     "prot": 31,
+     "nome": "💊 WHEY DOSE 2 (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 2."
+     "nota": "Logo após o treino; em dia sem treino, na ceia."
     }
    }
   },
   {
-   "id": "s03",
+   "id": "sab",
    "nome": "Sábado",
    "data": "03/10",
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "🔒 LOWER B de manhã (ou campeonato, se houver jogo)",
+    "foco": "🔒 LOWER B de manhã — força 3 de 3 (ou campeonato, se houver jogo)",
     "exercicios": [
      {
-      "nome": "🌧️ 81% de chuva. Academia de manhã, antes da casa.",
+      "nome": "🌤️ 33% de chuva às 8h, sem acumulado. Sábado é de manhã ou não é.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏆 SE HOUVER CAMPEONATO: o Lower B vai para domingo com RPE 7, e a sexta passa a ser sem corrida. Me avise assim que souber.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🔒 Sem jogo, esta é a sessão inegociável da semana.",
+      "nome": "🏆 SE HOUVER CAMPEONATO: o Lower B vai para domingo com RPE 7 e a corrida de domingo CAI — o teto fecha em 1 corrida na semana. Me avise o horário assim que souber.",
       "series": 1,
       "reps": "—"
      },
@@ -1165,9 +945,9 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Casa · Proteína grelhada + arroz + feijão + salada",
-     "kcal": 600,
-     "prot": 45,
+     "nome": "Casa · Proteína grelhada (180 g) + arroz + feijão + salada",
+     "kcal": 640,
+     "prot": 52,
      "peso_g": null,
      "nota": "Sem fritura."
     },
@@ -1176,14 +956,14 @@
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se estiver na rua, o substituto é 1 Yopro garrafa (250 ml, ~25 g) ou 2 potes (160 g, ~15 g cada)."
+     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
     },
     "lanche_pre_treino": {
-     "nome": "7h15 · Banana + 1 pão integral + café",
-     "kcal": 250,
-     "prot": 8,
+     "nome": "16h · Sanduíche de rosbife (meio) + 1 fruta",
+     "kcal": 300,
+     "prot": 22,
      "peso_g": null,
-     "nota": "Treino de manhã."
+     "nota": "Metade da porção: a refeição livre é logo à noite."
     },
     "janta": {
      "nome": "🍽️ REFEIÇÃO LIVRE DA SEMANA",
@@ -1192,35 +972,41 @@
      "peso_g": null,
      "nota": "Uma, marcada, sem repetir."
     },
-    "petisco": null
+    "petisco": {
+     "nome": "Pós-treino da manhã · 💊 WHEY (30 g) + 200 ml de leite",
+     "kcal": 200,
+     "prot": 31,
+     "peso_g": null,
+     "nota": "Garante a proteína antes da refeição livre da noite."
+    }
    }
   },
   {
-   "id": "d04",
+   "id": "dom",
    "nome": "Domingo",
    "data": "04/10",
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "🏃 7 km de manhã + PREPARO DA SEMANA — seco, UV 8,35",
+    "foco": "🏃 30–35 min fáceis 7h–8h30 + 45 min de PREPARO — corrida 2 de 2",
     "exercicios": [
      {
-      "nome": "🌤️ Seco e quente (30,2 °C, UV 8,35). Corra entre 6h30 e 8h.",
+      "nome": "🌤️ Sensação de 24–26 °C, 5% de chuva. Saia até 8h30: UV 8,3 depois disso.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏃 7 km contínuos a 8,5–9 km/h + 6 strides de 20 s no fim.",
+      "nome": "🏃 30–35 min fáceis (~5 km) a 8,5 km/h. Os 7 km voltam quando HRV ≥42 E FC de repouso ≤50 em dois dias seguidos — a condição inteira, não metade.",
       "series": 1,
-      "reps": "7 km"
+      "reps": "30–35 min"
      },
      {
-      "nome": "🍳 DEPOIS: 45 min de PREPARO DA SEMANA — é isso que resolve a desorganização. Assar 800 g de rosbife e fatiar, cozinhar 12 ovos, lavar e cortar os legumes, montar os 5 potes de iogurte. Sem isso, a terça já começa perdida.",
+      "nome": "🍳 DEPOIS, 45 min de PREPARO — é a peça que faz a terça acontecer: assar 800 g–1 kg de carne e fatiar como rosbife, cozinhar 12 ovos, lavar e cortar legumes, montar os potes de iogurte.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📋 Pese em jejum e me chame para fechar a semana.",
+      "nome": "📋 Pese em jejum e me chame — o conselho fecha a semana às 20h.",
       "series": 1,
       "reps": "—"
      }
@@ -1228,9 +1014,9 @@
    },
    "refeicoes": {
     "almoco": {
-     "nome": "Casa · Frango ou tilápia + arroz + salada",
-     "kcal": 550,
-     "prot": 45,
+     "nome": "Casa · Frango ou tilápia (180 g) + arroz + salada",
+     "kcal": 620,
+     "prot": 55,
      "peso_g": null,
      "nota": "Domingo controlado."
     },
@@ -1239,30 +1025,31 @@
      "kcal": 330,
      "prot": 30,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se estiver na rua, o substituto é 1 Yopro garrafa (250 ml, ~25 g) ou 2 potes (160 g, ~15 g cada)."
+     "nota": "💊 WHEY DOSE 1. Na rua: 1 garrafa de Yopro (250 ml, ~25 g) ou 2 potes."
     },
     "lanche_pre_treino": {
      "nome": "Antes da corrida · Banana + 1 pão integral",
      "kcal": 200,
      "prot": 6,
      "peso_g": null,
-     "nota": "Leve, de manhã."
+     "nota": "Leve."
     },
     "janta": {
-     "nome": "Casa · Sopa de legumes com frango desfiado",
-     "kcal": 400,
-     "prot": 35,
+     "nome": "Casa · Sopa de legumes com frango desfiado (150 g)",
+     "kcal": 480,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Leve."
+     "nota": "Leve, mas com proteína de verdade."
     },
     "petisco": {
      "nome": "Ceia · 1 dose de whey (30 g) + 200 ml de leite desnatado",
      "kcal": 200,
      "prot": 31,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 2."
+     "nota": "💊 WHEY DOSE 2. Fecha o dia."
     }
    }
   }
- ]
+ ],
+ "peso_rotulo": "média neutra (7 leituras, sem pós-jogo)"
 }

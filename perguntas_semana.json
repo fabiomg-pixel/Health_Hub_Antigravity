@@ -1,0 +1,37 @@
+{
+ "semana": "28/09 a 04/10",
+ "gerado_em": "2026-09-27",
+ "limites": {
+  "teto_corrida": 2,
+  "duracao_max_corrida_min": 35,
+  "intensa_liberada": false,
+  "condicao_para_liberar_intensa": "HRV >= 42 E FC de repouso <= 50 em dois dias seguidos — improvável esta semana (HRV 7d=37, 28d=39, melhor dia recente 38)",
+  "gatilho_corte": "3 dias seguidos de banda vermelha, OU FC de repouso >= 55 em dois dias → cai a MANUTENÇÃO de sexta e adia qualquer sessão intensa. NUNCA cortar as 3 sessões de força plenas: a ficha evidencia/treino-guiado-por-hrv.md mostra que nenhum estudo sustenta cortar musculação por HRV.",
+  "teto_forca_plena": 3,
+  "sessao_leve_condicional": "sexta 02/10, em casa, sem carga — só se FC repouso ≤52 E índice ≥45",
+  "dias_com_teto_zero": [
+   "seg 28 — vazia por desenho; se cair, não remarcar"
+  ],
+  "se_houver_campeonato_no_sabado": "Lower B vai para domingo com RPE 7 e a corrida de domingo cai"
+ },
+ "perguntas": [
+  {
+   "id": "q1",
+   "texto": "O lanche de rosbife das 16h elimina o doce da tarde?",
+   "como_responder": "contar SÓ os dias úteis (seg a sex): em quantos houve o sanduíche das 16h e em quantos houve doce. Comparar com a linha de base de 21 a 24/09, quando houve doce em 4 dos 5 dias com registro.",
+   "resposta": null
+  },
+  {
+   "id": "q2",
+   "texto": "Uma semana com teto (3 forças plenas, nada intenso) devolve a FC de repouso para 52 ou menos?",
+   "como_responder": "FC de repouso e HRV diários de sexta e domingo em resumo_diario.json (o fatos.json só traz média), contra 53 de média de 7 dias e 52 de 28 dias.",
+   "resposta": null
+  },
+  {
+   "id": "q3",
+   "texto": "O stiff e o afundo unilateral melhoram a arrancada no jogo?",
+   "como_responder": "relato em texto do jogo de quinta: se houve arrancada sem sensação de fragilidade. Terça e sábado precisam ter os dois exercícios de fato executados — o Fitbod tem cortado.",
+   "resposta": null
+  }
+ ]
+}
