@@ -1,6 +1,6 @@
 ---
 name: revisao-semanal
-description: Ritual de sábado do copiloto de saúde do Fabio (projeto health-hub) — sincroniza Garmin/Renpho/Strava/Notion, processa a fila de 📥 Registros (bruto), e produz a revisão da semana em três vozes (fisiologista, personal, nutricionista), fechando com o plano da semana seguinte + deploy do painel. USE sempre que o Fabio pedir para "analisar a semana", "fazer a sincronia", "gerar a semana", "revisão semanal", "ritual de sábado", ou pedir recomendação para o fim de semana / próxima semana de treino e dieta — mesmo sem essas palavras exatas, ex. "como foi minha semana", "o que eu faço esse fim de semana", "monta o cardápio", "vamos organizar as próximas semanas". NÃO use para perguntas rápidas no meio da semana tipo "como estou indo hoje" — aí é só um status curto.
+description: Ritual semanal (conselho de domingo) do copiloto de saúde do Fabio (projeto health-hub) — sincroniza Garmin/Renpho/Strava/Notion, processa a fila de 📥 Registros (bruto), e produz a revisão da semana em três vozes (fisiologista, personal, nutricionista), fechando com o plano da semana seguinte + deploy do painel. USE sempre que o Fabio pedir para "analisar a semana", "fazer a sincronia", "gerar a semana", "revisão semanal", "ritual de sábado", ou pedir recomendação para o fim de semana / próxima semana de treino e dieta — mesmo sem essas palavras exatas, ex. "como foi minha semana", "o que eu faço esse fim de semana", "monta o cardápio", "vamos organizar as próximas semanas". NÃO use para perguntas rápidas no meio da semana tipo "como estou indo hoje" — aí é só um status curto.
 ---
 
 # Ritual de revisão semanal — health-hub
@@ -18,7 +18,12 @@ cd /Users/fabiogomes/Documents/Claude/health-hub
 python3 garmin_pull.py --days 14 > garmin_out.json
 python3 renpho_pull.py --days 14 > renpho_out.json
 python3 synthesize.py > /dev/null
+python3 fatos.py > fatos.json
 ```
+
+**`fatos.json` é a camada 0 — a única fonte de número do ritual.** Ninguém (nem você, nem os
+especialistas) calcula média, tendência ou contagem por fora. Ele já separa as pesagens
+pós-jogo das neutras, conta os padrões alimentares dos registros e lista as `lacunas`.
 
 - **Garmin** retoma a sessão do token em `~/.garminconnect` — não precisa de `.env` no dia a dia.
   Se vier com `dias_vazios > 0`, o relógio não sincronizou; **não é rate limit**.
@@ -42,24 +47,23 @@ Para cada um:
    véspera, e o app preencher com hoje. Use `/api/registro` (PATCH corrige, DELETE arquiva) — ou
    avise para ele corrigir na aba ✏️ Corrigir do painel.
 
-## Passo 3 — As três vozes
+## Passo 3 — O conselho (especialistas em paralelo)
 
-Escreva a análise nas três, sem separá-las em seções rígidas — elas conversam.
+Dispare os três na MESMA mensagem, para rodarem em paralelo. Cada um lê só a sua fatia do
+`fatos.json` e devolve no máximo 200–250 palavras:
 
-**🫀 Fisiologista.** Prontidão, sono, HRV, FC de repouso, load balance, ACWR, training status.
-Tendência por BLOCO semanal, não por dia solto. FC de repouso caindo é o sinal mais limpo de
-adaptação que existe aqui.
+- **`carga`** → teto da semana (quantas sessões de força, quantas de corrida, cabe intensa?),
+  dias intocáveis, gatilho de corte, lacunas. **Tem veto sobre volume.**
+- **`nutricao`** → até 4 regras da semana, a compra que as sustenta, padrão dos registros,
+  lacunas. **Tem veto sobre prescrição acima da adesão histórica.**
+- **`logistica`** → janela viável por dia (horário e local), dias em risco, plano B concreto.
+  **Tem veto sobre horário e local.**
 
-**🏋️ Personal.** O que foi planejado × o que aconteceu, com os números do Strava. Cadência,
-comprimento de passada, FC por bloco, velocidade real. Compare jogos de futebol **normalizados por
-minuto** (m/min e RE/min) — e lembre que **duração prevê carga melhor que tamanho de campo**.
+Você é a camada de síntese, e ela **não pode ser paralela**: a dieta de quinta depende do jogo,
+a força de sábado depende do campeonato. Concilie os três num plano só. Veto de especialista não
+se negocia — se dois vetos se chocam, escolha o mais restritivo e diga isso no relatório.
 
-**🍽️ Nutricionista — análise CRUA.** Qualitativa: descrição + foto + efeito no peso. Produza:
-- o que está **certo** (comece por aqui),
-- os **padrões errados**, com nomes de alimentos reais,
-- as **atenções** para a semana seguinte.
-
-Sem eufemismo e sem moralismo. O padrão é o alvo, não a pessoa.
+Os especialistas **nunca falam com o Fabio**. A voz é sempre a sua.
 
 ## Passo 4 — O balanço (essencial)
 
@@ -90,6 +94,34 @@ Edite `painel/data/semana.json` respeitando o contrato (PROJETO_CHAT §9). Chequ
 Feche com a **lista de compras** por categoria e o **relatório** — as linhas que o Fabio lê no topo
 do painel. Escreva o relatório para ser lido por ele, não por você: número na frente, conclusão
 depois, sem hedge.
+
+## Passo 5b — O cético (bloqueante, antes de publicar)
+
+Com o `semana.json` pronto e ANTES do deploy, dispare o subagente **`cetico`**. Ele confere
+calendário (dia da semana × data), regra violada do PROJETO_CHAT, afirmação causal sem número,
+artefato de pesagem, jargão que autoriza o padrão errado, tamanho da prescrição e lacuna não
+declarada.
+
+- Achado **GRAVE** → corrija e rode o cético de novo.
+- Achado MÉDIO/LEVE → corrija ou registre no relatório por que não vale corrigir.
+- **Nunca publique sem rodar.** As três semanas de erro que originaram esta camada (terça
+  rotulada como segunda, peso lido como resposta à dieta, "carga de carboidrato" virando
+  feijoada) seriam todas pegas por esta checklist.
+
+## Passo 5c — Escrever o contrato de ida
+
+Grave `perguntas_semana.json` no repo:
+
+```json
+{"semana": "28/09 a 04/10", "limites": {"teto_forca": 4, "teto_corrida": 2, "intensa": false,
+ "dias_intocaveis": ["seg"], "gatilho_corte": "3 dias seguidos de banda vermelha → cai a corrida de quarta"},
+ "perguntas": [{"id": "q1", "texto": "O stiff e o unilateral melhoram a arrancada?",
+   "como_responder": "relato do jogo de quinta + strides de domingo", "resposta": null}]}
+```
+
+De 2 a 3 perguntas, nunca mais. **Sem pergunta explícita, o fechamento de domingo vira
+narrativa em vez de aprendizado.** O personal (briefs diários) lê este arquivo e é ele quem
+coleta as respostas em `diario_execucao.json`.
 
 ## Passo 6 — Publicar e registrar
 
