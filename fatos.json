@@ -1,67 +1,17 @@
 {
- "gerado_em": "2026-09-27T18:17:46",
+ "gerado_em": "2026-09-30T20:06:37",
  "janela": {
-  "hoje": "2026-09-27",
-  "dia_semana": "Sunday",
-  "semana_desde": "2026-09-20"
+  "hoje": "2026-09-30",
+  "dia_semana": "Wednesday",
+  "semana_desde": "2026-09-23"
  },
  "peso": {
   "ultima": {
-   "data": "2026-09-27",
-   "peso_kg": 94.35,
+   "data": "2026-09-30",
+   "peso_kg": 94.75,
    "pos_esforco": false
   },
   "serie_14d": [
-   {
-    "data": "2026-09-04",
-    "peso_kg": 95.45,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-07",
-    "peso_kg": 94.3,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-09",
-    "peso_kg": 94.4,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-10",
-    "peso_kg": 94.15,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-16",
-    "peso_kg": 94.95,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-17",
-    "peso_kg": 94.7,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-18",
-    "peso_kg": 93.65,
-    "pos_esforco": true
-   },
-   {
-    "data": "2026-09-21",
-    "peso_kg": 94.05,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-22",
-    "peso_kg": 94.5,
-    "pos_esforco": true
-   },
-   {
-    "data": "2026-09-23",
-    "peso_kg": 94.2,
-    "pos_esforco": false
-   },
    {
     "data": "2026-09-24",
     "peso_kg": 94.1,
@@ -81,42 +31,46 @@
     "data": "2026-09-27",
     "peso_kg": 94.35,
     "pos_esforco": false
+   },
+   {
+    "data": "2026-09-28",
+    "peso_kg": 94.9,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-29",
+    "peso_kg": 95.1,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-30",
+    "peso_kg": 94.75,
+    "pos_esforco": false
    }
   ],
-  "media_ultimas_7_leituras": 94.49,
-  "media_neutras_nas_ultimas_7": 94.48,
-  "n_neutras_nas_ultimas_7": 6,
-  "media_7_neutras_de_verdade": 94.51,
-  "media_28d_neutras": 94.53,
-  "n_leituras_pos_esforco_14d": 2,
+  "media_ultimas_7_leituras": 94.77,
+  "media_neutras_nas_ultimas_7": 94.77,
+  "n_neutras_nas_ultimas_7": 7,
+  "media_7_neutras_de_verdade": 94.77,
+  "media_28d_neutras": 94.77,
+  "n_leituras_pos_esforco_14d": 0,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 30,
-  "banda_hoje": "r",
+  "indice_hoje": 57,
+  "banda_hoje": "y",
   "prontidao_garmin_hoje": 87,
-  "dias_vermelhos_seguidos": 2,
-  "indice_medio_7d": 37.0,
-  "sono_medio_7d": 6.86,
-  "hrv_medio_7d": 37.0,
+  "dias_vermelhos_seguidos": 0,
+  "indice_medio_7d": 40.0,
+  "sono_medio_7d": 6.57,
+  "hrv_medio_7d": 38.0,
   "hrv_medio_28d": 39.0,
   "fc_repouso_7d": 53.0,
   "fc_repouso_28d": 52.0,
-  "indice_hoje_confiavel": false,
-  "componentes_faltando_hoje": [
-   "hrv_ms",
-   "sono_h",
-   "fc_repouso",
-   "body_battery_max"
-  ]
+  "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-09-21",
-    "kcal_ativas": 381.0,
-    "passos": 10684
-   },
    {
     "data": "2026-09-23",
     "kcal_ativas": 423.0,
@@ -126,21 +80,26 @@
     "data": "2026-09-26",
     "kcal_ativas": 397.0,
     "passos": 13658
+   },
+   {
+    "data": "2026-09-28",
+    "kcal_ativas": 392.0,
+    "passos": 12235
    }
   ],
   "registros_de_treino": [
    {
+    "data": "2026-09-29",
+    "tem_foto": true,
+    "texto": ""
+   },
+   {
+    "data": "2026-09-28",
+    "tem_foto": false,
+    "texto": "20 min de corrida a 8,5-8,0 km/h. O relogio começou a marcar atrasado"
+   },
+   {
     "data": "2026-09-25",
-    "tem_foto": true,
-    "texto": ""
-   },
-   {
-    "data": "2026-09-22",
-    "tem_foto": true,
-    "texto": ""
-   },
-   {
-    "data": "2026-09-21",
     "tem_foto": true,
     "texto": ""
    }
@@ -150,22 +109,27 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-09-21",
-   "2026-09-22",
    "2026-09-23",
    "2026-09-24",
-   "2026-09-25"
+   "2026-09-25",
+   "2026-09-28",
+   "2026-09-29"
   ],
-  "n_refeicoes_registradas": 15,
+  "n_refeicoes_registradas": 13,
   "por_dia": {
-   "2026-09-21": 4,
-   "2026-09-22": 3,
    "2026-09-23": 3,
    "2026-09-24": 4,
-   "2026-09-25": 1
+   "2026-09-25": 1,
+   "2026-09-28": 3,
+   "2026-09-29": 2
   },
   "ocorrencias": {
    "fritura": [
+    {
+     "data": "2026-09-28",
+     "refeicao": "Lanche",
+     "texto": "Salgado"
+    },
     {
      "data": "2026-09-25",
      "refeicao": "Almoço",
@@ -175,24 +139,14 @@
      "data": "2026-09-24",
      "refeicao": "Jantar",
      "texto": "Picanha, batata na airfryer"
-    },
-    {
-     "data": "2026-09-22",
-     "refeicao": "Almoço",
-     "texto": "abacate, tomate, alface, cenoura, bife, berinjela, milanesa, lombo suíno"
-    },
-    {
-     "data": "2026-09-21",
-     "refeicao": "Lanche",
-     "texto": "Festinha com salgados diversos"
-    },
-    {
-     "data": "2026-09-21",
-     "refeicao": "Almoço",
-     "texto": "Abacate, tomate, alface, bata frita, porco, empadão frango. \n\nPastel doce de leite"
     }
    ],
    "doce": [
+    {
+     "data": "2026-09-29",
+     "refeicao": "Jantar",
+     "texto": "Filet mignon suíno, batata doce, salda alface, tomate, rucula"
+    },
     {
      "data": "2026-09-24",
      "refeicao": "Outro",
@@ -207,21 +161,6 @@
      "data": "2026-09-23",
      "refeicao": "Jantar",
      "texto": "Capeletii carne a bolonhesa"
-    },
-    {
-     "data": "2026-09-22",
-     "refeicao": "Outro",
-     "texto": "Chocolate a tarde"
-    },
-    {
-     "data": "2026-09-21",
-     "refeicao": "Almoço",
-     "texto": "Abacate, tomate, alface, bata frita, porco, empadão frango. \n\nPastel doce de leite"
-    },
-    {
-     "data": "2026-09-21",
-     "refeicao": "Outro",
-     "texto": "Sorvete"
     }
    ],
    "buffet": [],
@@ -246,21 +185,6 @@
      "data": "2026-09-23",
      "refeicao": "Almoço",
      "texto": "300g majoritariamente carne"
-    },
-    {
-     "data": "2026-09-22",
-     "refeicao": "Almoço",
-     "texto": "abacate, tomate, alface, cenoura, bife, berinjela, milanesa, lombo suíno"
-    },
-    {
-     "data": "2026-09-21",
-     "refeicao": "Almoço",
-     "texto": "Abacate, tomate, alface, bata frita, porco, empadão frango. \n\nPastel doce de leite"
-    },
-    {
-     "data": "2026-09-21",
-     "refeicao": "Jantar",
-     "texto": "Picanha, bata, pão de alho."
     }
    ]
   },
@@ -272,15 +196,9 @@
    {
     "data": "2026-09-24",
     "texto": "Dia em evento, difícil acompanhar o que foi comido ou ser cuidadoso"
-   },
-   {
-    "data": "2026-09-21",
-    "texto": "Dia frouxo na alimentação. Cansaço musculação do futebol mas fui na academia e corrida leve para compensar a alimentação"
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
- "lacunas": [
-  "índice de hoje calculado sem hrv_ms, sono_h, fc_repouso, body_battery_max — use a média de 7 dias, não o número de hoje"
- ]
+ "lacunas": []
 }

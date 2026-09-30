@@ -95,6 +95,19 @@
   .report p { margin: 0 0 10px; font-size: 14.5px; color: var(--dim); }
   .report p:last-child { margin-bottom: 0; }
   .navin a.reg { color: var(--accent); font-weight: 600; }
+  .navin a.bot { color: #7fd1ff; font-weight: 600; }
+  .chat { display: flex; flex-direction: column; gap: 10px; min-height: 40vh; }
+  .msg { padding: 10px 12px; border-radius: 14px; font-size: 15px; line-height: 1.45; max-width: 88%; white-space: pre-wrap; }
+  .msg.eu { align-self: flex-end; background: var(--panel2); border: 1px solid var(--line); }
+  .msg.bot { align-self: flex-start; background: rgba(127,209,255,.08); border: 1px solid rgba(127,209,255,.25); }
+  .msg.err { align-self: flex-start; background: rgba(255,120,120,.10); border: 1px solid rgba(255,120,120,.35); }
+  .msg .tag { display: block; font-size: 11px; color: var(--dim); margin-top: 6px; }
+  .chatbar { position: sticky; bottom: 0; background: var(--bg); padding: 10px 0 14px; display: flex; gap: 8px; }
+  .chatbar textarea { flex: 1; resize: none; min-height: 46px; max-height: 120px; padding: 12px;
+    border-radius: 12px; border: 1px solid var(--line); background: var(--panel); color: var(--txt); font: inherit; }
+  .chips2 { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 4px; }
+  .chips2 button { font-size: 12px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--dim); }
   .form { display: flex; flex-direction: column; gap: 13px; }
   .form label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); display: block; margin-bottom: 5px; }
   .form select, .form textarea, .form input[type=date] { width: 100%; background: var(--panel2); color: var(--txt); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font: inherit; }
@@ -176,7 +189,8 @@ function plateGuide(d) {
 function renderNav(active) {
   const links = [
     `<a href="#home" class="${active === 'home' ? 'active' : ''}">Início</a>`,
-    `<a href="#reg" class="reg ${active === 'reg' ? 'active' : ''}">＋ Registrar</a>`]
+    `<a href="#reg" class="reg ${active === 'reg' ? 'active' : ''}">＋ Registrar</a>`,
+    `<a href="#bot" class="bot ${active === 'bot' ? 'active' : ''}">💬 Copiloto</a>`]
     .concat(DATA.dias.map(d =>
       `<a href="#${d.id}" class="${active === d.id ? 'active' : ''} ${d.tipo === 'treino' ? 'train' : ''}">${d.nome.slice(0,3)} ${d.data.slice(0,2)}</a>`));
   $("nav").innerHTML = links.join("");
@@ -479,10 +493,91 @@ function renderReg() {
   document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; PHOTO_DATA = null; renderReg(); });
   document.getElementById('tab-fix').addEventListener('click', () => { REG_TIPO = 'corrigir'; PHOTO_DATA = null; EDIT_ID = null; renderReg(); });
 }
+let CHAT = [];
+try { CHAT = JSON.parse(localStorage.getItem('chat_health') || '[]'); } catch (e) { CHAT = []; }
+
+function salvarChat() {
+  // Só as últimas 20 falas: o histórico serve de contexto curto, não de arquivo.
+  try { localStorage.setItem('chat_health', JSON.stringify(CHAT.slice(-20))); } catch (e) {}
+}
+
+function renderChat() {
+  const corpo = CHAT.length
+    ? CHAT.map(m => `<div class="msg ${m.role === 'user' ? 'eu' : (m.erro ? 'err' : 'bot')}">${
+        (m.content || '').replace(/[<>]/g, c => c === '<' ? '&lt;' : '&gt;')
+      }${m.gravados && m.gravados.length ? `<span class="tag">📥 ${m.gravados.map(g => `${g.tipo}${g.refeicao ? ' · ' + g.refeicao : ''} em ${g.dia}`).join(' · ')}</span>` : ''}</div>`).join("")
+    : `<div class="note">Fala comigo como falaria com um personal no WhatsApp.<br><br>
+       <b>Para registrar:</b> "almocei a N65 com 2 ovos", "fiz o Lower A, leg press 80", "dormi mal".<br>
+       <b>Para perguntar:</b> "posso treinar hoje?", "estou na meta de proteína?", "o que faço se chover?".<br><br>
+       O que for relato vira registro no Notion na hora. O que for pergunta, eu respondo com os números da semana.</div>`;
+  $("app").innerHTML = `<section><h2>💬 Copiloto</h2>
+    <div class="chips2">
+      <button class="qk" data-q="Posso treinar hoje?">Posso treinar hoje?</button>
+      <button class="qk" data-q="Como está a minha proteína hoje?">Proteína de hoje</button>
+      <button class="qk" data-q="Como está o peso na média neutra?">Peso</button>
+      <button class="qk" data-q="O que tem no plano de hoje?">Plano de hoje</button>
+    </div>
+    <div class="chat" id="chat">${corpo}</div>
+    <div class="chatbar">
+      <textarea id="ch-in" placeholder="O que você comeu, treinou ou quer perguntar..."></textarea>
+      <button class="btn" id="ch-send">Enviar</button>
+    </div>
+    <div class="note" id="ch-status"></div></section>`;
+  document.getElementById('ch-send').addEventListener('click', enviarChat);
+  document.getElementById('ch-in').addEventListener('keydown', e => {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) enviarChat();
+  });
+  document.querySelectorAll('.qk').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('ch-in').value = b.dataset.q; enviarChat();
+  }));
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+async function enviarChat() {
+  const campo = document.getElementById('ch-in');
+  const texto = (campo.value || '').trim();
+  if (!texto) return;
+  campo.value = '';
+  CHAT.push({ role: 'user', content: texto });
+  salvarChat(); renderChat();
+  document.getElementById('ch-status').textContent = 'pensando...';
+  try {
+    const r = await fetch('/api/bot', {
+      method: 'POST',
+      // x-log-key só viaja se você tiver ligado a LOG_KEY na Vercel; sem ela o
+      // header vai vazio e o endpoint aceita normalmente.
+      headers: Object.assign({ 'Content-Type': 'application/json' },
+        localStorage.getItem('log_key') ? { 'x-log-key': localStorage.getItem('log_key') } : {}),
+      body: JSON.stringify({
+        mensagem: texto,
+        historico: CHAT.slice(-12, -1).map(m => ({ role: m.role, content: m.content })),
+      }),
+    });
+    const d = await r.json();
+    if (r.status === 401) {
+      const k = prompt('Este painel está protegido por chave. Cole a LOG_KEY (fica salva neste celular):');
+      if (k) { localStorage.setItem('log_key', k.trim()); throw new Error('chave salva — manda a mensagem de novo'); }
+    }
+    if (!r.ok) throw new Error(d.error || ('erro ' + r.status));
+    CHAT.push({ role: 'assistant', content: d.resposta, gravados: d.gravados || [] });
+    if (d.gravados && d.gravados.length) {
+      // Registro novo: a aba de correção e os cards do dia precisam enxergar.
+      fetch('/api/registros').then(x => x.json()).then(x => {
+        REGISTROS = Array.isArray(x) ? x : (x && Object.values(x)[0]) || [];
+      }).catch(() => {});
+    }
+  } catch (e) {
+    CHAT.push({ role: 'assistant', content: 'Falhou: ' + e.message, erro: true });
+  }
+  document.getElementById('ch-status').textContent = '';
+  salvarChat(); renderChat();
+}
+
 function route() {
   const id = (location.hash || "#home").slice(1);
   const fab = document.getElementById('fab'); if (fab) fab.style.display = id === 'reg' ? 'none' : '';
   if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
+  if (id === 'bot') { renderNav('bot'); renderChat(); return; }
   const day = DATA.dias.find(d => d.id === id);
   renderNav(day ? id : 'home');
   if (day) renderDay(day); else renderHome();

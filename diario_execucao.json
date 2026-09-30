@@ -1,1 +1,56 @@
-{"dias": []}
+{
+ "dias": [
+  {
+   "data": "2026-09-28",
+   "planejado": "Dia intocável (light): teto de treino ZERO por desenho — sem treino ou 15 min de mobilidade. Cardápio: Yopro ~8h, buffet com proteína primeiro às 13h, iogurte+whey+granola+banana às 17h, frango/tilápia com legumes na janta, whey dose 2 na ceia. Meta: 1900 kcal / 175 g de proteína (piso 140).",
+   "feito": "Dois registros no painel: (1) TREINO — 20 min de corrida a 8,5–8,0 km/h, com nota de que o relógio começou a marcar atrasado; (2) REFEIÇÃO — almoço, só foto, sem texto. Nenhuma das outras 4 ocasiões registrada. Proteína VISÍVEL no registro ~50 g (só o almoço planejado); isso é o que foi registrado, não o que foi comido.",
+   "adaptacao": "Não mexi em nada do plano: o cardápio é fixo e não edito semana.json. O nudge de amanhã ficou em 'não pula e REGISTRA o iogurte com whey das 17h' — escolhi a ocasião das 17h em vez de mandar reforçar proteína no geral porque ela é a aposta declarada da semana (q1) e é o único dado que falta pra responder a pergunta; mandar comer mais proteína sem saber o que ele comeu seria palpite. FLAG DE CARGA pro conselho: a corrida de hoje aconteceu num dia de teto ZERO ('se cair, não remarcar'), e consome 1 das 2 corridas da semana. Com a quarta (25 min na esteira) o teto de 2 fecha, e a corrida de domingo passa a estourar o teto — domingo tenderia a virar só o bloco de preparo. Não executei esse corte: sinalizei, porque a semana ainda tem 5 dias e a decisão cabe ao conselho ou a um dia ruim de índice.",
+   "respostas": {
+    "q1": "Sem dado. O iogurte das 17h não foi registrado e não houve registro de doce — não dá pra contar nem a favor nem contra. Dia 1 dos 5 úteis da série perdido."
+   },
+   "nao_sei": [
+    "se as outras 4 ocasiões (Yopro, pré-lanche 17h, janta, ceia) aconteceram — registro esparso não é ausência de refeição",
+    "o que tinha no prato do almoço (registro só com foto, sem texto)",
+    "proteína real do dia — 175 g era a meta, ~50 g é só o que o registro deixa ver",
+    "se houve doce à tarde (q1 sem dado no dia 1)",
+    "por que a corrida aconteceu num dia marcado como intocável: se foi escolha, se o dia rendeu bem, ou se foi só vontade",
+    "a corrida não tem dado de relógio confiável — ele mesmo anotou que o relógio começou a marcar atrasado, então os 20 min são relato, não medida"
+   ],
+   "nota_de_revisao": "Esta linha SUBSTITUI uma versão escrita mais cedo em 28/09, quando o painel ainda não tinha nenhum registro do dia e a API devolvia 25/09 como último dado. A versão antiga dizia 'sem registro nenhum' e está preservada em 'substitui' abaixo. O fechamento rodou às 00:06 de 29/09, atravessando a meia-noite.",
+   "substitui": {
+    "data": "2026-09-28",
+    "planejado": "Dia intocável (light): sem treino, ou 15 min de mobilidade de quadril/tornozelo + prancha. Cardápio: Yopro, buffet com proteína primeiro, iogurte+whey 17h, frango/tilápia com legumes, whey dose 2 na ceia.",
+    "feito": "Sem registro nenhum no painel hoje. Nada confirma nem desmente o dia intocável nem as refeições.",
+    "adaptacao": "Nada mudado: o dia já era vazio por desenho e o teto da semana é zero para segunda (perguntas_semana.json manda não remarcar se cair). Não inventei aderência por falta de dado; o nudge de amanhã virou 'voltar a registrar' em vez de qualquer ajuste de porção ou treino.",
+    "respostas": {
+     "q1": null
+    },
+    "nao_sei": [
+     "se houve treino/mobilidade hoje",
+     "as 5 ocasiões do dia (café, almoço, pré-lanche 17h, janta, ceia) — nenhuma registrada",
+     "proteína do dia (sem base para estimar)",
+     "se houve doce à tarde — q1 sem dado hoje",
+     "último registro do painel é 25/09: 26, 27 e 28/09 estão em branco"
+    ]
+   }
+  },
+  {
+   "data": "2026-09-29",
+   "planejado": "Dia de treino: LOWER A — força 1 de 3 (leg press, STIFF, búlgaro/afundo, leg curl, panturrilha, core), academia só se a agenda fechasse até 17h; sem corrida. Cardápio: Yopro ~8h, N65 Maxi Carbo de Frango + 2 ovos às 13h, iogurte+whey+granola+banana às 17h, omelete de 4 ovos na janta, whey dose 2 pós-treino. Meta: 1900 kcal / 175 g de proteína (piso 140).",
+   "feito": "Nenhum registro no painel em 29/09 (API respondeu normalmente, 100 itens, último dado 28/09). Zero das 5 ocasiões e nenhum registro de treino. Garmin de hoje marca 1275 passos e 803 kcal de gasto às 22:51 — número compatível com sync parcial do começo do dia, então NÃO serve como prova de que não houve academia. Recuperação, ao contrário, foi o melhor dia da semana: sono 7,2 h (score 84), HRV 42, FC repouso 53, índice 70 (banda amarela) depois de dois dias vermelhos.",
+   "adaptacao": "Não mexi em nada: cardápio é fixo, não edito semana.json, e sem registro não há base pra ajustar porção nem treino. O nudge repetiu a ocasião das 17h de propósito — é o segundo dia seguido em que ela não aparece, e é a aposta declarada da semana (q1); mudei a ênfase de 'não pula' pra 'registra', porque o problema observável agora é o registro, não a refeição. Contexto do horário: o fechamento de 28/09 rodou 00:06 e encontrou registros que tinham entrado tarde — este rodou 22:51, então registros de hoje lançados depois desta hora não entraram nesta contagem e o 'zero' pode ser do relógio, não do dia. FLAG PRO CONSELHO (peso): série de 7 leituras neutras subindo — 94,2 (23/09) → 95,1 (29/09), média 7 = 94,69, nenhuma leitura pós-esforço no período pra explicar como artefato. Não é decisão minha mexer em meta ou macro; só sinalizo. FLAG (carga): HRV bateu 42 hoje, mas FC repouso 53 — a condição de liberar sessão intensa (HRV ≥42 E FC ≤50 em dois dias seguidos) segue fechada, e a quarta mantém esteira por veto de calor.",
+   "respostas": {
+    "q1": "Sem dado. Nem iogurte das 17h nem doce registrados — dia 2 dos 5 úteis da série perdido; a linha de base (doce em 4 de 5 dias, 21–24/09) segue sem contraparte."
+   },
+   "nao_sei": [
+    "se o treino LOWER A aconteceu — sem registro no painel e o Garmin de hoje está com sync parcial (803 kcal às 22:51)",
+    "se a agenda fechou até 17h, isto é, se foi academia, versão caseira ou nada",
+    "se as 5 ocasiões aconteceram — registro esparso não é ausência de refeição",
+    "proteína real do dia: meta 175 g, estimativa a partir do registro é impossível (zero itens)",
+    "se houve doce à tarde (q1 sem dado no dia 2)",
+    "se o STIFF e o afundo unilateral foram de fato executados (q3 depende disso, e o Fitbod tem cortado)",
+    "se algum registro de hoje entrou no painel depois das 22:51"
+   ]
+  }
+ ]
+}

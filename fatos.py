@@ -237,7 +237,16 @@ def main():
             saida["recuperacao"]["indice_hoje_confiavel"] = True
     if saida["peso"]["ultima"] and saida["peso"]["ultima"]["data"] != hoje.isoformat():
         saida["lacunas"].append(f"sem pesagem hoje (última: {saida['peso']['ultima']['data']})")
-    print(json.dumps(saida, ensure_ascii=False, indent=1))
+    texto = json.dumps(saida, ensure_ascii=False, indent=1)
+    print(texto)
+    # O bot do painel (api/bot.js) lê os números daqui: sem esta cópia ele
+    # responderia com o fatos.json da última vez que alguém publicou à mão.
+    destino = os.path.join(AQUI, "painel", "data", "fatos.json")
+    try:
+        with open(destino, "w", encoding="utf-8") as f:
+            f.write(texto)
+    except OSError as e:
+        log(f"não consegui publicar {destino}: {e}")
     return 0
 
 
