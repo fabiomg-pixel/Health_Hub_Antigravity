@@ -16,3 +16,4 @@ carryover.txt
 # Python
 __pycache__/
 *.pyc
+logs/
