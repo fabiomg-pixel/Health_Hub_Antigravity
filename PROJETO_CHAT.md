@@ -463,30 +463,27 @@ pós-exercício; frequência de força para reter massa magra em déficit.
 
 ---
 
-## 14. O bot do painel (`/api/bot`, criado em 30/09/2026)
+## 14. O copiloto pelo Telegram (30/09–01/10/2026)
 
-Aba **💬 Copiloto** no painel. Conversa, registra e responde — o objetivo é tirar do registro
-qualquer decisão: falar "almocei a N65 com 2 ovos" não exige escolher tipo, refeição nem data,
-que é o que o formulário exige.
+**A porta de entrada é o Telegram, e quem responde é uma sessão do Claude Code com o canal
+ligado** — não um bot separado com prompt próprio. Foi a escolha do Fabio depois de eu ter
+montado um chat dentro do painel: ele quer falar num lugar só, e quer que quem responde tenha o
+repo inteiro na mão (fatos, plano, regras, git, deploy).
 
-**Como funciona:** o endpoint monta o contexto a cada mensagem — plano do dia (`semana.json`),
-números (`data/fatos.json`, publicado pelo `fatos.py`) e os registros das últimas 72 h
-(`/api/registros`) — e chama a API da Anthropic com UMA ferramenta, `registrar_no_diario`, que
-grava no mesmo banco do Notion que o formulário usa. Relato vira registro na hora; pergunta vira
-resposta com os números dos fatos.
+Fluxo: ele manda no Telegram → a sessão recebe → registro cru no Notion via `/api/log` →
+resposta curta pela ferramenta `reply` → quando o ajuste muda o que ele lê no celular, edição do
+`semana.json` + deploy + commit.
 
-**Limites embutidos na persona (mesmas regras do projeto):**
-- pesagem pós-jogo e sob AINE não contam como progresso;
-- campeonato não tem relógio, e o relato em texto é a fonte primária;
-- nenhum termo que autorize volume;
-- nada de conduta clínica;
-- **não muda o plano da semana** — pode ajustar o dia (chuva, calor, reunião, cansaço); meta,
-  macro e molde são assunto do conselho de domingo.
+**O protocolo está em `~/.claude/skills/copiloto-saude-telegram/SKILL.md`** (global, porque a
+mensagem pode cair numa sessão com qualquer cwd). Ele cobre: classificar relato × foto × pergunta
+× pedido de ajuste; o que a camada 4 pode decidir sozinha; quando mexer no painel; e as regras
+permanentes.
 
-**Env vars na Vercel:** `ANTHROPIC_API_KEY` (obrigatória), `BOT_MODEL` (padrão `claude-sonnet-5`),
-`NOTION_TOKEN` e `DIARIO_DB_ID` (já existiam), `LOG_KEY` (opcional, protege `/api/log` e
-`/api/bot`; o front manda no header `x-log-key` e guarda no localStorage).
+**Pré-requisito operacional:** a sessão precisa estar rodando com o canal ligado
+(`claude --channels plugin:telegram@claude-plugins-official`, ou o equivalente no app). Sem isso
+o bot recebe a mensagem e ninguém responde. O token fica em `~/.claude/channels/telegram/.env` e
+a allowlist em `access.json` (só o ID 6462775748).
 
-⚠️ **O painel é público.** `data/fatos.json` publica peso, sono e HRV, e `/api/bot` gasta tokens
-por chamada. Quem tiver a URL consegue os dois. Se isso incomodar: ligar a `LOG_KEY` (barra
-crawler e curioso) ou pôr proteção por senha no projeto da Vercel.
+**O chat que vivia no painel (`/api/bot` + aba Copiloto) foi removido em 01/10** — ele resolvia o
+mesmo problema por um caminho que o Fabio não queria, exigia uma `ANTHROPIC_API_KEY` na Vercel e
+deixava um endpoint público gastando token. Está no histórico do git se um dia fizer falta.
