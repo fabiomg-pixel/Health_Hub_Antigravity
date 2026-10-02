@@ -5,14 +5,15 @@
   "teto_corrida": 2,
   "duracao_max_corrida_min": 35,
   "intensa_liberada": false,
-  "condicao_para_liberar_intensa": "HRV >= 42 E FC de repouso <= 50 em dois dias seguidos — improvável esta semana (HRV 7d=37, 28d=39, melhor dia recente 38)",
-  "gatilho_corte": "3 dias seguidos de banda vermelha, OU FC de repouso >= 55 em dois dias → cai a MANUTENÇÃO de sexta e adia qualquer sessão intensa. NUNCA cortar as 3 sessões de força plenas: a ficha evidencia/treino-guiado-por-hrv.md mostra que nenhum estudo sustenta cortar musculação por HRV.",
+  "condicao_para_liberar_intensa": "HRV >= 42 E FC de repouso <= 50 em dois dias seguidos — improvável esta semana (em 02/10: HRV 7d=40, 28d=39; FC de repouso 7d=53)",
+  "gatilho_corte": "3 dias seguidos de banda vermelha, OU FC de repouso >= 55 em dois dias → cai a ESTEIRA da sessão de Costas (as Costas ficam) e adia qualquer sessão intensa. NUNCA cortar as 3 sessões de força plenas: a ficha evidencia/treino-guiado-por-hrv.md mostra que nenhum estudo sustenta cortar musculação por HRV.",
   "teto_forca_plena": 3,
-  "sessao_leve_condicional": "sexta 02/10, em casa, sem carga — só se FC repouso ≤52 E índice ≥45",
   "dias_com_teto_zero": [
    "seg 28 — vazia por desenho; se cair, não remarcar"
   ],
-  "se_houver_campeonato_no_sabado": "Lower B vai para domingo com RPE 7 e a corrida de domingo cai"
+  "se_houver_campeonato_no_sabado": "Lower B vai para domingo com RPE 7; sexta só Costas, sem esteira; domingo sem corrida.",
+  "ajuste_01_10": "Quarta não feita: Costas + 25 min esteira vai para quinta (se o jogo cancelar) ou sexta; corrida de domingo caiu (teto 2 = seg + esteira).",
+  "ajuste_02_10": "Costas feitas na quinta 01/10. Sábado tem campeonato: Lower B no domingo com RPE 7, domingo sem corrida. Sexta: ombro+braço leve (acessório, não é força plena), sem esteira."
  },
  "perguntas": [
   {
@@ -30,7 +31,7 @@
   {
    "id": "q3",
    "texto": "O stiff e o afundo unilateral melhoram a arrancada no jogo?",
-   "como_responder": "relato em texto do jogo de quinta: se houve arrancada sem sensação de fragilidade. Terça e sábado precisam ter os dois exercícios de fato executados — o Fitbod tem cortado.",
+   "como_responder": "relato em texto do jogo de SÁBADO 03/10 (o de quinta não aconteceu): se houve arrancada sem sensação de fragilidade. Terça e DOMINGO (Lower B, movido pelo campeonato) precisam ter os dois exercícios de fato executados — o Fitbod tem cortado.",
    "resposta": null
   },
   {
