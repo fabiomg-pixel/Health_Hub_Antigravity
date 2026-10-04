@@ -938,53 +938,38 @@
    "id": "dom",
    "nome": "Domingo",
    "data": "04/10",
-   "tipo": "treino",
+   "tipo": "light",
    "flex": false,
    "treino": {
-    "foco": "🦵 LOWER B com RPE 7 (força 3 de 3) + 25 min de PREPARO. Sem corrida.",
+    "foco": "🛌 RECUPERAÇÃO DOS JOGOS — sem Lower B",
     "exercicios": [
      {
-      "nome": "🎚️ RPE 7: cargas um pouco abaixo do normal, 3 reps na reserva — ontem teve jogo.",
+      "nome": "🔁 Mudança de hoje (decisão sua): o Lower B com RPE 7 foi desenhado para UM jogo no sábado. Foram dois, com chuva. Ele sai.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "1️⃣ Agachamento — 4×6-8",
-      "series": 4,
-      "reps": "6–8"
-     },
-     {
-      "nome": "2️⃣ STIFF com halteres — 3×10 ⭐",
-      "series": 3,
-      "reps": "10"
-     },
-     {
-      "nome": "3️⃣ Afundo caminhando — 3×10 cada ⭐",
-      "series": 3,
-      "reps": "10 cada"
-     },
-     {
-      "nome": "4️⃣ Cadeira extensora — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "5️⃣ Elevação de quadril — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "6️⃣ Panturrilha sentada — 3×15",
-      "series": 3,
-      "reps": "15"
-     },
-     {
-      "nome": "🍳 DEPOIS, 25 min de PREPARO (encolheu: sem rosbife): cozinhar 12 ovos, lavar e cortar os legumes da semana, deixar 7 iogurtes e 7 Yopros na prateleira da frente da geladeira. É o que faz a terça acontecer.",
+      "nome": "📉 Os números de ontem: HRV 29 (o mais baixo de toda a série), FC de repouso 57, índice 7. Sono médio da semana em 6,11 h.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📋 Pese em jejum e me chame — o conselho fecha a semana às 20h.",
+      "nome": "🦵 O que fazer: 15 min de mobilidade de quadril e tornozelo, caminhada leve se der vontade. Nada de carga, nada de impacto.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🍳 25 min de preparo da semana: 12 ovos cozidos, legumes cortados, Yopros e iogurtes na prateleira da frente.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "⚖️ Pese em jejum — não há pesagem desde 02/10 — e deixe o relógio sincronizar: hoje não veio nada do Garmin.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "🧠 O conselho roda às 20h e monta a semana que começa amanhã.",
       "series": 1,
       "reps": "—"
      }

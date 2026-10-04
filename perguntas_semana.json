@@ -20,25 +20,25 @@
    "id": "q1",
    "texto": "O ritmo novo (Yopro de manhã + almoço 13h + iogurte com whey às 17h) elimina o doce da tarde?",
    "como_responder": "contar só os dias úteis: em quantos houve o iogurte das 17h e em quantos houve doce registrado. Linha de base: 21 a 24/09, doce em 4 dos 5 dias com registro.",
-   "resposta": null
+   "resposta": "Inconclusivo: doce caiu de 4/5 para 1/4 dias, mas o ritmo não foi executado e faltam registros."
   },
   {
    "id": "q2",
    "texto": "Uma semana com teto (3 forças plenas, nada intenso) devolve a FC de repouso para 52 ou menos?",
    "como_responder": "FC de repouso e HRV diários de sexta e domingo em resumo_diario.json (o fatos.json só traz média), contra 53 de média de 7 dias e 52 de 28 dias.",
-   "resposta": null
+   "resposta": "NÃO (fechou em 57). Teste inválido: o teto não foi cumprido."
   },
   {
    "id": "q3",
    "texto": "O stiff e o afundo unilateral melhoram a arrancada no jogo?",
    "como_responder": "relato em texto do jogo de SÁBADO 03/10 (o de quinta não aconteceu): se houve arrancada sem sensação de fragilidade. Terça e DOMINGO (Lower B, movido pelo campeonato) precisam ter os dois exercícios de fato executados — o Fitbod tem cortado.",
-   "resposta": null
+   "resposta": "Sem resposta: o jogo da tarde de 03/10 foi sem relógio; o da manhã tem dado e ainda não foi analisado."
   },
   {
    "id": "q4",
    "texto": "O Yopro de manhã atrapalha o almoço das 13h ou o dia fica mais fácil?",
    "como_responder": "observação dele em texto na quarta ou quinta: chegou às 13h com mais ou menos fome que o normal.",
-   "resposta": null
+   "resposta": "Efeito colateral: o Yopro substituiu o almoço em 30/09. Precisa ser adicional, nunca substituto."
   }
  ]
 }

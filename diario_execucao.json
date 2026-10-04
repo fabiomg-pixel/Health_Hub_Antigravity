@@ -97,6 +97,21 @@
     "O jogo da tarde não tem dado nenhum (sem relógio): duração, FC e carga reais do dia são desconhecidas. O índice 7 de hoje provavelmente subestima o quanto o corpo levou.",
     "Se o 'cansaço muscular' é só DOMS de dois jogos ou se tem algum ponto específico — ele não localizou. Nenhuma menção ao tornozelo, nem de dor."
    ]
+  },
+  {
+   "data": "2026-10-04",
+   "planejado": "Lower B contido (RPE 7), empurrado do sábado de campeonato.",
+   "feito": "Cancelado. Dia de recuperação por decisão do Fabio.",
+   "adaptacao": "Foram DOIS jogos de campeonato no sábado 03/10 (manhã com relógio, tarde sem), com chuva e cansaço muscular. O Lower B tinha sido desenhado para um jogo só. HRV 29, FC repouso 57, índice 7 — o pior dia da série. Trocado por mobilidade + preparo da semana.",
+   "respostas": {
+    "q2": "NÃO — FC de repouso fechou em 57, contra a meta de ≤52. Mas o teto da semana não foi cumprido (2 forças plenas de 3, mais dois jogos), então o teste não aconteceu de verdade.",
+    "q4": "Efeito colateral não previsto: em 30/09 o Yopro VIROU o almoço (registro: 'Almoço: Yopro 15g'), e o dia fechou com 2 coxinhas e 2 miojos. A refeição de 8h precisa ser explicitamente adicional, nunca substituta."
+   },
+   "nao_sei": [
+    "alimentação de 02, 03 e 04/10 — sem registro",
+    "se os dois jogos de sábado são regra nova ou exceção: PERGUNTAR ao Fabio, muda o desenho da semana inteira"
+   ],
+   "para_o_conselho": "A semana nova começa SEGUNDA 05/10. Hoje é recuperação e não entra como sessão. Considerar que a semana 28/09–04/10 terminou com a maior carga do mês (dois jogos) e a pior noite de sono da série."
   }
  ]
 }
