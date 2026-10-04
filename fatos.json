@@ -1,17 +1,47 @@
 {
- "gerado_em": "2026-10-02T07:46:15",
+ "gerado_em": "2026-10-04T09:59:49",
  "janela": {
-  "hoje": "2026-10-02",
-  "dia_semana": "Friday",
-  "semana_desde": "2026-09-25"
+  "hoje": "2026-10-04",
+  "dia_semana": "Sunday",
+  "semana_desde": "2026-09-27"
  },
  "peso": {
   "ultima": {
-   "data": "2026-10-01",
-   "peso_kg": 94.75,
-   "pos_esforco": true
+   "data": "2026-10-02",
+   "peso_kg": 95.0,
+   "pos_esforco": false
   },
   "serie_14d": [
+   {
+    "data": "2026-09-17",
+    "peso_kg": 94.7,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-18",
+    "peso_kg": 93.65,
+    "pos_esforco": true
+   },
+   {
+    "data": "2026-09-21",
+    "peso_kg": 94.05,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-22",
+    "peso_kg": 94.5,
+    "pos_esforco": true
+   },
+   {
+    "data": "2026-09-23",
+    "peso_kg": 94.2,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-24",
+    "peso_kg": 94.1,
+    "pos_esforco": false
+   },
    {
     "data": "2026-09-25",
     "peso_kg": 94.95,
@@ -45,44 +75,61 @@
    {
     "data": "2026-10-01",
     "peso_kg": 94.75,
-    "pos_esforco": true
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-10-02",
+    "peso_kg": 95.0,
+    "pos_esforco": false
    }
   ],
-  "media_ultimas_7_leituras": 94.86,
-  "media_neutras_nas_ultimas_7": 94.88,
-  "n_neutras_nas_ultimas_7": 6,
-  "media_7_neutras_de_verdade": 94.88,
-  "media_28d_neutras": 94.88,
-  "n_leituras_pos_esforco_14d": 1,
+  "media_ultimas_7_leituras": 94.87,
+  "media_neutras_nas_ultimas_7": 94.87,
+  "n_neutras_nas_ultimas_7": 7,
+  "media_7_neutras_de_verdade": 94.87,
+  "media_28d_neutras": 94.7,
+  "n_leituras_pos_esforco_14d": 2,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 57,
-  "banda_hoje": "y",
-  "prontidao_garmin_hoje": 91,
+  "indice_hoje": null,
+  "banda_hoje": null,
+  "prontidao_garmin_hoje": null,
   "dias_vermelhos_seguidos": 0,
-  "indice_medio_7d": 43,
-  "sono_medio_7d": 6.36,
-  "hrv_medio_7d": 40,
-  "hrv_medio_28d": 39,
-  "fc_repouso_7d": 53.0,
-  "fc_repouso_28d": 52.0,
-  "indice_hoje_confiavel": true
+  "indice_medio_7d": 38.0,
+  "sono_medio_7d": 6.11,
+  "hrv_medio_7d": 39.0,
+  "hrv_medio_28d": 38.0,
+  "fc_repouso_7d": 54,
+  "fc_repouso_28d": 53.0,
+  "indice_hoje_confiavel": false,
+  "componentes_faltando_hoje": [
+   "hrv_ms",
+   "sono_h",
+   "fc_repouso",
+   "body_battery_max",
+   "estresse_medio"
+  ]
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
    {
-    "data": "2026-09-26",
-    "kcal_ativas": 397.0,
-    "passos": 13658
-   },
-   {
     "data": "2026-09-28",
     "kcal_ativas": 392.0,
     "passos": 12235
+   },
+   {
+    "data": "2026-10-03",
+    "kcal_ativas": 778.0,
+    "passos": 12010
    }
   ],
   "registros_de_treino": [
+   {
+    "data": "2026-10-03",
+    "tem_foto": false,
+    "texto": "Dois jogos de campeonato. Manhã: gravado no relógio. Tarde: sem relógio. Chuva e cansaço muscular."
+   },
    {
     "data": "2026-10-01",
     "tem_foto": true,
@@ -102,11 +149,6 @@
     "data": "2026-09-28",
     "tem_foto": false,
     "texto": "20 min de corrida a 8,5-8,0 km/h. O relogio começou a marcar atrasado"
-   },
-   {
-    "data": "2026-09-25",
-    "tem_foto": true,
-    "texto": ""
    }
   ],
   "sessoes_registradas": 5,
@@ -114,15 +156,13 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-09-25",
    "2026-09-28",
    "2026-09-29",
    "2026-09-30",
    "2026-10-01"
   ],
-  "n_refeicoes_registradas": 11,
+  "n_refeicoes_registradas": 10,
   "por_dia": {
-   "2026-09-25": 1,
    "2026-09-28": 3,
    "2026-09-29": 2,
    "2026-09-30": 3,
@@ -139,11 +179,6 @@
      "data": "2026-09-28",
      "refeicao": "Lanche",
      "texto": "Salgado"
-    },
-    {
-     "data": "2026-09-25",
-     "refeicao": "Almoço",
-     "texto": "Feijoada (feijão e paio), arroz, torresmo, batata frita"
     }
    ],
    "doce": [
@@ -165,13 +200,14 @@
   },
   "observacoes": [
    {
-    "data": "2026-09-25",
-    "texto": "Dia de carga de carboidrato sem doce"
+    "data": "2026-10-02",
+    "texto": "Treino de 01/10 foi COSTAS (screenshot). Sábado 03/10 tem jogo: Lower B vai pro domingo com RPE 7. Sexta: ombro+braço leve no lugar da folga."
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
  "lacunas": [
-  "sem pesagem hoje (última: 2026-10-01)"
+  "índice de hoje calculado sem hrv_ms, sono_h, fc_repouso, body_battery_max, estresse_medio — use a média de 7 dias, não o número de hoje",
+  "sem pesagem hoje (última: 2026-10-02)"
  ]
 }
