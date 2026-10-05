@@ -2,6 +2,7 @@
 """Camada 0 do conselho: transforma os dados crus em FATOS, sem interpretação.
 
     python3 fatos.py > fatos.json
+    python3 fatos.py --selftest      # casos do classificador de alimentação
 
 Regra do projeto: nenhum especialista (nem o copiloto) calcula número por conta
 própria — todos citam este arquivo. Isso existe porque a classe de erro mais cara
@@ -16,6 +17,7 @@ os registros do Notion via /api/registros do painel.
 import datetime as dt
 import json
 import os
+import re
 import statistics as st
 import sys
 import subprocess
@@ -25,14 +27,55 @@ API_REGISTROS = "https://painel-xi-three.vercel.app/api/registros"
 # Véspera com este gasto ativo ou mais deprime a pesagem da manhã seguinte em
 # ~0,26 kg (n=46, jun–set/2026). Ver PROJETO_CHAT §5.
 LIMIAR_DIA_INTENSO = 450
+# Prefixos de palavra (casam no início de uma palavra, não no meio: "ovo" não
+# casa "novo"). Substring ingênua errou no conselho de 04/10/2026: "batata doce"
+# virou `doce` e "2 coxinha frango" virou `proteina_clara`.
 PALAVRAS = {
-    "fritura": ["frit", "torresmo", "empanad", "milanesa", "pastel", "salgad", "airfryer"],
+    "fritura": ["frit", "torresmo", "empanad", "milanesa", "airfryer"],
     "doce": ["chocolate", "sorvete", "doce", "nutella", "pudim", "brigadeiro", "bolo"],
     "buffet": ["buffet", "quilo", "self", "bufê"],
     "alcool": ["cerveja", "vinho", "chopp", "caipir", "whisky", "drink"],
     "proteina_clara": ["frango", "tilápia", "tilapia", "peixe", "carne", "ovo", "whey",
                        "iogurte", "patinho", "picanha", "sobrecoxa", "lombo", "rosbife"],
 }
+# Salgado de lanchonete conta como fritura e anula proteina_clara no mesmo item
+# ("coxinha de frango" não é proteína limpa). Kibe/quibe só é fritura se não for
+# assado, mas nunca é proteína clara.
+SALGADOS = ["coxinha", "pastel", "salgad", "empada", "empadinha", "risole",
+            "enroladinho", "kibe", "quibe"]
+PODEM_SER_ASSADOS = {"kibe", "quibe"}
+# Expressões que contêm uma chave mas não são a categoria.
+EXCECOES = {
+    "doce": [r"batata\s+doce", r"agridoce"],
+}
+
+
+def _tem(item, chaves):
+    return any(re.search(r"\b" + re.escape(c), item) for c in chaves)
+
+
+def classificar(texto):
+    """Categorias de PALAVRAS presentes no texto de uma refeição.
+
+    Analisa item a item (separados por vírgula, ";", "+", "/", quebra de linha
+    ou " e ") para que o salgado de um item não anule a proteína de outro.
+    """
+    t = (texto or "").lower().replace("-", " ")
+    cats = set()
+    for item in re.split(r"[,;+/\n]|\be\b", t):
+        for cat, padroes in EXCECOES.items():
+            for p in padroes:
+                item = re.sub(p, " ", item)
+        salgados = [c for c in SALGADOS if _tem(item, [c])]
+        for cat, chaves in PALAVRAS.items():
+            if cat == "proteina_clara" and salgados:
+                continue
+            if _tem(item, chaves):
+                cats.add(cat)
+        assado = _tem(item, ["assad"]) and set(salgados) <= PODEM_SER_ASSADOS
+        if salgados and not assado:
+            cats.add("fritura")
+    return cats
 
 
 def log(m):
@@ -180,9 +223,9 @@ def bloco_alimentacao(regs, desde):
     obs = [r for r in regs if r.get("tipo") == "Observação" and (r.get("data") or "") >= desde]
     achados = {k: [] for k in PALAVRAS}
     for r in refs:
-        t = (r.get("texto") or "").lower()
-        for cat, chaves in PALAVRAS.items():
-            if any(c in t for c in chaves):
+        cats = classificar(r.get("texto"))
+        for cat in PALAVRAS:
+            if cat in cats:
                 achados[cat].append({"data": r["data"], "refeicao": r.get("refeicao"),
                                      "texto": (r.get("texto") or "")[:90]})
     dias = sorted({r["data"] for r in refs})
@@ -195,6 +238,35 @@ def bloco_alimentacao(regs, desde):
         "aviso": ("Registro é esparso e qualitativo: ausência de registro NÃO é ausência de "
                   "refeição. Não estime caloria da semana a partir daqui."),
     }
+
+
+CASOS_TESTE = [
+    # (texto, deve conter, não deve conter)
+    ("Filet mignon suíno, batata doce, salada", set(), {"doce"}),
+    ("Filet mignon suíno, batata-doce, salada", set(), {"doce"}),
+    ("2 coxinha frango", {"fritura"}, {"proteina_clara"}),
+    ("pastel de carne", {"fritura"}, {"proteina_clara"}),
+    ("empada de frango e kibe frito", {"fritura"}, {"proteina_clara"}),
+    ("quibe assado", set(), {"fritura", "proteina_clara"}),
+    ("coxinha, frango grelhado", {"fritura", "proteina_clara"}, set()),
+    ("arroz, feijão, frango grelhado", {"proteina_clara"}, {"fritura"}),
+    ("bolo de chocolate", {"doce"}, set()),
+    ("doce de leite", {"doce"}, set()),
+    ("pão novo com manteiga", set(), {"proteina_clara"}),
+    ("2 ovos mexidos", {"proteina_clara"}, set()),
+    ("batata frita e cerveja", {"fritura", "alcool"}, set()),
+]
+
+
+def selftest():
+    falhas = 0
+    for texto, sim, nao in CASOS_TESTE:
+        cats = classificar(texto)
+        if not sim <= cats or cats & nao:
+            falhas += 1
+            log(f"FALHOU: {texto!r} → {sorted(cats)} (esperado ⊇ {sorted(sim)}, ∌ {sorted(nao)})")
+    log(f"selftest: {len(CASOS_TESTE) - falhas}/{len(CASOS_TESTE)} ok")
+    return 1 if falhas else 0
 
 
 def main():
@@ -251,4 +323,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(selftest() if "--selftest" in sys.argv[1:] else main())

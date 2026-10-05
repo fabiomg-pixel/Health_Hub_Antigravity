@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-04T22:02:15",
+ "gerado_em": "2026-10-04T22:11:16",
  "janela": {
   "hoje": "2026-10-04",
   "dia_semana": "Sunday",
@@ -175,27 +175,20 @@
      "texto": "(15h, tarde) arroz, feijão, bife, batata frita"
     },
     {
+     "data": "2026-09-30",
+     "refeicao": "Lanche",
+     "texto": "2 coxinha frango"
+    },
+    {
      "data": "2026-09-28",
      "refeicao": "Lanche",
      "texto": "Salgado"
     }
    ],
-   "doce": [
-    {
-     "data": "2026-09-29",
-     "refeicao": "Jantar",
-     "texto": "Filet mignon suíno, batata doce, salda alface, tomate, rucula"
-    }
-   ],
+   "doce": [],
    "buffet": [],
    "alcool": [],
-   "proteina_clara": [
-    {
-     "data": "2026-09-30",
-     "refeicao": "Lanche",
-     "texto": "2 coxinha frango"
-    }
-   ]
+   "proteina_clara": []
   },
   "observacoes": [
    {
