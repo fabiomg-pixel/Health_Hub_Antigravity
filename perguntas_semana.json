@@ -1,44 +1,37 @@
 {
- "semana": "28/09 a 04/10",
- "gerado_em": "2026-09-27",
+ "semana": "05/10 a 11/10",
+ "gerado_em": "2026-10-04",
  "limites": {
+  "teto_forca_plena": 3,
+  "forca_extra": "Lower B de sábado com RPE 6, só sem campeonato (4ª sessão). Com campeonato: Lower B vai para domingo com RPE 7 e a corrida de domingo cai.",
   "teto_corrida": 2,
   "duracao_max_corrida_min": 35,
   "intensa_liberada": false,
-  "condicao_para_liberar_intensa": "HRV >= 42 E FC de repouso <= 50 em dois dias seguidos — improvável esta semana (em 02/10: HRV 7d=40, 28d=39; FC de repouso 7d=53)",
-  "gatilho_corte": "3 dias seguidos de banda vermelha, OU FC de repouso >= 55 em dois dias → cai a ESTEIRA da sessão de Costas (as Costas ficam) e adia qualquer sessão intensa. NUNCA cortar as 3 sessões de força plenas: a ficha evidencia/treino-guiado-por-hrv.md mostra que nenhum estudo sustenta cortar musculação por HRV.",
-  "teto_forca_plena": 3,
-  "dias_com_teto_zero": [
-   "seg 28 — vazia por desenho; se cair, não remarcar"
-  ],
-  "se_houver_campeonato_no_sabado": "Lower B vai para domingo com RPE 7; sexta só Costas, sem esteira; domingo sem corrida.",
-  "ajuste_01_10": "Quarta não feita: Costas + 25 min esteira vai para quinta (se o jogo cancelar) ou sexta; corrida de domingo caiu (teto 2 = seg + esteira).",
-  "ajuste_02_10": "Costas feitas na quinta 01/10. Sábado tem campeonato: Lower B no domingo com RPE 7, domingo sem corrida. Sexta: ombro+braço leve (acessório, não é força plena), sem esteira."
+  "condicao_para_liberar_intensa": "HRV >= 42 E FC de repouso <= 50 em dois dias seguidos — longe (fatos 04/10: HRV 7d 39, FC de repouso 7d 54).",
+  "dias_intocaveis": ["seg 05 — light opcional, sem corrida; se cair, não remarcar", "qua 07 — sem tiro nem ritmo (véspera de futebol)", "sex 09 — sem corrida (possível véspera de campeonato)"],
+  "gatilho_corte": "Conta só a partir de 05/10; dia sem leitura não conta e não zera a sequência. FC de repouso >= 55 em dois dias seguidos OU 3 dias seguidos de banda vermelha → cai a corrida de quarta e o Lower B de sábado vira mobilidade. NUNCA cortar as 3 forças plenas por HRV. Jogo de quinta > ~50 min → Upper B de sexta com RPE 6.",
+  "veto_nutricao_forca": "Força plena só depois de almoço de verdade (marmita, ou buffet com frango/peixe/carne identificável e sem fritura). Sem almoço, a sessão cai e não é remarcada. Venceu sobre o veto de carga por ser o mais restritivo.",
+  "vetos_logistica": ["corrida na rua depois das 17h45", "corrida na rua no domingo 11/10 (sensação > 30 °C desde 5h) — esteira ou nada", "sessão de sábado depois das 9h", "academia em dia com reunião no fim da tarde"],
+  "nao_remarcar": "Sessão perdida não é empilhada em cima de outra."
  },
  "perguntas": [
   {
    "id": "q1",
-   "texto": "O ritmo novo (Yopro de manhã + almoço 13h + iogurte com whey às 17h) elimina o doce da tarde?",
-   "como_responder": "contar só os dias úteis: em quantos houve o iogurte das 17h e em quantos houve doce registrado. Linha de base: 21 a 24/09, doce em 4 dos 5 dias com registro.",
-   "resposta": "Inconclusivo: doce caiu de 4/5 para 1/4 dias, mas o ritmo não foi executado e faltam registros."
+   "texto": "Com a marmita às 13h de fato no prato, a tarde fica sem salgado/fritura/doce?",
+   "como_responder": "Ter a sex: registrar o almoço (foto do rótulo no 1º dia de cada marmita) e o que entrou às 17h. Contar à mão, lendo o texto — NÃO usar as 'ocorrencias' do fatos.json, que classificam batata-doce como doce e coxinha como proteína. Resposta = dias com marmita × dias com salgado/fritura/doce à tarde.",
+   "resposta": null
   },
   {
    "id": "q2",
-   "texto": "Uma semana com teto (3 forças plenas, nada intenso) devolve a FC de repouso para 52 ou menos?",
-   "como_responder": "FC de repouso e HRV diários de sexta e domingo em resumo_diario.json (o fatos.json só traz média), contra 53 de média de 7 dias e 52 de 28 dias.",
-   "resposta": "NÃO (fechou em 57). Teste inválido: o teto não foi cumprido."
+   "texto": "Numa semana de molde com um jogo só, a FC de repouso volta para 53 ou menos até sexta?",
+   "como_responder": "fc_repouso diário de ter 06 a sex 09 em resumo_diario.json, contra 57 em 02 e 03/10 e média de 28 dias 53 (fatos 04/10). Dia sem leitura fica como 'sem dado', não como resposta.",
+   "resposta": null
   },
   {
    "id": "q3",
-   "texto": "O stiff e o afundo unilateral melhoram a arrancada no jogo?",
-   "como_responder": "relato em texto do jogo de SÁBADO 03/10 (o de quinta não aconteceu): se houve arrancada sem sensação de fragilidade. Terça e DOMINGO (Lower B, movido pelo campeonato) precisam ter os dois exercícios de fato executados — o Fitbod tem cortado.",
-   "resposta": "Sem resposta: o jogo da tarde de 03/10 foi sem relógio; o da manhã tem dado e ainda não foi analisado."
-  },
-  {
-   "id": "q4",
-   "texto": "O Yopro de manhã atrapalha o almoço das 13h ou o dia fica mais fácil?",
-   "como_responder": "observação dele em texto na quarta ou quinta: chegou às 13h com mais ou menos fome que o normal.",
-   "resposta": "Efeito colateral: o Yopro substituiu o almoço em 30/09. Precisa ser adicional, nunca substituto."
+   "texto": "O stiff e o afundo unilateral se traduzem em arrancada sem sensação de fragilidade no tornozelo?",
+   "como_responder": "Relato em TEXTO do futebol de quinta 08/10 (duração e arrancada), e confirmação de que o STIFF e o búlgaro/afundo foram executados na terça. Sem pedir relógio; o relato é a fonte primária. Qualquer dor → para e é com o fisio.",
+   "resposta": null
   }
  ]
 }

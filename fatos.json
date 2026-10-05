@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-04T09:59:49",
+ "gerado_em": "2026-10-04T22:02:15",
  "janela": {
   "hoje": "2026-10-04",
   "dia_semana": "Sunday",
@@ -87,16 +87,16 @@
   "media_neutras_nas_ultimas_7": 94.87,
   "n_neutras_nas_ultimas_7": 7,
   "media_7_neutras_de_verdade": 94.87,
-  "media_28d_neutras": 94.7,
+  "media_28d_neutras": 94.62,
   "n_leituras_pos_esforco_14d": 2,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": null,
-  "banda_hoje": null,
-  "prontidao_garmin_hoje": null,
+  "indice_hoje": 100,
+  "banda_hoje": "g",
+  "prontidao_garmin_hoje": 55,
   "dias_vermelhos_seguidos": 0,
-  "indice_medio_7d": 38.0,
+  "indice_medio_7d": 47.0,
   "sono_medio_7d": 6.11,
   "hrv_medio_7d": 39.0,
   "hrv_medio_28d": 38.0,
@@ -107,8 +107,7 @@
    "hrv_ms",
    "sono_h",
    "fc_repouso",
-   "body_battery_max",
-   "estresse_medio"
+   "body_battery_max"
   ]
  },
  "treino_7d": {
@@ -120,8 +119,8 @@
    },
    {
     "data": "2026-10-03",
-    "kcal_ativas": 778.0,
-    "passos": 12010
+    "kcal_ativas": 871.0,
+    "passos": 14120
    }
   ],
   "registros_de_treino": [
@@ -207,7 +206,7 @@
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
  "lacunas": [
-  "índice de hoje calculado sem hrv_ms, sono_h, fc_repouso, body_battery_max, estresse_medio — use a média de 7 dias, não o número de hoje",
+  "índice de hoje calculado sem hrv_ms, sono_h, fc_repouso, body_battery_max — use a média de 7 dias, não o número de hoje",
   "sem pesagem hoje (última: 2026-10-02)"
  ]
 }

@@ -1,0 +1,116 @@
+{
+ "dias": [
+  {
+   "data": "2026-09-28",
+   "planejado": "Dia intocável (light): teto de treino ZERO por desenho — sem treino ou 15 min de mobilidade. Cardápio: Yopro ~8h, buffet com proteína primeiro às 13h, iogurte+whey+granola+banana às 17h, frango/tilápia com legumes na janta, whey dose 2 na ceia. Meta: 1900 kcal / 175 g de proteína (piso 140).",
+   "feito": "Dois registros no painel: (1) TREINO — 20 min de corrida a 8,5–8,0 km/h, com nota de que o relógio começou a marcar atrasado; (2) REFEIÇÃO — almoço, só foto, sem texto. Nenhuma das outras 4 ocasiões registrada. Proteína VISÍVEL no registro ~50 g (só o almoço planejado); isso é o que foi registrado, não o que foi comido.",
+   "adaptacao": "Não mexi em nada do plano: o cardápio é fixo e não edito semana.json. O nudge de amanhã ficou em 'não pula e REGISTRA o iogurte com whey das 17h' — escolhi a ocasião das 17h em vez de mandar reforçar proteína no geral porque ela é a aposta declarada da semana (q1) e é o único dado que falta pra responder a pergunta; mandar comer mais proteína sem saber o que ele comeu seria palpite. FLAG DE CARGA pro conselho: a corrida de hoje aconteceu num dia de teto ZERO ('se cair, não remarcar'), e consome 1 das 2 corridas da semana. Com a quarta (25 min na esteira) o teto de 2 fecha, e a corrida de domingo passa a estourar o teto — domingo tenderia a virar só o bloco de preparo. Não executei esse corte: sinalizei, porque a semana ainda tem 5 dias e a decisão cabe ao conselho ou a um dia ruim de índice.",
+   "respostas": {
+    "q1": "Sem dado. O iogurte das 17h não foi registrado e não houve registro de doce — não dá pra contar nem a favor nem contra. Dia 1 dos 5 úteis da série perdido."
+   },
+   "nao_sei": [
+    "se as outras 4 ocasiões (Yopro, pré-lanche 17h, janta, ceia) aconteceram — registro esparso não é ausência de refeição",
+    "o que tinha no prato do almoço (registro só com foto, sem texto)",
+    "proteína real do dia — 175 g era a meta, ~50 g é só o que o registro deixa ver",
+    "se houve doce à tarde (q1 sem dado no dia 1)",
+    "por que a corrida aconteceu num dia marcado como intocável: se foi escolha, se o dia rendeu bem, ou se foi só vontade",
+    "a corrida não tem dado de relógio confiável — ele mesmo anotou que o relógio começou a marcar atrasado, então os 20 min são relato, não medida"
+   ],
+   "nota_de_revisao": "Esta linha SUBSTITUI uma versão escrita mais cedo em 28/09, quando o painel ainda não tinha nenhum registro do dia e a API devolvia 25/09 como último dado. A versão antiga dizia 'sem registro nenhum' e está preservada em 'substitui' abaixo. O fechamento rodou às 00:06 de 29/09, atravessando a meia-noite.",
+   "substitui": {
+    "data": "2026-09-28",
+    "planejado": "Dia intocável (light): sem treino, ou 15 min de mobilidade de quadril/tornozelo + prancha. Cardápio: Yopro, buffet com proteína primeiro, iogurte+whey 17h, frango/tilápia com legumes, whey dose 2 na ceia.",
+    "feito": "Sem registro nenhum no painel hoje. Nada confirma nem desmente o dia intocável nem as refeições.",
+    "adaptacao": "Nada mudado: o dia já era vazio por desenho e o teto da semana é zero para segunda (perguntas_semana.json manda não remarcar se cair). Não inventei aderência por falta de dado; o nudge de amanhã virou 'voltar a registrar' em vez de qualquer ajuste de porção ou treino.",
+    "respostas": {
+     "q1": null
+    },
+    "nao_sei": [
+     "se houve treino/mobilidade hoje",
+     "as 5 ocasiões do dia (café, almoço, pré-lanche 17h, janta, ceia) — nenhuma registrada",
+     "proteína do dia (sem base para estimar)",
+     "se houve doce à tarde — q1 sem dado hoje",
+     "último registro do painel é 25/09: 26, 27 e 28/09 estão em branco"
+    ]
+   }
+  },
+  {
+   "data": "2026-09-29",
+   "planejado": "Dia de treino: LOWER A — força 1 de 3 (leg press, STIFF, búlgaro/afundo, leg curl, panturrilha, core), academia só se a agenda fechasse até 17h; sem corrida. Cardápio: Yopro ~8h, N65 Maxi Carbo de Frango + 2 ovos às 13h, iogurte+whey+granola+banana às 17h, omelete de 4 ovos na janta, whey dose 2 pós-treino. Meta: 1900 kcal / 175 g de proteína (piso 140).",
+   "feito": "Nenhum registro no painel em 29/09 (API respondeu normalmente, 100 itens, último dado 28/09). Zero das 5 ocasiões e nenhum registro de treino. Garmin de hoje marca 1275 passos e 803 kcal de gasto às 22:51 — número compatível com sync parcial do começo do dia, então NÃO serve como prova de que não houve academia. Recuperação, ao contrário, foi o melhor dia da semana: sono 7,2 h (score 84), HRV 42, FC repouso 53, índice 70 (banda amarela) depois de dois dias vermelhos.",
+   "adaptacao": "Não mexi em nada: cardápio é fixo, não edito semana.json, e sem registro não há base pra ajustar porção nem treino. O nudge repetiu a ocasião das 17h de propósito — é o segundo dia seguido em que ela não aparece, e é a aposta declarada da semana (q1); mudei a ênfase de 'não pula' pra 'registra', porque o problema observável agora é o registro, não a refeição. Contexto do horário: o fechamento de 28/09 rodou 00:06 e encontrou registros que tinham entrado tarde — este rodou 22:51, então registros de hoje lançados depois desta hora não entraram nesta contagem e o 'zero' pode ser do relógio, não do dia. FLAG PRO CONSELHO (peso): série de 7 leituras neutras subindo — 94,2 (23/09) → 95,1 (29/09), média 7 = 94,69, nenhuma leitura pós-esforço no período pra explicar como artefato. Não é decisão minha mexer em meta ou macro; só sinalizo. FLAG (carga): HRV bateu 42 hoje, mas FC repouso 53 — a condição de liberar sessão intensa (HRV ≥42 E FC ≤50 em dois dias seguidos) segue fechada, e a quarta mantém esteira por veto de calor.",
+   "respostas": {
+    "q1": "Sem dado. Nem iogurte das 17h nem doce registrados — dia 2 dos 5 úteis da série perdido; a linha de base (doce em 4 de 5 dias, 21–24/09) segue sem contraparte."
+   },
+   "nao_sei": [
+    "se o treino LOWER A aconteceu — sem registro no painel e o Garmin de hoje está com sync parcial (803 kcal às 22:51)",
+    "se a agenda fechou até 17h, isto é, se foi academia, versão caseira ou nada",
+    "se as 5 ocasiões aconteceram — registro esparso não é ausência de refeição",
+    "proteína real do dia: meta 175 g, estimativa a partir do registro é impossível (zero itens)",
+    "se houve doce à tarde (q1 sem dado no dia 2)",
+    "se o STIFF e o afundo unilateral foram de fato executados (q3 depende disso, e o Fitbod tem cortado)",
+    "se algum registro de hoje entrou no painel depois das 22:51"
+   ]
+  },
+  {
+   "data": "2026-09-30",
+   "planejado": "Dia de treino: COSTAS + 25 min na esteira (força 2 de 3, corrida 1 de 2) — corrida de rua VETADA pelo calor (sensação 36,8 °C às 16h). Cardápio: Yopro ~8h, N64 peito de frango com creme de espinafre às 13h (45 g), iogurte+whey+granola+banana às 17h (38 g), tilápia assada com legumes e arroz na janta (50 g), whey dose 2 pós-treino (24 g). Plano do dia: 1797 kcal / 172 g de proteína (meta da semana 175 g, piso 140).",
+   "feito": "Três registros no painel, nenhum com o prato do plano: 'Almoço — Yopro 15g', 'Lanche — 2 coxinha frango', 'Jantar — 2x miojo'. Nenhum registro de treino (o último screenshot é de 29/09, Lower A) e nenhum registro do whey pós-treino. Proteína VISÍVEL no registro ~47 g e ~1.300 kcal em composição quase toda de carboidrato refinado e fritura. Dia de logística atropelada, não de escolha: o almoço planejado virou um Yopro.",
+   "adaptacao": "Não mexi no cardápio nem no semana.json (pratos fixos, batch cooking). Nudge de hoje: reforçar proteína nas três ancoras do dia de jogo (almoço N98 com 2 ovos, pré-jogo 16h30, whey no clube) em vez de pedir registro — nesta vez o problema não foi falta de registro, foi um dia em que a comida planejada não chegou à mesa, e o buraco de proteína (~47 g contra piso de 140) é grande o suficiente pra ser a única coisa que vale pedir. Carryover carimbado para 2026-10-01 e não 10-02: esta avaliação rodou atrasada, na manhã de 01/10 (09h23), e o 'amanhã' do dia avaliado é hoje — carimbar 10-02 jogaria um nudge de dado de dois dias em cima do brief de amanhã, que é exatamente a falha de 20/09. FLAG PRO CONSELHO: a força 2 de 3 de quarta não tem registro; se a de sábado (Lower B) também cair, são dois treinos-chave perdidos na mesma semana — gatilho de escalar. Recuperação não explica a perda: índice 57, banda amarela, 0 dias vermelhos, prontidão Garmin 91, peso estável em 94,75 kg. CORREÇÃO DA LINHA DE 29/09: aquela entrada diz 'nenhum registro em 29/09' porque rodou antes de ele lançar — a API hoje mostra 3 registros nesse dia (almoço 350 g de churrasco com arroz, lentilha, falafel e humus; janta filet mignon suíno com batata doce e salada; e um TREINO com screenshot). Ou seja, a força 1 de 3 FOI feita e terça foi um dia bom de proteína. Conselho: leia 29/09 por este parágrafo, não pela linha dele.",
+   "respostas": {
+    "q1": "Não responde: o iogurte das 17h não apareceu no registro de 30/09 e o que entrou à tarde foi 2 coxinhas de frango. Não houve doce registrado — mas com 3 de 5 ocasiões registradas e nenhuma igual ao plano, isso não conta nem a favor nem contra a aposta das 17h."
+   },
+   "nao_sei": [
+    "Se o treino de COSTAS + esteira aconteceu sem screenshot, ou não aconteceu — nenhum registro de treino em 30/09 e nenhum texto explicando",
+    "Se o café (Yopro ~8h) aconteceu de verdade ou se o Yopro registrado como 'Almoço' É o café lançado na ocasião errada",
+    "O que foi comido fora dos 3 registros — a estimativa de ~47 g de proteína é o piso do registrado, não o total do dia"
+   ]
+  },
+  {
+   "data": "2026-10-02",
+   "planejado": "Sexta, dia de treino: OMBRO + BRAÇO leve ~30 min (acessório, NÃO conta como força plena — as Costas foram feitas na quinta 01/10), sem esteira e sem corrida por ser véspera de jogo. Cardápio de 5 ocasiões: Yopro ~8h (15 g), N62 frango com quiabo e arroz integral + 2 ovos às 13h (50 g), iogurte+whey+granola+banana às 17h (38 g), frango grelhado 170 g + salada + 2 col. de arroz na janta (48 g), whey dose 2 pós-treino (24 g). Plano: ~1910 kcal / ~175 g de proteína (meta da semana 175 g, piso 140).",
+   "feito": "NÃO SEI AINDA — esta avaliação rodou às 11h17 da própria sexta, com o dia inteiro pela frente. Único registro em 02/10 é uma Observação de replanejamento (texto: Costas feitas na quinta; sábado tem jogo, Lower B vai pro domingo com RPE 7; sexta é ombro+braço leve no lugar da folga), que é anotação de plano, não de execução. Zero refeições e zero treino registrados até 11h — e às 11h isso é o esperado, não falha: o almoço do plano é 13h. Garmin do dia ainda praticamente vazio (16 passos, 675 kcal, sem HRV/sono/FC de repouso), índice 87 banda verde MAS marcado como não confiável por faltarem os três componentes. Peso neutro de hoje 95,0 kg contra média de 94,87 — dentro da faixa, sem artefato de pós-esforço (0 leituras pós-esforço em 14 dias). Contexto de ontem (01/10), que esta rodada já alcança: 2 registros — Treino com screenshot (as Costas, força 2 de 3 recuperada da quarta perdida) e almoço às 15h com arroz, feijão, bife e batata frita, mais um Lanche com foto. Sono de quinta 5h57 (score 76), FC de repouso 53, HRV 43.",
+   "adaptacao": "Não mexi no cardápio, no semana.json nem no treino — não havia o que adaptar: o dia avaliado ainda não aconteceu. O nudge foi carimbado para 2026-10-03 (sábado de jogo) em vez de tratar hoje como fechado, e fala das três âncoras do dia de jogo (pré-jogo 3h antes, whey logo depois, refeição livre única) mais o pedido de relato em texto da arrancada, porque o jogo de sábado é a ÚNICA fonte possível para a q3 — o de quinta não aconteceu e o campeonato proíbe relógio, então sem o texto dele a pergunta da semana morre. Deixei de pedir 'registra mais' como nudge principal: com o dia ainda abrindo, cobrar registro hoje seria cobrar um buraco que ainda não existe. FLAG PRO CONSELHO (não é escalada, é observação): a rotina de fim de dia está rodando no meio da manhã do próprio dia — pela segunda rodada seguida (a de 30/09 rodou às 09h23 de 01/10). Enquanto o horário não for corrigido, toda avaliação mede um dia incompleto e o diário herda um 'feito' que é palpite. Vale o conselho olhar o agendamento, não o meu julgamento. Sem gatilho de parada: 0 dias vermelhos seguidos, sem dor registrada, sem anti-inflamatório, peso na faixa, e a força 2 de 3 foi recuperada na quinta (só a 3ª, Lower B, segue pendente — agora no domingo com RPE 7).",
+   "respostas": {
+    "q1": "Nada hoje — às 11h ainda não houve nem o iogurte das 17h nem doce possível de registrar. Contagem de dias úteis da semana segue parada em: 30/09 sem iogurte e sem doce (entraram 2 coxinhas), 01/10 com Lanche fotografado mas sem texto, logo indeterminado. A linha de base (doce em 4 de 5 dias, 21–24/09) ainda não tem contra-prova."
+   },
+   "nao_sei": [
+    "Tudo o que aconteceu em 02/10 depois das 11h17: as 5 ocasiões do cardápio e o treino de ombro+braço estão todos em aberto nesta rodada",
+    "O que foi o Lanche fotografado de 01/10 — tem foto, não tem texto, e eu não li a imagem nesta rodada; a proteína de ontem fica sem fechamento",
+    "HRV, sono e FC de repouso de hoje (sexta) — faltando no Garmin no momento da rodada, e são exatamente os números que a q2 pede para sexta",
+    "Se o Yopro das ~8h de hoje aconteceu: nenhum registro, mas 11h é cedo demais pra chamar de pulado"
+   ]
+  },
+  {
+   "data": "2026-10-03",
+   "planejado": "Sábado de campeonato: 1 jogo (o Lower B foi empurrado para domingo com RPE 7). Cardápio de 5 ocasiões: Yopro+banana de manhã como pré-jogo (16 g), proteína grelhada 200 g + arroz + feijão + salada no almoço (55 g), iogurte+whey às 17h (34 g), REFEIÇÃO LIVRE da semana na janta (40 g), whey dose 2 pós-jogo (24 g). Plano: ~2160 kcal / ~169 g de proteína (meta da semana 175 g, piso 140).",
+   "feito": "Um único registro no painel, tipo Treino: 'Dois jogos de campeonato. Manhã: gravado no relógio. Tarde: sem relógio. Chuva e cansaço muscular.' Ou seja, DOIS jogos, não um — o dobro do volume previsto, na chuva. Nenhuma refeição registrada, nenhuma foto, nenhuma observação. Métricas de hoje (04/10, pós-jogo): índice de recuperação 7, banda vermelha pelo 2º dia seguido, prontidão Garmin 70, FC de repouso 7d = 55 (28d = 53), HRV 7d = 39, sono médio 7d = 6,11 h. Peso da última leitura neutra: 95,0 kg em 02/10 (média 7 neutras 94,87) — estável.",
+   "adaptacao": "Baixei o Lower B de domingo de RPE 7 para RPE 6 e cortei 1 série dos acessórios, mantendo os 6 exercícios, o stiff e o afundo unilateral (são eles que respondem q3) e os 25 min de preparo. Por quê: o plano de RPE 7 foi escrito para UM jogo no sábado, e foram dois, na chuva, com cansaço muscular relatado — somados a 2 dias seguidos de banda vermelha, índice 7 e FC de repouso em 55, que é o número do gatilho de corte. Não cortei a sessão de força em si: a regra da semana é explícita que nenhum estudo sustenta cortar musculação por HRV, e esta é a 3ª de 3 forças plenas. Não mexi em cardápio, meta nem molde.",
+   "respostas": {
+    "q3": "Sem resposta útil. Ele relatou os dois jogos, mas só em termos de chuva e cansaço muscular — não falou de arrancada nem de sensação de fragilidade, que é exatamente o que a pergunta pede. O que dá para dizer é só o indireto: dois jogos num dia e nenhuma queixa de tornozelo. Isso é tranquilizador, mas NÃO é resposta a q3. Vale perguntar direto no domingo antes do conselho.",
+    "q1": null
+   },
+   "nao_sei": [
+    "Todas as 5 refeições de 03/10 — zero registro. Não sei se comeu o plano, se comeu fora, nem se tomou os 2 whey. Registro ausente NÃO é refeição ausente: num dia de dois jogos a chance de ter comido e não anotado é alta.",
+    "Proteína do dia: impossível estimar. Não jogar isso contra a meta de 175 g.",
+    "Se a 'refeição livre da semana' (a janta de sábado) foi usada — se não foi, ela não migra sozinha para domingo.",
+    "O jogo da tarde não tem dado nenhum (sem relógio): duração, FC e carga reais do dia são desconhecidas. O índice 7 de hoje provavelmente subestima o quanto o corpo levou.",
+    "Se o 'cansaço muscular' é só DOMS de dois jogos ou se tem algum ponto específico — ele não localizou. Nenhuma menção ao tornozelo, nem de dor."
+   ]
+  },
+  {
+   "data": "2026-10-04",
+   "planejado": "Lower B contido (RPE 7), empurrado do sábado de campeonato.",
+   "feito": "Cancelado. Dia de recuperação por decisão do Fabio.",
+   "adaptacao": "Foram DOIS jogos de campeonato no sábado 03/10 (manhã com relógio, tarde sem), com chuva e cansaço muscular. O Lower B tinha sido desenhado para um jogo só. HRV 29, FC repouso 57, índice 7 — o pior dia da série. Trocado por mobilidade + preparo da semana.",
+   "respostas": {
+    "q2": "NÃO — FC de repouso fechou em 57, contra a meta de ≤52. Mas o teto da semana não foi cumprido (2 forças plenas de 3, mais dois jogos), então o teste não aconteceu de verdade.",
+    "q4": "Efeito colateral não previsto: em 30/09 o Yopro VIROU o almoço (registro: 'Almoço: Yopro 15g'), e o dia fechou com 2 coxinhas e 2 miojos. A refeição de 8h precisa ser explicitamente adicional, nunca substituta."
+   },
+   "nao_sei": [
+    "alimentação de 02, 03 e 04/10 — sem registro"
+   ],
+   "para_o_conselho": "A semana nova começa SEGUNDA 05/10. Hoje é recuperação e não entra como sessão. Considerar que a semana 28/09–04/10 terminou com a maior carga do mês (dois jogos) e a pior noite de sono da série. RESPONDIDO pelo Fabio em 04/10: os DOIS jogos de sábado foram EXCEÇÃO — ele não espera que se repita tão cedo. O molde fixo continua valendo: sábado é Lower B, ou UM jogo de campeonato quando houver. Não redesenhe a semana em volta de dois jogos; trate 03/10 como pico isolado, que explica o HRV de 29 e a FC de repouso de 57."
+  }
+ ]
+}
