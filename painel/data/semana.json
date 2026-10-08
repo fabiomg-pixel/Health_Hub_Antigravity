@@ -1,7 +1,7 @@
 {
  "gerado_em": "2026-10-04",
- "semana": "5 a 11/out · molde fixo de volta, o almoço é a marmita",
- "objetivo": "Voltar ao molde depois do pico isolado de sábado: 3 forças plenas + Lower B contido, 2 corridas fáceis, futebol na quinta, nada intenso — e um almoço de verdade às 13h todo dia útil.",
+ "semana": "8 a 11/out · 🧳 MODO CONGRESSO — manter o padrão, não o plano",
+ "objetivo": "Atravessar o congresso com um padrão responsável, não com um plano perfeito. Proteína primeiro no prato, o kit antes do coffee-break, dormir o que der. Adesão parcial aqui é sucesso — em julho o peso voltou sozinho.",
  "peso_atual": 94.87,
  "peso_rotulo": "média neutra (7 leituras, sem pós-jogo)",
  "fontes_status": {
@@ -13,20 +13,23 @@
   "clima": "Open-Meteo, puxado em 04/10 (quarta e domingo a 3–7 dias: instável)"
  },
  "dieta": {
-  "calorias": 1900,
-  "proteina": 175,
-  "proteina_piso": 140,
-  "gordura": 60,
-  "carbo": 175,
-  "fibra": 30
+  "calorias": 2000,
+  "proteina": 140,
+  "proteina_piso": 120,
+  "gordura": 65,
+  "carbo": 190,
+  "fibra": 25
  },
  "regra_prato": {
-  "titulo": "Três coisas nesta semana. O resto é o de sempre.",
+  "titulo": "🧳 Modo congresso · 3 heurísticas, nenhum cardápio",
   "linhas": [
-   "1️⃣ O ALMOÇO É A MARMITA, ÀS 13H. O Yopro da manhã é extra — nunca é o almoço. Sem marmita, buffet: proteína primeiro, fritura fora.",
-   "2️⃣ ÀS 17H, IOGURTE COM WHEY — antes de qualquer salgado ou doce.",
-   "3️⃣ SEM JANTA PRONTA, A JANTA É A MARMITA RESERVA + 2 OVOS. Miojo não é janta.",
-   "↩️ Treino no molde: ter Lower A · qua Costas + 25 min · qui futebol · sex Upper B · sáb Lower B leve (ou campeonato) · dom 35 min na esteira + preparo. Nada intenso. Uma livre: sábado à noite."
+   "1️⃣ PROTEÍNA PRIMEIRO, metade do prato de salada. Vale em qualquer buffet, sem precisar escolher restaurante.",
+   "2️⃣ COMA O SEU LANCHE ANTES DO COFFEE-BREAK. Yopro, sachê de whey, castanhas ou banana na mochila. Sem o kit, a mesa decide por você.",
+   "3️⃣ NO JANTAR SOCIAL, ESCOLHA UM: a sobremesa ou a bebida. Nunca os dois.",
+   "🎯 Meta de proteína cai para 140 g (o piso). Comendo fora o tempo todo, esse é o teto honesto — não é falha sua.",
+   "📸 Uma foto por dia já é vitória. No congresso de julho o registro ficou 6 dias em zero, e foi isso que cegou a análise seguinte.",
+   "⚖️ Peso de viagem NÃO entra na série. Rotina, sal e sono são outros.",
+   "↩️ Na volta não se compensa. Retomar o plano normal é a conduta — em julho não houve dívida a pagar."
   ]
  },
  "tendencias": {
@@ -91,13 +94,12 @@
   "dias_feitos": []
  },
  "relatorio": [
-  "📋 SEMANA QUE PASSOU (28/09–04/10): 2 das 3 forças plenas (Lower A na terça, Costas na quinta), 1 corrida (20 min na segunda) e, no sábado, DOIS jogos de campeonato na chuva. Você confirmou que foi exceção: o molde fica, e 03/10 é tratado como pico isolado. Atenção aos números: o HRV 29 e a FC de repouso 57 datados de 03/10 foram medidos na noite ANTERIOR aos jogos — a FC já estava em 57 em 02/10. A noite depois dos jogos não tem dado.",
-  "⚖️ PESO: média das 7 leituras neutras 94,87 kg contra 94,62 kg nos 28 dias — +0,25 kg. Nenhuma das 7 é pós-jogo, então não é artefato. Sem pesagem desde 02/10. Não é motivo para cortar caloria: o que se corrige é a fritura e o almoço pulado, não o tamanho do prato.",
-  "🍽️ O QUE FUNCIONOU: 29/09 — churrasco com arroz, lentilha, falafel e homus no almoço; filé mignon suíno com batata-doce e salada à noite. Dia bom de proteína. O QUE NÃO: 30/09 o Yopro virou o almoço e o dia fechou com 2 coxinhas e 2 miojos; 01/10 almoço às 15h com batata frita; 28/09 salgado à tarde. O vazamento registrado foi fritura no lugar da refeição planejada. De 02 a 04/10 não há registro de comida — não sei o que aconteceu, e isso não é contado contra você.",
-  "❓ AS PERGUNTAS DA SEMANA PASSADA: q1 (o ritmo novo elimina o doce?) — inconclusiva: a contagem automática chamou batata-doce de doce e coxinha de proteína, então '1 dia com doce' não vale. q2 (FC de repouso ≤52?) — não testada: o teto não foi cumprido, e as duas últimas leituras (57 em 02 e 03/10) vieram antes dos jogos; a noite pós-jogo não tem dado. q3 (arrancada) — sem relato. q4 (o Yopro atrapalha?) — em 30/09 ele substituiu o almoço. Daí a regra 1 desta semana.",
-  "🫀 RECUPERAÇÃO: HRV média 7d 39 (28d 38) · FC de repouso 7d 54 (28d 53) · sono médio 7d 6,11 h. O índice de hoje (100) não vale: saiu sem HRV, sono e FC de repouso. A leitura real só sai segunda — por isso segunda é leve e sem corrida. Nada intenso cabe: a condição (HRV ≥42 e FC ≤50 dois dias seguidos) está longe.",
-  "⚖️ VETOS EM CHOQUE, E QUEM VENCEU: o especialista de carga diz que as 3 forças plenas nunca caem; o de nutrição diz que força plena só acontece depois de um almoço de verdade. Venceu o mais restritivo (nutrição): se o almoço não aconteceu, a força do dia cai e não é remarcada. É para isso que existe a marmita de reserva — ela é o seguro do treino. Logística vetou corrida na rua depois das 17h45 e no domingo inteiro (sensação acima de 30 °C desde as 5h): a corrida de domingo é na esteira ou não é.",
-  "🧠 Plano montado pelo conselho (carga, nutrição, logística) e revisado pelo cético: as violações que ele apontou foram corrigidas antes de publicar."
+  "🧳 MODO CONGRESSO ATIVADO (08–11/10). Este protocolo não é improviso: ele saiu do congresso de São Paulo (27/07–02/08), em que o peso saiu 95,3 e voltou 94,7 — congresso não cobra o preço que se teme. O que cobrou foi o sono.",
+  "🚩 VOCÊ COMEÇA ESTE CANSADO, e isso muda a prescrição: índice em 2 hoje (o mais baixo de toda a série) depois da noite em trânsito, sono de 6,02 h de média, HRV 33, FC de repouso 55. Zero treino hoje. O exercício da semana é andar.",
+  "⚖️ O QUE OS NÚMEROS DIZEM ANTES DA VIAGEM: a média de 7 leituras neutras subiu três semanas seguidas — 94,51 → 94,87 → 95,14 kg. Não é artefato. Mas a hora de tratar isso é na volta, com a rotina de pé: déficit em semana de congresso só custa sono e humor.",
+  "🥤 O KIT É A ÚNICA COISA QUE EU PEÇO DE VERDADE: Yopro, sachês de whey, castanhas porcionadas e banana na mochila. É a diferença medida entre a semana controlada e a solta — não a força de vontade na mesa do coffee-break.",
+  "🏃 SE SOBRAR ALGUMA COISA, QUE SEJA CORRIDA. Em julho a corrida sobreviveu ao congresso (3 sessões) e a academia não. É o hábito de menor atrito. Mas só depois de uma noite decente — hoje, não.",
+  "✅ ADESÃO PARCIAL AQUI É SUCESSO, e isso não é consolo: é o que os números de julho mostram."
  ],
  "lista_compra": [
   {
@@ -782,28 +784,28 @@
    "id": "qui",
    "nome": "Quinta",
    "data": "08/10",
-   "tipo": "futebol",
-   "flex": false,
+   "tipo": "light",
+   "flex": true,
    "treino": {
-    "foco": "⚽ FUTEBOL à noite",
+    "foco": "🧳 CONGRESSO · dia 1 — depois de uma noite em trânsito",
     "exercicios": [
      {
-      "nome": "🌤️ Seco, ~26 °C. Sem risco de clima.",
+      "nome": "🚩 Índice em 2 hoje, o mais baixo da série, depois da noite em trânsito. Sono de 6,0 h de média na semana, HRV 33, FC de repouso 55.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📝 Depois do jogo, me conte em texto: quanto tempo jogou e se a arrancada saiu sem sensação de fragilidade no tornozelo (pergunta q3).",
+      "nome": "❌ Sem futebol, sem academia, sem corrida hoje. O que estava no plano desta quinta não existe mais.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⏱️ Se passar de ~50 min, o Upper B de amanhã desce para RPE 6.",
+      "nome": "🚶 O exercício de hoje é ANDAR: congresso dá 8-10 mil passos de graça. Suba escada em vez de elevador e pronto.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🥤 Whey logo depois do jogo.",
+      "nome": "😴 A prioridade é dormir hoje. Em julho o custo do congresso não foi a comida — foi o sono (5,8 h, HRV 25, Garmin em STRAINED).",
       "series": 1,
       "reps": "—"
      }
@@ -811,40 +813,40 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "~8h · 1 Yopro (ou similar ≥15 g de proteína) — EXTRA, não é o almoço",
-     "kcal": 140,
-     "prot": 15,
+     "nome": "Café do hotel/evento · ovos + fruta + 1 pão, café",
+     "kcal": 420,
+     "prot": 28,
      "peso_g": null,
-     "nota": "Proteína cedo, sem preparo. Em 30/09 ele virou o almoço; não pode. O almoço das 13h acontece de qualquer jeito."
+     "nota": "O café de hotel é a refeição mais fácil de acertar da viagem: tem ovo mexido quase sempre. Comece por ele, antes do pão doce e do bolo."
     },
     "almoco": {
-     "nome": "13h · 🧊 N98 · Carne Moída com Cenoura e Arroz Integral + 2 ovos",
-     "kcal": 700,
-     "prot": 56,
+     "nome": "Almoço do evento · PROTEÍNA PRIMEIRO, metade de salada",
+     "kcal": 650,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Os 2 ovos (cozidos no domingo) são reforço fixo até o rótulo confirmar ≥35 g. 📸 Fotografe o rótulo."
+     "nota": "Monte o prato na ordem: proteína identificável, salada e legumes, por último o carbo. Sem fritura e sem sobremesa. Se for buffet de hotel, o grelhado está sempre lá."
     },
     "pre_lanche": {
-     "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
-     "kcal": 480,
-     "prot": 38,
+     "nome": "Coffee-break · o que estiver no KIT (Yopro, whey, castanhas, banana)",
+     "kcal": 250,
+     "prot": 25,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1 — e é o pré-jogo. Nada de salgado no caminho."
+     "nota": "⭐ A regra que decide a semana. Coma o SEU lanche ANTES de passar na mesa do coffee-break. Chegar sem fome na mesa do salgadinho é a diferença entre a semana controlada e a solta."
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Casa · A porção de frango assado que foi pro freezer ontem",
+     "nome": "Janta · proteína + salada, sem prato novo e sem fritura",
      "kcal": 600,
-     "prot": 50,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Janta pós-jogo já pronta: só esquentar. Sem pedir comida."
+     "nota": "Jantar de congresso costuma ser social e tarde. Peça proteína grelhada e salada; o resto é negociável. Álcool: no máximo uma, e nunca em noite curta de sono."
     },
     "petisco": {
-     "nome": "Pós-jogo · 💊 WHEY DOSE 2 (30 g) com água",
+     "nome": "Se a janta for cedo · 1 sachê de whey antes de dormir",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "No clube ou ao chegar em casa."
+     "nota": "Só se der. Em viagem, o whey é o que fecha a proteína sem depender de restaurante."
     }
    }
   },
@@ -852,58 +854,18 @@
    "id": "sex",
    "nome": "Sexta",
    "data": "09/10",
-   "tipo": "treino",
-   "flex": false,
+   "tipo": "light",
+   "flex": true,
    "treino": {
-    "foco": "💪 UPPER B — força 3 de 3",
+    "foco": "🧳 CONGRESSO · dia 2",
     "exercicios": [
      {
-      "nome": "🌤️ Seco. Academia.",
+      "nome": "🚶 Andar o dia. Se sobrar disposição E você tiver dormido mais de 7 h, 20 min fáceis na esteira do hotel — opcional de verdade.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🍱 Força plena só depois de almoço de verdade: a marmita, ou buffet com frango, peixe ou carne identificável e sem fritura. Coxinha não conta. Se o almoço falhou, a sessão cai e não é remarcada.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "❌ Sem corrida: pode ser véspera de campeonato.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "1️⃣ Supino reto ou inclinado — 4×8",
-      "series": 4,
-      "reps": "8"
-     },
-     {
-      "nome": "2️⃣ Puxada alta na barra — 4×8",
-      "series": 4,
-      "reps": "8"
-     },
-     {
-      "nome": "3️⃣ Desenvolvimento halteres — 3×8",
-      "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "4️⃣ Elevação lateral — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "5️⃣ Rosca W + tríceps corda — 2×10",
-      "series": 2,
-      "reps": "10"
-     },
-     {
-      "nome": "6️⃣ Core",
-      "series": 3,
-      "reps": "45 s"
-     },
-     {
-      "nome": "🍽️ Sexta à noite é o dia de risco da dieta. A livre da semana é amanhã, não hoje.",
+      "nome": "💧 2,5 L de água. Ar-condicionado de centro de convenções desidrata e isso vira fome falsa às 16h.",
       "series": 1,
       "reps": "—"
      }
@@ -911,40 +873,40 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "~8h · 1 Yopro (ou similar ≥15 g de proteína) — EXTRA, não é o almoço",
-     "kcal": 140,
-     "prot": 15,
+     "nome": "Café do hotel/evento · ovos + fruta + 1 pão, café",
+     "kcal": 420,
+     "prot": 28,
      "peso_g": null,
-     "nota": "Proteína cedo, sem preparo. Em 30/09 ele virou o almoço; não pode. O almoço das 13h acontece de qualquer jeito."
+     "nota": "O café de hotel é a refeição mais fácil de acertar da viagem: tem ovo mexido quase sempre. Comece por ele, antes do pão doce e do bolo."
     },
     "almoco": {
-     "nome": "13h · 🧊 N62 · Frango com Quiabo e Arroz Integral + 2 ovos",
-     "kcal": 660,
-     "prot": 50,
+     "nome": "Almoço do evento · PROTEÍNA PRIMEIRO, metade de salada",
+     "kcal": 650,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Os 2 ovos (cozidos no domingo) são reforço fixo até o rótulo confirmar ≥35 g. 📸 Fotografe o rótulo."
+     "nota": "Monte o prato na ordem: proteína identificável, salada e legumes, por último o carbo. Sem fritura e sem sobremesa. Se for buffet de hotel, o grelhado está sempre lá."
     },
     "pre_lanche": {
-     "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
-     "kcal": 480,
-     "prot": 38,
+     "nome": "Coffee-break · o que estiver no KIT (Yopro, whey, castanhas, banana)",
+     "kcal": 250,
+     "prot": 25,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Vem ANTES de qualquer salgado ou doce — é esta refeição que ocupa o horário da coxinha."
+     "nota": "⭐ A regra que decide a semana. Coma o SEU lanche ANTES de passar na mesa do coffee-break. Chegar sem fome na mesa do salgadinho é a diferença entre a semana controlada e a solta."
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Casa · Frango grelhado (170 g) + salada + 2 col. de arroz",
-     "kcal": 500,
-     "prot": 48,
+     "nome": "Janta · proteína + salada, sem prato novo e sem fritura",
+     "kcal": 600,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Janta normal com arroz — se amanhã tiver jogo, é isso e ponto."
+     "nota": "Jantar de congresso costuma ser social e tarde. Peça proteína grelhada e salada; o resto é negociável. Álcool: no máximo uma, e nunca em noite curta de sono."
     },
     "petisco": {
-     "nome": "Pós-treino ou ceia · 💊 WHEY DOSE 2 (30 g) com água",
+     "nome": "Se a janta for cedo · 1 sachê de whey antes de dormir",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "Fecha a proteína do dia."
+     "nota": "Só se der. Em viagem, o whey é o que fecha a proteína sem depender de restaurante."
     }
    }
   },
@@ -952,58 +914,23 @@
    "id": "sab",
    "nome": "Sábado",
    "data": "10/10",
-   "tipo": "treino",
+   "tipo": "light",
    "flex": true,
    "treino": {
-    "foco": "🦵 LOWER B contido (RPE 6), 7h–9h — OU campeonato",
+    "foco": "🧳 CONGRESSO · dia 3",
     "exercicios": [
      {
-      "nome": "🌡️ Às 10h a sensação já passa de 32 °C: sábado é de manhã ou não é.",
+      "nome": "🚶 Andar o dia.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏆 SE HOUVER CAMPEONATO: o Lower B vai para domingo com RPE 7 e a corrida de domingo cai. Um jogo só — se forem dois de novo, domingo é recuperação.",
+      "nome": "🏃 Se tiver 20-30 min livres e vontade: corrida fácil. Em julho a corrida foi o único hábito que sobreviveu ao congresso — é o de menor atrito.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🎚️ RPE 6: 4 reps na reserva. É a 4ª sessão da semana, não a 3ª.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "1️⃣ Agachamento — 4×6-8",
-      "series": 4,
-      "reps": "6–8"
-     },
-     {
-      "nome": "2️⃣ STIFF com halteres — 3×10 ⭐",
-      "series": 3,
-      "reps": "10"
-     },
-     {
-      "nome": "3️⃣ Afundo caminhando — 3×10 cada ⭐",
-      "series": 3,
-      "reps": "10 cada"
-     },
-     {
-      "nome": "4️⃣ Cadeira extensora — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "5️⃣ Elevação de quadril — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "6️⃣ Panturrilha sentada — 3×15",
-      "series": 3,
-      "reps": "15"
-     },
-     {
-      "nome": "🛑 Gatilho (conta só a partir de 05/10; dia sem leitura não conta e não zera a sequência): FC de repouso ≥55 em dois dias seguidos OU 3 dias seguidos de banda vermelha → cai a corrida de quarta e o Lower B de sábado vira mobilidade. As 3 forças plenas (ter, qua, sex) não caem por HRV.",
+      "nome": "🍽️ Jantar de congresso costuma ser o mais solto da semana. Escolha UM: a sobremesa ou a bebida. Não os dois.",
       "series": 1,
       "reps": "—"
      }
@@ -1011,40 +938,40 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Manhã · 1 Yopro + 1 banana",
-     "kcal": 240,
-     "prot": 16,
+     "nome": "Café do hotel/evento · ovos + fruta + 1 pão, café",
+     "kcal": 420,
+     "prot": 28,
      "peso_g": null,
-     "nota": "Pré-treino (ou pré-jogo) leve."
+     "nota": "O café de hotel é a refeição mais fácil de acertar da viagem: tem ovo mexido quase sempre. Comece por ele, antes do pão doce e do bolo."
     },
     "almoco": {
-     "nome": "Casa · Proteína grelhada (200 g) + arroz + feijão + salada",
-     "kcal": 660,
-     "prot": 55,
+     "nome": "Almoço do evento · PROTEÍNA PRIMEIRO, metade de salada",
+     "kcal": 650,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Sem fritura."
+     "nota": "Monte o prato na ordem: proteína identificável, salada e legumes, por último o carbo. Sem fritura e sem sobremesa. Se for buffet de hotel, o grelhado está sempre lá."
     },
     "pre_lanche": {
-     "nome": "17h · Iogurte natural + whey (30 g)",
-     "kcal": 330,
-     "prot": 34,
+     "nome": "Coffee-break · o que estiver no KIT (Yopro, whey, castanhas, banana)",
+     "kcal": 250,
+     "prot": 25,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Se o jogo for à tarde, coma 3h antes."
+     "nota": "⭐ A regra que decide a semana. Coma o SEU lanche ANTES de passar na mesa do coffee-break. Chegar sem fome na mesa do salgadinho é a diferença entre a semana controlada e a solta."
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "🍽️ REFEIÇÃO LIVRE DA SEMANA",
-     "kcal": 800,
-     "prot": 40,
+     "nome": "Janta · proteína + salada, sem prato novo e sem fritura",
+     "kcal": 600,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Uma, marcada, sem repetir no domingo. Comece por água e proteína."
+     "nota": "Jantar de congresso costuma ser social e tarde. Peça proteína grelhada e salada; o resto é negociável. Álcool: no máximo uma, e nunca em noite curta de sono."
     },
     "petisco": {
-     "nome": "Pós-treino ou ceia · 💊 WHEY DOSE 2 (30 g) com água",
+     "nome": "Se a janta for cedo · 1 sachê de whey antes de dormir",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "Fecha a proteína do dia."
+     "nota": "Só se der. Em viagem, o whey é o que fecha a proteína sem depender de restaurante."
     }
    }
   },
@@ -1052,33 +979,28 @@
    "id": "dom",
    "nome": "Domingo",
    "data": "11/10",
-   "tipo": "treino",
-   "flex": false,
+   "tipo": "light",
+   "flex": true,
    "treino": {
-    "foco": "🏃 35 min fáceis NA ESTEIRA + 45 min de preparo da semana",
+    "foco": "🧳 CONGRESSO · volta",
     "exercicios": [
      {
-      "nome": "🚫 Rua vetada: sensação acima de 30 °C desde as 5h, chegando a 37 °C à tarde. Esteira com ar, ou a corrida cai — não se corre na rua.",
+      "nome": "🚶 Dia de volta: andar e dormir.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏃 Até 35 min a 8–8,5 km/h. Fácil, sem tiros.",
-      "series": 1,
-      "reps": "35 min"
-     },
-     {
-      "nome": "🏆 Se sábado teve campeonato: hoje é o Lower B com RPE 7 e sem corrida.",
+      "nome": "❌ NÃO COMPENSAR na volta. Nada de déficit agressivo nem cardio extra para 'pagar' a semana — em julho o peso saiu 95,3 e voltou 94,7 sozinho.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🍳 45 min de PREPARO: 12 ovos cozidos (os reforços das marmitas), legumes lavados e cortados, a janta rendendo 2 com a porção extra no freezer, 7 iogurtes e 7 Yopros na prateleira da frente, pedido das 5 marmitas feito.",
+      "nome": "⚖️ Pese só na terça, já em casa e na rotina. Pesagem de viagem não entra na série.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📋 Pese em jejum. O conselho roda à noite.",
+      "nome": "📋 Me chame domingo à noite: o conselho remonta a semana normal a partir de segunda.",
       "series": 1,
       "reps": "—"
      }
@@ -1086,41 +1008,40 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Café · 2 ovos + 1 fatia de pão integral + café",
-     "kcal": 230,
-     "prot": 15,
+     "nome": "Café do hotel/evento · ovos + fruta + 1 pão, café",
+     "kcal": 420,
+     "prot": 28,
      "peso_g": null,
-     "nota": "Leve, antes da esteira."
+     "nota": "O café de hotel é a refeição mais fácil de acertar da viagem: tem ovo mexido quase sempre. Comece por ele, antes do pão doce e do bolo."
     },
     "almoco": {
-     "nome": "Casa · Frango ou tilápia (200 g) + arroz + salada",
-     "kcal": 640,
-     "prot": 58,
+     "nome": "Almoço do evento · PROTEÍNA PRIMEIRO, metade de salada",
+     "kcal": 650,
+     "prot": 45,
      "peso_g": null,
-     "nota": "Domingo controlado: a livre foi ontem."
+     "nota": "Monte o prato na ordem: proteína identificável, salada e legumes, por último o carbo. Sem fritura e sem sobremesa. Se for buffet de hotel, o grelhado está sempre lá."
     },
     "pre_lanche": {
-     "nome": "17h · Iogurte natural (170 g) + whey (30 g) + granola (30 g) + 1 banana",
-     "kcal": 480,
-     "prot": 38,
+     "nome": "Coffee-break · o que estiver no KIT (Yopro, whey, castanhas, banana)",
+     "kcal": 250,
+     "prot": 25,
      "peso_g": null,
-     "nota": "💊 WHEY DOSE 1. Vem ANTES de qualquer salgado ou doce — é esta refeição que ocupa o horário da coxinha."
+     "nota": "⭐ A regra que decide a semana. Coma o SEU lanche ANTES de passar na mesa do coffee-break. Chegar sem fome na mesa do salgadinho é a diferença entre a semana controlada e a solta."
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Casa · Frango piccata com arroz e brócolis",
-     "kcal": 700,
-     "prot": 54,
+     "nome": "Janta · proteína + salada, sem prato novo e sem fritura",
+     "kcal": 600,
+     "prot": 45,
      "peso_g": null,
-     "receita": "rA",
-     "nota": "Rende 2: a segunda porção vai pro freezer — é a janta reserva da semana que vem."
+     "nota": "Jantar de congresso costuma ser social e tarde. Peça proteína grelhada e salada; o resto é negociável. Álcool: no máximo uma, e nunca em noite curta de sono."
     },
     "petisco": {
-     "nome": "Pós-treino ou ceia · 💊 WHEY DOSE 2 (30 g) com água",
+     "nome": "Se a janta for cedo · 1 sachê de whey antes de dormir",
      "kcal": 130,
      "prot": 24,
      "peso_g": null,
-     "nota": "Fecha a proteína do dia."
+     "nota": "Só se der. Em viagem, o whey é o que fecha a proteína sem depender de restaurante."
     }
    }
   }

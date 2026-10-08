@@ -1,57 +1,17 @@
 {
- "gerado_em": "2026-10-04T22:11:16",
+ "gerado_em": "2026-10-08T09:17:55",
  "janela": {
-  "hoje": "2026-10-04",
-  "dia_semana": "Sunday",
-  "semana_desde": "2026-09-27"
+  "hoje": "2026-10-08",
+  "dia_semana": "Thursday",
+  "semana_desde": "2026-10-01"
  },
  "peso": {
   "ultima": {
-   "data": "2026-10-02",
-   "peso_kg": 95.0,
+   "data": "2026-10-06",
+   "peso_kg": 95.05,
    "pos_esforco": false
   },
   "serie_14d": [
-   {
-    "data": "2026-09-17",
-    "peso_kg": 94.7,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-18",
-    "peso_kg": 93.65,
-    "pos_esforco": true
-   },
-   {
-    "data": "2026-09-21",
-    "peso_kg": 94.05,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-22",
-    "peso_kg": 94.5,
-    "pos_esforco": true
-   },
-   {
-    "data": "2026-09-23",
-    "peso_kg": 94.2,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-24",
-    "peso_kg": 94.1,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-25",
-    "peso_kg": 94.95,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-26",
-    "peso_kg": 95.25,
-    "pos_esforco": false
-   },
    {
     "data": "2026-09-27",
     "peso_kg": 94.35,
@@ -81,49 +41,63 @@
     "data": "2026-10-02",
     "peso_kg": 95.0,
     "pos_esforco": false
+   },
+   {
+    "data": "2026-10-05",
+    "peso_kg": 96.4,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-10-06",
+    "peso_kg": 95.05,
+    "pos_esforco": false
    }
   ],
-  "media_ultimas_7_leituras": 94.87,
-  "media_neutras_nas_ultimas_7": 94.87,
+  "media_ultimas_7_leituras": 95.14,
+  "media_neutras_nas_ultimas_7": 95.14,
   "n_neutras_nas_ultimas_7": 7,
-  "media_7_neutras_de_verdade": 94.87,
-  "media_28d_neutras": 94.62,
-  "n_leituras_pos_esforco_14d": 2,
+  "media_7_neutras_de_verdade": 95.14,
+  "media_28d_neutras": 95.04,
+  "n_leituras_pos_esforco_14d": 0,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 100,
-  "banda_hoje": "g",
-  "prontidao_garmin_hoje": 55,
-  "dias_vermelhos_seguidos": 0,
-  "indice_medio_7d": 47.0,
-  "sono_medio_7d": 6.11,
-  "hrv_medio_7d": 39.0,
-  "hrv_medio_28d": 38.0,
-  "fc_repouso_7d": 54,
+  "indice_hoje": 2,
+  "banda_hoje": "r",
+  "prontidao_garmin_hoje": 15,
+  "dias_vermelhos_seguidos": 2,
+  "indice_medio_7d": 26.0,
+  "sono_medio_7d": 6.02,
+  "hrv_medio_7d": 33.0,
+  "hrv_medio_28d": 37.0,
+  "fc_repouso_7d": 55.0,
   "fc_repouso_28d": 53.0,
-  "indice_hoje_confiavel": false,
-  "componentes_faltando_hoje": [
-   "hrv_ms",
-   "sono_h",
-   "fc_repouso",
-   "body_battery_max"
-  ]
+  "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
    {
-    "data": "2026-09-28",
-    "kcal_ativas": 392.0,
-    "passos": 12235
-   },
-   {
     "data": "2026-10-03",
     "kcal_ativas": 871.0,
     "passos": 14120
+   },
+   {
+    "data": "2026-10-06",
+    "kcal_ativas": 318.0,
+    "passos": 14637
+   },
+   {
+    "data": "2026-10-07",
+    "kcal_ativas": 352.0,
+    "passos": 9231
    }
   ],
   "registros_de_treino": [
+   {
+    "data": "2026-10-05",
+    "tem_foto": true,
+    "texto": ""
+   },
    {
     "data": "2026-10-03",
     "tem_foto": false,
@@ -133,64 +107,59 @@
     "data": "2026-10-01",
     "tem_foto": true,
     "texto": ""
-   },
-   {
-    "data": "2026-09-30",
-    "tem_foto": false,
-    "texto": "Não treinou na quarta (Costas + esteira não feito)"
-   },
-   {
-    "data": "2026-09-29",
-    "tem_foto": true,
-    "texto": ""
-   },
-   {
-    "data": "2026-09-28",
-    "tem_foto": false,
-    "texto": "20 min de corrida a 8,5-8,0 km/h. O relogio começou a marcar atrasado"
    }
   ],
-  "sessoes_registradas": 5,
+  "sessoes_registradas": 3,
   "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço."
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-09-28",
-   "2026-09-29",
-   "2026-09-30",
-   "2026-10-01"
+   "2026-10-01",
+   "2026-10-04",
+   "2026-10-05",
+   "2026-10-06"
   ],
-  "n_refeicoes_registradas": 10,
+  "n_refeicoes_registradas": 9,
   "por_dia": {
-   "2026-09-28": 3,
-   "2026-09-29": 2,
-   "2026-09-30": 3,
-   "2026-10-01": 2
+   "2026-10-01": 2,
+   "2026-10-04": 2,
+   "2026-10-05": 2,
+   "2026-10-06": 3
   },
   "ocorrencias": {
    "fritura": [
     {
+     "data": "2026-10-04",
+     "refeicao": "Almoço",
+     "texto": "Picanha, arroz brócolis, fritas"
+    },
+    {
      "data": "2026-10-01",
      "refeicao": "Almoço",
      "texto": "(15h, tarde) arroz, feijão, bife, batata frita"
-    },
-    {
-     "data": "2026-09-30",
-     "refeicao": "Lanche",
-     "texto": "2 coxinha frango"
-    },
-    {
-     "data": "2026-09-28",
-     "refeicao": "Lanche",
-     "texto": "Salgado"
     }
    ],
    "doce": [],
    "buffet": [],
    "alcool": [],
-   "proteina_clara": []
+   "proteina_clara": [
+    {
+     "data": "2026-10-06",
+     "refeicao": "Café",
+     "texto": "Croissant frango, mini pão de queijo 5x, suco de laranja"
+    },
+    {
+     "data": "2026-10-04",
+     "refeicao": "Almoço",
+     "texto": "Picanha, arroz brócolis, fritas"
+    }
+   ]
   },
   "observacoes": [
+   {
+    "data": "2026-10-05",
+    "texto": "Dias soltos. Pouco planejamento nas refeições nas últimas semanas. Processo de recuperação muscular e intestino preso hoje. Hora de recuperar a programação. O f"
+   },
    {
     "data": "2026-10-02",
     "texto": "Treino de 01/10 foi COSTAS (screenshot). Sábado 03/10 tem jogo: Lower B vai pro domingo com RPE 7. Sexta: ombro+braço leve no lugar da folga."
@@ -199,7 +168,6 @@
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
  "lacunas": [
-  "índice de hoje calculado sem hrv_ms, sono_h, fc_repouso, body_battery_max — use a média de 7 dias, não o número de hoje",
-  "sem pesagem hoje (última: 2026-10-02)"
+  "sem pesagem hoje (última: 2026-10-06)"
  ]
 }

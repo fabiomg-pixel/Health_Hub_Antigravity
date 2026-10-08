@@ -1,4 +1,61 @@
 {
  "semana": "05/10 a 11/10",
- "dias": []
+ "dias": [
+  {
+   "data": "2026-10-04",
+   "planejado": "Lower B com RPE 7 — realocado do sábado 03/10 pela observação de 02/10. 04/10 não consta no painel/data/semana.json, que já foi rotacionado para a semana 05–11/10, então não havia 5 ocasiões planejadas para conferir hoje.",
+   "feito": "Nenhum registro no painel hoje: zero refeições, zero treino, zero observação. Último registro é 03/10 (dois jogos de campeonato, chuva e cansaço muscular, o da tarde sem relógio).",
+   "adaptacao": "Não movi nada e não remarquei o Lower B: dia seguinte a dois jogos de campeonato, e a regra do não-remarcar vale. Recuperação de hoje veio banda verde, mas o índice 100 está marcado como NÃO confiável (4 componentes faltando) e a prontidão Garmin é 55 — não usei isso como sinal para liberar nada.",
+   "respostas": {
+    "q1": null
+   },
+   "nao_sei": [
+    "Se o Lower B de hoje foi feito, parcial ou pulado — sem registro.",
+    "O que ele comeu hoje (nenhuma das refeições registrada); registro esparso não é ausência de refeição.",
+    "Proteína do dia — impossível estimar, nada registrado (meta do semana.json: 175 g, piso 140).",
+    "Peso: última leitura é de 02/10 (95,0 kg); não há pesagem em 03 nem 04/10.",
+    "Como o tornozelo reagiu aos dois jogos de ontem — nenhum relato de dor nem de ausência de dor."
+   ]
+  },
+  {
+   "data": "2026-10-07",
+   "planejado": "💪 COSTAS + 25 min fáceis na esteira (força 2 de 3, corrida 1 de 2), com veto de nutrição: força plena só depois de almoço de verdade. Refeições: 5 ocasiões (Yopro ~8h, marmita N64 frango/espinafre 13h, iogurte+whey+granola+banana 17h, frango assado com legumes + arroz na janta, whey dose 2 de ceia).",
+   "feito": "Nada registrado no painel hoje: zero refeições, zero treino, zero observação. Não sei se a sessão de Costas aconteceu. Fatos do dia: banda VERMELHA (índice 27, 1 dia vermelho seguido), FC de repouso 55, sono 6,2 h, prontidão Garmin 69; sem pesagem hoje (última 06/10). Ontem (06/10) tinha 3 refeições registradas, com café fora do molde (croissant de frango, 5 mini pães de queijo, suco de laranja) e nenhum treino.",
+   "adaptacao": "Não mudei nada do plano. O gatilho de corte NÃO disparou: exige FC de repouso ≥55 em dois dias seguidos (06/10 foi 51, hoje 55) ou 3 dias seguidos de banda vermelha (hoje é o 1º) — então a corrida de quarta e o Lower B de sábado continuam de pé. Também não remarquei nada: não sei se o treino de hoje caiu, e a regra do não-remarcar vale de qualquer forma. Amanhã é futebol à noite, dia intocável, e o único nudge que mandei foi de REGISTRO, não de carga — com um dia inteiro de dado faltando no meio da semana do molde, mexer em volume seria chutar.",
+   "respostas": {
+    "q1": null,
+    "q2": "Parcial: ter 06/10 veio FC de repouso 51 (abaixo dos 53, primeiro dia do molde já respondeu pra baixo), mas qua 07/10 subiu pra 55. Falta qui 08 e sex 09 — e quinta tem jogo, que tende a empurrar pra cima.",
+    "q3": null
+   },
+   "nao_sei": [
+    "Se o treino de COSTAS + 25 min de esteira foi feito, parcial ou pulado — nenhum registro.",
+    "Se o almoço de verdade aconteceu (era o veto para liberar a força plena) — nada registrado; registro esparso NÃO é ausência de refeição.",
+    "Proteína do dia — impossível estimar, nada registrado (meta do semana.json: 175 g, piso 140).",
+    "Se as duas doses de whey entraram, e se o iogurte das 17h ocupou o lugar do salgado (q1 fica sem dado hoje).",
+    "Se as duas porções de frango assado foram pro freezer — a janta de amanhã, pós-jogo, depende disso.",
+    "Peso de hoje (sem pesagem; última leitura 06/10).",
+    "Como o tornozelo está — nenhum relato de dor nem de ausência de dor desde os dois jogos de 03/10."
+   ]
+  },
+  {
+   "data": "2026-10-08",
+   "planejado": "⚽ FUTEBOL à noite (dia intocável do molde), whey logo depois do jogo e relato em texto da duração e da arrancada (q3); se o jogo passar de ~50 min, o Upper B de sexta desce para RPE 6. Refeições: 5 ocasiões (Yopro ~8h, marmita N98 carne moída + 2 ovos às 13h, iogurte+whey+granola+banana às 17h como pré-jogo, frango assado do freezer na janta pós-jogo, whey dose 2 de petisco) — 183 g de proteína planejados, meta do semana.json 175 g com piso 140.",
+   "feito": "NÃO AVALIADO. Esta avaliação de fim de dia disparou às 09h17 da MANHÃ de quinta, antes do dia acontecer: às 9h não havia nem almoço, nem jogo, nem janta para comparar. Registros no painel hoje: zero — o que é o esperado às 9h, NÃO é falha de adesão. Último registro do painel é de 06/10 (3 refeições). A API respondeu normalmente. Fatos de hoje no fatos.json vêm rotulados como 'hoje' mas são a leitura de 07/10 (índice 27, banda vermelha, prontidão Garmin 69, FC de repouso 55): o resumo_diario.json não tem linha para 08/10, sem sincronismo novo nem pesagem hoje.",
+   "adaptacao": "Não mudei nada: nenhum treino movido, nenhum corte de volume, nenhuma porção ajustada. Motivo: o dia não aconteceu ainda, e qualquer ajuste feito às 9h sobre um dia não vivido seria chute. O gatilho de corte NÃO disparou com dado real (FC de repouso 51 em 06/10 e 55 em 07/10 — não são dois dias seguidos ≥55; banda vermelha em 07/10 é o 1º dia seguido). O carryover que estava no repo, carimbado para 2026-10-08, continuava intacto com mtime de 07/10 08h13 — sinal de que o brief matinal de hoje não rodou (ele apaga o arquivo depois de ler). Escrevi o carryover novo carimbado para 2026-10-09 carregando as duas pendências que ainda valem (almoço das 13h e relato do jogo/q3), em vez de inventar um fechamento de quinta.",
+   "bug_de_agendamento": "A tarefa 'avaliacao-fim-do-dia-saude' vem disparando pela manhã, não à noite: hoje às 09h17 e em 07/10 às 08h13 (mtime de carryover.txt e diario_execucao.json). Por isso as entradas de 2026-10-04 e 2026-10-07 deste diário dizem 'nada registrado hoje' — foram escritas no começo da manhã do próprio dia, antes de haver o que registrar. O conselho de domingo NÃO deve ler esses três dias como ausência de refeição nem como falha de adesão; são dias nunca observados. Corrigir o horário do agendamento (alvo ~21h30-22h) é pré-requisito para o diário voltar a medir adesão.",
+   "respostas": {
+    "q1": null,
+    "q2": null,
+    "q3": null
+   },
+   "nao_sei": [
+    "Tudo sobre 08/10: se o jogo aconteceu, quanto tempo durou e como o tornozelo respondeu (q3) — a avaliação rodou antes do jogo.",
+    "Se as 5 ocasiões de hoje aconteceram, e a proteína do dia — nada a estimar às 9h; registro esparso NÃO é ausência de refeição.",
+    "Se a sessão de COSTAS de 07/10 e o Lower A de 06/10 foram feitos — nenhum registro de treino desde 05/10 (screenshot). Não trato como dois treinos-chave perdidos porque não-registrado não é não-feito; se a semana fechar assim, é pergunta para o conselho.",
+    "Se as porções de frango assado foram para o freezer — a janta pós-jogo de hoje depende disso.",
+    "Índice de recuperação, HRV, sono e peso de 08/10 — sem linha para hoje no resumo_diario.json e sem pesagem (última 06/10, 95,05 kg).",
+    "Se o brief matinal de 08/10 rodou e, se rodou, por que não apagou o carryover."
+   ]
+  }
+ ]
 }
