@@ -613,8 +613,16 @@ abas — **Início · Hoje · Evolução · Registrar**. No celular a barra fica
   prontidão Garmin, índice, sono, lidos do `fatos.json` do dia) · Hoje (atalho para o dia) ·
   Destino (régua do peso e VO₂ máx, atalho para a Evolução) · Prontidão de 7 dias · Os dias ·
   Relatório · Regras · Compras.
+  Entre Hoje e Destino entra o **Cardápio da semana** (pedido dele): os sete dias, cada um com as
+  refeições, as calorias e a proteína; no celular só o dia de hoje vem aberto, em tela larga todos.
 - **Hoje** é o dia de hoje, com a faixa dos sete dias para ir aos outros.
-- **Evolução** é aba, não página solta: mesma barra, mesmo lugar. Exercícios numerados (`1️⃣ …`) viram linhas com
+- **Evolução** é aba, não página solta: mesma barra, mesmo lugar.
+
+⚠️ **Bug que fez a navegação "sumir" (10/10):** a barra de abas e a régua de proteína tinham a
+mesma classe CSS, `.barra`. A régua tem 14 px de altura; a barra de abas herdou os 14 px e os
+botões vazavam para fora, sem fundo — no celular, para fora da tela. A barra agora é `nav.abas`.
+**Lição de verificação:** eu tinha visto a barra "cortada" na captura de celular e atribuí ao
+recorte da imagem. Medir a altura do elemento teria mostrado o defeito na hora. Exercícios numerados (`1️⃣ …`) viram linhas com
 séries × repetições; as demais linhas do `treino.exercicios` viram "Contexto do dia", recolhido.
 A nota de cada refeição abre ao tocar na linha.
 

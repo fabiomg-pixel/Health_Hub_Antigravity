@@ -119,6 +119,19 @@
   .pdia { font-size: 11.5px; font-weight: 600; color: var(--sec); }
   svg.graf { display: block; width: 100%; height: auto; overflow: visible; }
 
+  /* cardápio da semana */
+  .cardapio { display: grid; grid-template-columns: minmax(0, 1fr); }
+  .cdia { border-bottom: 1px solid var(--fraca); }
+  .cdia summary { gap: 12px; }
+  .cdia summary .corpo small { display: block; }
+  .cdia summary .hora { width: 72px; white-space: nowrap; }
+  .cdia.hoje summary .hora { background: var(--sol); padding: 3px 6px; margin-left: -6px; width: 78px; }
+  .crow { display: flex; gap: 10px; padding: 6px 0; font-size: 14.5px; line-height: 1.35; }
+  .crow .slot { flex: none; width: 58px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--sec); padding-top: 2px; }
+  .crow .oque { flex: 1 1 auto; min-width: 0; }
+  .crow .g { flex: none; font-family: var(--display); font-weight: 800; font-size: 15px; white-space: nowrap; }
+  @media (min-width: 720px) { .cardapio { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; } }
+
   /* glifos */
   .glifo { flex: none; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
   .glifo.g-campo { background: var(--campo); color: var(--branco); }
@@ -176,22 +189,23 @@
   .cat { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 16px 0 4px; }
   .rodape { padding: 22px; font-size: 12.5px; color: var(--sec); font-weight: 500; }
 
-  /* barra de navegação */
-  nav.barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: center; pointer-events: none; }
-  nav.barra .dentro { pointer-events: auto; width: 100%; max-width: 520px; background: var(--fundo); border-top: 2px solid var(--tinta);
+  /* abas de navegação — NÃO chamar de .barra: esse nome é da régua de proteína (14 px de altura) e as duas regras se somavam */
+  nav.abas { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: center; pointer-events: none; }
+  nav.abas .dentro { pointer-events: auto; width: 100%; max-width: 520px; background: var(--fundo); border-top: 2px solid var(--tinta);
     display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-bottom: env(safe-area-inset-bottom); }
-  nav.barra a { min-height: 58px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  nav.abas a { min-height: 58px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
     text-decoration: none; font-size: 12px; font-weight: 600; border-left: 2px solid var(--tinta); }
-  nav.barra a:first-child { border-left: 0; }
-  nav.barra a.on { background: var(--sol); font-weight: 700; }
-  nav.barra a.acao { background: var(--tinta); color: var(--branco); }
+  nav.abas a:first-child { border-left: 0; }
+  nav.abas a { background: var(--branco); color: var(--tinta); }
+  nav.abas a.on { background: var(--sol); font-weight: 700; }
+  nav.abas a.acao { background: var(--tinta); color: var(--branco); }
 
   /* Tela larga: as abas voltam para o topo, sempre à vista, e a coluna ganha largura. */
   @media (min-width: 720px) {
     .app { max-width: 760px; padding-bottom: 48px; }
-    nav.barra { position: sticky; top: 0; bottom: auto; }
-    nav.barra .dentro { max-width: 760px; border-top: 0; border-bottom: 2px solid var(--tinta); padding-bottom: 0; }
-    nav.barra a { flex-direction: row; gap: 9px; font-size: 15px; min-height: 54px; }
+    nav.abas { position: sticky; top: 0; bottom: auto; }
+    nav.abas .dentro { max-width: 760px; border-top: 0; border-bottom: 2px solid var(--tinta); padding-bottom: 0; }
+    nav.abas a { flex-direction: row; gap: 9px; font-size: 15px; min-height: 54px; }
   }
 
   @keyframes onda { from { transform: translateX(0); } to { transform: translateX(-390px); } }
@@ -204,7 +218,7 @@
 </style>
 </head>
 <body>
-<nav class="barra"><div class="dentro" id="nav"></div></nav>
+<nav class="abas"><div class="dentro" id="nav"></div></nav>
 <div class="app"><div id="view"></div></div>
 
 <script>
@@ -396,6 +410,24 @@ function blocoDestino() {
     <a class="linha" href="#evo"><span class="corpo">VO₂ máx<small>meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)} · só o peso já leva a ${fNum(V.so_pelo_peso, 1)}</small></span><span class="medio">${fNum(V.referencia_nivel_do_mar, 1)}</span></a>
     <a class="botao claro" href="#evo" style="margin-top:14px">Abrir a evolução completa</a></section>`;
 }
+function blocoCardapio() {
+  const largo = matchMedia('(min-width: 720px)').matches, hoje = hojeDDMM();
+  const dias = DATA.dias.map(d => {
+    const r = d.refeicoes || {}; let kcal = 0, prot = 0;
+    const linhas = SLOTS.map(([chave, rot]) => { const m = r[chave]; if (!m) return '';
+      kcal += m.kcal || 0; prot += m.prot || 0;
+      let nome = semEmoji(m.nome), hora = rot;
+      const t = nome.match(/^(~?\d{1,2}h\d{0,2}|\d{1,2}:\d{2})\s*·\s*/);
+      if (t) { hora = t[1]; nome = nome.slice(t[0].length); }
+      return `<div class="crow"><span class="slot">${esc(hora)}</span><span class="oque">${esc(nome)}</span><span class="g">${m.prot} g</span></div>`; }).join('');
+    if (!linhas) return '';
+    return `<details class="cdia ${d.data === hoje ? 'hoje' : ''}" ${largo || d.data === hoje ? 'open' : ''}>
+      <summary><span class="hora">${esc(d.nome.slice(0, 3))} ${esc(d.data.slice(0, 2))}</span><span class="corpo">${kcal.toLocaleString('pt-BR')} kcal · ${prot} g de proteína<small>${esc(partirFoco((d.treino && d.treino.foco) || '').titulo)}</small></span></summary>
+      <div class="miolo">${linhas}<a href="#${d.id}" style="display:inline-block;padding:8px 0 0;font-size:13.5px;font-weight:700">abrir o dia inteiro</a></div></details>`; }).join('');
+  if (!dias) return '';
+  return `<section class="bloco"><div class="cab"><h2>Cardápio da semana</h2><small>meta: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal · ${DATA.dieta.proteina} g</small></div>
+    <div class="cardapio">${dias}</div></section>`;
+}
 function renderInicio() {
   const partes = semEmoji(DATA.semana).split(/\s+·\s+/);
   const t = DATA.tendencias || {}, st = DATA.status_treino || {}, marcados = JSON.parse(localStorage.getItem('compras') || '{}');
@@ -404,7 +436,7 @@ function renderInicio() {
     <h1 class="titulo longo">${esc((t0 => t0.charAt(0).toUpperCase() + t0.slice(1))(frase(partes.slice(1).join(' · ') || partes[0])))}</h1>
     <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
 
-  h += quadroAgora() + blocoHoje() + blocoDestino();
+  h += quadroAgora() + blocoHoje() + blocoCardapio() + blocoDestino();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
       return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') +
