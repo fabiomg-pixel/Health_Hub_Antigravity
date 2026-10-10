@@ -709,6 +709,14 @@ Ao rolar, encolhe de ~215 para ~97 px (somem os anéis, a boia e os textos de ap
 já existia na página com `padding` e esmagou um ícone — prefixar tudo com `.status`; medir sobreposição por
 `getBoundingClientRect`, não a olho.
 
+## 20d. Cores de qualidade nos anéis (pedido do Fabio, 10/10/2026)
+
+O traço de cada anel tem cor pela faixa: **bom** (verde-água `#5FD3C4`), **médio** (amarelo `#FFD166`), **baixo**
+(coral `#FF6B5E`); sem dado, cinza e "—". Há legenda embaixo dos anéis. Cortes (`QUAL` em `index.html`):
+sono ≥7 h bom, 6–7 médio, <6 baixo · VFC ≥38 bom (portão do §15), 32–37 médio, <32 baixo · FC de repouso ≤52 bom
+(portão do §15), 53–55 médio, ≥56 baixo · prontidão Garmin ≥75 bom, 50–74 médio, <50 baixo (faixas do Garmin).
+Os cortes "médio/baixo" de VFC e FC são escolha do copiloto, a confirmar com o Fabio.
+
 ---
 
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)

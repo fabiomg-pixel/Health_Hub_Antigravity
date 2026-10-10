@@ -238,7 +238,13 @@
   .status .anel svg { display: block; width: 34px; height: 34px; }
   .status .anel circle[pathLength] { animation: anel 0.9s var(--curva) both; }
   .status .anel b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 800; font-size: 12px; letter-spacing: -0.02em; }
-  .status .anel.cheio .miolo { fill: var(--sol); } .status .anel.cheio b { color: var(--tinta); }
+  .status { --q-bom: #5FD3C4; --q-medio: #FFD166; --q-baixo: #FF6B5E; }
+  .status .anel .arco { stroke: rgba(255,255,255,0.5); }
+  .status .q-bom .arco { stroke: var(--q-bom); } .status .q-medio .arco { stroke: var(--q-medio); } .status .q-baixo .arco { stroke: var(--q-baixo); }
+  .status .leg-q { display: flex; justify-content: center; gap: 14px; margin-top: 8px; font-size: 10px; font-weight: 600; opacity: 0.85; }
+  .status .leg-q span { display: flex; align-items: center; gap: 5px; }
+  .status .leg-q i { width: 8px; height: 8px; border-radius: 50%; }
+  .status .leg-q .q-bom i { background: var(--q-bom); } .status .leg-q .q-medio i { background: var(--q-medio); } .status .leg-q .q-baixo i { background: var(--q-baixo); }
   .status .anel span { font-size: 10px; font-weight: 600; line-height: 1.1; opacity: 0.85; white-space: nowrap; }
   /* encolhida, ao rolar: some a quarta linha e os textos de apoio */
   .status.min .in { padding: 8px 20px 8px; }
@@ -246,7 +252,7 @@
   .status.min .clima > svg { width: 24px; height: 24px; } .status.min .temp { font-size: 0; } .status.min .temp b { font-size: 15px; }
   .status.min .trilho-s { margin: 8px 0 8px; }
   .status.min .trilho-s .mb, .status.min .trilho-s .meta-f, .status.min .trilho-s .falta { display: none; }
-  .status.min .aneis, .status.min .cartao .sb, .status.min .cartao .rt { display: none; }
+  .status.min .leg-q, .status.min .aneis, .status.min .cartao .sb, .status.min .cartao .rt { display: none; }
   .status.min .picto { width: 32px; height: 32px; } .status.min .picto svg { width: 20px; height: 20px; } .status.min .picto.mar svg { width: 32px; height: 32px; }
   .status.min .cartao .vl { font-size: 14px; margin-top: 0; }
   /* gestos discretos */
@@ -527,11 +533,20 @@ function pictoMar(e) {
 }
 // Um anel por métrica: o preenchimento é o quanto do alvo foi atingido; no alvo, o miolo acende.
 // Sem dado, o anel fica vazio e o número vira '—'.
-function anel(valor, frac, rot, casas) {
+function anel(valor, frac, rot, casas, q) {
   const v = valor == null ? '—' : fNum(valor, casas), f = valor == null ? 0 : Math.max(0, Math.min(1, frac));
-  return `<div class="anel${valor != null && frac >= 1 ? ' cheio' : ''}" role="img" aria-label="${rot}: ${v}"><div class="rd"><svg viewBox="0 0 40 40" aria-hidden="true"><circle class="miolo" cx="20" cy="20" r="13" fill="none"/><circle cx="20" cy="20" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3.5"/>
-    <circle pathLength="1" cx="20" cy="20" r="17" fill="none" stroke="var(--sol)" stroke-width="3.5" transform="rotate(-90 20 20)" style="stroke-dasharray:${f.toFixed(3)} 1"/></svg><b>${v}</b></div><span>${rot}</span></div>`;
+  const nomeQ = { bom: 'bom', medio: 'médio', baixo: 'baixo' }[q] || 'sem dado';
+  return `<div class="anel q-${valor == null ? 'nd' : q}" role="img" aria-label="${rot}: ${v}, ${nomeQ}" title="${nomeQ}"><div class="rd"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3.5"/>
+    <circle class="arco" pathLength="1" cx="20" cy="20" r="17" fill="none" stroke-width="3.5" transform="rotate(-90 20 20)" style="stroke-dasharray:${f.toFixed(3)} 1"/></svg><b>${v}</b></div><span>${rot}</span></div>`;
 }
+// Faixas de qualidade dos anéis. Sono: 7 h é o alvo do projeto, abaixo de 6 h é noite curta. VFC e FC de repouso:
+// o corte "bom" é o portão do §15 (VFC ≥38, FC ≤52). Prontidão: as faixas do próprio Garmin (75+ alta, 50–74 moderada).
+const QUAL = {
+  sono: h => h >= 7 ? 'bom' : h >= 6 ? 'medio' : 'baixo',
+  vfc: v => v >= 38 ? 'bom' : v >= 32 ? 'medio' : 'baixo',
+  fc: v => v <= 52 ? 'bom' : v <= 55 ? 'medio' : 'baixo',
+  pront: v => v >= 75 ? 'bom' : v >= 50 ? 'medio' : 'baixo'
+};
 function renderStatus() {
   const el = document.getElementById('status'); if (!el || !DATA) return;
   const f = FATOS || {}, rc = f.recuperacao || {}, ps = f.peso || {}, P = DASH && DASH.peso, ref = (DASH && DASH.metas && DASH.metas.referencias) || {};
@@ -552,10 +567,11 @@ function renderStatus() {
         <div class="tx"><div class="rt">Corpo</div><div class="vl">${esc(ec.nome)}</div><div class="sb">${esc(ec.sub)}</div></div></div>
     </div>
     <div class="aneis">
-      ${anel(rc.sono_ultima_noite_h, (rc.sono_ultima_noite_h || 0) / 7, 'sono h', 1)}
-      ${anel(rc.hrv_ultima_noite, (rc.hrv_ultima_noite || 0) / (ref.hrv_ms || 39), 'VFC', 0)}
-      ${anel(rc.fc_repouso_hoje, rc.fc_repouso_hoje ? (ref.fc_repouso || 52) / rc.fc_repouso_hoje : 0, 'FC repouso', 0)}
-      ${anel(rc.prontidao_garmin_hoje, (rc.prontidao_garmin_hoje || 0) / 100, 'prontidão', 0)}</div></div>`;
+      ${anel(rc.sono_ultima_noite_h, (rc.sono_ultima_noite_h || 0) / 7, 'sono h', 1, QUAL.sono(rc.sono_ultima_noite_h))}
+      ${anel(rc.hrv_ultima_noite, (rc.hrv_ultima_noite || 0) / (ref.hrv_ms || 39), 'VFC', 0, QUAL.vfc(rc.hrv_ultima_noite))}
+      ${anel(rc.fc_repouso_hoje, rc.fc_repouso_hoje ? (ref.fc_repouso || 52) / rc.fc_repouso_hoje : 0, 'FC repouso', 0, QUAL.fc(rc.fc_repouso_hoje))}
+      ${anel(rc.prontidao_garmin_hoje, (rc.prontidao_garmin_hoje || 0) / 100, 'prontidão', 0, QUAL.pront(rc.prontidao_garmin_hoje))}</div>
+    <div class="leg-q" aria-hidden="true"><span class="q-bom"><i></i>bom</span><span class="q-medio"><i></i>médio</span><span class="q-baixo"><i></i>baixo</span></div></div>`;
   document.documentElement.style.setProperty('--hstatus', el.offsetHeight + 'px');
 }
 const curto = t => { t = String(t).split(': ').pop().split(',')[0].replace(/ — .*/, '').trim(); return t.charAt(0).toLowerCase() + t.slice(1); };
