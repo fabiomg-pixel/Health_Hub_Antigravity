@@ -582,6 +582,42 @@ gráficos pequenos (VFC, FC de repouso, sono) e dias ativos por semana contra o 
 
 ---
 
+## 17. A cara do painel: direção "Mar" (10/10/2026)
+
+O painel foi redesenhado depois de o Fabio dizer que estava feio. Ele escolheu, num canvas de
+exploração, a direção **C · Campo de cor** na paleta **Mar**, e mandou eu decidir o resto.
+O canvas fica em https://claude.ai/artifact/UcSq51KaUQ7bTRnwdsFJL5 (três direções, cinco
+paletas, folha de elementos e protótipos com movimento).
+
+**A linguagem, em uma frase:** quatro campos de cor, uma onda, uma régua e uma boia; o resto é
+tipografia.
+
+- **Cores:** campo `#0B5E7C` (a pergunta do dia e o número principal), sol `#FFB48F` (o que
+  está ativo), fundo do mar `#071C26` (texto, ação, blocos de dado), espuma `#F1F6F8`/`#FFFFFF`.
+- **Tipos:** Bricolage Grotesque 800 nos títulos e números; Figtree no texto.
+- **Cantos retos e réguas de 2 px.** Nada de cartão com sombra ou canto arredondado.
+- **Linha d'água:** uma onda só, na base do campo principal, derivando devagar.
+- **Régua de maré:** todo progresso até uma meta (peso, VO₂ máx, proteína) usa a mesma régua.
+- **Boia:** marca refeição e ponto de gráfico; enche quando existe registro daquela refeição.
+- **Glifos de dia:** força, corrida, jogo, leve, descanso — deduzidos do `tipo` e do `foco`.
+- **Nenhum emoji na interface.** O `semana.json` continua podendo ter emoji (ele também vira
+  mensagem de Telegram): o painel tira na hora de desenhar, com `semEmoji()`.
+
+**Estrutura nova:** barra fixa embaixo com Hoje · Semana · Evolução · Registrar. A tela inicial
+é o DIA DE HOJE, não mais o resumo da semana. Exercícios numerados (`1️⃣ …`) viram linhas com
+séries × repetições; as demais linhas do `treino.exercicios` viram "Contexto do dia", recolhido.
+A nota de cada refeição abre ao tocar na linha.
+
+⚠️ **Consequência para quem escreve o `semana.json`:** o título grande de cada dia é o que vem
+ANTES do primeiro " — " em `treino.foco`. Escreva essa parte curta (até ~22 caracteres cabe no
+tamanho grande) e deixe a explicação para depois do travessão.
+
+**Bug antigo que saiu junto:** a data padrão do formulário de registro vinha em UTC, então depois
+das 21h o registro nascia com a data do dia seguinte. Era uma das causas dos registros "na data
+errada". Agora usa a data local.
+
+---
+
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
 
 **A porta de entrada é o Telegram, e quem responde é uma sessão do Claude Code com o canal

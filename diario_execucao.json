@@ -71,6 +71,21 @@
     "Pesagem (última 06/10, 95,05 kg)",
     "Registros de 07-08/10 e se o jogo de quinta aconteceu/duração (q3)"
    ]
+  },
+  {
+   "data": "2026-10-09",
+   "planejado": "Volta do congresso — descompressão, sem treino, geladeira abastecida, dormir, sincronizar o relógio",
+   "feito": "NÃO SEI. Zero registros no painel hoje (último registro é de 06/10). Sem registro ≠ sem refeição.",
+   "adaptacao": "Nada mudado: dia já era descompressão. Carryover para sábado reforça a porteira do semana.json e pede registro de café e almoço. Recuperação: índice 1, banda vermelha, 3 dias vermelhos seguidos, sono médio 7d 5,74 h, FC de repouso 7d 56 — isso é o contexto de congresso, não falha.",
+   "respostas": {
+    "q1": null
+   },
+   "nao_sei": [
+    "refeições de hoje",
+    "se a geladeira foi abastecida",
+    "pesagem (última 06/10)",
+    "aderência de proteína (meta 140 g, piso 120)"
+   ]
   }
  ]
 }

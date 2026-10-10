@@ -3,7 +3,7 @@
   "short_name": "Saúde",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#0f1115",
-  "theme_color": "#0f1115",
+  "background_color": "#F1F6F8",
+  "theme_color": "#0B5E7C",
   "icons": []
 }

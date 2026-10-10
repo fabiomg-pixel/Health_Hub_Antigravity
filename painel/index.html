@@ -2,303 +2,479 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0f1115" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0B5E7C" />
 <link rel="manifest" href="manifest.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
 <title>Painel de Saúde</title>
 <style>
+  /* Direção "Mar": quatro campos de cor, uma onda, uma régua e uma boia. O resto é tipografia.
+     Cantos retos, réguas de 2px, nenhum emoji na interface. */
   :root {
-    --bg: #0f1115; --panel: #171a21; --panel2: #1e222b; --line: #2a2f3a;
-    --txt: #e7e9ee; --dim: #9aa3b2; --accent: #7aa2ff;
-    --g: #46c08a; --y: #e8b73a; --r: #e3604f;
+    --campo: #0B5E7C; --onda: #0E7396; --sol: #FFB48F; --tinta: #071C26;
+    --fundo: #F1F6F8; --branco: #FFFFFF; --sec: #44565F; --fraca: #C4D3DA;
+    --curva: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --display: 'Bricolage Grotesque', 'Figtree', system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--txt);
-    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  html { background: #D9E4E9; }
+  body { margin: 0; color: var(--tinta); font: 16px/1.45 'Figtree', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 20px 16px 64px; }
-  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
-  h1 { font-size: 21px; margin: 0; letter-spacing: -0.01em; }
-  .sub { color: var(--dim); font-size: 14px; }
-  /* nav */
-  nav { position: sticky; top: 0; z-index: 10; background: rgba(15,17,21,.92);
-    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  .navin { max-width: 880px; margin: 0 auto; display: flex; gap: 6px; padding: 10px 16px; overflow-x: auto; }
-  .navin a { flex: 0 0 auto; font-size: 13px; padding: 6px 12px; border-radius: 999px;
-    color: var(--dim); text-decoration: none; border: 1px solid transparent; white-space: nowrap; }
-  .navin a.active { color: var(--txt); background: var(--panel2); border-color: var(--line); }
-  .navin a.train::after { content: "•"; color: var(--accent); margin-left: 5px; }
-  /* chips & sections */
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 20px; }
-  .chip { font-size: 12px; padding: 3px 10px; border-radius: 999px; background: var(--panel2);
-    border: 1px solid var(--line); color: var(--dim); }
-  .chip.ok { color: var(--g); } .chip.pend { color: var(--y); } .chip.obj { color: var(--accent); border-color: var(--accent); }
-  section { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
-  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); margin: 0 0 14px; font-weight: 600; }
-  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-  .stat { background: var(--panel2); border-radius: 10px; padding: 12px; text-align: center; }
-  .stat .v { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
-  .stat .v small { font-size: 12px; color: var(--dim); font-weight: 600; }
-  .stat .k { font-size: 11px; color: var(--dim); margin-top: 2px; }
-  /* bars */
-  .bars { display: flex; align-items: flex-end; gap: 4px; }
-  .bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; min-width: 0; }
-  .colwrap { width: 100%; height: 120px; position: relative; display: flex; align-items: flex-end; }
-  .bar .col { width: 100%; border-radius: 4px 4px 2px 2px; }
-  .bar .me { position: absolute; left: 8%; right: 8%; height: 0; border-top: 2px dashed rgba(231,233,238,.7); }
-  .bar .lbl { font-size: 9px; color: var(--dim); white-space: nowrap; transform: rotate(-90deg); height: 22px; }
-  .col.g { background: var(--g); } .col.y { background: var(--y); } .col.r { background: var(--r); }
-  /* week overview */
-  .wk { display: flex; flex-direction: column; gap: 8px; }
-  .wkrow { display: flex; align-items: center; gap: 12px; background: var(--panel2); border-radius: 10px; padding: 10px 12px;
-    text-decoration: none; color: var(--txt); }
-  .wkrow .d { font-weight: 700; width: 64px; flex: 0 0 auto; }
-  .wkrow .f { color: var(--dim); font-size: 14px; flex: 1; }
-  .tag { font-size: 11px; padding: 2px 8px; border-radius: 999px; flex: 0 0 auto; }
-  .tag.t { background: rgba(122,162,255,.15); color: var(--accent); }
-  .tag.rest { background: var(--panel); color: var(--dim); border: 1px solid var(--line); }
-  /* shopping */
-  .shop { columns: 2; column-gap: 18px; }
-  .shop .cat { break-inside: avoid; margin-bottom: 14px; }
-  .shop .cn { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-bottom: 6px; }
-  .shop label { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; padding: 2px 0; color: var(--dim); cursor: pointer; }
-  .shop input { margin-top: 4px; accent-color: var(--accent); }
-  /* day */
-  .ex { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; padding: 7px 0; border-top: 1px solid var(--line); }
-  .ex:first-of-type { border-top: 0; }
-  .ex .p { color: var(--dim); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .daytot { display: flex; justify-content: space-between; align-items: baseline; gap: 10px;
-    background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 11px 14px; margin-bottom: 12px; }
-  .daytot span { font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
-  .daytot small { color: var(--dim); font-size: 12px; font-weight: 600; white-space: nowrap; }
-  .meal { background: var(--panel2); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
-  .meal .mh { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
-  .meal .mt { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
-  .meal .mm { font-size: 12px; color: var(--dim); white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .meal .mn { font-weight: 600; margin: 3px 0; }
-  .meal .mo { font-size: 12.5px; color: var(--dim); }
-  details.recipe { background: var(--panel2); border-radius: 10px; padding: 0 14px; margin-bottom: 10px; }
-  details.recipe summary { cursor: pointer; padding: 12px 0; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 10px; }
-  details.recipe summary::-webkit-details-marker { display: none; }
-  details.recipe summary .meta { font-size: 12px; color: var(--dim); font-weight: 400; }
-  .recipe .body { padding: 0 0 14px; border-top: 1px solid var(--line); }
-  .recipe h4 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); margin: 12px 0 6px; }
-  .recipe ul, .recipe ol { margin: 0; padding-left: 18px; font-size: 14px; color: var(--dim); }
-  .recipe li { padding: 2px 0; }
-  .note { font-size: 13px; color: var(--dim); margin-top: 12px; padding: 10px 12px; background: var(--panel2); border-radius: 10px; border-left: 3px solid var(--accent); }
-  .note.flex { border-left-color: var(--y); }
-  .plate { list-style: none; margin: 0; padding: 0; }
-  .plate li { font-size: 14.5px; padding: 7px 0; border-top: 1px solid var(--line); color: var(--txt); }
-  .plate li:first-child { border-top: 0; }
-  .flexbadge { font-size: 11px; padding: 2px 8px; border-radius: 999px; background: rgba(232,183,58,.15); color: var(--y); margin-left: 8px; vertical-align: middle; }
-  .report p { margin: 0 0 10px; font-size: 14.5px; color: var(--dim); }
-  .report p:last-child { margin-bottom: 0; }
-  .navin a.reg { color: var(--accent); font-weight: 600; }
-  .navin a.evo { color: #86b6ef; font-weight: 600; }
-  .metas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-  .meta { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
-  .meta .rot { font-size: 13px; color: var(--dim); }
-  .meta .val { font-size: 40px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.15; }
-  .meta .val small { font-size: 15px; font-weight: 500; color: var(--dim); margin-left: 6px; }
-  .meta .alvo { font-size: 13px; color: var(--dim); margin-top: 2px; }
-  .trilho { height: 8px; border-radius: 999px; background: rgba(57,135,229,.18); margin: 12px 0 6px; overflow: hidden; }
-  .trilho > i { display: block; height: 100%; border-radius: 999px; background: #3987e5; min-width: 3px; }
-  .meta .linha { font-size: 13px; color: var(--dim); margin-top: 6px; }
-  .meta .linha b { color: var(--txt); font-weight: 600; }
-  .seta-ruim { color: var(--r); } .seta-boa { color: var(--g); }
-  .gbox { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 10px 6px; }
-  .gbox h3 { font-size: 14px; margin: 0 6px 2px; font-weight: 600; }
-  .gbox .gsub { font-size: 12.5px; color: var(--dim); margin: 0 6px 6px; }
-  .gbox svg { display: block; overflow: visible; touch-action: pan-y; }
-  .gg { stroke: #262b35; stroke-width: 1; }
-  .gr { stroke: #5b6474; stroke-width: 1; }
-  .gl { fill: var(--dim); font-size: 11px; }
-  .gv { fill: var(--txt); font-size: 12px; font-weight: 600; }
-  .gtip { position: absolute; pointer-events: none; background: #0b0d11; border: 1px solid var(--line);
-    border-radius: 8px; padding: 7px 9px; font-size: 12.5px; white-space: nowrap; z-index: 5; display: none; }
-  .gtip .td { color: var(--dim); margin-bottom: 3px; }
-  .gtip .tr { display: flex; align-items: center; gap: 6px; }
-  .gtip .tr b { color: var(--txt); } .gtip .tr span { color: var(--dim); }
-  .gtip .ch { display: inline-block; width: 12px; height: 2px; border-radius: 2px; }
-  .trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
-  details.tab { margin: 6px 6px 4px; font-size: 12.5px; color: var(--dim); }
-  details.tab summary { cursor: pointer; }
-  details.tab table { border-collapse: collapse; margin-top: 6px; width: 100%; }
-  details.tab td, details.tab th { text-align: left; padding: 3px 8px 3px 0; border-bottom: 1px solid var(--line); font-weight: 400; }
-  details.tab th { color: var(--txt); }
-  .form { display: flex; flex-direction: column; gap: 13px; }
-  .form label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); display: block; margin-bottom: 5px; }
-  .form select, .form textarea, .form input[type=date] { width: 100%; background: var(--panel2); color: var(--txt); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font: inherit; }
-  .form textarea { min-height: 88px; resize: vertical; }
-  .form .photo { display: flex; align-items: center; gap: 12px; }
-  .form .photo img { width: 60px; height: 60px; object-fit: cover; border-radius: 10px; display: none; }
-  .filebtn { display: inline-block; background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 11px 14px; cursor: pointer; }
+  .app { max-width: 520px; margin: 0 auto; min-height: 100vh; background: var(--fundo);
+    padding-bottom: calc(76px + env(safe-area-inset-bottom)); overflow-x: hidden; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+
+  /* campo principal */
+  .campo { background: var(--campo); color: var(--branco); overflow: hidden; }
+  .campo.tinta { background: var(--tinta); }
+  .campo .dentro { padding: 20px 22px 0; display: flex; flex-direction: column; gap: 14px; }
+  .rot { font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 44px; }
+  .selo { border: 1.5px solid currentColor; border-radius: 999px; padding: 4px 11px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+  h1.titulo { margin: 0; font-family: var(--display); font-weight: 800; font-size: 52px; line-height: 0.98; letter-spacing: -0.03em; }
+  h1.titulo.longo { font-size: 34px; line-height: 1.05; letter-spacing: -0.02em; }
+  .campo .sub { font-size: 15px; line-height: 1.4; }
+  .linha-dagua { height: 30px; margin-top: 18px; overflow: hidden; }
+  .linha-dagua svg { display: block; animation: onda 14s linear infinite; }
+
+  /* faixa de dias */
+  .dias { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-bottom: 2px solid var(--tinta); }
+  .dias a { min-height: 54px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 11.5px; font-weight: 600; color: var(--sec); border-left: 1px solid var(--fraca); }
+  .dias a:first-child { border-left: 0; }
+  .dias a b { font-family: var(--display); font-weight: 800; font-size: 17px; color: var(--tinta); line-height: 1.1; }
+  .dias a.on { background: var(--sol); color: var(--tinta); }
+  .dias a.hoje b::after { content: ""; display: block; width: 5px; height: 5px; border-radius: 99px; background: var(--tinta); margin: 2px auto 0; }
+
+  /* blocos e linhas */
+  .bloco { padding: 22px 22px 0; animation: sobe 0.45s var(--curva) both; }
+  .bloco + .bloco { animation-delay: 0.06s; }
+  .cab { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--tinta); }
+  h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: -0.02em; line-height: 1.1; }
+  .cab small { font-size: 13px; font-weight: 600; color: var(--sec); text-align: right; }
+  .linha { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--fraca); min-height: 52px; }
+  button.linha { width: 100%; background: transparent; border: 0; border-bottom: 1px solid var(--fraca); text-align: left; cursor: pointer; }
+  a.linha { text-decoration: none; }
+  .hora { flex: none; width: 58px; font-family: var(--display); font-weight: 800; font-size: 17px; line-height: 1.1; }
+  .corpo { flex: 1 1 auto; min-width: 0; font-size: 15.5px; font-weight: 600; line-height: 1.3; }
+  .corpo small { display: block; font-size: 13px; font-weight: 500; color: var(--sec); margin-top: 1px; }
+  .num { flex: none; font-family: var(--display); font-weight: 800; font-size: 21px; white-space: nowrap; }
+  .num small { font-family: 'Figtree', sans-serif; font-size: 12px; font-weight: 600; color: var(--sec); }
+  .nota { padding: 10px 0 12px 34px; font-size: 14px; color: var(--sec); border-bottom: 1px solid var(--fraca); }
+  .par { padding: 10px 0; border-bottom: 1px solid var(--fraca); font-size: 15px; line-height: 1.45; }
+  .par:last-child { border-bottom: 0; }
+
+  /* boia */
+  .boia { flex: none; width: 22px; height: 22px; border-radius: 999px; border: 2px solid var(--tinta);
+    display: flex; align-items: center; justify-content: center; transition: background 0.3s ease, border-color 0.3s ease; }
+  .boia.feito { background: var(--campo); border-color: var(--campo); }
+  .boia svg { opacity: 0; transition: opacity 0.3s ease; }
+  .boia.feito svg { opacity: 1; }
+
+  /* régua de maré */
+  .regua { position: relative; height: 26px; margin: 0 10px; }
+  .regua .eixo { position: absolute; left: 0; right: 0; top: 12px; height: 2px; background: currentColor; }
+  .regua .riscos { position: absolute; left: 0; right: 0; top: 5px; bottom: 5px; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  .regua .riscos i { border-left: 1px solid currentColor; }
+  .regua .riscos i:first-child, .regua .riscos i:nth-child(6) { border-left-width: 2px; }
+  .regua .riscos i:last-child { border-right: 2px solid currentColor; }
+  .regua .marca { position: absolute; top: 3px; width: 20px; height: 20px; margin-left: -10px; border-radius: 999px;
+    background: var(--sol); border: 2px solid currentColor; transition: left 1s var(--curva); }
+  .regua .alvo { position: absolute; top: 2px; bottom: 2px; background: currentColor; }
+  .legenda { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; padding-top: 5px; }
+
+  .barra { position: relative; height: 14px; background: var(--fraca); }
+  .barra > i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--campo); transition: width 0.6s var(--curva); }
+  .barra > b { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--tinta); }
+
+  /* campos de dado */
+  .sol { background: var(--sol); color: var(--tinta); padding: 18px 22px; }
+  .escuro { background: var(--tinta); color: var(--branco); padding: 20px 22px 18px; }
+  .gigante { font-family: var(--display); font-weight: 800; font-size: 112px; line-height: 0.88; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+  .grande { font-family: var(--display); font-weight: 800; font-size: 60px; line-height: 0.95; letter-spacing: -0.04em; }
+  .medio { font-family: var(--display); font-weight: 800; font-size: 34px; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+  .medio small, .gigante small { font-family: 'Figtree', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0; }
+  .colunas { position: relative; height: 96px; display: grid; gap: 5px; align-items: end; }
+  .colunas button { border: 0; padding: 0; background: var(--sol); min-height: 2px; transform-origin: bottom; cursor: pointer;
+    animation: cresce 0.6s var(--curva) both; }
+  .colunas button.on { background: var(--branco); }
+  .colunas .ref { position: absolute; left: 0; right: 0; height: 1px; background: var(--branco); pointer-events: none; }
+
+  /* glifos */
+  .glifo { flex: none; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+  .glifo.g-campo { background: var(--campo); color: var(--branco); }
+  .glifo.g-sol { background: var(--sol); color: var(--tinta); }
+  .glifo.g-tinta { background: var(--tinta); color: var(--branco); }
+  .glifo.g-vazio { border: 2px solid var(--tinta); color: var(--tinta); }
+
+  /* ações e formulários */
+  .botao { width: 100%; min-height: 56px; border: 0; background: var(--tinta); color: var(--branco); padding: 0 20px; cursor: pointer;
+    font-family: var(--display); font-weight: 800; font-size: 19px; letter-spacing: -0.01em;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; }
+  .botao:disabled { opacity: 0.55; }
+  .botao.claro { background: transparent; color: var(--tinta); border: 2px solid var(--tinta); min-height: 46px; font-size: 15px; justify-content: center; }
+  .seg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 2px solid var(--tinta); margin-top: 14px; }
+  .seg button { min-height: 46px; border: 0; border-left: 2px solid var(--tinta); background: transparent; font-size: 13.5px; font-weight: 600; cursor: pointer; padding: 0 4px; }
+  .seg button:first-child { border-left: 0; }
+  .seg button.on { background: var(--sol); font-weight: 700; }
+  .form { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .form label, .redit label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
+  input[type=date], select, textarea { width: 100%; min-height: 48px; padding: 10px 12px; border: 2px solid var(--tinta); border-radius: 0;
+    background: var(--branco); color: var(--tinta); font: inherit; font-size: 16px; }
+  textarea { min-height: 96px; resize: vertical; }
+  .photo { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .filebtn { display: inline-flex !important; align-items: center; min-height: 46px; padding: 0 16px; border: 2px solid var(--tinta); cursor: pointer;
+    font-size: 14px !important; letter-spacing: 0 !important; text-transform: none !important; margin: 0 !important; }
   .filebtn input { display: none; }
-  .btn { background: var(--accent); color: #0b0e14; border: 0; border-radius: 10px; padding: 13px; font: inherit; font-weight: 700; cursor: pointer; }
-  .btn:disabled { opacity: .5; cursor: default; }
-  .status { font-size: 14px; padding: 10px 12px; border-radius: 10px; }
-  .status.ok { background: rgba(70,192,138,.15); color: var(--g); }
-  .status.err { background: rgba(227,96,79,.15); color: var(--r); }
-  .fab { position: fixed; right: 16px; bottom: 18px; z-index: 50; background: var(--accent); color: #0b0e14;
-    font-weight: 700; font-size: 15px; padding: 13px 18px; border-radius: 999px; text-decoration: none;
-    box-shadow: 0 6px 22px rgba(0,0,0,.5); }
-  .seg { display: flex; gap: 6px; background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 4px; }
-  .seg button { flex: 1; background: none; border: 0; color: var(--dim); font: inherit; font-weight: 600; padding: 9px; border-radius: 8px; cursor: pointer; }
-  .seg button.on { background: var(--accent); color: #0b0e14; }
-  /* lista de correção de registros */
-  .rlist { display: flex; flex-direction: column; gap: 8px; }
-  .ritem { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; }
-  .ritem .rhead { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-  .ritem .rd { font-weight: 700; font-size: 14px; }
-  .ritem .rk { font-size: 12px; color: var(--dim); }
-  .ritem .rtxt { font-size: 14px; color: var(--dim); margin-top: 4px; word-break: break-word; }
-  .ritem .ract { display: flex; gap: 8px; margin-top: 10px; }
-  .ritem .ract button { flex: 0 0 auto; background: var(--panel); color: var(--dim); border: 1px solid var(--line);
-    border-radius: 8px; padding: 7px 12px; font: inherit; font-size: 13px; cursor: pointer; }
-  .ritem .ract button.danger { color: var(--r); border-color: rgba(227,96,79,.4); }
-  .ritem .ract button:disabled { opacity: .5; cursor: default; }
-  .ritem.editing { border-color: var(--accent); }
-  .ritem .redit { display: flex; flex-direction: column; gap: 10px; margin-top: 11px; }
-  .ritem .redit select, .ritem .redit textarea, .ritem .redit input[type=date] {
-    width: 100%; background: var(--panel); color: var(--txt); border: 1px solid var(--line);
-    border-radius: 8px; padding: 9px 11px; font: inherit; font-size: 14px; }
-  .ritem .redit textarea { min-height: 64px; resize: vertical; }
-  .rdays { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-  .rdays button { background: var(--panel2); color: var(--dim); border: 1px solid var(--line);
-    border-radius: 999px; padding: 5px 12px; font: inherit; font-size: 13px; cursor: pointer; }
-  .rdays button.on { background: var(--accent); color: #0b0e14; border-color: var(--accent); }
-  .legend { display: flex; gap: 14px; margin-top: 14px; font-size: 12px; color: var(--dim); flex-wrap: wrap; }
-  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
-  footer { text-align: center; color: var(--dim); font-size: 12px; margin-top: 24px; }
-  @media (max-width: 560px) { .grid4, .grid5 { grid-template-columns: repeat(3, 1fr); } .shop { columns: 1; } }
+  #rg-prev { display: none; max-width: 120px; max-height: 120px; border: 2px solid var(--tinta); }
+  .status { font-size: 14px; font-weight: 600; min-height: 20px; }
+  .status.ok { color: #0A5A3C; } .status.err { color: #8C1D12; }
+  .aviso { margin-top: 16px; padding: 12px 0; border-top: 1px solid var(--fraca); font-size: 13.5px; color: var(--sec); line-height: 1.45; }
+  .rdays { display: flex; gap: 8px; margin-top: 16px; }
+  .rdays button { min-height: 44px; padding: 0 14px; border: 2px solid var(--tinta); background: transparent; font-size: 13.5px; font-weight: 600; cursor: pointer; }
+  .rdays button.on { background: var(--sol); font-weight: 700; }
+  .ritem { padding: 12px 0; border-bottom: 1px solid var(--fraca); }
+  .rhead { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
+  .rd { font-weight: 700; } .rk { color: var(--sec); font-size: 12.5px; font-weight: 600; white-space: nowrap; }
+  .rtxt { font-size: 14.5px; margin: 4px 0 8px; color: var(--sec); }
+  .ract { display: flex; gap: 8px; }
+  .ract button { min-height: 44px; padding: 0 14px; border: 2px solid var(--tinta); background: transparent; font-size: 13.5px; font-weight: 700; cursor: pointer; }
+  .ract button.cheio { background: var(--tinta); color: var(--branco); }
+  .redit { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+
+  details { border-bottom: 1px solid var(--fraca); }
+  details summary { min-height: 48px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: 15px; font-weight: 700; list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: "+"; font-family: var(--display); font-weight: 800; font-size: 22px; }
+  details[open] summary::after { content: "–"; }
+  details .miolo { padding-bottom: 12px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 5px 8px 5px 0; border-bottom: 1px solid var(--fraca); font-weight: 500; }
+  th { font-weight: 700; }
+  .compra label { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--fraca); font-size: 15px; cursor: pointer; min-height: 44px; }
+  .compra input { flex: none; width: 22px; height: 22px; margin: 1px 0 0; accent-color: var(--campo); }
+  .compra input:checked + span { color: var(--sec); text-decoration: line-through; }
+  .cat { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 16px 0 4px; }
+  .rodape { padding: 22px; font-size: 12.5px; color: var(--sec); font-weight: 500; }
+
+  /* barra de navegação */
+  nav.barra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: center; pointer-events: none; }
+  nav.barra .dentro { pointer-events: auto; width: 100%; max-width: 520px; background: var(--fundo); border-top: 2px solid var(--tinta);
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding-bottom: env(safe-area-inset-bottom); }
+  nav.barra a { min-height: 58px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    text-decoration: none; font-size: 12px; font-weight: 600; border-left: 2px solid var(--tinta); }
+  nav.barra a:first-child { border-left: 0; }
+  nav.barra a.on { background: var(--sol); font-weight: 700; }
+  nav.barra a.acao { background: var(--tinta); color: var(--branco); }
+
+  @keyframes onda { from { transform: translateX(0); } to { transform: translateX(-390px); } }
+  @keyframes sobe { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes cresce { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes desenha { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes pop { 0% { transform: scale(0); } 70% { transform: scale(1.3); } 100% { transform: scale(1); } }
+  @keyframes pulso { 0% { transform: scale(1); opacity: 0.75; } 100% { transform: scale(2.8); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 </style>
 </head>
 <body>
-<nav><div class="navin" id="nav"></div></nav>
-<div class="wrap">
-  <header><h1>Painel de Saúde</h1><span class="sub" id="semana"></span></header>
-  <div class="chips" id="chips"></div>
-  <div id="view"></div>
-  <footer id="foot"></footer>
-</div>
-<a class="fab" id="fab" href="#reg" title="Registrar refeição">＋ Refeição</a>
+<div class="app"><div id="view"></div></div>
+<nav class="barra"><div class="dentro" id="nav"></div></nav>
 
 <script>
-let DATA = null, REGISTROS = [];
+let DATA = null, REGISTROS = [], DASH = null;
 const $ = id => document.getElementById(id);
+const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+// O semana.json vem cheio de emoji (é escrito para o Telegram também). A interface não usa nenhum:
+// eles saem na hora de desenhar, e o dado continua intacto.
+const semEmoji = s => String(s ?? '').replace(/[\p{Extended_Pictographic}\u{FE0F}\u{20E3}\u{200D}]/gu, '')
+  .replace(/\s{2,}/g, ' ').replace(/^[\s·—:-]+/, '').trim();
+const T = s => esc(semEmoji(s));
 const isoDDMM = s => s ? s.slice(8, 10) + '/' + s.slice(5, 7) : '';
-const bars = (arr) => `<div class="bars">` + arr.map(p =>
-  `<div class="bar"><div class="colwrap"><div class="col ${p.banda}" style="height:${Math.max(4, p.valor)}%"></div>${p.meu != null ? `<div class="me" style="bottom:${Math.max(2, p.meu)}%"></div>` : ''}</div><div class="lbl">${p.data}</div></div>`).join("") + `</div>`;
+const hojeDDMM = () => { const d = new Date(); return String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0'); };
+// Data LOCAL, não UTC: a conversão para ISO em UTC devolve o dia de amanhã depois das 21h no
+// Brasil (UTC−3), e era isso que fazia o registro da noite nascer com a data errada.
+const isoLocal = (d = new Date()) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+const fNum = (v, c = 1) => v == null ? '—' : Number(v).toFixed(c).replace('.', ',');
+const dData = t => { const [y, m, d] = t.split('-').map(Number); return new Date(y, m - 1, d); };
+const fDia = d => String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0');
+const dataLonga = t => { const d = dData(t); return d.getDate() + ' de ' + ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'][d.getMonth()] + ' de ' + d.getFullYear(); };
 
-function plateGuide(d) {
-  if (!DATA.regra_prato) return "";
-  const rp = DATA.regra_prato, flex = d && d.flex;
-  let g = null;
-  if (d) g = flex
-    ? "Fim de semana flexível (controle de dano) — proteína em toda refeição, vegetais à vontade, modere carbo, álcool e doces. Não precisa pesar; só não exagerar."
-    : (d.tipo === 'treino' || d.tipo === 'futebol')
-      ? "Dia de treino — garanta ~45 g de proteína no almoço, mesmo comendo fora."
-      : "Dia leve — mantenha a proteína e capriche nos vegetais. Sem treino, sem reforço de carbo.";
-  return `<section><h2>${rp.titulo}${flex ? '<span class="flexbadge">fim de semana · flexível</span>' : ''}</h2>
-    <ul class="plate">${rp.linhas.map(l => `<li>${l}</li>`).join("")}</ul>
-    ${g ? `<div class="note${flex ? ' flex' : ''}">${g}</div>` : ''}</section>`;
+const ICO = {
+  mais: '<path d="M12 5v14M5 12h14"/>',
+  visto: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  hoje: '<circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>',
+  semana: '<rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/>',
+  evo: '<path d="M4 18l5-6 4 3 7-9"/><path d="M15 6h5v5"/>',
+  sono: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+  pulso: '<path d="M3 12h4l2-5 4 10 2-5h6"/>',
+  vfc: '<path d="M4 14c3-7 5-7 8 0s5 7 8 0"/>',
+};
+const ico = (n, tam = 22, esp = 2.2) => `<svg aria-hidden="true" width="${tam}" height="${tam}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${esp}" stroke-linecap="round" stroke-linejoin="round">${ICO[n]}</svg>`;
+const ONDA = `<div class="linha-dagua"><svg aria-hidden="true" width="780" height="30" viewBox="0 0 780 30" preserveAspectRatio="none"><path d="M0 15 C 65 0, 130 0, 195 15 S 325 30, 390 15 S 520 0, 585 15 S 715 30, 780 15 V30 H0 Z" fill="var(--onda)"/></svg></div>`;
+const REGUA_RISCOS = '<div class="riscos">' + '<i></i>'.repeat(10) + '</div>';
+
+// ───────── tipo de dia → glifo ─────────
+function tipoDoDia(d) {
+  const f = ((d.treino && d.treino.foco) || '').toLowerCase();
+  if (d.tipo === 'futebol' || /futebol|campeonato|\bjogo\b/.test(f)) return 'jogo';
+  if (/recupera|descanso|vazio|descompress/.test(f)) return 'descanso';
+  if (/lower|upper|costas|for[çc]a|academia|ombro|corpo inteiro/.test(f)) return 'forca';
+  if (/corrida|esteira|\bkm\b|min f[áa]ceis/.test(f)) return 'corrida';
+  if (d.tipo === 'treino') return 'forca';
+  return 'leve';
+}
+const GLIFOS = {
+  forca: ['g-campo', '<svg width="30" height="30" viewBox="0 0 40 40" fill="currentColor"><rect x="5" y="12" width="7" height="16"/><rect x="28" y="12" width="7" height="16"/><rect x="12" y="18" width="16" height="4"/></svg>', 'Força'],
+  corrida: ['g-campo', '<svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="square"><path d="M9 11l9 9-9 9"/><path d="M21 11l9 9-9 9"/></svg>', 'Corrida'],
+  jogo: ['g-sol', '<svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="4"><circle cx="20" cy="20" r="13"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg>', 'Jogo'],
+  leve: ['g-vazio', '<svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><path d="M5 22c5-8 10-8 15 0s10 8 15 0"/></svg>', 'Dia leve'],
+  descanso: ['g-tinta', '<svg width="30" height="30" viewBox="0 0 40 40" fill="currentColor"><path d="M28 26a11 11 0 1 1-10-17 9 9 0 0 0 10 17z"/></svg>', 'Descanso'],
+};
+const glifo = d => { const g = GLIFOS[tipoDoDia(d)]; return `<span class="glifo ${g[0]}" role="img" aria-label="${g[2]}">${g[1]}</span>`; };
+
+function frase(s) { s = semEmoji(s); if (s.length > 14 && s === s.toUpperCase()) s = s.charAt(0) + s.slice(1).toLowerCase(); return s; }
+function partirFoco(foco) { const p = semEmoji(foco).split(/\s+—\s+/); return { titulo: frase(p[0]), sub: p.slice(1).join(' — ') }; }
+
+function renderNav(ativo) {
+  const it = (href, id, rot, icone, extra = '') => `<a href="${href}" class="${ativo === id ? 'on' : ''} ${extra}">${ico(icone)}<span>${rot}</span></a>`;
+  $("nav").innerHTML = it('#hoje', 'hoje', 'Hoje', 'hoje') + it('#semana', 'semana', 'Semana', 'semana') +
+    it('#evo', 'evo', 'Evolução', 'evo') + it('#reg', 'reg', 'Registrar', 'mais', ativo === 'reg' ? '' : 'acao');
+}
+function faixaDias(ativoId) {
+  const hoje = hojeDDMM();
+  return '<div class="dias">' + DATA.dias.map(d =>
+    `<a href="#${d.id}" class="${d.id === ativoId ? 'on' : ''} ${d.data === hoje ? 'hoje' : ''}" aria-label="${esc(d.nome)} ${esc(d.data)}"><span>${esc(d.nome.slice(0, 3))}</span><b>${esc(d.data.slice(0, 2))}</b></a>`).join('') + '</div>';
 }
 
-function renderNav(active) {
-  const links = [
-    `<a href="#home" class="${active === 'home' ? 'active' : ''}">Início</a>`,
-    `<a href="#reg" class="reg ${active === 'reg' ? 'active' : ''}">＋ Registrar</a>`,
-    `<a href="#evo" class="evo ${active === 'evo' ? 'active' : ''}">📈 Evolução</a>`]
-    .concat(DATA.dias.map(d =>
-      `<a href="#${d.id}" class="${active === d.id ? 'active' : ''} ${d.tipo === 'treino' ? 'train' : ''}">${d.nome.slice(0,3)} ${d.data.slice(0,2)}</a>`));
-  $("nav").innerHTML = links.join("");
-}
+// ───────── o dia (Hoje e qualquer dia da semana) ─────────
+const SLOTS = [['cafe', 'manhã', 'Café'], ['almoco', 'almoço', 'Almoço'], ['pre_lanche', 'tarde', 'Lanche'],
+  ['lanche_pre_treino', 'pré', 'Lanche'], ['janta', 'janta', 'Jantar'], ['petisco', 'fim', 'Outro']];
 
-function renderHome() {
-  const t = DATA.tendencias, st = DATA.status_treino;
-  const v = x => x == null ? "—" : x;
-  let h = `<section><h2>Prontidão · Garmin (principal) + índice agudo</h2><div class="grid4">
-    <div class="stat"><div class="v">${v(t.prontidao_garmin_hoje)}</div><div class="k">Garmin hoje</div></div>
-    <div class="stat"><div class="v">${v(t.prontidao_media_7d)}</div><div class="k">Garmin méd. 7d</div></div>
-    <div class="stat"><div class="v">${v(t.indice_agudo_hoje)}</div><div class="k">Meu índice hoje</div></div>
-    <div class="stat"><div class="v">${v(t.indice_medio_7d)}</div><div class="k">Meu índice méd. 7d</div></div>
-  </div>${bars(t.prontidao)}
-  <div class="legend"><span><span class="dot" style="background:var(--g)"></span>≥75</span>
-    <span><span class="dot" style="background:var(--y)"></span>50–74</span>
-    <span><span class="dot" style="background:var(--r)"></span>&lt;50</span>
-    <span>┈ meu índice agudo</span></div>
-  <div class="note">Barras = <b>Prontidão Garmin</b> (validada). Traço ┈ = seu índice agudo (sono/HRV), mais reativo. Status Garmin: <b>${t.training_status || '—'}</b>${t.training_status === 'DETRAINING' ? ' — ⚠️ mede fitness AERÓBICO (VO₂max, que só sobe com corrida/bike). Como o tornozelo proíbe corrida, fica vermelho por definição e NÃO reflete sua musculação. Lever: Zona 2 sem impacto. Progresso real de treino = Fitbod (força).' : ''}</div></section>`;
-
-  if (DATA.relatorio) h += `<section><h2>Relatório · calibração</h2><div class="report">` +
-    DATA.relatorio.map(p => `<p>${p}</p>`).join("") + `</div></section>`;
-
-  h += `<section><h2>Status do treino · esta semana</h2>
-    <div class="grid4"><div class="stat"><div class="v">${st.feito}<small>/${st.planejado}</small></div><div class="k">Treinos feitos</div></div>
-    <div class="stat" style="grid-column: span 3; text-align:left; display:flex; align-items:center;">
-      <span style="color:var(--dim); font-size:14px">${st.dias_feitos && st.dias_feitos.length ? st.dias_feitos.join(' ') : 'Semana ainda não iniciada.'}</span></div></div></section>`;
-
-  h += `<section><h2>Visão geral da semana</h2><div class="wk">` + DATA.dias.map(d =>
-    `<a class="wkrow" href="#${d.id}"><span class="d">${d.nome.slice(0,3)} ${d.data}</span>
-      <span class="f">${d.treino ? d.treino.foco : (d.cardio || 'Descanso')}</span>
-      <span class="tag ${d.tipo==='treino'?'t':'rest'}">${d.tipo==='treino'?'Treino':'Descanso'}</span></a>`).join("") + `</div></section>`;
-
-  h += `<section><h2>Lista de compras · semana</h2><div class="shop">` + DATA.lista_compra.map(c =>
-    `<div class="cat"><div class="cn">${c.cat}</div>` + c.itens.map(i =>
-      `<label><input type="checkbox"><span>${i}</span></label>`).join("") + `</div>`).join("") + `</div></section>`;
-
-  h += plateGuide(null);
-  $("view").innerHTML = h;
-}
-
-function renderDay(d) {
-  let h = `<section><h2>${d.nome} ${d.data} · ${d.tipo === 'treino' ? d.treino.foco : 'Descanso'}</h2>`;
-  if (d.treino) {
-    h += d.treino.exercicios.map(e =>
-      `<div class="ex"><span>${e.nome}</span><span class="p">${e.series}×${e.reps}</span></div>`).join("");
-  } else {
-    h += `<div class="note">🚴 ${d.cardio}</div>`;
-  }
-  h += `</section>`;
-
-  const r = d.refeicoes, isTrain = d.tipo === 'treino';
-  const slots = [['cafe', 'Manhã · proteína'], ['almoco', 'Almoço'], ['pre_lanche', 'Pré-lanche'],
-    ['lanche_pre_treino', isTrain ? 'Lanche · pré-treino' : 'Lanche · tarde'],
-    ['janta', 'Janta'], ['petisco', isTrain ? 'Pós-treino' : 'Ceia']];
-  let totK = 0, totP = 0;
-  const mealRows = slots.map(([key, label]) => {
-    const m = r[key]; if (!m) return '';
-    totK += m.kcal || 0; totP += m.prot || 0;
-    return `<div class="meal"><div class="mh"><span class="mt">${label}</span>
-      <span class="mm">${m.peso_g ? `≈ ${m.peso_g} g · ` : ''}${m.kcal} kcal · ${m.prot} g prot</span></div><div class="mn">${m.nome}</div>
-      ${m.origem ? `<div class="mo">↺ ${m.origem}</div>` : ''}
-      ${m.nota ? `<div class="mo">↳ ${m.nota}</div>` : ''}</div>`;
-  }).join("");
-  h += `<section><h2>Plano alimentar do dia</h2>
-    <div class="daytot"><span>≈ ${totK} kcal · ${totP} g proteína</span><small>meta ${DATA.dieta.calorias} / ${DATA.dieta.proteina} g${DATA.dieta.proteina_piso ? ` · piso ${DATA.dieta.proteina_piso} g` : ''}</small></div>
-    ${mealRows}
-    <div class="note">Janela alimentar: proteína leve de manhã (Yopro), almoço às 13h, iogurte com whey às 17h antes da academia, janta. Tudo que você come está aqui, inclusive a distração adocicada pós-janta. Se bater fome fora de hora, adiante o próximo item da lista em vez de beliscar solto; o que não está no plano fica de fora. Almoço = sobra da janta da véspera (cozinha-se uma vez).</div></section>`;
-
+function renderDia(d, ehHoje) {
+  const [dd, mm] = d.data.split('/');
+  const foco = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
   const regs = (REGISTROS || []).filter(x => isoDDMM(x.data) === d.data);
-  const ordem = { 'Café': 0, 'Almoço': 1, 'Lanche': 2, 'Jantar': 3, 'Outro': 4 };
-  regs.sort((a, b) => (ordem[a.refeicao] ?? 9) - (ordem[b.refeicao] ?? 9));
-  h += `<section><h2>✅ Registrado neste dia</h2>` + (regs.length
-    ? regs.map(x => `<div class="meal"><div class="mh"><span class="mt">${x.tipo === 'Treino' ? '🏋️ Treino' : x.tipo === 'Observação' ? '📝 Observação' : (x.refeicao || '—')}</span>${x.foto ? '<span class="mm">📷 foto</span>' : ''}</div><div class="mo">${x.texto || (x.foto ? '(screenshot)' : '(sem texto)')}</div></div>`).join("")
-    : `<div class="note">Nada registrado ainda. Toque em <b>＋ Refeição</b> pra lançar.</div>`) + `</section>`;
-  h += plateGuide(d);
+  let h = `<div class="campo"><div class="dentro">
+    <div class="topo"><div class="rot">${esc(d.nome)} · ${esc(dd)} ${MES[+mm - 1] || ''}</div><div class="selo">${ehHoje ? 'hoje' : esc(GLIFOS[tipoDoDia(d)][2].toLowerCase())}</div></div>
+    <h1 class="titulo ${foco.titulo.length > 22 ? 'longo' : ''}">${esc(foco.titulo)}</h1>
+    ${foco.sub ? `<div class="sub">${esc(foco.sub)}</div>` : ''}
+  </div>${ONDA}</div>` + faixaDias(d.id);
 
-  // receita do dia (a janta cozida hoje)
-  if (r.janta && r.janta.receita && DATA.receitas[r.janta.receita]) {
+  // treino: exercícios numerados viram linhas; o resto é contexto
+  const ex = ((d.treino && d.treino.exercicios) || []).map(e => {
+    const bruto = e.nome || '', k = bruto.match(/^\s*([0-9])️?⃣\s*/);
+    return { num: k ? k[1] : null, txt: semEmoji(k ? bruto.slice(k[0].length) : bruto), series: e.series, reps: e.reps };
+  }).filter(e => e.txt);
+  const numerados = ex.filter(e => e.num), notas = ex.filter(e => !e.num);
+  if (numerados.length) {
+    h += `<section class="bloco"><div class="cab"><h2>A sessão</h2><small>séries × repetições</small></div>` +
+      numerados.map(e => { const p = e.txt.split(/\s+—\s+/);
+        return `<div class="linha"><span class="hora">${esc(e.num)}</span><span class="corpo">${esc(p[0])}${p[1] ? `<small>${esc(p.slice(1).join(' — '))}</small>` : ''}</span>
+          <span class="num">${e.reps && e.reps !== '—' ? esc(e.series) + '×' + esc(e.reps) : ''}</span></div>`; }).join('') +
+      (notas.length ? `<details><summary>Contexto do dia · ${notas.length} ${notas.length === 1 ? 'nota' : 'notas'}</summary><div class="miolo">${notas.map(n => `<div class="par">${esc(n.txt)}</div>`).join('')}</div></details>` : '') +
+      `</section>`;
+  } else if (notas.length) {
+    h += `<section class="bloco"><div class="cab"><h2>O plano</h2></div>${notas.map(n => `<div class="par">${esc(n.txt)}</div>`).join('')}</section>`;
+  }
+
+  // refeições: a boia enche quando existe registro daquela refeição no dia
+  const r = d.refeicoes || {}, resta = {};
+  regs.filter(x => x.tipo === 'Refeição').forEach(x => { resta[x.refeicao] = (resta[x.refeicao] || 0) + 1; });
+  let kcal = 0, prot = 0, n = 0, feitas = 0;
+  const linhas = SLOTS.map(([chave, rot, ref], i) => {
+    const m = r[chave]; if (!m) return '';
+    n++; kcal += m.kcal || 0; prot += m.prot || 0;
+    const feito = (resta[ref] || 0) > 0; if (feito) { resta[ref]--; feitas++; }
+    let nome = semEmoji(m.nome), hora = rot;
+    const t = nome.match(/^(~?\d{1,2}h\d{0,2}|\d{1,2}:\d{2})\s*·\s*/);
+    if (t) { hora = t[1]; nome = nome.slice(t[0].length); }
+    const nota = [m.origem ? semEmoji(m.origem) : '', m.nota ? semEmoji(m.nota) : ''].filter(Boolean).join(' ');
+    return `<button type="button" class="linha refeicao" aria-expanded="false" data-n="${i}">
+        <span class="boia ${feito ? 'feito' : ''}">${ico('visto', 12, 3.5).replace('currentColor', '#fff')}</span>
+        <span class="hora">${esc(hora)}</span><span class="corpo">${esc(nome)}<small>${m.kcal} kcal${feito ? ' · registrado' : ''}</small></span>
+        <span class="num">${m.prot}<small> g</small></span></button>
+      ${nota ? `<div class="nota" id="nota-${i}" hidden>${esc(nota)}</div>` : ''}`;
+  }).join('');
+  if (n) {
+    const meta = DATA.dieta.proteina, piso = DATA.dieta.proteina_piso;
+    h += `<section class="bloco"><div class="cab"><h2>O dia</h2><small>proteína</small></div>${linhas}
+      <div style="padding-top:16px;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+          <div style="font-size:14px;color:var(--sec);font-weight:500">${kcal.toLocaleString('pt-BR')} kcal no plano · ${feitas} de ${n} registradas</div>
+          <div class="medio">${prot}<small style="color:var(--sec)"> g</small></div></div>
+        <div class="barra"><i style="width:${Math.min(100, prot / meta * 100)}%"></i>${piso ? `<b style="left:${Math.min(100, piso / meta * 100)}%"></b>` : ''}</div>
+        <div class="legenda" style="color:var(--sec);font-weight:600"><span>0</span><span>${piso ? 'risco: piso de ' + piso + ' g' : ''}</span><span>meta ${meta} g</span></div>
+      </div></section>`;
+  }
+
+  h += `<section class="bloco"><a class="botao" href="#reg">Registrar ${ico('mais')}</a></section>`;
+
+  if (regs.length) {
+    const ordem = { 'Café': 0, 'Almoço': 1, 'Lanche': 2, 'Jantar': 3, 'Outro': 4 };
+    regs.sort((a, b) => (ordem[a.refeicao] ?? 9) - (ordem[b.refeicao] ?? 9));
+    h += `<section class="bloco"><div class="cab"><h2>Registrado</h2><small>${regs.length} ${regs.length === 1 ? 'item' : 'itens'}</small></div>` +
+      regs.map(x => `<div class="linha"><span class="hora" style="font-size:14px">${esc(x.tipo === 'Refeição' ? (x.refeicao || 'Refeição') : x.tipo)}</span>
+        <span class="corpo" style="font-weight:500">${esc(x.texto || (x.foto ? 'só a foto' : 'sem texto'))}${x.foto ? '<small>com foto</small>' : ''}</span></div>`).join('') + `</section>`;
+  }
+
+  if (r.janta && r.janta.receita && DATA.receitas && DATA.receitas[r.janta.receita]) {
     const rec = DATA.receitas[r.janta.receita];
-    h += `<section><h2>Receita pra executar · janta</h2>
-      <details class="recipe" open><summary>${rec.nome}<span class="meta">${rec.tempo} · ${rec.kcal} kcal · ${rec.prot} g</span></summary>
-      <div class="body"><h4>Rende</h4><div style="font-size:14px;color:var(--dim)">${rec.rende}</div>
-      <h4>Ingredientes</h4><ul>${rec.ingredientes.map(i=>`<li>${i}</li>`).join("")}</ul>
-      <h4>Modo de fazer</h4><ol>${rec.passos.map(p=>`<li>${p}</li>`).join("")}</ol></div></details></section>`;
+    h += `<section class="bloco"><div class="cab"><h2>Receita da janta</h2><small>${T(rec.tempo)}</small></div>
+      <details><summary>${T(rec.nome)}</summary><div class="miolo">
+        <div class="par"><b>Rende:</b> ${T(rec.rende)} · ${rec.kcal} kcal · ${rec.prot} g</div>
+        <div class="cat">Ingredientes</div>${rec.ingredientes.map(i => `<div class="par">${T(i)}</div>`).join('')}
+        <div class="cat">Modo de fazer</div>${rec.passos.map((p, i) => `<div class="par"><b>${i + 1}.</b> ${T(p)}</div>`).join('')}
+      </div></details></section>`;
   }
   $("view").innerHTML = h;
+  document.querySelectorAll('button.refeicao').forEach(b => b.addEventListener('click', () => {
+    const nota = document.getElementById('nota-' + b.dataset.n); if (!nota) return;
+    nota.hidden = !nota.hidden; b.setAttribute('aria-expanded', String(!nota.hidden));
+  }));
 }
 
+// ───────── a semana ─────────
+function renderSemana() {
+  const partes = semEmoji(DATA.semana).split(/\s+·\s+/);
+  const t = DATA.tendencias || {}, st = DATA.status_treino || {}, marcados = JSON.parse(localStorage.getItem('compras') || '{}');
+  let h = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
+    <div class="topo"><div class="rot">Semana · ${esc(partes[0])}</div><div class="selo">${fNum(DATA.peso_atual, 1)} kg</div></div>
+    <h1 class="titulo longo">${esc((t0 => t0.charAt(0).toUpperCase() + t0.slice(1))(frase(partes.slice(1).join(' · ') || partes[0])))}</h1>
+    <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
+
+  h += `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
+    DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
+      return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') + `</section>`;
+
+  if (DATA.regra_prato) h += `<section class="bloco"><div class="cab"><h2>As regras</h2></div>` +
+    DATA.regra_prato.linhas.map((l, i) => `<div class="linha" style="align-items:flex-start"><span class="hora">${i + 1}</span><span class="corpo" style="font-weight:500">${T(l.replace(/^\s*[0-9]️?⃣\s*/, ''))}</span></div>`).join('') + `</section>`;
+
+  h += `<section class="bloco"><div class="cab"><h2>Prontidão</h2><small>${T(t.training_status || '')}</small></div>
+    <div class="linha"><span class="corpo">Garmin hoje<small>média de 7 dias: ${t.prontidao_media_7d ?? '—'}</small></span><span class="medio">${t.prontidao_garmin_hoje ?? '—'}</span></div>
+    <div class="linha"><span class="corpo">Índice próprio hoje<small>média de 7 dias: ${t.indice_medio_7d ?? '—'}</small></span><span class="medio">${t.indice_agudo_hoje ?? '—'}</span></div></section>`;
+
+  if (DATA.relatorio && DATA.relatorio.length) h += `<section class="bloco"><div class="cab"><h2>Relatório</h2><small>${DATA.relatorio.length} pontos</small></div>
+    <div class="par">${T(DATA.relatorio[0])}</div>
+    ${DATA.relatorio.length > 1 ? `<details><summary>Ler o resto</summary><div class="miolo">${DATA.relatorio.slice(1).map(p => `<div class="par">${T(p)}</div>`).join('')}</div></details>` : ''}</section>`;
+
+  if (DATA.lista_compra && DATA.lista_compra.length) h += `<section class="bloco compra"><div class="cab"><h2>Compras</h2><small>fica marcado neste aparelho</small></div>` +
+    DATA.lista_compra.map((c, ci) => `<div class="cat">${T(c.cat)}</div>` + c.itens.map((it, ii) => { const k = ci + ':' + ii + ':' + semEmoji(it).slice(0, 24);
+      return `<label><input type="checkbox" data-k="${esc(k)}" ${marcados[k] ? 'checked' : ''}><span>${T(it)}</span></label>`; }).join('')).join('') + `</section>`;
+
+  const fontes = Object.entries(DATA.fontes_status || {}).map(([k, v]) => `${k}: ${semEmoji(v)}`).join(' · ');
+  h += `<div class="rodape">Gerado em ${esc(DATA.gerado_em)}. ${esc(fontes)}</div>`;
+  $("view").innerHTML = h;
+  document.querySelectorAll('.compra input').forEach(c => c.addEventListener('change', () => {
+    const m = JSON.parse(localStorage.getItem('compras') || '{}'); if (c.checked) m[c.dataset.k] = 1; else delete m[c.dataset.k];
+    localStorage.setItem('compras', JSON.stringify(m));
+  }));
+}
+
+// ───────── evolução ─────────
+function caminho(pts, w, h, lo, hi) {
+  const xs = pts.map(p => +dData(p.d)), a = Math.min(...xs), b = Math.max(...xs);
+  const X = t => b === a ? w / 2 : (t - a) / (b - a) * w, Y = v => (1 - (v - lo) / (hi - lo)) * h;
+  return { d: pts.map((p, i) => (i ? 'L' : 'M') + X(xs[i]).toFixed(1) + ' ' + Y(p.v).toFixed(1)).join(' '), X, Y, a, b };
+}
+function contar(el, de, ate, casas, ms) {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = fNum(ate, casas); return; }
+  const t0 = performance.now();
+  const passo = t => { const k = Math.min(1, (t - t0) / ms), s = 1 - Math.pow(1 - k, 3);
+    el.textContent = fNum(de + (ate - de) * s, casas); if (k < 1) requestAnimationFrame(passo); };
+  requestAnimationFrame(passo);
+}
+function renderEvo() {
+  if (!DASH) { $("view").innerHTML = `<div class="campo"><div class="dentro" style="padding-bottom:22px"><div class="rot">Evolução</div><h1 class="titulo longo">Carregando os números.</h1></div></div>`;
+    fetch('data/dashboard.json').then(r => r.json()).then(d => { DASH = d; if ((location.hash || '') === '#evo') renderEvo(); })
+      .catch(() => { $("view").innerHTML = `<div class="campo"><div class="dentro" style="padding-bottom:22px"><h1 class="titulo longo">Ainda não há dados de evolução publicados.</h1></div></div>`; });
+    return; }
+  const P = DASH.peso, V = DASH.vo2max, R = DASH.recuperacao, ref = (DASH.metas || {}).referencias || {};
+  const med = P.serie.filter(p => p.media != null).map(p => ({ d: p.data, v: p.media }));
+  const vals = med.map(p => p.v), lo = Math.floor(Math.min(...vals)) - 0.5, hi = Math.ceil(Math.max(...vals)) + 0.5;
+  const c = caminho(med, 326, 96, lo, hi), ult = med[med.length - 1];
+  const sobe = P.ritmo_kg_semana_28d != null && P.ritmo_kg_semana_28d > 0.05;
+  const prog = Math.max(0, Math.min(1, P.progresso || 0));
+  const grades = []; for (let k = Math.ceil(lo); k <= Math.floor(hi); k++) grades.push(k);
+
+  let h = `<div class="campo"><div class="dentro">
+    <div class="topo"><div class="rot">Destino · ${fNum(P.alvo, 0)} kg</div><div class="selo">${P.ritmo_kg_semana_28d > 0 ? '+' : ''}${fNum(P.ritmo_kg_semana_28d, 2)} kg/sem</div></div>
+    <div style="display:flex;align-items:baseline;gap:8px"><div class="gigante" id="ev-num">${fNum(P.atual_media_neutra, 1)}</div><div style="font-family:var(--display);font-weight:600;font-size:26px">kg</div></div>
+    <div class="sub">Faltam <b>${fNum(P.atual_media_neutra - P.alvo, 1)} kg</b>. ${P.eta_no_ritmo_atual ? `No ritmo atual, a chegada é em <b>${dataLonga(P.eta_no_ritmo_atual)}</b>.`
+      : `${sobe ? 'A média está subindo, então no ritmo atual não chega.' : 'A média está parada.'} A ${fNum(P.ritmo_saudavel, 1)} kg por semana, a chegada é em <b>${dataLonga(P.eta_ritmo_saudavel)}</b>.`}</div>
+    <svg role="img" aria-label="Média neutra do peso ao longo do tempo" id="ev-graf" width="100%" height="118" viewBox="-2 -8 340 126" preserveAspectRatio="none" style="display:block;overflow:visible;touch-action:pan-y">
+      ${grades.map(g => `<line x1="0" x2="326" y1="${c.Y(g)}" y2="${c.Y(g)}" stroke="#fff" stroke-opacity="0.3"/><text x="0" y="${c.Y(g) - 4}" font-size="11" font-weight="600" fill="#fff">${g} kg</text>`).join('')}
+      <path pathLength="1" d="${c.d}" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1;animation:desenha 1.4s var(--curva) 0.15s both"/>
+      <circle cx="${c.X(+dData(ult.d))}" cy="${c.Y(ult.v)}" r="6" fill="var(--sol)" style="transform-box:fill-box;transform-origin:center;animation:pulso 2.2s ease-out 1.6s infinite"/>
+      <circle id="ev-ponto" cx="${c.X(+dData(ult.d))}" cy="${c.Y(ult.v)}" r="6" fill="var(--sol)" stroke="#fff" stroke-width="2" style="transform-box:fill-box;transform-origin:center;animation:pop 0.4s var(--curva) 1.35s both"/>
+      <text x="0" y="114" font-size="11" font-weight="600" fill="#fff">${fDia(new Date(c.a))}</text>
+      <text x="326" y="114" text-anchor="end" font-size="11" font-weight="600" fill="#fff">${fDia(new Date(c.b))}</text>
+    </svg>
+    <div id="ev-leitura" style="font-size:13px;font-weight:600;min-height:20px">Deslize o dedo no gráfico para ler um dia.</div>
+    <div><div class="regua">${`<div class="eixo"></div>`}${REGUA_RISCOS}<div class="marca" id="ev-marca" style="left:0%"></div></div>
+      <div class="legenda"><span>${fNum(P.partida, 1)} partida</span><span>${Math.round(prog * 100)}% do caminho</span><span>${fNum(P.alvo, 0)} meta</span></div></div>
+  </div>${ONDA}</div>`;
+
+  // VO2 máx
+  const vv = V.serie.map(p => p.valor).concat(V.alvo), vlo = Math.min(38, Math.floor(Math.min(...vv)) - 1), vhi = Math.max(48, Math.ceil(Math.max(...vv)) + 1);
+  const pos = x => Math.max(0, Math.min(100, (x - vlo) / (vhi - vlo) * 100));
+  h += `<div class="sol"><div style="display:flex;gap:16px;align-items:center">
+      <div style="flex:none"><div class="rot" style="font-size:12px">VO₂ máx</div><div class="grande">${fNum(V.referencia_nivel_do_mar, 1)}</div></div>
+      <div style="flex:1;font-size:13.5px;line-height:1.35">Só chegar a ${fNum(P.alvo, 0)} kg já leva a <b>${fNum(V.so_pelo_peso, 1)}</b>: VO₂ máx é medido por quilo.${V.ultimo && V.ultimo.altitude ? ` A leitura de ${fNum(V.ultimo.valor, 1)} foi em ${esc(V.ultimo.altitude)}.` : ''}</div></div>
+    <div style="padding-top:12px"><div class="regua"><div class="alvo" style="left:${pos(V.alvo[0])}%;width:${pos(V.alvo[1]) - pos(V.alvo[0])}%"></div><div class="eixo"></div>${REGUA_RISCOS}
+      <div class="marca" id="ev-vo2" style="left:0%;background:#fff"></div></div>
+      <div class="legenda"><span>${vlo}</span><span>faixa escura: meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)}</span><span>${vhi}</span></div></div></div>`;
+
+  // constância
+  const F = DASH.frequencia, topo = Math.max(6, ...F.map(f => f.ativos)), alt = v => Math.round(v / topo * 96);
+  h += `<div class="escuro"><div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:14px">
+      <h2>Constância</h2><div style="font-size:13px;font-weight:600">dias ativos por semana</div></div>
+    <div class="colunas" id="ev-col" style="grid-template-columns:repeat(${F.length},minmax(0,1fr))">
+      ${ref.dias_ativos_semana ? `<div class="ref" style="bottom:${alt(ref.dias_ativos_semana)}px"></div>` : ''}
+      ${F.map((f, i) => `<button type="button" data-i="${i}" aria-label="Semana de ${fDia(dData(f.semana))}: ${f.ativos} dias ativos" style="height:${Math.max(2, alt(f.ativos))}px;animation-delay:${(0.3 + i * 0.04).toFixed(2)}s"></button>`).join('')}
+    </div>
+    <div class="legenda" style="font-weight:600"><span>${fDia(dData(F[0].semana))}</span><span id="ev-colleg">linha: ritmo de agosto, ${fNum(ref.dias_ativos_semana, 1)}</span><span>${fDia(dData(F[F.length - 1].semana))}</span></div></div>`;
+
+  // recuperação
+  const ultimo = s => s.length ? s[s.length - 1].valor : null;
+  const fio = (s, a, b) => { if (s.length < 2) return ''; const k = caminho(s.map(p => ({ d: p.data, v: p.valor })), 64, 24, a, b);
+    return `<svg aria-hidden="true" width="64" height="24" viewBox="-2 -2 68 28" style="flex:none"><path d="${k.d}" fill="none" stroke="var(--sec)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`; };
+  const rec = (icone, nome, sub, serie, casas, un, a, b) => `<div class="linha">${ico(icone, 26, 2)}<span class="corpo" style="font-weight:700">${nome}<small>${sub}</small></span>${fio(serie, a, b)}<span class="medio">${fNum(ultimo(serie), casas)}<small style="color:var(--sec)"> ${un}</small></span></div>`;
+  h += `<section class="bloco"><div class="cab"><h2>Recuperação</h2><small>média de 7 dias</small></div>
+    ${rec('sono', 'Sono', 'alvo de ' + fNum(ref.sono_h, 0) + ' horas', R.sono, 1, 'h', 5, 8)}
+    ${rec('pulso', 'FC de repouso', 'era ' + ref.fc_repouso + ' em agosto e setembro', R.fc_repouso, 0, 'bpm', 46, 60)}
+    ${rec('vfc', 'VFC noturna', 'melhor mês fechou em ' + ref.hrv_ms, R.hrv, 0, 'ms', 25, 50)}</section>`;
+
+  h += `<section class="bloco"><div class="cab"><h2>Os dados</h2></div>
+    <details><summary>Pesagens · últimas 30</summary><div class="miolo"><table><tr><th>Data</th><th>Pesagem</th><th>Média neutra</th><th>Obs.</th></tr>${P.serie.slice(-30).reverse().map(p =>
+      `<tr><td>${fDia(dData(p.data))}</td><td>${fNum(p.peso, 2)}</td><td>${fNum(p.media, 2)}</td><td>${p.pos_esforco ? 'pós-jogo' : ''}</td></tr>`).join('')}</table></div></details>
+    <details><summary>VO₂ máx · todas as leituras</summary><div class="miolo"><table><tr><th>Data</th><th>VO₂ máx</th><th>Obs.</th></tr>${V.serie.slice().reverse().map(p =>
+      `<tr><td>${fDia(dData(p.data))}/${dData(p.data).getFullYear()}</td><td>${fNum(p.valor, 1)}</td><td>${esc(p.altitude || '')}</td></tr>`).join('')}</table></div></details>
+    <details><summary>Dias ativos · por semana</summary><div class="miolo"><table><tr><th>Semana de</th><th>Ativos</th><th>Pesados</th></tr>${F.slice().reverse().map(f =>
+      `<tr><td>${fDia(dData(f.semana))}</td><td>${f.ativos}</td><td>${f.pesados}</td></tr>`).join('')}</table></div></details></section>
+    <div class="rodape">Atualizado em ${esc(DASH.gerado_em.replace('T', ' às ').slice(0, 19))}. Peso do Renpho; sono, VFC, FC de repouso e VO₂ máx do Garmin. Dia ativo: 300 kcal ou mais de gasto em movimento.</div>`;
+  $("view").innerHTML = h;
+
+  contar($("ev-num"), P.atual_media_neutra - 5, P.atual_media_neutra, 1, 900);
+  requestAnimationFrame(() => { $("ev-marca").style.left = (prog * 100) + '%'; $("ev-vo2").style.left = pos(V.referencia_nivel_do_mar) + '%'; });
+  // o dedo acha a data; a leitura aparece embaixo do gráfico, sem balão flutuante
+  const g = $("ev-graf"), leit = $("ev-leitura"), ponto = $("ev-ponto");
+  const ler = ev => { const b = g.getBoundingClientRect(), px = (ev.clientX - b.left) / b.width * 340 - 2; let m = med[0], dist = Infinity;
+    med.forEach(p => { const k = Math.abs(c.X(+dData(p.d)) - px); if (k < dist) { dist = k; m = p; } });
+    ponto.style.animation = 'none'; ponto.setAttribute('cx', c.X(+dData(m.d))); ponto.setAttribute('cy', c.Y(m.v));
+    leit.textContent = fDia(dData(m.d)) + ' · média de ' + fNum(m.v, 2) + ' kg'; };
+  g.addEventListener('pointermove', ler); g.addEventListener('pointerdown', ler);
+  const leg = $("ev-colleg");
+  document.querySelectorAll('#ev-col button').forEach(b => { const f = F[+b.dataset.i];
+    const mostra = () => { document.querySelectorAll('#ev-col button').forEach(x => x.classList.toggle('on', x === b));
+      leg.textContent = 'semana de ' + fDia(dData(f.semana)) + ': ' + f.ativos + (f.ativos === 1 ? ' ativo, ' : ' ativos, ') + f.pesados + (f.pesados === 1 ? ' pesado' : ' pesados'); };
+    b.addEventListener('click', mostra); b.addEventListener('pointerenter', mostra); b.addEventListener('focus', mostra); });
+}
+
+// ───────── registrar (a lógica de gravação não mudou) ─────────
 let PHOTO_DATA = null, REG_TIPO = 'refeicao';
 function resizeImage(dataUrl, maxDim, quality, cb) {
   const im = new Image();
@@ -339,7 +515,7 @@ async function submitLog() {
     const r = await fetch('/api/log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     const j = await r.json().catch(() => ({}));
     if (r.ok && j.ok) {
-      st.className = 'status ok'; st.textContent = `✓ Anotado — ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} ${j.dia}${j.foto ? ' (com foto)' : ''}`;
+      st.className = 'status ok'; st.textContent = `Anotado: ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} em ${j.dia}${j.foto ? ', com foto' : ''}.`;
       document.getElementById('rg-txt').value = ''; PHOTO_DATA = null;
       const img = document.getElementById('rg-prev'); img.style.display = 'none'; document.getElementById('rg-foto').value = '';
       // mantém a aba Corrigir em dia — se a data saiu errada, o conserto está a um toque
@@ -352,13 +528,9 @@ async function submitLog() {
 // ---- correção de registros já gravados (o erro comum é a data errada) ----
 let EDIT_ID = null, RFILTRO = 7;
 const REFS = ['Café', 'Almoço', 'Jantar', 'Lanche', 'Outro'];
-
-function diasAtras(n) {
-  const d = new Date(); d.setDate(d.getDate() - n);
-  return d.toISOString().slice(0, 10);
-}
+function diasAtras(n) { const d = new Date(); d.setDate(d.getDate() - n); return isoLocal(d); }
 function rotuloData(iso) {
-  const hoje = new Date().toISOString().slice(0, 10);
+  const hoje = isoLocal();
   if (iso === hoje) return 'hoje';
   if (iso === diasAtras(1)) return 'ontem';
   const [, m, dd] = iso.split('-');
@@ -367,11 +539,7 @@ function rotuloData(iso) {
 async function acaoRegistro(id, metodo, corpo, st) {
   st.className = 'status'; st.textContent = metodo === 'DELETE' ? 'Excluindo…' : 'Salvando…';
   try {
-    const r = await fetch('/api/registro', {
-      method: metodo,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id, ...(corpo || {}) }),
-    });
+    const r = await fetch('/api/registro', { method: metodo, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id, ...(corpo || {}) }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok || !j.ok) {
       st.className = 'status err';
@@ -385,7 +553,7 @@ async function acaoRegistro(id, metodo, corpo, st) {
     EDIT_ID = null;
     renderReg();
     const st2 = document.getElementById('rg-status');
-    if (st2) { st2.className = 'status ok'; st2.textContent = j.acao === 'excluido' ? '✓ Registro excluído (foi pra lixeira do Notion, dá pra recuperar)' : `✓ Corrigido — ${j.refeicao || j.tipo} ${j.dia}`; }
+    if (st2) { st2.className = 'status ok'; st2.textContent = j.acao === 'excluido' ? 'Registro excluído. Foi para a lixeira do Notion e dá para recuperar.' : `Corrigido: ${j.refeicao || j.tipo} em ${j.dia}.`; }
     return true;
   } catch (e) {
     st.className = 'status err'; st.textContent = 'Falha de rede: ' + e;
@@ -395,40 +563,29 @@ async function acaoRegistro(id, metodo, corpo, st) {
 function renderListaRegistros() {
   const corte = diasAtras(RFILTRO);
   const itens = (REGISTROS || []).filter((x) => x.data >= corte);
-  const chips = [3, 7, 30].map((n) =>
-    `<button data-dias="${n}" class="${RFILTRO === n ? 'on' : ''}">${n} dias</button>`).join('');
-
-  if (!itens.length)
-    return `<div class="rdays">${chips}</div><div class="note">Nenhum registro nos últimos ${RFILTRO} dias.</div>`;
-
+  const chips = [3, 7, 30].map((n) => `<button data-dias="${n}" class="${RFILTRO === n ? 'on' : ''}">${n} dias</button>`).join('');
+  if (!itens.length) return `<div class="rdays">${chips}</div><div class="aviso">Nenhum registro nos últimos ${RFILTRO} dias.</div>`;
   const linhas = itens.map((x) => {
     const rotulo = x.tipo === 'Refeição' ? (x.refeicao || 'Refeição') : x.tipo;
-    const marcas = [x.foto ? '📷' : '', x.processado ? '✓ lido' : '⏳ na fila'].filter(Boolean).join(' · ');
+    const marcas = [x.foto ? 'foto' : '', x.processado ? 'lido' : 'na fila'].filter(Boolean).join(' · ');
     if (EDIT_ID === x.id) {
       const opts = REFS.map((r) => `<option${r === x.refeicao ? ' selected' : ''}>${r}</option>`).join('');
       return `<div class="ritem editing" data-id="${x.id}">
-        <div class="rhead"><span class="rd">Corrigindo ${rotulo}</span><span class="rk">${marcas}</span></div>
+        <div class="rhead"><span class="rd">Corrigindo ${esc(rotulo)}</span><span class="rk">${marcas}</span></div>
         <div class="redit">
-          <div><label style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);display:block;margin-bottom:5px">Data</label>
-            <input type="date" class="e-data" value="${x.data}"></div>
-          ${x.tipo === 'Refeição' ? `<div><label style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);display:block;margin-bottom:5px">Refeição</label>
-            <select class="e-ref">${opts}</select></div>` : ''}
-          <div><label style="font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);display:block;margin-bottom:5px">Texto</label>
-            <textarea class="e-txt">${(x.texto || '').replace(/</g, '&lt;')}</textarea></div>
-          <div class="ract">
-            <button class="e-save" style="background:var(--accent);color:#0b0e14;border-color:var(--accent);font-weight:700">Salvar</button>
-            <button class="e-cancel">Cancelar</button>
-          </div>
+          <div><label>Data</label><input type="date" class="e-data" value="${x.data}"></div>
+          ${x.tipo === 'Refeição' ? `<div><label>Refeição</label><select class="e-ref">${opts}</select></div>` : ''}
+          <div><label>Texto</label><textarea class="e-txt">${esc(x.texto || '')}</textarea></div>
+          <div class="ract"><button class="e-save cheio">Salvar</button><button class="e-cancel">Cancelar</button></div>
         </div></div>`;
     }
     return `<div class="ritem" data-id="${x.id}">
-      <div class="rhead"><span class="rd">${rotulo} · ${rotuloData(x.data)}</span><span class="rk">${marcas}</span></div>
-      ${x.texto ? `<div class="rtxt">${x.texto.slice(0, 160).replace(/</g, '&lt;')}${x.texto.length > 160 ? '…' : ''}</div>`
-                : `<div class="rtxt" style="opacity:.6">— sem texto${x.foto ? ', só foto' : ''} —</div>`}
-      <div class="ract"><button class="r-edit">✏️ Corrigir</button><button class="r-del danger">🗑️ Excluir</button></div>
+      <div class="rhead"><span class="rd">${esc(rotulo)} · ${rotuloData(x.data)}</span><span class="rk">${marcas}</span></div>
+      ${x.texto ? `<div class="rtxt">${esc(x.texto.slice(0, 160))}${x.texto.length > 160 ? '…' : ''}</div>`
+                : `<div class="rtxt">sem texto${x.foto ? ', só a foto' : ''}</div>`}
+      <div class="ract"><button class="r-edit">Corrigir</button><button class="r-del">Excluir</button></div>
     </div>`;
   }).join('');
-
   return `<div class="rdays">${chips}</div><div class="rlist">${linhas}</div>`;
 }
 function ligarListaRegistros() {
@@ -445,10 +602,7 @@ function ligarListaRegistros() {
     });
     el.querySelector('.e-cancel')?.addEventListener('click', () => { EDIT_ID = null; renderReg(); });
     el.querySelector('.e-save')?.addEventListener('click', () => {
-      const corpo = {
-        data: el.querySelector('.e-data').value,
-        texto: el.querySelector('.e-txt').value.trim(),
-      };
+      const corpo = { data: el.querySelector('.e-data').value, texto: el.querySelector('.e-txt').value.trim() };
       const ref = el.querySelector('.e-ref');
       if (ref) corpo.refeicao = ref.value;
       if (!corpo.data) { st.className = 'status err'; st.textContent = 'Escolha uma data.'; return; }
@@ -457,291 +611,71 @@ function ligarListaRegistros() {
     });
   });
 }
-
 function renderReg() {
-  const tipo = REG_TIPO;
-  const treino = tipo === 'treino';
-  const obs = tipo === 'observacao';
-  const corrigir = tipo === 'corrigir';
+  const tipo = REG_TIPO, treino = tipo === 'treino', obs = tipo === 'observacao', corrigir = tipo === 'corrigir';
   const label = treino ? 'treino' : obs ? 'observação' : 'refeição';
-
-  if (corrigir) {
-    $("view").innerHTML = `<section><h2>Corrigir registros</h2>
-      <div class="seg">
-        <button id="tab-ref">🍽️ Refeição</button>
-        <button id="tab-tre">🏋️ Treino</button>
-        <button id="tab-obs">📝 Observação</button>
-        <button id="tab-fix" class="on">✏️ Corrigir</button>
-      </div>
-      <div style="margin-top:13px">${renderListaRegistros()}</div>
-      <div id="rg-status" style="margin-top:12px"></div>
-      <div class="note">Mudar a data devolve o registro pra fila — eu releio na próxima análise, porque a leitura anterior estava no dia errado. Excluir manda pra lixeira do Notion, recuperável por 30 dias.</div>
-    </section>`;
+  const abas = `<div class="seg">
+      <button id="tab-ref" class="${tipo === 'refeicao' ? 'on' : ''}">Refeição</button>
+      <button id="tab-tre" class="${treino ? 'on' : ''}">Treino</button>
+      <button id="tab-obs" class="${obs ? 'on' : ''}">Nota</button>
+      <button id="tab-fix" class="${corrigir ? 'on' : ''}">Corrigir</button></div>`;
+  const topo = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
+    <div class="topo"><div class="rot">${corrigir ? 'Últimos registros' : 'Vai cru para o diário'}</div></div>
+    <h1 class="titulo">${corrigir ? 'Corrigir' : 'Registrar'}</h1></div></div>`;
+  const ligarAbas = () => {
     document.getElementById('tab-ref').addEventListener('click', () => { REG_TIPO = 'refeicao'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
     document.getElementById('tab-tre').addEventListener('click', () => { REG_TIPO = 'treino'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
     document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
-    ligarListaRegistros();
+    document.getElementById('tab-fix').addEventListener('click', () => { REG_TIPO = 'corrigir'; PHOTO_DATA = null; EDIT_ID = null; renderReg(); });
+  };
+  if (corrigir) {
+    $("view").innerHTML = topo + `<section class="bloco" style="padding-top:8px">${abas}${renderListaRegistros()}
+      <div id="rg-status" class="status" style="margin-top:12px"></div>
+      <div class="aviso">Mudar a data devolve o registro para a fila: eu releio na próxima análise, porque a leitura anterior estava no dia errado. Excluir manda para a lixeira do Notion, recuperável por 30 dias.</div></section>`;
+    ligarAbas(); ligarListaRegistros();
     return;
   }
-
-  $("view").innerHTML = `<section><h2>Registrar · cru</h2>
-    <div class="seg">
-      <button id="tab-ref" class="${tipo === 'refeicao' ? 'on' : ''}">🍽️ Refeição</button>
-      <button id="tab-tre" class="${treino ? 'on' : ''}">🏋️ Treino</button>
-      <button id="tab-obs" class="${obs ? 'on' : ''}">📝 Observação</button>
-      <button id="tab-fix">✏️ Corrigir</button>
-    </div>
-    <div class="form" style="margin-top:13px">
-      ${tipo === 'refeicao' ? `<div><label>Refeição</label><select id="rg-ref">
+  $("view").innerHTML = topo + `<section class="bloco" style="padding-top:8px">${abas}
+    <div class="form">
+      ${tipo === 'refeicao' ? `<div><label for="rg-ref">Refeição</label><select id="rg-ref">
         <option>Café</option><option selected>Almoço</option><option>Jantar</option><option>Lanche</option><option>Outro</option></select></div>` : ''}
-      <div><label>Data</label><input type="date" id="rg-data"></div>
-      <div><label>${treino ? 'Notas (opcional)' : obs ? 'Observação' : 'O que comeu (texto)'}</label>
-        <textarea id="rg-txt" placeholder="${treino ? 'ex.: Lower A · RPE 7 · tornozelo ok' : obs ? 'ex.: dor no ombro direito ao levantar peso, começou hoje' : 'ex.: 150g frango grelhado, arroz, salada'}"></textarea></div>
-      <div><label>${treino ? '📸 Screenshot do treino (Fitbod)' : obs ? 'Foto (opcional)' : 'Foto do prato (opcional)'}</label><div class="photo">
-        <label class="filebtn">📷 ${treino ? 'Anexar screenshot' : 'Tirar / escolher'}<input type="file" id="rg-foto" accept="image/*"></label>
+      <div><label for="rg-data">Data</label><input type="date" id="rg-data"></div>
+      <div><label for="rg-txt">${treino ? 'Notas (opcional)' : obs ? 'Observação' : 'O que comeu'}</label>
+        <textarea id="rg-txt" placeholder="${treino ? 'ex.: Lower A, RPE 7, tornozelo ok' : obs ? 'ex.: dor no ombro direito ao levantar peso, começou hoje' : 'ex.: 150 g de frango grelhado, arroz, salada'}"></textarea></div>
+      <div><label>${treino ? 'Screenshot do treino (Fitbod)' : obs ? 'Foto (opcional)' : 'Foto do prato ou do rótulo (opcional)'}</label><div class="photo">
+        <label class="filebtn">${treino ? 'Anexar screenshot' : 'Tirar ou escolher foto'}<input type="file" id="rg-foto" accept="image/*"></label>
         <img id="rg-prev" alt=""></div></div>
-      <button class="btn" id="rg-send">Registrar ${label}</button>
-      <div id="rg-status"></div>
-      <div class="note">${treino ? 'Sem análise agora — a screenshot vai crua. No sábado eu extraio exercícios/séries/carga pra 💪 Força (fallback do Fitbod).' : obs ? 'Sem análise agora — fica na caixa bruta pra eu considerar no próximo resumo.' : 'Sem análise agora — vai cru pra caixa. No sábado eu estimo os macros.'}</div>
+      <button class="botao" id="rg-send">Registrar ${label} ${ico('mais')}</button>
+      <div id="rg-status" class="status"></div>
+      <div class="aviso">${treino ? 'Sem análise agora: a screenshot vai crua. No fechamento da semana eu extraio exercícios, séries e carga.' : obs ? 'Sem análise agora: fica na caixa bruta para eu considerar no próximo resumo.' : 'Sem análise agora: vai cru para a caixa. No fechamento da semana eu leio tudo.'}</div>
     </div></section>`;
-  document.getElementById('rg-data').value = new Date().toISOString().slice(0, 10);
+  document.getElementById('rg-data').value = isoLocal();
   document.getElementById('rg-foto').addEventListener('change', previewPhoto);
   document.getElementById('rg-send').addEventListener('click', submitLog);
-  document.getElementById('tab-ref').addEventListener('click', () => { REG_TIPO = 'refeicao'; PHOTO_DATA = null; renderReg(); });
-  document.getElementById('tab-tre').addEventListener('click', () => { REG_TIPO = 'treino'; PHOTO_DATA = null; renderReg(); });
-  document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; PHOTO_DATA = null; renderReg(); });
-  document.getElementById('tab-fix').addEventListener('click', () => { REG_TIPO = 'corrigir'; PHOTO_DATA = null; EDIT_ID = null; renderReg(); });
-}
-// ───────────────────────── 📈 Evolução ─────────────────────────
-// Gráficos em SVG puro, sem biblioteca. Regras: um eixo por gráfico, uma cor de série
-// (azul) + cinza de contexto, rótulo direto só no fim da linha, valor completo no
-// tooltip e na tabela. Texto nunca usa a cor da série.
-let DASH = null;
-const NS = 'http://www.w3.org/2000/svg';
-const COR = '#3987e5', CINZA = '#5d6472';
-const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
-const svgEl = (tag, at = {}, txt) => { const e = document.createElementNS(NS, tag);
-  for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; return e; };
-const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls;
-  if (txt != null) e.textContent = txt; return e; };
-const dData = t => { const [y, m, d] = t.split('-').map(Number); return new Date(y, m - 1, d); };
-const fDia = d => String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0');
-const fNum = (v, c = 1) => v == null ? '—' : Number(v).toFixed(c).replace('.', ',');
-
-function tabela(host, cab, linhas) {
-  const d = el('details', 'tab'); d.append(el('summary', null, 'Ver os dados em tabela'));
-  const t = el('table'), h = el('tr'); cab.forEach(c => h.append(el('th', null, c))); t.append(h);
-  linhas.forEach(l => { const r = el('tr'); l.forEach(c => r.append(el('td', null, c))); t.append(r); });
-  d.append(t); host.append(d);
+  ligarAbas();
 }
 
-function caixa(pai, titulo, sub) {
-  const b = el('div', 'gbox'); b.append(el('h3', null, titulo));
-  if (sub) b.append(el('div', 'gsub', sub)); pai.append(b); return b;
-}
-
-// cfg: {h, yMin, yMax, yTicks, casas, series:[{nome, pts:[{d,v,...}], linha, raio, cor, oco}], refs:[{y,rot}], bandas:[{y0,y1,rot}]}
-function grafico(box, cfg) {
-  const W = Math.max(280, box.clientWidth - 20), H = cfg.h || 220;
-  const m = { t: 12, r: cfg.dir || 58, b: 22, l: 34 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
-  const todos = cfg.series.flatMap(s => s.pts.map(p => +dData(p.d)));
-  const x0 = Math.min(...todos), x1 = Math.max(...todos);
-  const X = t => m.l + (x1 === x0 ? iw / 2 : (t - x0) / (x1 - x0) * iw);
-  const Y = v => m.t + (1 - (v - cfg.yMin) / (cfg.yMax - cfg.yMin)) * ih;
-  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.rotulo });
-
-  (cfg.bandas || []).forEach(b => {
-    svg.append(svgEl('rect', { x: m.l, y: Y(b.y1), width: iw, height: Y(b.y0) - Y(b.y1), fill: 'rgba(255,255,255,.07)' }));
-    svg.append(svgEl('text', { x: m.l + iw + 6, y: Y((b.y0 + b.y1) / 2) + 4, class: 'gl' }, b.rot));
-  });
-  cfg.yTicks.forEach(t => {
-    svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(t), y2: Y(t), class: 'gg' }));
-    svg.append(svgEl('text', { x: m.l - 6, y: Y(t) + 4, class: 'gl', 'text-anchor': 'end' }, fNum(t, cfg.casasEixo ?? 0)));
-  });
-  for (let d = new Date(new Date(x0).getFullYear(), new Date(x0).getMonth() + 1, 1); +d <= x1; d = new Date(d.getFullYear(), d.getMonth() + 1, 1))
-    svg.append(svgEl('text', { x: X(+d), y: H - 6, class: 'gl', 'text-anchor': 'middle' }, MES[d.getMonth()]));
-  (cfg.refs || []).forEach(r => {
-    svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(r.y), y2: Y(r.y), class: 'gr' }));
-    svg.append(svgEl('text', { x: m.l + iw + 6, y: Y(r.y) + 4, class: 'gl' }, r.rot));
-  });
-
-  cfg.series.forEach(s => {
-    const cor = s.cor || COR;
-    if (s.linha && s.pts.length > 1) svg.append(svgEl('path', { fill: 'none', stroke: cor, 'stroke-width': 2,
-      'stroke-linejoin': 'round', 'stroke-linecap': 'round',
-      d: s.pts.map((p, i) => (i ? 'L' : 'M') + X(+dData(p.d)).toFixed(1) + ' ' + Y(p.v).toFixed(1)).join(' ') }));
-    if (s.raio) s.pts.forEach(p => svg.append(svgEl('circle', { cx: X(+dData(p.d)), cy: Y(p.v), r: s.raio,
-      fill: p.oco ? 'var(--panel)' : cor, stroke: p.oco ? cor : 'var(--panel)', 'stroke-width': 2 })));
-  });
-  // rótulo direto: só o último ponto da série principal
-  const pr = cfg.series.find(s => s.principal) || cfg.series[0], ult = pr.pts[pr.pts.length - 1];
-  if (ult) {
-    svg.append(svgEl('circle', { cx: X(+dData(ult.d)), cy: Y(ult.v), r: 4, fill: ult.oco ? 'var(--panel)' : (pr.cor || COR),
-      stroke: ult.oco ? (pr.cor || COR) : 'var(--panel)', 'stroke-width': 2 }));
-    svg.append(svgEl('text', { x: X(+dData(ult.d)) + 8, y: Y(ult.v) - 7, class: 'gv' }, fNum(ult.v, cfg.casas ?? 1)));
-  }
-
-  // camada de hover: a linha vertical acha a data; o tooltip lista todas as séries daquele dia
-  const fio = svgEl('line', { y1: m.t, y2: m.t + ih, stroke: '#7c8596', 'stroke-width': 1, visibility: 'hidden' });
-  const alvo = svgEl('rect', { x: m.l, y: m.t, width: iw, height: ih, fill: 'transparent' });
-  svg.append(fio, alvo); box.append(svg);
-  const tip = el('div', 'gtip'); box.append(tip);
-  const datas = [...new Set(cfg.series.flatMap(s => s.pts.map(p => p.d)))].sort();
-  const mover = ev => {
-    const r = svg.getBoundingClientRect(), px = (ev.clientX - r.left) / r.width * W;
-    let melhor = datas[0], dist = Infinity;
-    datas.forEach(d => { const k = Math.abs(X(+dData(d)) - px); if (k < dist) { dist = k; melhor = d; } });
-    const cx = X(+dData(melhor));
-    fio.setAttribute('x1', cx); fio.setAttribute('x2', cx); fio.setAttribute('visibility', 'visible');
-    tip.replaceChildren(el('div', 'td', fDia(dData(melhor)) + '/' + dData(melhor).getFullYear()));
-    cfg.series.forEach(s => { const p = s.pts.find(q => q.d === melhor); if (!p) return;
-      const l = el('div', 'tr'), ch = el('i', 'ch'); ch.style.background = s.cor || COR;
-      l.append(ch, el('b', null, fNum(p.v, cfg.casas ?? 1) + (cfg.unidade || '')), el('span', null, s.nome + (p.nota ? ' · ' + p.nota : '')));
-      tip.append(l); });
-    tip.style.display = 'block';
-    const bw = box.clientWidth, tw = tip.offsetWidth, cxPx = cx / W * r.width + 10;
-    tip.style.left = Math.min(Math.max(6, cxPx + 10), bw - tw - 6) + 'px'; tip.style.top = (svg.getBoundingClientRect().top - box.getBoundingClientRect().top + 6) + 'px';
-  };
-  alvo.addEventListener('pointermove', mover); alvo.addEventListener('pointerdown', mover);
-  alvo.addEventListener('pointerleave', () => { fio.setAttribute('visibility', 'hidden'); tip.style.display = 'none'; });
-}
-
-function barras(box, cfg) {
-  const W = Math.max(280, box.clientWidth - 20), H = cfg.h || 190;
-  const m = { t: 12, r: 78, b: 22, l: 26 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
-  const n = cfg.itens.length, passo = iw / n, larg = Math.min(24, passo - 2);
-  const Y = v => m.t + (1 - v / cfg.yMax) * ih, base = m.t + ih;
-  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.rotulo });
-  cfg.yTicks.forEach(t => { svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(t), y2: Y(t), class: 'gg' }));
-    svg.append(svgEl('text', { x: m.l - 6, y: Y(t) + 4, class: 'gl', 'text-anchor': 'end' }, String(t))); });
-  const tip = el('div', 'gtip');
-  cfg.itens.forEach((it, i) => {
-    const cx = m.l + passo * i + passo / 2, y = Y(it.v), h = Math.max(0, base - y), r = Math.min(4, h, larg / 2);
-    const x = cx - larg / 2;
-    // topo arredondado (4px), base reta: a barra nasce da linha de base
-    const d = h < 1 ? '' : `M${x} ${base} V${y + r} Q${x} ${y} ${x + r} ${y} H${x + larg - r} Q${x + larg} ${y} ${x + larg} ${y + r} V${base} Z`;
-    const b = svgEl('path', { d, fill: COR }); svg.append(b);
-    if (i % 2 === 0 || n <= 8) svg.append(svgEl('text', { x: cx, y: H - 6, class: 'gl', 'text-anchor': 'middle' }, it.rot));
-    const hit = svgEl('rect', { x: m.l + passo * i, y: m.t, width: passo, height: ih, fill: 'transparent', tabindex: 0 });
-    const mostra = () => { b.setAttribute('fill', '#6da7ec');
-      tip.replaceChildren(el('div', 'td', it.tit));
-      const l = el('div', 'tr'); l.append(el('b', null, String(it.v)), el('span', null, cfg.nome)); tip.append(l);
-      if (it.extra) tip.append(el('div', 'td', it.extra));
-      tip.style.display = 'block';
-      const px = cx / W * svg.getBoundingClientRect().width;
-      tip.style.left = Math.min(Math.max(6, px + 14), box.clientWidth - tip.offsetWidth - 6) + 'px'; tip.style.top = (svg.getBoundingClientRect().top - box.getBoundingClientRect().top + 6) + 'px'; };
-    const some = () => { b.setAttribute('fill', COR); tip.style.display = 'none'; };
-    hit.addEventListener('pointermove', mostra); hit.addEventListener('pointerdown', mostra);
-    hit.addEventListener('focus', mostra); hit.addEventListener('pointerleave', some); hit.addEventListener('blur', some);
-    svg.append(hit);
-  });
-  (cfg.refs || []).forEach(r => { svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(r.y), y2: Y(r.y), class: 'gr' }));
-    svg.append(svgEl('text', { x: m.l + iw + 6, y: Y(r.y) + 4, class: 'gl' }, r.rot)); });
-  box.append(svg, tip);
-}
-
-function cartaoMeta(pai, c) {
-  const b = el('div', 'meta'); b.append(el('div', 'rot', c.rotulo));
-  const v = el('div', 'val', c.valor); v.append(el('small', null, c.unidade)); b.append(v);
-  b.append(el('div', 'alvo', c.alvo));
-  const t = el('div', 'trilho'), i = el('i'); i.style.width = Math.round((c.progresso || 0) * 100) + '%'; t.append(i); b.append(t);
-  b.append(el('div', 'alvo', c.legendaTrilho));
-  c.linhas.forEach(l => { const d = el('div', 'linha');
-    if (l.seta) d.append(el('span', l.bom ? 'seta-boa' : 'seta-ruim', l.seta + ' '));
-    d.append(el('b', null, l.forte), document.createTextNode(' ' + l.resto)); b.append(d); });
-  pai.append(b);
-}
-
-function renderEvo() {
-  const app = $("view"); app.replaceChildren();
-  if (!DASH) { app.append(el('div', 'note', 'Carregando a evolução...'));
-    fetch('data/dashboard.json').then(r => r.json()).then(d => { DASH = d; renderEvo(); })
-      .catch(() => app.replaceChildren(el('div', 'note', 'Ainda não há dados de evolução publicados.')));
-    return; }
-  const P = DASH.peso, V = DASH.vo2max, R = DASH.recuperacao, ref = (DASH.metas || {}).referencias || {};
-  const dataBR = t => t ? fDia(dData(t)) + '/' + dData(t).getFullYear() : null;
-
-  const s1 = el('section'); s1.append(el('h2', null, 'Para onde estamos indo')); const g = el('div', 'metas'); s1.append(g); app.append(s1);
-  const sobe = P.ritmo_kg_semana_28d != null && P.ritmo_kg_semana_28d > 0.05;
-  cartaoMeta(g, { rotulo: 'Peso · média das leituras neutras', valor: fNum(P.atual_media_neutra, 1), unidade: 'kg',
-    alvo: `Meta ${fNum(P.alvo, 0)} kg · faltam ${fNum(P.atual_media_neutra - P.alvo, 1)} kg`, progresso: P.progresso,
-    legendaTrilho: `${Math.round((P.progresso || 0) * 100)}% do caminho desde ${fNum(P.partida, 1)} kg (${dataBR(DASH.metas.partida.data)})`,
-    linhas: [
-      { seta: sobe ? '▲' : '▼', bom: !sobe, forte: (P.ritmo_kg_semana_28d > 0 ? '+' : '') + fNum(P.ritmo_kg_semana_28d, 2) + ' kg/semana', resto: 'nos últimos 28 dias' },
-      P.eta_no_ritmo_atual ? { forte: dataBR(P.eta_no_ritmo_atual), resto: 'é quando chega, mantido o ritmo atual' }
-                           : { forte: 'No ritmo atual não chega', resto: '— a média está parada ou subindo' },
-      { forte: dataBR(P.eta_ritmo_saudavel), resto: `é a data com ${fNum(P.ritmo_saudavel, 1)} kg/semana, o ritmo que preserva massa magra` }] });
-  cartaoMeta(g, { rotulo: 'VO₂ máx · última leitura ao nível do mar', valor: fNum(V.referencia_nivel_do_mar, 1), unidade: 'ml/kg/min',
-    alvo: `Meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)} · faltam ${fNum(V.alvo[0] - V.referencia_nivel_do_mar, 1)}`, progresso: V.progresso,
-    legendaTrilho: `${Math.round((V.progresso || 0) * 100)}% do caminho desde ${fNum(V.partida, 1)}`,
-    linhas: [
-      { forte: fNum(V.so_pelo_peso, 1), resto: `é onde ele vai parar só de chegar a ${fNum(P.alvo, 0)} kg, sem ganhar fôlego nenhum — VO₂ máx é por quilo` },
-      V.ultimo && V.ultimo.altitude ? { forte: fNum(V.ultimo.valor, 1), resto: `foi a leitura de ${fDia(dData(V.ultimo.data))} em ${V.ultimo.altitude} — altitude derruba a estimativa, não é tendência` }
-                                    : { forte: 'Só corrida com GPS', resto: 'atualiza esse número; esteira e futebol não contam' }] });
-
-  // ── peso
-  const s2 = el('section'); s2.append(el('h2', null, 'Peso')); app.append(s2);
-  const b2 = caixa(s2, 'Média das 7 últimas leituras neutras, em kg', 'Pontos cinza = cada pesagem. Manhã seguinte a jogo fica fora da média.');
-  const med = P.serie.filter(p => p.media != null).map(p => ({ d: p.data, v: p.media }));
-  const cru = P.serie.map(p => ({ d: p.data, v: p.peso, nota: p.pos_esforco ? 'pós-jogo' : '' }));
-  grafico(b2, { h: 250, yMin: 84, yMax: 97, yTicks: [85, 88, 91, 94, 97], casas: 2, unidade: ' kg', rotulo: 'Peso ao longo do tempo',
-    series: [{ nome: 'pesagem do dia', pts: cru, raio: 2.5, cor: CINZA }, { nome: 'média neutra', pts: med, linha: true, principal: true }],
-    refs: [{ y: P.alvo, rot: 'meta ' + fNum(P.alvo, 0) }] });
-  tabela(b2, ['Data', 'Pesagem', 'Média neutra', 'Obs.'], P.serie.slice(-30).reverse().map(p =>
-    [fDia(dData(p.data)), fNum(p.peso, 2), fNum(p.media, 2), p.pos_esforco ? 'pós-jogo' : '']));
-
-  // ── VO2max
-  const s3 = el('section'); s3.append(el('h2', null, 'VO₂ máx')); app.append(s3);
-  const b3 = caixa(s3, 'Estimativa do Garmin, em ml/kg/min', 'Ponto vazado = medido em altitude. Só atualiza em corrida com GPS.');
-  grafico(b3, { h: 220, yMin: 38, yMax: 48, yTicks: [38, 40, 42, 44, 46, 48], casas: 1, rotulo: 'VO2 máximo ao longo do tempo',
-    series: [{ nome: 'VO₂ máx', linha: true, raio: 4, principal: true,
-      pts: V.serie.map(p => ({ d: p.data, v: p.valor, oco: !!p.altitude, nota: p.altitude || '' })) }],
-    bandas: [{ y0: V.alvo[0], y1: V.alvo[1], rot: 'meta' }] });
-  tabela(b3, ['Data', 'VO₂ máx', 'Obs.'], V.serie.slice().reverse().map(p => [dataBR(p.data), fNum(p.valor, 1), p.altitude || '']));
-
-  // ── recuperação: três gráficos pequenos, um eixo cada (nunca dois eixos no mesmo gráfico)
-  const s4 = el('section'); s4.append(el('h2', null, 'Recuperação · média móvel de 7 dias')); const trio = el('div', 'trio'); s4.append(trio); app.append(s4);
-  const mini = (titulo, sub, serie, o) => { const b = caixa(trio, titulo, sub);
-    grafico(b, Object.assign({ h: 170, dir: 76, rotulo: titulo, series: [{ nome: titulo, linha: true, principal: true,
-      pts: serie.map(p => ({ d: p.data, v: p.valor })) }] }, o)); };
-  mini('VFC noturna (ms)', 'Mais alto é melhor.', R.hrv, { yMin: 25, yMax: 50, yTicks: [30, 40, 50], casas: 0, refs: [{ y: ref.hrv_ms, rot: 'melhor mês' }] });
-  mini('FC de repouso (bpm)', 'Mais baixo é melhor.', R.fc_repouso, { yMin: 46, yMax: 60, yTicks: [48, 52, 56, 60], casas: 0, refs: [{ y: ref.fc_repouso, rot: 'ago–set' }] });
-  mini('Sono (horas)', 'A alavanca que levanta as outras duas.', R.sono, { yMin: 5, yMax: 8, yTicks: [5, 6, 7, 8], casas: 1, refs: [{ y: ref.sono_h, rot: 'alvo 7 h' }] });
-
-  // ── frequência
-  const s5 = el('section'); s5.append(el('h2', null, 'Constância')); app.append(s5);
-  const b5 = caixa(s5, 'Dias ativos por semana', 'Dia ativo = 300 kcal ou mais de gasto em movimento. Agosto rodou em 4–6.');
-  barras(b5, { h: 200, yMax: 7, yTicks: [0, 2, 4, 6], nome: 'dias ativos', rotulo: 'Dias ativos por semana',
-    itens: DASH.frequencia.map(f => ({ v: f.ativos, rot: fDia(dData(f.semana)), tit: 'Semana de ' + fDia(dData(f.semana)),
-      extra: f.pesados + ' com 600 kcal ou mais' })), refs: [{ y: ref.dias_ativos_semana, rot: 'ritmo de ago' }] });
-  tabela(b5, ['Semana de', 'Dias ativos', 'Dias pesados'], DASH.frequencia.slice().reverse().map(f => [fDia(dData(f.semana)), String(f.ativos), String(f.pesados)]));
-
-  app.append(el('div', 'note', 'Atualizado em ' + DASH.gerado_em.replace('T', ' às ').slice(0, 19) + '. Peso do Renpho; sono, VFC, FC de repouso e VO₂ máx do Garmin.'));
-}
-
+// ───────── rotas ─────────
 function route() {
-  const id = (location.hash || "#home").slice(1);
-  const fab = document.getElementById('fab'); if (fab) fab.style.display = (id === 'reg' || id === 'evo') ? 'none' : '';
+  const id = (location.hash || '#hoje').slice(1);
   if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
-  const day = DATA.dias.find(d => d.id === id);
-  renderNav(day ? id : 'home');
-  if (day) renderDay(day); else renderHome();
+  if (id === 'semana') { renderNav('semana'); renderSemana(); window.scrollTo(0, 0); return; }
+  const hoje = DATA.dias.find(d => d.data === hojeDDMM());
+  const dia = DATA.dias.find(d => d.id === id) || hoje || DATA.dias[0];
+  renderNav(dia === hoje || !DATA.dias.find(d => d.id === id) ? 'hoje' : 'semana');
+  renderDia(dia, dia === hoje);
   window.scrollTo(0, 0);
 }
-
 fetch("data/semana.json").then(r => r.json()).then(d => {
   DATA = d;
-  $("semana").textContent = "Semana " + d.semana;
-  const chips = [`<span class="chip obj">${d.objetivo}</span>`, `<span class="chip">${d.peso_atual} kg</span>`,
-    `<span class="chip">${d.dieta.calorias} kcal · ${d.dieta.proteina} g prot</span>`];
-  for (const [k, val] of Object.entries(d.fontes_status || {}))
-    chips.push(`<span class="chip ${val === 'ok' ? 'ok' : 'pend'}">${k}: ${val === 'ok' ? '✓' : '…'}</span>`);
-  $("chips").innerHTML = chips.join("");
-  $("foot").textContent = "Gerado em " + d.gerado_em + " · dados via Notion";
   window.addEventListener("hashchange", route);
   route();
-  fetch("/api/registros").then(r => r.ok ? r.json() : { items: [] }).then(j => { REGISTROS = j.items || []; route(); }).catch(() => {});
+  fetch("/api/registros").then(r => r.ok ? r.json() : { items: [] }).then(j => {
+    REGISTROS = j.items || [];
+    const id = (location.hash || '#hoje').slice(1);
+    if (id !== 'reg' && id !== 'evo' && id !== 'semana') route();   // as boias dependem dos registros
+  }).catch(() => {});
 });
 </script>
 </body>
