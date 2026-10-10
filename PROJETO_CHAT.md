@@ -673,6 +673,19 @@ A instrução está nos arquivos de `.claude/agents/`, na skill `revisao-semanal
 
 ---
 
+---
+
+## 20. A faixa de status fixa (pedido do Fabio, 10/10/2026)
+
+Acima das abas, em TODAS as telas, uma faixa escura que acompanha a rolagem: peso (média neutra) com quanto
+falta e % do caminho até 85 kg, barra de progresso, temperatura e sensação (Open-Meteo, Fundão, buscada no
+navegador e guardada 30 min), sono da última noite, VFC, FC de repouso, prontidão do Garmin e uma linha do dia
+("Sáb 10 · …", ou "Hoje sem plano · seg 12: …" quando o dia está fora da semana publicada). Ao rolar a página ela
+encolhe (some a linha do dia). Número que não existe aparece como "—", nunca como estimativa (§18). Em tela
+larga as abas ficam logo abaixo da faixa (`--hstatus` é medido por JavaScript).
+
+---
+
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
 
 **A porta de entrada é o Telegram, e quem responde é uma sessão do Claude Code com o canal

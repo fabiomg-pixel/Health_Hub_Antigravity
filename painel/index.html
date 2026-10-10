@@ -201,6 +201,27 @@
   .cat { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 16px 0 4px; }
   .rodape { padding: 22px; font-size: 12.5px; color: var(--sec); font-weight: 500; }
 
+  /* faixa de status: sempre no topo, acima das abas, em todas as telas */
+  .status { position: sticky; top: 0; z-index: 30; background: var(--tinta); color: var(--branco); }
+  .status .in { max-width: 520px; margin: 0 auto; padding: 8px 20px 8px; }
+  .status .l1 { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .status .peso { font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -0.03em; line-height: 1; }
+  .status .peso small { font-family: 'Figtree', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0; margin-left: 6px; opacity: 0.85; }
+  .status .temp { text-align: right; font-size: 12.5px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+  .status .temp b { font-family: var(--display); font-weight: 800; font-size: 17px; }
+  .status .temp { font-size: 11.5px; }
+  .status .trilho-s { height: 3px; background: rgba(255,255,255,0.22); margin: 6px 0 5px; }
+  .status .trilho-s i { display: block; height: 100%; background: var(--sol); min-width: 3px; transition: width 0.8s var(--curva); }
+  .status .mets { display: flex; gap: 12px; flex-wrap: nowrap; font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+  .status .mets b { font-family: var(--display); font-weight: 800; font-size: 14px; margin-right: 2px; }
+  .status .dia { margin-top: 4px; font-size: 12px; opacity: 0.9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .status.min .dia { display: none; }
+  .status.min .in { padding-top: 5px; padding-bottom: 6px; }
+  .status.min .trilho-s { margin: 4px 0 4px; }
+  .status.min .peso { font-size: 20px; }
+  .status.min .peso small { display: none; }
+  @media (min-width: 720px) { .status .in { max-width: 760px; } }
+
   /* abas de navegação — NÃO chamar de .barra: esse nome é da régua de proteína (14 px de altura) e as duas regras se somavam */
   nav.abas { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: center; pointer-events: none; }
   nav.abas .dentro { pointer-events: auto; width: 100%; max-width: 520px; background: var(--fundo); border-top: 2px solid var(--tinta);
@@ -215,7 +236,7 @@
   /* Tela larga: as abas voltam para o topo, sempre à vista, e a coluna ganha largura. */
   @media (min-width: 720px) {
     .app { max-width: 760px; padding-bottom: 48px; }
-    nav.abas { position: sticky; top: 0; bottom: auto; }
+    nav.abas { position: sticky; top: var(--hstatus, 0px); bottom: auto; }
     nav.abas .dentro { max-width: 760px; border-top: 0; border-bottom: 2px solid var(--tinta); padding-bottom: 0; }
     nav.abas a { flex-direction: row; gap: 9px; font-size: 15px; min-height: 54px; }
   }
@@ -230,6 +251,7 @@
 </style>
 </head>
 <body>
+<header class="status" id="status" aria-label="Situação atual"></header>
 <nav class="abas"><div class="dentro" id="nav"></div></nav>
 <div class="app"><div id="view"></div></div>
 
@@ -388,6 +410,42 @@ function renderDia(d, ehHoje) {
     nota.hidden = !nota.hidden; b.setAttribute('aria-expanded', String(!nota.hidden));
   }));
 }
+
+// ───────── faixa de status ─────────
+// Peso, progresso, métricas da noite, temperatura e uma linha do dia, em toda tela. Cada número
+// vem do fatos.json e do dashboard.json; o que não existe aparece como '—', nunca como palpite.
+let TEMPO = null;
+function carregarTempo() {
+  try { const c = JSON.parse(sessionStorage.getItem('tempo') || 'null'); if (c && Date.now() - c.t < 30 * 60 * 1000) { TEMPO = c; return; } } catch (e) {}
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=-22.86&longitude=-43.23&current=temperature_2m,apparent_temperature&timezone=America%2FSao_Paulo')
+    .then(r => r.ok ? r.json() : null).then(j => { if (!j || !j.current) return;
+      TEMPO = { t: Date.now(), temp: j.current.temperature_2m, sens: j.current.apparent_temperature };
+      try { sessionStorage.setItem('tempo', JSON.stringify(TEMPO)); } catch (e) {} renderStatus(); }).catch(() => {});
+}
+function renderStatus() {
+  const el = document.getElementById('status'); if (!el || !DATA) return;
+  const f = FATOS || {}, rc = f.recuperacao || {}, ps = f.peso || {}, P = DASH && DASH.peso;
+  const peso = ps.media_7_neutras_de_verdade ?? DATA.peso_atual, alvo = P ? P.alvo : 85;
+  const prog = P ? Math.max(0, Math.min(1, P.progresso || 0)) : 0;
+  const hojeD = DATA.dias.find(d => d.data === hojeDDMM());
+  let dia;
+  if (hojeD) dia = hojeDD(hojeD);
+  else { const ag = new Date(), base = new Date(ag.getFullYear(), ag.getMonth(), ag.getDate());
+    const prox = DATA.dias.find(x => { const [dd, mm] = x.data.split('/'); return new Date(2026, +mm - 1, +dd) >= base; });
+    dia = prox ? 'Hoje sem plano · ' + prox.nome.slice(0, 3).toLowerCase() + ' ' + prox.data.slice(0, 2) + ': ' + curto(partirFoco((prox.treino && prox.treino.foco) || '').titulo)
+               : 'Hoje fora do plano publicado'; }
+  const n = (v, c) => v == null ? '—' : fNum(v, c);
+  el.innerHTML = `<div class="in"><div class="l1"><div class="peso">${n(peso, 1)}<small>kg · faltam ${n(peso - alvo, 1)} · ${Math.round(prog * 100)}% do caminho</small></div>
+    ${TEMPO ? `<div class="temp"><b>${Math.round(TEMPO.temp)} °C</b><br>sensação ${Math.round(TEMPO.sens)}</div>` : ''}</div>
+    <div class="trilho-s"><i style="width:${prog * 100}%"></i></div>
+    <div class="mets"><span><b>${n(rc.sono_ultima_noite_h, 1)}</b>h de sono</span><span><b>${n(rc.hrv_ultima_noite, 0)}</b>VFC</span><span><b>${n(rc.fc_repouso_hoje, 0)}</b>FC rep.</span><span><b>${n(rc.prontidao_garmin_hoje, 0)}</b>prontidão</span></div>
+    <div class="dia">${esc(dia)}</div></div>`;
+  document.documentElement.style.setProperty('--hstatus', el.offsetHeight + 'px');
+}
+const curto = t => { t = String(t).split(': ').pop().split(',')[0].replace(/ — .*/, '').trim(); return t.charAt(0).toLowerCase() + t.slice(1); };
+const hojeDD = d => d.nome.slice(0, 3) + ' ' + d.data.slice(0, 2) + ' · ' + curto(partirFoco((d.treino && d.treino.foco) || 'Dia livre').titulo);
+new ResizeObserver(() => { const el = document.getElementById('status'); if (el) document.documentElement.style.setProperty('--hstatus', el.offsetHeight + 'px'); }).observe(document.getElementById('status'));
+window.addEventListener('scroll', () => { const el = document.getElementById('status'); if (el) el.classList.toggle('min', window.scrollY > 60); }, { passive: true });
 
 // ───────── início: a situação geral ─────────
 // Os números vêm do fatos.json, publicado toda manhã — os do plano da semana envelhecem em dois dias.
@@ -829,6 +887,7 @@ function renderReg() {
 
 // ───────── rotas ─────────
 function route() {
+  renderStatus();
   const id = (location.hash || '#home').slice(1);
   if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
@@ -851,8 +910,9 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
   route();
   // Tudo que chega depois redesenha a tela, menos o formulário (para não apagar o que está sendo digitado).
   const redesenha = () => { const id = (location.hash || '#home').slice(1); if (id !== 'reg' && id !== 'evo') route(); };
-  fetch("data/fatos.json").then(r => r.ok ? r.json() : null).then(f => { FATOS = f; if (f) redesenha(); }).catch(() => {});
-  fetch("data/dashboard.json").then(r => r.ok ? r.json() : null).then(x => { if (x) { DASH = x; redesenha(); } }).catch(() => {});
+  fetch("data/fatos.json").then(r => r.ok ? r.json() : null).then(f => { FATOS = f; renderStatus(); if (f) redesenha(); }).catch(() => {});
+  carregarTempo();
+  fetch("data/dashboard.json").then(r => r.ok ? r.json() : null).then(x => { if (x) { DASH = x; renderStatus(); redesenha(); } }).catch(() => {});
   fetch("/api/registros").then(r => r.ok ? r.json() : { items: [] }).then(j => {
     REGISTROS = j.items || [];
     redesenha();   // as boias dependem dos registros
