@@ -463,6 +463,66 @@ pós-exercício; frequência de força para reter massa magra em déficit.
 
 ---
 
+## 15. Protocolo de corrida — reconstrução da base (10/10/2026)
+
+**O pedido dele:** corrida diária de ~30 min, lenta na maior parte dos dias, começando em
+8,5 km/h, voltando "rapidamente" a 9,5–10 e chegando a 12 km/h.
+**A frequência diária está certa** — é a lição de agosto (18 dias ativos, FC de repouso 52).
+O "rapidamente" é o que precisa de freio.
+
+### O que os dados mostram (Strava + Garmin)
+
+| data | velocidade | FC média | cadência | contexto |
+|---|---|---|---|---|
+| 23/09 | 8,62 km/h | **143** | 80 | Rio, plano |
+| 28/09 | 8,29 km/h | — | 79 | 14 min só |
+| 07/10 | 8,06 km/h | — | 77 | Curitiba (930 m) |
+| 08/10 | 7,94 km/h | **154** | 77 | Curitiba, congresso |
+
+- **As corridas encolheram antes de ficarem lentas:** 14–21 min, 1,9–2,9 km. Ele pede 30 min e
+  vinha fazendo metade disso. O buraco é duração e frequência, não vontade.
+- **Cadência caiu de 94 (teste de potência, 08/08) para 77–80.** É a alavanca técnica mais
+  barata que existe aqui: mais passos por minuto na mesma velocidade = menos impacto por passo
+  (tornozelo) e melhor economia.
+- **Cuidado com a leitura de Curitiba:** 930 m de altitude e subidas inflam a FC. Não trate
+  7,94 km/h a 154 bpm como perda de forma — é fadiga de congresso + altitude.
+
+### O VFC não está "despencando" — ele caiu num evento
+
+Médias mensais: **36 (jul) → 38 (ago) → 39 (set) → 32 (out)**. Subiu durante o período todo e
+só caiu em outubro, junto com o sono indo a 5,77 h, o jogo duplo e a viagem. Corrida não vai
+consertar isso: **quem levanta HRV é hora de deitar.** A corrida diária ajuda a médio prazo (4–6
+semanas) e só se o sono segurar.
+
+### A progressão, com portaria entre as fases
+
+**Fase 1 — frequência (2 semanas).** 30 min, 6 dias por semana, a 8,0–8,5 km/h, **FC ≤150**.
+Cadência alvo 84–86 (metrônomo no relógio). Zero sessão rápida. O sucesso aqui é 5 de 7 dias,
+não o ritmo.
+
+**Porteira para a Fase 2:** FC de repouso ≤52 por 3 dias seguidos **E** HRV ≥38 **E** duas
+semanas com ≥5 corridas. Sem os três, fica na Fase 1 — e isso não é atraso, é o que faz a fase
+seguinte render.
+
+**Fase 2 — qualidade pontual (2–3 semanas).** Mantém os 30 min diários; **um** dia vira
+10 min fáceis + **4× 4 min a 9,5–10 km/h** (FC 155–170) com 2 min a 8 km/h entre eles. Mais
+2 dias com 4 strides de 20 s no fim. O resto continua fácil de verdade.
+
+**Fase 3 — velocidade.** 6× 3 min a 10,5–11 km/h. Os **12 km/h entram como tiro de 30–60 s**,
+nunca como ritmo contínuo.
+
+⚠️ **Dizer isto a ele com todas as letras:** 12 km/h contínuo é 5:00/km. Com 8,6 km/h a 143 bpm
+como base atual, isso é questão de **meses**, não de semanas. O teste de 08/08 mostrou que o teto
+existe (13 km/h em estágios, FC máx 181) — o que falta é base aeróbica para sustentar.
+
+### O KPI que vale olhar (melhor que perseguir velocidade)
+
+**FC média a 8,5 km/h na esteira**, mesma velocidade, mesmo horário, uma vez por semana.
+Base atual: ~143 bpm. Se cair para ~135 em 6 semanas, a base voltou — e aí a velocidade vem
+sozinha. Perseguir o ritmo antes disso é como querer sacar de uma conta que não teve depósito.
+
+---
+
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
 
 **A porta de entrada é o Telegram, e quem responde é uma sessão do Claude Code com o canal
