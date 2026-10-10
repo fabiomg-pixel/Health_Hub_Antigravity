@@ -957,5 +957,52 @@
     }
    }
   }
+ ],
+ "relatorios": [
+  {
+   "id": "carga",
+   "especialista": "Carga e recuperação",
+   "assina": "seu fisiologista",
+   "como_esta": "Você saiu do congresso no pior ponto dos últimos meses: na noite de 8 para 9 de outubro dormiu 4,3 horas e a VFC caiu para 18. Hoje dormiu 8 horas e a VFC voltou a 39, com a FC de repouso em 53. É uma boa noite, não é uma recuperação: a VFC média dos últimos 7 dias ainda está em 32, contra 36 de base, e o Garmin segue marcando sobrecarga. Mostra que o corpo se recupera quando o sono vem; ainda não mostra que já recuperou.",
+   "para_onde": "Uma semana de retomada. Duas forças plenas, na terça e na sexta, corridas de 30 minutos em ritmo fácil, e nenhuma sessão intensa. A meta não é desempenho, é repetir: aparecer e sair inteiro. A intensidade só volta quando a FC de repouso ficar em 52 ou menos por três dias, a VFC em 38 ou mais, e você somar duas semanas de cinco corridas.",
+   "nao_sei": [
+    "quando foi a sua última perna pesada (o último relato confirmado é Costas, em 01/10)",
+    "quantas corridas por semana você fez, porque ainda não existe essa contagem",
+    "o peso desde 06/10"
+   ]
+  },
+  {
+   "id": "nutricao",
+   "especialista": "Alimentação",
+   "assina": "sua nutricionista",
+   "como_esta": "A estrutura que você escolheu em 27/09 era boa e não resistiu ao dia a dia: em 30/09 o Yopro virou o almoço, e aquele dia terminou em coxinha e miojo. Não há registro de comida entre 07 e 09/10, os dias do congresso. A média do seu peso está em 95,14 kg, contra 94,83 nos últimos 28 dias, então subiu um pouco. Como o registro é esparso, eu não estimo as calorias da semana: seria inventar.",
+   "para_onde": "Quatro regras e mais nada. O Yopro de manhã é adicional e nunca substitui o almoço. De terça a sexta, almoço às 13h na marmita, com 35 g de proteína ou mais no rótulo. Às 17h, todo dia, iogurte, whey, granola e banana, antes de qualquer salgado. E uma refeição livre, no sábado à noite, só uma. Não há jejum nem corte: desintoxicar, aqui, é cumprir essas quatro.",
+   "nao_sei": [
+    "se existe marmita em casa; o pedido de 27/09 não aparece em nenhum registro",
+    "o que você comeu no café e no almoço de hoje, que só têm foto",
+    "quanto de frutas e legumes você já tem, então a feira vale para repor, não para comprar tudo"
+   ]
+  },
+  {
+   "id": "logistica",
+   "especialista": "Rotina e tempo",
+   "assina": "seu logístico",
+   "como_esta": "A semana começa com feriado, que é o primeiro dia em que dá para testar treino de manhã sem reunião nem trânsito. A previsão só é firme para segunda e terça; do resto em diante vale como tendência. De manhã, entre 6h e 9h, a temperatura fica entre 22 e 25 °C, e o calor forte só aparece no meio do dia.",
+   "para_onde": "Corrida na rua, de manhã, todos os dias em que houver corrida. Quinta e sexta têm chuva provável, mas essa previsão ainda vale pouco: confirme na manhã de cada dia, e a esteira é o plano B. Duas regras firmes: nenhuma corrida na rua depois das 17h45, porque o sol se põe às 17h56, e nenhuma academia no fim do dia quando houver reunião.",
+   "nao_sei": [
+    "se haverá futebol na quinta",
+    "se haverá campeonato no sábado",
+    "se a academia abre no feriado",
+    "a sua agenda de reuniões"
+   ]
+  },
+  {
+   "id": "cetico",
+   "especialista": "Revisão",
+   "assina": "o revisor",
+   "como_esta": "Este plano passou por duas revisões. A primeira versão foi barrada por três problemas: trazia números de uma rodada anterior (um peso de 94,87 que não existe no dado de hoje), pedia decisões demais para uma semana só, e usava critérios de intensidade que eu tinha inventado em vez dos que já estavam escritos no projeto. A segunda versão não teve nenhum problema grave.",
+   "para_onde": "Ficaram duas propostas que não posso decidir por você e dependem da sua resposta: fazer duas forças em vez de três esta semana, e até cinco corridas em vez das seis previstas. Na semana seguinte, se você concordar, tudo volta ao molde normal.",
+   "nao_sei": []
+  }
  ]
 }

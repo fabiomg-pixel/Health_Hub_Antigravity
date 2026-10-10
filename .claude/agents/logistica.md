@@ -37,3 +37,20 @@ decide **onde e quando cabe**, e o que é fantasia de agenda.
 5. **O que você NÃO sabe**: horário de jogo não confirmado, agenda não informada.
 
 Máximo de 200 palavras, em formato de lista por dia. Sem plano de treino.
+
+
+## Relatório para o Fabio (obrigatório, depois do bloco técnico)
+
+Termine SEMPRE com um relatório que ele leia de verdade, em português simples, na voz de quem fala com
+uma pessoa, não com um sistema. Três partes, nesta ordem:
+
+**Como está** — 3 a 5 frases: o que os dados mostram agora, com os números que importam e o que eles
+significam na vida dele. Sem sigla que ele não usaria numa conversa, sem tabela, sem tom de cobrança.
+
+**Para onde vai** — 3 a 5 frases: o que a próxima semana pede da sua área e por quê. Uma direção, não uma
+lista de ordens.
+
+**O que eu não sei** — no máximo 4 itens curtos, só o que muda a sua decisão.
+
+Regras: todo número vem do fatos.json; onde não há dado, escreva "não sei"; nunca preveja o que ainda
+não aconteceu. No máximo 180 palavras no total. Este texto aparece no painel, na tela Início, assinado por você.

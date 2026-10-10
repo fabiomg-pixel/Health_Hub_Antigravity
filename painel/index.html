@@ -119,6 +119,7 @@
   .pdia { font-size: 11.5px; font-weight: 600; color: var(--sec); }
   svg.graf { display: block; width: 100%; height: auto; overflow: visible; }
 
+  details.rel .par { font-size: 15.5px; line-height: 1.55; }
   /* cardápio da semana */
   .cardapio { display: grid; grid-template-columns: minmax(0, 1fr); }
   .cdia { border-bottom: 1px solid var(--fraca); }
@@ -412,6 +413,14 @@ function blocoDestino() {
     <a class="linha" href="#evo"><span class="corpo">VO₂ máx<small>meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)} · só o peso já leva a ${fNum(V.so_pelo_peso, 1)}</small></span><span class="medio">${fNum(V.referencia_nivel_do_mar, 1)}</span></a>
     <a class="botao claro" href="#evo" style="margin-top:14px">Abrir a evolução completa</a></section>`;
 }
+function blocoEspecialistas() {
+  const R = DATA.relatorios || []; if (!R.length) return '';
+  return `<section class="bloco"><div class="cab"><h2>Os especialistas</h2><small>como está e para onde vai</small></div>` +
+    R.map((r, i) => `<details class="rel" ${i === 0 ? 'open' : ''}><summary><span class="corpo">${esc(r.especialista)}<small>${esc(r.assina || '')}</small></span></summary>
+      <div class="miolo"><div class="cat" style="padding-top:4px">Como está</div><div class="par">${esc(r.como_esta)}</div>
+        <div class="cat">Para onde vai</div><div class="par">${esc(r.para_onde)}</div>
+        ${(r.nao_sei || []).length ? `<div class="cat">O que eu não sei</div>${r.nao_sei.map(x => `<div class="par" style="color:var(--sec)">${esc(x)}</div>`).join('')}` : ''}</div></details>`).join('') + `</section>`;
+}
 function blocoCardapio() {
   const largo = matchMedia('(min-width: 720px)').matches, hoje = hojeDDMM();
   const dias = DATA.dias.map(d => {
@@ -438,7 +447,7 @@ function renderInicio() {
     <h1 class="titulo longo">${esc((t0 => t0.charAt(0).toUpperCase() + t0.slice(1))(frase(partes.slice(1).join(' · ') || partes[0])))}</h1>
     <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
 
-  h += quadroAgora() + blocoHoje() + blocoCardapio() + blocoDestino();
+  h += quadroAgora() + blocoEspecialistas() + blocoHoje() + blocoCardapio() + blocoDestino();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
       return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') +

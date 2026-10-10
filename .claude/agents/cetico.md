@@ -51,3 +51,10 @@ preencher com estimativa.
 Para cada achado: `[GRAVE|MÉDIO|LEVE] <dia ou campo> — <o que está errado> → <a
 correção concreta>`. Sem preâmbulo, sem resumo, sem elogio ao plano. Se não houver
 nada, responda só "Nenhuma violação encontrada" e pare.
+
+
+## Relatório para o Fabio (obrigatório)
+
+Depois da lista de violações, escreva 3 a 5 frases humanas dizendo o que a revisão barrou, o que foi
+corrigido e o que ficou dependendo da resposta dele. Sem sigla, sem tom de bronca. No painel, ele aparece
+como "Revisão".

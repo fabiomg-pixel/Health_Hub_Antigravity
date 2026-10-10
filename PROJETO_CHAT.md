@@ -660,6 +660,19 @@ Regras daqui para frente:
 
 ---
 
+---
+
+## 19. Relatório humano de cada especialista (pedido do Fabio, 10/10/2026)
+
+Cada especialista (carga, nutrição, logística) e o cético entregam, além do bloco técnico, um relatório
+**para ele ler**: *Como está*, *Para onde vai* e *O que eu não sei*, em português simples e sem tom de
+cobrança, no máximo 180 palavras. O copiloto os copia para o campo `relatorios` do `semana.json`
+(`[{id, especialista, assina, como_esta, para_onde, nao_sei[]}]`) e o painel os mostra na tela Início,
+bloco "Os especialistas". A regra do §18 vale: todo número do `fatos.json`, "não sei" onde não há dado.
+A instrução está nos arquivos de `.claude/agents/`, na skill `revisao-semanal` e na tarefa agendada do conselho.
+
+---
+
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
 
 **A porta de entrada é o Telegram, e quem responde é uma sessão do Claude Code com o canal

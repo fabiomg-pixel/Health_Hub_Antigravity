@@ -63,7 +63,11 @@ Você é a camada de síntese, e ela **não pode ser paralela**: a dieta de quin
 a força de sábado depende do campeonato. Concilie os três num plano só. Veto de especialista não
 se negocia — se dois vetos se chocam, escolha o mais restritivo e diga isso no relatório.
 
-Os especialistas **nunca falam com o Fabio**. A voz é sempre a sua.
+Os especialistas **nunca falam com o Fabio diretamente**, mas cada um entrega um **relatório humano**
+(como está / para onde vai / o que não sei). Copie os quatro (carga, nutrição, logística e cético) para o
+campo `relatorios` do `semana.json`: `[{id, especialista, assina, como_esta, para_onde, nao_sei[]}]`. O painel
+mostra isso na tela Início. Não reescreva o que eles disseram; só corte para caber, e confira os números
+contra o `fatos.json`.
 
 ## Passo 4 — O balanço (essencial)
 
