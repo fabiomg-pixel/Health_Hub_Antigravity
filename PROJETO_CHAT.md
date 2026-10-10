@@ -603,8 +603,18 @@ tipografia.
 - **Nenhum emoji na interface.** O `semana.json` continua podendo ter emoji (ele também vira
   mensagem de Telegram): o painel tira na hora de desenhar, com `semEmoji()`.
 
-**Estrutura nova:** barra fixa embaixo com Hoje · Semana · Evolução · Registrar. A tela inicial
-é o DIA DE HOJE, não mais o resumo da semana. Exercícios numerados (`1️⃣ …`) viram linhas com
+**Estrutura (corrigida em 10/10 depois de o Fabio dizer que o sistema estava quebrado):** quatro
+abas — **Início · Hoje · Evolução · Registrar**. No celular a barra fica embaixo; em tela larga
+(≥720 px) ela volta para o topo e fica sempre à vista.
+
+- **Início é a entrada, e é a SITUAÇÃO GERAL** — não troque isso de novo. Na primeira versão do
+  redesenho eu pus o dia de hoje como entrada e espalhei o resumo numa aba chamada "Semana"; ele
+  leu como "o painel desapareceu", e tinha razão. O Início traz, nesta ordem: Agora (peso,
+  prontidão Garmin, índice, sono, lidos do `fatos.json` do dia) · Hoje (atalho para o dia) ·
+  Destino (régua do peso e VO₂ máx, atalho para a Evolução) · Prontidão de 7 dias · Os dias ·
+  Relatório · Regras · Compras.
+- **Hoje** é o dia de hoje, com a faixa dos sete dias para ir aos outros.
+- **Evolução** é aba, não página solta: mesma barra, mesmo lugar. Exercícios numerados (`1️⃣ …`) viram linhas com
 séries × repetições; as demais linhas do `treino.exercicios` viram "Contexto do dia", recolhido.
 A nota de cada refeição abre ao tocar na linha.
 
