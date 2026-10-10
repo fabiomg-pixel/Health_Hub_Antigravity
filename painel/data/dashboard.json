@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-09T22:24:42",
+ "gerado_em": "2026-10-10T08:42:12",
  "metas": {
   "_nota": "Ponto de destino de MEIO TERMO, definido pelo Fabio em 10/10/2026. A partir dele entra o 'modo avançado'.",
   "partida": {
@@ -32,7 +32,7 @@
   "progresso": 0.0,
   "ritmo_kg_semana_28d": 0.17,
   "eta_no_ritmo_atual": null,
-  "eta_ritmo_saudavel": "2027-02-27",
+  "eta_ritmo_saudavel": "2027-02-28",
   "ritmo_saudavel": 0.5,
   "serie": [
    {
@@ -853,6 +853,10 @@
    {
     "data": "2026-10-09",
     "valor": 30.0
+   },
+   {
+    "data": "2026-10-10",
+    "valor": 32.0
    }
   ],
   "fc_repouso": [
@@ -1207,6 +1211,10 @@
    {
     "data": "2026-10-09",
     "valor": 56.0
+   },
+   {
+    "data": "2026-10-10",
+    "valor": 55.0
    }
   ],
   "sono": [
@@ -1557,6 +1565,10 @@
    {
     "data": "2026-10-09",
     "valor": 5.74
+   },
+   {
+    "data": "2026-10-10",
+    "valor": 6.05
    }
   ]
  },
@@ -1643,7 +1655,7 @@
    "semana": "2026-10-05",
    "ativos": 4,
    "pesados": 0,
-   "com_dado": 5
+   "com_dado": 6
   }
  ]
 }

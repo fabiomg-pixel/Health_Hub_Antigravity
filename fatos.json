@@ -1,9 +1,9 @@
 {
- "gerado_em": "2026-10-09T22:34:03",
+ "gerado_em": "2026-10-10T08:42:11",
  "janela": {
-  "hoje": "2026-10-09",
-  "dia_semana": "Friday",
-  "semana_desde": "2026-10-02"
+  "hoje": "2026-10-10",
+  "dia_semana": "Saturday",
+  "semana_desde": "2026-10-03"
  },
  "peso": {
   "ultima": {
@@ -87,20 +87,24 @@
   "media_neutras_nas_ultimas_7": 95.14,
   "n_neutras_nas_ultimas_7": 7,
   "media_7_neutras_de_verdade": 95.14,
-  "media_28d_neutras": 94.79,
+  "media_28d_neutras": 94.83,
   "n_leituras_pos_esforco_14d": 1,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 1,
-  "banda_hoje": "r",
-  "prontidao_garmin_hoje": 1,
-  "dias_vermelhos_seguidos": 3,
-  "indice_medio_7d": 23,
-  "sono_medio_7d": 5.74,
-  "hrv_medio_7d": 30.0,
+  "indice_hoje": 77,
+  "banda_hoje": "g",
+  "prontidao_garmin_hoje": 46,
+  "dias_vermelhos_seguidos": 0,
+  "sono_ultima_noite_h": 8.05,
+  "sono_ultima_noite_score": 87,
+  "hrv_ultima_noite": 39,
+  "fc_repouso_hoje": 53,
+  "indice_medio_7d": 33.0,
+  "sono_medio_7d": 6.05,
+  "hrv_medio_7d": 32.0,
   "hrv_medio_28d": 36.0,
-  "fc_repouso_7d": 56.0,
+  "fc_repouso_7d": 55.0,
   "fc_repouso_28d": 54.0,
   "indice_hoje_confiavel": true
  },
@@ -128,8 +132,8 @@
    },
    {
     "data": "2026-10-09",
-    "kcal_ativas": 309.0,
-    "passos": 10853
+    "kcal_ativas": 315.0,
+    "passos": 11058
    }
   ],
   "registros_de_treino": [
@@ -218,10 +222,6 @@
    {
     "data": "2026-10-05",
     "texto": "Dias soltos. Pouco planejamento nas refeições nas últimas semanas. Processo de recuperação muscular e intestino preso hoje. Hora de recuperar a programação. O f"
-   },
-   {
-    "data": "2026-10-02",
-    "texto": "Treino de 01/10 foi COSTAS (screenshot). Sábado 03/10 tem jogo: Lower B vai pro domingo com RPE 7. Sexta: ombro+braço leve no lugar da folga."
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."

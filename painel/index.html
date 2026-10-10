@@ -388,7 +388,9 @@ function quadroAgora() {
       ${cel('Peso', fNum(ps.media_7_neutras_de_verdade ?? DATA.peso_atual, 1), 'kg', ult ? 'média neutra · última: ' + fNum(ult.peso_kg, 1) + ' em ' + ult.data.slice(8, 10) + '/' + ult.data.slice(5, 7) + (ult.pos_esforco ? ' (pós-jogo)' : '') : 'média neutra')}
       ${cel('Prontidão Garmin', gar ?? '—', '', 'média de 7 dias: ' + (t.prontidao_media_7d ?? '—'))}
       ${cel('Índice próprio', idx ?? '—', '', rc.indice_hoje_confiavel === false ? 'faltou dado do relógio: use a média, ' + (rc.indice_medio_7d ?? '—') : 'média de 7 dias: ' + (rc.indice_medio_7d ?? t.indice_medio_7d ?? '—'))}
-      ${cel('Sono', fNum(rc.sono_medio_7d ?? t.sono_media_7d, 1), 'h', 'média de 7 noites · alvo 7 h')}
+      ${rc.sono_ultima_noite_h != null
+        ? cel('Sono desta noite', fNum(rc.sono_ultima_noite_h, 1), 'h', (rc.sono_ultima_noite_score != null ? 'score ' + rc.sono_ultima_noite_score + ' · ' : '') + 'média de 7 noites: ' + fNum(rc.sono_medio_7d, 1) + ' h')
+        : cel('Sono', '—', '', 'o relógio ainda não enviou a noite · média de 7: ' + fNum(rc.sono_medio_7d ?? t.sono_media_7d, 1) + ' h')}
     </div>
     ${(f.lacunas || []).length ? `<div class="aviso" style="margin-top:0;border-top:0">Falta: ${esc(f.lacunas.join(' · '))}</div>` : ''}</section>`;
 }

@@ -193,6 +193,12 @@ def bloco_recuperacao(resumo):
         "banda_hoje": u7[-1].get("banda") if u7 else None,
         "prontidao_garmin_hoje": u7[-1].get("prontidao_garmin") if u7 else None,
         "dias_vermelhos_seguidos": vermelhos,
+        # A noite de hoje, separada da média: é a pergunta que ele faz de manhã ("dormi quanto?").
+        # Fica None enquanto o relógio não sincroniza — o Garmin só processa o sono depois disso.
+        "sono_ultima_noite_h": u7[-1].get("sono_h") if u7 else None,
+        "sono_ultima_noite_score": u7[-1].get("sono_score") if u7 else None,
+        "hrv_ultima_noite": u7[-1].get("hrv_ms") if u7 else None,
+        "fc_repouso_hoje": u7[-1].get("fc_repouso") if u7 else None,
         "indice_medio_7d": media([d.get("indice_prontidao") for d in u7], 0),
         "sono_medio_7d": media([d.get("sono_h") for d in u7]),
         "hrv_medio_7d": media([d.get("hrv_ms") for d in u7], 0),
