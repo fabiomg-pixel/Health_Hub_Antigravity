@@ -684,6 +684,15 @@ navegador e guardada 30 min), sono da última noite, VFC, FC de repouso, prontid
 encolhe (some a linha do dia). Número que não existe aparece como "—", nunca como estimativa (§18). Em tela
 larga as abas ficam logo abaixo da faixa (`--hstatus` é medido por JavaScript).
 
+## 20b. A faixa de status em imagens (10/10/2026)
+
+A faixa deixou de ser só número: (1) **ícone do tipo de tempo**, do código WMO do Open-Meteo (céu limpo, sol e
+nuvem, nublado, neblina, chuva, pancadas, trovoada; lua à noite) com a palavra ao lado; (2) **glifo do tipo
+de atividade do dia** (força, corrida, jogo, dia leve, descanso), o mesmo das telas Semana e Hoje, deduzido do
+`foco`; (3) **quatro anéis** de estado — sono (cheio em 7 h), VFC (cheio em 39, o melhor mês), FC de repouso
+(cheio em 52 ou menos; quanto mais alta, mais vazio) e prontidão do Garmin (0 a 100). Anel vazio com '—' =
+sem dado, nunca estimativa. Ao rolar, a faixa encolhe de ~150 para ~79 px.
+
 ---
 
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
