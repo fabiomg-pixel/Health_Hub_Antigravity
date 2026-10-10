@@ -7,4 +7,4 @@ cd "$(dirname "$0")"
 export TELEGRAM_STATE_DIR="$HOME/.claude/channels/telegram-saude"
 CLAUDE=$(ls -d "$HOME/Library/Application Support/Claude/claude-code/"*/claude.app/Contents/MacOS/claude 2>/dev/null | sort -V | tail -1)
 [ -x "$CLAUDE" ] || CLAUDE=$(command -v claude)
-exec "$CLAUDE" --channels plugin:telegram@claude-plugins-official "$@"
+exec "$CLAUDE" --model sonnet --channels plugin:telegram@claude-plugins-official "$@"
