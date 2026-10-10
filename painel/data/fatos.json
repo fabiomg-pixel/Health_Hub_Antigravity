@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-09T21:35:22",
+ "gerado_em": "2026-10-09T22:15:47",
  "janela": {
   "hoje": "2026-10-09",
   "dia_semana": "Friday",
@@ -65,6 +65,11 @@
     "data": "2026-10-08",
     "kcal_ativas": 343.0,
     "passos": 10946
+   },
+   {
+    "data": "2026-10-09",
+    "kcal_ativas": 309.0,
+    "passos": 10853
    }
   ],
   "registros_de_treino": [
@@ -81,6 +86,21 @@
   ],
   "sessoes_registradas": 2,
   "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço."
+ },
+ "vo2max": {
+  "serie": [
+   {
+    "data": "2026-10-07",
+    "valor": 41.2
+   },
+   {
+    "data": "2026-10-08",
+    "valor": 39.5
+   }
+  ],
+  "ultimo": 39.5,
+  "data_ultimo": "2026-10-08",
+  "aviso": "A estimativa vem da relação FC × ritmo em corrida com GPS. Altitude, calor, sono ruim e subida derrubam o número sem que a aptidão tenha mudado — 07 e 08/10/2026 foram medidos em Curitiba, a 930 m. Esteira e futebol não atualizam o valor."
  },
  "alimentacao_7d": {
   "dias_com_registro": [

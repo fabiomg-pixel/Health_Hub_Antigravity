@@ -487,7 +487,35 @@ O "rapidamente" é o que precisa de freio.
 - **Cuidado com a leitura de Curitiba:** 930 m de altitude e subidas inflam a FC. Não trate
   7,94 km/h a 154 bpm como perda de forma — é fadiga de congresso + altitude.
 
-### O VFC não está "despencando" — ele caiu num evento
+### VO2max: a série, e por que o tombo de outubro é meio falso
+
+| data | VO2max | |
+|---|---|---|
+| 12/08 | 42,4 | |
+| 18/08 | **42,7** | pico |
+| 19/08 | 42,6 | |
+| 21/09 | 42,2 | −0,5 em 5 semanas (colapso de frequência de setembro) |
+| 07/10 | 41,2 | **Curitiba, 930 m** |
+| 08/10 | **39,5** | **Curitiba, 930 m** |
+
+**Separe as duas quedas.** De 42,7 para 42,2 é real e explicada: setembro teve 9 dias ativos
+contra 18 de agosto. De 42,2 para 39,5 em duas corridas é **artefato**: a estimativa do Garmin
+sai da relação FC × ritmo, e as duas medições foram a 930 m de altitude, com subida, sono de
+5,8 h e fadiga de congresso. Ninguém perde 2,7 pontos de VO2max em 48 h — isso levaria meses
+de destreino.
+
+⚠️ **A série é esparsa de propósito:** o valor só atualiza em **corrida com GPS**. Esteira e
+futebol não alimentam — foram 6 atualizações em 3 meses. Cada corrida isolada pesa demais.
+
+**Conduta:** remedir no Rio, no plano, depois de uma semana normal e uma noite decente. Esse
+número é o honesto. E dizer a ele explicitamente que VO2max **responde a intensidade**
+(trabalho a 90–95% da FC máx), não a volume fácil — a corrida diária constrói o chão que torna
+a Fase 2 possível, mas é a Fase 2 que move o número.
+
+*(Coletado automaticamente desde 10/10/2026: `garmin_pull.py` grava `vo2max` e o `fatos.json`
+traz o bloco `vo2max` com a série e o aviso de altitude.)*
+
+### O VFC, que é outra coisa, não está despencando
 
 Médias mensais: **36 (jul) → 38 (ago) → 39 (set) → 32 (out)**. Subiu durante o período todo e
 só caiu em outubro, junto com o sono indo a 5,77 h, o jogo duplo e a viagem. Corrida não vai

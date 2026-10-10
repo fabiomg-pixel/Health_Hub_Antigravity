@@ -129,6 +129,16 @@ def puxar_dia(cliente, data):
     d["hrv_ms"] = cavar(hrv, "hrvSummary", "lastNightAvg")
     d["hrv_status"] = cavar(hrv, "hrvSummary", "status")
 
+    # VO2max: o Garmin só grava num dia em que houve CORRIDA COM GPS — esteira e futebol
+    # não alimentam a estimativa. Por isso a série é esparsa (6 atualizações em 3 meses) e
+    # cada corrida isolada pesa muito. Guardamos o valor do dia quando existir.
+    vo2 = tentar(cliente.get_max_metrics, iso)
+    if isinstance(vo2, list) and vo2:
+        generico = (vo2[0] or {}).get("generic") or {}
+        d["vo2max"] = generico.get("vo2MaxPreciseValue") or generico.get("vo2MaxValue")
+    else:
+        d["vo2max"] = None
+
     status = tentar(cliente.get_training_status, iso) or {}
     ts = None
     mapa = status.get("mostRecentTrainingStatus") or {}

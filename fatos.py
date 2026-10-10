@@ -202,6 +202,21 @@ def bloco_recuperacao(resumo):
     }
 
 
+def bloco_vo2(garmin_hist):
+    """Série esparsa: só muda em dia de corrida com GPS. Altitude distorce para baixo."""
+    pontos = [(x["data"], x.get("vo2max")) for x in garmin_hist if x.get("vo2max")]
+    pontos.sort()
+    return {
+        "serie": [{"data": d, "valor": v} for d, v in pontos[-10:]],
+        "ultimo": pontos[-1][1] if pontos else None,
+        "data_ultimo": pontos[-1][0] if pontos else None,
+        "aviso": ("A estimativa vem da relação FC × ritmo em corrida com GPS. Altitude, calor, "
+                  "sono ruim e subida derrubam o número sem que a aptidão tenha mudado — "
+                  "07 e 08/10/2026 foram medidos em Curitiba, a 930 m. Esteira e futebol não "
+                  "atualizam o valor."),
+    }
+
+
 def bloco_treino(resumo, garmin_hist, regs, desde):
     ativas = {d["data"]: d.get("kcal_ativas") for d in garmin_hist}
     dias = [d for d in resumo if d["data"] >= desde]
@@ -285,6 +300,7 @@ def main():
         "peso": bloco_peso(resumo, hist, regs),
         "recuperacao": bloco_recuperacao(resumo),
         "treino_7d": bloco_treino(resumo, hist, regs, desde),
+        "vo2max": bloco_vo2(hist),
         "alimentacao_7d": bloco_alimentacao(regs, desde),
         "lacunas": [],
     }

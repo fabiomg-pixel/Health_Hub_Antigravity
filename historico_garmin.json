@@ -1777,6 +1777,7 @@
    "prontidao_nivel": "MODERATE",
    "hrv_ms": 33,
    "hrv_status": "BALANCED",
+   "vo2max": 41.2,
    "training_status": "MAINTAINING_2",
    "vazio": false
   },
@@ -1797,16 +1798,17 @@
    "prontidao_nivel": "POOR",
    "hrv_ms": 22,
    "hrv_status": "LOW",
+   "vo2max": 39.5,
    "training_status": "STRAINED_4",
    "vazio": false
   },
   {
    "data": "2026-10-09",
-   "passos": 8790,
-   "gasto_kcal": 1663.0,
-   "kcal_ativas": 289.0,
+   "passos": 10853,
+   "gasto_kcal": 2395.0,
+   "kcal_ativas": 309.0,
    "fc_repouso": 59,
-   "estresse_medio": 60,
+   "estresse_medio": 53,
    "body_battery_max": 9,
    "body_battery_min": 5,
    "sono_h": 4.33,
@@ -1817,6 +1819,7 @@
    "prontidao_nivel": "POOR",
    "hrv_ms": 18,
    "hrv_status": "LOW",
+   "vo2max": null,
    "training_status": "STRAINED_4",
    "vazio": false
   }
