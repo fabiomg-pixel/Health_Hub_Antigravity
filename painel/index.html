@@ -120,6 +120,17 @@
   svg.graf { display: block; width: 100%; height: auto; overflow: visible; }
 
   details.rel .par { font-size: 15.5px; line-height: 1.55; }
+  /* blocos dobráveis do Início */
+  details.sec { padding: 0 22px; border-bottom: 0; animation: sobe 0.45s var(--curva) both; }
+  details.sec > summary { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    border-bottom: 2px solid var(--tinta); cursor: pointer; list-style: none; }
+  details.sec > summary::after { content: "+"; flex: none; margin-left: 6px; font-family: var(--display); font-weight: 800; font-size: 26px; line-height: 1; }
+  details.sec[open] > summary::after { content: "–"; }
+  details.sec > summary h2 { font-size: 24px; }
+  details.sec > summary small { margin-left: auto; font-size: 12.5px; font-weight: 600; color: var(--sec); text-align: right; max-width: 48%; }
+  details.sec > .corpo-sec { padding-bottom: 6px; }
+  details.sec:not([open]) { padding-bottom: 0; }
+  details.sec + details.sec > summary { border-top: 0; }
   /* cardápio da semana */
   .cardapio { display: grid; grid-template-columns: minmax(0, 1fr); }
   .cdia { border-bottom: 1px solid var(--fraca); }
@@ -397,7 +408,15 @@ function quadroAgora() {
 }
 function blocoHoje() {
   const d = DATA.dias.find(x => x.data === hojeDDMM());
-  if (!d) return `<section class="bloco"><div class="cab"><h2>Hoje</h2></div><div class="aviso" style="margin-top:0;border-top:0">O plano publicado não cobre o dia de hoje. A semana nova entra depois do conselho de domingo.</div></section>`;
+  if (!d) {
+    const agora = new Date(), chave = x => { const [dd, mm] = x.data.split('/'); return new Date(2026, +mm - 1, +dd); };
+    const prox = DATA.dias.find(x => chave(x) >= new Date(agora.getFullYear(), agora.getMonth(), agora.getDate()));
+    if (!prox) return `<section class="bloco"><div class="cab"><h2>Hoje</h2></div><div class="aviso" style="margin-top:0;border-top:0">O plano publicado não cobre o dia de hoje. A semana nova entra depois do conselho de domingo.</div></section>`;
+    const fp = partirFoco((prox.treino && prox.treino.foco) || 'Dia livre');
+    return `<section class="bloco"><div class="cab"><h2>Hoje</h2><small>fora do plano publicado</small></div>
+      <div class="par" style="color:var(--sec)">A semana publicada começa em ${esc(prox.nome.toLowerCase())}, ${esc(prox.data)}. O dia de hoje não tem plano escrito.</div>
+      <a class="linha" href="#${prox.id}">${glifo(prox)}<span class="corpo">Próximo: ${esc(fp.titulo)}<small>${esc(prox.nome)} · ${esc(prox.data)}</small></span></a></section>`;
+  }
   const f = partirFoco((d.treino && d.treino.foco) || 'Dia livre'), r = d.refeicoes || {};
   const prot = SLOTS.reduce((a, [k]) => a + ((r[k] && r[k].prot) || 0), 0);
   return `<section class="bloco"><div class="cab"><h2>Hoje</h2><small>${esc(d.nome)} · ${esc(d.data)}</small></div>
@@ -439,6 +458,24 @@ function blocoCardapio() {
   return `<section class="bloco"><div class="cab"><h2>Cardápio da semana</h2><small>meta: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal · ${DATA.dieta.proteina} g</small></div>
     <div class="cardapio">${dias}</div></section>`;
 }
+// Cada bloco do Início (menos o 'Agora') vira uma linha que abre ao toque. O resumo fica à vista
+// com o bloco fechado, e o que foi aberto fica lembrado neste aparelho.
+const ABERTOS_PADRAO = ['Hoje'];
+function dobrarSecoes() {
+  let guardado = {}; try { guardado = JSON.parse(localStorage.getItem('secoes') || '{}'); } catch (e) {}
+  [...document.querySelectorAll('#view > section.bloco')].slice(1).forEach(sec => {
+    const cab = sec.querySelector(':scope > .cab'); if (!cab) return;
+    const nome = cab.querySelector('h2').textContent;
+    const det = document.createElement('details'); det.className = 'sec ' + sec.className.replace('bloco', '').trim();
+    det.open = nome in guardado ? !!guardado[nome] : ABERTOS_PADRAO.includes(nome);
+    const sum = document.createElement('summary'); while (cab.firstChild) sum.appendChild(cab.firstChild);
+    const corpo = document.createElement('div'); corpo.className = 'corpo-sec';
+    [...sec.children].filter(c => c !== cab).forEach(c => corpo.appendChild(c));
+    det.append(sum, corpo);
+    det.addEventListener('toggle', () => { guardado[nome] = det.open; try { localStorage.setItem('secoes', JSON.stringify(guardado)); } catch (e) {} });
+    sec.replaceWith(det);
+  });
+}
 function renderInicio() {
   const partes = semEmoji(DATA.semana).split(/\s+·\s+/);
   const t = DATA.tendencias || {}, st = DATA.status_treino || {}, marcados = JSON.parse(localStorage.getItem('compras') || '{}');
@@ -479,6 +516,7 @@ function renderInicio() {
   const fontes = Object.entries(DATA.fontes_status || {}).map(([k, v]) => `${k}: ${semEmoji(v)}`).join(' · ');
   h += `<div class="rodape">Gerado em ${esc(DATA.gerado_em)}. ${esc(fontes)}</div>`;
   $("view").innerHTML = h;
+  dobrarSecoes();
   document.querySelectorAll('.compra input').forEach(c => c.addEventListener('change', () => {
     const m = JSON.parse(localStorage.getItem('compras') || '{}'); if (c.checked) m[c.dataset.k] = 1; else delete m[c.dataset.k];
     localStorage.setItem('compras', JSON.stringify(m));
