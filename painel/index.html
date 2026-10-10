@@ -201,73 +201,68 @@
   .cat { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 16px 0 4px; }
   .rodape { padding: 22px; font-size: 12.5px; color: var(--sec); font-weight: 500; }
 
-  /* faixa de status: sempre no topo, acima das abas, em todas as telas */
+  /* faixa de status: sempre no topo, acima das abas. Quatro linhas separadas, nada sobreposto:
+     1) peso e tempo  2) barra de progresso com a boia  3) atividade de hoje e estado do corpo  4) os quatro anéis */
   .status { position: sticky; top: 0; z-index: 30; background: var(--tinta); color: var(--branco); }
-  .status .in { max-width: 520px; margin: 0 auto; padding: 8px 20px 8px; }
-  .status .l1 { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-  .status .peso { font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -0.03em; line-height: 1; }
-  .status .peso small { font-family: 'Figtree', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0; margin-left: 6px; opacity: 0.85; }
-  .status .temp { text-align: right; font-size: 12.5px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
-  .status .temp b { font-family: var(--display); font-weight: 800; font-size: 17px; }
-  .status .temp { font-size: 11.5px; }
-  .status .trilho-s { height: 3px; background: rgba(255,255,255,0.22); margin: 6px 0 5px; }
-  .status .trilho-s i { display: block; height: 100%; background: var(--sol); min-width: 3px; transition: width 0.8s var(--curva); }
-  .status .mets { display: flex; gap: 12px; flex-wrap: nowrap; font-size: 11.5px; font-weight: 600; white-space: nowrap; }
-  .status .mets b { font-family: var(--display); font-weight: 800; font-size: 14px; margin-right: 2px; }
-  .status .dia { margin-top: 4px; font-size: 12px; opacity: 0.9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .status.min .dia { display: none; }
-  .status.min .in { padding-top: 5px; padding-bottom: 6px; }
-  .status.min .trilho-s { margin: 4px 0 4px; }
-  .status.min .peso { font-size: 20px; }
-  .status.min .peso small { display: none; }
+  .status::after { content: ""; display: block; height: 6px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0 3q7.5-5 15 0t15 0 15 0 15 0v3H0z' fill='%230E7396'/%3E%3C/svg%3E") repeat-x; animation: ondinha 7s linear infinite; }
+  .status .in { max-width: 520px; margin: 0 auto; padding: 10px 20px 10px; }
   @media (min-width: 720px) { .status .in { max-width: 760px; } }
-
+  .status .l1 { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .status .peso { font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
   .status .clima { display: flex; align-items: center; gap: 8px; }
   .status .clima > svg { flex: none; width: 34px; height: 34px; }
-  .status .l3 { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .status .aneis { display: flex; gap: 9px; }
-  .status .anel { position: relative; width: 46px; text-align: center; }
-  .status .anel svg { display: block; width: 46px; height: 46px; }
+  .status .temp { font-size: 11.5px; font-weight: 600; line-height: 1.25; white-space: nowrap; }
+  .status .temp b { display: block; font-family: var(--display); font-weight: 800; font-size: 18px; }
+  /* a boia fica numa faixa própria de 22 px acima do trilho, para nunca encostar no peso */
+  .status .trilho-s { position: relative; height: 3px; background: rgba(255,255,255,0.22); margin: 26px 0 12px; }
+  .status .trilho-s .falta { position: absolute; top: -19px; right: 22px; font-size: 11.5px; font-weight: 600; line-height: 1; opacity: 0.85; white-space: nowrap; }
+  .status .trilho-s .falta.esq { right: auto; left: 0; }
+  .status .trilho-s i { display: block; height: 100%; background: var(--sol); min-width: 3px; transition: width 0.8s var(--curva); }
+  .status .trilho-s .mb { position: absolute; top: -20px; width: 14px; height: 20px; margin-left: -7px; transition: left 0.9s var(--curva); animation: boia-bob 2.8s ease-in-out infinite; }
+  .status .trilho-s .mb.ini { margin-left: 0; }
+  .status .trilho-s .meta-f { position: absolute; right: 0; top: -17px; width: 14px; height: 16px; }
+  .status .cartoes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .status .cartao { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .status .picto { flex: none; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--campo); overflow: hidden; }
+  .status .picto.vazio { background: none; border: 2px dashed rgba(255,255,255,0.55); }
+  .status .picto.p-jogo { background: var(--sol); color: var(--tinta); }
+  .status .picto svg { width: 30px; height: 30px; }
+  .status .picto.mar svg { width: 48px; height: 48px; }
+  .status .cartao .tx { min-width: 0; }
+  .status .cartao .rt { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; opacity: 0.75; }
+  .status .cartao .vl { font-family: var(--display); font-weight: 800; font-size: 16px; letter-spacing: -0.02em; line-height: 1.15; margin-top: 2px; }
+  .status .cartao .sb { font-size: 11.5px; font-weight: 600; line-height: 1.25; margin-top: 2px; opacity: 0.85; }
+  .status .aneis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
+  .status .anel { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 0; text-align: center; }
+  .status .anel .rd { position: relative; flex: none; width: 34px; height: 34px; }
+  .status .anel svg { display: block; width: 34px; height: 34px; }
   .status .anel circle[pathLength] { animation: anel 0.9s var(--curva) both; }
-  .status .anel b { position: absolute; left: 0; right: 0; top: 0; height: 46px; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 800; font-size: 14px; letter-spacing: -0.02em; }
-  .status .anel span { display: block; font-size: 9.5px; font-weight: 600; letter-spacing: 0.02em; margin-top: 1px; white-space: nowrap; opacity: 0.85; }
-  .status .ativ { flex: none; display: flex; flex-direction: column; align-items: center; gap: 2px; }
-  .status .ativ .glifo { width: 46px; height: 46px; }
-  .status .ativ .glifo svg { width: 28px; height: 28px; }
-  .status .ativ .rot-a { font-size: 9.5px; font-weight: 600; opacity: 0.85; }
-  .status .glifo.g-vazio { border-color: var(--branco); color: var(--branco); }
-  .status .glifo.g-tinta { background: var(--branco); color: var(--tinta); }
-  .status .glifo.g-campo { background: var(--campo); }
-  .status.min .anel, .status.min .anel svg, .status.min .anel b { width: 30px; height: 30px; }
-  .status.min .anel b { font-size: 10.5px; }
-  .status.min .anel span, .status.min .ativ .rot-a { display: none; }
-  .status.min .ativ .glifo { width: 30px; height: 30px; } .status.min .ativ .glifo svg { width: 18px; height: 18px; }
-  .status.min .aneis { gap: 6px; }
-  .status.min .clima > svg { width: 24px; height: 24px; }
-  .status.min .temp { font-size: 0; } .status.min .temp b { font-size: 15px; }
-  @keyframes anel { from { stroke-dasharray: 0 1; } }
-
-  /* pequenos elementos gráficos do banner */
-  .status { position: sticky; }
-  .status::after { content: ""; display: block; height: 6px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='6' viewBox='0 0 60 6'%3E%3Cpath d='M0 3q7.5-5 15 0t15 0 15 0 15 0v3H0z' fill='%230E7396'/%3E%3C/svg%3E") repeat-x; animation: ondinha 7s linear infinite; }
-  .status .trilho-s { position: relative; overflow: visible; margin: 14px 0 8px; }
-  .status .trilho-s .mb { position: absolute; top: -17px; width: 14px; height: 20px; margin-left: -7px; transition: left 0.9s var(--curva); animation: boia-bob 2.8s ease-in-out infinite; }
-  .status .trilho-s .meta-f { position: absolute; right: 0; top: -15px; width: 14px; height: 16px; }
-  .status.min .trilho-s { margin: 10px 0 5px; }
-  .status .anel .estrela { position: absolute; top: -3px; right: -2px; width: 14px; height: 14px; animation: pop-e 0.5s var(--curva) 0.9s both; }
-  .status .anel .zzz { position: absolute; top: -6px; right: -1px; font-family: var(--display); font-weight: 800; font-size: 11px; animation: flutua-s 2.4s ease-in-out infinite; }
+  .status .anel b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-weight: 800; font-size: 12px; letter-spacing: -0.02em; }
+  .status .anel.cheio .miolo { fill: var(--sol); } .status .anel.cheio b { color: var(--tinta); }
+  .status .anel span { font-size: 10px; font-weight: 600; line-height: 1.1; opacity: 0.85; white-space: nowrap; }
+  /* encolhida, ao rolar: some a quarta linha e os textos de apoio */
+  .status.min .in { padding: 8px 20px 8px; }
+  .status.min .peso { font-size: 20px; }
+  .status.min .clima > svg { width: 24px; height: 24px; } .status.min .temp { font-size: 0; } .status.min .temp b { font-size: 15px; }
+  .status.min .trilho-s { margin: 8px 0 8px; }
+  .status.min .trilho-s .mb, .status.min .trilho-s .meta-f, .status.min .trilho-s .falta { display: none; }
+  .status.min .aneis, .status.min .cartao .sb, .status.min .cartao .rt { display: none; }
+  .status.min .picto { width: 32px; height: 32px; } .status.min .picto svg { width: 20px; height: 20px; } .status.min .picto.mar svg { width: 32px; height: 32px; }
+  .status.min .cartao .vl { font-size: 14px; margin-top: 0; }
+  /* gestos discretos */
   .t-sol { animation: gira 26s linear infinite; }
   .t-nuvem, .t-parcial, .t-neblina { animation: desliza-n 5s ease-in-out infinite; }
   .t-chuva path:last-of-type, .t-trovoada path:last-of-type { animation: chove 1.1s linear infinite; }
   .t-lua { animation: balanca-l 5s ease-in-out infinite; transform-origin: 50% 50%; }
-  .ativ-corrida svg { animation: corre 0.9s ease-in-out infinite alternate; }
-  .ativ-forca svg { animation: levanta 1.6s ease-in-out infinite; }
-  .ativ-jogo svg { animation: quica 1.1s ease-in-out infinite; }
-  .ativ-leve svg, .ativ-descanso svg { animation: boia-bob 4s ease-in-out infinite; }
+  .p-corrida svg { animation: corre 0.9s ease-in-out infinite alternate; }
+  .p-forca svg { animation: levanta 1.6s ease-in-out infinite; }
+  .p-jogo svg { animation: quica 1.1s ease-in-out infinite; }
+  .p-leve svg { animation: corre 1.8s ease-in-out infinite alternate; }
+  .p-descanso svg, .p-nenhum svg { animation: rede 3.4s ease-in-out infinite; transform-origin: 50% 20%; }
+  .picto.mar .ondas { animation: mar-anda var(--vel, 6s) linear infinite; }
   @keyframes ondinha { to { background-position-x: -60px; } }
   @keyframes boia-bob { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-2px) rotate(6deg); } }
-  @keyframes pop-e { 0% { transform: scale(0) rotate(-40deg); } 70% { transform: scale(1.3) rotate(10deg); } 100% { transform: scale(1) rotate(0); } }
-  @keyframes flutua-s { 0% { opacity: 0; transform: translate(0, 4px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translate(4px, -6px); } }
+  @keyframes anel { from { stroke-dasharray: 0 1; } }
   @keyframes gira { to { transform: rotate(360deg); } }
   @keyframes desliza-n { 0%, 100% { transform: translateX(-1.5px); } 50% { transform: translateX(1.5px); } }
   @keyframes chove { 0% { transform: translateY(-2px); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(3px); opacity: 0; } }
@@ -275,6 +270,8 @@
   @keyframes corre { from { transform: translateX(-2px); } to { transform: translateX(2px); } }
   @keyframes levanta { 0%, 100% { transform: translateY(1px); } 50% { transform: translateY(-3px); } }
   @keyframes quica { 0%, 100% { transform: translateY(2px) scale(1.04, 0.94); } 50% { transform: translateY(-3px) scale(0.96, 1.04); } }
+  @keyframes rede { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+  @keyframes mar-anda { to { transform: translateX(-16px); } }
 
   /* abas de navegação — NÃO chamar de .barra: esse nome é da régua de proteína (14 px de altura) e as duas regras se somavam */
   nav.abas { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: center; pointer-events: none; }
@@ -481,10 +478,10 @@ const TEMPO_SVG = {
 };
 function tipoDeTempo(code, dia) {
   if (code === 0) return dia ? ['sol', 'céu limpo'] : ['lua', 'noite limpa'];
-  if (code === 1 || code === 2) return ['parcial', 'parcialmente nublado'];
+  if (code === 1 || code === 2) return ['parcial', 'sol e nuvem'];
   if (code === 3) return ['nuvem', 'nublado'];
   if (code === 45 || code === 48) return ['neblina', 'neblina'];
-  if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return ['chuva', code >= 80 ? 'pancadas de chuva' : 'chuva'];
+  if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return ['chuva', code >= 80 ? 'pancadas' : 'chuva'];
   if (code >= 95) return ['trovoada', 'trovoada'];
   return ['nuvem', 'nublado'];
 }
@@ -495,40 +492,70 @@ function carregarTempo() {
       TEMPO = { t: Date.now(), temp: j.current.temperature_2m, sens: j.current.apparent_temperature, code: j.current.weather_code, dia: j.current.is_day === 1 };
       try { sessionStorage.setItem('tempo', JSON.stringify(TEMPO)); } catch (e) {} renderStatus(); }).catch(() => {});
 }
-// Um anel por métrica: o preenchimento é o quanto do alvo foi atingido. Sem dado, o anel fica vazio e o número vira '—'.
-function anel(valor, frac, rot, casas, curto) {
+// Pictogramas do banner: a atividade proposta para hoje, ou a falta dela.
+const PICTO = {
+  corrida: ['Corrida', '<circle cx="15.5" cy="4.5" r="2"/><path d="M8.5 10l4-2 3.5 3 3 .8M12.5 8l-1.5 5.5 3.5 2.5V21M11 13.5L9 17H5"/>'],
+  forca: ['Força', '<path d="M2.5 9.5v5M5.5 7v10M18.5 7v10M21.5 9.5v5M5.5 12h13"/>'],
+  jogo: ['Jogo', '<circle cx="12" cy="12" r="9"/><path d="M12 8.2l3.6 2.6-1.4 4.2H9.8l-1.4-4.2zM12 3v5.2M20.5 9.5l-4.9 1.3M17.3 19.2l-3.1-4.2M6.7 19.2l3.1-4.2M3.5 9.5l4.9 1.3"/>'],
+  leve: ['Dia leve', '<circle cx="12.5" cy="4.5" r="2"/><path d="M12.5 8v6l2.5 7M12.5 14L10 21M9 12l3.5-3.5 3 3"/>'],
+  descanso: ['Descanso', '<path d="M3 4v17M21 4v17"/><path d="M3 7.5c3 9.5 15 9.5 18 0c-5 3.2-13 3.2-18 0z" fill="currentColor"/>'],
+  definir: ['A definir', '<path d="M9.3 9.2a2.8 2.8 0 1 1 4 2.5c-.9.5-1.3 1-1.3 2.1M12 17.5v.01"/>'],
+  nenhum: ['Sem treino', '<path d="M3 4v17M21 4v17"/><path d="M3 7.5c3 9.5 15 9.5 18 0c-5 3.2-13 3.2-18 0z" fill="currentColor"/>']
+};
+function atividadeDeHoje() {
+  const d = DATA.dias.find(x => x.data === hojeDDMM());
+  if (d) { const foco = (d.treino && d.treino.foco) || '', t = partirFoco(foco).titulo;
+    if (/^a definir/i.test(foco)) return { tipo: 'definir', sub: curto(t) };
+    return { tipo: tipoDoDia(d), sub: curto(t) }; }
+  const ag = new Date(), base = new Date(ag.getFullYear(), ag.getMonth(), ag.getDate());
+  const prox = DATA.dias.find(x => { const [dd, mm] = x.data.split('/'); return new Date(2026, +mm - 1, +dd) >= base; });
+  return { tipo: 'nenhum', sub: prox ? prox.nome.slice(0, 3).toLowerCase() + ' ' + prox.data.slice(0, 2) + ': ' + PICTO[/^a definir/i.test(prox.treino.foco) ? 'definir' : tipoDoDia(prox)][0].toLowerCase() : 'fora do plano publicado' };
+}
+// O estado do corpo como estado do mar. Sai da banda do índice de recuperação de hoje (fatos.json);
+// sem índice confiável, vira neblina e diz que não há dado — nunca um palpite.
+function estadoDoCorpo(rc) {
+  const ok = rc.indice_hoje != null && rc.indice_hoje_confiavel !== false, b = rc.banda_hoje;
+  if (!ok) return { cls: 'neblina', nome: 'Sem dado', sub: 'aguardando o relógio', amp: 0, vel: '0s' };
+  if (b === 'g') return { cls: 'calmo', nome: 'Mar calmo', sub: 'índice ' + fNum(rc.indice_hoje, 0) + ', faixa alta', amp: 2, vel: '9s' };
+  if (b === 'r') return { cls: 'agitado', nome: 'Mar agitado', sub: 'índice ' + fNum(rc.indice_hoje, 0) + ', faixa baixa', amp: 9, vel: '2.6s' };
+  return { cls: 'ondulado', nome: 'Mar ondulado', sub: 'índice ' + fNum(rc.indice_hoje, 0) + ', faixa média', amp: 5, vel: '5s' };
+}
+function pictoMar(e) {
+  if (!e.amp) return `<svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="5 5"><path d="M8 18h32M8 26h32M8 34h32"/></svg>`;
+  const onda = y => { let d = `M-16 ${y}`; for (let x = -16; x < 64; x += 16) d += `q4 ${-e.amp} 8 0t8 0`; return d; };
+  return `<svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><g class="ondas" style="--vel:${e.vel}"><path d="${onda(19)}"/><path d="${onda(29)}" opacity="0.75"/><path d="${onda(39)}" opacity="0.5"/></g></svg>`;
+}
+// Um anel por métrica: o preenchimento é o quanto do alvo foi atingido; no alvo, o miolo acende.
+// Sem dado, o anel fica vazio e o número vira '—'.
+function anel(valor, frac, rot, casas) {
   const v = valor == null ? '—' : fNum(valor, casas), f = valor == null ? 0 : Math.max(0, Math.min(1, frac));
-  const enfeite = valor == null ? '' : (frac >= 1 ? '<svg class="estrela" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 0l1.7 4.6L13.5 5l-3.8 3 1.3 4.8L7 10l-4 2.8L4.3 8 .5 5l4.8-.4z" fill="#fff"/></svg>' : (curto ? '<span class="zzz" aria-hidden="true">z</span>' : ''));
-  return `<div class="anel" role="img" aria-label="${rot}: ${v}"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="4"/>
-    <circle pathLength="1" cx="20" cy="20" r="16" fill="none" stroke="var(--sol)" stroke-width="4" stroke-linecap="butt" transform="rotate(-90 20 20)" style="stroke-dasharray:${f.toFixed(3)} 1"/></svg><b>${v}</b><span>${rot}</span>${enfeite}</div>`;
+  return `<div class="anel${valor != null && frac >= 1 ? ' cheio' : ''}" role="img" aria-label="${rot}: ${v}"><div class="rd"><svg viewBox="0 0 40 40" aria-hidden="true"><circle class="miolo" cx="20" cy="20" r="13" fill="none"/><circle cx="20" cy="20" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3.5"/>
+    <circle pathLength="1" cx="20" cy="20" r="17" fill="none" stroke="var(--sol)" stroke-width="3.5" transform="rotate(-90 20 20)" style="stroke-dasharray:${f.toFixed(3)} 1"/></svg><b>${v}</b></div><span>${rot}</span></div>`;
 }
 function renderStatus() {
   const el = document.getElementById('status'); if (!el || !DATA) return;
   const f = FATOS || {}, rc = f.recuperacao || {}, ps = f.peso || {}, P = DASH && DASH.peso, ref = (DASH && DASH.metas && DASH.metas.referencias) || {};
   const peso = ps.media_7_neutras_de_verdade ?? DATA.peso_atual, alvo = P ? P.alvo : 85;
   const prog = P ? Math.max(0, Math.min(1, P.progresso || 0)) : 0;
-  const hojeD = DATA.dias.find(d => d.data === hojeDDMM());
-  let diaAtiv = hojeD, dia;
-  if (hojeD) dia = hojeDD(hojeD);
-  else { const ag = new Date(), base = new Date(ag.getFullYear(), ag.getMonth(), ag.getDate());
-    const prox = DATA.dias.find(x => { const [dd, mm] = x.data.split('/'); return new Date(2026, +mm - 1, +dd) >= base; });
-    diaAtiv = prox;
-    dia = prox ? 'Hoje sem plano · ' + prox.nome.slice(0, 3).toLowerCase() + ' ' + prox.data.slice(0, 2) + ': ' + curto(partirFoco((prox.treino && prox.treino.foco) || '').titulo)
-               : 'Hoje fora do plano publicado'; }
   const n = (v, c) => v == null ? '—' : fNum(v, c);
   const tt = TEMPO ? tipoDeTempo(TEMPO.code, TEMPO.dia) : null;
-  const g = diaAtiv ? GLIFOS[tipoDoDia(diaAtiv)] : null;
-  el.innerHTML = `<div class="in"><div class="l1"><div class="peso">${n(peso, 1)}<small>kg · faltam ${n(peso - alvo, 1)} · ${Math.round(prog * 100)}% do caminho</small></div>
-    ${TEMPO ? `<div class="clima" title="${esc(tt[1])}"><svg class="t-${tt[0]}" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${TEMPO_SVG[tt[0]]}</svg>
-      <div class="temp"><b>${Math.round(TEMPO.temp)} °C</b><br>${esc(tt[1])}</div></div>` : ''}</div>
-    <div class="trilho-s"><i style="width:${prog * 100}%"></i><svg class="mb" viewBox="0 0 14 20" aria-hidden="true" style="left:${(prog * 100).toFixed(1)}%"><path d="M2 18C0 12 1 6 7 5c6 1 7 7 5 13z" fill="#FFB48F" stroke="#fff" stroke-width="1.2"/><rect x="1" y="12" width="12" height="2.6" fill="#fff"/><circle cx="7" cy="3" r="1.8" fill="#FFB48F" stroke="#fff" stroke-width="1"/></svg><svg class="meta-f" viewBox="0 0 14 16" aria-hidden="true"><path d="M3 15V2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M3 2.5h8l-2 3 2 3H3z" fill="#FFB48F"/></svg></div>
-    <div class="l3"><div class="aneis">
-      ${anel(rc.sono_ultima_noite_h, (rc.sono_ultima_noite_h || 0) / 7, 'sono h', 1, rc.sono_ultima_noite_h < 6)}
+  const at = atividadeDeHoje(), pa = PICTO[at.tipo], sem = at.tipo === 'nenhum' || at.tipo === 'definir';
+  const ec = FATOS ? estadoDoCorpo(rc) : { cls: 'neblina', nome: 'Carregando', sub: '', amp: 0 };
+  el.innerHTML = `<div class="in"><div class="l1"><div class="peso">${n(peso, 1)} kg</div>
+    ${TEMPO ? `<div class="clima"><svg class="t-${tt[0]}" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${TEMPO_SVG[tt[0]]}</svg>
+      <div class="temp"><b>${Math.round(TEMPO.temp)} °C</b>${esc(tt[1])}</div></div>` : ''}</div>
+    <div class="trilho-s" role="img" aria-label="Progresso até ${n(alvo, 0)} kg: ${Math.round(prog * 100)}%"><i style="width:${prog * 100}%"></i><span class="falta${prog > 0.55 ? ' esq' : ''}">faltam ${n(peso - alvo, 1)} kg · ${Math.round(prog * 100)}% do caminho</span><svg class="mb${prog < 0.03 ? ' ini' : ''}" viewBox="0 0 14 20" aria-hidden="true" style="left:${(prog * 100).toFixed(1)}%"><path d="M2 18C0 12 1 6 7 5c6 1 7 7 5 13z" fill="#FFB48F" stroke="#fff" stroke-width="1.2"/><rect x="1" y="12" width="12" height="2.6" fill="#fff"/><circle cx="7" cy="3" r="1.8" fill="#FFB48F" stroke="#fff" stroke-width="1"/></svg><svg class="meta-f" viewBox="0 0 14 16" aria-hidden="true"><path d="M3 15V2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M3 2.5h8l-2 3 2 3H3z" fill="#FFB48F"/></svg></div>
+    <div class="cartoes">
+      <div class="cartao"><div class="picto p-${at.tipo}${sem ? ' vazio' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${pa[1]}</svg></div>
+        <div class="tx"><div class="rt">Hoje</div><div class="vl">${esc(pa[0])}</div><div class="sb">${esc(at.sub)}</div></div></div>
+      <div class="cartao"><div class="picto mar${ec.amp ? '' : ' vazio'}">${pictoMar(ec)}</div>
+        <div class="tx"><div class="rt">Corpo</div><div class="vl">${esc(ec.nome)}</div><div class="sb">${esc(ec.sub)}</div></div></div>
+    </div>
+    <div class="aneis">
+      ${anel(rc.sono_ultima_noite_h, (rc.sono_ultima_noite_h || 0) / 7, 'sono h', 1)}
       ${anel(rc.hrv_ultima_noite, (rc.hrv_ultima_noite || 0) / (ref.hrv_ms || 39), 'VFC', 0)}
-      ${anel(rc.fc_repouso_hoje, rc.fc_repouso_hoje ? (ref.fc_repouso || 52) / rc.fc_repouso_hoje : 0, 'FC rep.', 0)}
-      ${anel(rc.prontidao_garmin_hoje, (rc.prontidao_garmin_hoje || 0) / 100, 'prontidão', 0)}</div>
-      ${g ? `<div class="ativ ativ-${tipoDoDia(diaAtiv)}" role="img" aria-label="Atividade do dia: ${g[2]}"><span class="glifo ${g[0]}">${g[1]}</span><span class="rot-a">${g[2]}</span></div>` : ''}</div>
-    <div class="dia">${esc(dia)}</div></div>`;
+      ${anel(rc.fc_repouso_hoje, rc.fc_repouso_hoje ? (ref.fc_repouso || 52) / rc.fc_repouso_hoje : 0, 'FC repouso', 0)}
+      ${anel(rc.prontidao_garmin_hoje, (rc.prontidao_garmin_hoje || 0) / 100, 'prontidão', 0)}</div></div>`;
   document.documentElement.style.setProperty('--hstatus', el.offsetHeight + 'px');
 }
 const curto = t => { t = String(t).split(': ').pop().split(',')[0].replace(/ — .*/, '').trim(); return t.charAt(0).toLowerCase() + t.slice(1); };

@@ -693,14 +693,21 @@ de atividade do dia** (força, corrida, jogo, dia leve, descanso), o mesmo das t
 (cheio em 52 ou menos; quanto mais alta, mais vazio) e prontidão do Garmin (0 a 100). Anel vazio com '—' =
 sem dado, nunca estimativa. Ao rolar, a faixa encolhe de ~150 para ~79 px.
 
-## 20c. Elementos gráficos pequenos no banner (10/10/2026)
+## 20c. O banner: atividade de hoje e estado do corpo (10/10/2026)
 
-A mascote (Boia com rosto) foi tentada e **removida a pedido do Fabio**: ele queria "pequenos elementos gráficos"
-no banner, não um personagem. Ficaram: **boia pequena** na barra de progresso, que anda até o peso atual e boia, com
-uma **bandeirinha** na meta de 85 kg; **estrelinha** no anel que bate o alvo (e um "z" no anel de sono quando a noite
-foi curta); **ondinha** animada na base do banner; e um **gesto discreto** em cada ícone — sol que gira devagar,
-nuvem que desliza, chuva que cai, lua que balança; corrida desliza, força levanta, jogo quica, dia leve boia. Tudo
-para com "reduzir movimento". Sem emoji e sem texto de humor: o humor ficou só no movimento.
+A mascote (Boia com rosto) foi tentada e **removida a pedido do Fabio**. O banner fixo tem quatro linhas
+separadas, **sem nada posicionado por cima de texto** (ele reclamou de sobreposição):
+1. peso (média neutra) à esquerda, ícone do tempo + temperatura à direita;
+2. barra de progresso até 85 kg, com a boia pequena numa faixa própria acima do trilho, o texto
+   "faltam X kg · N% do caminho" e a bandeirinha da meta;
+3. dois cartões: **HOJE** (pictograma da atividade proposta: corrida, força, jogo, dia leve, descanso;
+   quadro tracejado com "A definir" ou "Sem treino" + o próximo dia quando não há proposta) e **CORPO**
+   (o estado do mar: calmo / ondulado / agitado conforme a banda g / y / r do índice de recuperação do
+   `fatos.json`; **neblina e "Sem dado" quando o índice não existe ou não é confiável** — §18);
+4. quatro anéis (sono, VFC, FC de repouso, prontidão); no alvo, o miolo acende.
+Ao rolar, encolhe de ~215 para ~97 px (somem os anéis, a boia e os textos de apoio). Lições: classe `.sol`
+já existia na página com `padding` e esmagou um ícone — prefixar tudo com `.status`; medir sobreposição por
+`getBoundingClientRect`, não a olho.
 
 ---
 
