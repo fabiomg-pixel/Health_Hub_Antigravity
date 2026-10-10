@@ -730,6 +730,14 @@ function route() {
   renderDia(dia, dia === hoje);
   window.scrollTo(0, 0);
 }
+// Celular deixa a página aberta em segundo plano por dias. Ao voltar depois de 10 min, recarrega:
+// é o que garante plano, números e a própria página sempre da última publicação.
+let SAIU_EM = 0;
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) { SAIU_EM = Date.now(); return; }
+  if (SAIU_EM && Date.now() - SAIU_EM > 10 * 60 * 1000 && !document.querySelector('#rg-txt')?.value) location.reload();
+});
+
 fetch("data/semana.json").then(r => r.json()).then(d => {
   DATA = d;
   window.addEventListener("hashchange", route);
