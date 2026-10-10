@@ -201,6 +201,20 @@
   .cat { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 16px 0 4px; }
   .rodape { padding: 22px; font-size: 12.5px; color: var(--sec); font-weight: 500; }
 
+  /* a Boia: mascote do painel. Expressão e frase vêm do dado de hoje; sem dado, ela espera. */
+  .mascote { display: flex; align-items: flex-end; gap: 10px; margin-top: 4px; }
+  .mascote svg { flex: none; width: 92px; height: 108px; overflow: visible; }
+  .mascote .corpo-m { animation: bob 3.6s ease-in-out infinite; transform-origin: 40px 90px; }
+  .mascote .zz { animation: flutua 2.6s ease-in-out infinite; }
+  .mascote .zz2 { animation-delay: 1.1s; }
+  .mascote .brilho { animation: pisca 2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .mascote .balao { position: relative; background: var(--branco); color: var(--tinta); padding: 11px 14px; font-size: 14.5px; font-weight: 600; line-height: 1.35; margin-bottom: 26px; }
+  .mascote .balao::before { content: ""; position: absolute; left: -8px; bottom: 14px; border: 8px solid transparent; border-left-width: 0; border-right-color: var(--branco); }
+  .mascote .balao small { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec); margin-bottom: 2px; }
+  @keyframes bob { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg) translateY(-2px); } }
+  @keyframes flutua { 0% { opacity: 0; transform: translate(0, 6px); } 40% { opacity: 1; } 100% { opacity: 0; transform: translate(6px, -10px); } }
+  @keyframes pisca { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+
   /* faixa de status: sempre no topo, acima das abas, em todas as telas */
   .status { position: sticky; top: 0; z-index: 30; background: var(--tinta); color: var(--branco); }
   .status .in { max-width: 520px; margin: 0 auto; padding: 8px 20px 8px; }
@@ -506,6 +520,49 @@ const hojeDD = d => d.nome.slice(0, 3) + ' ' + d.data.slice(0, 2) + ' · ' + cur
 new ResizeObserver(() => { const el = document.getElementById('status'); if (el) document.documentElement.style.setProperty('--hstatus', el.offsetHeight + 'px'); }).observe(document.getElementById('status'));
 window.addEventListener('scroll', () => { const el = document.getElementById('status'); if (el) el.classList.toggle('min', window.scrollY > 60); }, { passive: true });
 
+// ───────── a Boia ─────────
+// Humor sem cobrança e sem palpite: a expressão sai do dado de hoje, e sem dado ela diz que espera.
+const BOIA_FRASES = {
+  animado: ['Dormiu o que o corpo pedia. Hoje o corpo agradece, e eu também.', 'Noite boa! Eu só boio, mas dá para sentir a diferença daqui.'],
+  ok: ['Nem lá, nem cá: dia de fazer o combinado e mais nada.', 'Dia comum. Os melhores meses são feitos deles.'],
+  sonolento: ['Noite curta. Hoje a gente negocia com a cama e discute menos com o relógio.', 'Pouco sono por aqui. Vai devagar: boia quem não luta contra a maré.'],
+  curioso: ['O relógio ainda não mandou a noite. Eu não chuto: espero.', 'Sem dado, sem palpite. Enquanto isso, eu fico boiando e olhando.']
+};
+function humorBoia() {
+  const rc = (FATOS && FATOS.recuperacao) || {}, h = rc.sono_ultima_noite_h, i = rc.indice_hoje;
+  let m = 'curioso';
+  if (h != null) m = h < 6 ? 'sonolento' : (h >= 7 && (i == null || i >= 40) ? 'animado' : 'ok');
+  const frases = BOIA_FRASES[m], k = new Date().getDate() % frases.length;
+  return { m, frase: frases[k] };
+}
+function mascote() {
+  const { m, frase } = humorBoia();
+  const olhos = { animado: '<circle cx="31" cy="40" r="5.5" fill="#fff" stroke="#071C26" stroke-width="2.5"/><circle cx="49" cy="40" r="5.5" fill="#fff" stroke="#071C26" stroke-width="2.5"/><circle cx="32" cy="39" r="2.4" fill="#071C26"/><circle cx="50" cy="39" r="2.4" fill="#071C26"/>',
+    ok: '<circle cx="31" cy="40" r="5.5" fill="#fff" stroke="#071C26" stroke-width="2.5"/><circle cx="49" cy="40" r="5.5" fill="#fff" stroke="#071C26" stroke-width="2.5"/><circle cx="31" cy="41" r="2.4" fill="#071C26"/><circle cx="49" cy="41" r="2.4" fill="#071C26"/>',
+    sonolento: '<path d="M25 41q6 5 12 0M43 41q6 5 12 0" fill="none" stroke="#071C26" stroke-width="3" stroke-linecap="round"/><path d="M26 47q5 3 10 0M44 47q5 3 10 0" fill="none" stroke="#071C26" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/>',
+    curioso: '<circle cx="31" cy="40" r="5.5" fill="#fff" stroke="#071C26" stroke-width="2.5"/><circle cx="49" cy="40" r="5.5" fill="#fff" stroke="#071C26" stroke-width="2.5"/><circle cx="34" cy="38" r="2.4" fill="#071C26"/><circle cx="52" cy="38" r="2.4" fill="#071C26"/>' }[m];
+  const boca = { animado: '<path d="M32 52q8 11 16 0z" fill="#071C26" stroke="#071C26" stroke-width="2" stroke-linejoin="round"/><path d="M36 56q4 3 8 0" fill="none" stroke="#FFB48F" stroke-width="2" stroke-linecap="round"/>',
+    ok: '<path d="M33 53q7 6 14 0" fill="none" stroke="#071C26" stroke-width="3" stroke-linecap="round"/>',
+    sonolento: '<ellipse cx="40" cy="54" rx="4.5" ry="5.5" fill="#071C26"/>',
+    curioso: '<path d="M34 54h12" stroke="#071C26" stroke-width="3" stroke-linecap="round"/>' }[m];
+  const extra = { animado: '<g class="brilho"><path d="M70 22l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/></g><g class="brilho" style="animation-delay:.8s"><path d="M8 30l1.5 3.5 3.5 1.5-3.5 1.5L8 40l-1.5-3.5L3 35l3.5-1.5z" fill="#fff"/></g>',
+    ok: '',
+    sonolento: '<text class="zz" x="62" y="26" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="15" fill="#fff">z</text><text class="zz zz2" x="70" y="14" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="11" fill="#fff">z</text>',
+    curioso: '<text x="63" y="22" font-family="Bricolage Grotesque,sans-serif" font-weight="800" font-size="22" fill="#fff">?</text>' }[m];
+  const rotulo = { animado: 'descansada', ok: 'tranquila', sonolento: 'sonolenta', curioso: 'esperando o relógio' }[m];
+  return `<div class="mascote"><svg role="img" aria-label="A Boia, mascote do painel, ${rotulo}" viewBox="0 0 80 96">
+      <defs><clipPath id="cb"><path d="M14 88C6 60 12 24 40 20c28 4 34 40 26 68z"/></clipPath></defs>
+      <g class="corpo-m">
+        <rect x="35" y="6" width="10" height="14" fill="#071C26"/><circle cx="40" cy="6" r="4.5" fill="#FFB48F" stroke="#071C26" stroke-width="2.5"/>
+        <path d="M14 88C6 60 12 24 40 20c28 4 34 40 26 68z" fill="#FFB48F"/>
+        <g clip-path="url(#cb)"><rect x="0" y="62" width="80" height="12" fill="#fff"/><rect x="0" y="74" width="80" height="6" fill="#0B5E7C"/></g>
+        <path d="M14 88C6 60 12 24 40 20c28 4 34 40 26 68z" fill="none" stroke="#071C26" stroke-width="3" stroke-linejoin="round"/>
+        ${olhos}${boca}${extra}
+      </g>
+      <path d="M0 90q10-9 20 0t20 0 20 0 20 0v6H0z" fill="#0E7396"/></svg>
+    <div class="balao"><small>A Boia</small>${esc(frase)}</div></div>`;
+}
+
 // ───────── início: a situação geral ─────────
 // Os números vêm do fatos.json, publicado toda manhã — os do plano da semana envelhecem em dois dias.
 function quadroAgora() {
@@ -599,7 +656,7 @@ function renderInicio() {
   let h = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
     <div class="topo"><div class="rot">Semana · ${esc(partes[0])}</div><div class="selo">${fNum(DATA.peso_atual, 1)} kg</div></div>
     <h1 class="titulo longo">${esc((t0 => t0.charAt(0).toUpperCase() + t0.slice(1))(frase(partes.slice(1).join(' · ') || partes[0])))}</h1>
-    <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
+    <div class="sub">${T(DATA.objetivo)}</div>${mascote()}</div></div>`;
 
   h += quadroAgora() + blocoEspecialistas() + blocoHoje() + blocoCardapio() + blocoDestino();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +

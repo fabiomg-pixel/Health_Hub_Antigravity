@@ -693,6 +693,15 @@ de atividade do dia** (força, corrida, jogo, dia leve, descanso), o mesmo das t
 (cheio em 52 ou menos; quanto mais alta, mais vazio) e prontidão do Garmin (0 a 100). Anel vazio com '—' =
 sem dado, nunca estimativa. Ao rolar, a faixa encolhe de ~150 para ~79 px.
 
+## 20c. A Boia, a mascote (10/10/2026)
+
+O humor do painel é a **Boia**, a mesma boia da linguagem Mar, com rosto. Ela aparece no fim do topo da tela
+Início, com um balão. **A expressão sai do dado de hoje** (`humorBoia()` em `index.html`): sono ≥7 h e índice ≥40
+→ animada; sono <6 h → sonolenta, com "z"; entre os dois → tranquila; **sem sono medido → curiosa, com "?", e a
+frase diz que ela espera o relógio em vez de chutar** (§18). A frase é uma de duas por humor, escolhida pelo dia
+do mês, para não repetir sempre. **Regras de tom:** apoio, nunca cobrança; sem palpite sobre o que ainda não
+aconteceu; sem julgar comida nem peso. Anima suave (balança, "z" que sobe) e para com "reduzir movimento".
+
 ---
 
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
