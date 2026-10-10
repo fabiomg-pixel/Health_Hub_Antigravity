@@ -95,6 +95,38 @@
   .report p { margin: 0 0 10px; font-size: 14.5px; color: var(--dim); }
   .report p:last-child { margin-bottom: 0; }
   .navin a.reg { color: var(--accent); font-weight: 600; }
+  .navin a.evo { color: #86b6ef; font-weight: 600; }
+  .metas { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .meta { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .meta .rot { font-size: 13px; color: var(--dim); }
+  .meta .val { font-size: 40px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.15; }
+  .meta .val small { font-size: 15px; font-weight: 500; color: var(--dim); margin-left: 6px; }
+  .meta .alvo { font-size: 13px; color: var(--dim); margin-top: 2px; }
+  .trilho { height: 8px; border-radius: 999px; background: rgba(57,135,229,.18); margin: 12px 0 6px; overflow: hidden; }
+  .trilho > i { display: block; height: 100%; border-radius: 999px; background: #3987e5; min-width: 3px; }
+  .meta .linha { font-size: 13px; color: var(--dim); margin-top: 6px; }
+  .meta .linha b { color: var(--txt); font-weight: 600; }
+  .seta-ruim { color: var(--r); } .seta-boa { color: var(--g); }
+  .gbox { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px 10px 6px; }
+  .gbox h3 { font-size: 14px; margin: 0 6px 2px; font-weight: 600; }
+  .gbox .gsub { font-size: 12.5px; color: var(--dim); margin: 0 6px 6px; }
+  .gbox svg { display: block; overflow: visible; touch-action: pan-y; }
+  .gg { stroke: #262b35; stroke-width: 1; }
+  .gr { stroke: #5b6474; stroke-width: 1; }
+  .gl { fill: var(--dim); font-size: 11px; }
+  .gv { fill: var(--txt); font-size: 12px; font-weight: 600; }
+  .gtip { position: absolute; pointer-events: none; background: #0b0d11; border: 1px solid var(--line);
+    border-radius: 8px; padding: 7px 9px; font-size: 12.5px; white-space: nowrap; z-index: 5; display: none; }
+  .gtip .td { color: var(--dim); margin-bottom: 3px; }
+  .gtip .tr { display: flex; align-items: center; gap: 6px; }
+  .gtip .tr b { color: var(--txt); } .gtip .tr span { color: var(--dim); }
+  .gtip .ch { display: inline-block; width: 12px; height: 2px; border-radius: 2px; }
+  .trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  details.tab { margin: 6px 6px 4px; font-size: 12.5px; color: var(--dim); }
+  details.tab summary { cursor: pointer; }
+  details.tab table { border-collapse: collapse; margin-top: 6px; width: 100%; }
+  details.tab td, details.tab th { text-align: left; padding: 3px 8px 3px 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+  details.tab th { color: var(--txt); }
   .form { display: flex; flex-direction: column; gap: 13px; }
   .form label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--dim); display: block; margin-bottom: 5px; }
   .form select, .form textarea, .form input[type=date] { width: 100%; background: var(--panel2); color: var(--txt); border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font: inherit; }
@@ -176,7 +208,8 @@ function plateGuide(d) {
 function renderNav(active) {
   const links = [
     `<a href="#home" class="${active === 'home' ? 'active' : ''}">Início</a>`,
-    `<a href="#reg" class="reg ${active === 'reg' ? 'active' : ''}">＋ Registrar</a>`]
+    `<a href="#reg" class="reg ${active === 'reg' ? 'active' : ''}">＋ Registrar</a>`,
+    `<a href="#evo" class="evo ${active === 'evo' ? 'active' : ''}">📈 Evolução</a>`]
     .concat(DATA.dias.map(d =>
       `<a href="#${d.id}" class="${active === d.id ? 'active' : ''} ${d.tipo === 'treino' ? 'train' : ''}">${d.nome.slice(0,3)} ${d.data.slice(0,2)}</a>`));
   $("nav").innerHTML = links.join("");
@@ -479,10 +512,218 @@ function renderReg() {
   document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; PHOTO_DATA = null; renderReg(); });
   document.getElementById('tab-fix').addEventListener('click', () => { REG_TIPO = 'corrigir'; PHOTO_DATA = null; EDIT_ID = null; renderReg(); });
 }
+// ───────────────────────── 📈 Evolução ─────────────────────────
+// Gráficos em SVG puro, sem biblioteca. Regras: um eixo por gráfico, uma cor de série
+// (azul) + cinza de contexto, rótulo direto só no fim da linha, valor completo no
+// tooltip e na tabela. Texto nunca usa a cor da série.
+let DASH = null;
+const NS = 'http://www.w3.org/2000/svg';
+const COR = '#3987e5', CINZA = '#5d6472';
+const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const svgEl = (tag, at = {}, txt) => { const e = document.createElementNS(NS, tag);
+  for (const k in at) e.setAttribute(k, at[k]); if (txt != null) e.textContent = txt; return e; };
+const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls;
+  if (txt != null) e.textContent = txt; return e; };
+const dData = t => { const [y, m, d] = t.split('-').map(Number); return new Date(y, m - 1, d); };
+const fDia = d => String(d.getDate()).padStart(2, '0') + '/' + String(d.getMonth() + 1).padStart(2, '0');
+const fNum = (v, c = 1) => v == null ? '—' : Number(v).toFixed(c).replace('.', ',');
+
+function tabela(host, cab, linhas) {
+  const d = el('details', 'tab'); d.append(el('summary', null, 'Ver os dados em tabela'));
+  const t = el('table'), h = el('tr'); cab.forEach(c => h.append(el('th', null, c))); t.append(h);
+  linhas.forEach(l => { const r = el('tr'); l.forEach(c => r.append(el('td', null, c))); t.append(r); });
+  d.append(t); host.append(d);
+}
+
+function caixa(pai, titulo, sub) {
+  const b = el('div', 'gbox'); b.append(el('h3', null, titulo));
+  if (sub) b.append(el('div', 'gsub', sub)); pai.append(b); return b;
+}
+
+// cfg: {h, yMin, yMax, yTicks, casas, series:[{nome, pts:[{d,v,...}], linha, raio, cor, oco}], refs:[{y,rot}], bandas:[{y0,y1,rot}]}
+function grafico(box, cfg) {
+  const W = Math.max(280, box.clientWidth - 20), H = cfg.h || 220;
+  const m = { t: 12, r: cfg.dir || 58, b: 22, l: 34 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const todos = cfg.series.flatMap(s => s.pts.map(p => +dData(p.d)));
+  const x0 = Math.min(...todos), x1 = Math.max(...todos);
+  const X = t => m.l + (x1 === x0 ? iw / 2 : (t - x0) / (x1 - x0) * iw);
+  const Y = v => m.t + (1 - (v - cfg.yMin) / (cfg.yMax - cfg.yMin)) * ih;
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.rotulo });
+
+  (cfg.bandas || []).forEach(b => {
+    svg.append(svgEl('rect', { x: m.l, y: Y(b.y1), width: iw, height: Y(b.y0) - Y(b.y1), fill: 'rgba(255,255,255,.07)' }));
+    svg.append(svgEl('text', { x: m.l + iw + 6, y: Y((b.y0 + b.y1) / 2) + 4, class: 'gl' }, b.rot));
+  });
+  cfg.yTicks.forEach(t => {
+    svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(t), y2: Y(t), class: 'gg' }));
+    svg.append(svgEl('text', { x: m.l - 6, y: Y(t) + 4, class: 'gl', 'text-anchor': 'end' }, fNum(t, cfg.casasEixo ?? 0)));
+  });
+  for (let d = new Date(new Date(x0).getFullYear(), new Date(x0).getMonth() + 1, 1); +d <= x1; d = new Date(d.getFullYear(), d.getMonth() + 1, 1))
+    svg.append(svgEl('text', { x: X(+d), y: H - 6, class: 'gl', 'text-anchor': 'middle' }, MES[d.getMonth()]));
+  (cfg.refs || []).forEach(r => {
+    svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(r.y), y2: Y(r.y), class: 'gr' }));
+    svg.append(svgEl('text', { x: m.l + iw + 6, y: Y(r.y) + 4, class: 'gl' }, r.rot));
+  });
+
+  cfg.series.forEach(s => {
+    const cor = s.cor || COR;
+    if (s.linha && s.pts.length > 1) svg.append(svgEl('path', { fill: 'none', stroke: cor, 'stroke-width': 2,
+      'stroke-linejoin': 'round', 'stroke-linecap': 'round',
+      d: s.pts.map((p, i) => (i ? 'L' : 'M') + X(+dData(p.d)).toFixed(1) + ' ' + Y(p.v).toFixed(1)).join(' ') }));
+    if (s.raio) s.pts.forEach(p => svg.append(svgEl('circle', { cx: X(+dData(p.d)), cy: Y(p.v), r: s.raio,
+      fill: p.oco ? 'var(--panel)' : cor, stroke: p.oco ? cor : 'var(--panel)', 'stroke-width': 2 })));
+  });
+  // rótulo direto: só o último ponto da série principal
+  const pr = cfg.series.find(s => s.principal) || cfg.series[0], ult = pr.pts[pr.pts.length - 1];
+  if (ult) {
+    svg.append(svgEl('circle', { cx: X(+dData(ult.d)), cy: Y(ult.v), r: 4, fill: ult.oco ? 'var(--panel)' : (pr.cor || COR),
+      stroke: ult.oco ? (pr.cor || COR) : 'var(--panel)', 'stroke-width': 2 }));
+    svg.append(svgEl('text', { x: X(+dData(ult.d)) + 8, y: Y(ult.v) - 7, class: 'gv' }, fNum(ult.v, cfg.casas ?? 1)));
+  }
+
+  // camada de hover: a linha vertical acha a data; o tooltip lista todas as séries daquele dia
+  const fio = svgEl('line', { y1: m.t, y2: m.t + ih, stroke: '#7c8596', 'stroke-width': 1, visibility: 'hidden' });
+  const alvo = svgEl('rect', { x: m.l, y: m.t, width: iw, height: ih, fill: 'transparent' });
+  svg.append(fio, alvo); box.append(svg);
+  const tip = el('div', 'gtip'); box.append(tip);
+  const datas = [...new Set(cfg.series.flatMap(s => s.pts.map(p => p.d)))].sort();
+  const mover = ev => {
+    const r = svg.getBoundingClientRect(), px = (ev.clientX - r.left) / r.width * W;
+    let melhor = datas[0], dist = Infinity;
+    datas.forEach(d => { const k = Math.abs(X(+dData(d)) - px); if (k < dist) { dist = k; melhor = d; } });
+    const cx = X(+dData(melhor));
+    fio.setAttribute('x1', cx); fio.setAttribute('x2', cx); fio.setAttribute('visibility', 'visible');
+    tip.replaceChildren(el('div', 'td', fDia(dData(melhor)) + '/' + dData(melhor).getFullYear()));
+    cfg.series.forEach(s => { const p = s.pts.find(q => q.d === melhor); if (!p) return;
+      const l = el('div', 'tr'), ch = el('i', 'ch'); ch.style.background = s.cor || COR;
+      l.append(ch, el('b', null, fNum(p.v, cfg.casas ?? 1) + (cfg.unidade || '')), el('span', null, s.nome + (p.nota ? ' · ' + p.nota : '')));
+      tip.append(l); });
+    tip.style.display = 'block';
+    const bw = box.clientWidth, tw = tip.offsetWidth, cxPx = cx / W * r.width + 10;
+    tip.style.left = Math.min(Math.max(6, cxPx + 10), bw - tw - 6) + 'px'; tip.style.top = (svg.getBoundingClientRect().top - box.getBoundingClientRect().top + 6) + 'px';
+  };
+  alvo.addEventListener('pointermove', mover); alvo.addEventListener('pointerdown', mover);
+  alvo.addEventListener('pointerleave', () => { fio.setAttribute('visibility', 'hidden'); tip.style.display = 'none'; });
+}
+
+function barras(box, cfg) {
+  const W = Math.max(280, box.clientWidth - 20), H = cfg.h || 190;
+  const m = { t: 12, r: 78, b: 22, l: 26 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const n = cfg.itens.length, passo = iw / n, larg = Math.min(24, passo - 2);
+  const Y = v => m.t + (1 - v / cfg.yMax) * ih, base = m.t + ih;
+  const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, width: '100%', height: H, role: 'img', 'aria-label': cfg.rotulo });
+  cfg.yTicks.forEach(t => { svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(t), y2: Y(t), class: 'gg' }));
+    svg.append(svgEl('text', { x: m.l - 6, y: Y(t) + 4, class: 'gl', 'text-anchor': 'end' }, String(t))); });
+  const tip = el('div', 'gtip');
+  cfg.itens.forEach((it, i) => {
+    const cx = m.l + passo * i + passo / 2, y = Y(it.v), h = Math.max(0, base - y), r = Math.min(4, h, larg / 2);
+    const x = cx - larg / 2;
+    // topo arredondado (4px), base reta: a barra nasce da linha de base
+    const d = h < 1 ? '' : `M${x} ${base} V${y + r} Q${x} ${y} ${x + r} ${y} H${x + larg - r} Q${x + larg} ${y} ${x + larg} ${y + r} V${base} Z`;
+    const b = svgEl('path', { d, fill: COR }); svg.append(b);
+    if (i % 2 === 0 || n <= 8) svg.append(svgEl('text', { x: cx, y: H - 6, class: 'gl', 'text-anchor': 'middle' }, it.rot));
+    const hit = svgEl('rect', { x: m.l + passo * i, y: m.t, width: passo, height: ih, fill: 'transparent', tabindex: 0 });
+    const mostra = () => { b.setAttribute('fill', '#6da7ec');
+      tip.replaceChildren(el('div', 'td', it.tit));
+      const l = el('div', 'tr'); l.append(el('b', null, String(it.v)), el('span', null, cfg.nome)); tip.append(l);
+      if (it.extra) tip.append(el('div', 'td', it.extra));
+      tip.style.display = 'block';
+      const px = cx / W * svg.getBoundingClientRect().width;
+      tip.style.left = Math.min(Math.max(6, px + 14), box.clientWidth - tip.offsetWidth - 6) + 'px'; tip.style.top = (svg.getBoundingClientRect().top - box.getBoundingClientRect().top + 6) + 'px'; };
+    const some = () => { b.setAttribute('fill', COR); tip.style.display = 'none'; };
+    hit.addEventListener('pointermove', mostra); hit.addEventListener('pointerdown', mostra);
+    hit.addEventListener('focus', mostra); hit.addEventListener('pointerleave', some); hit.addEventListener('blur', some);
+    svg.append(hit);
+  });
+  (cfg.refs || []).forEach(r => { svg.append(svgEl('line', { x1: m.l, x2: m.l + iw, y1: Y(r.y), y2: Y(r.y), class: 'gr' }));
+    svg.append(svgEl('text', { x: m.l + iw + 6, y: Y(r.y) + 4, class: 'gl' }, r.rot)); });
+  box.append(svg, tip);
+}
+
+function cartaoMeta(pai, c) {
+  const b = el('div', 'meta'); b.append(el('div', 'rot', c.rotulo));
+  const v = el('div', 'val', c.valor); v.append(el('small', null, c.unidade)); b.append(v);
+  b.append(el('div', 'alvo', c.alvo));
+  const t = el('div', 'trilho'), i = el('i'); i.style.width = Math.round((c.progresso || 0) * 100) + '%'; t.append(i); b.append(t);
+  b.append(el('div', 'alvo', c.legendaTrilho));
+  c.linhas.forEach(l => { const d = el('div', 'linha');
+    if (l.seta) d.append(el('span', l.bom ? 'seta-boa' : 'seta-ruim', l.seta + ' '));
+    d.append(el('b', null, l.forte), document.createTextNode(' ' + l.resto)); b.append(d); });
+  pai.append(b);
+}
+
+function renderEvo() {
+  const app = $("view"); app.replaceChildren();
+  if (!DASH) { app.append(el('div', 'note', 'Carregando a evolução...'));
+    fetch('data/dashboard.json').then(r => r.json()).then(d => { DASH = d; renderEvo(); })
+      .catch(() => app.replaceChildren(el('div', 'note', 'Ainda não há dados de evolução publicados.')));
+    return; }
+  const P = DASH.peso, V = DASH.vo2max, R = DASH.recuperacao, ref = (DASH.metas || {}).referencias || {};
+  const dataBR = t => t ? fDia(dData(t)) + '/' + dData(t).getFullYear() : null;
+
+  const s1 = el('section'); s1.append(el('h2', null, 'Para onde estamos indo')); const g = el('div', 'metas'); s1.append(g); app.append(s1);
+  const sobe = P.ritmo_kg_semana_28d != null && P.ritmo_kg_semana_28d > 0.05;
+  cartaoMeta(g, { rotulo: 'Peso · média das leituras neutras', valor: fNum(P.atual_media_neutra, 1), unidade: 'kg',
+    alvo: `Meta ${fNum(P.alvo, 0)} kg · faltam ${fNum(P.atual_media_neutra - P.alvo, 1)} kg`, progresso: P.progresso,
+    legendaTrilho: `${Math.round((P.progresso || 0) * 100)}% do caminho desde ${fNum(P.partida, 1)} kg (${dataBR(DASH.metas.partida.data)})`,
+    linhas: [
+      { seta: sobe ? '▲' : '▼', bom: !sobe, forte: (P.ritmo_kg_semana_28d > 0 ? '+' : '') + fNum(P.ritmo_kg_semana_28d, 2) + ' kg/semana', resto: 'nos últimos 28 dias' },
+      P.eta_no_ritmo_atual ? { forte: dataBR(P.eta_no_ritmo_atual), resto: 'é quando chega, mantido o ritmo atual' }
+                           : { forte: 'No ritmo atual não chega', resto: '— a média está parada ou subindo' },
+      { forte: dataBR(P.eta_ritmo_saudavel), resto: `é a data com ${fNum(P.ritmo_saudavel, 1)} kg/semana, o ritmo que preserva massa magra` }] });
+  cartaoMeta(g, { rotulo: 'VO₂ máx · última leitura ao nível do mar', valor: fNum(V.referencia_nivel_do_mar, 1), unidade: 'ml/kg/min',
+    alvo: `Meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)} · faltam ${fNum(V.alvo[0] - V.referencia_nivel_do_mar, 1)}`, progresso: V.progresso,
+    legendaTrilho: `${Math.round((V.progresso || 0) * 100)}% do caminho desde ${fNum(V.partida, 1)}`,
+    linhas: [
+      { forte: fNum(V.so_pelo_peso, 1), resto: `é onde ele vai parar só de chegar a ${fNum(P.alvo, 0)} kg, sem ganhar fôlego nenhum — VO₂ máx é por quilo` },
+      V.ultimo && V.ultimo.altitude ? { forte: fNum(V.ultimo.valor, 1), resto: `foi a leitura de ${fDia(dData(V.ultimo.data))} em ${V.ultimo.altitude} — altitude derruba a estimativa, não é tendência` }
+                                    : { forte: 'Só corrida com GPS', resto: 'atualiza esse número; esteira e futebol não contam' }] });
+
+  // ── peso
+  const s2 = el('section'); s2.append(el('h2', null, 'Peso')); app.append(s2);
+  const b2 = caixa(s2, 'Média das 7 últimas leituras neutras, em kg', 'Pontos cinza = cada pesagem. Manhã seguinte a jogo fica fora da média.');
+  const med = P.serie.filter(p => p.media != null).map(p => ({ d: p.data, v: p.media }));
+  const cru = P.serie.map(p => ({ d: p.data, v: p.peso, nota: p.pos_esforco ? 'pós-jogo' : '' }));
+  grafico(b2, { h: 250, yMin: 84, yMax: 97, yTicks: [85, 88, 91, 94, 97], casas: 2, unidade: ' kg', rotulo: 'Peso ao longo do tempo',
+    series: [{ nome: 'pesagem do dia', pts: cru, raio: 2.5, cor: CINZA }, { nome: 'média neutra', pts: med, linha: true, principal: true }],
+    refs: [{ y: P.alvo, rot: 'meta ' + fNum(P.alvo, 0) }] });
+  tabela(b2, ['Data', 'Pesagem', 'Média neutra', 'Obs.'], P.serie.slice(-30).reverse().map(p =>
+    [fDia(dData(p.data)), fNum(p.peso, 2), fNum(p.media, 2), p.pos_esforco ? 'pós-jogo' : '']));
+
+  // ── VO2max
+  const s3 = el('section'); s3.append(el('h2', null, 'VO₂ máx')); app.append(s3);
+  const b3 = caixa(s3, 'Estimativa do Garmin, em ml/kg/min', 'Ponto vazado = medido em altitude. Só atualiza em corrida com GPS.');
+  grafico(b3, { h: 220, yMin: 38, yMax: 48, yTicks: [38, 40, 42, 44, 46, 48], casas: 1, rotulo: 'VO2 máximo ao longo do tempo',
+    series: [{ nome: 'VO₂ máx', linha: true, raio: 4, principal: true,
+      pts: V.serie.map(p => ({ d: p.data, v: p.valor, oco: !!p.altitude, nota: p.altitude || '' })) }],
+    bandas: [{ y0: V.alvo[0], y1: V.alvo[1], rot: 'meta' }] });
+  tabela(b3, ['Data', 'VO₂ máx', 'Obs.'], V.serie.slice().reverse().map(p => [dataBR(p.data), fNum(p.valor, 1), p.altitude || '']));
+
+  // ── recuperação: três gráficos pequenos, um eixo cada (nunca dois eixos no mesmo gráfico)
+  const s4 = el('section'); s4.append(el('h2', null, 'Recuperação · média móvel de 7 dias')); const trio = el('div', 'trio'); s4.append(trio); app.append(s4);
+  const mini = (titulo, sub, serie, o) => { const b = caixa(trio, titulo, sub);
+    grafico(b, Object.assign({ h: 170, dir: 76, rotulo: titulo, series: [{ nome: titulo, linha: true, principal: true,
+      pts: serie.map(p => ({ d: p.data, v: p.valor })) }] }, o)); };
+  mini('VFC noturna (ms)', 'Mais alto é melhor.', R.hrv, { yMin: 25, yMax: 50, yTicks: [30, 40, 50], casas: 0, refs: [{ y: ref.hrv_ms, rot: 'melhor mês' }] });
+  mini('FC de repouso (bpm)', 'Mais baixo é melhor.', R.fc_repouso, { yMin: 46, yMax: 60, yTicks: [48, 52, 56, 60], casas: 0, refs: [{ y: ref.fc_repouso, rot: 'ago–set' }] });
+  mini('Sono (horas)', 'A alavanca que levanta as outras duas.', R.sono, { yMin: 5, yMax: 8, yTicks: [5, 6, 7, 8], casas: 1, refs: [{ y: ref.sono_h, rot: 'alvo 7 h' }] });
+
+  // ── frequência
+  const s5 = el('section'); s5.append(el('h2', null, 'Constância')); app.append(s5);
+  const b5 = caixa(s5, 'Dias ativos por semana', 'Dia ativo = 300 kcal ou mais de gasto em movimento. Agosto rodou em 4–6.');
+  barras(b5, { h: 200, yMax: 7, yTicks: [0, 2, 4, 6], nome: 'dias ativos', rotulo: 'Dias ativos por semana',
+    itens: DASH.frequencia.map(f => ({ v: f.ativos, rot: fDia(dData(f.semana)), tit: 'Semana de ' + fDia(dData(f.semana)),
+      extra: f.pesados + ' com 600 kcal ou mais' })), refs: [{ y: ref.dias_ativos_semana, rot: 'ritmo de ago' }] });
+  tabela(b5, ['Semana de', 'Dias ativos', 'Dias pesados'], DASH.frequencia.slice().reverse().map(f => [fDia(dData(f.semana)), String(f.ativos), String(f.pesados)]));
+
+  app.append(el('div', 'note', 'Atualizado em ' + DASH.gerado_em.replace('T', ' às ').slice(0, 19) + '. Peso do Renpho; sono, VFC, FC de repouso e VO₂ máx do Garmin.'));
+}
+
 function route() {
   const id = (location.hash || "#home").slice(1);
-  const fab = document.getElementById('fab'); if (fab) fab.style.display = id === 'reg' ? 'none' : '';
+  const fab = document.getElementById('fab'); if (fab) fab.style.display = (id === 'reg' || id === 'evo') ? 'none' : '';
   if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
+  if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
   const day = DATA.dias.find(d => d.id === id);
   renderNav(day ? id : 'home');
   if (day) renderDay(day); else renderHome();

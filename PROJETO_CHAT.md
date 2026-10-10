@@ -551,6 +551,37 @@ sozinha. Perseguir o ritmo antes disso é como querer sacar de uma conta que nã
 
 ---
 
+## 16. Ponto de destino de meio termo e a aba 📈 Evolução (10/10/2026)
+
+**As duas metas, definidas pelo Fabio:** peso **85 kg** e VO₂ máx **46–47**. A partir daí entra
+o "modo avançado". Ficam em `metas.json`, com o ponto de partida (95,14 kg e 42,2 em 10/10/2026).
+
+⚠️ Ele escreveu "VFC de 46–47" logo depois de corrigir que queria dizer VO₂ máx. Assumi VO₂ máx.
+**[confirmar com ele]** — se for mesmo VFC, é só trocar a meta: a aba já mostra as duas séries.
+
+**As duas metas são acopladas, e isso muda a prioridade.** VO₂ máx é por quilo: com a mesma
+capacidade absoluta, ir de 95,1 para 85 kg leva 42,2 para **47,2** — a meta de VO₂ sai quase
+inteira do peso. Então o peso é a alavanca-mestra; a corrida de qualidade (Fase 2 do §15) é o
+que garante a faixa e protege contra perder capacidade junto com a massa.
+
+**A conta do tempo, sem enfeite:** são 10,1 kg. A 0,5 kg/semana — o ritmo que preserva massa
+magra — isso é **fim de fevereiro de 2027**. Na partida a média vinha SUBINDO 0,17 kg/semana.
+Antes de falar em ritmo, a tarefa é inverter o sinal.
+
+**A aba:** `painel/index.html` → `#evo`, alimentada por `painel/data/dashboard.json`, gerado por
+`dashboard.py`. Mostra as duas metas com trilho de progresso e data projetada, peso (média
+neutra + cada pesagem + linha da meta), VO₂ máx (ponto vazado = altitude), recuperação em três
+gráficos pequenos (VFC, FC de repouso, sono) e dias ativos por semana contra o ritmo de agosto.
+
+- `historico_peso.json` acumula toda pesagem já vista — o `renpho_out.json` só guarda a janela
+  do último pull, e sem o acumulado o gráfico encolhe.
+- `dashboard.py` tem um dicionário `ALTITUDE`: **acrescente ali toda viagem a cidade alta**,
+  senão a leitura distorcida entra como tendência.
+- `./publicar_dados.sh` roda pulls → fatos → dashboard → deploy, sem tocar no plano. O brief da
+  manhã chama esse script, então a aba anda todo dia.
+
+---
+
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
 
 **A porta de entrada é o Telegram, e quem responde é uma sessão do Claude Code com o canal

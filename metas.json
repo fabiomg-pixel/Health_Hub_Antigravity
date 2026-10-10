@@ -1,0 +1,12 @@
+{
+ "_nota": "Ponto de destino de MEIO TERMO, definido pelo Fabio em 10/10/2026. A partir dele entra o 'modo avançado'.",
+ "partida": {"data": "2026-10-10", "peso_kg": 95.14, "vo2max": 42.2,
+             "vo2max_nota": "42,2 é a última leitura ao nível do mar (21/09). Os 39,5 de 08/10 foram medidos em Curitiba, a 930 m."},
+ "peso_alvo_kg": 85.0,
+ "vo2max_alvo": [46.0, 47.0],
+ "ritmo_saudavel_kg_semana": 0.5,
+ "referencias": {"hrv_ms": 39, "hrv_nota": "melhor média mensal (set/2026)",
+                 "fc_repouso": 52, "fc_nota": "média de ago e set/2026",
+                 "sono_h": 7.0, "sono_nota": "noites de 7,2–7,9 h deram os melhores treinos",
+                 "dias_ativos_semana": 4.5, "dias_nota": "ritmo de agosto/2026: 18 dias ativos no mês"}
+}

@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-09T22:15:47",
+ "gerado_em": "2026-10-09T22:24:42",
  "janela": {
   "hoje": "2026-10-09",
   "dia_semana": "Friday",
@@ -13,6 +13,66 @@
   },
   "serie_14d": [
    {
+    "data": "2026-09-21",
+    "peso_kg": 94.05,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-22",
+    "peso_kg": 94.5,
+    "pos_esforco": true
+   },
+   {
+    "data": "2026-09-23",
+    "peso_kg": 94.2,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-24",
+    "peso_kg": 94.1,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-25",
+    "peso_kg": 94.95,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-26",
+    "peso_kg": 95.25,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-27",
+    "peso_kg": 94.35,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-28",
+    "peso_kg": 94.9,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-29",
+    "peso_kg": 95.1,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-09-30",
+    "peso_kg": 94.75,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-10-01",
+    "peso_kg": 94.75,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-10-02",
+    "peso_kg": 95.0,
+    "pos_esforco": false
+   },
+   {
     "data": "2026-10-05",
     "peso_kg": 96.4,
     "pos_esforco": false
@@ -23,12 +83,12 @@
     "pos_esforco": false
    }
   ],
-  "media_ultimas_7_leituras": 95.72,
-  "media_neutras_nas_ultimas_7": 95.72,
-  "n_neutras_nas_ultimas_7": 2,
-  "media_7_neutras_de_verdade": 95.72,
-  "media_28d_neutras": 95.72,
-  "n_leituras_pos_esforco_14d": 0,
+  "media_ultimas_7_leituras": 95.14,
+  "media_neutras_nas_ultimas_7": 95.14,
+  "n_neutras_nas_ultimas_7": 7,
+  "media_7_neutras_de_verdade": 95.14,
+  "media_28d_neutras": 94.79,
+  "n_leituras_pos_esforco_14d": 1,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
@@ -89,6 +149,22 @@
  },
  "vo2max": {
   "serie": [
+   {
+    "data": "2026-08-12",
+    "valor": 42.4
+   },
+   {
+    "data": "2026-08-18",
+    "valor": 42.7
+   },
+   {
+    "data": "2026-08-19",
+    "valor": 42.6
+   },
+   {
+    "data": "2026-09-21",
+    "valor": 42.2
+   },
    {
     "data": "2026-10-07",
     "valor": 41.2
