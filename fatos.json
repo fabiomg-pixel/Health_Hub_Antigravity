@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-10T08:42:11",
+ "gerado_em": "2026-10-10T16:23:44",
  "janela": {
   "hoje": "2026-10-10",
   "dia_semana": "Saturday",
@@ -92,9 +92,9 @@
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 77,
+  "indice_hoje": 76,
   "banda_hoje": "g",
-  "prontidao_garmin_hoje": 46,
+  "prontidao_garmin_hoje": 50,
   "dias_vermelhos_seguidos": 0,
   "sono_ultima_noite_h": 8.05,
   "sono_ultima_noite_score": 87,
@@ -186,13 +186,15 @@
   "dias_com_registro": [
    "2026-10-04",
    "2026-10-05",
-   "2026-10-06"
+   "2026-10-06",
+   "2026-10-10"
   ],
-  "n_refeicoes_registradas": 7,
+  "n_refeicoes_registradas": 9,
   "por_dia": {
    "2026-10-04": 2,
    "2026-10-05": 2,
-   "2026-10-06": 3
+   "2026-10-06": 3,
+   "2026-10-10": 2
   },
   "ocorrencias": {
    "fritura": [
