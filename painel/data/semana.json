@@ -1,7 +1,7 @@
 {
  "gerado_em": "2026-10-10",
  "semana": "12 a 18/out · retomar a constância, sem pressa e sem palpite",
- "objetivo": "Constância: corrida fácil de 30 min de manhã e duas forças. Onde falta informação, o plano diz que não sabe.",
+ "objetivo": "Constância: corrida fácil de 30 min de manhã, duas forças, futebol na quinta e campeonato no sábado. Nada intenso além dos jogos.",
  "peso_atual": 95.14,
  "peso_rotulo": "média das 7 leituras neutras, até 06/10",
  "fontes_status": {
@@ -83,16 +83,16 @@
   "prontidao_media_7d": 41
  },
  "status_treino": {
-  "planejado": 6,
+  "planejado": 7,
   "feito": 0,
   "dias_feitos": []
  },
  "relatorio": [
-  "Rodada sob a regra de 10/10, sem informação, sem decisão: onde não há dado, o plano escreve 'não sei'.",
-  "Números de hoje: peso, média das 7 leituras neutras 95,14 kg (28 dias: 94,83), incluindo 96,4 em 05/10; última pesagem 06/10. Noite de 8,05 h, HRV 39, FC de repouso 53, índice 76. Média de 7 noites: 6,05 h; HRV de 7 dias 32 (28 dias: 36).",
-  "Sessão intensa continua fora, pela regra do §15: só abre com FC de repouso ≤52 por 3 dias seguidos, HRV ≥38 e duas semanas com 5 corridas ou mais. Não tenho a contagem de corridas por semana, e o Garmin marca STRAINED_4 desde 08/10.",
-  "Duas propostas minhas, que precisam da sua resposta: 2 forças esta semana em vez de 3 (retomada), e até 5 corridas de 30 min em vez das 6 do §15. Esta semana só cabem 4 corridas (seg, qua, qui, dom); a 5ª seria o sábado, se não houver campeonato. Então ela ainda não conta para a porteira da Fase 2.",
-  "O que não sei, e você me diz até hoje às 22h pela aba Registrar, em Nota: há marmita em casa? Há futebol na quinta? Há campeonato no sábado?"
+  "Semana fechada com as suas respostas de 10/10: há marmitas, há futebol na quinta 15/10, há campeonato no sábado 17/10, e você aceitou a proposta dos especialistas (2 forças, até 5 corridas).",
+  "Como ficou: corrida fácil de 30 min na segunda, quarta e domingo; força na terça (Lower A) e na sexta (Upper B); futebol na quinta; campeonato no sábado. São 3 corridas, e não 5: quinta e sábado viraram jogo. Por isso esta semana ainda não conta para a porteira da Fase 2.",
+  "Números de 10/10: peso, média das 7 leituras neutras 95,14 kg (28 dias: 94,83); última pesagem 06/10. Noite de 8,05 h, HRV 39, FC de repouso 53, índice 76. Média de 7 noites: 6,05 h; HRV de 7 dias 32 (28 dias: 36).",
+  "Sessão intensa continua fora, pela regra do §15: só abre com FC de repouso ≤52 por 3 dias seguidos, HRV ≥38 e duas semanas com 5 corridas ou mais. Os dois jogos são a intensidade da semana.",
+  "O que ainda não sei: o horário do jogo de sábado e a carga da última perna pesada. O campeonato não tem relógio, então o seu relato depois do jogo é o registro."
  ],
  "lista_compra": [
   {
@@ -108,7 +108,7 @@
    "cat": "Proteína da semana",
    "itens": [
     "Não sei o que há no freezer: conte antes de comprar.",
-    "Frango ou carne para 7 jantas e 3 almoços em casa",
+    "Frango ou carne para 6 jantas e 3 almoços em casa",
     "Ovos: 12 cozidos no domingo, mais os do café"
    ]
   },
@@ -118,12 +118,6 @@
     "Iogurte natural 170 g, um por dia",
     "Whey: confira se o pote chega até domingo",
     "Yopro, um por dia"
-   ]
-  },
-  {
-   "cat": "Marmitas",
-   "itens": [
-    "Só se você disser que não há: pedir 5, nunca 10."
    ]
   }
  ],
@@ -607,7 +601,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Se não houver marmita, buffet com proteína primeiro e sem fritura."
+     "nota": "Marmita confirmada por você em 10/10."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -648,7 +642,7 @@
       "reps": "—"
      },
      {
-      "nome": "Sem tiros. Intensidade só se a porteira do §15 abrir; confira os números da manhã.",
+      "nome": "Sem tiros: amanhã tem futebol e a porteira do §15 não abre nesta semana.",
       "series": 1,
       "reps": "30 min"
      }
@@ -667,7 +661,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Se não houver marmita, buffet com proteína primeiro e sem fritura."
+     "nota": "Marmita confirmada por você em 10/10."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -697,18 +691,23 @@
    "id": "qui",
    "nome": "Quinta",
    "data": "15/10",
-   "tipo": "treino",
+   "tipo": "futebol",
    "flex": false,
    "treino": {
-    "foco": "A definir: futebol ou corrida fácil",
+    "foco": "Futebol de quinta",
     "exercicios": [
      {
-      "nome": "Não sei se há jogo. Responda até hoje às 22h e eu fecho este dia.",
+      "nome": "O jogo é o treino do dia. Sem corrida de manhã e sem academia.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Com jogo: nada acima de corrida fácil. Sem jogo: corrida de 30 min fácil, de manhã.",
+      "nome": "Vá de relógio: é o registro da carga do jogo.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Lanche das 17h antes de sair, como todo dia.",
       "series": 1,
       "reps": "—"
      }
@@ -727,7 +726,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Se não houver marmita, buffet com proteína primeiro e sem fritura."
+     "nota": "Marmita confirmada por você em 10/10."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -763,7 +762,7 @@
     "foco": "Upper B — força 2 de 2",
     "exercicios": [
      {
-      "nome": "Última força plena da semana. Sem corrida hoje: se amanhã houver campeonato, esta é a véspera.",
+      "nome": "Última força plena da semana. Sem corrida hoje: amanhã tem campeonato, e Upper não pesa nas pernas.",
       "series": 1,
       "reps": "—"
      },
@@ -807,7 +806,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Se não houver marmita, buffet com proteína primeiro e sem fritura."
+     "nota": "Marmita confirmada por você em 10/10."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -822,7 +821,7 @@
      "kcal": 600,
      "prot": 55,
      "peso_g": null,
-     "nota": "Véspera de jogo se houver campeonato: janta normal com arroz."
+     "nota": "Véspera de campeonato: janta normal com arroz. Nada de porção extra."
     },
     "petisco": {
      "nome": "Ceia ou pós-treino · whey (30 g) com água ou leite",
@@ -837,23 +836,28 @@
    "id": "sab",
    "nome": "Sábado",
    "data": "17/10",
-   "tipo": "treino",
+   "tipo": "futebol",
    "flex": false,
    "treino": {
-    "foco": "A definir: campeonato ou dia leve",
+    "foco": "Campeonato",
     "exercicios": [
      {
-      "nome": "Não sei se há campeonato. Responda até hoje às 22h.",
+      "nome": "Dia de jogo. Sem corrida e sem academia.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Campeonato não tem relógio: seu relato em texto é o registro. Na véspera, janta normal com arroz. Sem jogo: caminhada e mobilidade de manhã.",
+      "nome": "Campeonato não tem relógio: depois do jogo, escreva em Registrar quanto tempo jogou e como as pernas ficaram. Esse texto é o registro.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Refeição livre da semana: uma só, até 800 kcal, sábado à noite.",
+      "nome": "Não sei o horário do jogo. Sem ele, não ajusto as refeições do dia: me diga quando souber.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Refeição livre da semana: uma só, sábado à noite.",
       "series": 1,
       "reps": "—"
      }
@@ -887,7 +891,7 @@
      "kcal": 800,
      "prot": 40,
      "peso_g": null,
-     "nota": "Uma só. A proteína do sábado fica abaixo do piso no papel de propósito: é o dia da refeição livre."
+     "nota": "Uma só. A proteína do sábado fica abaixo da meta no papel de propósito: é o dia da refeição livre."
     },
     "petisco": null
    }
@@ -897,12 +901,12 @@
    "nome": "Domingo",
    "data": "18/10",
    "tipo": "treino",
-   "flex": false,
+   "flex": true,
    "treino": {
     "foco": "Corrida de 30 min + preparo da semana",
     "exercicios": [
      {
-      "nome": "Corrida de 30 min fácil, de manhã.",
+      "nome": "Corrida de 30 min fácil, de manhã (8,0–8,5 km/h). É o dia seguinte ao campeonato e eu não sei como as pernas vão acordar: se estiverem pesadas, troque por caminhada e me avise.",
       "series": 1,
       "reps": "30 min"
      },
@@ -912,7 +916,7 @@
       "reps": "—"
      },
      {
-      "nome": "Pese em jejum. Se houve campeonato ou refeição livre no sábado, essa leitura vem fora do normal e não conta como progresso.",
+      "nome": "Pese em jejum. Depois de campeonato e refeição livre, essa leitura vem fora do normal e não conta como progresso.",
       "series": 1,
       "reps": "—"
      }
@@ -963,12 +967,13 @@
    "id": "carga",
    "especialista": "Carga e recuperação",
    "assina": "seu fisiologista",
-   "como_esta": "Você saiu do congresso no pior ponto dos últimos meses: na noite de 8 para 9 de outubro dormiu 4,3 horas e a VFC caiu para 18. Hoje dormiu 8 horas e a VFC voltou a 39, com a FC de repouso em 53. É uma boa noite, não é uma recuperação: a VFC média dos últimos 7 dias ainda está em 32, contra 36 de base, e o Garmin segue marcando sobrecarga. Mostra que o corpo se recupera quando o sono vem; ainda não mostra que já recuperou.",
-   "para_onde": "Uma semana de retomada. Duas forças plenas, na terça e na sexta, corridas de 30 minutos em ritmo fácil, e nenhuma sessão intensa. A meta não é desempenho, é repetir: aparecer e sair inteiro. A intensidade só volta quando a FC de repouso ficar em 52 ou menos por três dias, a VFC em 38 ou mais, e você somar duas semanas de cinco corridas.",
+   "como_esta": "Você saiu do congresso com o sono curto: a média das últimas 7 noites é de 6,05 horas. Hoje dormiu 8 horas e a VFC ficou em 39, com a FC de repouso em 53. É uma boa noite, não é uma recuperação: a VFC média dos últimos 7 dias ainda está em 32, contra 36 de base, e o Garmin segue marcando sobrecarga. Mostra que o corpo se recupera quando o sono vem; ainda não mostra que já recuperou.",
+   "para_onde": "Uma semana de retomada, agora fechada: duas forças plenas, na terça e na sexta, três corridas de 30 minutos em ritmo fácil (segunda, quarta e domingo), futebol na quinta e campeonato no sábado. Os dois jogos são a única intensidade da semana. A meta não é desempenho, é repetir: aparecer e sair inteiro. Sessão intensa de corrida só volta quando a FC de repouso ficar em 52 ou menos por três dias, a VFC em 38 ou mais, e você somar duas semanas de cinco corridas.",
    "nao_sei": [
     "quando foi a sua última perna pesada (o último relato confirmado é Costas, em 01/10)",
     "quantas corridas por semana você fez, porque ainda não existe essa contagem",
-    "o peso desde 06/10"
+    "o peso desde 06/10",
+    "como as pernas vão sair do campeonato: sem relógio, só o seu relato diz"
    ]
   },
   {
@@ -976,10 +981,10 @@
    "especialista": "Alimentação",
    "assina": "sua nutricionista",
    "como_esta": "A estrutura que você escolheu em 27/09 era boa e não resistiu ao dia a dia: em 30/09 o Yopro virou o almoço, e aquele dia terminou em coxinha e miojo. Não há registro de comida entre 07 e 09/10, os dias do congresso. A média do seu peso está em 95,14 kg, contra 94,83 nos últimos 28 dias, então subiu um pouco. Como o registro é esparso, eu não estimo as calorias da semana: seria inventar.",
-   "para_onde": "Quatro regras e mais nada. O Yopro de manhã é adicional e nunca substitui o almoço. De terça a sexta, almoço às 13h na marmita, com 35 g de proteína ou mais no rótulo. Às 17h, todo dia, iogurte, whey, granola e banana, antes de qualquer salgado. E uma refeição livre, no sábado à noite, só uma. Não há jejum nem corte: desintoxicar, aqui, é cumprir essas quatro.",
+   "para_onde": "Quatro regras e mais nada. O Yopro de manhã é adicional e nunca substitui o almoço. De terça a sexta, almoço às 13h na marmita, que você confirmou ter, com 35 g de proteína ou mais no rótulo. Às 17h, todo dia, iogurte, whey, granola e banana, antes de qualquer salgado. E uma refeição livre, no sábado à noite, só uma. Não há jejum nem corte: desintoxicar, aqui, é cumprir essas quatro.",
    "nao_sei": [
-    "se existe marmita em casa; o pedido de 27/09 não aparece em nenhum registro",
-    "o que você comeu no café e no almoço de hoje, que só têm foto",
+    "o horário do jogo de sábado, que define a hora da última refeição antes dele",
+    "o que você comeu no café e no almoço de 10/10, que só têm foto",
     "quanto de frutas e legumes você já tem, então a feira vale para repor, não para comprar tudo"
    ]
   },
@@ -988,10 +993,9 @@
    "especialista": "Rotina e tempo",
    "assina": "seu logístico",
    "como_esta": "A semana começa com feriado, que é o primeiro dia em que dá para testar treino de manhã sem reunião nem trânsito. A previsão só é firme para segunda e terça; do resto em diante vale como tendência. De manhã, entre 6h e 9h, a temperatura fica entre 22 e 25 °C, e o calor forte só aparece no meio do dia.",
-   "para_onde": "Corrida na rua, de manhã, todos os dias em que houver corrida. Quinta e sexta têm chuva provável, mas essa previsão ainda vale pouco: confirme na manhã de cada dia, e a esteira é o plano B. Duas regras firmes: nenhuma corrida na rua depois das 17h45, porque o sol se põe às 17h56, e nenhuma academia no fim do dia quando houver reunião.",
+   "para_onde": "Corrida na rua, de manhã, na segunda, na quarta e no domingo. A previsão só é firme para os dois primeiros dias: confirme na manhã de cada corrida, e a esteira é o plano B. Duas regras firmes: nenhuma corrida na rua depois das 17h45, porque o sol se põe às 17h56, e nenhuma academia no fim do dia quando houver reunião.",
    "nao_sei": [
-    "se haverá futebol na quinta",
-    "se haverá campeonato no sábado",
+    "o horário do futebol de quinta e do campeonato de sábado",
     "se a academia abre no feriado",
     "a sua agenda de reuniões"
    ]
@@ -1001,7 +1005,7 @@
    "especialista": "Revisão",
    "assina": "o revisor",
    "como_esta": "Este plano passou por duas revisões. A primeira versão foi barrada por três problemas: trazia números de uma rodada anterior (um peso de 94,87 que não existe no dado de hoje), pedia decisões demais para uma semana só, e usava critérios de intensidade que eu tinha inventado em vez dos que já estavam escritos no projeto. A segunda versão não teve nenhum problema grave.",
-   "para_onde": "Ficaram duas propostas que não posso decidir por você e dependem da sua resposta: fazer duas forças em vez de três esta semana, e até cinco corridas em vez das seis previstas. Na semana seguinte, se você concordar, tudo volta ao molde normal.",
+   "para_onde": "As duas propostas que dependiam de você foram aceitas em 10/10: duas forças em vez de três, e até cinco corridas. Com futebol na quinta e campeonato no sábado, a semana fecha com três corridas. Revisei esta versão fechada: nenhum dia junta corrida e jogo, tirei da quarta uma frase que dava a entender que tiros poderiam voltar, e tirei três números que não tinham fonte. A semana seguinte se decide no fechamento de domingo, com os dados desta.",
    "nao_sei": []
   }
  ]

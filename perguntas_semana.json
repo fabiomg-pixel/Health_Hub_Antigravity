@@ -3,30 +3,29 @@
  "gerado_em": "2026-10-10",
  "limites": {
   "teto_forca_plena": 2,
-  "proposta_forca": "2 forças esta semana (retomada); volta a 3 na seguinte, se o Fabio concordar",
+  "proposta_forca": "2 forças esta semana (retomada), aceito pelo Fabio em 10/10. A semana seguinte se decide no fechamento.",
   "teto_corrida": 5,
   "duracao_max_corrida_min": 30,
   "intensa_liberada": false,
   "condicao_para_liberar_intensa": "§15: FC de repouso ≤52 por 3 dias seguidos E HRV ≥38 E duas semanas com 5 corridas ou mais",
-  "gatilho_corte": "Proposta (base: §10 e §13): se a banda vier vermelha por 3 dias seguidos, o personal adapta a corrida do dia. Dia sem leitura não conta.",
+  "gatilho_corte": "Aceito em 10/10 (base: §10 e §13): se a banda vier vermelha por 3 dias seguidos, o personal adapta a corrida do dia. Dia sem leitura não conta.",
   "escalar": "dor articular ou no tornozelo, uso de anti-inflamatório ou dois treinos-chave perdidos na semana: parar e avisar o fisio ou o médico",
   "regra": "sem informação, sem decisão (PROJETO_CHAT §18)"
  },
  "pendencias_do_fabio": {
-  "canal": "aba Registrar, tipo Nota",
-  "prazo": "hoje às 22h",
-  "itens": [
-   "há marmita em casa?",
-   "há futebol na quinta 15/10?",
-   "há campeonato no sábado 17/10?",
-   "concorda com 2 forças esta semana e até 5 corridas?"
-  ]
+  "respondido_em": "2026-10-10",
+  "respostas": {
+   "marmita": "sim",
+   "futebol_quinta_15_10": "sim",
+   "campeonato_sabado_17_10": "sim",
+   "2_forcas_e_ate_5_corridas": "concorda com os especialistas"
+  }
  },
  "perguntas": [
   {
    "id": "q1",
-   "texto": "A corrida de 30 min de manhã acontece 4 ou mais vezes?",
-   "como_responder": "contar no Strava e no Garmin, seg a dom. Com jogo na quinta, o mínimo cai para 3.",
+   "texto": "As 3 corridas de 30 min de manhã (seg, qua, dom) aconteceram?",
+   "como_responder": "contar no Strava e no Garmin, seg a dom. Com futebol na quinta e campeonato no sábado, cabem 3 corridas (seg, qua, dom): a pergunta vira 'as 3 aconteceram?'.",
    "resposta": null
   },
   {
