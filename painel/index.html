@@ -103,6 +103,22 @@
   .colunas button.on { background: var(--branco); }
   .colunas .ref { position: absolute; left: 0; right: 0; height: 1px; background: var(--branco); pointer-events: none; }
 
+  /* quadro de números e prontidão de 7 dias */
+  .quad { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quad > div { padding: 12px 0 12px; border-bottom: 1px solid var(--fraca); }
+  .quad > div:nth-child(odd) { padding-right: 12px; border-right: 1px solid var(--fraca); }
+  .quad > div:nth-child(even) { padding-left: 14px; }
+  .quad .k { font-size: 13px; font-weight: 600; color: var(--sec); }
+  .quad .d { font-size: 12px; font-weight: 500; color: var(--sec); }
+  .pront { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px; padding-top: 14px; }
+  .pcol { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .pval { font-family: var(--display); font-weight: 800; font-size: 16px; }
+  .ptrilho { position: relative; width: 100%; height: 104px; background: var(--fraca); }
+  .ptrilho i { position: absolute; left: 0; right: 0; bottom: 0; background: var(--campo); transform-origin: bottom; animation: cresce 0.6s var(--curva) both; }
+  .ptrilho b { position: absolute; left: -3px; right: -3px; height: 3px; background: var(--tinta); }
+  .pdia { font-size: 11.5px; font-weight: 600; color: var(--sec); }
+  svg.graf { display: block; width: 100%; height: auto; overflow: visible; }
+
   /* glifos */
   .glifo { flex: none; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
   .glifo.g-campo { background: var(--campo); color: var(--branco); }
@@ -184,7 +200,7 @@
 <nav class="barra"><div class="dentro" id="nav"></div></nav>
 
 <script>
-let DATA = null, REGISTROS = [], DASH = null;
+let DATA = null, REGISTROS = [], DASH = null, FATOS = null;
 const $ = id => document.getElementById(id);
 const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -263,6 +279,22 @@ function renderDia(d, ehHoje) {
     <h1 class="titulo ${foco.titulo.length > 22 ? 'longo' : ''}">${esc(foco.titulo)}</h1>
     ${foco.sub ? `<div class="sub">${esc(foco.sub)}</div>` : ''}
   </div>${ONDA}</div>` + faixaDias(d.id);
+
+  // "Agora": o painel de entrada. Só no dia de hoje, e com os números do fatos.json — que é
+  // publicado toda manhã — em vez dos do plano da semana, que envelhecem em dois dias.
+  if (ehHoje) {
+    const f = FATOS || {}, rc = f.recuperacao || {}, ps = f.peso || {}, t = DATA.tendencias || {};
+    const ult = ps.ultima, idx = rc.indice_hoje ?? t.indice_agudo_hoje, gar = rc.prontidao_garmin_hoje ?? t.prontidao_garmin_hoje;
+    const cel = (k, v, un, d) => `<div><div class="k">${k}</div><div class="medio">${v}<small style="color:var(--sec)"> ${un}</small></div><div class="d">${d}</div></div>`;
+    h += `<section class="bloco"><div class="cab"><h2>Agora</h2><small>${f.gerado_em ? 'dados de ' + esc(f.gerado_em.slice(8, 10) + '/' + f.gerado_em.slice(5, 7) + ' às ' + f.gerado_em.slice(11, 16)) : 'do plano da semana'}</small></div>
+      <div class="quad">
+        ${cel('Peso', fNum(ps.media_7_neutras_de_verdade ?? DATA.peso_atual, 1), 'kg', ult ? 'média neutra · última: ' + fNum(ult.peso_kg, 1) + ' em ' + ult.data.slice(8, 10) + '/' + ult.data.slice(5, 7) + (ult.pos_esforco ? ' (pós-jogo)' : '') : 'média neutra')}
+        ${cel('Prontidão Garmin', gar ?? '—', '', 'média de 7 dias: ' + (t.prontidao_media_7d ?? '—'))}
+        ${cel('Índice próprio', idx ?? '—', '', rc.indice_hoje_confiavel === false ? 'faltou dado do relógio: use a média, ' + (rc.indice_medio_7d ?? '—') : 'média de 7 dias: ' + (rc.indice_medio_7d ?? t.indice_medio_7d ?? '—'))}
+        ${cel('Sono', fNum(rc.sono_medio_7d, 1), 'h', 'média de 7 noites · alvo 7 h')}
+      </div>
+      ${(f.lacunas || []).length ? `<div class="aviso" style="margin-top:0;border-top:0">Falta: ${esc(f.lacunas.join(' · '))}</div>` : ''}</section>`;
+  }
 
   // treino: exercícios numerados viram linhas; o resto é contexto
   const ex = ((d.treino && d.treino.exercicios) || []).map(e => {
@@ -348,14 +380,22 @@ function renderSemana() {
 
   h += `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
-      return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') + `</section>`;
+      return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') +
+    ((st.dias_feitos || []).length ? `<div class="aviso">${st.dias_feitos.map(T).join(' ')}</div>` : '') +
+    `<div class="aviso" style="${(st.dias_feitos || []).length ? 'margin-top:0;border-top:0;padding-top:0' : ''}">Meta da semana: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal e ${DATA.dieta.proteina} g de proteína por dia${DATA.dieta.proteina_piso ? ', com piso de ' + DATA.dieta.proteina_piso + ' g' : ''}.</div></section>`;
 
   if (DATA.regra_prato) h += `<section class="bloco"><div class="cab"><h2>As regras</h2></div>` +
     DATA.regra_prato.linhas.map((l, i) => `<div class="linha" style="align-items:flex-start"><span class="hora">${i + 1}</span><span class="corpo" style="font-weight:500">${T(l.replace(/^\s*[0-9]️?⃣\s*/, ''))}</span></div>`).join('') + `</section>`;
 
+  const pr = t.prontidao || [];
   h += `<section class="bloco"><div class="cab"><h2>Prontidão</h2><small>${T(t.training_status || '')}</small></div>
+    ${pr.length ? `<div class="pront">${pr.map((p, i) => `<div class="pcol"><div class="pval">${p.valor ?? '—'}</div>
+        <div class="ptrilho"><i style="height:${Math.max(2, Math.min(100, p.valor || 0))}%;animation-delay:${(i * 0.05).toFixed(2)}s"></i>${p.meu != null ? `<b style="bottom:calc(${Math.max(0, Math.min(100, p.meu))}% - 1px)"></b>` : ''}</div>
+        <div class="pdia">${esc(p.data)}</div></div>`).join('')}</div>
+      <div class="legenda" style="color:var(--sec);font-weight:600;padding-top:10px"><span>barra e número: Garmin</span><span>traço: índice próprio</span></div>` : ''}
     <div class="linha"><span class="corpo">Garmin hoje<small>média de 7 dias: ${t.prontidao_media_7d ?? '—'}</small></span><span class="medio">${t.prontidao_garmin_hoje ?? '—'}</span></div>
-    <div class="linha"><span class="corpo">Índice próprio hoje<small>média de 7 dias: ${t.indice_medio_7d ?? '—'}</small></span><span class="medio">${t.indice_agudo_hoje ?? '—'}</span></div></section>`;
+    <div class="linha"><span class="corpo">Índice próprio hoje<small>média de 7 dias: ${t.indice_medio_7d ?? '—'}</small></span><span class="medio">${t.indice_agudo_hoje ?? '—'}</span></div>
+    <div class="linha"><span class="corpo">Sono<small>média de 7 dias</small></span><span class="medio">${fNum(t.sono_media_7d, 1)}<small style="color:var(--sec)"> h</small></span></div></section>`;
 
   if (DATA.relatorio && DATA.relatorio.length) h += `<section class="bloco"><div class="cab"><h2>Relatório</h2><small>${DATA.relatorio.length} pontos</small></div>
     <div class="par">${T(DATA.relatorio[0])}</div>
@@ -394,7 +434,8 @@ function renderEvo() {
     return; }
   const P = DASH.peso, V = DASH.vo2max, R = DASH.recuperacao, ref = (DASH.metas || {}).referencias || {};
   const med = P.serie.filter(p => p.media != null).map(p => ({ d: p.data, v: p.media }));
-  const vals = med.map(p => p.v), lo = Math.floor(Math.min(...vals)) - 0.5, hi = Math.ceil(Math.max(...vals)) + 0.5;
+  const cru = P.serie.filter(p => p.data >= med[0].d);
+  const vals = cru.map(p => p.peso).concat(med.map(p => p.v)), lo = Math.floor(Math.min(...vals) * 2) / 2 - 0.25, hi = Math.ceil(Math.max(...vals) * 2) / 2 + 0.25;
   const c = caminho(med, 326, 96, lo, hi), ult = med[med.length - 1];
   const sobe = P.ritmo_kg_semana_28d != null && P.ritmo_kg_semana_28d > 0.05;
   const prog = Math.max(0, Math.min(1, P.progresso || 0));
@@ -405,15 +446,16 @@ function renderEvo() {
     <div style="display:flex;align-items:baseline;gap:8px"><div class="gigante" id="ev-num">${fNum(P.atual_media_neutra, 1)}</div><div style="font-family:var(--display);font-weight:600;font-size:26px">kg</div></div>
     <div class="sub">Faltam <b>${fNum(P.atual_media_neutra - P.alvo, 1)} kg</b>. ${P.eta_no_ritmo_atual ? `No ritmo atual, a chegada é em <b>${dataLonga(P.eta_no_ritmo_atual)}</b>.`
       : `${sobe ? 'A média está subindo, então no ritmo atual não chega.' : 'A média está parada.'} A ${fNum(P.ritmo_saudavel, 1)} kg por semana, a chegada é em <b>${dataLonga(P.eta_ritmo_saudavel)}</b>.`}</div>
-    <svg role="img" aria-label="Média neutra do peso ao longo do tempo" id="ev-graf" width="100%" height="118" viewBox="-2 -8 340 126" preserveAspectRatio="none" style="display:block;overflow:visible;touch-action:pan-y">
+    <svg role="img" aria-label="Peso ao longo do tempo: média neutra e cada pesagem" id="ev-graf" class="graf" viewBox="-2 -8 340 126" style="touch-action:pan-y">
       ${grades.map(g => `<line x1="0" x2="326" y1="${c.Y(g)}" y2="${c.Y(g)}" stroke="#fff" stroke-opacity="0.3"/><text x="0" y="${c.Y(g) - 4}" font-size="11" font-weight="600" fill="#fff">${g} kg</text>`).join('')}
+      ${cru.map(p => `<circle cx="${c.X(+dData(p.data)).toFixed(1)}" cy="${c.Y(p.peso).toFixed(1)}" r="2.2" fill="${p.pos_esforco ? 'none' : '#fff'}" fill-opacity="0.5" stroke="#fff" stroke-opacity="${p.pos_esforco ? 0.7 : 0}" stroke-width="1"/>`).join('')}
       <path pathLength="1" d="${c.d}" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" style="stroke-dasharray:1;animation:desenha 1.4s var(--curva) 0.15s both"/>
       <circle cx="${c.X(+dData(ult.d))}" cy="${c.Y(ult.v)}" r="6" fill="var(--sol)" style="transform-box:fill-box;transform-origin:center;animation:pulso 2.2s ease-out 1.6s infinite"/>
       <circle id="ev-ponto" cx="${c.X(+dData(ult.d))}" cy="${c.Y(ult.v)}" r="6" fill="var(--sol)" stroke="#fff" stroke-width="2" style="transform-box:fill-box;transform-origin:center;animation:pop 0.4s var(--curva) 1.35s both"/>
       <text x="0" y="114" font-size="11" font-weight="600" fill="#fff">${fDia(new Date(c.a))}</text>
       <text x="326" y="114" text-anchor="end" font-size="11" font-weight="600" fill="#fff">${fDia(new Date(c.b))}</text>
     </svg>
-    <div id="ev-leitura" style="font-size:13px;font-weight:600;min-height:20px">Deslize o dedo no gráfico para ler um dia.</div>
+    <div id="ev-leitura" style="font-size:13px;font-weight:600;min-height:20px">Linha: média neutra. Pontos: cada pesagem (vazado = manhã seguinte a jogo). Deslize para ler um dia.</div>
     <div><div class="regua">${`<div class="eixo"></div>`}${REGUA_RISCOS}<div class="marca" id="ev-marca" style="left:0%"></div></div>
       <div class="legenda"><span>${fNum(P.partida, 1)} partida</span><span>${Math.round(prog * 100)}% do caminho</span><span>${fNum(P.alvo, 0)} meta</span></div></div>
   </div>${ONDA}</div>`;
@@ -426,7 +468,17 @@ function renderEvo() {
       <div style="flex:1;font-size:13.5px;line-height:1.35">Só chegar a ${fNum(P.alvo, 0)} kg já leva a <b>${fNum(V.so_pelo_peso, 1)}</b>: VO₂ máx é medido por quilo.${V.ultimo && V.ultimo.altitude ? ` A leitura de ${fNum(V.ultimo.valor, 1)} foi em ${esc(V.ultimo.altitude)}.` : ''}</div></div>
     <div style="padding-top:12px"><div class="regua"><div class="alvo" style="left:${pos(V.alvo[0])}%;width:${pos(V.alvo[1]) - pos(V.alvo[0])}%"></div><div class="eixo"></div>${REGUA_RISCOS}
       <div class="marca" id="ev-vo2" style="left:0%;background:#fff"></div></div>
-      <div class="legenda"><span>${vlo}</span><span>faixa escura: meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)}</span><span>${vhi}</span></div></div></div>`;
+      <div class="legenda"><span>${vlo}</span><span>faixa escura: meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)}</span><span>${vhi}</span></div></div>
+    ${(() => { if (V.serie.length < 2) return ''; const k = caminho(V.serie.map(p => ({ d: p.data, v: p.valor })), 300, 78, vlo, vhi);
+      return `<svg role="img" aria-label="VO2 máximo ao longo do tempo" class="graf" viewBox="-4 -10 344 112" style="margin-top:14px">
+        <rect x="0" y="${k.Y(V.alvo[1])}" width="300" height="${k.Y(V.alvo[0]) - k.Y(V.alvo[1])}" fill="var(--tinta)" fill-opacity="0.14"/>
+        <text x="304" y="${k.Y((V.alvo[0] + V.alvo[1]) / 2) + 4}" font-size="10.5" font-weight="700" fill="var(--tinta)">meta</text>
+        <path d="${k.d}" fill="none" stroke="var(--tinta)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        ${V.serie.map(p => `<circle cx="${k.X(+dData(p.data)).toFixed(1)}" cy="${k.Y(p.valor).toFixed(1)}" r="4.5" fill="${p.altitude ? 'var(--sol)' : 'var(--tinta)'}" stroke="var(--tinta)" stroke-width="2"/>`).join('')}
+        ${[V.serie[0], V.serie[V.serie.length - 1]].map((p, i) => `<text x="${k.X(+dData(p.data)).toFixed(1)}" y="${(k.Y(p.valor) + (i ? 18 : -9)).toFixed(1)}" text-anchor="${i ? 'end' : 'start'}" font-size="11" font-weight="700" fill="var(--tinta)">${fNum(p.valor, 1)}</text>`).join('')}
+        <text x="0" y="98" font-size="10.5" font-weight="600" fill="var(--tinta)">${fDia(new Date(k.a))}</text>
+        <text x="300" y="98" text-anchor="end" font-size="10.5" font-weight="600" fill="var(--tinta)">${fDia(new Date(k.b))}</text>
+      </svg><div style="font-size:12px;font-weight:600">Cada ponto é uma corrida com GPS. Ponto vazado: medido em altitude.</div>`; })()}</div>`;
 
   // constância
   const F = DASH.frequencia, topo = Math.max(6, ...F.map(f => f.ativos)), alt = v => Math.round(v / topo * 96);
@@ -442,11 +494,22 @@ function renderEvo() {
   const ultimo = s => s.length ? s[s.length - 1].valor : null;
   const fio = (s, a, b) => { if (s.length < 2) return ''; const k = caminho(s.map(p => ({ d: p.data, v: p.valor })), 64, 24, a, b);
     return `<svg aria-hidden="true" width="64" height="24" viewBox="-2 -2 68 28" style="flex:none"><path d="${k.d}" fill="none" stroke="var(--sec)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>`; };
-  const rec = (icone, nome, sub, serie, casas, un, a, b) => `<div class="linha">${ico(icone, 26, 2)}<span class="corpo" style="font-weight:700">${nome}<small>${sub}</small></span>${fio(serie, a, b)}<span class="medio">${fNum(ultimo(serie), casas)}<small style="color:var(--sec)"> ${un}</small></span></div>`;
+  const graf = (serie, a, b, refY, refRot, rotulo) => { if (serie.length < 2) return ''; const k = caminho(serie.map(p => ({ d: p.data, v: p.valor })), 290, 58, a, b), u = serie[serie.length - 1];
+    return `<svg role="img" aria-label="${rotulo} nos últimos meses" class="graf" viewBox="-28 -8 368 92" style="margin:4px 0 2px">
+      <text x="-6" y="4" text-anchor="end" font-size="10.5" font-weight="600" fill="var(--sec)">${fNum(b, 0)}</text>
+      <text x="-6" y="62" text-anchor="end" font-size="10.5" font-weight="600" fill="var(--sec)">${fNum(a, 0)}</text>
+      <line x1="0" x2="290" y1="0" y2="0" stroke="var(--fraca)"/><line x1="0" x2="290" y1="58" y2="58" stroke="var(--fraca)"/>
+      ${refY != null ? `<line x1="0" x2="290" y1="${k.Y(refY)}" y2="${k.Y(refY)}" stroke="var(--sec)" stroke-width="1"/><text x="294" y="${k.Y(refY) + 4}" font-size="10.5" font-weight="700" fill="var(--sec)">${refRot}</text>` : ''}
+      <path d="${k.d}" fill="none" stroke="var(--tinta)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle cx="${k.X(+dData(u.data))}" cy="${k.Y(u.valor)}" r="4" fill="var(--campo)" stroke="var(--fundo)" stroke-width="2"/>
+      <text x="0" y="78" font-size="10.5" font-weight="600" fill="var(--sec)">${fDia(new Date(k.a))}</text>
+      <text x="290" y="78" text-anchor="end" font-size="10.5" font-weight="600" fill="var(--sec)">${fDia(new Date(k.b))}</text></svg>`; };
+  const rec = (icone, nome, sub, serie, casas, un, a, b, refY, refRot) => `<div class="linha" style="border-bottom:0">${ico(icone, 26, 2)}<span class="corpo" style="font-weight:700">${nome}<small>${sub}</small></span><span class="medio">${fNum(ultimo(serie), casas)}<small style="color:var(--sec)"> ${un}</small></span></div>
+    <div style="border-bottom:1px solid var(--fraca);padding-bottom:6px">${graf(serie, a, b, refY, refRot, nome)}</div>`;
   h += `<section class="bloco"><div class="cab"><h2>Recuperação</h2><small>média de 7 dias</small></div>
-    ${rec('sono', 'Sono', 'alvo de ' + fNum(ref.sono_h, 0) + ' horas', R.sono, 1, 'h', 5, 8)}
-    ${rec('pulso', 'FC de repouso', 'era ' + ref.fc_repouso + ' em agosto e setembro', R.fc_repouso, 0, 'bpm', 46, 60)}
-    ${rec('vfc', 'VFC noturna', 'melhor mês fechou em ' + ref.hrv_ms, R.hrv, 0, 'ms', 25, 50)}</section>`;
+    ${rec('sono', 'Sono', 'alvo de ' + fNum(ref.sono_h, 0) + ' horas', R.sono, 1, 'h', 5, 8, ref.sono_h, 'alvo')}
+    ${rec('pulso', 'FC de repouso', 'era ' + ref.fc_repouso + ' em agosto e setembro · mais baixo é melhor', R.fc_repouso, 0, 'bpm', 46, 60, ref.fc_repouso, 'ago–set')}
+    ${rec('vfc', 'VFC noturna', 'melhor mês fechou em ' + ref.hrv_ms + ' · mais alto é melhor', R.hrv, 0, 'ms', 25, 50, ref.hrv_ms, 'melhor mês')}</section>`;
 
   h += `<section class="bloco"><div class="cab"><h2>Os dados</h2></div>
     <details><summary>Pesagens · últimas 30</summary><div class="miolo"><table><tr><th>Data</th><th>Pesagem</th><th>Média neutra</th><th>Obs.</th></tr>${P.serie.slice(-30).reverse().map(p =>
@@ -671,6 +734,8 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
   DATA = d;
   window.addEventListener("hashchange", route);
   route();
+  const naTelaDoDia = () => { const id = (location.hash || '#hoje').slice(1); return id !== 'reg' && id !== 'evo' && id !== 'semana'; };
+  fetch("data/fatos.json").then(r => r.ok ? r.json() : null).then(f => { FATOS = f; if (f && naTelaDoDia()) route(); }).catch(() => {});
   fetch("/api/registros").then(r => r.ok ? r.json() : { items: [] }).then(j => {
     REGISTROS = j.items || [];
     const id = (location.hash || '#hoje').slice(1);
