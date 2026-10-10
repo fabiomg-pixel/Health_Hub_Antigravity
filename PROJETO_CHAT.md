@@ -693,14 +693,14 @@ de atividade do dia** (força, corrida, jogo, dia leve, descanso), o mesmo das t
 (cheio em 52 ou menos; quanto mais alta, mais vazio) e prontidão do Garmin (0 a 100). Anel vazio com '—' =
 sem dado, nunca estimativa. Ao rolar, a faixa encolhe de ~150 para ~79 px.
 
-## 20c. A Boia, a mascote (10/10/2026)
+## 20c. Elementos gráficos pequenos no banner (10/10/2026)
 
-O humor do painel é a **Boia**, a mesma boia da linguagem Mar, com rosto. Ela aparece no fim do topo da tela
-Início, com um balão. **A expressão sai do dado de hoje** (`humorBoia()` em `index.html`): sono ≥7 h e índice ≥40
-→ animada; sono <6 h → sonolenta, com "z"; entre os dois → tranquila; **sem sono medido → curiosa, com "?", e a
-frase diz que ela espera o relógio em vez de chutar** (§18). A frase é uma de duas por humor, escolhida pelo dia
-do mês, para não repetir sempre. **Regras de tom:** apoio, nunca cobrança; sem palpite sobre o que ainda não
-aconteceu; sem julgar comida nem peso. Anima suave (balança, "z" que sobe) e para com "reduzir movimento".
+A mascote (Boia com rosto) foi tentada e **removida a pedido do Fabio**: ele queria "pequenos elementos gráficos"
+no banner, não um personagem. Ficaram: **boia pequena** na barra de progresso, que anda até o peso atual e boia, com
+uma **bandeirinha** na meta de 85 kg; **estrelinha** no anel que bate o alvo (e um "z" no anel de sono quando a noite
+foi curta); **ondinha** animada na base do banner; e um **gesto discreto** em cada ícone — sol que gira devagar,
+nuvem que desliza, chuva que cai, lua que balança; corrida desliza, força levanta, jogo quica, dia leve boia. Tudo
+para com "reduzir movimento". Sem emoji e sem texto de humor: o humor ficou só no movimento.
 
 ---
 
