@@ -1,7 +1,7 @@
 {
  "gerado_em": "2026-10-04",
- "semana": "8 a 11/out · 🧳 MODO CONGRESSO — manter o padrão, não o plano",
- "objetivo": "Atravessar o congresso com um padrão responsável, não com um plano perfeito. Proteína primeiro no prato, o kit antes do coffee-break, dormir o que der. Adesão parcial aqui é sucesso — em julho o peso voltou sozinho.",
+ "semana": "9 a 11/out · volta do congresso e recomeço",
+ "objetivo": "Aterrissar. Hoje é descompressão, amanhã a avaliação dos danos com você, domingo o conselho monta a primeira semana do recomeço — com poucas âncoras, não com o plano cheio.",
  "peso_atual": 94.87,
  "peso_rotulo": "média neutra (7 leituras, sem pós-jogo)",
  "fontes_status": {
@@ -94,6 +94,8 @@
   "dias_feitos": []
  },
  "relatorio": [
+  "🏠 VOLTA (09/10). Nada de compensar: sem déficit agressivo, sem cardio extra, sem 'começar hoje mesmo'. Em julho o peso subiu na viagem e voltou sozinho em uma semana de rotina normal — a dívida que se sente não é a dívida que existe.",
+  "📋 AMANHÃ, A AVALIAÇÃO. Pese em jejum de manhã sabendo que o número vem inflado por sal, sono e viagem; a leitura limpa é terça. O que vou olhar: as três semanas de alta na média neutra (94,51 → 94,87 → 95,14), o sono (6,0 h) e o que sobrou de constância — porque é constância, não intensidade, o que a gente vai reconstruir.",
   "🧳 MODO CONGRESSO ATIVADO (08–11/10). Este protocolo não é improviso: ele saiu do congresso de São Paulo (27/07–02/08), em que o peso saiu 95,3 e voltou 94,7 — congresso não cobra o preço que se teme. O que cobrou foi o sono.",
   "🚩 VOCÊ COMEÇA ESTE CANSADO, e isso muda a prescrição: índice em 2 hoje (o mais baixo de toda a série) depois da noite em trânsito, sono de 6,02 h de média, HRV 33, FC de repouso 55. Zero treino hoje. O exercício da semana é andar.",
   "⚖️ O QUE OS NÚMEROS DIZEM ANTES DA VIAGEM: a média de 7 leituras neutras subiu três semanas seguidas — 94,51 → 94,87 → 95,14 kg. Não é artefato. Mas a hora de tratar isso é na volta, com a rotina de pé: déficit em semana de congresso só custa sono e humor.",
@@ -857,15 +859,25 @@
    "tipo": "light",
    "flex": true,
    "treino": {
-    "foco": "🧳 CONGRESSO · dia 2",
+    "foco": "🏠 VOLTA DO CONGRESSO — hoje é descompressão",
     "exercicios": [
      {
-      "nome": "🚶 Andar o dia. Se sobrar disposição E você tiver dormido mais de 7 h, 20 min fáceis na esteira do hotel — opcional de verdade.",
+      "nome": "Chegou hoje. Nada de treino, nada de déficit, nada de 'começar agora'. Recomeço bom não nasce de noite mal dormida.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "💧 2,5 L de água. Ar-condicionado de centro de convenções desidrata e isso vira fome falsa às 16h.",
+      "nome": "🛒 A única tarefa útil de hoje é a geladeira: se der, ovos, iogurte, fruta e uma proteína para amanhã. Sem isso o sábado já começa torto.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "😴 Dormir o que der. O custo de congresso é sono, não comida — foi assim em julho e foi assim agora.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "⌚ Deixe o relógio sincronizar hoje à noite: é o que me permite medir o estrago amanhã.",
       "series": 1,
       "reps": "—"
      }
@@ -917,20 +929,25 @@
    "tipo": "light",
    "flex": true,
    "treino": {
-    "foco": "🧳 CONGRESSO · dia 3",
+    "foco": "📋 AVALIAÇÃO DOS DANOS + recomeço (amanhã, com você)",
     "exercicios": [
      {
-      "nome": "🚶 Andar o dia.",
+      "nome": "De manhã: pese em jejum. ⚠️ Esse número vem inflado por sal, viagem e sono — serve de referência, não de veredito. A leitura limpa é terça.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🏃 Se tiver 20-30 min livres e vontade: corrida fácil. Em julho a corrida foi o único hábito que sobreviveu ao congresso — é o de menor atrito.",
+      "nome": "Eu monto a avaliação com o que o Garmin e os registros trouxerem, e a gente decide juntos o tamanho do recomeço.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "🍽️ Jantar de congresso costuma ser o mais solto da semana. Escolha UM: a sobremesa ou a bebida. Não os dois.",
+      "nome": "🎯 A ideia não é voltar ao plano cheio: é escolher POUCAS âncoras e acertar elas por duas semanas. Constância primeiro, intensidade depois.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Se der vontade de mexer o corpo hoje, que seja caminhada ou 20 min fáceis — nada que exija decisão.",
       "series": 1,
       "reps": "—"
      }
@@ -982,25 +999,20 @@
    "tipo": "light",
    "flex": true,
    "treino": {
-    "foco": "🧳 CONGRESSO · volta",
+    "foco": "🔄 RECOMEÇO — o conselho monta a semana às 20h",
     "exercicios": [
      {
-      "nome": "🚶 Dia de volta: andar e dormir.",
+      "nome": "Domingo é o dia do conselho: com a avaliação de sábado na mão, ele monta a primeira semana do recomeço.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "❌ NÃO COMPENSAR na volta. Nada de déficit agressivo nem cardio extra para 'pagar' a semana — em julho o peso saiu 95,3 e voltou 94,7 sozinho.",
+      "nome": "🍳 Se sobrar ânimo, o preparo curto: 12 ovos cozidos e os iogurtes na frente da geladeira. É o que faz a terça acontecer.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "⚖️ Pese só na terça, já em casa e na rotina. Pesagem de viagem não entra na série.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "📋 Me chame domingo à noite: o conselho remonta a semana normal a partir de segunda.",
+      "nome": "Sem treino obrigatório hoje.",
       "series": 1,
       "reps": "—"
      }
