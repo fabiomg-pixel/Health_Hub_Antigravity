@@ -5,6 +5,17 @@
 # dentro de um screen: ver com `screen -r saude`; sair sem fechar com Ctrl-A depois D.
 cd "$(dirname "$0")"
 export TELEGRAM_STATE_DIR="$HOME/.claude/channels/telegram-saude"
-CLAUDE=$(ls -d "$HOME/Library/Application Support/Claude/claude-code/"*/claude.app/Contents/MacOS/claude 2>/dev/null | sort -V | tail -1)
-[ -x "$CLAUDE" ] || CLAUDE=$(command -v claude)
+# Claude Code embutido no app (a pasta já mudou de formato entre versões); a instalação via npm é a reserva.
+BASE="$HOME/Library/Application Support/Claude/claude-code"
+setopt null_glob
+CANDIDATOS=("$BASE"/*/claude.app/Contents/MacOS/claude "$BASE"/*/*/claude.app/Contents/MacOS/claude)
+unsetopt null_glob
+CLAUDE=""
+(( ${#CANDIDATOS} )) && CLAUDE=$(print -l $CANDIDATOS | sort -V | tail -1)
+[ -f "$CLAUDE" ] && [ -x "$CLAUDE" ] || CLAUDE=$(command -v claude)
+# Arquivo de apoio: o essencial da conversa anterior (gerado de madrugada por secretario/apoio.py).
+APOIO="$TELEGRAM_STATE_DIR/apoio.md"
+if [ -s "$APOIO" ]; then
+  exec "$CLAUDE" --model sonnet --append-system-prompt-file "$APOIO" --channels plugin:telegram@claude-plugins-official "$@"
+fi
 exec "$CLAUDE" --model sonnet --channels plugin:telegram@claude-plugins-official "$@"
