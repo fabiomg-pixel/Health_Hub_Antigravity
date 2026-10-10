@@ -918,38 +918,18 @@
    "id": "sab",
    "nome": "Sábado",
    "data": "10/10",
-   "tipo": "light",
+   "tipo": "feito",
    "flex": true,
    "treino": {
-    "foco": "🧭 SÁBADO COM PORTEIRA — o relógio decide, não a vontade",
+    "foco": "Limpeza da casa — exercício passivo, escolha dele",
     "exercicios": [
      {
-      "nome": "🐕 7h–8h · passeio com os cachorros, sem pressa. Isso acontece dê no que der.",
+      "nome": "Dia organizado pelo Fabio: limpeza da casa como gasto passivo e organização da semana. Conta como dia feito.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "📊 DEPOIS DO PASSEIO, OLHE O RELÓGIO e siga a porteira abaixo. A regra existe para a decisão não depender de como você acordou se sentindo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "✅ VAI PARA A ACADEMIA se as TRÊS valerem: sono da noite ≥6,5 h · FC de repouso ≤54 · índice ≥40. Sessão de corpo inteiro, 40 min, RPE 7 (3 reps na reserva): agachamento ou leg press · supino ou flexão · puxada ou remada · stiff leve · prancha. Sem recorde, sem falha.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🛑 NÃO VAI se qualquer uma falhar: sono <6 h, FC de repouso ≥56 ou índice <40. Aí o dia é limpeza da casa (gasto passivo real, 300-400 kcal em 2 h) + organizar a semana comigo. Isso NÃO é o plano B do fracasso: com HRV em 32 e FC de repouso em 56, treinar forte seria cavar mais fundo.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🛒 A FEIRA ACONTECE NOS DOIS CENÁRIOS. Frutas e legumes não dependem de métrica, e são a base do recomeço — a lista está no painel.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "🧘 10 min de mobilidade antes de dormir, não de manhã: quadril, tornozelo, torácica. Antes de dormir porque o objetivo aqui é dormir melhor, não aquecer.",
+      "nome": "A noite de 8,05 h abriu a porteira, mas a decisão era dele. Fica registrado, sem cobrança.",
       "series": 1,
       "reps": "—"
      }

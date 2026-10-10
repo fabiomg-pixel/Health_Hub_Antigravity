@@ -636,6 +636,30 @@ errada". Agora usa a data local.
 
 ---
 
+---
+
+## 18. Sem informação, sem decisão (regra do Fabio, 10/10/2026)
+
+**Se o dado que sustenta a decisão não existe, eu não decido — digo que não sei e quando vou saber.**
+
+O que errei, nas últimas 24 h:
+- previ a porteira de sábado ("vai fechar com folga") sem a noite medida; a noite real foi de 8,05 h
+  e a porteira abriu;
+- o brief das 8h roda ANTES de o relógio sincronizar o sono, e mesmo assim concluía algo com o
+  índice calculado por um ou dois componentes.
+
+Regras daqui para frente:
+1. **Previsão sobre dado que ainda não existe é proibida.** Nada de "provavelmente fecha", "deve
+   abrir". Vale: "isso depende da noite de hoje; o relógio sincroniza por volta das 10h".
+2. **Se `fatos.json` traz `indice_hoje_confiavel: false` ou lacuna de sono/HRV/FC, o brief não
+   decide treino.** Diz o que falta, quando chega, e deixa o dia aberto.
+3. **A decisão do dia é do Fabio quando os dados não chegaram.** Ele pode escolher (ontem à noite,
+   por exemplo, já tinha organizado a limpeza da casa como exercício passivo). Eu registro e não
+   discuto a escolha com base em número que eu não tinha.
+4. **"Não sei" é resposta completa.** Não preencher com média, com tendência nem com palpite.
+
+---
+
 ## 14. O copiloto pelo Telegram (30/09–01/10/2026)
 
 **A porta de entrada é o Telegram, e quem responde é uma sessão do Claude Code com o canal
