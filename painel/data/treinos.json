@@ -68,7 +68,8 @@
      "descanso_s": 45,
      "grupo": "core_dinamico"
     }
-   ]
+   ],
+   "pesada": false
   }
  },
  "biblioteca": {

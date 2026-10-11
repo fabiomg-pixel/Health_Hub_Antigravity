@@ -200,6 +200,9 @@
   .serie .cp small { font-size: 12px; font-weight: 600; color: var(--sec); }
   input.n { width: 100%; min-width: 0; min-height: 46px; font: 700 20px/1 'Figtree', sans-serif; text-align: center; border: 2px solid var(--tinta); background: var(--branco); border-radius: 0; }
   .alerta-carga { padding: 6px 0 8px; font-size: 13.5px; font-weight: 600; color: var(--tinta); background: var(--sol); margin: 0 0 4px; padding-left: 8px; }
+  .rir { display: flex; align-items: center; gap: 8px; padding: 4px 0 8px; font-size: 13px; font-weight: 600; color: var(--sec); flex-wrap: wrap; }
+  .rir button { min-height: 44px; padding: 0 14px; border: 2px solid var(--tinta); background: transparent; font: 700 13.5px/1 'Figtree', sans-serif; cursor: pointer; }
+  .rir button.on { background: var(--tinta); color: #fff; }
   .okb { min-height: 46px; border: 2px solid var(--tinta); background: transparent; font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
   .okb.on { background: var(--campo); border-color: var(--campo); color: #fff; }
   .trocar { margin: 8px 0 2px; min-height: 44px; padding: 0 12px; border: 2px solid var(--tinta); background: transparent; font: 700 13.5px/1 'Figtree', sans-serif; cursor: pointer; }
@@ -213,6 +216,9 @@
   #t-desc[hidden] { display: none; }
   #t-desc b { font-family: var(--display); font-size: 24px; margin-left: 6px; }
   #t-desc button { min-height: 40px; padding: 0 14px; border: 2px solid var(--tinta); background: var(--branco); font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
+  .sem { flex: none; min-width: 92px; text-align: center; padding: 10px 12px; font: 800 15px/1 'Figtree', sans-serif; border: 2px solid var(--tinta); }
+  .sem-pode { background: #5FD3C4; color: var(--tinta); } .sem-ajustar { background: #FFD166; color: var(--tinta); }
+  .sem-segurar { background: #FF6B5E; color: var(--tinta); } .sem-sem_dado { background: transparent; color: var(--tinta); border-style: dashed; }
   .alim-leitura { font-size: 14px; color: var(--sec); padding: 8px 0 12px; }
   .tab-ref { width: 100%; border-collapse: collapse; font-size: 13.5px; }
   .tab-ref td { padding: 8px 6px 8px 0; border-bottom: 1px solid var(--fraca); vertical-align: top; }
@@ -451,7 +457,8 @@ function renderDia(d, ehHoje) {
     <h1 class="titulo ${foco.titulo.length > 22 ? 'longo' : ''}">${esc(foco.titulo)}</h1>
     ${foco.sub ? `<div class="sub">${esc(foco.sub)}</div>` : ''}
   </div>${ONDA}</div>` + faixaDias(d.id);
-  h += (typeof linkTreino === 'function' ? linkTreino(new Date().getFullYear() + '-' + mm + '-' + dd) : '');
+  const isoDia = new Date().getFullYear() + '-' + mm + '-' + dd;
+  h += (typeof linkTreino === 'function' ? linkTreino(isoDia) : '') + (typeof blocoJanela === 'function' ? blocoJanela(d) : '');
 
   // treino: exercícios numerados viram linhas; o resto é contexto
   const ex = ((d.treino && d.treino.exercicios) || []).map(e => {
@@ -486,18 +493,12 @@ function renderDia(d, ehHoje) {
         <span class="boia ${feito ? 'feito' : ''}">${ico('visto', 12, 3.5).replace('currentColor', '#fff')}</span>
         <span class="hora">${esc(hora)}</span><span class="corpo">${esc(nome)}<small>${m.kcal} kcal${feito ? ' · registrado' : ''}</small></span>
         <span class="num">${m.prot}<small> g</small></span></button>
-      ${nota ? `<div class="nota" id="nota-${i}" hidden>${esc(nota)}</div>` : ''}`;
+      <div class="nota" id="nota-${i}" hidden>${nota ? esc(nota) + '<br>' : ''}<a href="#reg/refeicao/${encodeURIComponent(ref)}/${isoDia}" style="font-weight:700">Registrar ${esc(ref.toLowerCase())}</a></div>`;
   }).join('');
   if (n) {
     const meta = DATA.dieta.proteina_alvo || DATA.dieta.proteina, piso = DATA.dieta.proteina_piso;
     h += `<section class="bloco"><div class="cab"><h2>O dia</h2><small>proteína</small></div>${linhas}
-      <div style="padding-top:16px;display:flex;flex-direction:column;gap:8px">
-        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
-          <div style="font-size:14px;color:var(--sec);font-weight:500">${kcal.toLocaleString('pt-BR')} kcal no plano · ${feitas} de ${n} refeições registradas</div>
-          <div class="medio">${prot}<small style="color:var(--sec)"> g no plano</small></div></div>
-        <div class="barra"><i style="width:${Math.min(100, prot / meta * 100)}%"></i>${piso ? `<b style="left:${Math.min(100, piso / meta * 100)}%"></b>` : ''}</div>
-        <div class="legenda" style="color:var(--sec);font-weight:600"><span>0</span><span>${piso ? 'risco: piso de ' + piso + ' g' : ''}</span><span>alvo ${DATA.dieta.proteina_alvo || meta} g · plano ${meta} g</span></div>
-      </div></section>`;
+      ${typeof blocoProteina === 'function' ? blocoProteina(isoDia, prot, ehHoje) : ''}</section>`;
   }
 
   h += `<section class="bloco"><a class="botao" href="#reg">Registrar ${ico('mais')}</a></section>`;
@@ -710,19 +711,19 @@ function blocoCardapio() {
 }
 // Cada bloco do Início (menos o 'Agora') vira uma linha que abre ao toque. O resumo fica à vista
 // com o bloco fechado, e o que foi aberto fica lembrado neste aparelho.
-const ABERTOS_PADRAO = ['Hoje'];
-function dobrarSecoes() {
-  let guardado = {}; try { guardado = JSON.parse(localStorage.getItem('secoes') || '{}'); } catch (e) {}
+const ABERTOS_PADRAO = ['Pode treinar hoje?', 'Hoje', 'O que como agora'];
+function dobrarSecoes(abertos = ABERTOS_PADRAO, chave = 'secoes') {
+  let guardado = {}; try { guardado = JSON.parse(localStorage.getItem(chave) || '{}'); } catch (e) {}
   [...document.querySelectorAll('#view > section.bloco')].slice(1).forEach(sec => {
     const cab = sec.querySelector(':scope > .cab'); if (!cab) return;
     const nome = cab.querySelector('h2').textContent;
     const det = document.createElement('details'); det.className = 'sec ' + sec.className.replace('bloco', '').trim();
-    det.open = nome in guardado ? !!guardado[nome] : ABERTOS_PADRAO.includes(nome);
+    det.open = nome in guardado ? !!guardado[nome] : abertos.some(a => nome.indexOf(a) === 0);
     const sum = document.createElement('summary'); while (cab.firstChild) sum.appendChild(cab.firstChild);
     const corpo = document.createElement('div'); corpo.className = 'corpo-sec';
     [...sec.children].filter(c => c !== cab).forEach(c => corpo.appendChild(c));
     det.append(sum, corpo);
-    det.addEventListener('toggle', () => { guardado[nome] = det.open; try { localStorage.setItem('secoes', JSON.stringify(guardado)); } catch (e) {} });
+    det.addEventListener('toggle', () => { guardado[nome] = det.open; try { localStorage.setItem(chave, JSON.stringify(guardado)); } catch (e) {} });
     sec.replaceWith(det);
   });
 }
@@ -735,7 +736,8 @@ function renderInicio() {
     <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
 
   h += abasInicio('semana');
-  h += quadroAgora() + blocoEspecialistas() + blocoHoje() + (typeof linkTreino === 'function' ? linkTreino(isoLocal()) : '') + blocoCardapio() + blocoDestino();
+  h += (typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoHoje() + (typeof linkTreino === 'function' ? linkTreino(isoLocal()) : '') +
+    (typeof blocoComer === 'function' ? blocoComer() : '') + quadroAgora() + blocoCardapio() + blocoDestino() + blocoEspecialistas();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
       return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') +
@@ -874,6 +876,7 @@ function renderAlim() {
       `<tr><td>${esc(r.data)}</td><td><b>${esc(r.refeicao)}</b> · ${esc(r.tipo)}<br>${esc(r.texto)}</td></tr>`).join('')}</tbody></table></div></details>
     <div class="aviso">${esc(A.aviso)}</div></section><div class="rodape">Análise de ${esc(isoDDMM(A.gerado_em))}.</div>`;
   $("view").innerHTML = h;
+  dobrarSecoes(['Metas de', 'Semana anterior', 'Pontos de atenção'], 'secoes_alim');
 }
 
 // ───────── evolução ─────────
@@ -980,7 +983,7 @@ function renderEvo() {
       `<tr><td>${fDia(dData(p.data))}/${dData(p.data).getFullYear()}</td><td>${fNum(p.valor, 1)}</td><td>${esc(p.altitude || '')}</td></tr>`).join('')}</table></div></details>
     <details><summary>Dias ativos · por semana</summary><div class="miolo"><table><tr><th>Semana de</th><th>Ativos</th><th>Pesados</th></tr>${F.slice().reverse().map(f =>
       `<tr><td>${fDia(dData(f.semana))}</td><td>${f.ativos}</td><td>${f.pesados}</td></tr>`).join('')}</table></div></details></section>
-    <div class="rodape">Atualizado em ${esc(DASH.gerado_em.replace('T', ' às ').slice(0, 19))}. Peso do Renpho; sono, VFC, FC de repouso e VO₂ máx do Garmin. Dia ativo: 300 kcal ou mais de gasto em movimento.</div>`;
+    ${typeof blocoPorteira === 'function' ? blocoPorteira() : ''}${typeof blocoVolume === 'function' ? blocoVolume() : ''}<div class="rodape">Atualizado em ${esc(DASH.gerado_em.replace('T', ' às ').slice(0, 19))}. Peso do Renpho; sono, VFC, FC de repouso e VO₂ máx do Garmin. Dia ativo: 300 kcal ou mais de gasto em movimento.</div>`;
   $("view").innerHTML = h;
 
   contar($("ev-num"), P.atual_media_neutra - 5, P.atual_media_neutra, 1, 900);
@@ -1000,7 +1003,7 @@ function renderEvo() {
 }
 
 // ───────── registrar (a lógica de gravação não mudou) ─────────
-let PHOTO_DATA = null, REG_TIPO = 'refeicao';
+let PHOTO_DATA = null, REG_TIPO = 'refeicao', REG_PRESET = null;
 function resizeImage(dataUrl, maxDim, quality, cb) {
   const im = new Image();
   im.onload = () => {
@@ -1034,6 +1037,8 @@ async function submitLog() {
     texto: document.getElementById('rg-txt').value.trim(),
     photoBase64: PHOTO_DATA || undefined,
   };
+  const protEl = document.getElementById('rg-prot'), prot = protEl && parseFloat(protEl.value);
+  if (prot > 0) payload.texto = (payload.texto ? payload.texto + ' ' : '') + 'Proteína informada: ' + prot + ' g.';
   if (!payload.texto && !payload.photoBase64) { st.className = 'status err'; st.textContent = treino ? 'Anexe a screenshot do treino (ou escreva as notas).' : 'Escreva algo ou anexe uma foto.'; return; }
   btn.disabled = true; st.className = 'status'; st.textContent = 'Enviando…';
   try {
@@ -1041,7 +1046,7 @@ async function submitLog() {
     const j = await r.json().catch(() => ({}));
     if (r.ok && j.ok) {
       st.className = 'status ok'; st.textContent = `Anotado: ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} em ${j.dia}${j.foto ? ', com foto' : ''}.`;
-      document.getElementById('rg-txt').value = ''; PHOTO_DATA = null;
+      document.getElementById('rg-txt').value = ''; PHOTO_DATA = null; if (document.getElementById('rg-prot')) document.getElementById('rg-prot').value = '';
       const img = document.getElementById('rg-prev'); img.style.display = 'none'; document.getElementById('rg-foto').value = '';
       // mantém a aba Corrigir em dia — se a data saiu errada, o conserto está a um toque
       fetch('/api/registros').then((x) => x.ok ? x.json() : { items: [] })
@@ -1165,6 +1170,7 @@ function renderReg() {
       ${tipo === 'refeicao' ? `<div><label for="rg-ref">Refeição</label><select id="rg-ref">
         <option>Café</option><option selected>Almoço</option><option>Jantar</option><option>Lanche</option><option>Outro</option></select></div>` : ''}
       <div><label for="rg-data">Data</label><input type="date" id="rg-data"></div>
+      ${tipo === 'refeicao' ? `<div><label for="rg-prot">Proteína em gramas, se souber (opcional)</label><input type="number" inputmode="decimal" id="rg-prot" min="0" max="300" placeholder="ex.: 35"></div>` : ''}
       <div><label for="rg-txt">${treino ? 'Notas (opcional)' : obs ? 'Observação' : 'O que comeu'}</label>
         <textarea id="rg-txt" placeholder="${treino ? 'ex.: Lower A, RPE 7, tornozelo ok' : obs ? 'ex.: dor no ombro direito ao levantar peso, começou hoje' : 'ex.: 150 g de frango grelhado, arroz, salada'}"></textarea></div>
       <div><label>${treino ? 'Screenshot do treino (Fitbod)' : obs ? 'Foto (opcional)' : 'Foto do prato ou do rótulo (opcional)'}</label><div class="photo">
@@ -1174,7 +1180,9 @@ function renderReg() {
       <div id="rg-status" class="status"></div>
       <div class="aviso">${treino ? 'Sem análise agora: a screenshot vai crua. No fechamento da semana eu extraio exercícios, séries e carga.' : obs ? 'Sem análise agora: fica na caixa bruta para eu considerar no próximo resumo.' : 'Sem análise agora: vai cru para a caixa. No fechamento da semana eu leio tudo.'}</div>
     </div></section>`;
-  document.getElementById('rg-data').value = isoLocal();
+  document.getElementById('rg-data').value = (REG_PRESET && REG_PRESET.data) || isoLocal();
+  if (REG_PRESET && REG_PRESET.refeicao && document.getElementById('rg-ref')) document.getElementById('rg-ref').value = REG_PRESET.refeicao;
+  REG_PRESET = null;
   document.getElementById('rg-foto').addEventListener('change', previewPhoto);
   document.getElementById('rg-send').addEventListener('click', submitLog);
   ligarAbas();
@@ -1199,7 +1207,7 @@ function renderHojeSemPlano() {
 function route() {
   renderStatus();
   const id = (location.hash || '#home').slice(1);
-  if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
+  if (id === 'reg' || id.startsWith('reg/')) { const pr = id.split('/'); if (pr[1] === 'refeicao') { REG_TIPO = 'refeicao'; REG_PRESET = { refeicao: decodeURIComponent(pr[2] || ''), data: pr[3] || '' }; } renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
   if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
   if (/^treino(\/|$)/.test(id)) { renderNav('hoje'); renderTreino(id); window.scrollTo(0, 0); return; }
@@ -1225,6 +1233,7 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
   const redesenha = () => { const id = (location.hash || '#home').slice(1); if (id !== 'reg' && id !== 'evo' && !id.startsWith('treino')) route(); };
   fetch("data/fatos.json").then(r => r.ok ? r.json() : null).then(f => { FATOS = f; renderStatus(); if (f) redesenha(); }).catch(() => {});
   carregarTempo();
+  if (typeof carregarPrevisao === 'function') carregarPrevisao();
   fetch("data/dashboard.json").then(r => r.ok ? r.json() : null).then(x => { if (x) { DASH = x; renderStatus(); redesenha(); } }).catch(() => {});
   fetch("/api/registros").then(r => r.ok ? r.json() : { items: [] }).then(j => {
     REGISTROS = j.items || [];
@@ -1233,6 +1242,7 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
 });
 </script>
 <script src="treino.js"></script>
+<script src="decisao.js"></script>
 <script>if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
 </body>
 </html>

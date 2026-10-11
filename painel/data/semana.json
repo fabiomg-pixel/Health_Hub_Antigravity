@@ -551,6 +551,10 @@
      "peso_g": null,
      "nota": "Dose 2."
     }
+   },
+   "janela": {
+    "quando": "Feriado em 12/10. Corrida de 30 min de manhã.",
+    "plano_b": "Se chover: esteira ou 20 min em casa, sem compensar."
    }
   },
   {
@@ -563,12 +567,12 @@
     "foco": "Lower A, de volta — força 1 de 2",
     "exercicios": [
      {
-      "nome": "Primeira força plena depois do congresso. Carga: não sei qual foi a última (o último relato confirmado é Costas, 01/10). Comece leve e deixe 3 repetições na reserva.",
+      "nome": "Primeira força plena depois do congresso. Carga: não sei qual foi a última (o último relato confirmado é Costas, 01/10). Comece leve e deixe 3 repetições na reserva. Tornozelo 100% por relato seu em 11/10: o búlgaro fica no plano, mas a carga dele e a da panturrilha não sobem sozinhas (decisão sua e do fisio).",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "0 · Antes de começar, abra o relógio e olhe a leitura de 13/10. Se o sono estiver abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro. Senão, como está. Esses cortes (HRV 32 e FC de repouso 56) são proposta do copiloto, ainda sem a sua confirmação.",
+      "nome": "0 · Antes de começar, abra o painel: o semáforo já lê o relógio de 13/10. Se disser Segurar (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro, com cargas 10% menores. Se disser Ajustar, tire 1 série de cada exercício. Se disser Pode, moderando, siga o plano com 2 ou mais repetições de sobra e sem subir carga. Esses cortes (VFC 32 e FC de repouso 56) foram autorizados por você em 11/10 ('faça tudo'); falta a sua confirmação específica.",
       "series": 1,
       "reps": "—"
      },
@@ -641,6 +645,10 @@
      "peso_g": null,
      "nota": "Dose 2."
     }
+   },
+   "janela": {
+    "quando": "Academia, a 40 a 50 min de trânsito, com teto de 30 min de sala. Lower A.",
+    "plano_b": "Se a academia ou uma reunião do fim da tarde atrapalhar: versão em casa (stiff, afundo e panturrilha com halteres, 3 séries) ou sem treino, sem compensar."
    }
   },
   {
@@ -701,6 +709,10 @@
      "peso_g": null,
      "nota": "Dose 2."
     }
+   },
+   "janela": {
+    "quando": "Corrida de 30 min de manhã, antes do calor, na rua.",
+    "plano_b": "Se estiver quente ou chover: esteira ou 30 min de caminhada."
    }
   },
   {
@@ -766,6 +778,10 @@
      "peso_g": null,
      "nota": "Dose 2."
     }
+   },
+   "janela": {
+    "quando": "Futebol às 20h no campo. Sem corrida e sem academia. O lanche das 17h acontece antes de sair.",
+    "plano_b": "Se o jogo cair: caminhada ou treino leve em casa, sem compensar."
    }
   },
   {
@@ -846,6 +862,10 @@
      "peso_g": null,
      "nota": "Dose 2."
     }
+   },
+   "janela": {
+    "quando": "Academia (Upper B), teto de 30 min de sala. Véspera do campeonato: sem corrida.",
+    "plano_b": "Se a academia ou uma reunião atrapalhar: versão em casa (flexão ou supino com halteres, remada unilateral, desenvolvimento e rosca, 3 séries) ou sem treino, sem compensar."
    }
   },
   {
@@ -910,6 +930,10 @@
      "nota": "Uma só. A proteína do sábado fica abaixo da meta no papel de propósito: é o dia da refeição livre."
     },
     "petisco": null
+   },
+   "janela": {
+    "quando": "Campeonato às 9h, sem relógio: depois do jogo, registre quanto tempo jogou e como as pernas ficaram. Yopro por volta das 7h30, com banana.",
+    "plano_b": "Se o jogo cair por chuva: caminhada ou treino leve em casa, sem compensar."
    }
   },
   {
@@ -975,6 +999,10 @@
      "peso_g": null,
      "nota": "Dose 2."
     }
+   },
+   "janela": {
+    "quando": "Corrida de 30 min de manhã e preparo da semana (marmitas e compras).",
+    "plano_b": "Se chover: esteira ou caminhada. Se não der, não repõe."
    }
   }
  ],

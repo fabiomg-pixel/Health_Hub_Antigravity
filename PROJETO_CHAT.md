@@ -715,7 +715,7 @@ O traço de cada anel tem cor pela faixa: **bom** (verde-água `#5FD3C4`), **mé
 (coral `#FF6B5E`); sem dado, cinza e "—". Há legenda embaixo dos anéis. Cortes (`QUAL` em `index.html`):
 sono ≥7 h bom, 6–7 médio, <6 baixo · VFC ≥38 bom (portão do §15), 32–37 médio, <32 baixo · FC de repouso ≤52 bom
 (portão do §15), 53–55 médio, ≥56 baixo · prontidão Garmin ≥75 bom, 50–74 médio, <50 baixo (faixas do Garmin).
-Os cortes "médio/baixo" de VFC e FC são escolha do copiloto, a confirmar com o Fabio.
+Os cortes "médio/baixo" de VFC e FC são escolha do copiloto. Em 11/10 o Fabio autorizou o uso deles no semáforo com o "faça tudo"; falta a confirmação específica dos números (VFC 32, FC 56).
 
 ---
 
@@ -799,3 +799,16 @@ peso com "média até DD/MM"; corpo com "hoje · 7 dias"; VO₂ máx com data e 
 6. Reordenar o Início em ~8 blocos, com especialistas, cardápio de 7 dias, relatório, regras e compras dobrados por padrão.
 7. Cortar ou dobrar na Alimentação: micronutrientes, subgrupos, tipo de carboidrato (excesso de informação para a decisão).
 8. Cartão "o que como agora" por situação (buffet, delivery, marmita) e lembrete do lanche das 17h.
+
+### Decisão e progressão no painel (11/10/2026)
+
+- **Semáforo** (`decisao.js`, `avaliarSemaforo`): SEGURAR = 3 ou mais dias vermelhos seguidos, sono <6 h com VFC <32 ou FC ≥56, ou prontidão 50–74 com
+  índice próprio vermelho e sono <6 h (cross-check do §7). AJUSTAR = índice do dia fora da banda verde, prontidão do Garmin <50, noite <5,5 h, ou média
+  de 7 dias baixa (sono <6, VFC <32, FC ≥56). PODE, MODERANDO = prontidão 50–74 (§7: moderar, teto de esforço 8) ou 2+ médias de 7 dias em faixa média.
+  PODE = o resto. Sem leitura de hoje, o painel diz que não há decisão.
+- **Progressão** (`treino.js`, `progressao`): a carga só sobe com as duas últimas sessões PESADAS fechando o topo das repetições em todas as séries, esforço
+  registrado em todas, folga na última, nenhuma série no limite, semáforo liberando a carga (PODE, sem moderar, VFC de 7 dias ≥35 e FC de 7 dias <55),
+  sem aumento nos últimos 7 dias e só no dia de hoje; no máximo 2 aumentos por treino. Unilaterais e panturrilha não sobem sozinhos (tornozelo é do fisio, §10).
+  Treino leve (`pesada:false`) não conta. Em SEGURAR o painel reduz as cargas 10%.
+- **Esforço por série:** Folga (3+ de sobra) / Duro (1 a 2) / Limite (0), terceiro item de cada série no `#sets`.
+- **Proteína registrada:** o campo do formulário grava "Proteína informada: X g." e manda sobre qualquer outro número do texto; faixa ("15 a 20 g") não conta.
