@@ -115,6 +115,10 @@ Feche com a **lista de compras** por categoria e o **relatório** — as linhas 
 do painel. Escreva o relatório para ser lido por ele, não por você: número na frente, conclusão
 depois, sem hedge.
 
+## Passo 5a — Sessões de corrida guiada
+
+Peça ao `carga` as sessões de corrida da semana em etapas (porteira, teto de FC, tiros só se a fase 2 estiver aberta) e grave em `painel/data/corridas.json` (formato no PROJETO_CHAT, seção Corrida guiada). O painel usa isso no botão Iniciar de `#corrida`.
+
 ## Passo 5b — O cético (bloqueante, antes de publicar)
 
 Com o `semana.json` pronto e ANTES do deploy, dispare o subagente **`cetico`**. Ele confere

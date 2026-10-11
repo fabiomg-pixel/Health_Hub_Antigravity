@@ -1,0 +1,209 @@
+{
+ "definido_por": "carga",
+ "em": "2026-10-11",
+ "porteira_fase_2": "fechada",
+ "sessoes": {
+  "2026-10-12": {
+   "titulo": "Base em degraus de cadência",
+   "porque": "Mesma velocidade de sempre, mas com passos mais curtos e rápidos e pausas de caminhada, para a corrida não ficar monótona e o tornozelo agradecer.",
+   "etapas": [
+    {
+     "n": "Aquecimento",
+     "s": 300,
+     "v": "6,5 km/h",
+     "fc": "FC abaixo de 125",
+     "t": "Trote bem leve, soltando o corpo.",
+     "marcas": 60
+    },
+    {
+     "n": "Bloco 1 de 3",
+     "s": 300,
+     "v": "8,0 km/h",
+     "fc": "FC até 140",
+     "t": "Cadência 84: passos curtos e rápidos.",
+     "marcas": 60
+    },
+    {
+     "n": "Bloco 2 de 3",
+     "s": 240,
+     "v": "8,3 km/h",
+     "fc": "FC até 145",
+     "t": "Cadência 86, mantendo o passo curto.",
+     "marcas": 60
+    },
+    {
+     "n": "Caminhada ativa 1",
+     "s": 90,
+     "v": "5,5 km/h",
+     "fc": "FC abaixo de 125",
+     "t": "Caminhe forte e respire fundo.",
+     "marcas": 45
+    },
+    {
+     "n": "Bloco 3 de 3",
+     "s": 240,
+     "v": "8,5 km/h",
+     "fc": "FC até 148",
+     "t": "Cadência 86. Se a FC passar de 150, volte a 8,0.",
+     "marcas": 60
+    },
+    {
+     "n": "Caminhada ativa 2",
+     "s": 90,
+     "v": "5,5 km/h",
+     "fc": "FC abaixo de 125",
+     "t": "Caminhe forte e deixe a FC baixar.",
+     "marcas": 45
+    },
+    {
+     "n": "Bloco final",
+     "s": 300,
+     "v": "8,0 km/h",
+     "fc": "FC até 145",
+     "t": "Fácil, cadência 84.",
+     "marcas": 60
+    },
+    {
+     "n": "Desaceleração",
+     "s": 240,
+     "v": "6,0 km/h",
+     "fc": "FC abaixo de 120",
+     "t": "Caminhe e solte as pernas.",
+     "marcas": 60
+    }
+   ]
+  },
+  "2026-10-14": {
+   "titulo": "Duas escadas de cadência",
+   "porque": "Você sobe a cadência de 82 para 86 em degraus, duas vezes, sem passar do teto de FC. Se a leitura de 13/10 cortar o Lower A (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), o treinador troca por 20 min de caminhada.",
+   "etapas": [
+    {
+     "n": "Aquecimento",
+     "s": 300,
+     "v": "6,5 km/h",
+     "fc": "FC abaixo de 125",
+     "t": "Trote leve. Se as pernas estiverem pesadas do Lower A, alongue o aquecimento.",
+     "marcas": 60
+    },
+    {
+     "n": "Escada 1, degrau 1",
+     "s": 180,
+     "v": "8,0 km/h",
+     "fc": "FC até 140",
+     "t": "Cadência 82.",
+     "marcas": 60
+    },
+    {
+     "n": "Escada 1, degrau 2",
+     "s": 180,
+     "v": "8,2 km/h",
+     "fc": "FC até 145",
+     "t": "Cadência 84.",
+     "marcas": 60
+    },
+    {
+     "n": "Escada 1, degrau 3",
+     "s": 180,
+     "v": "8,4 km/h",
+     "fc": "FC até 148",
+     "t": "Cadência 86.",
+     "marcas": 60
+    },
+    {
+     "n": "Recuperação 1",
+     "s": 120,
+     "v": "6,0 km/h",
+     "fc": "FC abaixo de 130",
+     "t": "Caminhada rápida ou trote muito leve.",
+     "marcas": 60
+    },
+    {
+     "n": "Escada 2, degrau 1",
+     "s": 180,
+     "v": "8,0 km/h",
+     "fc": "FC até 140",
+     "t": "Cadência 82.",
+     "marcas": 60
+    },
+    {
+     "n": "Escada 2, degrau 2",
+     "s": 180,
+     "v": "8,2 km/h",
+     "fc": "FC até 145",
+     "t": "Cadência 84.",
+     "marcas": 60
+    },
+    {
+     "n": "Escada 2, degrau 3",
+     "s": 180,
+     "v": "8,4 km/h",
+     "fc": "FC até 148",
+     "t": "Cadência 86. Se a FC passar de 150, volte a 8,0.",
+     "marcas": 60
+    },
+    {
+     "n": "Fácil",
+     "s": 120,
+     "v": "8,0 km/h",
+     "fc": "FC até 140",
+     "t": "Passo solto e natural.",
+     "marcas": 60
+    },
+    {
+     "n": "Desaceleração",
+     "s": 180,
+     "v": "6,0 km/h",
+     "fc": "FC abaixo de 120",
+     "t": "Caminhe e solte as pernas.",
+     "marcas": 60
+    }
+   ]
+  },
+  "2026-10-18": {
+   "titulo": "Retomada curta pós-campeonato",
+   "porque": "É o dia seguinte ao jogo e não há dado do relógio do campeonato, então são 24 min com duas caminhadas: se as pernas pesarem, troque por caminhada.",
+   "etapas": [
+    {
+     "n": "Aquecimento",
+     "s": 360,
+     "v": "5,5 a 6,5 km/h",
+     "fc": "FC abaixo de 115",
+     "t": "Caminhe e entre num trote leve só se as pernas deixarem.",
+     "marcas": 60
+    },
+    {
+     "n": "Bloco 1 de 2",
+     "s": 360,
+     "v": "8,0 km/h",
+     "fc": "FC até 140",
+     "t": "Cadência 84, passo curto.",
+     "marcas": 60
+    },
+    {
+     "n": "Caminhada ativa",
+     "s": 120,
+     "v": "5,5 km/h",
+     "fc": "FC abaixo de 120",
+     "t": "Caminhe e solte as pernas.",
+     "marcas": 60
+    },
+    {
+     "n": "Bloco 2 de 2",
+     "s": 360,
+     "v": "8,0 km/h",
+     "fc": "FC até 140",
+     "t": "Cadência 84. Se as pernas pesarem, caminhe.",
+     "marcas": 60
+    },
+    {
+     "n": "Desaceleração",
+     "s": 240,
+     "v": "6,0 km/h",
+     "fc": "FC abaixo de 115",
+     "t": "Caminhe e respire.",
+     "marcas": 60
+    }
+   ]
+  }
+ }
+}

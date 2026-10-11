@@ -19,12 +19,27 @@ const C_PLANOS = {
     .concat([{ n: 'Desaquecimento', s: 300, v: '5 a 5,5 km/h', t: 'Caminhe até normalizar.', fc: 'FC caindo' }]) }
 };
 
+let C_DADOS = null;   // sessões definidas pelo treinador (data/corridas.json)
+fetch('data/corridas.json').then(r => r.ok ? r.json() : null).then(j => { C_DADOS = j; if (location.hash === '#corrida' && !C) renderCorrida(); }).catch(() => {});
+function cSessaoDoDia() {
+  const ss = (C_DADOS && C_DADOS.sessoes) || {}, hoje = isoLocal();
+  const ks = Object.keys(ss).filter(k => k >= hoje).sort(); if (!ks.length) return null;
+  const k = ks[0], x = ss[k];
+  return { iso: k, hoje: k === hoje, plano: { nome: x.titulo, sub: x.porque || '', etapas: x.etapas }, porque: x.porque || '' };
+}
+
+let C_REC = null;
 let C = null;   // sessão em andamento: { plano, ini, pausado, acum, i, falou, metro }
 let C_TICK = null, C_AUDIO = null, C_METRO = null, C_LOCK = null;
 
 const cDur = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
 const cTotal = p => p.etapas.reduce((a, e) => a + e.s, 0);
 
+function cResumo(P) {
+  const e = P.etapas, tiros = e.filter(x => x.tiro).length;
+  const min = Math.round(cTotal(P) / 60);
+  return `${min} min em ${e.length} etapas` + (tiros ? `, com ${tiros} tiros` : '') + ': ' + e.filter((x, i) => i < 3 || i === e.length - 1).map(x => `${Math.max(1, Math.round(x.s / 60))} min ${x.n.toLowerCase()} (${x.v})`).join(' · ') + (e.length > 4 ? ' · …' : '');
+}
 function cFalar(txt) {
   try { if (C && C.mudo) return; const u = new SpeechSynthesisUtterance(txt); u.lang = 'pt-BR'; u.rate = 1.05; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) {}
 }
@@ -40,7 +55,7 @@ async function cTela() { try { if ('wakeLock' in navigator && !C_LOCK) { C_LOCK 
 function cSoltar() { try { if (C_LOCK) C_LOCK.release(); } catch (e) {} C_LOCK = null; }
 function cMetro(liga) {
   if (C_METRO) { clearInterval(C_METRO); C_METRO = null; }
-  if (liga) C_METRO = setInterval(() => { if (C && !C.pausado && cEtapa().n === 'Corrida fácil') cBip(1200, 40); }, 60000 / 170);
+  if (liga) C_METRO = setInterval(() => { if (C && !C.pausado && parseFloat(String(cEtapa().v).replace(',', '.')) >= 8) cBip(1200, 40); }, 60000 / 170);
 }
 
 function cDecorrido() { return C.acum + (C.pausado ? 0 : (Date.now() - C.ini) / 1000); }
@@ -50,7 +65,7 @@ function cEtapa() {
 function cInicioEtapa(i) { return C.plano.etapas.slice(0, i).reduce((a, e) => a + e.s, 0); }
 
 function cAnunciar(e, primeira) {
-  cBip(988, 200); cVibrar([250, 120, 250]);
+  cBip(e.tiro ? 1175 : 988, 200); if (e.tiro) setTimeout(() => cBip(1175, 200), 260); cVibrar(e.tiro ? [300, 100, 300, 100, 300] : [250, 120, 250]);
   const prox = C.plano.etapas[C.i + 1];
   cFalar(`${e.n}. ${e.v.replace('km/h', 'quilômetros por hora').replace('a ', 'a ')}. ${e.t} Duração: ${Math.round(e.s / 60)} minuto${Math.round(e.s / 60) === 1 ? '' : 's'}.`);
 }
@@ -67,7 +82,7 @@ function cTic() {
     if (C.i >= p.etapas.length) { cFim(); return; }
     const e = p.etapas[C.i], rest = cInicioEtapa(C.i) + e.s - el;
     if (rest <= 10 && rest > 8 && !C.falou.dez && C.i + 1 < p.etapas.length) { C.falou.dez = 1; cBip(660, 120); cFalar(`Em dez segundos: ${p.etapas[C.i + 1].n}.`); }
-    if (e.marcas) { const k = Math.floor((el - cInicioEtapa(C.i)) / e.marcas); if (k >= 1 && !C.falou['m' + k] && rest > 20) { C.falou['m' + k] = 1; cBip(740, 120); cVibrar(200); cFalar(`Confira a frequência cardíaca. O teto é ${e.fc.replace('FC até ', '')}. Se passar, diminua o passo.`); } }
+    if (e.marcas) { const k = Math.floor((el - cInicioEtapa(C.i)) / e.marcas); if (k >= 1 && !C.falou['m' + k] && rest > 20) { C.falou['m' + k] = 1; cBip(740, 120); cVibrar(200); if (e.marcas >= 180 || k % 3 === 0) cFalar(`Confira a frequência cardíaca. Alvo: ${e.fc.replace('FC ', '')}.`); } }
   }
   cPintar();
 }
@@ -111,24 +126,30 @@ function renderCorrida() {
   if (!C) {
     const sem = (typeof avaliarSemaforo === 'function') ? avaliarSemaforo() : null;
     const seg = sem && (sem.estado === 'segurar' || sem.estado === 'ajustar');
-    const rec = seg ? 'curta' : 'base', P = C_PLANOS[rec];
-    const dia = (typeof DATA !== 'undefined' && DATA && DATA.dias || []).find(d => d.data === hojeDDMM());
-    const foco = dia && dia.treino && dia.treino.foco;
-    const noPlano = foco && /corrida/i.test(foco);
-    const porque = seg ? 'O semáforo está em ' + sem.estado + ' hoje: ' + ((sem.motivos || [])[0] || 'recuperação baixa') + ' Por isso a versão curta.'
-      : noPlano ? 'É a corrida do plano de hoje: ' + foco + '.' : 'Fase 1: constância, tudo fácil.' + (dia ? '' : ' Hoje não há corrida no plano publicado; esta é a sessão-padrão da fase 1.');
-    const resumo = P.etapas.map(e => `${Math.round(e.s / 60)} min ${e.n.toLowerCase()} (${e.v})`).join(' · ');
-    v.innerHTML = topoC('Corrida de hoje', 'Eu escolhi a sessão. É só tocar em iniciar e deixar a tela acesa.') +
+    const ses = cSessaoDoDia();
+    let rec, P, porque;
+    if (ses) {
+      rec = '__treinador'; P = ses.plano;
+      const quando = ses.hoje ? 'Sessão de hoje, definida pelo treinador.' : 'Próxima sessão do plano (' + ses.iso.slice(8, 10) + '/' + ses.iso.slice(5, 7) + '), definida pelo treinador.';
+      porque = quando + (ses.porque ? ' ' + ses.porque : '') + (seg ? ' Atenção: o semáforo está em ' + sem.estado + ' hoje (' + ((sem.motivos || [])[0] || 'recuperação baixa') + '). Se for correr, reduza ou use a versão curta em "Trocar a sessão".' : '');
+    } else {
+      rec = seg ? 'curta' : 'base'; P = C_PLANOS[rec];
+      porque = seg ? 'O semáforo está em ' + sem.estado + ' hoje: ' + ((sem.motivos || [])[0] || 'recuperação baixa') + ' Por isso a versão curta.' : 'Sessão-padrão da fase 1: o treinador ainda não publicou a sessão de hoje.';
+    }
+    C_REC = { rec, P };
+    const dia = null, foco = null, noPlano = false;
+    const resumo = cResumo(P);
+    v.innerHTML = topoC('Corrida de hoje', 'A sessão vem do treinador. É só tocar em iniciar e deixar a tela acesa.') +
       `<section class="bloco"><div class="c-card"><div class="c-et">${esc(P.nome)}</div><p class="c-t" style="margin:8px 0">${esc(porque)}</p><div class="c-mini" style="display:block">${esc(resumo)}</div></div>
       <button class="botao" id="c-ini" type="button" style="margin-top:14px">Iniciar</button></section>
       <section class="bloco"><label class="c-op"><input type="checkbox" id="c-metro" checked> Metrônomo de cadência (170 batidas por minuto, só na corrida fácil)</label>
       <label class="c-op"><input type="checkbox" id="c-mudo"> Sem voz (só bip e vibração)</label>
-      <details class="c-outro"><summary>Trocar a sessão</summary>${Object.entries(C_PLANOS).filter(([k]) => k !== 'qualidade' && k !== rec).map(([k, p]) => `<button type="button" class="linha c-esc" data-p="${k}"><span class="corpo">${esc(p.nome)}<small>${esc(p.sub)}</small></span><span class="num">iniciar</span></button>`).join('')}<div class="aviso">A sessão de qualidade (4 × 4) só entra quando a porteira da fase 2 abrir; eu aviso.</div></details>
+      <details class="c-outro"><summary>Trocar a sessão</summary>${Object.entries(C_PLANOS).filter(([k]) => k === 'base' || k === 'curta').filter(([k]) => k !== rec).map(([k, p]) => `<button type="button" class="linha c-esc" data-p="${k}"><span class="corpo">${esc(p.nome)}<small>${esc(p.sub)}</small></span><span class="num">iniciar</span></button>`).join('')}<div class="aviso">A sessão de qualidade (4 × 4) só entra quando a porteira da fase 2 abrir; eu aviso.</div></details>
       <div class="aviso">No iPhone, bloquear a tela corta a voz e o bip: mantenha o painel aberto. O ritmo na esteira é você que ajusta; o guia só marca o tempo.</div></section>
       <section class="bloco"><a class="botao claro" href="#home">Voltar</a></section>`;
-    const comecar = k => { C = { plano: C_PLANOS[k], ini: Date.now(), acum: 0, pausado: false, i: 0, falou: {}, mudo: document.getElementById('c-mudo').checked };
+    const comecar = (k, plano) => { C = { plano: plano || C_PLANOS[k], ini: Date.now(), acum: 0, pausado: false, i: 0, falou: {}, mudo: document.getElementById('c-mudo').checked };
       cMetro(document.getElementById('c-metro').checked); cTela(); cBip(660, 80); cAnunciar(C.plano.etapas[0], true); renderCorrida(); };
-    document.getElementById('c-ini').onclick = () => comecar(rec);
+    document.getElementById('c-ini').onclick = () => comecar(rec === '__treinador' ? null : rec, P);
     v.querySelectorAll('.c-esc').forEach(b => b.onclick = () => comecar(b.dataset.p));
     return;
   }

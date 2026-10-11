@@ -817,3 +817,5 @@ peso com "média até DD/MM"; corpo com "hoje · 7 dias"; VO₂ máx com data e 
 
 ### Corrida guiada (11/10/2026)
 `painel/corrida.js`, rota `#corrida`, link no Início e no dia. Pedido do Fábio (inspirado no Down Dog Run, que encerrou): guia na tela com etapa, tempo restante, o que fazer, voz pt-BR, bip e vibração. Planos: Base 30 min (fase 1: 3 min aquecimento, 24 min a 8–8,5 km/h FC ≤150, 3 min desaquecimento), Curta 20 min (indicada quando o semáforo é Segurar/Ajustar) e Qualidade 4×4 (fase 2, só após a porteira). Metrônomo opcional a 170/min. O guia não mede nada; o Garmin segue como registro. Identidade visual fica para depois.
+
+Atualização 11/10: a sessão de corrida NÃO é fixa. Quem define é o treinador (agente `carga`), em `painel/data/corridas.json` (`sessoes[iso] = {titulo, porque, etapas:[{n,s,v,fc,t,marcas,tiro?}]}`, repetições expandidas). O guia pega a sessão de hoje ou a próxima; Base/Curta ficam só de reserva. Porteira da fase 2 fechada em 11/10: sem tiros, a variedade vem de degraus de cadência (82→86) e caminhada ativa, sempre FC ≤150. Etapas com `tiro: true` ganham aviso sonoro duplo. Todo domingo, o conselho gera as sessões da semana.
