@@ -93,13 +93,13 @@
   "Atualização de 11/10: a noite de hoje foi melhor que a média, mas curta (sono 6,43 h, HRV 45, FC de repouso 49, índice 83, prontidão do Garmin 54). A semana ainda não mostra recuperação: índice médio de 7 dias 44, HRV de 7 dias 34 contra 37 de base, sono médio 6,11 h. Hoje, por conversa de 11/10, você faz um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, com carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18/10 não muda.",
   "Peso: média das 7 leituras neutras 95,14 kg (28 dias: 94,83); última pesagem 06/10. Sono, HRV e FC de repouso de hoje estão na linha de atualização acima.",
   "Sessão intensa continua fora, pela regra do §15: só abre com FC de repouso ≤52 por 3 dias seguidos, HRV ≥38 e duas semanas com 5 corridas ou mais. Os dois jogos são a intensidade da semana.",
-  "O que ainda não sei: o horário do jogo de sábado e a carga da última perna pesada. O campeonato não tem relógio, então o seu relato depois do jogo é o registro."
+  "O que ainda não sei: a carga da última perna pesada. O campeonato não tem relógio, então o seu relato depois do jogo é o registro."
  ],
  "lista_compra": [
   {
    "cat": "Feira de hoje",
    "itens": [
-    "Banana (a do lanche das 17h)",
+    "Banana (a do lanche das 17h, mais 1 para sábado de manhã)",
     "Folhas e tomate, para lavar e guardar secos",
     "Frutas à vista na bancada",
     "Quantidade: não sei o que já há em casa, então conte antes de comprar"
@@ -708,7 +708,7 @@
    "tipo": "futebol",
    "flex": false,
    "treino": {
-    "foco": "Futebol de quinta",
+    "foco": "Futebol de quinta (20h)",
     "exercicios": [
      {
       "nome": "O jogo é o treino do dia. Sem corrida de manhã e sem academia.",
@@ -853,7 +853,7 @@
    "tipo": "futebol",
    "flex": false,
    "treino": {
-    "foco": "Campeonato",
+    "foco": "Campeonato (9h)",
     "exercicios": [
      {
       "nome": "Dia de jogo. Sem corrida e sem academia.",
@@ -866,7 +866,7 @@
       "reps": "—"
      },
      {
-      "nome": "Não sei o horário do jogo. Sem ele, não ajusto as refeições do dia: me diga quando souber.",
+      "nome": "Jogo às 9h (informado por você em 11/10). As refeições do dia já estão ajustadas a esse horário: Yopro por volta das 7h30 com banana, almoço às 13h.",
       "series": 1,
       "reps": "—"
      },
@@ -879,11 +879,11 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "~8h · 1 Yopro (≥15 g de proteína)",
-     "kcal": 140,
-     "prot": 15,
+     "nome": "~7h30 · 1 Yopro (≥15 g de proteína) + 1 banana",
+     "kcal": 230,
+     "prot": 16,
      "peso_g": null,
-     "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
+     "nota": "Jogo às 9h: tome o Yopro por volta das 7h30, com uma banana, e não deixe o almoço das 13h de fora. Se virar o almoço, o das 13h acontece mesmo assim."
     },
     "almoco": {
      "nome": "13h · Casa · Proteína grelhada + arroz + feijão + salada",
@@ -1007,11 +1007,9 @@
    "id": "logistica",
    "especialista": "Rotina e tempo",
    "assina": "seu logístico",
-   "como_esta": "O treino leve de hoje cabe em casa, sem deslocamento: a academia custa 40 a 50 min de trânsito e não compensa para uma sessão leve. A previsão do tempo só é firme para os dois primeiros dias do último puxão, então do meio da semana em diante vale como tendência, não como plano. O horário do jogo de sábado e o do futebol de quinta continuam desconhecidos.",
+   "como_esta": "O treino leve de hoje cabe em casa, sem deslocamento: a academia custa 40 a 50 min de trânsito e não compensa para uma sessão leve. A previsão do tempo só é firme para os dois primeiros dias do último puxão, então do meio da semana em diante vale como tendência, não como plano. O futebol de quinta é sempre às 20h e o campeonato de sábado é às 9h (informado por você em 11/10).",
    "para_onde": "Corrida de manhã. O personal ajusta se o tempo ou a agenda mudarem.",
    "nao_sei": [
-    "O horário do futebol de quinta",
-    "O horário do campeonato de sábado",
     "Se há reunião no fim de terça ou sexta",
     "O clima depois de segunda"
    ]
@@ -1025,7 +1023,6 @@
    "nao_sei": [
     "Como você dorme na noite antes de terça: é isso que decide o Lower A",
     "A proteína da marmita N53: fotografe de novo sem reflexo",
-    "O horário do futebol de quinta e do campeonato de sábado",
     "O clima depois de segunda",
     "Se você confirma os cortes de HRV (abaixo de 32) e FC de repouso (a partir de 56) do aviso de terça"
    ]
