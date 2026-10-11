@@ -283,6 +283,12 @@
       "id": "elevacao_lateral_na_maquina",
       "nome": "Elevação lateral na máquina",
       "dica": "Suba até a linha dos ombros sem encolher o pescoço. Carga leve e movimento controlado."
+     },
+     {
+      "id": "remada_alta_com_halteres",
+      "nome": "Remada alta (em pé) com halteres",
+      "halter": true,
+      "dica": "Puxe os halteres rentes ao corpo até a altura do peito, com os cotovelos acima das mãos e sem subir os ombros em direção às orelhas. Carga leve: se o ombro incomodar, pare."
      }
     ]
    },

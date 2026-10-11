@@ -166,7 +166,10 @@ function ligarTreino(sessao, st, iso) {
   const salvar = () => lsSet(T_ESTADO, st);
   document.querySelectorAll('.serie').forEach(row => {
     const e = sessao.exercicios[+row.dataset.x], s = st.s[e.id][+row.dataset.i];
-    row.querySelectorAll('input.n').forEach(inp => inp.addEventListener('input', () => { s[inp.dataset.c] = inp.dataset.c === 'kg' ? inp.value : (numT(inp.value) ?? ''); salvar(); }));
+    row.querySelectorAll('input.n').forEach(inp => inp.addEventListener('input', () => {
+      s[inp.dataset.c] = inp.dataset.c === 'kg' ? inp.value : (numT(inp.value) ?? ''); salvar();
+      if (inp.dataset.c === 'kg') conferirCarga(row, st.s[e.id], +row.dataset.i);
+    }));
     row.querySelector('.okb').addEventListener('click', ev => {
       s.ok = !s.ok; if (s.ok && !st.inicio) st.inicio = Date.now(); salvar();
       ev.currentTarget.classList.toggle('on', s.ok); ev.currentTarget.textContent = s.ok ? 'Feita' : 'Fazer'; ev.currentTarget.setAttribute('aria-pressed', s.ok);
@@ -232,3 +235,13 @@ async function esvaziarFila() {
 }
 window.addEventListener('online', esvaziarFila);
 esvaziarFila();
+
+// Aviso de digitação: carga muito diferente da série vizinha costuma ser erro (56 em vez de 26). Só avisa, não bloqueia.
+function conferirCarga(row, series, i) {
+  const cur = numT(series[i].kg), vizinha = [series[i - 1], series[i + 1]].map(x => x && numT(x.kg)).find(v => v > 0);
+  let av = row.nextElementSibling && row.nextElementSibling.classList.contains('alerta-carga') ? row.nextElementSibling : null;
+  const suspeita = cur != null && vizinha && (cur > vizinha * 1.6 || cur < vizinha * 0.5);
+  if (!suspeita) { if (av) av.remove(); return; }
+  if (!av) { av = document.createElement('div'); av.className = 'alerta-carga'; row.after(av); }
+  av.textContent = 'Confere? A série vizinha está em ' + String(vizinha).replace('.', ',') + ' kg e esta em ' + String(cur).replace('.', ',') + ' kg.';
+}
