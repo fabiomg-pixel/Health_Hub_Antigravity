@@ -3,7 +3,7 @@
  "janela": "04 a 11/10",
  "titulo": "Faltam vegetal, leguminosa, fruta e peixe",
  "subtitulo": "11 refeições registradas em 5 dias (04, 05, 06, 10 e 11/10). Sem registro: 07, 08 e 09/10.",
- "aviso": "Só conta o que foi registrado. O que não aparece aqui pode ter sido comido e não registrado. A classificação dos pratos foi feita pelo copiloto a partir do texto, da foto e do rótulo. As metas são propostas do copiloto e dependem da sua confirmação.",
+ "aviso": "Só conta o que foi registrado. O que não aparece aqui pode ter sido comido e não registrado. A classificação dos pratos foi feita pelo copiloto a partir do texto, da foto e do rótulo. As metas foram definidas pela nutricionista do copiloto em 11/10, a seu pedido.",
  "base": {
   "refeicoes": 11,
   "principais": 7,
@@ -16,39 +16,10 @@
    "tipo": "alcancar",
    "atual": 3,
    "de": 7,
-   "meta": 5,
-   "unidade": "refeições principais (almoço e janta)",
-   "leitura": "Só brócolis (04/10 e marmita de 10/10) e espinafre em creme (marmita de 06/10). Salada crua não aparece."
-  },
-  {
-   "id": "leguminosa",
-   "nome": "Leguminosas (feijão, lentilha, grão-de-bico)",
-   "tipo": "alcancar",
-   "atual": 0,
-   "de": 7,
    "meta": 4,
-   "unidade": "refeições principais",
-   "leitura": "Não aparecem nos registros."
-  },
-  {
-   "id": "fruta",
-   "nome": "Fruta inteira",
-   "tipo": "alcancar",
-   "atual": 0,
-   "de": 5,
-   "meta": 4,
-   "unidade": "dias com registro",
-   "leitura": "Só suco de laranja, banana frita e abacate. Fruta inteira não aparece."
-  },
-  {
-   "id": "peixe",
-   "nome": "Peixe",
-   "tipo": "alcancar",
-   "atual": 0,
-   "de": 7,
-   "meta": 2,
-   "unidade": "refeições principais",
-   "leitura": "Não aparece nos registros. As 3 marmitas são de frango."
+   "escala": 7,
+   "unidade": "refeições principais registradas",
+   "leitura": "Só brócolis (04/10 e marmita de 10/10) e espinafre em creme (06/10). Salada crua não aparece nos registros. A meta acompanha o que você registrar."
   },
   {
    "id": "fritura",
@@ -57,18 +28,28 @@
    "atual": 3,
    "de": 11,
    "meta": 2,
-   "unidade": "refeições",
-   "leitura": "Fritas (04/10), banana frita (06/10) e croquete (10/10)."
+   "unidade": "refeições registradas, no máximo",
+   "leitura": "Fritas (04/10), banana frita (06/10) e croquete (10/10), todas fora de casa. Esta semana já passou do teto. Na próxima: a refeição livre de sábado e no máximo mais uma. Ovo frito na frigideira não conta."
   },
   {
-   "id": "queijo",
-   "nome": "Queijo e creme de leite",
-   "tipo": "limitar",
-   "atual": 6,
-   "de": 11,
-   "meta": 4,
-   "unidade": "refeições",
-   "leitura": "Lasanha, pão de queijo, linguiça com parmesão e as 3 marmitas (creme de leite)."
+   "id": "fruta",
+   "nome": "Fruta inteira",
+   "tipo": "alcancar",
+   "atual": 0,
+   "de": 5,
+   "meta": 2,
+   "unidade": "dias com registro",
+   "leitura": "Só suco de laranja, banana frita e abacate (contado como gordura). Fruta inteira não aparece nos registros. A banana das 17h é o caminho."
+  },
+  {
+   "id": "peixe",
+   "nome": "Peixe",
+   "tipo": "alcancar",
+   "atual": 0,
+   "de": 7,
+   "meta": 1,
+   "unidade": "refeições principais registradas",
+   "leitura": "Não aparece nos registros. As 3 marmitas registradas são de frango. Uma janta com peixe já muda a semana."
   }
  ],
  "proteina_fontes": {
@@ -108,7 +89,7 @@
     "n": 0
    }
   ],
-  "leitura": "Frango domina as marmitas. Peixe e leguminosa ficam em zero."
+  "leitura": "Frango domina as marmitas. Peixe e leguminosa ficam em zero. As fontes somam 14 em 11 refeições, porque uma refeição pode ter mais de uma."
  },
  "carbo": {
   "titulo": "Tipo de carboidrato",
@@ -216,9 +197,9 @@
   ]
  },
  "atencao": [
-  "Uma porção de vegetal ou salada crua no almoço e na janta, com as marmitas como base.",
-  "Peixe, ovo ou leguminosa em variedade: peixe em pelo menos 2 refeições por semana.",
-  "Fora de casa, sem proibir: proteína, uma base e um vegetal no prato, e uma fonte de fritura ou queijo por dia, não duas."
+  "Terça a sexta, escolha marmita com vegetal visível no prato (brócolis, espinafre, legumes); nas outras refeições principais, folha ou tomate do pote no prato.",
+  "17h: banana ou outra fruta inteira com o iogurte, antes de qualquer doce.",
+  "Uma janta com peixe (sardinha ou atum em lata servem) no lugar de frango ou carne. Fritura só na livre de sábado e no máximo mais uma."
  ],
  "refeicoes": [
   {
@@ -287,5 +268,7 @@
    "tipo": "Café",
    "texto": "Torrada com abacate e ovo, mais Yopro de 23 g de proteína"
   }
- ]
+ ],
+ "base_das_metas": "As barras contam só o que você registrou, não a semana inteira: com poucos registros elas ficam cinzas, e esquecer de anotar nunca conta contra você.",
+ "definicoes": "Fritura: fritas, croquete e banana frita. Ovo frito na frigideira não conta. Abacate conta como gordura, não como fruta. As fontes de proteína somam 14 em 11 refeições porque uma refeição pode ter mais de uma fonte. Ficam como leitura, sem meta: leguminosa, queijo e creme de leite, fibra, sódio e proteína."
 }

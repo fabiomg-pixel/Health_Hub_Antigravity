@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-11T08:53:05",
+ "gerado_em": "2026-10-11T10:34:08",
  "janela": {
   "hoje": "2026-10-11",
   "dia_semana": "Sunday",
@@ -177,17 +177,29 @@
    "2026-10-04",
    "2026-10-05",
    "2026-10-06",
-   "2026-10-10"
+   "2026-10-10",
+   "2026-10-11"
   ],
-  "n_refeicoes_registradas": 10,
+  "n_refeicoes_registradas": 11,
   "por_dia": {
    "2026-10-04": 2,
    "2026-10-05": 2,
    "2026-10-06": 3,
-   "2026-10-10": 3
+   "2026-10-10": 3,
+   "2026-10-11": 1
   },
   "ocorrencias": {
    "fritura": [
+    {
+     "data": "2026-10-10",
+     "refeicao": "Jantar",
+     "texto": "Petiscos alemães: linguiça recheada com parmesão, joelho de porco, croquete. [Processado e"
+    },
+    {
+     "data": "2026-10-10",
+     "refeicao": "Café",
+     "texto": "[Lido da foto em 11/10] 2 fatias de pão integral, meio abacate, 1 ovo frito (com algo escu"
+    },
     {
      "data": "2026-10-04",
      "refeicao": "Almoço",
@@ -198,6 +210,21 @@
    "buffet": [],
    "alcool": [],
    "proteina_clara": [
+    {
+     "data": "2026-10-11",
+     "refeicao": "Café",
+     "texto": "Repetiu a torrada com avocado e ovo, Yopro 23g proteína"
+    },
+    {
+     "data": "2026-10-10",
+     "refeicao": "Almoço",
+     "texto": "[Lido do RÓTULO em 11/10] Food Fitness N53, frango ao curry e arroz com brócolis, FAB 22/0"
+    },
+    {
+     "data": "2026-10-10",
+     "refeicao": "Café",
+     "texto": "[Lido da foto em 11/10] 2 fatias de pão integral, meio abacate, 1 ovo frito (com algo escu"
+    },
     {
      "data": "2026-10-06",
      "refeicao": "Café",
@@ -211,6 +238,10 @@
    ]
   },
   "observacoes": [
+   {
+    "data": "2026-10-11",
+    "texto": "Conselho de domingo 11/10. DADOS: noite de 11/10 sono 6,43 h (score 80), HRV 45 (base 28d 37), FC de repouso 49, índice 83 (confiável), prontidão Garmin 54. Méd"
+   },
    {
     "data": "2026-10-10",
     "texto": "10/10 noite: Fabio pediu cardio na manha de 11/10 para compensar as calorias da noite. Copiloto orientou nao compensar (regra PROJETO_CHAT); levar ao conselho d"

@@ -173,6 +173,7 @@
   .meta .barra { margin-top: 8px; }
   .meta .barra i { border-radius: 0 4px 4px 0; }
   .meta .barra i.acima { background: var(--sol); }
+  .meta .barra i.cinza { background: #8A9BA5; }
   .meta .ml { font-size: 13px; color: var(--sec); margin-top: 6px; }
   .hb { display: grid; grid-template-columns: 124px minmax(0, 1fr) 34px; gap: 10px; align-items: center; padding: 6px 0; font-size: 14px; }
   .hb .hn { font-weight: 600; line-height: 1.2; }
@@ -770,20 +771,23 @@ function renderAlim() {
       .catch(() => { $("view").innerHTML = topo + abasInicio('alim') + `<section class="bloco"><div class="aviso">A análise por grupos ainda não foi publicada.</div></section>`; });
     return;
   }
-  const A = ALIM, alc = A.metas.filter(m => m.tipo === 'alcancar');
-  const feito = alc.reduce((s, m) => s + Math.min(m.atual, m.meta), 0), total = alc.reduce((s, m) => s + m.meta, 0);
+  const A = ALIM, pouco = A.base.principais < 4;
+  const efet = m => m.escala ? Math.max(1, Math.round(m.meta / m.escala * m.de)) : m.meta;
+  const alc = A.metas.filter(m => m.tipo === 'alcancar');
+  const feito = alc.reduce((s, m) => s + Math.min(m.atual, efet(m)), 0), total = alc.reduce((s, m) => s + efet(m), 0);
   const pct = total ? Math.round(feito / total * 100) : 0;
   let h = topo + abasInicio('alim');
 
-  h += `<section class="bloco"><div class="cab"><h2>Metas da semana</h2><small>propostas, a confirmar</small></div>
-    <div class="meta"><div class="mh"><span>Progresso das metas de alcançar</span><small>${feito} de ${total} · ${pct}%</small></div>
-      <div class="barra" role="img" aria-label="${feito} de ${total}, ${pct} por cento"><i style="width:${pct}%"></i></div>
-      <div class="ml">Soma do que foi alcançado em vegetal, leguminosa, fruta e peixe, limitado à meta de cada um.</div></div>` +
-    A.metas.map(m => { const lim = m.tipo === 'limitar', acima = lim && m.atual > m.meta;
-      return `<div class="meta"><div class="mh"><span>${esc(m.nome)}</span><small>${m.atual} de ${m.de} · ${lim ? 'teto' : 'meta'} ${m.meta}${acima ? ' · acima do teto' : ''}</small></div>
-        <div class="barra" role="img" aria-label="${esc(m.nome)}: ${m.atual} de ${m.de}, ${lim ? 'teto' : 'meta'} ${m.meta}"><i class="${acima ? 'acima' : ''}" style="width:${(m.atual / m.de * 100).toFixed(1)}%"></i><b style="left:calc(${(m.meta / m.de * 100).toFixed(1)}% - 1px)"></b></div>
+  h += `<section class="bloco"><div class="cab"><h2>Metas da semana</h2><small>definidas pela nutricionista</small></div>
+    <div class="meta"><div class="mh"><span>Registros</span><small>${A.base.refeicoes} refeições em ${A.base.dias} dias</small></div></div>
+    <div class="meta"><div class="mh"><span>Progresso das metas de alcançar</span><small>${pouco ? 'poucos registros' : feito + ' de ' + total + ' · ' + pct + '%'}</small></div>
+      <div class="barra" role="img" aria-label="${pouco ? 'poucos registros' : feito + ' de ' + total + ', ' + pct + ' por cento'}"><i class="${pouco ? 'cinza' : ''}" style="width:${pouco ? 0 : pct}%"></i></div>
+      <div class="ml">${esc(A.base_das_metas || '')}</div></div>` +
+    A.metas.map(m => { const lim = m.tipo === 'limitar', me = efet(m), acima = lim && !pouco && m.atual > me;
+      return `<div class="meta"><div class="mh"><span>${esc(m.nome)}</span><small>${m.atual} de ${m.de} · ${lim ? 'teto' : 'meta'} ${me}${pouco ? ' · poucos registros' : acima ? ' · acima do teto' : ''}</small></div>
+        <div class="barra" role="img" aria-label="${esc(m.nome)}: ${m.atual} de ${m.de}, ${lim ? 'teto' : 'meta'} ${me}"><i class="${pouco ? 'cinza' : acima ? 'acima' : ''}" style="width:${(m.atual / m.de * 100).toFixed(1)}%"></i><b style="left:calc(${(me / m.de * 100).toFixed(1)}% - 1px)"></b></div>
         <div class="ml">${esc(m.unidade)}. ${esc(m.leitura)}</div></div>`; }).join('') +
-    `<div class="aviso">O traço marca a meta (ou o teto, nas fritas e no queijo). Cada barra vai até o total de refeições registradas.</div></section>`;
+    `<div class="aviso">O traço marca a meta (ou o teto, na fritura). Cada barra vai até o total registrado. ${esc(A.definicoes || '')}</div></section>`;
 
   const P = A.proteina_fontes, mxP = Math.max(...P.itens.map(i => i.n), 1);
   h += `<section class="bloco"><div class="cab"><h2>${esc(P.titulo)}</h2><small>${esc(P.unidade)}</small></div>

@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-11T09:04:47",
+ "gerado_em": "2026-10-11T10:34:09",
  "metas": {
   "_nota": "Ponto de destino de MEIO TERMO, definido pelo Fabio em 10/10/2026. A partir dele entra o 'modo avançado'.",
   "partida": {
@@ -266,56 +266,56 @@
    {
     "data": "2026-08-16",
     "peso": 94.3,
-    "pos_esforco": true,
-    "media": 95.18
+    "pos_esforco": false,
+    "media": 95.06
    },
    {
     "data": "2026-08-17",
     "peso": 94.55,
     "pos_esforco": true,
-    "media": 95.18
+    "media": 95.06
    },
    {
     "data": "2026-08-23",
     "peso": 94.7,
     "pos_esforco": false,
-    "media": 95.12
+    "media": 94.91
    },
    {
     "data": "2026-08-26",
     "peso": 94.1,
     "pos_esforco": false,
-    "media": 94.88
+    "media": 94.67
    },
    {
     "data": "2026-08-27",
     "peso": 94.6,
     "pos_esforco": false,
-    "media": 94.71
+    "media": 94.66
    },
    {
     "data": "2026-08-28",
     "peso": 94.3,
     "pos_esforco": true,
-    "media": 94.71
+    "media": 94.66
    },
    {
     "data": "2026-08-30",
     "peso": 94.05,
     "pos_esforco": false,
-    "media": 94.62
+    "media": 94.51
    },
    {
     "data": "2026-08-31",
     "peso": 94.5,
     "pos_esforco": false,
-    "media": 94.54
+    "media": 94.43
    },
    {
     "data": "2026-09-01",
     "peso": 94.15,
     "pos_esforco": false,
-    "media": 94.41
+    "media": 94.34
    },
    {
     "data": "2026-09-02",
