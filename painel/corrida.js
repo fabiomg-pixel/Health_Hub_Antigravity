@@ -58,6 +58,47 @@ function cMetro(liga) {
   if (liga) C_METRO = setInterval(() => { if (C && !C.pausado && parseFloat(String(cEtapa().v).replace(',', '.')) >= 8) cBip(1200, 40); }, 60000 / 170);
 }
 
+
+// ───────── GPS (corrida na rua) ─────────
+// Só funciona com o painel aberto e a tela acesa (iPhone e navegadores suspendem o GPS com a tela travada).
+// Nada de trajeto é guardado nem enviado: só a distância e o ritmo da sessão, na memória da página.
+const cKm = (a, b) => { const R = 6371000, r = x => x * Math.PI / 180, dl = r(b.lat - a.lat), dn = r(b.lon - a.lon);
+  const h = Math.sin(dl / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(dn / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
+const cPace = ms => { if (!ms || ms < 0.4) return '—'; const sKm = 1000 / ms, m = Math.floor(sKm / 60), s = Math.round(sKm % 60); return m + ':' + String(s === 60 ? 0 : s).padStart(2, '0') + ' /km'; };
+function cFaixa(v) {   // "8,0 km/h" -> [7,5 .. 8,5]; "5,5 a 6,5 km/h" -> [5,5 .. 6,5]
+  const n = (String(v).match(/\d+(?:,\d+)?/g) || []).map(x => parseFloat(x.replace(',', '.')));
+  if (!n.length) return null; return n.length > 1 ? [n[0], n[1]] : [n[0] - 0.5, n[0] + 0.5];
+}
+function cGpsIniciar() {
+  const g = C.gps = { ok: false, erro: '', dist: 0, vel: 0, ult: null, kmFalado: 0, ultTreino: 0, id: null };
+  if (!('geolocation' in navigator)) { g.erro = 'Este aparelho não tem GPS no navegador.'; return; }
+  g.id = navigator.geolocation.watchPosition(p => {
+    if (!C || !C.gps) return;
+    g.ok = true; g.erro = '';
+    const c = p.coords, agora = { lat: c.latitude, lon: c.longitude, t: Date.now() };
+    if (c.accuracy > 35) return;                          // sinal ruim: ignora o ponto
+    if (g.ult) {
+      const d = cKm(g.ult, agora), dt = (agora.t - g.ult.t) / 1000;
+      if (dt <= 0 || d < 2) return;                       // parado ou ruído
+      const v = d / dt;
+      if (v > 7) return;                                  // salto de GPS (acima de 25 km/h)
+      if (!C.pausado) { g.dist += d; g.vel = g.vel ? g.vel * 0.7 + v * 0.3 : v; }
+    }
+    g.ult = agora;
+  }, e => { g.erro = e.code === 1 ? 'Permissão de localização negada: o guia segue só por tempo.' : 'Sem sinal de GPS por enquanto.'; }, { enableHighAccuracy: true, maximumAge: 2000, timeout: 20000 });
+}
+function cGpsParar() { try { if (C && C.gps && C.gps.id != null) navigator.geolocation.clearWatch(C.gps.id); } catch (e) {} }
+function cGpsAvisos(e, el, rest) {
+  const g = C.gps; if (!g || !g.ok || C.pausado) return;
+  const km = Math.floor(g.dist / 1000);
+  if (km > g.kmFalado) { g.kmFalado = km; const ritmoMedio = cPace(g.dist / Math.max(1, el)); cBip(1046, 150); cFalar(`${km} quilômetro${km > 1 ? 's' : ''}. Tempo ${cDur(el).replace(':', ' minutos e ')} segundos. Ritmo médio ${ritmoMedio.replace(' /km', ' por quilômetro').replace(':', ' minutos e ') .replace('minutos e 00','minutos')}.`); }
+  const f = cFaixa(e.v), kmh = g.vel * 3.6, desdeTroca = el - cInicioEtapa(C.i);
+  if (f && g.vel && desdeTroca > 25 && rest > 12 && el - g.ultTreino > 45) {
+    if (kmh < f[0] - 0.8) { g.ultTreino = el; cFalar('Um pouco mais rápido. Alvo ' + e.v.replace('km/h', 'quilômetros por hora') + '.'); }
+    else if (kmh > f[1] + 0.8) { g.ultTreino = el; cFalar('Reduza um pouco. Alvo ' + e.v.replace('km/h', 'quilômetros por hora') + '.'); }
+  }
+}
+
 function cDecorrido() { return C.acum + (C.pausado ? 0 : (Date.now() - C.ini) / 1000); }
 function cEtapa() {
   const et = C.plano.etapas; return et[Math.min(C.i, et.length - 1)];
@@ -81,6 +122,7 @@ function cTic() {
     }
     if (C.i >= p.etapas.length) { cFim(); return; }
     const e = p.etapas[C.i], rest = cInicioEtapa(C.i) + e.s - el;
+    cGpsAvisos(e, el, rest);
     if (rest <= 10 && rest > 8 && !C.falou.dez && C.i + 1 < p.etapas.length) { C.falou.dez = 1; cBip(660, 120); cFalar(`Em dez segundos: ${p.etapas[C.i + 1].n}.`); }
     if (e.marcas) { const k = Math.floor((el - cInicioEtapa(C.i)) / e.marcas); if (k >= 1 && !C.falou['m' + k] && rest > 20) { C.falou['m' + k] = 1; cBip(740, 120); cVibrar(200); if (e.marcas >= 180 || k % 3 === 0) cFalar(`Confira a frequência cardíaca. Alvo: ${e.fc.replace('FC ', '')}.`); } }
   }
@@ -97,18 +139,21 @@ function cPintar() {
     <div class="c-v">${esc(e.v)} · ${esc(e.fc)}</div>
     <p class="c-t">${esc(e.t)}</p>
     <div class="c-seg">${segs}</div>
+    ${C.gps ? `<div class="c-v" style="margin-top:6px">${C.gps.erro ? esc(C.gps.erro) : C.gps.ok ? (C.gps.dist / 1000).toFixed(2).replace('.', ',') + ' km · ' + cPace(C.gps.vel) + ' · ' + (C.gps.vel * 3.6).toFixed(1).replace('.', ',') + ' km/h' : 'Procurando sinal de GPS…'}</div>` : ''}
     <div class="c-mini"><span>Total ${cDur(el)} de ${cDur(total)}</span><span>${prox ? 'Depois: ' + esc(prox.n) : 'Última etapa'}</span></div>`;
   const pb = document.getElementById('c-pausa'); if (pb) pb.textContent = C.pausado ? 'Continuar' : 'Pausar';
 }
 
 function cFim(parou) {
   const el = Math.round(cDecorrido()); const nome = C.plano.nome;
+  const dist = C.gps && C.gps.ok ? C.gps.dist : 0; cGpsParar();
   clearInterval(C_TICK); C_TICK = null; cMetro(false); cSoltar();
   if (!parou) { cBip(1318, 400); cVibrar([400, 150, 400]); cFalar('Fim da corrida. Boa. Caminhe mais um pouco e beba água.'); }
   const min = Math.round(el / 60); C = null;
   const v = document.getElementById('view'); if (!v) return;
-  const texto = `Corrida guiada (${nome}): ${min} min${parou ? ', parei antes do fim' : ', completa'}.`;
-  v.innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="topo"><div class="rot">Corrida</div></div><h1 class="titulo longo">${parou ? 'Sessão encerrada' : 'Corrida completa'}</h1><div class="sub">${min} min · ${esc(nome)}</div></div></div>
+  const km = dist ? (dist / 1000).toFixed(2).replace('.', ',') + ' km (GPS do celular, aproximado)' : '';
+  const texto = `Corrida guiada (${nome}): ${min} min${km ? ', ' + km : ''}${parou ? ', parei antes do fim' : ', completa'}.`;
+  v.innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="topo"><div class="rot">Corrida</div></div><h1 class="titulo longo">${parou ? 'Sessão encerrada' : 'Corrida completa'}</h1><div class="sub">${min} min${km ? ' · ' + esc(km) : ''} · ${esc(nome)}</div></div></div>
     <section class="bloco"><div class="aviso">O relógio guarda a corrida de verdade (distância, FC, cadência). Anote aqui só como foi: tornozelo, respiração, vontade de parar.</div>
     <button class="botao" id="c-reg" type="button">Registrar a corrida</button></section>
     <section class="bloco"><a class="botao claro" href="#corrida">Voltar</a></section>`;
@@ -137,18 +182,21 @@ function renderCorrida() {
       porque = seg ? 'O semáforo está em ' + sem.estado + ' hoje: ' + ((sem.motivos || [])[0] || 'recuperação baixa') + ' Por isso a versão curta.' : 'Sessão-padrão da fase 1: o treinador ainda não publicou a sessão de hoje.';
     }
     C_REC = { rec, P };
+    let gpsLembrado = false; try { gpsLembrado = localStorage.getItem('corrida_gps') === '1'; } catch (e) {}
     const dia = null, foco = null, noPlano = false;
     const resumo = cResumo(P);
     v.innerHTML = topoC('Corrida de hoje', 'A sessão vem do treinador. É só tocar em iniciar e deixar a tela acesa.') +
       `<section class="bloco"><div class="c-card"><div class="c-et">${esc(P.nome)}</div><p class="c-t" style="margin:8px 0">${esc(porque)}</p><div class="c-mini" style="display:block">${esc(resumo)}</div></div>
       <button class="botao" id="c-ini" type="button" style="margin-top:14px">Iniciar</button></section>
       <section class="bloco"><label class="c-op"><input type="checkbox" id="c-metro" checked> Metrônomo de cadência (170 batidas por minuto, só na corrida fácil)</label>
+      <label class="c-op"><input type="checkbox" id="c-gps"> Corrida na rua: usar o GPS do celular (distância, ritmo e aviso a cada km)</label>
       <label class="c-op"><input type="checkbox" id="c-mudo"> Sem voz (só bip e vibração)</label>
       <details class="c-outro"><summary>Trocar a sessão</summary>${Object.entries(C_PLANOS).filter(([k]) => k === 'base' || k === 'curta').filter(([k]) => k !== rec).map(([k, p]) => `<button type="button" class="linha c-esc" data-p="${k}"><span class="corpo">${esc(p.nome)}<small>${esc(p.sub)}</small></span><span class="num">iniciar</span></button>`).join('')}<div class="aviso">A sessão de qualidade (4 × 4) só entra quando a porteira da fase 2 abrir; eu aviso.</div></details>
-      <div class="aviso">No iPhone, bloquear a tela corta a voz e o bip: mantenha o painel aberto. O ritmo na esteira é você que ajusta; o guia só marca o tempo.</div></section>
+      <div class="aviso">No iPhone, bloquear a tela corta a voz e o bip: mantenha o painel aberto. Na esteira, o ritmo é você que ajusta. Na rua, com o GPS ligado, o guia mede distância e ritmo e avisa se estiver rápido ou lento demais; ele pede a permissão de localização e não guarda nem envia o trajeto.</div></section>
       <section class="bloco"><a class="botao claro" href="#home">Voltar</a></section>`;
-    const comecar = (k, plano) => { C = { plano: plano || C_PLANOS[k], ini: Date.now(), acum: 0, pausado: false, i: 0, falou: {}, mudo: document.getElementById('c-mudo').checked };
-      cMetro(document.getElementById('c-metro').checked); cTela(); cBip(660, 80); cAnunciar(C.plano.etapas[0], true); renderCorrida(); };
+    document.getElementById('c-gps').checked = gpsLembrado;
+    const comecar = (k, plano) => { try { localStorage.setItem('corrida_gps', document.getElementById('c-gps').checked ? '1' : '0'); } catch (e) {} C = { plano: plano || C_PLANOS[k], ini: Date.now(), acum: 0, pausado: false, i: 0, falou: {}, mudo: document.getElementById('c-mudo').checked };
+      cMetro(document.getElementById('c-metro').checked); if (document.getElementById('c-gps').checked) cGpsIniciar(); cTela(); cBip(660, 80); cAnunciar(C.plano.etapas[0], true); renderCorrida(); };
     document.getElementById('c-ini').onclick = () => comecar(rec === '__treinador' ? null : rec, P);
     v.querySelectorAll('.c-esc').forEach(b => b.onclick = () => comecar(b.dataset.p));
     return;
