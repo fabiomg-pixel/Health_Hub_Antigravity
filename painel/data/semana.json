@@ -24,7 +24,7 @@
   "titulo": "Quatro regras. O resto é o de sempre.",
   "linhas": [
    "O Yopro da manhã é ADICIONAL: se virar o almoço, o almoço das 13h acontece mesmo assim.",
-   "Terça a sexta, almoço às 13h: marmita com 35 g de proteína ou mais no rótulo e com vegetal visível no prato (brócolis, espinafre, legumes). O nome da marmita não basta. Segunda, sábado e domingo: almoço em casa.",
+   "Segunda a sexta, almoço às 13h: marmita com 35 g de proteína ou mais no rótulo e com vegetal visível no prato (brócolis, espinafre, legumes); quando a marmita não traz o vegetal, salada ao lado. O nome da marmita não basta. Sábado e domingo: almoço em casa.",
    "17h, todo dia: iogurte, whey, granola e banana, antes de qualquer salgado ou doce.",
    "Uma refeição livre, sábado à noite. Só uma."
   ]
@@ -94,7 +94,8 @@
   "Atualização de 11/10: a noite de hoje foi melhor que a média, mas curta (sono 6,43 h, HRV 45, FC de repouso 49, índice 83, prontidão do Garmin 54). A semana ainda não mostra recuperação: índice médio de 7 dias 44, HRV de 7 dias 34 contra 37 de base, sono médio 6,11 h. Hoje, por conversa de 11/10, você faz um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, com carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18/10 não muda.",
   "Peso: média das 7 leituras neutras 95,14 kg (28 dias: 94,83); última pesagem 06/10. Sono, HRV e FC de repouso de hoje estão na linha de atualização acima.",
   "Sessão intensa continua fora, pela regra do §15: só abre com FC de repouso ≤52 por 3 dias seguidos, HRV ≥38 e duas semanas com 5 corridas ou mais. Os dois jogos são a intensidade da semana.",
-  "O que ainda não sei: a carga da última perna pesada. O campeonato não tem relógio, então o seu relato depois do jogo é o registro."
+  "O que ainda não sei: a carga da última perna pesada. O campeonato não tem relógio, então o seu relato depois do jogo é o registro.",
+  "Almoço, segunda a sexta: marmitas do pedido de 11/10, um prato por dia, em dobro. Seg N35, ter N83, qua N49, qui N02, sex N53. Calorias e proteína de cada uma vêm do rótulo do cardápio do iFood, sem estimativa; a proteína da N53 (51 g), que estava ilegível, está confirmada. Salada ao lado de segunda a quinta, pela regra do vegetal visível. A ordem dos pratos na semana foi escolha do copiloto, sem critério fisiológico: pode trocar os dias à vontade."
  ],
  "lista_compra": [
   {
@@ -110,7 +111,7 @@
    "cat": "Proteína da semana",
    "itens": [
     "Não sei o que há no freezer: conte antes de comprar.",
-    "Frango, carne ou peixe para 6 jantas e 3 almoços em casa, com uma janta de peixe (sardinha ou atum em lata servem)",
+    "Frango, carne ou peixe para 6 jantas e 2 almoços em casa (sábado e domingo), com uma janta de peixe (sardinha ou atum em lata servem)",
     "Ovos: 12 cozidos no domingo, mais os do café"
    ]
   },
@@ -123,12 +124,12 @@
    ]
   },
   {
-   "cat": "Marmitas (terça a sexta)",
+   "cat": "Marmitas (pedido de 11/10, segunda a sexta)",
    "itens": [
-    "5 marmitas (4 mais 1 de reserva) com 35 g de proteína ou mais NO RÓTULO e com vegetal visível no prato (brócolis, espinafre, legumes)",
-    "Das que você já registrou, só a N64 (frango com creme de espinafre, 45 g) tem os dois critérios confirmados no rótulo",
-    "A N53 frango ao curry não serve de referência: a proteína do rótulo está ilegível na foto. Fotografe de novo sem reflexo ou leve 2 ovos de reforço",
-    "Conte o que já há no freezer antes de comprar"
+    "Já pedidas no iFood (Food Brasil): 10 porções = 5 pratos × 2, para você e sua esposa. Guardar no freezer ao chegar.",
+    "Seg N35 frango agridoce · Ter N83 cenoura com carne moída · Qua N49 frango com batata doce · Qui N02 fricassê · Sex N53 curry com brócolis",
+    "Salada de folhas e tomate ao lado de segunda a quinta, porque o rótulo não mostra vegetal em quantidade (N53 já traz brócolis)",
+    "Não sei quantas marmitas já havia no freezer: conte e guarde como reserva"
    ]
   }
  ],
@@ -523,11 +524,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
     },
     "almoco": {
-     "nome": "13h · Casa · Proteína grelhada + arroz + feijão + salada",
-     "kcal": 640,
-     "prot": 50,
-     "peso_g": null,
-     "nota": null
+     "nome": "13h · Marmita N35 Frango agridoce com arroz + salada",
+     "kcal": 448,
+     "prot": 45,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 448 kcal, 45 g de proteína, 44 g de carboidrato, 9.6 g de gordura, sódio 599 mg (porção declarada de 400 g). Vegetal declarado no rótulo: pimentão verde. Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas. Se a entrega ainda não tiver chegado, almoço em casa: proteína grelhada + arroz + feijão + salada. A ordem dos pratos na semana foi escolha do copiloto, sem critério fisiológico: pode trocar os dias à vontade."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -622,11 +623,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
     },
     "almoco": {
-     "nome": "13h · Marmita (35 g de proteína ou mais no rótulo)",
-     "kcal": 520,
-     "prot": 42,
-     "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
+     "nome": "13h · Marmita N83 Creme de cenoura com queijo e carne moída + salada",
+     "kcal": 525,
+     "prot": 49,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 525 kcal, 49 g de proteína, 50 g de carboidrato, 14 g de gordura, sódio 513 mg (porção declarada de 400 g). Vegetal declarado no rótulo: cenoura (dentro do creme). Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -686,11 +687,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
     },
     "almoco": {
-     "nome": "13h · Marmita (35 g de proteína ou mais no rótulo)",
-     "kcal": 520,
-     "prot": 42,
-     "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
+     "nome": "13h · Marmita N49 Frango desfiado com purê de batata doce + salada",
+     "kcal": 461,
+     "prot": 45,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 461 kcal, 45 g de proteína, 44 g de carboidrato, 13 g de gordura, sódio 487 mg (porção declarada de 400 g). Vegetal declarado no rótulo: nenhum vegetal listado (batata doce é tubérculo). Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -755,11 +756,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
     },
     "almoco": {
-     "nome": "13h · Marmita (35 g de proteína ou mais no rótulo)",
-     "kcal": 520,
-     "prot": 42,
-     "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
+     "nome": "13h · Marmita N02 Fricassê de frango com arroz + salada",
+     "kcal": 542,
+     "prot": 49,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 542 kcal, 49 g de proteína, 49 g de carboidrato, 14 g de gordura, sódio 641 mg (porção declarada de 400 g). Vegetal declarado no rótulo: milho. Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -844,11 +845,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
     },
     "almoco": {
-     "nome": "13h · Marmita (35 g de proteína ou mais no rótulo)",
-     "kcal": 520,
-     "prot": 42,
-     "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
+     "nome": "13h · Marmita N53 Frango ao curry e arroz com brócolis",
+     "kcal": 461,
+     "prot": 51,
+     "peso_g": 380,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 461 kcal, 51 g de proteína, 38 g de carboidrato, 12 g de gordura, sódio 474 mg (porção declarada de 380 g). Brócolis já vem no prato. Preparo do cardápio: 5 a 7 min no micro-ondas."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -1011,7 +1012,7 @@
     }
    },
    "janela": {
-    "quando": "Corrida de 30 min de manhã e preparo da semana (marmitas e compras).",
+    "quando": "Corrida de 30 min de manhã e preparo da semana (compras).",
     "plano_b": "Se chover: esteira ou caminhada. Se não der, não repõe."
    }
   }
@@ -1033,13 +1034,13 @@
    "id": "nutricao",
    "especialista": "Alimentação",
    "assina": "sua nutricionista",
-   "como_esta": "Os registros são poucos: nove refeições em quatro dias (05, 06, 10 e 11/10), e nada de 07 a 09/10, que não prova que você não comeu. Sábado 10/10, à noite, foi uma refeição livre só (linguiça, joelho de porco e croquete, sem quantidade nem foto). Pelo que deu para ler na foto, o café de sábado tinha ovo, pão integral e abacate (estimativa de 15 a 20 g de proteína, sem rótulo), e o rótulo da marmita N53 mostra, lido na foto, 461 kcal e 474 mg de sódio, mas a proteína ficou ilegível. A média do peso é 95,14 kg e a última pesagem é de 06/10.",
-   "para_onde": "Hoje e segunda seguem o plano como está, inclusive o whey da noite e o iogurte das 17h. Nada a mais, nada a menos. Proteína primeiro no prato. Em 05/10 a leitura veio alta (96,40) e em 06/10 caiu (95,05): se subir de novo, vale a média de 95,14, não a leitura do dia. A lista de compras ganhou as marmitas que faltavam, com 35 g ou mais de proteína no rótulo.",
+   "como_esta": "Os registros são poucos: nove refeições em quatro dias (05, 06, 10 e 11/10), e nada de 07 a 09/10, que não prova que você não comeu. Sábado 10/10, à noite, foi uma refeição livre só (linguiça, joelho de porco e croquete, sem quantidade nem foto). Pelo que deu para ler na foto, o café de sábado tinha ovo, pão integral e abacate (estimativa de 15 a 20 g de proteína, sem rótulo), e o rótulo da marmita N53 mostra 461 kcal e 474 mg de sódio; a proteína, ilegível na foto, o cardápio do iFood informa: 51 g. A média do peso é 95,14 kg e a última pesagem é de 06/10.",
+   "para_onde": "Hoje e segunda seguem o plano como está, inclusive o whey da noite e o iogurte das 17h. Nada a mais, nada a menos. Proteína primeiro no prato. Em 05/10 a leitura veio alta (96,40) e em 06/10 caiu (95,05): se subir de novo, vale a média de 95,14, não a leitura do dia. As marmitas de segunda a sexta já foram pedidas no iFood em 11/10: cinco pratos em dobro, para você e sua esposa, todos com 35 g de proteína ou mais no rótulo. Em quatro deles falta vegetal visível, então a salada ao lado fecha a regra.",
    "nao_sei": [
     "O que você comeu de 07 a 09/10",
     "O que você comeu além da refeição livre no sábado",
-    "Quanta proteína tem a marmita N53",
-    "Quantas marmitas já há no freezer"
+    "Quantas marmitas já há no freezer",
+    "quando o pedido do iFood chega: segunda depende da entrega, e sem ela o almoço é em casa"
    ]
   },
   {
@@ -1061,7 +1062,6 @@
    "para_onde": "O aviso de terça agora usa cortes reais do projeto (sono abaixo de 6 h e HRV abaixo de 32 ou FC de repouso a partir de 56). O treino de hoje é leve por escolha sua e está definido (3 séries de 12, sem agachamento nem leg press). As regras de calor, chuva e reunião saíram do seu texto: o personal resolve na hora. A semana de 12 a 18 não muda.",
    "nao_sei": [
     "Como você dorme na noite antes de terça: é isso que decide o Lower A",
-    "A proteína da marmita N53: fotografe de novo sem reflexo",
     "O clima depois de segunda"
    ]
   }

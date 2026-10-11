@@ -824,3 +824,24 @@ Corrida na rua (11/10): checkbox 'usar o GPS' no `#corrida` (lembra a escolha). 
 
 ### Lombar e joelho esquerdo — reforço (11/10/2026)
 Relato do Fábio: dor lombar central ao sentar e ficar em pé, sem irradiar; joelho esquerdo ligado ao uso (corrida), "não é terrível". Decisão da carga (teto da semana inalterado: 2 forças, 3 corridas): o reforço **troca, não soma**. Lower A de 13/10 sem búlgaro (entra step-up 2×8; fora até o joelho ficar ≤2/10 por 2 semanas), stiff 4→3 séries, leg press até ~90°, RIR 3, e bloco no fim (dead bug, prancha lateral, bird dog, ponte unilateral, caminhada lateral com mini-band). Upper B de 16/10: só core (~6 min). Corridas: teto 8,0 km/h, plano, sem descida; dor >3/10 vira caminhada a 5,5; se o joelho piorar após o Lower A, a corrida de 14/10 vira caminhada ativa. Quinta e sábado (jogos): nada. Progressão do bloco só com 2 sessões sem dor e RIR ≥3: +1 série, +2 reps ou +5 s; depois halter 4–6 kg. Parar/regredir: dor >3/10 ou piora no dia seguinte (48 h sem o bloco). Hábitos: levantar 1–2 min a cada 45 min sentado; alternar apoio dos pés em pé. Fisio presencial em 2–3 semanas ou antes se houver irradiação/formigamento, dor noturna, joelho inchado/travando. Sessões em `painel/data/treinos.json` (13/10, 16/10); corridas em `corridas.json`.
+
+## 22. Marmitas de 11/10: 10 porções = 5 pratos em dobro (casal)
+
+O Fabio fez o pedido no iFood (Food Brasil, Santa Teresa, combo de 10 a R$ 226,53 mais sobretaxas) em
+11/10/2026. **Atenção à regra "compre 5, nunca 10" (§ do almoço):** ela existe para uma pessoa. Aqui
+são **5 pratos × 2 porções, porque a esposa come o mesmo prato**; o almoço de segunda a sexta usa 1
+prato por dia, então não há excesso, e não sobra reserva (segunda é feriado e entrou: o almoço em casa
+agora é só sábado e domingo). Quantas marmitas já havia no freezer: **não sei**.
+
+- Escolha: o critério foi ≥35 g de proteína NO RÓTULO do cardápio e sem prato com sobretaxa de R$ 3,99
+  (pedido dele). Distribuição por dia (escolha do copiloto, sem critério fisiológico forte): seg N35 frango
+  agridoce · ter N83 creme de cenoura com carne · qua N49 frango com purê de batata doce · qui N02 fricassê ·
+  sex N53 frango ao curry com brócolis. N83 tem sobretaxa de R$ 1,99 por porção.
+- **Vegetal visível (regra da nutricionista):** só a N53 traz o brócolis no prato. Nas outras quatro o
+  rótulo lista pimentão, cenoura dentro do creme, milho ou nenhum vegetal, então a **salada de folhas e
+  tomate ao lado** fecha a regra. Na próxima compra, preferir pratos com vegetal em pedaço (a N64 do
+  espinafre entra nesse critério, mas o cardápio do iFood não traz a tabela nutricional dela).
+- A proteína da N53 (51 g) estava "ilegível na foto"; o cardápio do iFood a informa. 14 dos 56 pratos
+  do cardápio não trazem tabela nutricional e ficam fora da escolha, por §18.
+- Como ler o cardápio: a página mostra a "porção declarada" da tabela, que às vezes difere do peso do
+  nome (N53: nome 350 g, tabela 380 g; N35: nome 380 g, tabela 400 g). Os números do plano são os da tabela.
