@@ -60,7 +60,7 @@ function blocoSemaforo() {
       <div class="par"><b>Segurar:</b> 3 ou mais dias seguidos em banda vermelha, sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56, ou prontidão 50 a 74 com índice próprio vermelho e sono abaixo de 6 h.</div>
       <div class="par"><b>Ajustar:</b> dia fora da faixa alta, prontidão do Garmin abaixo de 50, noite abaixo de 5,5 h, ou média de 7 dias baixa (sono abaixo de 6 h, VFC abaixo de 32, FC de repouso a partir de 56).</div>
       <div class="par"><b>Pode, moderando:</b> prontidão de 50 a 74 (faixa do projeto: moderar, teto de esforço 8) ou 2 ou mais médias de 7 dias em faixa média. A carga só sobe com a semana fora dessa faixa.</div>
-      <div class="par"><b>Pode:</b> o resto. Os cortes de VFC 32 e FC 56 são propostas do copiloto que você autorizou em 11/10 com o "faça tudo"; falta a sua confirmação específica.</div></div></details></section>`;
+      <div class="par"><b>Pode:</b> o resto. Os cortes de VFC 32 e FC 56 foram definidos pela carga (a fisiologista do copiloto) e você delegou essa decisão aos especialistas em 11/10.</div></div></details></section>`;
 }
 // A sessão do dia é pesada? (força de verdade, não o treino leve nem a corrida fácil)
 function sessaoPesada(sessao) { return !!sessao && sessao.pesada !== false && /lower|upper|for[çc]a|costas|peito|ombro/i.test(sessao.titulo + ' ' + (sessao.regra || '')); }

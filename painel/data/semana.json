@@ -567,12 +567,12 @@
     "foco": "Lower A, de volta — força 1 de 2",
     "exercicios": [
      {
-      "nome": "Primeira força plena depois do congresso. Carga: não sei qual foi a última (o último relato confirmado é Costas, 01/10). Comece leve e deixe 3 repetições na reserva. Tornozelo 100% por relato seu em 11/10: o búlgaro fica no plano, mas a carga dele e a da panturrilha não sobem sozinhas (decisão sua e do fisio).",
+      "nome": "Primeira força plena depois do congresso. Carga: não sei qual foi a última (o último relato confirmado é Costas, 01/10). Comece leve e deixe 3 repetições na reserva. Tornozelo liberado, segundo você em 11/10: o búlgaro e a panturrilha seguem o plano, e a carga deles sobe pelas mesmas regras dos outros exercícios. Se aparecer dor, pare e avise.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "0 · Antes de começar, abra o painel: o semáforo já lê o relógio de 13/10. Se disser Segurar (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro, com cargas 10% menores. Se disser Ajustar, tire 1 série de cada exercício. Se disser Pode, moderando, siga o plano com 2 ou mais repetições de sobra e sem subir carga. Esses cortes (VFC 32 e FC de repouso 56) foram autorizados por você em 11/10 ('faça tudo'); falta a sua confirmação específica.",
+      "nome": "0 · Antes de começar, abra o painel: o semáforo já lê o relógio de 13/10. Se disser Segurar (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro, com cargas 10% menores. Se disser Ajustar, tire 1 série de cada exercício. Se disser Pode, moderando, siga o plano com 2 ou mais repetições de sobra e sem subir carga. Esses cortes (VFC 32 e FC de repouso 56) foram definidos pela carga, a fisiologista do copiloto, e você delegou essa decisão aos especialistas em 11/10.",
       "series": 1,
       "reps": "—"
      },
@@ -1012,11 +1012,10 @@
    "especialista": "Carga e recuperação",
    "assina": "seu fisiologista",
    "como_esta": "A noite de hoje foi melhor que a média, mas curta: índice 83, HRV 45 e FC de repouso 49, com 6,43 h de sono. A semana ainda não mostra recuperação: índice médio de 7 dias 44, HRV de 7 dias 34 contra 37 de base, sono médio 6,11 h e prontidão do Garmin em 54. O relógio não trouxe a carga acumulada (ACWR) desta semana, então não prescrevo por ela.",
-   "para_onde": "Hoje, um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18 segue como combinada: 2 forças e até 5 corridas fáceis, sendo 3 as planejadas. Na terça, ao abrir o relógio, a leitura de 13/10 decide: sono abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56) reduz o Lower A para 3 séries, sem o búlgaro. Os cortes de HRV e de FC de repouso desse aviso são escolha do copiloto e dependem da sua confirmação.",
+   "para_onde": "Hoje, um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18 segue como combinada: 2 forças e até 5 corridas fáceis, sendo 3 as planejadas. Na terça, ao abrir o relógio, a leitura de 13/10 decide: sono abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56) reduz o Lower A para 3 séries, sem o búlgaro. Os cortes de VFC e de FC de repouso desse aviso foram definidos pela carga e você delegou essa decisão aos especialistas.",
    "nao_sei": [
     "A carga acumulada do relógio (ACWR) desta semana",
     "Como será o sono da noite antes de terça, que decide o Lower A",
-    "Como está o tornozelo",
     "O VO2max de 39,5 foi medido a 930 m e não mostra a sua forma"
    ]
   },
@@ -1053,8 +1052,7 @@
    "nao_sei": [
     "Como você dorme na noite antes de terça: é isso que decide o Lower A",
     "A proteína da marmita N53: fotografe de novo sem reflexo",
-    "O clima depois de segunda",
-    "Se você confirma os cortes de HRV (abaixo de 32) e FC de repouso (a partir de 56) do aviso de terça"
+    "O clima depois de segunda"
    ]
   }
  ]

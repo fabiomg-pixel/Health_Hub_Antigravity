@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-11T11:48:37",
+ "gerado_em": "2026-10-11T12:35:13",
  "janela": {
   "hoje": "2026-10-11",
   "dia_semana": "Sunday",
@@ -94,7 +94,7 @@
  "recuperacao": {
   "indice_hoje": 83,
   "banda_hoje": "g",
-  "prontidao_garmin_hoje": 54,
+  "prontidao_garmin_hoje": 43,
   "dias_vermelhos_seguidos": 0,
   "sono_ultima_noite_h": 6.43,
   "sono_ultima_noite_score": 80,
@@ -133,38 +133,20 @@
   ],
   "atividades_garmin": [
    {
-    "id": 24656807636,
-    "tipo": "running",
-    "nome": "Curitiba Corrida",
-    "inicio_local": "2026-10-08 18:39:12",
-    "duracao_min": 20.2,
-    "distancia_km": 2.64,
-    "fc_media": 154.0,
-    "fc_max": 168.0,
-    "kcal": 235.0,
+    "id": 24687618791,
+    "tipo": "treadmill_running",
+    "nome": "Base",
+    "inicio_local": "2026-10-11 11:50:07",
+    "duracao_min": 23.0,
+    "distancia_km": 3.3,
+    "fc_media": 138.0,
+    "fc_max": 143.0,
+    "kcal": 237.0,
     "tempo_em_zona_s": [
-     26,
-     32,
-     502,
-     629,
-     0
-    ]
-   },
-   {
-    "id": 24645478265,
-    "tipo": "running",
-    "nome": "Curitiba Corrida",
-    "inicio_local": "2026-10-07 19:05:02",
-    "duracao_min": 21.7,
-    "distancia_km": 2.86,
-    "fc_media": 145.0,
-    "fc_max": 167.0,
-    "kcal": 257.0,
-    "tempo_em_zona_s": [
-     37,
-     354,
-     630,
-     267,
+     0,
+     945,
+     435,
+     0,
      0
     ]
    }

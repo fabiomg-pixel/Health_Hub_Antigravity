@@ -715,7 +715,7 @@ O traço de cada anel tem cor pela faixa: **bom** (verde-água `#5FD3C4`), **mé
 (coral `#FF6B5E`); sem dado, cinza e "—". Há legenda embaixo dos anéis. Cortes (`QUAL` em `index.html`):
 sono ≥7 h bom, 6–7 médio, <6 baixo · VFC ≥38 bom (portão do §15), 32–37 médio, <32 baixo · FC de repouso ≤52 bom
 (portão do §15), 53–55 médio, ≥56 baixo · prontidão Garmin ≥75 bom, 50–74 médio, <50 baixo (faixas do Garmin).
-Os cortes "médio/baixo" de VFC e FC são escolha do copiloto. Em 11/10 o Fabio autorizou o uso deles no semáforo com o "faça tudo"; falta a confirmação específica dos números (VFC 32, FC 56).
+Os cortes "médio/baixo" de VFC e FC são escolha do copiloto. Em 11/10 o Fabio disse que não conhece os cortes e delegou aos especialistas: valem os que a carga definiu (VFC 32, FC 56).
 
 ---
 
@@ -808,7 +808,7 @@ peso com "média até DD/MM"; corpo com "hoje · 7 dias"; VO₂ máx com data e 
   PODE = o resto. Sem leitura de hoje, o painel diz que não há decisão.
 - **Progressão** (`treino.js`, `progressao`): a carga só sobe com as duas últimas sessões PESADAS fechando o topo das repetições em todas as séries, esforço
   registrado em todas, folga na última, nenhuma série no limite, semáforo liberando a carga (PODE, sem moderar, VFC de 7 dias ≥35 e FC de 7 dias <55),
-  sem aumento nos últimos 7 dias e só no dia de hoje; no máximo 2 aumentos por treino. Unilaterais e panturrilha não sobem sozinhos (tornozelo é do fisio, §10).
+  sem aumento nos últimos 7 dias e só no dia de hoje; no máximo 2 aumentos por treino. Em 11/10 o Fabio informou que o tornozelo está liberado (sem dizer quem liberou): a trava dos unilaterais e da panturrilha está desligada (`TRAVAR_UNILATERAL` em treino.js). Dor articular continua exigindo parar e avisar o fisio (§10).
   Treino leve (`pesada:false`) não conta. Em SEGURAR o painel reduz as cargas 10%.
 - **Esforço por série:** Folga (3+ de sobra) / Duro (1 a 2) / Limite (0), terceiro item de cada série no `#sets`.
 - **Proteína registrada:** o campo do formulário grava "Proteína informada: X g." e manda sobre qualquer outro número do texto; faixa ("15 a 20 g") não conta.

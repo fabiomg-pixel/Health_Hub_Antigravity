@@ -93,9 +93,11 @@ function opcoesDe(e) { const g = acharGrupo(e), gs = (TREINOS && TREINOS.bibliot
 // Progressão de carga (carga, 11/10): sobe só quando TODAS valem: (1) as duas últimas sessões PESADAS desse exercício
 // fecharam o topo das repetições em todas as séries, com o esforço registrado em todas e folga na última; (2) nenhuma série
 // foi ao limite; (3) a semana não está em faixa média (o painel libera a carga); (4) não subiu nos últimos 7 dias;
-// (5) é dia de hoje (nunca pré-preenche aumento de dia futuro); (6) o exercício não é unilateral nem panturrilha
-// (tornozelo é decisão do fisio, PROJETO_CHAT §10). Treino leve não conta. Máximo 2 aumentos por treino.
+// (5) é dia de hoje (nunca pré-preenche aumento de dia futuro); (6) se TRAVAR_UNILATERAL estiver ligada, unilaterais e
+// panturrilha não sobem sozinhos (hoje desligada: tornozelo liberado). Treino leve não conta. Máximo 2 aumentos por treino.
 // Salto: halter +1 kg (+2 a partir de 20 kg); pernas e demais +2,5 kg.
+// Em 11/10 o Fabio informou que o tornozelo está liberado: a trava dos unilaterais está desligada. Ligue de novo se houver dor.
+const TRAVAR_UNILATERAL = false;
 const TRAVADOS = /bulgaro|afundo|passada|step_up|unilateral|panturrilha/;
 const kgFmt = v => fNum(v, v % 1 ? 1 : 0);
 function ultimaCarga(sess) { const f = (sess.s || []).filter(x => x && x[0] != null); return f.length ? f[f.length - 1][0] : null; }
@@ -106,7 +108,7 @@ function progressao(e, ef, h, iso) {
   if (base == null) return null;
   const mantem = motivo => ({ kg: base, motivo, subiu: false });
   if (iso !== isoLocal()) return mantem('');
-  if (TRAVADOS.test(ef.id)) return mantem('Carga mantida: exercício unilateral ou de panturrilha não sobe sozinho; essa decisão é sua e do fisio.');
+  if (TRAVAR_UNILATERAL && TRAVADOS.test(ef.id)) return mantem('Carga mantida: exercício unilateral ou de panturrilha não sobe sozinho; essa decisão é sua e do fisio.');
   if (!pesadas.length) return mantem('Carga mantida: a última carga vem de um treino leve e ainda não há treino pesado desse exercício (o leve não conta para subir). Ajuste pela sensação.');
   const topo = topoReps(e.reps), av = pesadas.slice(0, 2).map(x => avaliarSessao(x.s, topo));
   if (av.some(x => x.limite)) return mantem('Carga mantida: em uma das últimas sessões alguma série foi ao limite.');
