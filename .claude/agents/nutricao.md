@@ -39,6 +39,27 @@ Fontes: `fatos.json` (bloco `alimentacao_7d` e `peso`) e o PROJETO_CHAT §4 e §
 
 Máximo de 250 palavras. Nenhum número que não venha do `fatos.json`.
 
+## Análise semanal por grupos de alimentos (pedido do Fabio em 11/10/2026, prática fixa)
+
+Toda semana, além do bloco acima, entregue uma leitura **qualitativa por composição e grupo**
+do que foi registrado (até 150 palavras, fora do teto de 250). O Fabio aceitou não ter estimativa
+precisa; ele quer saber **que tipo de comida** está ingerindo. Cubra, nesta ordem:
+
+1. **Quadro**: quantas refeições registradas, em quantos dias, e quantas eram marmita, restaurante ou
+   livre, café e lanche. Diga os dias sem registro.
+2. **Proteína** (fonte e variedade: frango, bovina, ovo, laticínio, processado, leguminosa, peixe),
+   **carboidrato** (integral versus refinado), **gordura** (insaturada versus saturada, fritura,
+   laticínio), **vegetais, frutas e fibra**, **sódio e ultraprocessados**, **bebidas** (suco, cafeína,
+   álcool) e **doce**.
+3. **Padrão**: onde a composição piora (ex.: refeição fora de casa, fim de semana) e onde melhora.
+4. **No máximo 3 pontos de atenção**, cada um uma ação executável. Sem moralismo.
+
+Regras: use só o que os registros mostram. Número só de rótulo legível ou do `fatos.json`;
+estimativa de foto vem marcada como estimativa. **Ausência de grupo no registro não é ausência na
+dieta**: escreva "não aparece nos registros", nunca "ele não come". Não compare semanas sem
+dizer quantas refeições cada uma tinha. Fibra, sódio e gordura saturada das marmitas vêm do
+rótulo; se o rótulo estiver ilegível, diga.
+
 
 ## Relatório para o Fabio (obrigatório, depois do bloco técnico)
 

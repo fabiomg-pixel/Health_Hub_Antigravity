@@ -55,7 +55,12 @@ Dispare os três na MESMA mensagem, para rodarem em paralelo. Cada um lê só a 
 - **`carga`** → teto da semana (quantas sessões de força, quantas de corrida, cabe intensa?),
   dias intocáveis, gatilho de corte, lacunas. **Tem veto sobre volume.**
 - **`nutricao`** → até 4 regras da semana, a compra que as sustenta, padrão dos registros,
-  lacunas. **Tem veto sobre prescrição acima da adesão histórica.**
+  lacunas, **mais a análise semanal por grupos de alimentos** (prática fixa desde 11/10/2026, a
+  pedido do Fabio: composição e grupos, sem estimativa precisa). O `fatos.json` só traz
+  ocorrências (fritura, doce, etc.), então **passe ao especialista o texto completo dos
+  registros da semana**, já enriquecido no Passo 2 (rótulos lidos, fotos descritas). Envie a
+  análise ao Fabio no fechamento (Telegram), em linguagem simples, junto com o relatório.
+  **Tem veto sobre prescrição acima da adesão histórica.**
 - **`logistica`** → janela viável por dia (horário e local), dias em risco, plano B concreto.
   **Tem veto sobre horário e local.**
 
