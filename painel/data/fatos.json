@@ -1,9 +1,9 @@
 {
- "gerado_em": "2026-10-10T16:23:44",
+ "gerado_em": "2026-10-11T08:53:05",
  "janela": {
-  "hoje": "2026-10-10",
-  "dia_semana": "Saturday",
-  "semana_desde": "2026-10-03"
+  "hoje": "2026-10-11",
+  "dia_semana": "Sunday",
+  "semana_desde": "2026-10-04"
  },
  "peso": {
   "ultima": {
@@ -92,29 +92,24 @@
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 76,
+  "indice_hoje": 83,
   "banda_hoje": "g",
-  "prontidao_garmin_hoje": 50,
+  "prontidao_garmin_hoje": 54,
   "dias_vermelhos_seguidos": 0,
-  "sono_ultima_noite_h": 8.05,
-  "sono_ultima_noite_score": 87,
-  "hrv_ultima_noite": 39,
-  "fc_repouso_hoje": 53,
-  "indice_medio_7d": 33.0,
-  "sono_medio_7d": 6.05,
-  "hrv_medio_7d": 32.0,
-  "hrv_medio_28d": 36.0,
-  "fc_repouso_7d": 55.0,
+  "sono_ultima_noite_h": 6.43,
+  "sono_ultima_noite_score": 80,
+  "hrv_ultima_noite": 45,
+  "fc_repouso_hoje": 49,
+  "indice_medio_7d": 44.0,
+  "sono_medio_7d": 6.11,
+  "hrv_medio_7d": 34.0,
+  "hrv_medio_28d": 37.0,
+  "fc_repouso_7d": 54.0,
   "fc_repouso_28d": 54.0,
   "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-10-03",
-    "kcal_ativas": 871.0,
-    "passos": 14120
-   },
    {
     "data": "2026-10-06",
     "kcal_ativas": 318.0,
@@ -141,14 +136,9 @@
     "data": "2026-10-05",
     "tem_foto": true,
     "texto": ""
-   },
-   {
-    "data": "2026-10-03",
-    "tem_foto": false,
-    "texto": "Dois jogos de campeonato. Manhã: gravado no relógio. Tarde: sem relógio. Chuva e cansaço muscular."
    }
   ],
-  "sessoes_registradas": 2,
+  "sessoes_registradas": 1,
   "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço."
  },
  "vo2max": {
@@ -189,12 +179,12 @@
    "2026-10-06",
    "2026-10-10"
   ],
-  "n_refeicoes_registradas": 9,
+  "n_refeicoes_registradas": 10,
   "por_dia": {
    "2026-10-04": 2,
    "2026-10-05": 2,
    "2026-10-06": 3,
-   "2026-10-10": 2
+   "2026-10-10": 3
   },
   "ocorrencias": {
    "fritura": [
@@ -221,6 +211,10 @@
    ]
   },
   "observacoes": [
+   {
+    "data": "2026-10-10",
+    "texto": "10/10 noite: Fabio pediu cardio na manha de 11/10 para compensar as calorias da noite. Copiloto orientou nao compensar (regra PROJETO_CHAT); levar ao conselho d"
+   },
    {
     "data": "2026-10-05",
     "texto": "Dias soltos. Pouco planejamento nas refeições nas últimas semanas. Processo de recuperação muscular e intestino preso hoje. Hora de recuperar a programação. O f"

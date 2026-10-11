@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-10",
+ "gerado_em": "2026-10-11",
  "semana": "12 a 18/out · retomar a constância, sem pressa e sem palpite",
  "objetivo": "Constância: corrida fácil de 30 min de manhã, duas forças, futebol na quinta e campeonato no sábado. Nada intenso além dos jogos.",
  "peso_atual": 95.14,
  "peso_rotulo": "média das 7 leituras neutras, até 06/10",
  "fontes_status": {
-  "garmin": "ok, noite de 10/10 incluída",
+  "garmin": "ok, noite de 11/10 incluída (sono 6,43 h, HRV 45, FC de repouso 49)",
   "peso": "última pesagem 06/10 (95,05 kg)",
-  "nutricao": "parcial: sem registro de 07 a 09/10",
-  "strava": "não consultado nesta rodada",
+  "nutricao": "parcial: sem registro de 07 a 09/10; 10/10 processado (café estimado pela foto, almoço com rótulo sem a proteína legível, jantar sem quantidade)",
+  "strava": "consultado em 11/10: última atividade em 08/10, nada ainda em 11/10",
   "clima": "Open-Meteo, puxado em 10/10 (só os dois primeiros dias são firmes)"
  },
  "dieta": {
@@ -29,13 +29,13 @@
   ]
  },
  "tendencias": {
-  "prontidao_garmin_hoje": 50,
-  "indice_agudo_hoje": 76,
-  "indice_medio_7d": 33.0,
-  "sono_media_7d": 6.05,
-  "sono_score_hoje": 87,
+  "prontidao_garmin_hoje": 54,
+  "indice_agudo_hoje": 83,
+  "indice_medio_7d": 44.0,
+  "sono_media_7d": 6.11,
+  "sono_score_hoje": 80,
   "rem_hoje": null,
-  "training_status": "STRAINED_4",
+  "training_status": null,
   "prontidao": [
    {
     "data": "04/10",
@@ -90,7 +90,8 @@
  "relatorio": [
   "Semana fechada com as suas respostas de 10/10: há marmitas, há futebol na quinta 15/10, há campeonato no sábado 17/10, e você aceitou a proposta dos especialistas (2 forças, até 5 corridas).",
   "Como ficou: corrida fácil de 30 min na segunda, quarta e domingo; força na terça (Lower A) e na sexta (Upper B); futebol na quinta; campeonato no sábado. São 3 corridas, e não 5: quinta e sábado viraram jogo. Por isso esta semana ainda não conta para a porteira da Fase 2.",
-  "Números de 10/10: peso, média das 7 leituras neutras 95,14 kg (28 dias: 94,83); última pesagem 06/10. Noite de 8,05 h, HRV 39, FC de repouso 53, índice 76. Média de 7 noites: 6,05 h; HRV de 7 dias 32 (28 dias: 36).",
+  "Atualização de 11/10: a noite de hoje foi melhor que a média, mas curta (sono 6,43 h, HRV 45, FC de repouso 49, índice 83, prontidão do Garmin 54). A semana ainda não mostra recuperação: índice médio de 7 dias 44, HRV de 7 dias 34 contra 37 de base, sono médio 6,11 h. Hoje, por conversa de 11/10, você faz um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, com carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18/10 não muda.",
+  "Peso: média das 7 leituras neutras 95,14 kg (28 dias: 94,83); última pesagem 06/10. Sono, HRV e FC de repouso de hoje estão na linha de atualização acima.",
   "Sessão intensa continua fora, pela regra do §15: só abre com FC de repouso ≤52 por 3 dias seguidos, HRV ≥38 e duas semanas com 5 corridas ou mais. Os dois jogos são a intensidade da semana.",
   "O que ainda não sei: o horário do jogo de sábado e a carga da última perna pesada. O campeonato não tem relógio, então o seu relato depois do jogo é o registro."
  ],
@@ -118,6 +119,14 @@
     "Iogurte natural 170 g, um por dia",
     "Whey: confira se o pote chega até domingo",
     "Yopro, um por dia"
+   ]
+  },
+  {
+   "cat": "Marmitas (terça a sexta)",
+   "itens": [
+    "5 marmitas (4 mais 1 de reserva) com 35 g de proteína ou mais NO RÓTULO",
+    "A N53 frango ao curry não serve de referência: a proteína do rótulo está ilegível na foto. Fotografe de novo sem reflexo ou leve 2 ovos de reforço",
+    "Conte o que já há no freezer antes de comprar"
    ]
   }
  ],
@@ -557,6 +566,11 @@
       "reps": "—"
      },
      {
+      "nome": "0 · Antes de começar, abra o relógio e olhe a leitura de 13/10. Se o sono estiver abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro. Senão, como está.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
       "nome": "1 · Leg press — 4×6–8",
       "series": 4,
       "reps": "6–8"
@@ -601,7 +615,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10."
+     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -661,7 +675,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10."
+     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -726,7 +740,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10."
+     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -806,7 +820,7 @@
      "kcal": 520,
      "prot": 42,
      "peso_g": null,
-     "nota": "Marmita confirmada por você em 10/10."
+     "nota": "Marmita confirmada por você em 10/10. Os 42 g assumem o mínimo de 35 g do rótulo mais um reforço; sem rótulo, não é dado medido."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
@@ -967,46 +981,54 @@
    "id": "carga",
    "especialista": "Carga e recuperação",
    "assina": "seu fisiologista",
-   "como_esta": "Você saiu do congresso com o sono curto: a média das últimas 7 noites é de 6,05 horas. Hoje dormiu 8 horas e a VFC ficou em 39, com a FC de repouso em 53. É uma boa noite, não é uma recuperação: a VFC média dos últimos 7 dias ainda está em 32, contra 36 de base, e o Garmin segue marcando sobrecarga. Mostra que o corpo se recupera quando o sono vem; ainda não mostra que já recuperou.",
-   "para_onde": "Uma semana de retomada, agora fechada: duas forças plenas, na terça e na sexta, três corridas de 30 minutos em ritmo fácil (segunda, quarta e domingo), futebol na quinta e campeonato no sábado. Os dois jogos são a única intensidade da semana. A meta não é desempenho, é repetir: aparecer e sair inteiro. Sessão intensa de corrida só volta quando a FC de repouso ficar em 52 ou menos por três dias, a VFC em 38 ou mais, e você somar duas semanas de cinco corridas.",
+   "como_esta": "A noite de hoje foi melhor que a média, mas curta: índice 83, HRV 45 e FC de repouso 49, com 6,43 h de sono. A semana ainda não mostra recuperação: índice médio de 7 dias 44, HRV de 7 dias 34 contra 37 de base, sono médio 6,11 h e prontidão do Garmin em 54. O relógio não trouxe a carga acumulada (ACWR) desta semana, então não prescrevo por ela.",
+   "para_onde": "Hoje, um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18 segue como combinada: 2 forças e até 5 corridas fáceis, sendo 3 as planejadas. Na terça, ao abrir o relógio, a leitura de 13/10 decide: sono abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56) reduz o Lower A para 3 séries, sem o búlgaro. Os cortes de HRV e de FC de repouso desse aviso são escolha do copiloto e dependem da sua confirmação.",
    "nao_sei": [
-    "quando foi a sua última perna pesada (o último relato confirmado é Costas, em 01/10)",
-    "quantas corridas por semana você fez, porque ainda não existe essa contagem",
-    "o peso desde 06/10",
-    "como as pernas vão sair do campeonato: sem relógio, só o seu relato diz"
+    "A carga acumulada do relógio (ACWR) desta semana",
+    "Como será o sono da noite antes de terça, que decide o Lower A",
+    "Como está o tornozelo",
+    "O VO2max de 39,5 foi medido a 930 m e não mostra a sua forma"
    ]
   },
   {
    "id": "nutricao",
    "especialista": "Alimentação",
    "assina": "sua nutricionista",
-   "como_esta": "A estrutura que você escolheu em 27/09 era boa e não resistiu ao dia a dia: em 30/09 o Yopro virou o almoço, e aquele dia terminou em coxinha e miojo. Não há registro de comida entre 07 e 09/10, os dias do congresso. A média do seu peso está em 95,14 kg, contra 94,83 nos últimos 28 dias, então subiu um pouco. Como o registro é esparso, eu não estimo as calorias da semana: seria inventar.",
-   "para_onde": "Quatro regras e mais nada. O Yopro de manhã é adicional e nunca substitui o almoço. De terça a sexta, almoço às 13h na marmita, que você confirmou ter, com 35 g de proteína ou mais no rótulo. Às 17h, todo dia, iogurte, whey, granola e banana, antes de qualquer salgado. E uma refeição livre, no sábado à noite, só uma. Não há jejum nem corte: desintoxicar, aqui, é cumprir essas quatro.",
+   "como_esta": "Os registros são poucos: quatro dias com dez refeições, e nada de 07 a 09/10, que não prova que você não comeu. Sábado 10/10, à noite, foi uma refeição livre só (linguiça, joelho de porco e croquete, sem quantidade nem foto). Pelo que deu para ler na foto, o café de sábado tinha ovo, pão integral e abacate (estimativa de 15 a 20 g de proteína, sem rótulo), e o rótulo da marmita N53 mostra, lido na foto, 461 kcal e 474 mg de sódio, mas a proteína ficou ilegível. A média do peso é 95,14 kg e a última pesagem é de 06/10.",
+   "para_onde": "Hoje e segunda seguem o plano como está, inclusive o whey da noite e o iogurte das 17h. Nada a mais, nada a menos. Proteína primeiro no prato. Em 05/10 a leitura veio alta (96,40) e em 06/10 caiu (95,05): se subir de novo, vale a média de 95,14, não a leitura do dia. A lista de compras ganhou as marmitas que faltavam, com 35 g ou mais de proteína no rótulo.",
    "nao_sei": [
-    "o horário do jogo de sábado, que define a hora da última refeição antes dele",
-    "o que você comeu no café e no almoço de 10/10, que só têm foto",
-    "quanto de frutas e legumes você já tem, então a feira vale para repor, não para comprar tudo"
+    "O que você comeu de 07 a 09/10",
+    "O que você comeu além da refeição livre no sábado",
+    "Quanta proteína tem a marmita N53",
+    "Quantas marmitas já há no freezer"
    ]
   },
   {
    "id": "logistica",
    "especialista": "Rotina e tempo",
    "assina": "seu logístico",
-   "como_esta": "A semana começa com feriado, que é o primeiro dia em que dá para testar treino de manhã sem reunião nem trânsito. A previsão só é firme para segunda e terça; do resto em diante vale como tendência. De manhã, entre 6h e 9h, a temperatura fica entre 22 e 25 °C, e o calor forte só aparece no meio do dia.",
-   "para_onde": "Corrida na rua, de manhã, na segunda, na quarta e no domingo. A previsão só é firme para os dois primeiros dias: confirme na manhã de cada corrida, e a esteira é o plano B. Duas regras firmes: nenhuma corrida na rua depois das 17h45, porque o sol se põe às 17h56, e nenhuma academia no fim do dia quando houver reunião.",
+   "como_esta": "O treino leve de hoje cabe em casa, sem deslocamento: a academia custa 40 a 50 min de trânsito e não compensa para uma sessão leve. A previsão do tempo só é firme para os dois primeiros dias do último puxão, então do meio da semana em diante vale como tendência, não como plano. O horário do jogo de sábado e o do futebol de quinta continuam desconhecidos.",
+   "para_onde": "Corrida de manhã. O personal ajusta se o tempo ou a agenda mudarem.",
    "nao_sei": [
-    "o horário do futebol de quinta e do campeonato de sábado",
-    "se a academia abre no feriado",
-    "a sua agenda de reuniões"
+    "O horário do futebol de quinta",
+    "O horário do campeonato de sábado",
+    "Se há reunião no fim de terça ou sexta",
+    "O clima depois de segunda"
    ]
   },
   {
    "id": "cetico",
    "especialista": "Revisão",
    "assina": "o revisor",
-   "como_esta": "Este plano passou por duas revisões. A primeira versão foi barrada por três problemas: trazia números de uma rodada anterior (um peso de 94,87 que não existe no dado de hoje), pedia decisões demais para uma semana só, e usava critérios de intensidade que eu tinha inventado em vez dos que já estavam escritos no projeto. A segunda versão não teve nenhum problema grave.",
-   "para_onde": "As duas propostas que dependiam de você foram aceitas em 10/10: duas forças em vez de três, e até cinco corridas. Com futebol na quinta e campeonato no sábado, a semana fecha com três corridas. Revisei esta versão fechada: nenhum dia junta corrida e jogo, tirei da quarta uma frase que dava a entender que tiros poderiam voltar, e tirei três números que não tinham fonte. A semana seguinte se decide no fechamento de domingo, com os dados desta.",
-   "nao_sei": []
+   "como_esta": "Conferi a atualização de hoje contra o relógio: sono 6,43 h, índice 83, FC de repouso 49 e prontidão 54 batem. A revisão barrou o aviso de terça, que disparava quase toda semana, e textos que ligavam o treino de hoje a sábado ou misturavam números de ontem com os de hoje. Tudo isso foi corrigido.",
+   "para_onde": "O aviso de terça agora usa cortes reais do projeto (sono abaixo de 6 h e HRV abaixo de 32 ou FC de repouso a partir de 56). O treino de hoje é leve por escolha sua e está definido (3 séries de 12, sem agachamento nem leg press). As regras de calor, chuva e reunião saíram do seu texto: o personal resolve na hora. A semana de 12 a 18 não muda.",
+   "nao_sei": [
+    "Como você dorme na noite antes de terça: é isso que decide o Lower A",
+    "A proteína da marmita N53: fotografe de novo sem reflexo",
+    "O horário do futebol de quinta e do campeonato de sábado",
+    "O clima depois de segunda",
+    "Se você confirma os cortes de HRV (abaixo de 32) e FC de repouso (a partir de 56) do aviso de terça"
+   ]
   }
  ]
 }
