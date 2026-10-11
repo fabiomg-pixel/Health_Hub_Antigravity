@@ -68,6 +68,13 @@ function acharGrupo(e) {
   const gs = (TREINOS && TREINOS.biblioteca && TREINOS.biblioteca.grupos) || {};
   return Object.keys(gs).find(g => gs[g].chaves.some(c => e.id.indexOf(c) >= 0)) || null;
 }
+function dicaDe(e, ef) {
+  if (ef.id === e.id && e.dica) return e.dica;
+  const ops = Object.values((TREINOS && TREINOS.biblioteca && TREINOS.biblioteca.grupos) || {}).flatMap(g => g.opcoes);
+  const op = ops.find(o => o.id === ef.id) || ops.find(o => ef.id.indexOf(o.id) === 0 || o.id.indexOf(ef.id) === 0);
+  return (op && op.dica) || '';
+}
+const linkVideo = nome => 'https://www.youtube.com/results?search_query=' + encodeURIComponent(semEmoji(nome) + ' execução correta');
 function opcoesDe(e) { const g = acharGrupo(e), gs = (TREINOS && TREINOS.biblioteca && TREINOS.biblioteca.grupos) || {}; return g && gs[g] ? gs[g].opcoes : []; }
 function kgInicial(e, ef, i, hist) {
   if (ef.id === e.id && e.kg != null) return e.kg;
@@ -110,6 +117,9 @@ function renderTreino(id) {
       ${trocado ? `<div class="alim-leitura" style="padding-bottom:4px">No lugar de ${esc(e.nome)}. ${ef.halter ? 'A carga é por halter (cada mão). ' : ''}${ult ? '' : 'Sem histórico nesse exercício: use uma carga com a qual você faria uns 16 repetições.'}</div>` : (e.nota ? `<div class="alim-leitura" style="padding-bottom:4px">${esc(e.nota)}</div>` : '')}
       <button type="button" class="trocar" data-x="${xi}" aria-expanded="false">Trocar exercício</button>
       <div class="opcoes" id="op-${xi}" hidden>${opcoes.filter(op => op.id !== ef.id && op.id !== e.id).map(op => `<button type="button" data-x="${xi}" data-op="${esc(op.id)}">${esc(op.nome)}${op.halter ? ' · por halter' : ''}</button>`).join('')}${trocado ? `<button type="button" data-x="${xi}" data-op="${esc(e.id)}">Voltar para ${esc(e.nome)}</button>` : ''}<button type="button" data-x="${xi}" data-op="__outro">Outro (digitar o nome)</button></div>
+      <details class="exec"><summary>Ver execução</summary><div class="miolo">${dicaDe(e, ef) ? `<div class="par">${esc(dicaDe(e, ef))}</div>` : ''}
+        <div class="par"><a href="${linkVideo(ef.nome)}" target="_blank" rel="noopener">Abrir vídeo de ${esc(ef.nome)} no YouTube</a></div>
+        ${dicaDe(e, ef) && TREINOS && TREINOS.biblioteca ? `<div class="ml" style="font-size:12.5px;color:var(--sec);padding:6px 0">${esc(TREINOS.biblioteca.aviso_dicas || '')}</div>` : ''}</div></details>
       ${lastTxt ? `<div class="ml" style="font-size:13px;color:var(--sec);padding:6px 0 2px">${esc(lastTxt)}</div>` : ''}
       ${st.s[e.id].map((s, i) => `<div class="serie" data-x="${xi}" data-i="${i}"><span class="sn">${i + 1}</span>
         ${tempo ? `<label class="cp"><input class="n" inputmode="numeric" data-c="seg" value="${esc(s.seg)}" aria-label="segundos da série ${i + 1}"><small>s</small></label><span></span>`

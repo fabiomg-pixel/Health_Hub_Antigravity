@@ -765,6 +765,10 @@ Fitbod mandou leg press de 120 kg). A carga passa a ser decidida aqui e registra
   (`biblioteca.grupos` em `data/treinos.json`) e "Outro (digitar o nome)", porque a academia lota. A carga passa a ser
   do exercício de fato feito (`halter: true` = carga por halter). O registro guarda `i` (o feito), `o` (o do plano) e
   `h` (por halter), e a última carga é lida por `i`. Exercício novo da biblioteca = linha nova no JSON, sem mexer no JS.
+- **Ver execução (11/10):** cada exercício tem uma dica curta de execução (`dica` na biblioteca ou na própria sessão) e um
+  link que abre a busca de vídeo no YouTube pelo nome. As dicas são escritas pelo copiloto, gerais, e a tela diz que não
+  substituem um profissional. **Foto ou ilustração: não há** (sem fonte livre de direitos; não copiar as do Fitbod).
+  Exercício novo na biblioteca precisa de `dica`.
 - **Fase 2 (não feita):** progressão automática (sobe com folga no topo das repetições; segura ou reduz em banda
   vermelha ou noite curta; respeita as regras de tornozelo e AINE). **Fase 3:** gamificação, pedida por ele.
 - **Pendências:** o histórico do Fitbod no Strava (séries, cargas e repetições existem, nomes em inglês, alguns

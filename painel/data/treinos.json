@@ -25,7 +25,8 @@
      "kg": null,
      "descanso_s": 75,
      "nota": "Sem histórico das costas: use uma carga com a qual você faria uns 16.",
-     "grupo": "costas"
+     "grupo": "costas",
+     "dica": "Peito aberto e escápulas juntas. Na puxada, leve a barra ao queixo; na remada, puxe os cotovelos para trás com o tronco firme. Volte devagar."
     },
     {
      "id": "desenvolvimento_com_halteres",
@@ -83,33 +84,40 @@
     "opcoes": [
      {
       "id": "supino_com_barra",
-      "nome": "Supino com barra"
+      "nome": "Supino com barra",
+      "dica": "Escápulas juntas e para baixo, pés firmes no chão. Desça a barra até o meio do peito sob controle e empurre sem tirar o quadril do banco."
      },
      {
       "id": "supino_com_halteres",
       "nome": "Supino com halteres",
-      "halter": true
+      "halter": true,
+      "dica": "Cotovelos a uns 45° do tronco, não abertos a 90°. Desça até os halteres ficarem na altura do peito e suba sem bater um no outro."
      },
      {
       "id": "supino_inclinado_com_halteres",
       "nome": "Supino inclinado com halteres",
-      "halter": true
+      "halter": true,
+      "dica": "Banco levemente inclinado (30 a 45°). Cotovelos a uns 45° do tronco e descida controlada."
      },
      {
       "id": "supino_inclinado_com_barra",
-      "nome": "Supino inclinado com barra"
+      "nome": "Supino inclinado com barra",
+      "dica": "Banco levemente inclinado (30 a 45°). Desça a barra até a parte alta do peito e empurre sem arquear a lombar."
      },
      {
       "id": "supino_na_maquina",
-      "nome": "Supino na máquina"
+      "nome": "Supino na máquina",
+      "dica": "Ajuste o banco para as pegadas ficarem na altura do meio do peito. Empurre sem esticar o cotovelo de forma brusca."
      },
      {
       "id": "crucifixo_na_maquina",
-      "nome": "Crucifixo na máquina (pec deck)"
+      "nome": "Crucifixo na máquina (pec deck)",
+      "dica": "Costas apoiadas e cotovelos levemente flexionados. Feche até as mãos se encontrarem, sem jogar os ombros para a frente."
      },
      {
       "id": "flexao_de_braco",
-      "nome": "Flexão de braço"
+      "nome": "Flexão de braço",
+      "dica": "Corpo em linha da cabeça aos calcanhares, cotovelos a uns 45°. Desça até o peito quase tocar o chão. Apoie os joelhos se não conseguir manter a linha."
      }
     ]
    },
@@ -121,20 +129,24 @@
      {
       "id": "desenvolvimento_com_halteres",
       "nome": "Desenvolvimento com halteres",
-      "halter": true
+      "halter": true,
+      "dica": "Costas apoiadas e abdômen firme. Suba sem travar o cotovelo em cima e desça até a altura das orelhas."
      },
      {
       "id": "desenvolvimento_na_maquina",
-      "nome": "Desenvolvimento na máquina"
+      "nome": "Desenvolvimento na máquina",
+      "dica": "Ajuste o banco para as pegadas saírem na altura dos ombros. Empurre sem arquear a lombar."
      },
      {
       "id": "desenvolvimento_com_barra",
-      "nome": "Desenvolvimento com barra"
+      "nome": "Desenvolvimento com barra",
+      "dica": "Abdômen e glúteos firmes para não arquear a lombar. A barra sobe em linha reta, rente ao rosto."
      },
      {
       "id": "desenvolvimento_arnold",
       "nome": "Desenvolvimento Arnold",
-      "halter": true
+      "halter": true,
+      "dica": "Comece com as palmas viradas para você e gire para a frente enquanto sobe. Use carga menor que no desenvolvimento comum."
      }
     ]
    },
@@ -147,32 +159,39 @@
     "opcoes": [
      {
       "id": "puxada_na_frente",
-      "nome": "Puxada na frente"
+      "nome": "Puxada na frente",
+      "dica": "Peito aberto. Leve a barra até a altura do queixo, com os cotovelos para baixo e para trás, sem balançar o tronco."
      },
      {
       "id": "puxada_pegada_neutra",
-      "nome": "Puxada com pegada neutra (triângulo)"
+      "nome": "Puxada com pegada neutra (triângulo)",
+      "dica": "Cotovelos próximos ao corpo. Puxe o triângulo até o peito e volte devagar, até esticar os braços sem soltar o peso."
      },
      {
       "id": "remada_baixa_no_cabo",
-      "nome": "Remada baixa no cabo"
+      "nome": "Remada baixa no cabo",
+      "dica": "Tronco firme e ereto. Puxe levando os cotovelos para trás e junte as escápulas. Volte devagar, sem curvar as costas."
      },
      {
       "id": "remada_na_maquina",
-      "nome": "Remada na máquina"
+      "nome": "Remada na máquina",
+      "dica": "Peito apoiado no suporte. Puxe os cotovelos para trás, junte as escápulas e volte sem soltar a carga."
      },
      {
       "id": "remada_unilateral_com_halter",
       "nome": "Remada unilateral com halter",
-      "halter": true
+      "halter": true,
+      "dica": "Joelho e mão apoiados no banco, coluna reta. Puxe o halter em direção ao quadril, sem girar o tronco."
      },
      {
       "id": "remada_curvada_com_barra",
-      "nome": "Remada curvada com barra"
+      "nome": "Remada curvada com barra",
+      "dica": "Quadril para trás, coluna neutra e tronco inclinado. Puxe a barra até o abdômen. Se a lombar incomodar, troque por uma remada apoiada."
      },
      {
       "id": "remada_cavalinho",
-      "nome": "Remada cavalinho"
+      "nome": "Remada cavalinho",
+      "dica": "Se houver apoio para o peito, use. Puxe até o abdômen com os cotovelos junto ao corpo, sem balançar o tronco."
      }
     ]
    },
@@ -183,29 +202,35 @@
     "opcoes": [
      {
       "id": "rosca_com_barra",
-      "nome": "Rosca com barra"
+      "nome": "Rosca com barra",
+      "dica": "Cotovelos colados ao tronco e sem balançar o corpo. Suba até o antebraço ficar quase vertical e desça em 2 a 3 segundos."
      },
      {
       "id": "rosca_com_barra_ez",
-      "nome": "Rosca com barra EZ"
+      "nome": "Rosca com barra EZ",
+      "dica": "Cotovelos colados ao tronco, sem balançar. A barra EZ alivia os punhos. Desça devagar."
      },
      {
       "id": "rosca_com_halteres",
       "nome": "Rosca com halteres",
-      "halter": true
+      "halter": true,
+      "dica": "Cotovelos fixos ao lado do corpo. Gire a palma para cima ao subir e desça controlando."
      },
      {
       "id": "rosca_martelo",
       "nome": "Rosca martelo",
-      "halter": true
+      "halter": true,
+      "dica": "Palmas viradas uma para a outra e cotovelos fixos. Trabalha também o antebraço."
      },
      {
       "id": "rosca_no_cabo",
-      "nome": "Rosca no cabo"
+      "nome": "Rosca no cabo",
+      "dica": "Cotovelos fixos e tensão constante: não deixe o peso descansar embaixo."
      },
      {
       "id": "rosca_scott_na_maquina",
-      "nome": "Rosca scott na máquina"
+      "nome": "Rosca scott na máquina",
+      "dica": "Braços apoiados no suporte. Não estique o cotovelo de forma brusca embaixo."
      }
     ]
    },
@@ -217,20 +242,24 @@
     "opcoes": [
      {
       "id": "triceps_no_cabo",
-      "nome": "Tríceps no cabo (corda)"
+      "nome": "Tríceps no cabo (corda)",
+      "dica": "Cotovelos colados ao tronco. Estenda até esticar o braço e volte devagar, sem subir os ombros."
      },
      {
       "id": "triceps_testa",
-      "nome": "Tríceps testa"
+      "nome": "Tríceps testa",
+      "dica": "Cotovelos apontando para o teto e fixos. Desça a barra em direção à testa sob controle e use carga moderada para proteger o cotovelo."
      },
      {
       "id": "mergulho_na_maquina",
-      "nome": "Mergulho na máquina"
+      "nome": "Mergulho na máquina",
+      "dica": "Ombros para baixo e cotovelos junto do corpo. Não desça a ponto de sentir o ombro puxar."
      },
      {
       "id": "triceps_frances_com_halter",
       "nome": "Tríceps francês com halter",
-      "halter": true
+      "halter": true,
+      "dica": "Halter atrás da cabeça, com as duas mãos. Cotovelos fixos e apontando para cima."
      }
     ]
    },
@@ -242,15 +271,18 @@
      {
       "id": "elevacao_lateral_com_halteres",
       "nome": "Elevação lateral com halteres",
-      "halter": true
+      "halter": true,
+      "dica": "Suba os braços até a linha dos ombros, cotovelos levemente flexionados e sem balançar. Use carga leve."
      },
      {
       "id": "elevacao_lateral_no_cabo",
-      "nome": "Elevação lateral no cabo"
+      "nome": "Elevação lateral no cabo",
+      "dica": "Suba o braço até a linha do ombro, cotovelo levemente flexionado, sem balançar o tronco."
      },
      {
       "id": "elevacao_lateral_na_maquina",
-      "nome": "Elevação lateral na máquina"
+      "nome": "Elevação lateral na máquina",
+      "dica": "Suba até a linha dos ombros sem encolher o pescoço. Carga leve e movimento controlado."
      }
     ]
    },
@@ -262,12 +294,14 @@
      {
       "id": "prancha",
       "nome": "Prancha",
-      "tipo": "tempo"
+      "tipo": "tempo",
+      "dica": "Corpo em linha reta, abdômen e glúteos contraídos, sem o quadril cair nem subir. Respire normalmente."
      },
      {
       "id": "prancha_lateral",
       "nome": "Prancha lateral (cada lado)",
-      "tipo": "tempo"
+      "tipo": "tempo",
+      "dica": "Cotovelo sob o ombro, quadril alto e corpo em linha. Troque de lado e mantenha o mesmo tempo."
      }
     ]
    },
@@ -278,19 +312,23 @@
     "opcoes": [
      {
       "id": "abdominal",
-      "nome": "Abdominal (sit-up ou na máquina)"
+      "nome": "Abdominal (sit-up ou na máquina)",
+      "dica": "Lombar apoiada e queixo afastado do peito. Suba só até a escápula sair do chão, sem puxar o pescoço."
      },
      {
       "id": "abdominal_na_maquina",
-      "nome": "Abdominal na máquina"
+      "nome": "Abdominal na máquina",
+      "dica": "Movimento curto, fechando o abdômen. Não use o impulso dos braços."
      },
      {
       "id": "abdominal_no_cabo",
-      "nome": "Abdominal no cabo"
+      "nome": "Abdominal no cabo",
+      "dica": "Ajoelhado e com o quadril fixo. Flexione o tronco levando as costelas em direção ao quadril."
      },
      {
       "id": "dead_bug",
-      "nome": "Dead bug"
+      "nome": "Dead bug",
+      "dica": "Lombar colada no chão. Estenda braço e perna opostos devagar, sem a lombar subir."
      }
     ]
    },
@@ -303,15 +341,18 @@
     "opcoes": [
      {
       "id": "leg_press",
-      "nome": "Leg press"
+      "nome": "Leg press",
+      "dica": "Pés na largura dos ombros e joelhos acompanhando a ponta dos pés. Desça até uns 90° sem descolar o quadril do encosto e não trave o joelho em cima."
      },
      {
       "id": "hack_na_maquina",
-      "nome": "Hack na máquina"
+      "nome": "Hack na máquina",
+      "dica": "Costas coladas e pés na largura dos ombros, com os joelhos na direção dos pés. Desça controlado e suba sem travar."
      },
      {
       "id": "agachamento_no_smith",
-      "nome": "Agachamento no Smith"
+      "nome": "Agachamento no Smith",
+      "dica": "Pés um pouco à frente da barra e coluna neutra. Desça só até onde mantém o calcanhar no chão (atenção ao tornozelo)."
      }
     ]
    },
@@ -323,7 +364,8 @@
     "opcoes": [
      {
       "id": "cadeira_extensora",
-      "nome": "Cadeira extensora"
+      "nome": "Cadeira extensora",
+      "dica": "Costas apoiadas. Estenda sem chutar e desça devagar. Carga moderada para proteger o joelho."
      }
     ]
    },
@@ -337,20 +379,24 @@
     "opcoes": [
      {
       "id": "stiff",
-      "nome": "Stiff"
+      "nome": "Stiff",
+      "dica": "Joelhos levemente flexionados, quadril para trás e coluna neutra. A barra desce rente às pernas até sentir a parte de trás da coxa esticar."
      },
      {
       "id": "leg_curl",
-      "nome": "Leg curl (mesa flexora)"
+      "nome": "Leg curl (mesa flexora)",
+      "dica": "Quadril apoiado. Puxe o calcanhar em direção ao glúteo e volte devagar, sem deixar o peso bater."
      },
      {
       "id": "cadeira_flexora",
-      "nome": "Cadeira flexora"
+      "nome": "Cadeira flexora",
+      "dica": "Costas apoiadas. Flexione puxando o calcanhar para baixo e volte devagar, sem deixar o peso bater."
      },
      {
       "id": "terra_romeno_com_halteres",
       "nome": "Terra romeno com halteres",
-      "halter": true
+      "halter": true,
+      "dica": "Mesma ideia do stiff: quadril para trás, coluna neutra e halteres rentes às pernas."
      }
     ]
    },
@@ -363,21 +409,25 @@
     "opcoes": [
      {
       "id": "bulgaro",
-      "nome": "Búlgaro"
+      "nome": "Búlgaro",
+      "dica": "Pé de trás apoiado no banco e tronco levemente inclinado. Desça com o joelho da frente na direção do pé e peso no calcanhar da frente. Comece leve: exige equilíbrio e tornozelo."
      },
      {
       "id": "afundo",
-      "nome": "Afundo"
+      "nome": "Afundo",
+      "dica": "Passo longo e tronco ereto. Desça até o joelho de trás quase tocar o chão e suba empurrando o calcanhar da frente."
      },
      {
       "id": "passada_com_halteres",
       "nome": "Passada com halteres",
-      "halter": true
+      "halter": true,
+      "dica": "Passo longo e tronco ereto, com os halteres ao lado do corpo. Desça até o joelho de trás quase tocar o chão."
      },
      {
       "id": "step_up",
       "nome": "Subida no banco (step-up)",
-      "halter": true
+      "halter": true,
+      "dica": "Pé inteiro apoiado no banco. Suba empurrando com a perna da frente, sem impulso da perna de trás."
      }
     ]
    },
@@ -388,18 +438,22 @@
     "opcoes": [
      {
       "id": "panturrilha_em_pe",
-      "nome": "Panturrilha em pé"
+      "nome": "Panturrilha em pé",
+      "dica": "Suba o máximo que conseguir, segure 1 segundo em cima e desça até alongar. Movimento lento, sem quicar."
      },
      {
       "id": "panturrilha_sentado",
-      "nome": "Panturrilha sentado"
+      "nome": "Panturrilha sentado",
+      "dica": "Suba o máximo que conseguir, segure 1 segundo e desça até alongar. Movimento lento, sem quicar."
      },
      {
       "id": "panturrilha_unilateral",
-      "nome": "Panturrilha unilateral"
+      "nome": "Panturrilha unilateral",
+      "dica": "Apoie uma mão para equilíbrio. Suba o máximo, segure 1 segundo e desça até alongar, sem quicar."
      }
     ]
    }
-  }
+  },
+  "aviso_dicas": "Dicas gerais de execução, escritas pelo copiloto. Não substituem a orientação de um profissional presente. Se sentir dor, pare."
  }
 }
