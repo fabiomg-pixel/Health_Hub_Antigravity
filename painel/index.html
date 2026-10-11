@@ -193,6 +193,17 @@
   .st.ok { background: var(--campo); border-color: var(--campo); color: #fff; }
   .st.par { background: var(--sol); }
   .st.nao { background: transparent; }
+  /* corrida guiada */
+  .c-vivo { text-align: center; padding: 8px 0 4px; }
+  .c-et { font-family: var(--display); font-weight: 800; font-size: 28px; }
+  .c-tempo { font-family: var(--display); font-weight: 800; font-size: 96px; line-height: 1; font-variant-numeric: tabular-nums; margin: 6px 0; }
+  .c-v { font-weight: 700; font-size: 18px; }
+  .c-t { color: var(--sec); font-size: 17px; margin: 10px 0 16px; }
+  .c-seg { display: flex; gap: 2px; height: 10px; margin: 8px 0; }
+  .c-seg i { display: block; }
+  .c-mini { display: flex; justify-content: space-between; font-size: 14px; color: var(--sec); }
+  .c-op { display: block; padding: 8px 0; font-size: 15px; }
+  button.c-esc { width: 100%; background: none; border: 0; text-align: left; cursor: pointer; }
   /* treino com séries */
   .serie { display: grid; grid-template-columns: 26px 1fr 1fr 78px; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--fraca); }
   .serie .sn { font-weight: 800; font-family: var(--display); }
@@ -736,7 +747,7 @@ function renderInicio() {
     <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
 
   h += abasInicio('semana');
-  h += (typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoHoje() + (typeof linkTreino === 'function' ? linkTreino(isoLocal()) : '') +
+  h += (typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoHoje() + (typeof linkTreino === 'function' ? linkTreino(isoLocal()) : '') + (typeof linkCorrida === 'function' ? linkCorrida() : '') +
     (typeof blocoComer === 'function' ? blocoComer() : '') + quadroAgora() + blocoCardapio() + blocoDestino() + blocoEspecialistas();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
@@ -1210,6 +1221,7 @@ function route() {
   if (id === 'reg' || id.startsWith('reg/')) { const pr = id.split('/'); if (pr[1] === 'refeicao') { REG_TIPO = 'refeicao'; REG_PRESET = { refeicao: decodeURIComponent(pr[2] || ''), data: pr[3] || '' }; } renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
   if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
+  if (id === 'corrida') { renderNav('hoje'); renderCorrida(); window.scrollTo(0, 0); return; }
   if (/^treino(\/|$)/.test(id)) { renderNav('hoje'); renderTreino(id); window.scrollTo(0, 0); return; }
   const hoje = DATA.dias.find(d => d.data === hojeDDMM());
   if (id === 'hoje' && !hoje) { renderNav('hoje'); renderHojeSemPlano(); window.scrollTo(0, 0); return; }
@@ -1230,7 +1242,7 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
   window.addEventListener("hashchange", route);
   route();
   // Tudo que chega depois redesenha a tela, menos o formulário (para não apagar o que está sendo digitado).
-  const redesenha = () => { const id = (location.hash || '#home').slice(1); if (id !== 'reg' && id !== 'evo' && !id.startsWith('treino')) route(); };
+  const redesenha = () => { const id = (location.hash || '#home').slice(1); if (id !== 'reg' && id !== 'evo' && id !== 'corrida' && !id.startsWith('treino')) route(); };
   fetch("data/fatos.json").then(r => r.ok ? r.json() : null).then(f => { FATOS = f; renderStatus(); if (f) redesenha(); }).catch(() => {});
   carregarTempo();
   if (typeof carregarPrevisao === 'function') carregarPrevisao();
@@ -1242,6 +1254,7 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
 });
 </script>
 <script src="treino.js"></script>
+<script src="corrida.js"></script>
 <script src="decisao.js"></script>
 <script>if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
 </body>
