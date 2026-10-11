@@ -57,17 +57,30 @@ function historicoDeCargas() {
 // ───────── estado do treino em andamento (fica no aparelho) ─────────
 function estadoDe(iso) {
   let st = lsGet(T_ESTADO, null);
-  if (!st || st.data !== iso) { st = { data: iso, inicio: null, ef: null, nota: '', s: {} }; lsSet(T_ESTADO, st); }
+  if (!st || st.data !== iso) { st = { data: iso, inicio: null, ef: null, nota: '', s: {}, troca: {} }; lsSet(T_ESTADO, st); }
+  if (!st.troca) st.troca = {};
   return st;
+}
+// o exercício de fato feito: o do plano ou o que ele trocou por equivalente
+const efetivo = (e, st) => st.troca[e.id] || { id: e.id, nome: e.nome, halter: !!e.halter };
+function acharGrupo(e) {
+  if (e.grupo) return e.grupo;
+  const gs = (TREINOS && TREINOS.biblioteca && TREINOS.biblioteca.grupos) || {};
+  return Object.keys(gs).find(g => gs[g].chaves.some(c => e.id.indexOf(c) >= 0)) || null;
+}
+function opcoesDe(e) { const g = acharGrupo(e), gs = (TREINOS && TREINOS.biblioteca && TREINOS.biblioteca.grupos) || {}; return g && gs[g] ? gs[g].opcoes : []; }
+function kgInicial(e, ef, i, hist) {
+  if (ef.id === e.id && e.kg != null) return e.kg;
+  const u = hist[ef.id], dele = u && (u.s[i] || u.s[u.s.length - 1]);
+  return dele && dele[0] != null ? dele[0] : '';
 }
 function preencher(sessao, st, hist) {
   sessao.exercicios.forEach(e => {
-    const l = st.s[e.id] = st.s[e.id] || [], ult = hist[e.id];
+    const l = st.s[e.id] = st.s[e.id] || [];
     for (let i = 0; i < e.series; i++) {
       if (l[i]) continue;
       if (e.tipo === 'tempo') { l[i] = { seg: e.alvo_s || 30, ok: false }; continue; }
-      const dele = ult && (ult.s[i] || ult.s[ult.s.length - 1]);
-      l[i] = { kg: e.kg != null ? e.kg : (dele && dele[0] != null ? dele[0] : ''), reps: topoReps(e.reps), ok: false };
+      l[i] = { kg: kgInicial(e, efetivo(e, st), i, hist), reps: topoReps(e.reps), ok: false };
     }
   });
   lsSet(T_ESTADO, st);
@@ -91,14 +104,16 @@ function renderTreino(id) {
   const fila = lsGet(T_FILA, []);
   let h = topo + `<div id="t-banner"></div>`;
   h += sessao.exercicios.map((e, xi) => {
-    const ult = hist[e.id], tempo = e.tipo === 'tempo';
+    const ef = efetivo(e, st), ult = hist[ef.id], tempo = e.tipo === 'tempo', opcoes = opcoesDe(e), trocado = ef.id !== e.id;
     const lastTxt = ult ? 'Última vez (' + isoDDMM(ult.data) + '): ' + ult.s.map(s => tempo ? s[0] + ' s' : (s[0] != null ? fNum(s[0], s[0] % 1 ? 1 : 0) + ' kg × ' + s[1] : s[1])).join(', ') : '';
-    return `<section class="bloco"><div class="cab"><h2 style="font-size:20px">${esc(e.nome)}</h2><small>${e.series} × ${tempo ? (e.alvo_s || '') + ' s' : esc(e.reps)} · descanso ${e.descanso_s || 60} s</small></div>
-      ${e.nota ? `<div class="alim-leitura" style="padding-bottom:4px">${esc(e.nota)}</div>` : ''}
+    return `<section class="bloco"><div class="cab"><h2 style="font-size:20px">${esc(ef.nome)}</h2><small>${e.series} × ${tempo ? (e.alvo_s || '') + ' s' : esc(e.reps)} · descanso ${e.descanso_s || 60} s</small></div>
+      ${trocado ? `<div class="alim-leitura" style="padding-bottom:4px">No lugar de ${esc(e.nome)}. ${ef.halter ? 'A carga é por halter (cada mão). ' : ''}${ult ? '' : 'Sem histórico nesse exercício: use uma carga com a qual você faria uns 16 repetições.'}</div>` : (e.nota ? `<div class="alim-leitura" style="padding-bottom:4px">${esc(e.nota)}</div>` : '')}
+      <button type="button" class="trocar" data-x="${xi}" aria-expanded="false">Trocar exercício</button>
+      <div class="opcoes" id="op-${xi}" hidden>${opcoes.filter(op => op.id !== ef.id && op.id !== e.id).map(op => `<button type="button" data-x="${xi}" data-op="${esc(op.id)}">${esc(op.nome)}${op.halter ? ' · por halter' : ''}</button>`).join('')}${trocado ? `<button type="button" data-x="${xi}" data-op="${esc(e.id)}">Voltar para ${esc(e.nome)}</button>` : ''}<button type="button" data-x="${xi}" data-op="__outro">Outro (digitar o nome)</button></div>
       ${lastTxt ? `<div class="ml" style="font-size:13px;color:var(--sec);padding:6px 0 2px">${esc(lastTxt)}</div>` : ''}
       ${st.s[e.id].map((s, i) => `<div class="serie" data-x="${xi}" data-i="${i}"><span class="sn">${i + 1}</span>
         ${tempo ? `<label class="cp"><input class="n" inputmode="numeric" data-c="seg" value="${esc(s.seg)}" aria-label="segundos da série ${i + 1}"><small>s</small></label><span></span>`
-          : `<label class="cp"><input class="n" inputmode="decimal" data-c="kg" value="${esc(s.kg)}" aria-label="carga da série ${i + 1}"><small>kg</small></label>
+          : `<label class="cp"><input class="n" inputmode="decimal" data-c="kg" value="${esc(s.kg)}" aria-label="carga da série ${i + 1}"><small>${ef.halter ? 'kg/halter' : 'kg'}</small></label>
              <label class="cp"><input class="n" inputmode="numeric" data-c="reps" value="${esc(s.reps)}" aria-label="repetições da série ${i + 1}"><small>reps</small></label>`}
         <button type="button" class="okb ${s.ok ? 'on' : ''}" aria-pressed="${s.ok}" aria-label="série ${i + 1} feita">${s.ok ? 'Feita' : 'Fazer'}</button></div>`).join('')}
     </section>`;
@@ -148,6 +163,17 @@ function ligarTreino(sessao, st, iso) {
       if (s.ok) T_FIM_DESCANSO = Date.now() + (e.descanso_s || 60) * 1000; else { T_FIM_DESCANSO = 0; barraDescanso().hidden = true; }
     });
   });
+  document.querySelectorAll('.trocar').forEach(b => b.addEventListener('click', () => { const box = document.getElementById('op-' + b.dataset.x); box.hidden = !box.hidden; b.setAttribute('aria-expanded', !box.hidden); }));
+  document.querySelectorAll('.opcoes button').forEach(b => b.addEventListener('click', () => {
+    const e = sessao.exercicios[+b.dataset.x], hist = historicoDeCargas();
+    let op = b.dataset.op === '__outro' ? null : (opcoesDe(e).find(x => x.id === b.dataset.op) || (b.dataset.op === e.id ? { id: e.id, nome: e.nome, halter: !!e.halter } : null));
+    if (b.dataset.op === '__outro') { const nome = (prompt('Qual exercício você fez no lugar?') || '').trim(); if (!nome) return; op = { id: 'x_' + slugT(nome), nome, halter: /halter/i.test(nome) }; }
+    if (!op) return;
+    if (op.id === e.id) delete st.troca[e.id]; else st.troca[e.id] = { id: op.id, nome: op.nome, halter: !!op.halter };
+    const ef = efetivo(e, st);
+    st.s[e.id].forEach((s, i) => { if (e.tipo !== 'tempo') s.kg = kgInicial(e, ef, i, hist); });
+    salvar(); renderTreino('treino/' + iso);
+  }));
   document.querySelectorAll('[data-ef]').forEach(b => b.addEventListener('click', () => { st.ef = st.ef === b.dataset.ef ? null : b.dataset.ef; salvar(); document.querySelectorAll('[data-ef]').forEach(x => x.classList.toggle('on', x.dataset.ef === st.ef)); }));
   document.getElementById('t-nota').addEventListener('input', ev => { st.nota = ev.target.value; salvar(); });
   document.getElementById('t-fim').addEventListener('click', ev => terminarTreino(sessao, st, iso, ev.currentTarget));
@@ -158,10 +184,11 @@ function montarRegistro(sessao, st, iso) {
   const feitos = sessao.exercicios.map(e => ({ e, ss: (st.s[e.id] || []).filter(x => x.ok) })).filter(x => x.ss.length);
   if (!feitos.length) return null;
   const dur = st.inicio ? Math.max(1, Math.round((Date.now() - st.inicio) / 60000)) : null;
-  const j = { v: 1, t: slugT(sessao.titulo), dur, ef: st.ef, ex: feitos.map(({ e, ss }) => ({ i: e.id, s: ss.map(x => e.tipo === 'tempo' ? [x.seg] : [numT(x.kg) ?? 0, x.reps]) })) };
+  const j = { v: 1, t: slugT(sessao.titulo), dur, ef: st.ef, ex: feitos.map(({ e, ss }) => { const f = efetivo(e, st), o = { i: f.id, s: ss.map(x => e.tipo === 'tempo' ? [x.seg] : [numT(x.kg) ?? 0, x.reps]) }; if (f.id !== e.id) o.o = e.id; if (f.halter) o.h = 1; return o; }) };
   const json = JSON.stringify(j);
   const ef = { leve: 'leve', ok: 'no ponto', pesado: 'pesado' }[st.ef];
-  const linhas = feitos.map(({ e, ss }) => e.tipo === 'tempo' ? `${e.nome}: ${ss.map(x => x.seg + ' s').join(', ')}` : `${e.nome}: ${ss.map(x => (numT(x.kg) ?? 0) + ' kg × ' + x.reps).join(', ')}`).join('; ');
+  const linhas = feitos.map(({ e, ss }) => { const f = efetivo(e, st), nome = f.id !== e.id ? `${f.nome} (no lugar de ${e.nome})` : e.nome;
+    return e.tipo === 'tempo' ? `${nome}: ${ss.map(x => x.seg + ' s').join(', ')}` : `${nome}: ${ss.map(x => (numT(x.kg) ?? 0) + (f.halter ? ' kg por halter × ' : ' kg × ') + x.reps).join(', ')}`; }).join('; ');
   let cab = `Treino feito no painel: ${sessao.titulo}${dur ? ', ' + dur + ' min' : ''}${ef ? ', esforço ' + ef : ''}. ${linhas}${st.nota ? '. Nota: ' + st.nota.trim() : ''}`;
   const folga = 1880 - json.length - 8;
   if (cab.length > folga) cab = cab.slice(0, Math.max(40, folga - 1)) + '…';

@@ -200,8 +200,14 @@
   input.n { width: 100%; min-width: 0; min-height: 46px; font: 700 20px/1 'Figtree', sans-serif; text-align: center; border: 2px solid var(--tinta); background: var(--branco); border-radius: 0; }
   .okb { min-height: 46px; border: 2px solid var(--tinta); background: transparent; font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
   .okb.on { background: var(--campo); border-color: var(--campo); color: #fff; }
+  .trocar { margin: 8px 0 2px; min-height: 40px; padding: 0 12px; border: 2px solid var(--tinta); background: transparent; font: 700 13.5px/1 'Figtree', sans-serif; cursor: pointer; }
+  .opcoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; padding: 8px 0 4px; }
+  .opcoes[hidden] { display: none; }
+  .opcoes button { min-height: 44px; padding: 6px 10px; text-align: left; border: 2px solid var(--fraca); background: var(--branco); font: 600 14px/1.2 'Figtree', sans-serif; cursor: pointer; }
+  .opcoes button:last-child { border-style: dashed; }
   #t-desc { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 40; width: 100%; max-width: 520px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
     padding: 14px 18px calc(14px + env(safe-area-inset-bottom)); background: var(--sol); color: var(--tinta); border-top: 2px solid var(--tinta); font-weight: 600; }
+  #t-desc[hidden] { display: none; }
   #t-desc b { font-family: var(--display); font-size: 24px; margin-left: 6px; }
   #t-desc button { min-height: 40px; padding: 0 14px; border: 2px solid var(--tinta); background: var(--branco); font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
   .alim-leitura { font-size: 14px; color: var(--sec); padding: 8px 0 12px; }

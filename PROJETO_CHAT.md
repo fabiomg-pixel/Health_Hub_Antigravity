@@ -761,6 +761,10 @@ Fitbod mandou leg press de 120 kg). A carga passa a ser decidida aqui e registra
   (`{v,t,dur,ef,ex:[{i,s:[[kg,reps]]}]}`; prancha usa `[seg]`). **Ao processar a fila (Passo 2), leia o `#sets`**: é a
   fonte de carga real para a progressão. O Strava deixa de receber o treino de força (o Fitbod mandava); o Garmin
   no pulso segue gravando a frequência cardíaca se o Fabio marcar a atividade.
+- **Troca de exercício (11/10):** cada exercício tem "Trocar exercício", com os equivalentes do mesmo movimento
+  (`biblioteca.grupos` em `data/treinos.json`) e "Outro (digitar o nome)", porque a academia lota. A carga passa a ser
+  do exercício de fato feito (`halter: true` = carga por halter). O registro guarda `i` (o feito), `o` (o do plano) e
+  `h` (por halter), e a última carga é lida por `i`. Exercício novo da biblioteca = linha nova no JSON, sem mexer no JS.
 - **Fase 2 (não feita):** progressão automática (sobe com folga no topo das repetições; segura ou reduz em banda
   vermelha ou noite curta; respeita as regras de tornozelo e AINE). **Fase 3:** gamificação, pedida por ele.
 - **Pendências:** o histórico do Fitbod no Strava (séries, cargas e repetições existem, nomes em inglês, alguns

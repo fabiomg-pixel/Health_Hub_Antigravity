@@ -7,13 +7,399 @@
    "duracao_min": 38,
    "regra": "3 séries de 12 com 4 repetições de sobra. Sem agachamento, sem leg press e sem perna: terça é o Lower A. Se a última repetição pesar, baixe a carga.",
    "exercicios": [
-    {"id": "supino_com_barra", "nome": "Supino com barra", "series": 3, "reps": "12", "kg": 55, "descanso_s": 75, "nota": "Antes, 1 série leve de aquecimento. No Fitbod a carga era 70 kg para 8 repetições."},
-    {"id": "remada_baixa_ou_puxada", "nome": "Remada baixa ou puxada na frente", "series": 3, "reps": "12", "kg": null, "descanso_s": 75, "nota": "Sem histórico das costas: use uma carga com a qual você faria uns 16."},
-    {"id": "desenvolvimento_com_halteres", "nome": "Desenvolvimento com halteres", "series": 3, "reps": "12", "kg": 15, "descanso_s": 75, "nota": "No Fitbod era 17,5 kg para 10 repetições."},
-    {"id": "rosca_com_barra", "nome": "Rosca com barra", "series": 2, "reps": "12", "kg": 20, "descanso_s": 60, "nota": "No Fitbod era 22,5 kg para 12 repetições."},
-    {"id": "prancha", "nome": "Prancha", "tipo": "tempo", "series": 3, "alvo_s": 35, "descanso_s": 45, "nota": "30 a 40 segundos por série."},
-    {"id": "abdominal", "nome": "Abdominal (sit-up ou na máquina)", "series": 3, "reps": "12", "kg": 0, "descanso_s": 45}
+    {
+     "id": "supino_com_barra",
+     "nome": "Supino com barra",
+     "series": 3,
+     "reps": "12",
+     "kg": 55,
+     "descanso_s": 75,
+     "nota": "Antes, 1 série leve de aquecimento. No Fitbod a carga era 70 kg para 8 repetições.",
+     "grupo": "peito_empurrar"
+    },
+    {
+     "id": "remada_baixa_ou_puxada",
+     "nome": "Remada baixa ou puxada na frente",
+     "series": 3,
+     "reps": "12",
+     "kg": null,
+     "descanso_s": 75,
+     "nota": "Sem histórico das costas: use uma carga com a qual você faria uns 16.",
+     "grupo": "costas"
+    },
+    {
+     "id": "desenvolvimento_com_halteres",
+     "nome": "Desenvolvimento com halteres",
+     "series": 3,
+     "reps": "12",
+     "kg": 15,
+     "descanso_s": 75,
+     "nota": "No Fitbod era 17,5 kg para 10 repetições.",
+     "grupo": "ombro_empurrar",
+     "halter": true
+    },
+    {
+     "id": "rosca_com_barra",
+     "nome": "Rosca com barra",
+     "series": 2,
+     "reps": "12",
+     "kg": 20,
+     "descanso_s": 60,
+     "nota": "No Fitbod era 22,5 kg para 12 repetições.",
+     "grupo": "biceps"
+    },
+    {
+     "id": "prancha",
+     "nome": "Prancha",
+     "tipo": "tempo",
+     "series": 3,
+     "alvo_s": 35,
+     "descanso_s": 45,
+     "nota": "30 a 40 segundos por série.",
+     "grupo": "core_tempo"
+    },
+    {
+     "id": "abdominal",
+     "nome": "Abdominal (sit-up ou na máquina)",
+     "series": 3,
+     "reps": "12",
+     "kg": 0,
+     "descanso_s": 45,
+     "grupo": "core_dinamico"
+    }
    ]
+  }
+ },
+ "biblioteca": {
+  "nota": "Equivalentes por movimento. 'halter' = a carga é por halter (cada mão). Use 'Outro' na tela para um exercício que não está aqui.",
+  "grupos": {
+   "peito_empurrar": {
+    "chaves": [
+     "supino",
+     "flexao",
+     "crucifixo",
+     "pec_deck"
+    ],
+    "opcoes": [
+     {
+      "id": "supino_com_barra",
+      "nome": "Supino com barra"
+     },
+     {
+      "id": "supino_com_halteres",
+      "nome": "Supino com halteres",
+      "halter": true
+     },
+     {
+      "id": "supino_inclinado_com_halteres",
+      "nome": "Supino inclinado com halteres",
+      "halter": true
+     },
+     {
+      "id": "supino_inclinado_com_barra",
+      "nome": "Supino inclinado com barra"
+     },
+     {
+      "id": "supino_na_maquina",
+      "nome": "Supino na máquina"
+     },
+     {
+      "id": "crucifixo_na_maquina",
+      "nome": "Crucifixo na máquina (pec deck)"
+     },
+     {
+      "id": "flexao_de_braco",
+      "nome": "Flexão de braço"
+     }
+    ]
+   },
+   "ombro_empurrar": {
+    "chaves": [
+     "desenvolvimento"
+    ],
+    "opcoes": [
+     {
+      "id": "desenvolvimento_com_halteres",
+      "nome": "Desenvolvimento com halteres",
+      "halter": true
+     },
+     {
+      "id": "desenvolvimento_na_maquina",
+      "nome": "Desenvolvimento na máquina"
+     },
+     {
+      "id": "desenvolvimento_com_barra",
+      "nome": "Desenvolvimento com barra"
+     },
+     {
+      "id": "desenvolvimento_arnold",
+      "nome": "Desenvolvimento Arnold",
+      "halter": true
+     }
+    ]
+   },
+   "costas": {
+    "chaves": [
+     "puxada",
+     "remada",
+     "barra_fixa"
+    ],
+    "opcoes": [
+     {
+      "id": "puxada_na_frente",
+      "nome": "Puxada na frente"
+     },
+     {
+      "id": "puxada_pegada_neutra",
+      "nome": "Puxada com pegada neutra (triângulo)"
+     },
+     {
+      "id": "remada_baixa_no_cabo",
+      "nome": "Remada baixa no cabo"
+     },
+     {
+      "id": "remada_na_maquina",
+      "nome": "Remada na máquina"
+     },
+     {
+      "id": "remada_unilateral_com_halter",
+      "nome": "Remada unilateral com halter",
+      "halter": true
+     },
+     {
+      "id": "remada_curvada_com_barra",
+      "nome": "Remada curvada com barra"
+     },
+     {
+      "id": "remada_cavalinho",
+      "nome": "Remada cavalinho"
+     }
+    ]
+   },
+   "biceps": {
+    "chaves": [
+     "rosca"
+    ],
+    "opcoes": [
+     {
+      "id": "rosca_com_barra",
+      "nome": "Rosca com barra"
+     },
+     {
+      "id": "rosca_com_barra_ez",
+      "nome": "Rosca com barra EZ"
+     },
+     {
+      "id": "rosca_com_halteres",
+      "nome": "Rosca com halteres",
+      "halter": true
+     },
+     {
+      "id": "rosca_martelo",
+      "nome": "Rosca martelo",
+      "halter": true
+     },
+     {
+      "id": "rosca_no_cabo",
+      "nome": "Rosca no cabo"
+     },
+     {
+      "id": "rosca_scott_na_maquina",
+      "nome": "Rosca scott na máquina"
+     }
+    ]
+   },
+   "triceps": {
+    "chaves": [
+     "triceps",
+     "mergulho"
+    ],
+    "opcoes": [
+     {
+      "id": "triceps_no_cabo",
+      "nome": "Tríceps no cabo (corda)"
+     },
+     {
+      "id": "triceps_testa",
+      "nome": "Tríceps testa"
+     },
+     {
+      "id": "mergulho_na_maquina",
+      "nome": "Mergulho na máquina"
+     },
+     {
+      "id": "triceps_frances_com_halter",
+      "nome": "Tríceps francês com halter",
+      "halter": true
+     }
+    ]
+   },
+   "ombro_lateral": {
+    "chaves": [
+     "elevacao_lateral"
+    ],
+    "opcoes": [
+     {
+      "id": "elevacao_lateral_com_halteres",
+      "nome": "Elevação lateral com halteres",
+      "halter": true
+     },
+     {
+      "id": "elevacao_lateral_no_cabo",
+      "nome": "Elevação lateral no cabo"
+     },
+     {
+      "id": "elevacao_lateral_na_maquina",
+      "nome": "Elevação lateral na máquina"
+     }
+    ]
+   },
+   "core_tempo": {
+    "chaves": [
+     "prancha"
+    ],
+    "opcoes": [
+     {
+      "id": "prancha",
+      "nome": "Prancha",
+      "tipo": "tempo"
+     },
+     {
+      "id": "prancha_lateral",
+      "nome": "Prancha lateral (cada lado)",
+      "tipo": "tempo"
+     }
+    ]
+   },
+   "core_dinamico": {
+    "chaves": [
+     "abdominal"
+    ],
+    "opcoes": [
+     {
+      "id": "abdominal",
+      "nome": "Abdominal (sit-up ou na máquina)"
+     },
+     {
+      "id": "abdominal_na_maquina",
+      "nome": "Abdominal na máquina"
+     },
+     {
+      "id": "abdominal_no_cabo",
+      "nome": "Abdominal no cabo"
+     },
+     {
+      "id": "dead_bug",
+      "nome": "Dead bug"
+     }
+    ]
+   },
+   "quadriceps_composto": {
+    "chaves": [
+     "leg_press",
+     "hack",
+     "agachamento"
+    ],
+    "opcoes": [
+     {
+      "id": "leg_press",
+      "nome": "Leg press"
+     },
+     {
+      "id": "hack_na_maquina",
+      "nome": "Hack na máquina"
+     },
+     {
+      "id": "agachamento_no_smith",
+      "nome": "Agachamento no Smith"
+     }
+    ]
+   },
+   "extensao": {
+    "chaves": [
+     "extensora",
+     "extensao"
+    ],
+    "opcoes": [
+     {
+      "id": "cadeira_extensora",
+      "nome": "Cadeira extensora"
+     }
+    ]
+   },
+   "posterior": {
+    "chaves": [
+     "stiff",
+     "leg_curl",
+     "flexora",
+     "terra"
+    ],
+    "opcoes": [
+     {
+      "id": "stiff",
+      "nome": "Stiff"
+     },
+     {
+      "id": "leg_curl",
+      "nome": "Leg curl (mesa flexora)"
+     },
+     {
+      "id": "cadeira_flexora",
+      "nome": "Cadeira flexora"
+     },
+     {
+      "id": "terra_romeno_com_halteres",
+      "nome": "Terra romeno com halteres",
+      "halter": true
+     }
+    ]
+   },
+   "unilateral": {
+    "chaves": [
+     "bulgaro",
+     "afundo",
+     "passada"
+    ],
+    "opcoes": [
+     {
+      "id": "bulgaro",
+      "nome": "Búlgaro"
+     },
+     {
+      "id": "afundo",
+      "nome": "Afundo"
+     },
+     {
+      "id": "passada_com_halteres",
+      "nome": "Passada com halteres",
+      "halter": true
+     },
+     {
+      "id": "step_up",
+      "nome": "Subida no banco (step-up)",
+      "halter": true
+     }
+    ]
+   },
+   "panturrilha": {
+    "chaves": [
+     "panturrilha"
+    ],
+    "opcoes": [
+     {
+      "id": "panturrilha_em_pe",
+      "nome": "Panturrilha em pé"
+     },
+     {
+      "id": "panturrilha_sentado",
+      "nome": "Panturrilha sentado"
+     },
+     {
+      "id": "panturrilha_unilateral",
+      "nome": "Panturrilha unilateral"
+     }
+    ]
+   }
   }
  }
 }
