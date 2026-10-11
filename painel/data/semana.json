@@ -17,7 +17,8 @@
   "proteina_piso": 140,
   "gordura": 60,
   "carbo": 175,
-  "fibra": 30
+  "fibra": 30,
+  "proteina_alvo": 160
  },
  "regra_prato": {
   "titulo": "Quatro regras. O resto é o de sempre.",
@@ -567,7 +568,7 @@
       "reps": "—"
      },
      {
-      "nome": "0 · Antes de começar, abra o relógio e olhe a leitura de 13/10. Se o sono estiver abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro. Senão, como está.",
+      "nome": "0 · Antes de começar, abra o relógio e olhe a leitura de 13/10. Se o sono estiver abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro. Senão, como está. Esses cortes (HRV 32 e FC de repouso 56) são proposta do copiloto, ainda sem a sua confirmação.",
       "series": 1,
       "reps": "—"
      },

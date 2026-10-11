@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#0B5E7C" />
 <link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="icon-192.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
@@ -201,9 +202,10 @@
   .alerta-carga { padding: 6px 0 8px; font-size: 13.5px; font-weight: 600; color: var(--tinta); background: var(--sol); margin: 0 0 4px; padding-left: 8px; }
   .okb { min-height: 46px; border: 2px solid var(--tinta); background: transparent; font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
   .okb.on { background: var(--campo); border-color: var(--campo); color: #fff; }
-  .trocar { margin: 8px 0 2px; min-height: 40px; padding: 0 12px; border: 2px solid var(--tinta); background: transparent; font: 700 13.5px/1 'Figtree', sans-serif; cursor: pointer; }
+  .trocar { margin: 8px 0 2px; min-height: 44px; padding: 0 12px; border: 2px solid var(--tinta); background: transparent; font: 700 13.5px/1 'Figtree', sans-serif; cursor: pointer; }
   .opcoes { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; padding: 8px 0 4px; }
   .opcoes[hidden] { display: none; }
+  details.exec .par a { display: inline-block; padding: 13px 0; }
   .opcoes button { min-height: 44px; padding: 6px 10px; text-align: left; border: 2px solid var(--fraca); background: var(--branco); font: 600 14px/1.2 'Figtree', sans-serif; cursor: pointer; }
   .opcoes button:last-child { border-style: dashed; }
   #t-desc { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 40; width: 100%; max-width: 520px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
@@ -283,7 +285,8 @@
   .status .picto svg { width: 30px; height: 30px; }
   .status .picto.mar svg { width: 48px; height: 48px; }
   .status .cartao .tx { min-width: 0; }
-  .status .cartao .rt { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; opacity: 0.75; }
+  .status .peso .pdt { display: block; font-size: 11.5px; font-weight: 600; opacity: 0.8; letter-spacing: 0; }
+  .status .cartao .rt { font-size: 11.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; opacity: 0.75; }
   .status .cartao .vl { font-family: var(--display); font-weight: 800; font-size: 16px; letter-spacing: -0.02em; line-height: 1.15; margin-top: 2px; }
   .status .cartao .sb { font-size: 11.5px; font-weight: 600; line-height: 1.25; margin-top: 2px; opacity: 0.85; }
   .status .aneis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
@@ -486,14 +489,14 @@ function renderDia(d, ehHoje) {
       ${nota ? `<div class="nota" id="nota-${i}" hidden>${esc(nota)}</div>` : ''}`;
   }).join('');
   if (n) {
-    const meta = DATA.dieta.proteina, piso = DATA.dieta.proteina_piso;
+    const meta = DATA.dieta.proteina_alvo || DATA.dieta.proteina, piso = DATA.dieta.proteina_piso;
     h += `<section class="bloco"><div class="cab"><h2>O dia</h2><small>proteína</small></div>${linhas}
       <div style="padding-top:16px;display:flex;flex-direction:column;gap:8px">
         <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
-          <div style="font-size:14px;color:var(--sec);font-weight:500">${kcal.toLocaleString('pt-BR')} kcal no plano · ${feitas} de ${n} registradas</div>
-          <div class="medio">${prot}<small style="color:var(--sec)"> g</small></div></div>
+          <div style="font-size:14px;color:var(--sec);font-weight:500">${kcal.toLocaleString('pt-BR')} kcal no plano · ${feitas} de ${n} refeições registradas</div>
+          <div class="medio">${prot}<small style="color:var(--sec)"> g no plano</small></div></div>
         <div class="barra"><i style="width:${Math.min(100, prot / meta * 100)}%"></i>${piso ? `<b style="left:${Math.min(100, piso / meta * 100)}%"></b>` : ''}</div>
-        <div class="legenda" style="color:var(--sec);font-weight:600"><span>0</span><span>${piso ? 'risco: piso de ' + piso + ' g' : ''}</span><span>meta ${meta} g</span></div>
+        <div class="legenda" style="color:var(--sec);font-weight:600"><span>0</span><span>${piso ? 'risco: piso de ' + piso + ' g' : ''}</span><span>alvo ${DATA.dieta.proteina_alvo || meta} g · plano ${meta} g</span></div>
       </div></section>`;
   }
 
@@ -579,9 +582,9 @@ function atividadeDeHoje() {
 function estadoDoCorpo(rc) {
   const ok = rc.indice_hoje != null && rc.indice_hoje_confiavel !== false, b = rc.banda_hoje;
   if (!ok) return { cls: 'neblina', nome: 'Sem dado', sub: 'aguardando o relógio', amp: 0, vel: '0s' };
-  if (b === 'g') return { cls: 'calmo', nome: 'Mar calmo', sub: 'índice ' + fNum(rc.indice_hoje, 0) + ', faixa alta', amp: 2, vel: '9s' };
-  if (b === 'r') return { cls: 'agitado', nome: 'Mar agitado', sub: 'índice ' + fNum(rc.indice_hoje, 0) + ', faixa baixa', amp: 9, vel: '2.6s' };
-  return { cls: 'ondulado', nome: 'Mar ondulado', sub: 'índice ' + fNum(rc.indice_hoje, 0) + ', faixa média', amp: 5, vel: '5s' };
+  if (b === 'g') return { cls: 'calmo', nome: 'Mar calmo', sub: fNum(rc.indice_hoje, 0) + ' hoje · ' + (rc.indice_medio_7d != null ? fNum(rc.indice_medio_7d, 0) : '—') + ' em 7 dias', amp: 2, vel: '9s' };
+  if (b === 'r') return { cls: 'agitado', nome: 'Mar agitado', sub: fNum(rc.indice_hoje, 0) + ' hoje · ' + (rc.indice_medio_7d != null ? fNum(rc.indice_medio_7d, 0) : '—') + ' em 7 dias', amp: 9, vel: '2.6s' };
+  return { cls: 'ondulado', nome: 'Mar ondulado', sub: fNum(rc.indice_hoje, 0) + ' hoje · ' + (rc.indice_medio_7d != null ? fNum(rc.indice_medio_7d, 0) : '—') + ' em 7 dias', amp: 5, vel: '5s' };
 }
 function pictoMar(e) {
   if (!e.amp) return `<svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="5 5"><path d="M8 18h32M8 26h32M8 34h32"/></svg>`;
@@ -613,7 +616,7 @@ function renderStatus() {
   const tt = TEMPO ? tipoDeTempo(TEMPO.code, TEMPO.dia) : null;
   const at = atividadeDeHoje(), pa = PICTO[at.tipo], sem = at.tipo === 'nenhum' || at.tipo === 'definir';
   const ec = FATOS ? estadoDoCorpo(rc) : { cls: 'neblina', nome: 'Carregando', sub: '', amp: 0 };
-  el.innerHTML = `<div class="in"><div class="l1"><div class="peso">${n(peso, 1)} kg</div>
+  el.innerHTML = `<div class="in"><div class="l1"><div class="peso">${n(peso, 1)} kg${ps.ultima && ps.ultima.data ? `<small class="pdt">média das pesagens até ${esc(isoDDMM(ps.ultima.data))}</small>` : ''}</div>
     ${TEMPO ? `<div class="clima"><svg class="t-${tt[0]}" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${TEMPO_SVG[tt[0]]}</svg>
       <div class="temp"><b>${Math.round(TEMPO.temp)} °C</b>${esc(tt[1])}</div></div>` : ''}</div>
     <div class="trilho-s" role="img" aria-label="Progresso até ${n(alvo, 0)} kg: ${Math.round(prog * 100)}%"><i style="width:${prog * 100}%"></i><span class="falta${prog > 0.55 ? ' esq' : ''}">faltam ${n(peso - alvo, 1)} kg · ${Math.round(prog * 100)}% do caminho</span><svg class="mb${prog < 0.03 ? ' ini' : ''}" viewBox="0 0 14 20" aria-hidden="true" style="left:${(prog * 100).toFixed(1)}%"><path d="M2 18C0 12 1 6 7 5c6 1 7 7 5 13z" fill="#FFB48F" stroke="#fff" stroke-width="1.2"/><rect x="1" y="12" width="12" height="2.6" fill="#fff"/><circle cx="7" cy="3" r="1.8" fill="#FFB48F" stroke="#fff" stroke-width="1"/></svg><svg class="meta-f" viewBox="0 0 14 16" aria-hidden="true"><path d="M3 15V2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M3 2.5h8l-2 3 2 3H3z" fill="#FFB48F"/></svg></div>
@@ -625,8 +628,8 @@ function renderStatus() {
     </div>
     <div class="aneis">
       ${anel(rc.sono_ultima_noite_h, (rc.sono_ultima_noite_h || 0) / 7, 'sono h', 1, QUAL.sono(rc.sono_ultima_noite_h))}
-      ${anel(rc.hrv_ultima_noite, (rc.hrv_ultima_noite || 0) / (ref.hrv_ms || 39), 'VFC', 0, QUAL.vfc(rc.hrv_ultima_noite))}
-      ${anel(rc.fc_repouso_hoje, rc.fc_repouso_hoje ? (ref.fc_repouso || 52) / rc.fc_repouso_hoje : 0, 'FC repouso', 0, QUAL.fc(rc.fc_repouso_hoje))}
+      ${anel(rc.hrv_ultima_noite, (rc.hrv_ultima_noite || 0) / (ref.hrv_ms || 39), 'VFC ms', 0, QUAL.vfc(rc.hrv_ultima_noite))}
+      ${anel(rc.fc_repouso_hoje, rc.fc_repouso_hoje ? (ref.fc_repouso || 52) / rc.fc_repouso_hoje : 0, 'FC bpm', 0, QUAL.fc(rc.fc_repouso_hoje))}
       ${anel(rc.prontidao_garmin_hoje, (rc.prontidao_garmin_hoje || 0) / 100, 'prontidão', 0, QUAL.pront(rc.prontidao_garmin_hoje))}</div>
     <div class="leg-q" aria-hidden="true"><span class="q-bom"><i></i>bom</span><span class="q-medio"><i></i>médio</span><span class="q-baixo"><i></i>baixo</span></div></div>`;
   document.documentElement.style.setProperty('--hstatus', el.offsetHeight + 'px');
@@ -676,7 +679,7 @@ function blocoDestino() {
     <a class="linha" href="#evo"><span class="corpo">Peso<small>faltam ${fNum(P.atual_media_neutra - P.alvo, 1)} kg · ${P.ritmo_kg_semana_28d > 0 ? '+' : ''}${fNum(P.ritmo_kg_semana_28d, 2)} kg por semana</small></span><span class="medio">${fNum(P.atual_media_neutra, 1)}<small style="color:var(--sec)"> kg</small></span></a>
     <div style="padding:12px 0 6px;border-bottom:1px solid var(--fraca)"><div class="regua"><div class="eixo"></div>${REGUA_RISCOS}<div class="marca" style="left:${prog * 100}%"></div></div>
       <div class="legenda"><span>${fNum(P.partida, 1)} partida</span><span>${Math.round(prog * 100)}% do caminho</span><span>${fNum(P.alvo, 0)} meta</span></div></div>
-    <a class="linha" href="#evo"><span class="corpo">VO₂ máx<small>meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)} · só o peso já leva a ${fNum(V.so_pelo_peso, 1)}</small></span><span class="medio">${fNum(V.referencia_nivel_do_mar, 1)}</span></a>
+    <a class="linha" href="#evo"><span class="corpo">VO₂ máx<small>meta ${fNum(V.alvo[0], 0)}–${fNum(V.alvo[1], 0)} · só o peso já leva a ${fNum(V.so_pelo_peso, 1)}</small></span><span class="medio">${fNum(V.referencia_nivel_do_mar, 1)}<small style="color:var(--sec)"> em ${esc(isoDDMM(((V.serie.filter(p => !p.altitude).slice(-1)[0]) || {}).data || ''))}</small></span></a>
     <a class="botao claro" href="#evo" style="margin-top:14px">Abrir a evolução completa</a></section>`;
 }
 function blocoEspecialistas() {
@@ -700,7 +703,7 @@ function blocoCardapio() {
     if (!linhas) return '';
     return `<details class="cdia ${d.data === hoje ? 'hoje' : ''}" ${largo || d.data === hoje ? 'open' : ''}>
       <summary><span class="hora">${esc(d.nome.slice(0, 3))} ${esc(d.data.slice(0, 2))}</span><span class="corpo">${kcal.toLocaleString('pt-BR')} kcal · ${prot} g de proteína<small>${esc(partirFoco((d.treino && d.treino.foco) || '').titulo)}</small></span></summary>
-      <div class="miolo">${linhas}<a href="#${d.id}" style="display:inline-block;padding:8px 0 0;font-size:13.5px;font-weight:700">abrir o dia inteiro</a></div></details>`; }).join('');
+      <div class="miolo">${linhas}<a href="#${d.id}" style="display:inline-block;padding:14px 0 10px;font-size:13.5px;font-weight:700">abrir o dia inteiro</a></div></details>`; }).join('');
   if (!dias) return '';
   return `<section class="bloco"><div class="cab"><h2>Cardápio da semana</h2><small>meta: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal · ${DATA.dieta.proteina} g</small></div>
     <div class="cardapio">${dias}</div></section>`;
@@ -737,7 +740,7 @@ function renderInicio() {
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
       return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') +
     ((st.dias_feitos || []).length ? `<div class="aviso">${st.dias_feitos.map(T).join(' ')}</div>` : '') +
-    `<div class="aviso" style="${(st.dias_feitos || []).length ? 'margin-top:0;border-top:0;padding-top:0' : ''}">Meta da semana: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal e ${DATA.dieta.proteina} g de proteína por dia${DATA.dieta.proteina_piso ? ', com piso de ' + DATA.dieta.proteina_piso + ' g' : ''}.</div></section>`;
+    `<div class="aviso" style="${(st.dias_feitos || []).length ? 'margin-top:0;border-top:0;padding-top:0' : ''}">Plano: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal e ${DATA.dieta.proteina} g de proteína por dia. O alvo real é ${DATA.dieta.proteina_alvo || 160} g, com piso de ${DATA.dieta.proteina_piso || 140} g; o plano é escrito mais alto porque a execução costuma entregar 85 a 90%.</div></section>`;
 
   const pr = t.prontidao || [];
   h += `<section class="bloco"><div class="cab"><h2>Prontidão</h2><small>${T(t.training_status || '')}</small></div>
@@ -762,7 +765,7 @@ function renderInicio() {
       return `<label><input type="checkbox" data-k="${esc(k)}" ${marcados[k] ? 'checked' : ''}><span>${T(it)}</span></label>`; }).join('')).join('') + `</section>`;
 
   const fontes = Object.entries(DATA.fontes_status || {}).map(([k, v]) => `${k}: ${semEmoji(v)}`).join(' · ');
-  h += `<div class="rodape">Gerado em ${esc(DATA.gerado_em)}. ${esc(fontes)}</div>`;
+  h += `<div class="rodape">Gerado em ${esc(isoDDMM(DATA.gerado_em))}. ${esc(fontes)}</div>`;
   $("view").innerHTML = h;
   dobrarSecoes();
   document.querySelectorAll('.compra input').forEach(c => c.addEventListener('change', () => {
@@ -858,8 +861,8 @@ function renderAlim() {
 
   const mi = A.micro.itens, cont = st => mi.filter(i => i.status === st).length;
   const glifoSt = { 'coberto': '● coberto', 'parcial': '◐ parcial', 'não apareceu': '○ não apareceu' };
-  h += `<section class="bloco"><div class="cab"><h2>Micronutrientes</h2><small>${esc(an.rotulo)}${an.provisoria ? ' · provisório' : ''} · ${cont('coberto')} cobertos · ${cont('parcial')} parciais · ${cont('não apareceu')} sem registro</small></div>
-    <div class="aviso" style="margin-top:0;border-top:0;padding-top:10px">${esc(A.micro.aviso)}</div>` +
+  h += `<section class="bloco"><div class="cab"><h2>Micronutrientes</h2><small>${esc(an.rotulo)}${an.provisoria ? ' · provisório' : ''}</small></div>
+    <div class="aviso" style="margin-top:0;border-top:0;padding-top:10px"><b>${cont('coberto')} cobertos · ${cont('parcial')} parciais · ${cont('não apareceu')} sem registro.</b> ${esc(A.micro.aviso)}</div>` +
     mi.map(i => `<div class="linha" style="align-items:flex-start"><span class="corpo">${esc(i.nome)}<small>Fontes: ${esc(i.onde)}. Apareceu: ${esc(i.apareceu)} ${i.sugestao && i.sugestao !== 'Manter.' ? 'Sugestão: ' + esc(i.sugestao) : ''}</small></span>
       <span class="st ${i.status === 'coberto' ? 'ok' : i.status === 'parcial' ? 'par' : 'nao'}">${esc(glifoSt[i.status] || i.status)}</span></div>`).join('') + `</section>`;
 
@@ -869,7 +872,7 @@ function renderAlim() {
   h += `<section class="bloco"><div class="cab"><h2>As refeições</h2><small>${A.refeicoes.length} registradas · ${esc(an.rotulo)}</small></div>
     <details><summary>Ver a tabela de refeições</summary><div class="miolo"><table class="tab-ref"><tbody>${A.refeicoes.map(r =>
       `<tr><td>${esc(r.data)}</td><td><b>${esc(r.refeicao)}</b> · ${esc(r.tipo)}<br>${esc(r.texto)}</td></tr>`).join('')}</tbody></table></div></details>
-    <div class="aviso">${esc(A.aviso)}</div></section><div class="rodape">Análise de ${esc(A.gerado_em)}.</div>`;
+    <div class="aviso">${esc(A.aviso)}</div></section><div class="rodape">Análise de ${esc(isoDDMM(A.gerado_em))}.</div>`;
   $("view").innerHTML = h;
 }
 
@@ -923,7 +926,7 @@ function renderEvo() {
   const vv = V.serie.map(p => p.valor).concat(V.alvo), vlo = Math.min(38, Math.floor(Math.min(...vv)) - 1), vhi = Math.max(48, Math.ceil(Math.max(...vv)) + 1);
   const pos = x => Math.max(0, Math.min(100, (x - vlo) / (vhi - vlo) * 100));
   h += `<div class="sol"><div style="display:flex;gap:16px;align-items:center">
-      <div style="flex:none"><div class="rot" style="font-size:12px">VO₂ máx</div><div class="grande">${fNum(V.referencia_nivel_do_mar, 1)}</div></div>
+      <div style="flex:none"><div class="rot" style="font-size:12px">VO₂ máx</div><div class="grande">${fNum(V.referencia_nivel_do_mar, 1)}</div><div class="rot" style="font-size:11.5px;text-transform:none;letter-spacing:0">nível do mar, ${esc(isoDDMM(((V.serie.filter(p => !p.altitude).slice(-1)[0]) || {}).data || ''))}</div></div>
       <div style="flex:1;font-size:13.5px;line-height:1.35">Só chegar a ${fNum(P.alvo, 0)} kg já leva a <b>${fNum(V.so_pelo_peso, 1)}</b>: VO₂ máx é medido por quilo.${V.ultimo && V.ultimo.altitude ? ` A leitura de ${fNum(V.ultimo.valor, 1)} foi em ${esc(V.ultimo.altitude)}.` : ''}</div></div>
     <div style="padding-top:12px"><div class="regua"><div class="alvo" style="left:${pos(V.alvo[0])}%;width:${pos(V.alvo[1]) - pos(V.alvo[0])}%"></div><div class="eixo"></div>${REGUA_RISCOS}
       <div class="marca" id="ev-vo2" style="left:0%;background:#fff"></div></div>
@@ -1177,6 +1180,21 @@ function renderReg() {
   ligarAbas();
 }
 
+// Hoje quando o plano publicado não cobre o dia (em 11/10 a semana nova só começa em 12/10): mostra o que existe de verdade.
+function renderHojeSemPlano() {
+  const iso = isoLocal(), d = new Date(), s = typeof sessaoDe === 'function' ? sessaoDe(iso) : null;
+  const base = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const prox = DATA.dias.find(x => { const [dd, mm] = x.data.split('/'); return new Date(d.getFullYear(), +mm - 1, +dd) >= base; });
+  const nomeDia = d.toLocaleDateString('pt-BR', { weekday: 'long' }).replace(/^./, c => c.toUpperCase());
+  $("view").innerHTML = `<div class="campo"><div class="dentro">
+    <div class="topo"><div class="rot">${esc(nomeDia)} · ${d.getDate()} ${MES[d.getMonth()]}</div><div class="selo">hoje</div></div>
+    <h1 class="titulo longo">${s ? esc(s.titulo) : 'Hoje não tem plano escrito'}</h1>
+    <div class="sub">${s ? esc(s.regra || '') : 'O plano publicado não cobre hoje.'}</div></div>${ONDA}</div>` +
+    (typeof linkTreino === 'function' ? linkTreino(iso) : '') +
+    (prox ? `<section class="bloco"><div class="cab"><h2>Próximo dia do plano</h2></div><a class="linha" href="#${prox.id}">${glifo(prox)}<span class="corpo">${esc(partirFoco((prox.treino && prox.treino.foco) || 'Dia livre').titulo)}<small>${esc(prox.nome)} · ${esc(prox.data)}</small></span></a></section>` : '') +
+    `<section class="bloco"><a class="botao" href="#reg">Registrar ${ico('mais')}</a></section>`;
+}
+
 // ───────── rotas ─────────
 function route() {
   renderStatus();
@@ -1186,7 +1204,8 @@ function route() {
   if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
   if (/^treino(\/|$)/.test(id)) { renderNav('hoje'); renderTreino(id); window.scrollTo(0, 0); return; }
   const hoje = DATA.dias.find(d => d.data === hojeDDMM());
-  const dia = id === 'hoje' ? (hoje || DATA.dias[DATA.dias.length - 1]) : DATA.dias.find(d => d.id === id);
+  if (id === 'hoje' && !hoje) { renderNav('hoje'); renderHojeSemPlano(); window.scrollTo(0, 0); return; }
+  const dia = id === 'hoje' ? hoje : DATA.dias.find(d => d.id === id);
   if (dia) { renderNav('hoje'); renderDia(dia, dia === hoje); window.scrollTo(0, 0); return; }
   renderNav('home'); renderInicio(); window.scrollTo(0, 0);   // '#home', '#semana' e qualquer endereço antigo
 }
@@ -1214,5 +1233,6 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
 });
 </script>
 <script src="treino.js"></script>
+<script>if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
 </body>
 </html>

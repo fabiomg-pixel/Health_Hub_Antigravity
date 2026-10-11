@@ -780,3 +780,22 @@ Fitbod mandou leg press de 120 kg). A carga passa a ser decidida aqui e registra
   do Garmin do mesmo dia quando o Fabio marca o relógio). Isso fecha a brecha da corrida de 07/10 e mostra que o Strava
   duplicou essa corrida como 'trilha' (o Garmin tem uma atividade só). A FC no pulso oscila na musculação: tendência,
   não medida. Séries e cargas continuam vindo do painel, nunca da contagem de séries do Garmin.
+
+### Avaliação do app em 11/10/2026 (4 agentes haiku + carga, nutrição, logística e cético)
+
+**Corrigido no mesmo dia:** aba Hoje mostrava o dia 18 (agora mostra o treino de hoje ou "sem plano"); cartão do treino de
+hoje aparecia como se fosse de segunda; estado do treino agora é por dia (abrir outro dia não apaga); série feita sem carga é
+barrada (não grava 0 kg); estado corrompido se recupera; funciona sem sinal (service worker + ícones, rede primeiro); tela
+acesa durante o treino; alvos de toque de 44 px; meta de proteína mostrada como alvo 160 g (plano 175 g, piso 140 g);
+peso com "média até DD/MM"; corpo com "hoje · 7 dias"; VO₂ máx com data e nível do mar; unidades nos anéis.
+
+**Backlog priorizado (decisão do Fabio):**
+1. Semáforo "pode / ajustar / parar" no Início, combinando o dia com a tendência de 7 dias (carga). Depende de ele confirmar os cortes
+   de VFC (32) e FC de repouso (56) do §20d. Hoje o dia bom (índice 83) pinta "Mar calmo" e esconde a semana (índice 44).
+2. Barra de proteína honesta: planejado, registrado e quanto falta (nutrição). Precisa de proteína por registro (rótulo ou estimativa marcada).
+3. Registrar a partir da linha da refeição, com refeição e data já preenchidas (2 a 3 toques).
+4. Janela por dia (hora, local, plano B) e previsão com chuva, pôr do sol e calor (logística).
+5. RIR por série no treino (sobrou ou não sobrou) para a progressão da fase 2.
+6. Reordenar o Início em ~8 blocos, com especialistas, cardápio de 7 dias, relatório, regras e compras dobrados por padrão.
+7. Cortar ou dobrar na Alimentação: micronutrientes, subgrupos, tipo de carboidrato (excesso de informação para a decisão).
+8. Cartão "o que como agora" por situação (buffet, delivery, marmita) e lembrete do lanche das 17h.
