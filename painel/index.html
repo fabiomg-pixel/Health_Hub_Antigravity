@@ -188,6 +188,10 @@
   .leg { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--sec); font-weight: 500; }
   .leg .sw { display: inline-block; width: 10px; height: 10px; margin-right: 6px; }
   .leg b { color: var(--tinta); }
+  .st { flex: none; font-size: 12px; font-weight: 700; padding: 3px 8px; border: 2px solid var(--tinta); white-space: nowrap; }
+  .st.ok { background: var(--campo); border-color: var(--campo); color: #fff; }
+  .st.par { background: var(--sol); }
+  .st.nao { background: transparent; }
   .alim-leitura { font-size: 14px; color: var(--sec); padding: 8px 0 12px; }
   .tab-ref { width: 100%; border-collapse: collapse; font-size: 13.5px; }
   .tab-ref td { padding: 8px 6px 8px 0; border-bottom: 1px solid var(--fraca); vertical-align: top; }
@@ -762,7 +766,7 @@ const pilha = (itens, cores, rotulo) => `<div class="pilha" role="img" aria-labe
   <div class="leg">${itens.map((i, k) => `<span><i class="sw c${cores[k]}"></i>${esc(i.nome)} <b>${i.n}</b></span>`).join('')}</div>`;
 function renderAlim() {
   const topo = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
-    <div class="topo"><div class="rot">Alimentação${ALIM ? ' · ' + esc(ALIM.janela) : ''}</div></div>
+    <div class="topo"><div class="rot">Alimentação${ALIM ? ' · ' + esc(ALIM.semana.rotulo) : ''}</div></div>
     <h1 class="titulo longo">${ALIM ? esc(ALIM.titulo) : 'Carregando a análise.'}</h1>
     <div class="sub">${ALIM ? esc(ALIM.subtitulo) : ''}</div></div></div>`;
   if (!ALIM) {
@@ -771,37 +775,58 @@ function renderAlim() {
       .catch(() => { $("view").innerHTML = topo + abasInicio('alim') + `<section class="bloco"><div class="aviso">A análise por grupos ainda não foi publicada.</div></section>`; });
     return;
   }
-  const A = ALIM, pouco = A.base.principais < 4;
-  const efet = m => m.escala ? Math.max(1, Math.round(m.meta / m.escala * m.de)) : m.meta;
+  const A = ALIM, W = A.semana, an = A.anterior;
+  const naoComecou = isoLocal() < W.inicio, pouco = W.registros.principais < 4;
+  const nota = naoComecou ? ' · começa em ' + isoDDMM(W.inicio) : pouco ? ' · poucos registros' : '';
   const alc = A.metas.filter(m => m.tipo === 'alcancar');
-  const feito = alc.reduce((s, m) => s + Math.min(m.atual, efet(m)), 0), total = alc.reduce((s, m) => s + efet(m), 0);
+  const feito = alc.reduce((s, m) => s + Math.min(m.atual, m.meta), 0), total = alc.reduce((s, m) => s + m.meta, 0);
   const pct = total ? Math.round(feito / total * 100) : 0;
   let h = topo + abasInicio('alim');
 
-  h += `<section class="bloco"><div class="cab"><h2>Metas da semana</h2><small>definidas pela nutricionista</small></div>
-    <div class="meta"><div class="mh"><span>Registros</span><small>${A.base.refeicoes} refeições em ${A.base.dias} dias</small></div></div>
-    <div class="meta"><div class="mh"><span>Progresso das metas de alcançar</span><small>${pouco ? 'poucos registros' : feito + ' de ' + total + ' · ' + pct + '%'}</small></div>
-      <div class="barra" role="img" aria-label="${pouco ? 'poucos registros' : feito + ' de ' + total + ', ' + pct + ' por cento'}"><i class="${pouco ? 'cinza' : ''}" style="width:${pouco ? 0 : pct}%"></i></div>
-      <div class="ml">${esc(A.base_das_metas || '')}</div></div>` +
-    A.metas.map(m => { const lim = m.tipo === 'limitar', me = efet(m), acima = lim && !pouco && m.atual > me;
-      return `<div class="meta"><div class="mh"><span>${esc(m.nome)}</span><small>${m.atual} de ${m.de} · ${lim ? 'teto' : 'meta'} ${me}${pouco ? ' · poucos registros' : acima ? ' · acima do teto' : ''}</small></div>
-        <div class="barra" role="img" aria-label="${esc(m.nome)}: ${m.atual} de ${m.de}, ${lim ? 'teto' : 'meta'} ${me}"><i class="${pouco ? 'cinza' : acima ? 'acima' : ''}" style="width:${(m.atual / m.de * 100).toFixed(1)}%"></i><b style="left:calc(${(me / m.de * 100).toFixed(1)}% - 1px)"></b></div>
+  h += `<section class="bloco"><div class="cab"><h2>Metas de ${esc(W.rotulo)}</h2><small>definidas pelo copiloto de nutrição</small></div>
+    <div class="meta"><div class="mh"><span>Registros desta semana</span><small>${W.registros.refeicoes} refeições em ${W.registros.dias} dias</small></div></div>
+    <div class="meta"><div class="mh"><span>Progresso das metas de alcançar</span><small>${feito} de ${total} · ${pct}%${nota}</small></div>
+      <div class="barra" role="img" aria-label="${feito} de ${total}, ${pct} por cento"><i class="${pouco ? 'cinza' : ''}" style="width:${pct}%"></i></div>
+      <div class="ml">${esc(A.base_das_metas)}</div></div>` +
+    A.metas.map(m => { const lim = m.tipo === 'limitar', esc2 = lim ? m.meta * 2 : m.meta, acima = lim && m.atual > m.meta;
+      return `<div class="meta"><div class="mh"><span>${esc(m.nome)}</span><small>${m.atual} · ${lim ? 'teto' : 'meta'} ${m.meta}${acima ? ' · acima do teto' : ''}</small></div>
+        <div class="barra" role="img" aria-label="${esc(m.nome)}: ${m.atual}, ${lim ? 'teto' : 'meta'} ${m.meta}"><i class="${pouco ? 'cinza' : acima ? 'acima' : ''}" style="width:${Math.min(100, m.atual / esc2 * 100).toFixed(1)}%"></i>${lim ? `<b style="left:calc(${(m.meta / esc2 * 100).toFixed(1)}% - 1px)"></b>` : ''}</div>
         <div class="ml">${esc(m.unidade)}. ${esc(m.leitura)}</div></div>`; }).join('') +
-    `<div class="aviso">O traço marca a meta (ou o teto, na fritura). Cada barra vai até o total registrado. ${esc(A.definicoes || '')}</div></section>`;
+    `<div class="aviso">${esc(A.definicoes)}</div></section>`;
+
+  h += `<section class="bloco"><div class="cab"><h2>Semana anterior</h2><small>${esc(an.rotulo)}${an.provisoria ? ' · provisório' : ''}</small></div>
+    <div class="aviso" style="margin-top:0;border-top:0;padding-top:10px">${esc(an.nota)} ${an.n_refeicoes} refeições registradas em ${an.n_dias} dias, ${an.n_principais} delas principais.</div>
+    <div class="cat">O que foi bom</div>` +
+    an.boa.map((x, i) => `<div class="linha" style="align-items:flex-start"><span class="hora">${i + 1}</span><span class="corpo">${esc(x.titulo)}<small>${esc(x.evidencia)}</small></span></div>`).join('') +
+    `<div class="cat">O que faltou</div>` +
+    an.deficit.map((x, i) => `<div class="linha" style="align-items:flex-start"><span class="hora">${i + 1}</span><span class="corpo">${esc(x.titulo)}<small>${esc(x.evidencia)}</small></span></div>`).join('') + `</section>`;
 
   const P = A.proteina_fontes, mxP = Math.max(...P.itens.map(i => i.n), 1);
-  h += `<section class="bloco"><div class="cab"><h2>${esc(P.titulo)}</h2><small>${esc(P.unidade)}</small></div>
+  h += `<section class="bloco"><div class="cab"><h2>${esc(P.titulo)}</h2><small>${esc(an.rotulo)} · ${esc(P.unidade)}</small></div>
     ${hbarras(P.itens, i => i.n, i => i.nome, mxP)}<div class="alim-leitura">${esc(P.leitura)}</div></section>`;
 
   const C = A.carbo;
-  h += `<section class="bloco"><div class="cab"><h2>${esc(C.titulo)}</h2><small>${esc(C.unidade)}</small></div>
+  h += `<section class="bloco"><div class="cab"><h2>${esc(C.titulo)}</h2><small>${esc(an.rotulo)} · ${esc(C.unidade)}</small></div>
     ${pilha(C.itens, [0, 1, 3], C.titulo)}
     <details><summary>O que entrou em cada grupo</summary><div class="miolo">${C.itens.map(i => `<div class="par"><b>${esc(i.nome)}:</b> ${esc(i.detalhe)}</div>`).join('')}</div></details>
     <div class="alim-leitura">${esc(C.leitura)}</div></section>`;
 
   const G = A.gorduras;
-  h += `<section class="bloco"><div class="cab"><h2>${esc(G.titulo)}</h2><small>${esc(G.unidade)}</small></div>
-    ${hbarras(G.itens, i => i.n, i => i.nome, A.base.refeicoes)}<div class="alim-leitura">${esc(G.leitura)}</div></section>`;
+  h += `<section class="bloco"><div class="cab"><h2>${esc(G.titulo)}</h2><small>${esc(an.rotulo)} · ${esc(G.unidade)}</small></div>
+    ${hbarras(G.itens, i => i.n, i => i.nome, an.n_refeicoes)}<div class="alim-leitura">${esc(G.leitura)}</div></section>`;
+
+  const sub = (tit, lista) => { const mx = Math.max(...lista.map(i => i.n), 1);
+    return `<div class="cat">${esc(tit)}</div>${hbarras(lista, i => i.n, i => i.nome, mx)}
+      <details><summary>O que cada tipo traz</summary><div class="miolo">${lista.map(i => `<div class="par"><b>${esc(i.nome)}</b> (${esc(i.exemplos)}): ${esc(i.micro)}</div>`).join('')}</div></details>`; };
+  h += `<section class="bloco"><div class="cab"><h2>Vegetais e frutas por tipo</h2><small>${esc(an.rotulo)} · refeições</small></div>
+    ${sub('Vegetais', A.subgrupos.vegetais)}${sub('Frutas', A.subgrupos.frutas)}</section>`;
+
+  const M = A.macro;
+  h += `<section class="bloco"><div class="cab"><h2>Macro das marmitas</h2><small>${esc(M.unidade)}</small></div>` +
+    M.linhas.map(l => `<div class="meta" style="border-bottom:0;padding-bottom:0"><div class="mh"><span>${esc(l.nome)}</span><small>${l.kcal} kcal</small></div>
+      <div class="pilha" role="img" aria-label="${esc(l.nome)}: ${M.legenda.map((n, k) => n + ' ' + Math.round(l.pct[k]) + '%').join(', ')}" style="margin:8px 0 2px">${l.pct.map((v, k) => `<div class="sg c${[0, 1, 2][k]}" style="flex:${v}" title="${esc(M.legenda[k])}: ${fNum(v, 1)}%">${Math.round(v)}%</div>`).join('')}</div><div class="ml" style="margin-top:2px">${esc(l.nota || '')}</div></div>`).join('') +
+    `<div class="leg" style="margin-top:8px">${M.legenda.map((n, k) => `<span><i class="sw c${k}"></i>${esc(n)}</span>`).join('')}</div>
+    <div class="alim-leitura">${esc(M.leitura)}</div></section>`;
 
   const F = A.fibra, mxF = Math.max(F.referencia, ...F.itens.map(i => i.g)) * 1.1;
   h += `<section class="bloco"><div class="cab"><h2>${esc(F.titulo)}</h2><small>${esc(F.unidade)}</small></div>
@@ -809,13 +834,17 @@ function renderAlim() {
     <div class="legenda" style="color:var(--sec);font-weight:600;padding-top:6px"><span>o traço marca ${F.referencia} g: ${esc(F.referencia_nota)}</span></div>
     <div class="alim-leitura">${esc(F.leitura)} Sódio por marmita: ${A.sodio.itens.map(i => i.nome + ' ' + i.mg + ' mg').join(', ')}.</div></section>`;
 
-  const T2 = A.tipos;
-  h += `<section class="bloco"><div class="cab"><h2>${esc(T2.titulo)}</h2><small>${esc(T2.unidade)}</small></div>${pilha(T2.itens, [0, 1, 2, 3], T2.titulo)}</section>`;
+  const mi = A.micro.itens, cont = st => mi.filter(i => i.status === st).length;
+  const glifoSt = { 'coberto': '● coberto', 'parcial': '◐ parcial', 'não apareceu': '○ não apareceu' };
+  h += `<section class="bloco"><div class="cab"><h2>Micronutrientes</h2><small>${esc(an.rotulo)}${an.provisoria ? ' · provisório' : ''} · ${cont('coberto')} cobertos · ${cont('parcial')} parciais · ${cont('não apareceu')} sem registro</small></div>
+    <div class="aviso" style="margin-top:0;border-top:0;padding-top:10px">${esc(A.micro.aviso)}</div>` +
+    mi.map(i => `<div class="linha" style="align-items:flex-start"><span class="corpo">${esc(i.nome)}<small>Fontes: ${esc(i.onde)}. Apareceu: ${esc(i.apareceu)} ${i.sugestao && i.sugestao !== 'Manter.' ? 'Sugestão: ' + esc(i.sugestao) : ''}</small></span>
+      <span class="st ${i.status === 'coberto' ? 'ok' : i.status === 'parcial' ? 'par' : 'nao'}">${esc(glifoSt[i.status] || i.status)}</span></div>`).join('') + `</section>`;
 
   h += `<section class="bloco"><div class="cab"><h2>Pontos de atenção</h2></div>` +
     A.atencao.map((l, i) => `<div class="linha" style="align-items:flex-start"><span class="hora">${i + 1}</span><span class="corpo" style="font-weight:500">${esc(l)}</span></div>`).join('') + `</section>`;
 
-  h += `<section class="bloco"><div class="cab"><h2>As refeições</h2><small>${A.refeicoes.length} registradas</small></div>
+  h += `<section class="bloco"><div class="cab"><h2>As refeições</h2><small>${A.refeicoes.length} registradas · ${esc(an.rotulo)}</small></div>
     <details><summary>Ver a tabela de refeições</summary><div class="miolo"><table class="tab-ref"><tbody>${A.refeicoes.map(r =>
       `<tr><td>${esc(r.data)}</td><td><b>${esc(r.refeicao)}</b> · ${esc(r.tipo)}<br>${esc(r.texto)}</td></tr>`).join('')}</tbody></table></div></details>
     <div class="aviso">${esc(A.aviso)}</div></section><div class="rodape">Análise de ${esc(A.gerado_em)}.</div>`;

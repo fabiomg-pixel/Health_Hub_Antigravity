@@ -1,57 +1,111 @@
 {
  "gerado_em": "2026-10-11",
- "janela": "04 a 11/10",
- "titulo": "Faltam vegetal, leguminosa, fruta e peixe",
- "subtitulo": "11 refeições registradas em 5 dias (04, 05, 06, 10 e 11/10). Sem registro: 07, 08 e 09/10.",
- "aviso": "Só conta o que foi registrado. O que não aparece aqui pode ter sido comido e não registrado. A classificação dos pratos foi feita pelo copiloto a partir do texto, da foto e do rótulo. As metas foram definidas pela nutricionista do copiloto em 11/10, a seu pedido.",
- "base": {
-  "refeicoes": 11,
-  "principais": 7,
-  "dias": 5
+ "semana": {
+  "id": "12-18/10",
+  "rotulo": "12 a 18/10",
+  "inicio": "2026-10-12",
+  "fim": "2026-10-18",
+  "registros": {
+   "refeicoes": 0,
+   "principais": 0,
+   "dias": 0
+  }
  },
+ "titulo": "Semana nova: vegetal, variedade, menos fritura, fruta e peixe",
+ "subtitulo": "As barras começam zeradas e contam só o que você registrar de 12 a 18/10.",
+ "base_das_metas": "As metas saem do que a semana 05 a 11/10 mostrou de bom e de faltante e valem só para o que for registrado de 12 a 18/10. Com poucos registros as barras ficam cinzas: esquecer de anotar nunca conta contra você. Eu atualizo as barras quando processo os seus registros.",
  "metas": [
   {
    "id": "vegetal",
    "nome": "Vegetais e folhas",
    "tipo": "alcancar",
-   "atual": 3,
-   "de": 7,
    "meta": 4,
-   "escala": 7,
-   "unidade": "refeições principais registradas",
-   "leitura": "Só brócolis (04/10 e marmita de 10/10) e espinafre em creme (06/10). Salada crua não aparece nos registros. A meta acompanha o que você registrar."
+   "unidade": "refeições principais com vegetal visível",
+   "atual": 0,
+   "leitura": "Semana anterior: 2 de 5 principais (espinafre e brócolis). Batata-doce e molho de tomate não contam: a batata-doce é base de carboidrato e o molho é tempero. Marmita com vegetal visível conta.",
+   "racional": "Vegetal foi o déficit mais claro, e a marmita já resolve metade."
+  },
+  {
+   "id": "familias",
+   "nome": "Famílias de vegetal",
+   "tipo": "alcancar",
+   "meta": 3,
+   "unidade": "famílias diferentes na semana",
+   "atual": 0,
+   "leitura": "Famílias: folha verde-escura, crucífera, laranja ou vermelho, outros. Na semana anterior apareceram 2: folha escura (espinafre) e crucífera (brócolis). Molho de tomate e batata-doce não contam.",
+   "racional": "Vegetal não é tudo igual. Variedade cobre mais micronutrientes sem pesar nada."
   },
   {
    "id": "fritura",
    "nome": "Fritura",
    "tipo": "limitar",
-   "atual": 3,
-   "de": 11,
    "meta": 2,
    "unidade": "refeições registradas, no máximo",
-   "leitura": "Fritas (04/10), banana frita (06/10) e croquete (10/10), todas fora de casa. Esta semana já passou do teto. Na próxima: a refeição livre de sábado e no máximo mais uma. Ovo frito na frigideira não conta."
+   "atual": 0,
+   "leitura": "A refeição livre de sábado conta como uma. Ovo frito na frigideira não conta.",
+   "racional": "Os 2 jantares registrados na semana anterior tiveram fritura."
   },
   {
    "id": "fruta",
    "nome": "Fruta inteira",
    "tipo": "alcancar",
-   "atual": 0,
-   "de": 5,
    "meta": 2,
    "unidade": "dias com registro",
-   "leitura": "Só suco de laranja, banana frita e abacate (contado como gordura). Fruta inteira não aparece nos registros. A banana das 17h é o caminho."
+   "atual": 0,
+   "leitura": "Fruta inteira não aparece nos registros de 05 a 11/10. A banana das 17h já está no plano todos os dias: a meta é comê-la e registrá-la. Laranja ou mexerica também valem.",
+   "racional": "Não é regra nova: é fazer a banana do plano aparecer no registro, no horário em que o doce costuma entrar."
   },
   {
    "id": "peixe",
    "nome": "Peixe",
    "tipo": "alcancar",
-   "atual": 0,
-   "de": 7,
    "meta": 1,
-   "unidade": "refeições principais registradas",
-   "leitura": "Não aparece nos registros. As 3 marmitas registradas são de frango. Uma janta com peixe já muda a semana."
+   "unidade": "janta com peixe",
+   "atual": 0,
+   "leitura": "Não aparece nos registros. Sardinha em lata serve.",
+   "racional": "A fonte de ômega-3 mais direta que falta no mapa."
   }
  ],
+ "anterior": {
+  "rotulo": "05 a 11/10",
+  "provisoria": true,
+  "nota": "Provisório até o fim de 11/10: hoje só o café está registrado. Dias 07, 08 e 09 sem registro, o que não prova que você não comeu.",
+  "n_refeicoes": 9,
+  "n_principais": 5,
+  "n_dias": 4,
+  "boa": [
+   {
+    "titulo": "Almoço de marmita com proteína",
+    "evidencia": "3 de 3 almoços registrados são marmita. As 2 com rótulo legível têm 45 g de proteína cada."
+   },
+   {
+    "titulo": "Café com proteína e gordura boa",
+    "evidencia": "10 e 11/10: torrada integral, abacate e ovo. Em 11/10 também Yopro (você escreveu 23 g)."
+   },
+   {
+    "titulo": "Brócolis e arroz integral na marmita",
+    "evidencia": "Marmita N53 de 10/10."
+   }
+  ],
+  "deficit": [
+   {
+    "titulo": "Pouco vegetal nas principais",
+    "evidencia": "Em 2 de 5 refeições principais (espinafre em 06/10, brócolis em 10/10)."
+   },
+   {
+    "titulo": "Jantares fora com fritura e sem vegetal",
+    "evidencia": "06/10 banana frita; 10/10 croquete. 2 de 2 jantares registrados."
+   },
+   {
+    "titulo": "Fruta inteira, peixe e leguminosa não aparecem",
+    "evidencia": "Fruta só como suco de laranja, banana frita e abacate."
+   },
+   {
+    "titulo": "Fibra baixa e gordura saturada alta nas marmitas",
+    "evidencia": "Fibra de 2,9 a 4,8 g (plano: 30 g por dia). Saturada de 5,1 a 5,5 g. As 3 levam creme de leite ou leite integral."
+   }
+  ]
+ },
  "proteina_fontes": {
   "titulo": "De onde vem a proteína",
   "unidade": "refeições",
@@ -65,16 +119,16 @@
     "n": 3
    },
    {
-    "nome": "Carne bovina",
-    "n": 2
-   },
-   {
     "nome": "Queijo",
     "n": 2
    },
    {
     "nome": "Suplemento (Yopro)",
     "n": 2
+   },
+   {
+    "nome": "Carne bovina",
+    "n": 1
    },
    {
     "nome": "Processado e suíno",
@@ -89,7 +143,7 @@
     "n": 0
    }
   ],
-  "leitura": "Frango domina as marmitas. Peixe e leguminosa ficam em zero. As fontes somam 14 em 11 refeições, porque uma refeição pode ter mais de uma."
+  "leitura": "Frango domina as marmitas. Peixe e leguminosa ficam em zero. As fontes somam 13 em 9 refeições, porque uma refeição pode ter mais de uma."
  },
  "carbo": {
   "titulo": "Tipo de carboidrato",
@@ -102,16 +156,16 @@
    },
    {
     "nome": "Refinado ou frito",
-    "n": 4,
-    "detalhe": "arroz com fritas, lasanha, croissant com pão de queijo, arroz branco com farofa"
+    "n": 2,
+    "detalhe": "croissant com pão de queijo; arroz branco com farofa"
    },
    {
     "nome": "Sem base de carboidrato",
     "n": 2,
-    "detalhe": "Yopro e petiscos alemães"
+    "detalhe": "Yopro de 05/10 e petiscos alemães"
    }
   ],
-  "leitura": "As marmitas e a torrada integral seguram o lado bom. O refinado vem das refeições fora de casa e do café de 06/10."
+  "leitura": "As marmitas e a torrada integral seguram o lado bom. O refinado veio do café de 06/10 e do jantar fora de 06/10."
  },
  "tipos": {
   "titulo": "De onde vêm as refeições",
@@ -123,7 +177,7 @@
    },
    {
     "nome": "Fora de casa ou pedido",
-    "n": 4
+    "n": 2
    },
    {
     "nome": "Café",
@@ -137,7 +191,7 @@
  },
  "gorduras": {
   "titulo": "Gorduras",
-  "unidade": "refeições, de 11",
+  "unidade": "refeições, de 9",
   "itens": [
    {
     "nome": "Gordura boa (abacate, azeite)",
@@ -145,14 +199,14 @@
    },
    {
     "nome": "Fritura",
-    "n": 3
+    "n": 2
    },
    {
     "nome": "Queijo ou creme de leite",
-    "n": 6
+    "n": 5
    }
   ],
-  "leitura": "As 3 marmitas têm 5,1 a 5,5 g de gordura saturada cada, pelo rótulo."
+  "leitura": "Gordura boa: abacate (10 e 11/10) e azeite (rótulo da N85). As 3 marmitas têm de 5,1 a 5,5 g de gordura saturada cada, pelo rótulo, e levam creme de leite e leite integral."
  },
  "fibra": {
   "titulo": "Fibra por marmita",
@@ -179,8 +233,6 @@
   "leitura": "Nenhuma chega perto de um terço da meta. Em 05/10 você anotou intestino preso, o que é compatível, mas não prova a causa."
  },
  "sodio": {
-  "titulo": "Sódio por marmita",
-  "unidade": "mg",
   "itens": [
    {
     "nome": "N85",
@@ -196,29 +248,200 @@
    }
   ]
  },
+ "subgrupos": {
+  "vegetais": [
+   {
+    "nome": "Folhas verde-escuras",
+    "exemplos": "espinafre, couve, rúcula",
+    "n": 1,
+    "micro": "folato, ferro não-heme, magnésio, vitamina K"
+   },
+   {
+    "nome": "Crucíferas",
+    "exemplos": "brócolis, couve-flor, repolho",
+    "n": 1,
+    "micro": "vitamina C, folato, fibra"
+   },
+   {
+    "nome": "Laranja e vermelhos",
+    "exemplos": "cenoura, abóbora, tomate, batata-doce",
+    "n": 2,
+    "micro": "carotenoides, potássio. Só apareceram batata-doce (N85) e molho de tomate (N85 e N64), pelos rótulos; não contam na meta de vegetal visível"
+   },
+   {
+    "nome": "Outros e salada crua",
+    "exemplos": "cebola, abobrinha, alface, pepino",
+    "n": 0,
+    "micro": "fibra, variedade"
+   }
+  ],
+  "frutas": [
+   {
+    "nome": "Cítricas",
+    "exemplos": "laranja, mexerica, limão",
+    "n": 1,
+    "micro": "vitamina C (a laranja apareceu só como suco)"
+   },
+   {
+    "nome": "Tropicais (sem fruta inteira)",
+    "exemplos": "banana, abacate, mamão, manga",
+    "n": 3,
+    "micro": "Só apareceram abacate (10 e 11/10) e banana frita (06/10). Nenhuma fruta tropical inteira. Potássio, gordura insaturada (abacate)"
+   },
+   {
+    "nome": "Vermelhas e roxas",
+    "exemplos": "morango, uva, jabuticaba",
+    "n": 0,
+    "micro": "polifenóis, vitamina C"
+   },
+   {
+    "nome": "Outras",
+    "exemplos": "maçã, pera, melancia",
+    "n": 0,
+    "micro": "fibra"
+   }
+  ]
+ },
+ "macro": {
+  "titulo": "Energia das marmitas contra o alvo do plano",
+  "unidade": "% das kcal",
+  "legenda": [
+   "Carboidrato",
+   "Proteína",
+   "Gordura"
+  ],
+  "linhas": [
+   {
+    "nome": "Alvo do plano",
+    "kcal": 1940,
+    "pct": [
+     36.1,
+     36.1,
+     27.8
+    ],
+    "nota": "calculado dos gramas do plano (175 g de carboidrato, 175 g de proteína, 60 g de gordura); o plano declara 1900 kcal"
+   },
+   {
+    "nome": "N85 · 05/10",
+    "kcal": 406,
+    "pct": [
+     24.6,
+     44.3,
+     31.0
+    ],
+    "nota": "rótulo: 421 kcal"
+   },
+   {
+    "nome": "N64 · 06/10",
+    "kcal": 468,
+    "pct": [
+     38.5,
+     38.5,
+     23.1
+    ],
+    "nota": "rótulo: 487 kcal"
+   }
+  ],
+  "leitura": "A N85 é pobre em carboidrato e rica em proteína; a N64 fica no alvo de carboidrato e proteína. As duas ficam baixas em fibra (2,9 e 4,8 g). O carboidrato e a fibra do dia precisam vir do resto das refeições (arroz, feijão, legumes) e da fruta. A N53 ficou fora: proteína e carboidrato ilegíveis no rótulo. As kcal calculadas por 4, 4 e 9 por grama diferem um pouco das do rótulo."
+ },
+ "micro": {
+  "aviso": "Cobertura por alimento, não dosagem de nutriente. Mostra se um alimento fonte apareceu nos registros, não quanto você absorveu.",
+  "itens": [
+   {
+    "id": "vit_c",
+    "nome": "Vitamina C",
+    "onde": "cítricos, brócolis, tomate",
+    "status": "parcial",
+    "apareceu": "Suco de laranja, brócolis e molho de tomate (rótulos).",
+    "sugestao": "Laranja ou mexerica inteira."
+   },
+   {
+    "id": "folato",
+    "nome": "Folato",
+    "onde": "folhas, brócolis, ovo, abacate",
+    "status": "coberto",
+    "apareceu": "Espinafre, brócolis, ovo e abacate.",
+    "sugestao": "Manter."
+   },
+   {
+    "id": "carotenoides",
+    "nome": "Carotenoides",
+    "onde": "laranja e vermelhos, folhas",
+    "status": "parcial",
+    "apareceu": "Batata-doce e molho de tomate (rótulos de 05 e 06/10) e espinafre (06/10).",
+    "sugestao": "Cenoura ou abóbora no almoço ou na janta."
+   },
+   {
+    "id": "potassio",
+    "nome": "Potássio",
+    "onde": "banana, batata-doce, abacate",
+    "status": "coberto",
+    "apareceu": "Batata-doce, banana, abacate e espinafre.",
+    "sugestao": "Manter."
+   },
+   {
+    "id": "calcio",
+    "nome": "Cálcio",
+    "onde": "laticínios",
+    "status": "parcial",
+    "apareceu": "Leite e creme de leite em molhos, parmesão, Yopro.",
+    "sugestao": "Iogurte."
+   },
+   {
+    "id": "ferro",
+    "nome": "Ferro",
+    "onde": "carne, ovo, feijão, folhas",
+    "status": "parcial",
+    "apareceu": "Picadinho, ovo e espinafre.",
+    "sugestao": "Feijão com laranja."
+   },
+   {
+    "id": "zinco",
+    "nome": "Zinco",
+    "onde": "carnes, ovo, laticínios",
+    "status": "coberto",
+    "apareceu": "Frango, bovina, porco, ovo e queijo.",
+    "sugestao": "Manter."
+   },
+   {
+    "id": "magnesio",
+    "nome": "Magnésio",
+    "onde": "folhas, feijão, integrais, oleaginosas",
+    "status": "parcial",
+    "apareceu": "Espinafre, abacate, torrada e arroz integral.",
+    "sugestao": "Feijão ou aveia."
+   },
+   {
+    "id": "omega3",
+    "nome": "Ômega-3",
+    "onde": "peixe gordo, linhaça, chia",
+    "status": "não apareceu",
+    "apareceu": "Nada nos registros. Os dias 07 a 09/10 estão sem registro, então pode ser só isso.",
+    "sugestao": "Sardinha em lata na janta."
+   },
+   {
+    "id": "b12",
+    "nome": "B12",
+    "onde": "carnes, ovo, laticínios",
+    "status": "coberto",
+    "apareceu": "Frango, bovina, ovo e laticínios.",
+    "sugestao": "Manter."
+   }
+  ]
+ },
  "atencao": [
-  "Terça a sexta, escolha marmita com vegetal visível no prato (brócolis, espinafre, legumes); nas outras refeições principais, folha ou tomate do pote no prato.",
-  "17h: banana ou outra fruta inteira com o iogurte, antes de qualquer doce.",
-  "Uma janta com peixe (sardinha ou atum em lata servem) no lugar de frango ou carne. Fritura só na livre de sábado e no máximo mais uma."
+  "Escolha a marmita com vegetal visível e procure variar a família do legume ao longo da semana (meta: 3 famílias).",
+  "Jantar fora: peça uma opção sem fritura nos dias fora da refeição livre de sábado.",
+  "Compra: banana ou laranja para as 17h (fruta) e 2 latas de sardinha para uma janta (peixe)."
  ],
+ "definicoes": "Fritura: fritas, croquete e banana frita; ovo frito na frigideira não conta. Abacate conta como gordura, não como fruta. Refeição principal é almoço ou janta.",
+ "aviso": "Só conta o que foi registrado. O que não aparece aqui pode ter sido comido e não registrado. A classificação dos pratos foi feita pelo copiloto a partir do texto, da foto e do rótulo. As metas foram definidas pelo agente de nutrição do copiloto em 11/10, a seu pedido. Não são prescrição de um profissional de saúde.",
  "refeicoes": [
-  {
-   "data": "04/10",
-   "refeicao": "Almoço",
-   "tipo": "Fora",
-   "texto": "Picanha, arroz, brócolis, fritas"
-  },
-  {
-   "data": "04/10",
-   "refeicao": "Jantar",
-   "tipo": "Fora",
-   "texto": "Lasanha quatro queijos"
-  },
   {
    "data": "05/10",
    "refeicao": "Almoço",
    "tipo": "Marmita",
-   "texto": "N85 frango ao curry com batata-doce rústica. Rótulo: 421 kcal, 45 g de proteína, 25 g de carboidrato, 14 g de gordura, 2,9 g de fibra, 244 mg de sódio"
+   "texto": "N85 frango ao curry com batata-doce rústica. Rótulo: 421 kcal, 45 g de proteína, 25 g de carboidrato, 14 g de gordura (5,4 g saturada), 2,9 g de fibra, 244 mg de sódio. Ingredientes do rótulo: peito de frango, batata-doce, leite integral, molho de tomate, creme de leite, azeite de oliva, ketchup, mostarda, curry"
   },
   {
    "data": "05/10",
@@ -236,7 +459,7 @@
    "data": "06/10",
    "refeicao": "Almoço",
    "tipo": "Marmita",
-   "texto": "N64 peito de frango com creme de espinafre. Rótulo: 487 kcal, 45 g de proteína, 45 g de carboidrato, 12 g de gordura, 4,8 g de fibra, 603 mg de sódio"
+   "texto": "N64 peito de frango com creme de espinafre. Rótulo: 487 kcal, 45 g de proteína, 45 g de carboidrato, 12 g de gordura (5,1 g saturada), 4,8 g de fibra, 603 mg de sódio. Ingredientes do rótulo: arroz parboilizado, peito de frango, leite integral, molho de tomate, creme de leite, espinafre, óleo de soja"
   },
   {
    "data": "06/10",
@@ -254,7 +477,7 @@
    "data": "10/10",
    "refeicao": "Almoço",
    "tipo": "Marmita",
-   "texto": "N53 frango ao curry com arroz integral e brócolis. Rótulo: 461 kcal, 12 g de gordura, 2,9 g de fibra, 474 mg de sódio; proteína ilegível"
+   "texto": "N53 frango ao curry com arroz integral e brócolis. Rótulo: 461 kcal, 12 g de gordura (5,5 g saturada), 2,9 g de fibra, 474 mg de sódio; proteína e carboidrato ilegíveis. Ingredientes do rótulo: peito de frango, arroz integral, leite integral, creme de leite, brócolis, cebolinha, curry, óleo de soja"
   },
   {
    "data": "10/10",
@@ -266,9 +489,7 @@
    "data": "11/10",
    "refeicao": "Café",
    "tipo": "Café",
-   "texto": "Torrada com abacate e ovo, mais Yopro de 23 g de proteína"
+   "texto": "Torrada com abacate e ovo, mais Yopro de 23 g de proteína (você escreveu)"
   }
- ],
- "base_das_metas": "As barras contam só o que você registrou, não a semana inteira: com poucos registros elas ficam cinzas, e esquecer de anotar nunca conta contra você.",
- "definicoes": "Fritura: fritas, croquete e banana frita. Ovo frito na frigideira não conta. Abacate conta como gordura, não como fruta. As fontes de proteína somam 14 em 11 refeições porque uma refeição pode ter mais de uma fonte. Ficam como leitura, sem meta: leguminosa, queijo e creme de leite, fibra, sódio e proteína."
+ ]
 }
