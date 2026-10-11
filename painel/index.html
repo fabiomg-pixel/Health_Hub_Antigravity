@@ -161,6 +161,36 @@
   .seg button { min-height: 46px; border: 0; border-left: 2px solid var(--tinta); background: transparent; font-size: 13.5px; font-weight: 600; cursor: pointer; padding: 0 4px; }
   .seg button:first-child { border-left: 0; }
   .seg button.on { background: var(--sol); font-weight: 700; }
+  .seg.dois { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0; }
+  .seg a { display: flex; align-items: center; justify-content: center; min-height: 46px; border-left: 2px solid var(--tinta);
+    font-size: 13.5px; font-weight: 600; color: var(--tinta); text-decoration: none; padding: 0 4px; }
+  .seg a:first-child { border-left: 0; }
+  .seg a.on { background: var(--sol); font-weight: 700; }
+  /* aba Alimentação: barras de meta, barras de contagem e pilhas. Marcas finas, ponta de dado com 4px de raio, base reta. */
+  .meta { padding: 12px 0; border-bottom: 1px solid var(--fraca); }
+  .meta .mh { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-weight: 600; }
+  .meta .mh small { font-size: 13px; font-weight: 600; color: var(--sec); text-align: right; }
+  .meta .barra { margin-top: 8px; }
+  .meta .barra i { border-radius: 0 4px 4px 0; }
+  .meta .barra i.acima { background: var(--sol); }
+  .meta .ml { font-size: 13px; color: var(--sec); margin-top: 6px; }
+  .hb { display: grid; grid-template-columns: 124px minmax(0, 1fr) 34px; gap: 10px; align-items: center; padding: 6px 0; font-size: 14px; }
+  .hb .hn { font-weight: 600; line-height: 1.2; }
+  .hb .ht { position: relative; height: 14px; background: #E3ECF0; }
+  .hb .ht i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--campo); border-radius: 0 4px 4px 0; }
+  .hb .ht b { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--tinta); }
+  .hb .hv { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+  .pilha { display: flex; gap: 2px; height: 30px; margin: 12px 0 8px; }
+  .pilha .sg { display: flex; align-items: center; justify-content: center; min-width: 0; font-size: 13px; font-weight: 700; }
+  .c0 { background: var(--campo); color: #fff; } .c1 { background: var(--sol); color: var(--tinta); }
+  .c2 { background: var(--tinta); color: #fff; } .c3 { background: var(--fraca); color: var(--tinta); }
+  .leg { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--sec); font-weight: 500; }
+  .leg .sw { display: inline-block; width: 10px; height: 10px; margin-right: 6px; }
+  .leg b { color: var(--tinta); }
+  .alim-leitura { font-size: 14px; color: var(--sec); padding: 8px 0 12px; }
+  .tab-ref { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .tab-ref td { padding: 8px 6px 8px 0; border-bottom: 1px solid var(--fraca); vertical-align: top; }
+  .tab-ref td:first-child { white-space: nowrap; font-weight: 700; }
   .form { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
   .form label, .redit label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
   input[type=date], select, textarea { width: 100%; min-height: 48px; padding: 10px 12px; border: 2px solid var(--tinta); border-radius: 0;
@@ -674,6 +704,7 @@ function renderInicio() {
     <h1 class="titulo longo">${esc((t0 => t0.charAt(0).toUpperCase() + t0.slice(1))(frase(partes.slice(1).join(' · ') || partes[0])))}</h1>
     <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
 
+  h += abasInicio('semana');
   h += quadroAgora() + blocoEspecialistas() + blocoHoje() + blocoCardapio() + blocoDestino();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
@@ -711,6 +742,80 @@ function renderInicio() {
     const m = JSON.parse(localStorage.getItem('compras') || '{}'); if (c.checked) m[c.dataset.k] = 1; else delete m[c.dataset.k];
     localStorage.setItem('compras', JSON.stringify(m));
   }));
+}
+
+// ───────── alimentação por grupo (aba do Início) ─────────
+let ALIM = null;
+function abasInicio(ativo) {
+  return `<section class="bloco" style="padding-top:14px;padding-bottom:4px"><div class="seg dois" role="tablist">
+    <a href="#home" class="${ativo === 'semana' ? 'on' : ''}" aria-current="${ativo === 'semana' ? 'page' : 'false'}">Semana</a>
+    <a href="#alim" class="${ativo === 'alim' ? 'on' : ''}" aria-current="${ativo === 'alim' ? 'page' : 'false'}">Alimentação</a></div></section>`;
+}
+const hbarras = (itens, valor, rotulo, max, ref) => itens.map(i => {
+  const v = valor(i), r = rotulo(i);
+  return `<div class="hb" title="${esc(i.nome)}: ${fNum(v, v % 1 ? 1 : 0)}"><span class="hn">${esc(r)}</span>
+    <span class="ht"><i style="width:${Math.min(100, v / max * 100).toFixed(1)}%"></i>${ref != null ? `<b style="left:calc(${(ref / max * 100).toFixed(1)}% - 1px)"></b>` : ''}</span>
+    <span class="hv">${fNum(v, v % 1 ? 1 : 0)}</span></div>`; }).join('');
+const pilha = (itens, cores, rotulo) => `<div class="pilha" role="img" aria-label="${esc(rotulo)}: ${itens.map(i => i.nome + ' ' + i.n).join(', ')}">` +
+  itens.map((i, k) => i.n ? `<div class="sg c${cores[k]}" style="flex:${i.n}" title="${esc(i.nome)}: ${i.n}">${i.n}</div>` : '').join('') + `</div>
+  <div class="leg">${itens.map((i, k) => `<span><i class="sw c${cores[k]}"></i>${esc(i.nome)} <b>${i.n}</b></span>`).join('')}</div>`;
+function renderAlim() {
+  const topo = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
+    <div class="topo"><div class="rot">Alimentação${ALIM ? ' · ' + esc(ALIM.janela) : ''}</div></div>
+    <h1 class="titulo longo">${ALIM ? esc(ALIM.titulo) : 'Carregando a análise.'}</h1>
+    <div class="sub">${ALIM ? esc(ALIM.subtitulo) : ''}</div></div></div>`;
+  if (!ALIM) {
+    $("view").innerHTML = topo + abasInicio('alim');
+    fetch('data/alimentacao.json').then(r => r.json()).then(d => { ALIM = d; if ((location.hash || '') === '#alim') renderAlim(); })
+      .catch(() => { $("view").innerHTML = topo + abasInicio('alim') + `<section class="bloco"><div class="aviso">A análise por grupos ainda não foi publicada.</div></section>`; });
+    return;
+  }
+  const A = ALIM, alc = A.metas.filter(m => m.tipo === 'alcancar');
+  const feito = alc.reduce((s, m) => s + Math.min(m.atual, m.meta), 0), total = alc.reduce((s, m) => s + m.meta, 0);
+  const pct = total ? Math.round(feito / total * 100) : 0;
+  let h = topo + abasInicio('alim');
+
+  h += `<section class="bloco"><div class="cab"><h2>Metas da semana</h2><small>propostas, a confirmar</small></div>
+    <div class="meta"><div class="mh"><span>Progresso das metas de alcançar</span><small>${feito} de ${total} · ${pct}%</small></div>
+      <div class="barra" role="img" aria-label="${feito} de ${total}, ${pct} por cento"><i style="width:${pct}%"></i></div>
+      <div class="ml">Soma do que foi alcançado em vegetal, leguminosa, fruta e peixe, limitado à meta de cada um.</div></div>` +
+    A.metas.map(m => { const lim = m.tipo === 'limitar', acima = lim && m.atual > m.meta;
+      return `<div class="meta"><div class="mh"><span>${esc(m.nome)}</span><small>${m.atual} de ${m.de} · ${lim ? 'teto' : 'meta'} ${m.meta}${acima ? ' · acima do teto' : ''}</small></div>
+        <div class="barra" role="img" aria-label="${esc(m.nome)}: ${m.atual} de ${m.de}, ${lim ? 'teto' : 'meta'} ${m.meta}"><i class="${acima ? 'acima' : ''}" style="width:${(m.atual / m.de * 100).toFixed(1)}%"></i><b style="left:calc(${(m.meta / m.de * 100).toFixed(1)}% - 1px)"></b></div>
+        <div class="ml">${esc(m.unidade)}. ${esc(m.leitura)}</div></div>`; }).join('') +
+    `<div class="aviso">O traço marca a meta (ou o teto, nas fritas e no queijo). Cada barra vai até o total de refeições registradas.</div></section>`;
+
+  const P = A.proteina_fontes, mxP = Math.max(...P.itens.map(i => i.n), 1);
+  h += `<section class="bloco"><div class="cab"><h2>${esc(P.titulo)}</h2><small>${esc(P.unidade)}</small></div>
+    ${hbarras(P.itens, i => i.n, i => i.nome, mxP)}<div class="alim-leitura">${esc(P.leitura)}</div></section>`;
+
+  const C = A.carbo;
+  h += `<section class="bloco"><div class="cab"><h2>${esc(C.titulo)}</h2><small>${esc(C.unidade)}</small></div>
+    ${pilha(C.itens, [0, 1, 3], C.titulo)}
+    <details><summary>O que entrou em cada grupo</summary><div class="miolo">${C.itens.map(i => `<div class="par"><b>${esc(i.nome)}:</b> ${esc(i.detalhe)}</div>`).join('')}</div></details>
+    <div class="alim-leitura">${esc(C.leitura)}</div></section>`;
+
+  const G = A.gorduras;
+  h += `<section class="bloco"><div class="cab"><h2>${esc(G.titulo)}</h2><small>${esc(G.unidade)}</small></div>
+    ${hbarras(G.itens, i => i.n, i => i.nome, A.base.refeicoes)}<div class="alim-leitura">${esc(G.leitura)}</div></section>`;
+
+  const F = A.fibra, mxF = Math.max(F.referencia, ...F.itens.map(i => i.g)) * 1.1;
+  h += `<section class="bloco"><div class="cab"><h2>${esc(F.titulo)}</h2><small>${esc(F.unidade)}</small></div>
+    ${hbarras(F.itens, i => i.g, i => i.nome.split(' ')[0] + ' · ' + i.data, mxF, F.referencia)}
+    <div class="legenda" style="color:var(--sec);font-weight:600;padding-top:6px"><span>o traço marca ${F.referencia} g: ${esc(F.referencia_nota)}</span></div>
+    <div class="alim-leitura">${esc(F.leitura)} Sódio por marmita: ${A.sodio.itens.map(i => i.nome + ' ' + i.mg + ' mg').join(', ')}.</div></section>`;
+
+  const T2 = A.tipos;
+  h += `<section class="bloco"><div class="cab"><h2>${esc(T2.titulo)}</h2><small>${esc(T2.unidade)}</small></div>${pilha(T2.itens, [0, 1, 2, 3], T2.titulo)}</section>`;
+
+  h += `<section class="bloco"><div class="cab"><h2>Pontos de atenção</h2></div>` +
+    A.atencao.map((l, i) => `<div class="linha" style="align-items:flex-start"><span class="hora">${i + 1}</span><span class="corpo" style="font-weight:500">${esc(l)}</span></div>`).join('') + `</section>`;
+
+  h += `<section class="bloco"><div class="cab"><h2>As refeições</h2><small>${A.refeicoes.length} registradas</small></div>
+    <details><summary>Ver a tabela de refeições</summary><div class="miolo"><table class="tab-ref"><tbody>${A.refeicoes.map(r =>
+      `<tr><td>${esc(r.data)}</td><td><b>${esc(r.refeicao)}</b> · ${esc(r.tipo)}<br>${esc(r.texto)}</td></tr>`).join('')}</tbody></table></div></details>
+    <div class="aviso">${esc(A.aviso)}</div></section><div class="rodape">Análise de ${esc(A.gerado_em)}.</div>`;
+  $("view").innerHTML = h;
 }
 
 // ───────── evolução ─────────
@@ -1023,6 +1128,7 @@ function route() {
   const id = (location.hash || '#home').slice(1);
   if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
+  if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
   const hoje = DATA.dias.find(d => d.data === hojeDDMM());
   const dia = id === 'hoje' ? (hoje || DATA.dias[DATA.dias.length - 1]) : DATA.dias.find(d => d.id === id);
   if (dia) { renderNav('hoje'); renderDia(dia, dia === hoje); window.scrollTo(0, 0); return; }

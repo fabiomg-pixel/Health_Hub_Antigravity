@@ -60,6 +60,10 @@ Dispare os três na MESMA mensagem, para rodarem em paralelo. Cada um lê só a 
   ocorrências (fritura, doce, etc.), então **passe ao especialista o texto completo dos
   registros da semana**, já enriquecido no Passo 2 (rótulos lidos, fotos descritas). Envie a
   análise ao Fabio no fechamento (Telegram), em linguagem simples, junto com o relatório.
+  **Grave também `painel/data/alimentacao.json`** (a aba Alimentação do Início lê esse arquivo):
+  contagens por grupo, metas propostas, fontes de proteína, carboidrato, gorduras, fibra e a tabela de
+  refeições. Conte à mão e confira que as pilhas somam o total de refeições registradas. Metas são
+  propostas do copiloto até o Fabio confirmar.
   **Tem veto sobre prescrição acima da adesão histórica.**
 - **`logistica`** → janela viável por dia (horário e local), dias em risco, plano B concreto.
   **Tem veto sobre horário e local.**

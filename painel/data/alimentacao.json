@@ -1,0 +1,291 @@
+{
+ "gerado_em": "2026-10-11",
+ "janela": "04 a 11/10",
+ "titulo": "Faltam vegetal, leguminosa, fruta e peixe",
+ "subtitulo": "11 refeições registradas em 5 dias (04, 05, 06, 10 e 11/10). Sem registro: 07, 08 e 09/10.",
+ "aviso": "Só conta o que foi registrado. O que não aparece aqui pode ter sido comido e não registrado. A classificação dos pratos foi feita pelo copiloto a partir do texto, da foto e do rótulo. As metas são propostas do copiloto e dependem da sua confirmação.",
+ "base": {
+  "refeicoes": 11,
+  "principais": 7,
+  "dias": 5
+ },
+ "metas": [
+  {
+   "id": "vegetal",
+   "nome": "Vegetais e folhas",
+   "tipo": "alcancar",
+   "atual": 3,
+   "de": 7,
+   "meta": 5,
+   "unidade": "refeições principais (almoço e janta)",
+   "leitura": "Só brócolis (04/10 e marmita de 10/10) e espinafre em creme (marmita de 06/10). Salada crua não aparece."
+  },
+  {
+   "id": "leguminosa",
+   "nome": "Leguminosas (feijão, lentilha, grão-de-bico)",
+   "tipo": "alcancar",
+   "atual": 0,
+   "de": 7,
+   "meta": 4,
+   "unidade": "refeições principais",
+   "leitura": "Não aparecem nos registros."
+  },
+  {
+   "id": "fruta",
+   "nome": "Fruta inteira",
+   "tipo": "alcancar",
+   "atual": 0,
+   "de": 5,
+   "meta": 4,
+   "unidade": "dias com registro",
+   "leitura": "Só suco de laranja, banana frita e abacate. Fruta inteira não aparece."
+  },
+  {
+   "id": "peixe",
+   "nome": "Peixe",
+   "tipo": "alcancar",
+   "atual": 0,
+   "de": 7,
+   "meta": 2,
+   "unidade": "refeições principais",
+   "leitura": "Não aparece nos registros. As 3 marmitas são de frango."
+  },
+  {
+   "id": "fritura",
+   "nome": "Fritura",
+   "tipo": "limitar",
+   "atual": 3,
+   "de": 11,
+   "meta": 2,
+   "unidade": "refeições",
+   "leitura": "Fritas (04/10), banana frita (06/10) e croquete (10/10)."
+  },
+  {
+   "id": "queijo",
+   "nome": "Queijo e creme de leite",
+   "tipo": "limitar",
+   "atual": 6,
+   "de": 11,
+   "meta": 4,
+   "unidade": "refeições",
+   "leitura": "Lasanha, pão de queijo, linguiça com parmesão e as 3 marmitas (creme de leite)."
+  }
+ ],
+ "proteina_fontes": {
+  "titulo": "De onde vem a proteína",
+  "unidade": "refeições",
+  "itens": [
+   {
+    "nome": "Frango",
+    "n": 4
+   },
+   {
+    "nome": "Ovo",
+    "n": 3
+   },
+   {
+    "nome": "Carne bovina",
+    "n": 2
+   },
+   {
+    "nome": "Queijo",
+    "n": 2
+   },
+   {
+    "nome": "Suplemento (Yopro)",
+    "n": 2
+   },
+   {
+    "nome": "Processado e suíno",
+    "n": 1
+   },
+   {
+    "nome": "Peixe",
+    "n": 0
+   },
+   {
+    "nome": "Leguminosa",
+    "n": 0
+   }
+  ],
+  "leitura": "Frango domina as marmitas. Peixe e leguminosa ficam em zero."
+ },
+ "carbo": {
+  "titulo": "Tipo de carboidrato",
+  "unidade": "refeições",
+  "itens": [
+   {
+    "nome": "Integral ou pouco refinado",
+    "n": 5,
+    "detalhe": "batata-doce, arroz parboilizado, arroz integral, torrada integral (2x)"
+   },
+   {
+    "nome": "Refinado ou frito",
+    "n": 4,
+    "detalhe": "arroz com fritas, lasanha, croissant com pão de queijo, arroz branco com farofa"
+   },
+   {
+    "nome": "Sem base de carboidrato",
+    "n": 2,
+    "detalhe": "Yopro e petiscos alemães"
+   }
+  ],
+  "leitura": "As marmitas e a torrada integral seguram o lado bom. O refinado vem das refeições fora de casa e do café de 06/10."
+ },
+ "tipos": {
+  "titulo": "De onde vêm as refeições",
+  "unidade": "refeições",
+  "itens": [
+   {
+    "nome": "Marmita",
+    "n": 3
+   },
+   {
+    "nome": "Fora de casa ou pedido",
+    "n": 4
+   },
+   {
+    "nome": "Café",
+    "n": 3
+   },
+   {
+    "nome": "Lanche",
+    "n": 1
+   }
+  ]
+ },
+ "gorduras": {
+  "titulo": "Gorduras",
+  "unidade": "refeições, de 11",
+  "itens": [
+   {
+    "nome": "Gordura boa (abacate, azeite)",
+    "n": 3
+   },
+   {
+    "nome": "Fritura",
+    "n": 3
+   },
+   {
+    "nome": "Queijo ou creme de leite",
+    "n": 6
+   }
+  ],
+  "leitura": "As 3 marmitas têm 5,1 a 5,5 g de gordura saturada cada, pelo rótulo."
+ },
+ "fibra": {
+  "titulo": "Fibra por marmita",
+  "unidade": "g",
+  "referencia": 10,
+  "referencia_nota": "um terço da meta diária de 30 g",
+  "itens": [
+   {
+    "nome": "N85 frango ao curry com batata-doce",
+    "g": 2.9,
+    "data": "05/10"
+   },
+   {
+    "nome": "N64 frango com creme de espinafre",
+    "g": 4.8,
+    "data": "06/10"
+   },
+   {
+    "nome": "N53 frango ao curry com arroz e brócolis",
+    "g": 2.9,
+    "data": "10/10"
+   }
+  ],
+  "leitura": "Nenhuma chega perto de um terço da meta. Em 05/10 você anotou intestino preso, o que é compatível, mas não prova a causa."
+ },
+ "sodio": {
+  "titulo": "Sódio por marmita",
+  "unidade": "mg",
+  "itens": [
+   {
+    "nome": "N85",
+    "mg": 244
+   },
+   {
+    "nome": "N64",
+    "mg": 603
+   },
+   {
+    "nome": "N53",
+    "mg": 474
+   }
+  ]
+ },
+ "atencao": [
+  "Uma porção de vegetal ou salada crua no almoço e na janta, com as marmitas como base.",
+  "Peixe, ovo ou leguminosa em variedade: peixe em pelo menos 2 refeições por semana.",
+  "Fora de casa, sem proibir: proteína, uma base e um vegetal no prato, e uma fonte de fritura ou queijo por dia, não duas."
+ ],
+ "refeicoes": [
+  {
+   "data": "04/10",
+   "refeicao": "Almoço",
+   "tipo": "Fora",
+   "texto": "Picanha, arroz, brócolis, fritas"
+  },
+  {
+   "data": "04/10",
+   "refeicao": "Jantar",
+   "tipo": "Fora",
+   "texto": "Lasanha quatro queijos"
+  },
+  {
+   "data": "05/10",
+   "refeicao": "Almoço",
+   "tipo": "Marmita",
+   "texto": "N85 frango ao curry com batata-doce rústica. Rótulo: 421 kcal, 45 g de proteína, 25 g de carboidrato, 14 g de gordura, 2,9 g de fibra, 244 mg de sódio"
+  },
+  {
+   "data": "05/10",
+   "refeicao": "Lanche",
+   "tipo": "Lanche",
+   "texto": "Yopro Energy Boost café expresso, 250 ml. Rótulo: 15 g de proteína, 100 mg de cafeína"
+  },
+  {
+   "data": "06/10",
+   "refeicao": "Café",
+   "tipo": "Café",
+   "texto": "Croissant de frango, 5 mini pães de queijo, suco de laranja"
+  },
+  {
+   "data": "06/10",
+   "refeicao": "Almoço",
+   "tipo": "Marmita",
+   "texto": "N64 peito de frango com creme de espinafre. Rótulo: 487 kcal, 45 g de proteína, 45 g de carboidrato, 12 g de gordura, 4,8 g de fibra, 603 mg de sódio"
+  },
+  {
+   "data": "06/10",
+   "refeicao": "Jantar",
+   "tipo": "Fora",
+   "texto": "Picadinho com arroz branco, farofa, ovo frito e banana frita"
+  },
+  {
+   "data": "10/10",
+   "refeicao": "Café",
+   "tipo": "Café",
+   "texto": "Torrada integral, meio abacate e ovo frito (estimativa pela foto: 15 a 20 g de proteína)"
+  },
+  {
+   "data": "10/10",
+   "refeicao": "Almoço",
+   "tipo": "Marmita",
+   "texto": "N53 frango ao curry com arroz integral e brócolis. Rótulo: 461 kcal, 12 g de gordura, 2,9 g de fibra, 474 mg de sódio; proteína ilegível"
+  },
+  {
+   "data": "10/10",
+   "refeicao": "Jantar",
+   "tipo": "Fora",
+   "texto": "Petiscos alemães: linguiça com parmesão, joelho de porco, croquete. Sem quantidade"
+  },
+  {
+   "data": "11/10",
+   "refeicao": "Café",
+   "tipo": "Café",
+   "texto": "Torrada com abacate e ovo, mais Yopro de 23 g de proteína"
+  }
+ ]
+}
