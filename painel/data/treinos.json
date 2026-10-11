@@ -68,6 +68,207 @@
     }
    ],
    "pesada": false
+  },
+  "2026-10-13": {
+   "titulo": "Lower A com reforço",
+   "duracao_min": 55,
+   "pesada": true,
+   "regra": "Séries com 3 repetições de sobra e 3 s para descer. O búlgaro saiu por enquanto (joelho esquerdo): entra o step-up. Leg press só até cerca de 90°, stiff com coluna neutra. Dor acima de 3/10: pare o exercício. Se o semáforo disser Ajustar, faça só o reforço de core no fim.",
+   "exercicios": [
+    {
+     "id": "leg_press",
+     "nome": "Leg press",
+     "series": 4,
+     "reps": "6–8",
+     "kg": null,
+     "descanso_s": 120,
+     "grupo": "quadriceps_composto",
+     "nota": "Desça até cerca de 90°, sem passar. Carga: comece leve."
+    },
+    {
+     "id": "stiff",
+     "nome": "Stiff",
+     "series": 3,
+     "reps": "8",
+     "kg": null,
+     "descanso_s": 120,
+     "grupo": "posterior",
+     "nota": "Era 4 séries; agora 3. Coluna neutra, quadril para trás."
+    },
+    {
+     "id": "step_up",
+     "nome": "Subida no banco baixo (step-up)",
+     "series": 2,
+     "reps": "8 cada",
+     "kg": null,
+     "descanso_s": 75,
+     "grupo": "unilateral",
+     "nota": "No lugar do búlgaro. Joelho esquerdo sobre o pé, descida em 3 s.",
+     "halter": true
+    },
+    {
+     "id": "leg_curl",
+     "nome": "Leg curl",
+     "series": 3,
+     "reps": "10",
+     "kg": null,
+     "descanso_s": 75,
+     "grupo": "posterior"
+    },
+    {
+     "id": "panturrilha_unilateral",
+     "nome": "Panturrilha unilateral",
+     "series": 3,
+     "reps": "12",
+     "kg": null,
+     "descanso_s": 60,
+     "grupo": "panturrilha"
+    },
+    {
+     "id": "dead_bug",
+     "nome": "Dead bug",
+     "series": 2,
+     "reps": "6 cada",
+     "kg": 0,
+     "descanso_s": 40,
+     "grupo": "core_dinamico",
+     "nota": "Reforço de core. 3 s para voltar, lombar colada no chão."
+    },
+    {
+     "id": "prancha_lateral",
+     "nome": "Prancha lateral",
+     "tipo": "tempo",
+     "series": 2,
+     "alvo_s": 20,
+     "descanso_s": 40,
+     "grupo": "core_tempo",
+     "nota": "Reforço de core. 20 s por lado."
+    },
+    {
+     "id": "bird_dog",
+     "nome": "Bird dog",
+     "series": 2,
+     "reps": "6 cada",
+     "kg": 0,
+     "descanso_s": 40,
+     "grupo": "core_dinamico",
+     "nota": "Reforço de core. Pausa de 3 s no alto."
+    },
+    {
+     "id": "ponte_gluteo_unilateral",
+     "nome": "Ponte de glúteo unilateral",
+     "series": 2,
+     "reps": "8 cada",
+     "kg": 0,
+     "descanso_s": 40,
+     "grupo": "gluteo",
+     "nota": "Reforço de glúteo."
+    },
+    {
+     "id": "caminhada_lateral_mini_band",
+     "nome": "Caminhada lateral com mini-band",
+     "series": 2,
+     "reps": "10 cada",
+     "kg": 0,
+     "descanso_s": 40,
+     "grupo": "gluteo",
+     "nota": "Reforço de glúteo e controle do joelho."
+    }
+   ]
+  },
+  "2026-10-16": {
+   "titulo": "Upper B com core",
+   "duracao_min": 50,
+   "pesada": true,
+   "regra": "Última força da semana. Sem perna: amanhã tem jogo. Séries com 3 repetições de sobra. No fim, 6 min de core.",
+   "exercicios": [
+    {
+     "id": "crucifixo_na_maquina",
+     "nome": "Pec deck ou crucifixo",
+     "series": 4,
+     "reps": "8",
+     "kg": null,
+     "descanso_s": 90,
+     "grupo": "peito_empurrar"
+    },
+    {
+     "id": "puxada_na_frente",
+     "nome": "Puxada alta",
+     "series": 4,
+     "reps": "8",
+     "kg": null,
+     "descanso_s": 90,
+     "grupo": "costas"
+    },
+    {
+     "id": "remada_unilateral_com_halter",
+     "nome": "Remada unilateral",
+     "series": 3,
+     "reps": "10 cada",
+     "kg": null,
+     "descanso_s": 75,
+     "grupo": "costas",
+     "halter": true
+    },
+    {
+     "id": "elevacao_lateral_com_halteres",
+     "nome": "Elevação lateral",
+     "series": 3,
+     "reps": "12",
+     "kg": null,
+     "descanso_s": 60,
+     "grupo": "ombro_lateral",
+     "halter": true
+    },
+    {
+     "id": "rosca_com_barra",
+     "nome": "Rosca com barra",
+     "series": 2,
+     "reps": "10",
+     "kg": null,
+     "descanso_s": 60,
+     "grupo": "biceps"
+    },
+    {
+     "id": "triceps_no_cabo",
+     "nome": "Tríceps no cabo",
+     "series": 2,
+     "reps": "10",
+     "kg": null,
+     "descanso_s": 60,
+     "grupo": "triceps"
+    },
+    {
+     "id": "dead_bug",
+     "nome": "Dead bug",
+     "series": 2,
+     "reps": "6 cada",
+     "kg": 0,
+     "descanso_s": 40,
+     "grupo": "core_dinamico",
+     "nota": "Reforço de core. 3 s para voltar, lombar colada no chão."
+    },
+    {
+     "id": "prancha_lateral",
+     "nome": "Prancha lateral",
+     "tipo": "tempo",
+     "series": 2,
+     "alvo_s": 20,
+     "descanso_s": 40,
+     "grupo": "core_tempo",
+     "nota": "Reforço de core. 20 s por lado."
+    },
+    {
+     "id": "bird_dog",
+     "nome": "Bird dog",
+     "series": 2,
+     "reps": "6 cada",
+     "kg": 0,
+     "descanso_s": 40,
+     "grupo": "core_dinamico",
+     "nota": "Reforço de core. Pausa de 3 s no alto."
+    }
+   ]
   }
  },
  "biblioteca": {
@@ -312,7 +513,8 @@
    },
    "core_dinamico": {
     "chaves": [
-     "abdominal"
+     "abdominal",
+     "bird_dog"
     ],
     "opcoes": [
      {
@@ -334,6 +536,11 @@
       "id": "dead_bug",
       "nome": "Dead bug",
       "dica": "Lombar colada no chão. Estenda braço e perna opostos devagar, sem a lombar subir."
+     },
+     {
+      "id": "bird_dog",
+      "nome": "Bird dog",
+      "dica": "De quatro apoios, lombar parada. Estenda braço e perna opostos sem girar o quadril, pause 3 s e volte devagar. Se a lombar arquear, encurte o movimento."
      }
     ]
    },
@@ -455,6 +662,24 @@
       "id": "panturrilha_unilateral",
       "nome": "Panturrilha unilateral",
       "dica": "Apoie uma mão para equilíbrio. Suba o máximo, segure 1 segundo e desça até alongar, sem quicar."
+     }
+    ]
+   },
+   "gluteo": {
+    "chaves": [
+     "ponte",
+     "caminhada_lateral"
+    ],
+    "opcoes": [
+     {
+      "id": "ponte_gluteo_unilateral",
+      "nome": "Ponte de glúteo unilateral",
+      "dica": "Deitado, um pé apoiado e a outra perna estendida. Empurre pelo calcanhar e suba até o quadril alinhar, sem arquear a lombar. Desça em 3 s."
+     },
+     {
+      "id": "caminhada_lateral_mini_band",
+      "nome": "Caminhada lateral com mini-band",
+      "dica": "Mini-band acima dos joelhos, joelhos levemente flexionados. Passos laterais curtos, com o joelho sempre na direção do pé, sem cair para dentro."
      }
     ]
    }

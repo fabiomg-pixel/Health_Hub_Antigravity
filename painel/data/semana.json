@@ -567,12 +567,12 @@
     "foco": "Lower A, de volta — força 1 de 2",
     "exercicios": [
      {
-      "nome": "Primeira força plena depois do congresso. Carga: não sei qual foi a última (o último relato confirmado é Costas, 01/10). Comece leve e deixe 3 repetições na reserva. Tornozelo liberado, segundo você em 11/10: o búlgaro e a panturrilha seguem o plano, e a carga deles sobe pelas mesmas regras dos outros exercícios. Se aparecer dor, pare e avise.",
+      "nome": "Primeira força plena depois do congresso. Carga: não sei qual foi a última (o último relato confirmado é Costas, 01/10). Comece leve e deixe 3 repetições na reserva. Tornozelo liberado, segundo você em 11/10: o joelho esquerdo e a lombar pedem reforço (11/10), então o búlgaro sai por enquanto e entra o step-up, o stiff vai a 3 séries e o fim da sessão tem um bloco de core e glúteo (leg press até cerca de 90°). Se aparecer dor, pare e avise.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "0 · Antes de começar, abra o painel: o semáforo já lê o relógio de 13/10. Se disser Segurar (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, sem o búlgaro, com cargas 10% menores. Se disser Ajustar, tire 1 série de cada exercício. Se disser Pode, moderando, siga o plano com 2 ou mais repetições de sobra e sem subir carga. Esses cortes (VFC 32 e FC de repouso 56) foram definidos pela carga, a fisiologista do copiloto, e você delegou essa decisão aos especialistas em 11/10.",
+      "nome": "0 · Antes de começar, abra o painel: o semáforo já lê o relógio de 13/10. Se disser Segurar (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, com cargas 10% menores e só o reforço de core no fim. Se disser Ajustar, tire 1 série de cada exercício. Se disser Pode, moderando, siga o plano com 2 ou mais repetições de sobra e sem subir carga. Esses cortes (VFC 32 e FC de repouso 56) foram definidos pela carga, a fisiologista do copiloto, e você delegou essa decisão aos especialistas em 11/10.",
       "series": 1,
       "reps": "—"
      },
@@ -582,12 +582,12 @@
       "reps": "6–8"
      },
      {
-      "nome": "2 · Stiff — 4×8",
+      "nome": "2 · Stiff — 3×8",
       "series": 4,
       "reps": "8"
      },
      {
-      "nome": "3 · Búlgaro ou afundo — 3×8 cada",
+      "nome": "3 · Step-up (no lugar do búlgaro) — 2×8 cada",
       "series": 3,
       "reps": "8 cada"
      },
@@ -604,6 +604,11 @@
      {
       "nome": "Sem corrida hoje.",
       "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "6 · Reforço no fim — dead bug, prancha lateral, bird dog, ponte unilateral e caminhada lateral (12 a 15 min)",
+      "series": 2,
       "reps": "—"
      }
     ]
@@ -822,6 +827,11 @@
       "nome": "5 · Rosca e tríceps — 2×10",
       "series": 2,
       "reps": "10"
+     },
+     {
+      "nome": "6 · Core — dead bug, prancha lateral e bird dog, ~6 min",
+      "series": 2,
+      "reps": "—"
      }
     ]
    },

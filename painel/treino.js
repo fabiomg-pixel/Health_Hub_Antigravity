@@ -105,7 +105,7 @@ function avaliarSessao(s, topo) { const f = (s || []).filter(x => x && x[1] != n
 function progressao(e, ef, h, iso) {
   if (!h || !h.todas || !h.todas.length) return null;
   const pesadas = h.todas.filter(x => !x.lv), ref = pesadas[0] || h.todas[0], base = ultimaCarga(ref);
-  if (base == null) return null;
+  if (base == null || base === 0) return null;
   const mantem = motivo => ({ kg: base, motivo, subiu: false });
   if (iso !== isoLocal()) return mantem('');
   if (TRAVAR_UNILATERAL && TRAVADOS.test(ef.id)) return mantem('Carga mantida: exercício unilateral ou de panturrilha não sobe sozinho; essa decisão é sua e do fisio.');

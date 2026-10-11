@@ -5,7 +5,7 @@
  "sessoes": {
   "2026-10-12": {
    "titulo": "Base em degraus de cadência",
-   "porque": "Mesma velocidade de sempre, mas com passos mais curtos e rápidos e pausas de caminhada, para a corrida não ficar monótona e o tornozelo agradecer.",
+   "porque": "Mesma velocidade de sempre, mas com passos mais curtos e rápidos e pausas de caminhada, para a corrida não ficar monótona e o tornozelo agradecer. Joelho esquerdo: se a dor passar de 3/10, troque por caminhada a 5,5 km/h. Terreno plano, sem descida. Teto de 8,0 km/h enquanto o joelho incomoda.",
    "etapas": [
     {
      "n": "Aquecimento",
@@ -26,7 +26,7 @@
     {
      "n": "Bloco 2 de 3",
      "s": 240,
-     "v": "8,3 km/h",
+     "v": "8,0 km/h",
      "fc": "FC até 145",
      "t": "Cadência 86, mantendo o passo curto.",
      "marcas": 60
@@ -42,7 +42,7 @@
     {
      "n": "Bloco 3 de 3",
      "s": 240,
-     "v": "8,5 km/h",
+     "v": "8,0 km/h",
      "fc": "FC até 148",
      "t": "Cadência 86. Se a FC passar de 150, volte a 8,0.",
      "marcas": 60
@@ -75,7 +75,7 @@
   },
   "2026-10-14": {
    "titulo": "Duas escadas de cadência",
-   "porque": "Você sobe a cadência de 82 para 86 em degraus, duas vezes, sem passar do teto de FC. Se a leitura de 13/10 cortar o Lower A (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), o treinador troca por 20 min de caminhada.",
+   "porque": "Você sobe a cadência de 82 para 86 em degraus, duas vezes, sem passar do teto de FC. Se a leitura de 13/10 cortar o Lower A (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), o treinador troca por 20 min de caminhada. Joelho esquerdo: se a dor passar de 3/10, troque por caminhada a 5,5 km/h. Terreno plano, sem descida. Se o joelho piorar depois do Lower A, vira caminhada ativa de 30 min.",
    "etapas": [
     {
      "n": "Aquecimento",
@@ -96,7 +96,7 @@
     {
      "n": "Escada 1, degrau 2",
      "s": 180,
-     "v": "8,2 km/h",
+     "v": "8,0 km/h",
      "fc": "FC até 145",
      "t": "Cadência 84.",
      "marcas": 60
@@ -104,7 +104,7 @@
     {
      "n": "Escada 1, degrau 3",
      "s": 180,
-     "v": "8,4 km/h",
+     "v": "8,0 km/h",
      "fc": "FC até 148",
      "t": "Cadência 86.",
      "marcas": 60
@@ -128,7 +128,7 @@
     {
      "n": "Escada 2, degrau 2",
      "s": 180,
-     "v": "8,2 km/h",
+     "v": "8,0 km/h",
      "fc": "FC até 145",
      "t": "Cadência 84.",
      "marcas": 60
@@ -136,7 +136,7 @@
     {
      "n": "Escada 2, degrau 3",
      "s": 180,
-     "v": "8,4 km/h",
+     "v": "8,0 km/h",
      "fc": "FC até 148",
      "t": "Cadência 86. Se a FC passar de 150, volte a 8,0.",
      "marcas": 60
@@ -161,7 +161,7 @@
   },
   "2026-10-18": {
    "titulo": "Retomada curta pós-campeonato",
-   "porque": "É o dia seguinte ao jogo e não há dado do relógio do campeonato, então são 24 min com duas caminhadas: se as pernas pesarem, troque por caminhada.",
+   "porque": "É o dia seguinte ao jogo e não há dado do relógio do campeonato, então são 24 min com duas caminhadas: se as pernas pesarem, troque por caminhada. Joelho esquerdo: se a dor passar de 3/10, troque por caminhada a 5,5 km/h. Terreno plano, sem descida.",
    "etapas": [
     {
      "n": "Aquecimento",
@@ -205,5 +205,6 @@
     }
    ]
   }
- }
+ },
+ "nota": "11/10: teto de 8,0 km/h nos blocos enquanto o joelho esquerdo dói (carga)."
 }
