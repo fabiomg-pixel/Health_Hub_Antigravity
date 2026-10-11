@@ -192,6 +192,18 @@
   .st.ok { background: var(--campo); border-color: var(--campo); color: #fff; }
   .st.par { background: var(--sol); }
   .st.nao { background: transparent; }
+  /* treino com séries */
+  .serie { display: grid; grid-template-columns: 26px 1fr 1fr 78px; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--fraca); }
+  .serie .sn { font-weight: 800; font-family: var(--display); }
+  .serie .cp { display: flex; align-items: baseline; gap: 4px; }
+  .serie .cp small { font-size: 12px; font-weight: 600; color: var(--sec); }
+  input.n { width: 100%; min-width: 0; min-height: 46px; font: 700 20px/1 'Figtree', sans-serif; text-align: center; border: 2px solid var(--tinta); background: var(--branco); border-radius: 0; }
+  .okb { min-height: 46px; border: 2px solid var(--tinta); background: transparent; font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
+  .okb.on { background: var(--campo); border-color: var(--campo); color: #fff; }
+  #t-desc { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 40; width: 100%; max-width: 520px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    padding: 14px 18px calc(14px + env(safe-area-inset-bottom)); background: var(--sol); color: var(--tinta); border-top: 2px solid var(--tinta); font-weight: 600; }
+  #t-desc b { font-family: var(--display); font-size: 24px; margin-left: 6px; }
+  #t-desc button { min-height: 40px; padding: 0 14px; border: 2px solid var(--tinta); background: var(--branco); font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
   .alim-leitura { font-size: 14px; color: var(--sec); padding: 8px 0 12px; }
   .tab-ref { width: 100%; border-collapse: collapse; font-size: 13.5px; }
   .tab-ref td { padding: 8px 6px 8px 0; border-bottom: 1px solid var(--fraca); vertical-align: top; }
@@ -429,6 +441,7 @@ function renderDia(d, ehHoje) {
     <h1 class="titulo ${foco.titulo.length > 22 ? 'longo' : ''}">${esc(foco.titulo)}</h1>
     ${foco.sub ? `<div class="sub">${esc(foco.sub)}</div>` : ''}
   </div>${ONDA}</div>` + faixaDias(d.id);
+  h += (typeof linkTreino === 'function' ? linkTreino(new Date().getFullYear() + '-' + mm + '-' + dd) : '');
 
   // treino: exercícios numerados viram linhas; o resto é contexto
   const ex = ((d.treino && d.treino.exercicios) || []).map(e => {
@@ -548,6 +561,8 @@ function atividadeDeHoje() {
   if (d) { const foco = (d.treino && d.treino.foco) || '', t = partirFoco(foco).titulo;
     if (/^a definir/i.test(foco)) return { tipo: 'definir', sub: curto(t) };
     return { tipo: tipoDoDia(d), sub: curto(t) }; }
+  const avulsa = typeof sessaoDe === 'function' ? sessaoDe(isoLocal()) : null;   // sessão escrita à mão para hoje, fora do plano da semana
+  if (avulsa) return { tipo: 'forca', sub: curto(avulsa.titulo) };
   const ag = new Date(), base = new Date(ag.getFullYear(), ag.getMonth(), ag.getDate());
   const prox = DATA.dias.find(x => { const [dd, mm] = x.data.split('/'); return new Date(2026, +mm - 1, +dd) >= base; });
   return { tipo: 'nenhum', sub: prox ? prox.nome.slice(0, 3).toLowerCase() + ' ' + prox.data.slice(0, 2) + ': ' + PICTO[/^a definir/i.test(prox.treino.foco) ? 'definir' : tipoDoDia(prox)][0].toLowerCase() : 'fora do plano publicado' };
@@ -710,7 +725,7 @@ function renderInicio() {
     <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
 
   h += abasInicio('semana');
-  h += quadroAgora() + blocoEspecialistas() + blocoHoje() + blocoCardapio() + blocoDestino();
+  h += quadroAgora() + blocoEspecialistas() + blocoHoje() + (typeof linkTreino === 'function' ? linkTreino(isoLocal()) : '') + blocoCardapio() + blocoDestino();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
       return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') +
@@ -1162,6 +1177,7 @@ function route() {
   if (id === 'reg') { renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
   if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
+  if (/^treino(\/|$)/.test(id)) { renderNav('hoje'); renderTreino(id); window.scrollTo(0, 0); return; }
   const hoje = DATA.dias.find(d => d.data === hojeDDMM());
   const dia = id === 'hoje' ? (hoje || DATA.dias[DATA.dias.length - 1]) : DATA.dias.find(d => d.id === id);
   if (dia) { renderNav('hoje'); renderDia(dia, dia === hoje); window.scrollTo(0, 0); return; }
@@ -1180,7 +1196,7 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
   window.addEventListener("hashchange", route);
   route();
   // Tudo que chega depois redesenha a tela, menos o formulário (para não apagar o que está sendo digitado).
-  const redesenha = () => { const id = (location.hash || '#home').slice(1); if (id !== 'reg' && id !== 'evo') route(); };
+  const redesenha = () => { const id = (location.hash || '#home').slice(1); if (id !== 'reg' && id !== 'evo' && !id.startsWith('treino')) route(); };
   fetch("data/fatos.json").then(r => r.ok ? r.json() : null).then(f => { FATOS = f; renderStatus(); if (f) redesenha(); }).catch(() => {});
   carregarTempo();
   fetch("data/dashboard.json").then(r => r.ok ? r.json() : null).then(x => { if (x) { DASH = x; renderStatus(); redesenha(); } }).catch(() => {});
@@ -1190,5 +1206,6 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
   }).catch(() => {});
 });
 </script>
+<script src="treino.js"></script>
 </body>
 </html>

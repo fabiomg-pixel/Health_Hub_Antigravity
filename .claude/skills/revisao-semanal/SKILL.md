@@ -47,6 +47,11 @@ Para cada um:
    véspera, e o app preencher com hoje. Use `/api/registro` (PATCH corrige, DELETE arquiva) — ou
    avise para ele corrigir na aba ✏️ Corrigir do painel.
 
+**Treino registrado no painel:** registros Tipo Treino com `#sets {json}` no fim do Texto trazem carga e
+repetições por série (PROJETO_CHAT §21). Leia-os aqui, resuma por exercício (melhor série e volume) e use como
+base da progressão. Para os dias de força da semana nova, escreva a sessão com `kg` em `painel/data/treinos.json`
+(a data sobrepõe o semana.json), usando a última carga registrada e a regra de esforço do plano.
+
 ## Passo 3 — O conselho (especialistas em paralelo)
 
 Dispare os três na MESMA mensagem, para rodarem em paralelo. Cada um lê só a sua fatia do

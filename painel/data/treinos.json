@@ -1,0 +1,19 @@
+{
+ "gerado_em": "2026-10-11",
+ "nota": "Sessões escritas à mão pelo copiloto. Para os dias da semana publicada, o painel lê os exercícios do semana.json. Uma data aqui sobrepõe o semana.json.",
+ "sessoes": {
+  "2026-10-11": {
+   "titulo": "Upper leve e core",
+   "duracao_min": 38,
+   "regra": "3 séries de 12 com 4 repetições de sobra. Sem agachamento, sem leg press e sem perna: terça é o Lower A. Se a última repetição pesar, baixe a carga.",
+   "exercicios": [
+    {"id": "supino_com_barra", "nome": "Supino com barra", "series": 3, "reps": "12", "kg": 55, "descanso_s": 75, "nota": "Antes, 1 série leve de aquecimento. No Fitbod a carga era 70 kg para 8 repetições."},
+    {"id": "remada_baixa_ou_puxada", "nome": "Remada baixa ou puxada na frente", "series": 3, "reps": "12", "kg": null, "descanso_s": 75, "nota": "Sem histórico das costas: use uma carga com a qual você faria uns 16."},
+    {"id": "desenvolvimento_com_halteres", "nome": "Desenvolvimento com halteres", "series": 3, "reps": "12", "kg": 15, "descanso_s": 75, "nota": "No Fitbod era 17,5 kg para 10 repetições."},
+    {"id": "rosca_com_barra", "nome": "Rosca com barra", "series": 2, "reps": "12", "kg": 20, "descanso_s": 60, "nota": "No Fitbod era 22,5 kg para 12 repetições."},
+    {"id": "prancha", "nome": "Prancha", "tipo": "tempo", "series": 3, "alvo_s": 35, "descanso_s": 45, "nota": "30 a 40 segundos por série."},
+    {"id": "abdominal", "nome": "Abdominal (sit-up ou na máquina)", "series": 3, "reps": "12", "kg": 0, "descanso_s": 45}
+   ]
+  }
+ }
+}

@@ -743,3 +743,25 @@ a allowlist em `access.json` (só o ID 6462775748).
 **O chat que vivia no painel (`/api/bot` + aba Copiloto) foi removido em 01/10** — ele resolvia o
 mesmo problema por um caminho que o Fabio não queria, exigia uma `ANTHROPIC_API_KEY` na Vercel e
 deixava um endpoint público gastando token. Está no histórico do git se um dia fizer falta.
+
+---
+
+## 21. Treino com séries no painel (11/10/2026)
+
+O Fabio decidiu abandonar o Fitbod: dois prescritores se contradizem (em 11/10 o plano pedia upper leve e o
+Fitbod mandou leg press de 120 kg). A carga passa a ser decidida aqui e registrada no painel.
+
+- **Tela:** `#treino` (e `#treino/AAAA-MM-DD`). Séries com carga e repetições, botão Fazer/Feita por série,
+  cronômetro de descanso, esforço (leve, no ponto, pesado) e nota. O treino em andamento fica no aparelho
+  (localStorage) e, sem sinal, o envio entra numa fila e tenta de novo quando a rede volta.
+- **Fonte da sessão:** `painel/data/treinos.json` (sessões escritas à mão, por data; **sobrepõem** o semana.json)
+  ou, para os dias da semana publicada, os exercícios numerados do `semana.json`. Para o painel pré-preencher
+  carga, a sessão precisa ter `kg` no `treinos.json`; sem `kg`, ele usa a última carga registrada.
+- **Registro:** vai pelo `/api/log` (Tipo Treino no 📥 Registros), com um resumo legível e, no fim, `#sets {json}`
+  (`{v,t,dur,ef,ex:[{i,s:[[kg,reps]]}]}`; prancha usa `[seg]`). **Ao processar a fila (Passo 2), leia o `#sets`**: é a
+  fonte de carga real para a progressão. O Strava deixa de receber o treino de força (o Fitbod mandava); o Garmin
+  no pulso segue gravando a frequência cardíaca se o Fabio marcar a atividade.
+- **Fase 2 (não feita):** progressão automática (sobe com folga no topo das repetições; segura ou reduz em banda
+  vermelha ou noite curta; respeita as regras de tornozelo e AINE). **Fase 3:** gamificação, pedida por ele.
+- **Pendências:** o histórico do Fitbod no Strava (séries, cargas e repetições existem, nomes em inglês, alguns
+  "Unknown") ainda não foi importado; sem vídeos de execução.
