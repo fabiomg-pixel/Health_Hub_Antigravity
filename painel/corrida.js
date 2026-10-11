@@ -103,23 +103,33 @@ function cFim(parou) {
   };
 }
 
+const topoC = (t, sub) => '<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="topo"><div class="rot">Corrida</div></div><h1 class="titulo longo">' + esc(t) + '</h1>' + (sub ? '<div class="sub">' + esc(sub) + '</div>' : '') + '</div></div>';
+
 function renderCorrida() {
   const v = document.getElementById('view'); if (!v) return;
   if (C_TICK) clearInterval(C_TICK); C_TICK = null; cMetro(false);
   if (!C) {
     const sem = (typeof avaliarSemaforo === 'function') ? avaliarSemaforo() : null;
-    const rec = sem && /Segurar|Ajustar/.test(sem.nivel || sem.titulo || '') ? 'curta' : 'base';
-    v.innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="topo"><div class="rot">Corrida</div></div><h1 class="titulo longo">Corrida guiada</h1><div class="sub">Deixe a tela acesa: o guia mostra a etapa, fala o que fazer e avisa a hora de trocar.</div></div></div>
-      <section class="bloco">${Object.entries(C_PLANOS).map(([k, p]) => `<button type="button" class="linha c-esc" data-p="${k}"><span class="corpo">${esc(p.nome)}${k === rec ? ' · indicada hoje' : ''}<small>${esc(p.sub)} · ${p.etapas.length} etapas</small></span><span class="num">iniciar</span></button>`).join('')}</section>
-      <section class="bloco"><label class="c-op"><input type="checkbox" id="c-metro"> Metrônomo de cadência (170 batidas por minuto, só na corrida fácil)</label>
+    const seg = sem && (sem.estado === 'segurar' || sem.estado === 'ajustar');
+    const rec = seg ? 'curta' : 'base', P = C_PLANOS[rec];
+    const dia = (typeof DATA !== 'undefined' && DATA && DATA.dias || []).find(d => d.data === hojeDDMM());
+    const foco = dia && dia.treino && dia.treino.foco;
+    const noPlano = foco && /corrida/i.test(foco);
+    const porque = seg ? 'O semáforo está em ' + sem.estado + ' hoje: ' + ((sem.motivos || [])[0] || 'recuperação baixa') + ' Por isso a versão curta.'
+      : noPlano ? 'É a corrida do plano de hoje: ' + foco + '.' : 'Fase 1: constância, tudo fácil.' + (dia ? '' : ' Hoje não há corrida no plano publicado; esta é a sessão-padrão da fase 1.');
+    const resumo = P.etapas.map(e => `${Math.round(e.s / 60)} min ${e.n.toLowerCase()} (${e.v})`).join(' · ');
+    v.innerHTML = topoC('Corrida de hoje', 'Eu escolhi a sessão. É só tocar em iniciar e deixar a tela acesa.') +
+      `<section class="bloco"><div class="c-card"><div class="c-et">${esc(P.nome)}</div><p class="c-t" style="margin:8px 0">${esc(porque)}</p><div class="c-mini" style="display:block">${esc(resumo)}</div></div>
+      <button class="botao" id="c-ini" type="button" style="margin-top:14px">Iniciar</button></section>
+      <section class="bloco"><label class="c-op"><input type="checkbox" id="c-metro" checked> Metrônomo de cadência (170 batidas por minuto, só na corrida fácil)</label>
       <label class="c-op"><input type="checkbox" id="c-mudo"> Sem voz (só bip e vibração)</label>
+      <details class="c-outro"><summary>Trocar a sessão</summary>${Object.entries(C_PLANOS).filter(([k]) => k !== 'qualidade' && k !== rec).map(([k, p]) => `<button type="button" class="linha c-esc" data-p="${k}"><span class="corpo">${esc(p.nome)}<small>${esc(p.sub)}</small></span><span class="num">iniciar</span></button>`).join('')}<div class="aviso">A sessão de qualidade (4 × 4) só entra quando a porteira da fase 2 abrir; eu aviso.</div></details>
       <div class="aviso">No iPhone, bloquear a tela corta a voz e o bip: mantenha o painel aberto. O ritmo na esteira é você que ajusta; o guia só marca o tempo.</div></section>
       <section class="bloco"><a class="botao claro" href="#home">Voltar</a></section>`;
-    v.querySelectorAll('.c-esc').forEach(b => b.onclick = () => {
-      C = { plano: C_PLANOS[b.dataset.p], ini: Date.now(), acum: 0, pausado: false, i: 0, falou: {}, mudo: document.getElementById('c-mudo').checked };
-      cMetro(document.getElementById('c-metro').checked);
-      cTela(); cBip(660, 80); cAnunciar(C.plano.etapas[0], true); renderCorrida();
-    });
+    const comecar = k => { C = { plano: C_PLANOS[k], ini: Date.now(), acum: 0, pausado: false, i: 0, falou: {}, mudo: document.getElementById('c-mudo').checked };
+      cMetro(document.getElementById('c-metro').checked); cTela(); cBip(660, 80); cAnunciar(C.plano.etapas[0], true); renderCorrida(); };
+    document.getElementById('c-ini').onclick = () => comecar(rec);
+    v.querySelectorAll('.c-esc').forEach(b => b.onclick = () => comecar(b.dataset.p));
     return;
   }
   v.innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="topo"><div class="rot">Corrida</div></div><h1 class="titulo longo">${esc(C.plano.nome)}</h1></div></div>
