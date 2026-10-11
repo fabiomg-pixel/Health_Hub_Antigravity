@@ -153,6 +153,37 @@ def puxar_dia(cliente, data):
     return d
 
 
+def puxar_atividades(cliente, inicio, fim):
+    """Atividades do período (corrida, força, jogo...), com FC média e máxima.
+
+    Uma chamada para a janela inteira, não uma por dia. Antes só vinha o resumo do dia, e por isso
+    a corrida de 07/10 e o treino de força nunca apareciam como sessão. Para força o Garmin também
+    conta séries e repetições sozinho, mas esse número é pouco confiável: o painel é a fonte de
+    carga e série. A FC no pulso oscila na musculação (pegada e flexão do punho): tendência, não medida.
+    """
+    bruto = tentar(cliente.get_activities_by_date, inicio.isoformat(), fim.isoformat()) or []
+    saida = []
+    for a in bruto:
+        zonas = [a.get(f"hrTimeInZone_{i}") for i in range(1, 6)]
+        saida.append({
+            "id": a.get("activityId"),
+            "tipo": cavar(a, "activityType", "typeKey"),
+            "nome": a.get("activityName"),
+            "inicio_local": a.get("startTimeLocal"),
+            "duracao_min": round(a["duration"] / 60, 1) if a.get("duration") else None,
+            "distancia_km": round(a["distance"] / 1000, 2) if a.get("distance") else None,
+            "fc_media": a.get("averageHR"),
+            "fc_max": a.get("maxHR"),
+            "kcal": a.get("calories"),
+            "efeito_aerobico": a.get("aerobicTrainingEffect"),
+            "efeito_anaerobico": a.get("anaerobicTrainingEffect"),
+            "tempo_em_zona_s": [round(z) for z in zonas] if any(z is not None for z in zonas) else None,
+            "series_garmin": a.get("totalSets"),
+            "repeticoes_garmin": a.get("totalReps"),
+        })
+    return saida
+
+
 def main():
     ap = argparse.ArgumentParser(description="Puxa métricas do Garmin Connect")
     ap.add_argument("--days", type=int, default=7, help="quantos dias até hoje")
@@ -193,6 +224,9 @@ def main():
         saida["dias"].append(puxar_dia(cliente, data))
         if i:
             time.sleep(0.3)  # gentileza com a API; o limite é de login, não disto
+
+    saida["atividades"] = puxar_atividades(cliente, hoje - dt.timedelta(days=args.days - 1), hoje)
+    log(f"atividades no período: {len(saida['atividades'])}")
 
     vazios = sum(1 for d in saida["dias"] if d["vazio"])
     if vazios == len(saida["dias"]):

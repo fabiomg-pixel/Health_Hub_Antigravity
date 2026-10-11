@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-11T10:34:08",
+ "gerado_em": "2026-10-11T11:48:37",
  "janela": {
   "hoje": "2026-10-11",
   "dia_semana": "Sunday",
@@ -131,15 +131,79 @@
     "passos": 11058
    }
   ],
+  "atividades_garmin": [
+   {
+    "id": 24656807636,
+    "tipo": "running",
+    "nome": "Curitiba Corrida",
+    "inicio_local": "2026-10-08 18:39:12",
+    "duracao_min": 20.2,
+    "distancia_km": 2.64,
+    "fc_media": 154.0,
+    "fc_max": 168.0,
+    "kcal": 235.0,
+    "tempo_em_zona_s": [
+     26,
+     32,
+     502,
+     629,
+     0
+    ]
+   },
+   {
+    "id": 24645478265,
+    "tipo": "running",
+    "nome": "Curitiba Corrida",
+    "inicio_local": "2026-10-07 19:05:02",
+    "duracao_min": 21.7,
+    "distancia_km": 2.86,
+    "fc_media": 145.0,
+    "fc_max": 167.0,
+    "kcal": 257.0,
+    "tempo_em_zona_s": [
+     37,
+     354,
+     630,
+     267,
+     0
+    ]
+   }
+  ],
+  "sessoes_do_painel": [
+   {
+    "data": "2026-10-11",
+    "sessao": "upper_leve_e_core",
+    "duracao_min": 22,
+    "esforco": "ok",
+    "exercicios": 6,
+    "series_feitas": 17,
+    "trocas": [
+     {
+      "feito": "supino_com_halteres",
+      "plano": "supino_com_barra"
+     },
+     {
+      "feito": "x_remada_alta_com_halter",
+      "plano": "remada_baixa_ou_puxada"
+     }
+    ],
+    "garmin": null
+   }
+  ],
   "registros_de_treino": [
+   {
+    "data": "2026-10-11",
+    "tem_foto": false,
+    "texto": "Treino feito no painel: Upper leve e core, 22 min, esforço no ponto. Supino com halteres (no lugar de Supino com barra):"
+   },
    {
     "data": "2026-10-05",
     "tem_foto": true,
     "texto": ""
    }
   ],
-  "sessoes_registradas": 1,
-  "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço."
+  "sessoes_registradas": 2,
+  "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço. A FC no pulso oscila na musculação: tendência, não medida exata. Séries e cargas vêm do painel, não da contagem do Garmin."
  },
  "vo2max": {
   "serie": [

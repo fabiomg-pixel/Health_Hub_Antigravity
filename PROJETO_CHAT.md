@@ -773,3 +773,10 @@ Fitbod mandou leg press de 120 kg). A carga passa a ser decidida aqui e registra
   vermelha ou noite curta; respeita as regras de tornozelo e AINE). **Fase 3:** gamificação, pedida por ele.
 - **Pendências:** o histórico do Fitbod no Strava (séries, cargas e repetições existem, nomes em inglês, alguns
   "Unknown") ainda não foi importado; sem vídeos de execução.
+
+- **Atividades do Garmin (11/10/2026):** o `garmin_pull.py` agora traz `atividades` (uma chamada para a janela inteira:
+  tipo, início, duração, distância, FC média e máxima, kcal, efeito de treino, tempo por zona). O `fatos.json` ganhou
+  `treino_7d.atividades_garmin` e `treino_7d.sessoes_do_painel` (treino registrado no painel, com a atividade de força
+  do Garmin do mesmo dia quando o Fabio marca o relógio). Isso fecha a brecha da corrida de 07/10 e mostra que o Strava
+  duplicou essa corrida como 'trilha' (o Garmin tem uma atividade só). A FC no pulso oscila na musculação: tendência,
+  não medida. Séries e cargas continuam vindo do painel, nunca da contagem de séries do Garmin.

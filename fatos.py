@@ -223,19 +223,48 @@ def bloco_vo2(garmin_hist):
     }
 
 
-def bloco_treino(resumo, garmin_hist, regs, desde):
+def _sessao_do_painel(r):
+    """Treino registrado no painel: o texto termina em '#sets {json}' (PROJETO_CHAT §21)."""
+    m = re.search(r"#sets (\{.*\})\s*$", r.get("texto") or "")
+    if not m:
+        return None
+    try:
+        j = json.loads(m.group(1))
+    except Exception:
+        return None
+    ex = j.get("ex") or []
+    return {"data": r.get("data"), "sessao": j.get("t"), "duracao_min": j.get("dur"), "esforco": j.get("ef"),
+            "exercicios": len(ex), "series_feitas": sum(len(e.get("s") or []) for e in ex),
+            "trocas": [{"feito": e.get("i"), "plano": e.get("o")} for e in ex if e.get("o")]}
+
+
+def bloco_treino(resumo, garmin_hist, regs, desde, atividades=None):
     ativas = {d["data"]: d.get("kcal_ativas") for d in garmin_hist}
     dias = [d for d in resumo if d["data"] >= desde]
     ativos = [{"data": d["data"], "kcal_ativas": ativas.get(d["data"]), "passos": d.get("passos")}
               for d in dias if (ativas.get(d["data"]) or 0) >= 300]
     treinos_reg = [r for r in regs if r.get("tipo") == "Treino" and (r.get("data") or "") >= desde]
+    # Atividades do Garmin (corrida, força, jogo): FC média e máxima, tempo por zona. Antes só vinha o
+    # resumo do dia, e por isso a corrida de 07/10 nunca virou sessão aqui.
+    ativ = [{k: a.get(k) for k in ("id", "tipo", "nome", "inicio_local", "duracao_min", "distancia_km",
+                                   "fc_media", "fc_max", "kcal", "tempo_em_zona_s")}
+            for a in (atividades or []) if (a.get("inicio_local") or "")[:10] >= desde]
+    sessoes = [x for x in (_sessao_do_painel(r) for r in treinos_reg) if x]
+    # Casa a sessão do painel com a atividade de força do Garmin do MESMO dia (se o Fabio marcou o relógio).
+    for x in sessoes:
+        forca = [a for a in ativ if a["tipo"] == "strength_training" and (a["inicio_local"] or "")[:10] == x["data"]]
+        x["garmin"] = ({"fc_media": forca[0]["fc_media"], "fc_max": forca[0]["fc_max"],
+                        "duracao_min": forca[0]["duracao_min"]} if forca else None)
     return {
         "dias_com_gasto_ativo_300+": ativos,
+        "atividades_garmin": ativ,
+        "sessoes_do_painel": sessoes,
         "registros_de_treino": [{"data": r["data"], "tem_foto": bool(r.get("foto")),
                                  "texto": (r.get("texto") or "")[:120]} for r in treinos_reg],
         "sessoes_registradas": len(treinos_reg),
         "aviso": ("Jogo de campeonato não gera dado de relógio (regra da competição) — "
-                  "ausência de atividade não é ausência de esforço."),
+                  "ausência de atividade não é ausência de esforço. A FC no pulso oscila na musculação: "
+                  "tendência, não medida exata. Séries e cargas vêm do painel, não da contagem do Garmin."),
     }
 
 
@@ -305,7 +334,7 @@ def main():
                    "semana_desde": desde},
         "peso": bloco_peso(resumo, hist, regs),
         "recuperacao": bloco_recuperacao(resumo),
-        "treino_7d": bloco_treino(resumo, hist, regs, desde),
+        "treino_7d": bloco_treino(resumo, hist, regs, desde, (carregar("garmin_out.json") or {}).get("atividades")),
         "vo2max": bloco_vo2(hist),
         "alimentacao_7d": bloco_alimentacao(regs, desde),
         "lacunas": [],
