@@ -14,8 +14,8 @@
      "reps": "12",
      "kg": 55,
      "descanso_s": 75,
-     "nota": "Antes, 1 série leve de aquecimento. Na lista do Fitbod de 11/10 a carga era 70 kg para 8 repetições.",
-     "grupo": "peito_empurrar"
+     "grupo": "peito_empurrar",
+     "nota": "Antes, 1 série leve de aquecimento."
     },
     {
      "id": "remada_baixa_ou_puxada",
@@ -35,7 +35,6 @@
      "reps": "12",
      "kg": 15,
      "descanso_s": 75,
-     "nota": "Na lista do Fitbod de 11/10 era 17,5 kg para 10 repetições.",
      "grupo": "ombro_empurrar",
      "halter": true
     },
@@ -46,7 +45,6 @@
      "reps": "12",
      "kg": 20,
      "descanso_s": 60,
-     "nota": "Na lista do Fitbod de 11/10 era 22,5 kg para 12 repetições.",
      "grupo": "biceps"
     },
     {

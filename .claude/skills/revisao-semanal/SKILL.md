@@ -32,6 +32,8 @@ pós-jogo das neutras, conta os padrões alimentares dos registros e lista as `l
 - **Strava** vem pelo MCP (`list_activities`, `get_activity_performance`, `get_activity_streams`).
   Para corridas em blocos, puxe os streams: é onde estão cadência, FC por bloco e velocidade real.
 
+**Ignore as atividades do Strava com título "Fitbod - ..." e os detalhes de força vindos delas:** o Fitbod foi descartado em 11/10/2026 (era só validação). A força vem do painel (`#sets`).
+
 Colete também **load balance + ACWR** via `get_training_status` (ver PROJETO_CHAT §6).
 
 ## Passo 2 — Processar a fila do Notion

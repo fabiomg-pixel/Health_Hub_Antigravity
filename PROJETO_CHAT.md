@@ -771,8 +771,9 @@ Fitbod mandou leg press de 120 kg). A carga passa a ser decidida aqui e registra
   Exercício novo na biblioteca precisa de `dica`.
 - **Fase 2 (não feita):** progressão automática (sobe com folga no topo das repetições; segura ou reduz em banda
   vermelha ou noite curta; respeita as regras de tornozelo e AINE). **Fase 3:** gamificação, pedida por ele.
-- **Pendências:** o histórico do Fitbod no Strava (séries, cargas e repetições existem, nomes em inglês, alguns
-  "Unknown") ainda não foi importado; sem vídeos de execução.
+- **Fitbod descartado (11/10/2026):** o Fabio disse que o Fitbod era só validação e mandou interromper e não usar. **Não importe nem use** o
+  histórico do Fitbod (nem as atividades do Strava com título "Fitbod - ..."): a carga de partida vem só do que foi registrado no painel.
+  O Strava ainda pode trazer essas atividades se o app continuar aberto; ignore-as.
 
 - **Atividades do Garmin (11/10/2026):** o `garmin_pull.py` agora traz `atividades` (uma chamada para a janela inteira:
   tipo, início, duração, distância, FC média e máxima, kcal, efeito de treino, tempo por zona). O `fatos.json` ganhou
