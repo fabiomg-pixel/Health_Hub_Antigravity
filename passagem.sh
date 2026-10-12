@@ -4,9 +4,16 @@
 # Só lê (git log/status, decisoes.md); nunca grava nem publica nada.
 cd "$(dirname "$0")" || exit 0
 export GIT_OPTIONAL_LOCKS=0
+IN=""; [ -t 0 ] || IN=$(cat 2>/dev/null)
 L=decisoes.md
 echo "=== PASSAGEM ENTRE SESSÕES (health-hub): leia antes de recomendar, decidir ou comprar ==="
 echo "Agora: $(date '+%d/%m %H:%M'). Este resumo é do disco, não da sua memória: se divergir do que você lembra, vale o disco."
+case "$IN" in *plugin:telegram*)
+  echo "!!! ESTA MENSAGEM VEIO DO TELEGRAM. O Fabio SÓ recebe o que você enviar pela ferramenta mcp__plugin_telegram_telegram__reply (chat_id da tag <channel>)."
+  echo "!!! Texto escrito no terminal NUNCA chega a ele. Se a ferramenta não estiver na sua lista, carregue-a ANTES de responder:"
+  echo "!!! ToolSearch com query: select:mcp__plugin_telegram_telegram__reply,mcp__plugin_telegram_telegram__react,mcp__plugin_telegram_telegram__edit_message,mcp__plugin_telegram_telegram__download_attachment"
+  echo "!!! (O fim do seu turno é bloqueado se não houver um reply depois desta mensagem.)";;
+esac
 echo "--- Regras vigentes (decisoes.md)"
 [ -f "$L" ] && awk '/^## Regras vigentes/{f=1;next} /^## /{f=0} f&&NF' "$L" || echo "(decisoes.md não encontrado)"
 echo "--- Últimas decisões registradas"

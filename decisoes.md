@@ -13,6 +13,7 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - Horários da semana 12–18/10: futebol quinta 20h; campeonato sábado 9h (sem relógio: o relato do Fabio é o registro).
 - Treino: corridas com teto de 8,0 km/h; sem progressão de kg em peso do corpo; tornozelo liberado; Fitbod descartado (git 77dca63, 2ce770c, d0e38a5).
 - Sempre commitar o que mudar; nunca dar push (o ambiente bloqueia o GitHub).
+- Sessão do bot: a resposta só chega ao Fabio pela ferramenta mcp__plugin_telegram_telegram__reply; texto no terminal não chega (gancho Stop bloqueia o turno sem reply).
 
 ## Registro
 - 2026-10-10 | app | Fabio: "Se não sabe, não toma decisão" | PROJETO_CHAT §18
@@ -22,3 +23,4 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - 2026-10-11 | bot | Fabio: o iogurte da semana é o Danone natural desnatado 160 g | lista_compra, git 82bf93f
 - 2026-10-11 | app | Fabio pediu 10 marmitas iFood = 5 pratos × 2 (casal), sem prato com sobretaxa de R$ 3,99 | semana.json, git 7135fc6, PROJETO_CHAT §22
 - 2026-10-12 | app | Fabio: decisões tomadas no bot e no app precisam chegar uma à outra; criado este livro, o ./passagem.sh e o gancho | PROJETO_CHAT §23
+- 2026-10-12 | app | Falha: as sessões do bot de 04h30 e 11h35 não enviaram a resposta (texto no terminal). Corrigido com aviso injetado + gancho Stop | PROJETO_CHAT §23, garantir_resposta_telegram.py

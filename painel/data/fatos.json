@@ -1,22 +1,17 @@
 {
- "gerado_em": "2026-10-11T12:35:13",
+ "gerado_em": "2026-10-12T10:34:19",
  "janela": {
-  "hoje": "2026-10-11",
-  "dia_semana": "Sunday",
-  "semana_desde": "2026-10-04"
+  "hoje": "2026-10-12",
+  "dia_semana": "Monday",
+  "semana_desde": "2026-10-05"
  },
  "peso": {
   "ultima": {
-   "data": "2026-10-06",
-   "peso_kg": 95.05,
-   "pos_esforco": false
+   "data": "2026-10-12",
+   "peso_kg": 95.3,
+   "pos_esforco": true
   },
   "serie_14d": [
-   {
-    "data": "2026-09-21",
-    "peso_kg": 94.05,
-    "pos_esforco": false
-   },
    {
     "data": "2026-09-22",
     "peso_kg": 94.5,
@@ -81,31 +76,36 @@
     "data": "2026-10-06",
     "peso_kg": 95.05,
     "pos_esforco": false
+   },
+   {
+    "data": "2026-10-12",
+    "peso_kg": 95.3,
+    "pos_esforco": true
    }
   ],
-  "media_ultimas_7_leituras": 95.14,
-  "media_neutras_nas_ultimas_7": 95.14,
-  "n_neutras_nas_ultimas_7": 7,
+  "media_ultimas_7_leituras": 95.19,
+  "media_neutras_nas_ultimas_7": 95.17,
+  "n_neutras_nas_ultimas_7": 6,
   "media_7_neutras_de_verdade": 95.14,
   "media_28d_neutras": 94.83,
-  "n_leituras_pos_esforco_14d": 1,
+  "n_leituras_pos_esforco_14d": 2,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 83,
+  "indice_hoje": 91,
   "banda_hoje": "g",
-  "prontidao_garmin_hoje": 43,
+  "prontidao_garmin_hoje": 74,
   "dias_vermelhos_seguidos": 0,
-  "sono_ultima_noite_h": 6.43,
-  "sono_ultima_noite_score": 80,
-  "hrv_ultima_noite": 45,
+  "sono_ultima_noite_h": 7.17,
+  "sono_ultima_noite_score": 90,
+  "hrv_ultima_noite": 48,
   "fc_repouso_hoje": 49,
-  "indice_medio_7d": 44.0,
-  "sono_medio_7d": 6.11,
-  "hrv_medio_7d": 34.0,
+  "indice_medio_7d": 48.0,
+  "sono_medio_7d": 6.23,
+  "hrv_medio_7d": 35,
   "hrv_medio_28d": 37.0,
-  "fc_repouso_7d": 54.0,
-  "fc_repouso_28d": 54.0,
+  "fc_repouso_7d": 53.0,
+  "fc_repouso_28d": 53.0,
   "indice_hoje_confiavel": true
  },
  "treino_7d": {
@@ -129,6 +129,11 @@
     "data": "2026-10-09",
     "kcal_ativas": 315.0,
     "passos": 11058
+   },
+   {
+    "data": "2026-10-11",
+    "kcal_ativas": 353.0,
+    "passos": 12646
    }
   ],
   "atividades_garmin": [
@@ -147,6 +152,42 @@
      945,
      435,
      0,
+     0
+    ]
+   },
+   {
+    "id": 24656807636,
+    "tipo": "running",
+    "nome": "Curitiba Corrida",
+    "inicio_local": "2026-10-08 18:39:12",
+    "duracao_min": 20.2,
+    "distancia_km": 2.64,
+    "fc_media": 154.0,
+    "fc_max": 168.0,
+    "kcal": 235.0,
+    "tempo_em_zona_s": [
+     26,
+     32,
+     502,
+     629,
+     0
+    ]
+   },
+   {
+    "id": 24645478265,
+    "tipo": "running",
+    "nome": "Curitiba Corrida",
+    "inicio_local": "2026-10-07 19:05:02",
+    "duracao_min": 21.7,
+    "distancia_km": 2.86,
+    "fc_media": 145.0,
+    "fc_max": 167.0,
+    "kcal": 257.0,
+    "tempo_em_zona_s": [
+     37,
+     354,
+     630,
+     267,
      0
     ]
    }
@@ -220,19 +261,17 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-10-04",
    "2026-10-05",
    "2026-10-06",
    "2026-10-10",
    "2026-10-11"
   ],
-  "n_refeicoes_registradas": 11,
+  "n_refeicoes_registradas": 12,
   "por_dia": {
-   "2026-10-04": 2,
    "2026-10-05": 2,
    "2026-10-06": 3,
    "2026-10-10": 3,
-   "2026-10-11": 1
+   "2026-10-11": 4
   },
   "ocorrencias": {
    "fritura": [
@@ -245,17 +284,22 @@
      "data": "2026-10-10",
      "refeicao": "Café",
      "texto": "[Lido da foto em 11/10] 2 fatias de pão integral, meio abacate, 1 ovo frito (com algo escu"
-    },
-    {
-     "data": "2026-10-04",
-     "refeicao": "Almoço",
-     "texto": "Picanha, arroz brócolis, fritas"
     }
    ],
    "doce": [],
    "buffet": [],
    "alcool": [],
    "proteina_clara": [
+    {
+     "data": "2026-10-11",
+     "refeicao": "Lanche",
+     "texto": "Lanche das 17h: iogurte Danone natural desnatado (160 g; rótulo: 84 kcal, 8,9 g de proteín"
+    },
+    {
+     "data": "2026-10-11",
+     "refeicao": "Almoço",
+     "texto": "Salada de alface, rúcula, cenoura, tomate cereja, avocado com molho a base de iogurte e jo"
+    },
     {
      "data": "2026-10-11",
      "refeicao": "Café",
@@ -275,15 +319,14 @@
      "data": "2026-10-06",
      "refeicao": "Café",
      "texto": "Croissant frango, mini pão de queijo 5x, suco de laranja"
-    },
-    {
-     "data": "2026-10-04",
-     "refeicao": "Almoço",
-     "texto": "Picanha, arroz brócolis, fritas"
     }
    ]
   },
   "observacoes": [
+   {
+    "data": "2026-10-11",
+    "texto": "Linha de base visual da recomposição corporal em 11/10/2026: o Fábio enviou duas fotos (frente e perfil) pelo Telegram e confirmou que são a base do trabalho. A"
+   },
    {
     "data": "2026-10-11",
     "texto": "Conselho de domingo 11/10. DADOS: noite de 11/10 sono 6,43 h (score 80), HRV 45 (base 28d 37), FC de repouso 49, índice 83 (confiável), prontidão Garmin 54. Méd"
@@ -299,7 +342,5 @@
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
- "lacunas": [
-  "sem pesagem hoje (última: 2026-10-06)"
- ]
+ "lacunas": []
 }

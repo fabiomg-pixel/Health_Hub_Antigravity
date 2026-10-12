@@ -881,3 +881,15 @@ de apoio que o bot lê ao reiniciar.
 folhas em 4 refeições principais por semana com vegetal visível (batata-doce e molho de tomate não contam);
 3 famílias de vegetal (folha escura, crucífera, laranja/vermelho, outros); fritura no máximo 2 refeições;
 fruta inteira em 2 dias com registro; um peixe na semana. Ela tem autoridade para impor, por pedido do Fabio.
+
+**Segunda falha, achada no mesmo dia (12/10).** Ao testar o gancho, o Fabio mandou uma mensagem ao bot e não
+recebeu nada. O registro da sessão mostra que o gancho FUNCIONOU (a passagem entrou no contexto e o
+`CLAUDE.md` foi lido), mas a sessão escreveu a resposta como texto no terminal e **não chamou a ferramenta
+`reply`**. A mesma coisa tinha acontecido às 11h02 com a sessão aberta às 04h30. Só a sessão antiga, que
+rodava havia dias, respondia: sessões recém-abertas podem receber as ferramentas do plugin descarregadas e
+não se lembram de carregá-las. Correção em duas camadas: o `passagem.sh` passa a avisar, em toda mensagem
+do Telegram, que só o `reply` entrega (com a linha do `ToolSearch`), e o gancho `Stop`
+(`garantir_resposta_telegram.py`) bloqueia o fim do turno se a última mensagem foi do Telegram e não houve
+`reply` depois. Testado contra os três registros reais: bloqueia os dois que falharam, libera o que respondeu.
+**Lição:** sessão reiniciada só é "no ar" depois de uma mensagem de teste respondida de ponta a ponta; ver o
+processo vivo não prova entrega.
