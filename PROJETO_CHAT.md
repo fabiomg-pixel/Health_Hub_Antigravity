@@ -845,3 +845,39 @@ agora é só sábado e domingo). Quantas marmitas já havia no freezer: **não s
   do cardápio não trazem tabela nutricional e ficam fora da escolha, por §18.
 - Como ler o cardápio: a página mostra a "porção declarada" da tabela, que às vezes difere do peso do
   nome (N53: nome 350 g, tabela 380 g; N35: nome 380 g, tabela 400 g). Os números do plano são os da tabela.
+
+
+## 23. As sessões se enxergam pelo disco (pedido do Fabio, 12/10/2026)
+
+**O que aconteceu.** Em 11/10, às 10h39, na sessão do bot, a nutricionista impôs metas de alimentação
+(vegetal visível em 4 refeições principais, 3 famílias de vegetal, fritura no máximo 2, fruta em 2 dias,
+um peixe na semana) e a regra de marmita com vegetal visível. Isso ficou só em `alimentacao.json` e numa
+mensagem de commit, nunca no `PROJETO_CHAT.md`. Horas depois, na sessão do app, o copiloto recomendou
+cinco marmitas pelo critério antigo (só proteína no rótulo) sem reler os arquivos. O Fabio fez o pedido
+no iFood: **quatro dos cinco pratos não mostram vegetal no rótulo**, e a salada ao lado virou o remendo.
+A causa foi dupla: a decisão não foi escrita onde as outras sessões leem, e a sessão que decidiu não
+reabriu os arquivos antes de decidir.
+
+**O mecanismo (não depende de memória nem de boa vontade):**
+- `decisoes.md`: livro único. `## Regras vigentes` (curadoria) e `## Registro` (uma linha por decisão,
+  com origem, quem decidiu e onde vive). Escreve-se com `./registrar_decisao.sh`.
+- `passagem.sh`: lê o livro, os commits das últimas 36 h e o que está sem commit. Só lê.
+- **Gancho `UserPromptSubmit`** em `.claude/settings.json`: injeta a saída da passagem a cada mensagem em
+  qualquer sessão aberta neste projeto (app, bot, agendadas). Vale a partir da próxima sessão iniciada:
+  o bot reinicia sozinho (o `screen` o relança); a sessão do app que já estava aberta pode precisar ser
+  reaberta.
+- `CLAUDE.md` do projeto e seção "Passagem entre sessões" na skill do bot: a obrigação de registrar a
+  decisão e de reler o arquivo antes de editar.
+
+**Limites, ditos com franqueza.** O gancho garante que a informação CHEGA; não garante que a sessão a use,
+nem que ela REGISTRE o que ouviu. Por isso a passagem lista também o que está sem commit e os commits
+recentes, que aparecem mesmo se alguém esquecer o registro. Se um gancho não disparar (por exemplo, em
+mensagens do Telegram), a obrigação de rodar `./passagem.sh` está escrita no `CLAUDE.md` e na skill. Teste
+pedido ao Fabio: mandar ao bot "qual é a regra do almoço de segunda a sexta?" e ver se ele cita o vegetal
+visível e o casal; se não citar, o gancho não está chegando ao bot e o próximo passo é um aviso no arquivo
+de apoio que o bot lê ao reiniciar.
+
+**Regras da nutricionista, agora na doutrina** (fonte: `painel/data/alimentacao.json`, `metas`): vegetais e
+folhas em 4 refeições principais por semana com vegetal visível (batata-doce e molho de tomate não contam);
+3 famílias de vegetal (folha escura, crucífera, laranja/vermelho, outros); fritura no máximo 2 refeições;
+fruta inteira em 2 dias com registro; um peixe na semana. Ela tem autoridade para impor, por pedido do Fabio.
