@@ -24,3 +24,4 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - 2026-10-11 | app | Fabio pediu 10 marmitas iFood = 5 pratos × 2 (casal), sem prato com sobretaxa de R$ 3,99 | semana.json, git 7135fc6, PROJETO_CHAT §22
 - 2026-10-12 | app | Fabio: decisões tomadas no bot e no app precisam chegar uma à outra; criado este livro, o ./passagem.sh e o gancho | PROJETO_CHAT §23
 - 2026-10-12 | app | Falha: as sessões do bot de 04h30 e 11h35 não enviaram a resposta (texto no terminal). Corrigido com aviso injetado + gancho Stop | PROJETO_CHAT §23, garantir_resposta_telegram.py
+- 2026-10-12 | bot | Fabio confirmou: as duas coxinhas do lanche de 12/10 contam como fritura (1 de no máximo 2 na semana 12–18/10; a refeição livre de sábado 17/10, se frita, é a 2ª). Semana vai de segunda a domingo. | alimentacao.json (meta fritura), relato do Fabio
