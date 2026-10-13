@@ -48,6 +48,8 @@
   .dias a:first-child { border-left: 0; }
   .dias a b { font-family: var(--display); font-weight: 800; font-size: 17px; color: var(--tinta); line-height: 1.1; }
   .dias a.on { background: var(--sol); color: var(--tinta); }
+  .dias a.feito { position: relative; }
+  .dias a.feito::after { content: ""; position: absolute; left: 26%; right: 26%; bottom: 0; height: 4px; background: var(--campo); }
   .dias a.hoje b::after { content: ""; display: block; width: 5px; height: 5px; border-radius: 99px; background: var(--tinta); margin: 2px auto 0; }
 
   /* blocos e linhas */
@@ -452,24 +454,83 @@ function renderNav(ativo) {
 function faixaDias(ativoId) {
   const hoje = hojeDDMM();
   return '<div class="dias">' + DATA.dias.map(d =>
-    `<a href="#${d.id}" class="${d.id === ativoId ? 'on' : ''} ${d.data === hoje ? 'hoje' : ''}" aria-label="${esc(d.nome)} ${esc(d.data)}"><span>${esc(d.nome.slice(0, 3))}</span><b>${esc(d.data.slice(0, 2))}</b></a>`).join('') + '</div>';
+    `<a href="#${d.id}" class="${d.id === ativoId ? 'on' : ''} ${d.data === hoje ? 'hoje' : ''} ${treinosRegistrados(isoDiaDoPlano(d.data)).length ? 'feito' : ''}" aria-label="${esc(d.nome)} ${esc(d.data)}${treinosRegistrados(isoDiaDoPlano(d.data)).length ? ', treino feito' : ''}"><span>${esc(d.nome.slice(0, 3))}</span><b>${esc(d.data.slice(0, 2))}</b></a>`).join('') + '</div>';
 }
 
 // ───────── o dia (Hoje e qualquer dia da semana) ─────────
 const SLOTS = [['cafe', 'manhã', 'Café'], ['almoco', 'almoço', 'Almoço'], ['pre_lanche', 'tarde', 'Lanche'],
   ['lanche_pre_treino', 'pré', 'Lanche'], ['janta', 'janta', 'Jantar'], ['petisco', 'fim', 'Outro']];
 
+// ───────── hoje: o que está programado, o que já foi feito e o botão para começar ─────────
+// "Feito" é DEDUZIDO dos registros do site (tipo Treino), não de um contador escrito à mão.
+function isoDiaDoPlano(ddmm) {   // não depende do decisao.js (que carrega depois do script principal)
+  if (typeof isoDoDia === 'function') return isoDoDia(ddmm);
+  const [dd, mm] = ddmm.split('/'); return new Date().getFullYear() + '-' + mm + '-' + dd;
+}
+function treinosRegistrados(iso) { return (REGISTROS || []).filter(x => x.tipo === 'Treino' && x.data === iso); }
+function resumoTreino(r) {
+  const t = String(r.texto || '').replace(/\s*#sets[\s\S]*$/, '').replace(/^Treino feito no painel:\s*/i, '').trim();
+  const p = t.split(/\.\s/)[0]; return p.length > 70 ? p.slice(0, 67) + '…' : p;
+}
+function tipoProgramado(d) {   // só o que está escrito no plano do dia
+  const foco = (d.treino && d.treino.foco) || '';
+  return /^a definir/i.test(foco) ? 'definir' : tipoDoDia(d);
+}
+function proximaRefeicao(d, iso) {   // a primeira refeição do plano que ainda não tem registro
+  const r = d.refeicoes || {}, resta = {};
+  (REGISTROS || []).filter(x => x.tipo === 'Refeição' && x.data === iso).forEach(x => { resta[x.refeicao] = (resta[x.refeicao] || 0) + 1; });
+  for (const [chave, rot, ref] of SLOTS) {
+    const m = r[chave]; if (!m) continue;
+    if ((resta[ref] || 0) > 0) { resta[ref]--; continue; }
+    let nome = semEmoji(m.nome), hora = rot; const t = nome.match(/^(~?\d{1,2}h\d{0,2}|\d{1,2}:\d{2})\s*·\s*/);
+    if (t) { hora = t[1]; nome = nome.slice(t[0].length); }
+    return { ref, hora, nome, m };
+  }
+  return null;
+}
+function blocoParaHoje(d, iso) {
+  const tipo = tipoProgramado(d), feitos = treinosRegistrados(iso), f = partirFoco((d.treino && d.treino.foco) || 'Dia livre');
+  const sessao = typeof sessaoDe === 'function' ? sessaoDe(iso) : null;
+  const linha = (t, sub, fim) => `<div class="linha" style="align-items:flex-start;border-bottom:0">${glifo(d)}<span class="corpo">${esc(t)}<small>${esc(sub)}</small></span>${fim ? `<span class="num">${fim}</span>` : ''}</div>`;
+  let atividade = '';
+  if (tipo === 'forca') {
+    atividade = linha(f.titulo, (f.sub ? f.sub + ' · ' : '') + (sessao ? sessao.exercicios.length + ' exercícios' : 'sessão no corpo da página'), feitos.length ? 'feito' : '') +
+      (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +
+      (sessao ? `<a class="botao${feitos.length ? ' claro' : ''}" href="#treino/${iso}">${feitos.length ? 'Abrir o treino de novo' : 'Iniciar o treino'}</a>` : '');
+  } else if (tipo === 'corrida') {
+    atividade = linha(f.titulo, f.sub || 'etapas, tempo e voz na tela', feitos.length ? 'feito' : '') +
+      (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +
+      `<a class="botao${feitos.length ? ' claro' : ''}" href="#corrida">${feitos.length ? 'Abrir a corrida guiada de novo' : 'Iniciar a corrida guiada'}</a>`;
+  } else if (tipo === 'jogo') {
+    atividade = linha(f.titulo, f.sub || 'o jogo é o treino do dia', feitos.length ? 'feito' : '') +
+      `<a class="botao claro" href="#reg">Registrar o jogo</a>`;
+  } else if (tipo === 'definir') {
+    atividade = linha(f.titulo, 'a atividade de hoje ainda não está definida no plano');
+  } else {
+    atividade = linha(f.titulo, 'nada para iniciar hoje');
+  }
+  const pr = proximaRefeicao(d, iso);
+  const refeicao = pr
+    ? `<div class="linha" style="align-items:flex-start;border-bottom:0;padding-top:18px"><span class="hora">${esc(pr.hora)}</span><span class="corpo">${esc(pr.nome)}<small>próxima refeição · ${pr.m.kcal} kcal · ${pr.m.prot} g de proteína</small></span></div>
+       <a class="botao claro" href="#reg/refeicao/${encodeURIComponent(pr.ref)}/${iso}">Registrar ${esc(pr.ref.toLowerCase())}</a>`
+    : `<div class="par" style="color:var(--sec);padding-top:18px">Todas as refeições do plano de hoje já têm registro.</div>`;
+  return `<section class="bloco"><div class="cab"><h2>Para fazer hoje</h2><small>${esc(d.nome)} · ${esc(d.data)}</small></div>${atividade}${refeicao}</section>`;
+}
 function renderDia(d, ehHoje) {
   const [dd, mm] = d.data.split('/');
   const foco = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
   const regs = (REGISTROS || []).filter(x => isoDDMM(x.data) === d.data);
   let h = `<div class="campo"><div class="dentro">
-    <div class="topo"><div class="rot">${esc(d.nome)} · ${esc(dd)} ${MES[+mm - 1] || ''}</div><div class="selo">${ehHoje ? 'hoje' : esc(GLIFOS[tipoDoDia(d)][2].toLowerCase())}</div></div>
+    <div class="topo"><div class="rot">${esc(d.nome)} · ${esc(dd)} ${MES[+mm - 1] || ''}</div><div class="selo">${ehHoje ? 'hoje' : esc(GLIFOS[tipoDoDia(d)][2].toLowerCase())}${treinosRegistrados(new Date().getFullYear() + '-' + mm + '-' + dd).length ? ' · feito' : ''}</div></div>
     <h1 class="titulo ${foco.titulo.length > 22 ? 'longo' : ''}">${esc(foco.titulo)}</h1>
     ${foco.sub ? `<div class="sub">${esc(foco.sub)}</div>` : ''}
   </div>${ONDA}</div>` + faixaDias(d.id);
   const isoDia = new Date().getFullYear() + '-' + mm + '-' + dd;
-  h += (typeof linkTreino === 'function' ? linkTreino(isoDia) : '') + (typeof blocoJanela === 'function' ? blocoJanela(d) : '');
+  if (ehHoje) {
+    const tp = tipoProgramado(d);
+    h += (['forca', 'corrida', 'jogo'].includes(tp) && typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoParaHoje(d, isoDia);
+  } else h += (typeof linkTreino === 'function' ? linkTreino(isoDia) : '');
+  h += (typeof blocoJanela === 'function' ? blocoJanela(d) : '');
 
   // treino: exercícios numerados viram linhas; o resto é contexto
   const ex = ((d.treino && d.treino.exercicios) || []).map(e => {
@@ -509,7 +570,7 @@ function renderDia(d, ehHoje) {
   if (n) {
     const meta = DATA.dieta.proteina_alvo || DATA.dieta.proteina, piso = DATA.dieta.proteina_piso;
     h += `<section class="bloco"><div class="cab"><h2>O dia</h2><small>proteína</small></div>${linhas}
-      ${typeof blocoProteina === 'function' ? blocoProteina(isoDia, prot, ehHoje) : ''}</section>`;
+      ${typeof blocoProteina === 'function' ? blocoProteina(isoDia, prot, ehHoje) : ''}</section>` + (ehHoje && typeof blocoComer === 'function' ? blocoComer() : '');
   }
 
   h += `<section class="bloco"><a class="botao" href="#reg">Registrar ${ico('mais')}</a></section>`;
@@ -634,7 +695,7 @@ function renderStatus() {
     <div class="trilho-s" role="img" aria-label="Progresso até ${n(alvo, 0)} kg: ${Math.round(prog * 100)}%"><i style="width:${prog * 100}%"></i><span class="falta${prog > 0.55 ? ' esq' : ''}">faltam ${n(peso - alvo, 1)} kg · ${Math.round(prog * 100)}% do caminho</span><svg class="mb${prog < 0.03 ? ' ini' : ''}" viewBox="0 0 14 20" aria-hidden="true" style="left:${(prog * 100).toFixed(1)}%"><path d="M2 18C0 12 1 6 7 5c6 1 7 7 5 13z" fill="#FFB48F" stroke="#fff" stroke-width="1.2"/><rect x="1" y="12" width="12" height="2.6" fill="#fff"/><circle cx="7" cy="3" r="1.8" fill="#FFB48F" stroke="#fff" stroke-width="1"/></svg><svg class="meta-f" viewBox="0 0 14 16" aria-hidden="true"><path d="M3 15V2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M3 2.5h8l-2 3 2 3H3z" fill="#FFB48F"/></svg></div>
     <div class="cartoes">
       <div class="cartao"><div class="picto p-${at.tipo}${sem ? ' vazio' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${pa[1]}</svg></div>
-        <div class="tx"><div class="rt">Hoje</div><div class="vl">${esc(pa[0])}</div><div class="sb">${esc(at.sub)}</div></div></div>
+        <div class="tx"><div class="rt">Hoje${treinosRegistrados(isoLocal()).length ? ' · feito' : ''}</div><div class="vl">${esc(pa[0])}</div><div class="sb">${esc(at.sub)}</div></div></div>
       <div class="cartao"><div class="picto mar${ec.amp ? '' : ' vazio'}">${pictoMar(ec)}</div>
         <div class="tx"><div class="rt">Corpo</div><div class="vl">${esc(ec.nome)}</div><div class="sb">${esc(ec.sub)}</div></div></div>
     </div>
@@ -668,22 +729,6 @@ function quadroAgora() {
     </div>
     ${(f.lacunas || []).length ? `<div class="aviso" style="margin-top:0;border-top:0">Falta: ${esc(f.lacunas.join(' · '))}</div>` : ''}</section>`;
 }
-function blocoHoje() {
-  const d = DATA.dias.find(x => x.data === hojeDDMM());
-  if (!d) {
-    const agora = new Date(), chave = x => { const [dd, mm] = x.data.split('/'); return new Date(2026, +mm - 1, +dd); };
-    const prox = DATA.dias.find(x => chave(x) >= new Date(agora.getFullYear(), agora.getMonth(), agora.getDate()));
-    if (!prox) return `<section class="bloco"><div class="cab"><h2>Hoje</h2></div><div class="aviso" style="margin-top:0;border-top:0">O plano publicado não cobre o dia de hoje. A semana nova entra depois do conselho de domingo.</div></section>`;
-    const fp = partirFoco((prox.treino && prox.treino.foco) || 'Dia livre');
-    return `<section class="bloco"><div class="cab"><h2>Hoje</h2><small>fora do plano publicado</small></div>
-      <div class="par" style="color:var(--sec)">A semana publicada começa em ${esc(prox.nome.toLowerCase())}, ${esc(prox.data)}. O dia de hoje não tem plano escrito.</div>
-      <a class="linha" href="#${prox.id}">${glifo(prox)}<span class="corpo">Próximo: ${esc(fp.titulo)}<small>${esc(prox.nome)} · ${esc(prox.data)}</small></span></a></section>`;
-  }
-  const f = partirFoco((d.treino && d.treino.foco) || 'Dia livre'), r = d.refeicoes || {};
-  const prot = SLOTS.reduce((a, [k]) => a + ((r[k] && r[k].prot) || 0), 0);
-  return `<section class="bloco"><div class="cab"><h2>Hoje</h2><small>${esc(d.nome)} · ${esc(d.data)}</small></div>
-    <a class="linha" href="#hoje">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(f.sub || 'toque para abrir o dia')}</small></span><span class="num">${prot}<small> g</small></span></a></section>`;
-}
 function blocoDestino() {
   if (!DASH) return '';
   const P = DASH.peso, V = DASH.vo2max, prog = Math.max(0, Math.min(1, P.progresso || 0));
@@ -703,7 +748,7 @@ function blocoEspecialistas() {
         ${(r.nao_sei || []).length ? `<div class="cat">O que eu não sei</div>${r.nao_sei.map(x => `<div class="par" style="color:var(--sec)">${esc(x)}</div>`).join('')}` : ''}</div></details>`).join('') + `</section>`;
 }
 function blocoCardapio() {
-  const largo = matchMedia('(min-width: 720px)').matches, hoje = hojeDDMM();
+  const largo = matchMedia('(min-width: 720px)').matches;
   const dias = DATA.dias.map(d => {
     const r = d.refeicoes || {}; let kcal = 0, prot = 0;
     const linhas = SLOTS.map(([chave, rot]) => { const m = r[chave]; if (!m) return '';
@@ -713,7 +758,7 @@ function blocoCardapio() {
       if (t) { hora = t[1]; nome = nome.slice(t[0].length); }
       return `<div class="crow"><span class="slot">${esc(hora)}</span><span class="oque">${esc(nome)}</span><span class="g">${m.prot} g</span></div>`; }).join('');
     if (!linhas) return '';
-    return `<details class="cdia ${d.data === hoje ? 'hoje' : ''}" ${largo || d.data === hoje ? 'open' : ''}>
+    return `<details class="cdia" ${largo ? 'open' : ''}>
       <summary><span class="hora">${esc(d.nome.slice(0, 3))} ${esc(d.data.slice(0, 2))}</span><span class="corpo">${kcal.toLocaleString('pt-BR')} kcal · ${prot} g de proteína<small>${esc(partirFoco((d.treino && d.treino.foco) || '').titulo)}</small></span></summary>
       <div class="miolo">${linhas}<a href="#${d.id}" style="display:inline-block;padding:14px 0 10px;font-size:13.5px;font-weight:700">abrir o dia inteiro</a></div></details>`; }).join('');
   if (!dias) return '';
@@ -722,7 +767,7 @@ function blocoCardapio() {
 }
 // Cada bloco do Início (menos o 'Agora') vira uma linha que abre ao toque. O resumo fica à vista
 // com o bloco fechado, e o que foi aberto fica lembrado neste aparelho.
-const ABERTOS_PADRAO = ['Pode treinar hoje?', 'Hoje', 'O que como agora'];
+const ABERTOS_PADRAO = [];
 function dobrarSecoes(abertos = ABERTOS_PADRAO, chave = 'secoes') {
   let guardado = {}; try { guardado = JSON.parse(localStorage.getItem(chave) || '{}'); } catch (e) {}
   [...document.querySelectorAll('#view > section.bloco')].slice(1).forEach(sec => {
@@ -747,11 +792,12 @@ function renderInicio() {
     <div class="sub">${T(DATA.objetivo)}</div></div></div>`;
 
   h += abasInicio('semana');
-  h += (typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoHoje() + (typeof linkTreino === 'function' ? linkTreino(isoLocal()) : '') + (typeof linkCorrida === 'function' ? linkCorrida() : '') +
-    (typeof blocoComer === 'function' ? blocoComer() : '') + quadroAgora() + blocoCardapio() + blocoDestino() + blocoEspecialistas();
-  const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${st.feito ?? 0} de ${st.planejado ?? '—'} treinos</small></div>` +
+  // O Início é da semana e do corpo: nada daqui depende do dia de hoje. O que é de hoje (treino, corrida,
+  // refeições, semáforo, "o que como agora") mora só na aba Hoje, com o botão de iniciar cada coisa.
+  h += quadroAgora() + blocoCardapio() + blocoDestino() + blocoEspecialistas();
+  const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${Math.max(st.feito ?? 0, DATA.dias.filter(d => treinosRegistrados(isoDiaDoPlano(d.data)).length).length)} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
-      return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${d.data === hojeDDMM() ? ' · hoje' : ''}</small></span></a>`; }).join('') +
+      return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${treinosRegistrados(isoDiaDoPlano(d.data)).length ? ' · treino feito' : ''}</small></span></a>`; }).join('') +
     ((st.dias_feitos || []).length ? `<div class="aviso">${st.dias_feitos.map(T).join(' ')}</div>` : '') +
     `<div class="aviso" style="${(st.dias_feitos || []).length ? 'margin-top:0;border-top:0;padding-top:0' : ''}">Plano: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal e ${DATA.dieta.proteina} g de proteína por dia. O alvo real é ${DATA.dieta.proteina_alvo || 160} g, com piso de ${DATA.dieta.proteina_piso || 140} g; o plano é escrito mais alto porque a execução costuma entregar 85 a 90%.</div></section>`;
 
@@ -1221,6 +1267,7 @@ function route() {
   if (id === 'reg' || id.startsWith('reg/')) { const pr = id.split('/'); if (pr[1] === 'refeicao') { REG_TIPO = 'refeicao'; REG_PRESET = { refeicao: decodeURIComponent(pr[2] || ''), data: pr[3] || '' }; } renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
   if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
+  if ((id === 'corrida' && typeof renderCorrida !== 'function') || (/^treino(\/|$)/.test(id) && typeof renderTreino !== 'function')) { window.addEventListener('load', route, { once: true }); return; }   // link direto antes dos scripts carregarem
   if (id === 'corrida') { renderNav('hoje'); renderCorrida(); window.scrollTo(0, 0); return; }
   if (/^treino(\/|$)/.test(id)) { renderNav('hoje'); renderTreino(id); window.scrollTo(0, 0); return; }
   const hoje = DATA.dias.find(d => d.data === hojeDDMM());
@@ -1240,7 +1287,7 @@ document.addEventListener('visibilitychange', () => {
 fetch("data/semana.json").then(r => r.json()).then(d => {
   DATA = d;
   window.addEventListener("hashchange", route);
-  route();
+  try { route(); } catch (e) { console.error(e); }   // se falhar, os dados que chegam depois redesenham a tela
   // Tudo que chega depois redesenha a tela, menos o formulário (para não apagar o que está sendo digitado).
   const redesenha = () => { const id = (location.hash || '#home').slice(1); if (id !== 'reg' && id !== 'evo' && id !== 'corrida' && !id.startsWith('treino')) route(); };
   fetch("data/fatos.json").then(r => r.ok ? r.json() : null).then(f => { FATOS = f; renderStatus(); if (f) redesenha(); }).catch(() => {});

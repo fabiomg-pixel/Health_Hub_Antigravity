@@ -893,3 +893,25 @@ do Telegram, que só o `reply` entrega (com a linha do `ToolSearch`), e o gancho
 `reply` depois. Testado contra os três registros reais: bloqueia os dois que falharam, libera o que respondeu.
 **Lição:** sessão reiniciada só é "no ar" depois de uma mensagem de teste respondida de ponta a ponta; ver o
 processo vivo não prova entrega.
+
+## 24. Início sem o dia, Hoje com o botão de começar (pedido do Fabio, 13/10/2026)
+
+O Fabio abriu o painel numa terça de Lower A e viu um cartão de "Corrida guiada" que não estava no plano.
+A causa: o cartão era fixo no Início. A regra, a partir daqui:
+- **Início = semana e corpo.** Nada que dependa do dia de hoje: saíram o semáforo, o bloco Hoje, o treino do
+  dia, a corrida guiada e o "o que como agora". Ficaram Agora (corpo), cardápio da semana, destino, especialistas,
+  os dias, prontidão, relatório, regras e compras. O cardápio não abre mais "o dia de hoje" sozinho.
+- **Hoje = só o programado, com botão.** Seção "Para fazer hoje": treino de força → "Iniciar o treino";
+  corrida → "Iniciar a corrida guiada" (**só em dia de corrida**: seg, qua e dom nesta semana); jogo → "Registrar o
+  jogo"; descanso ou dia leve → "nada para iniciar"; "a definir" → diz que falta definir. Junto, a próxima
+  refeição do plano que ainda não tem registro, com "Registrar <refeição>". Antes vem o semáforo "Pode treinar
+  hoje?" (se há treino, corrida ou jogo) e depois a janela do dia, a sessão, as refeições e "o que como agora".
+- **"Feito" é deduzido dos registros** (tipo Treino na data do dia): selo "hoje · feito", barra sob o dia na faixa
+  dos dias, "· treino feito" em Os dias, e o contador da semana usa o maior entre o `status_treino.feito` manual e o
+  que os registros mostram. O `status_treino` manual continua existindo como piso.
+- **Erro que quase passou:** o `isoDoDia` mora no `decisao.js`, que carrega depois do script principal. A primeira
+  renderização em produção chamou-o antes de existir, falhou dentro da promessa e derrubou o carregamento do resto:
+  tela vazia. No teste local funcionou porque os arquivos vinham do cache. Correções: auxiliar local
+  `isoDiaDoPlano` com guarda `typeof`, `try/catch` na primeira renderização e espera de `load` para `#corrida` e
+  `#treino` abertos direto. **Lição:** testar com o cache do service worker limpo e com os dados reais da API,
+  não só com registros simulados.

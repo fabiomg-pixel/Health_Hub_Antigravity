@@ -14,6 +14,7 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - Treino: corridas com teto de 8,0 km/h; sem progressão de kg em peso do corpo; tornozelo liberado; Fitbod descartado (git 77dca63, 2ce770c, d0e38a5).
 - Sempre commitar o que mudar; nunca dar push (o ambiente bloqueia o GitHub).
 - Sessão do bot: a resposta só chega ao Fabio pela ferramenta mcp__plugin_telegram_telegram__reply; texto no terminal não chega (gancho Stop bloqueia o turno sem reply).
+- Painel: o Início é da semana e do corpo, sem NADA específico do dia. A aba Hoje mostra só o que está programado para hoje, com botão para iniciar (treino, corrida só se estiver no plano, jogo, próxima refeição). "Treino feito" é deduzido dos registros do site, não de contador manual. (Fabio, 13/10)
 
 ## Registro
 - 2026-10-10 | app | Fabio: "Se não sabe, não toma decisão" | PROJETO_CHAT §18
@@ -25,3 +26,4 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - 2026-10-12 | app | Fabio: decisões tomadas no bot e no app precisam chegar uma à outra; criado este livro, o ./passagem.sh e o gancho | PROJETO_CHAT §23
 - 2026-10-12 | app | Falha: as sessões do bot de 04h30 e 11h35 não enviaram a resposta (texto no terminal). Corrigido com aviso injetado + gancho Stop | PROJETO_CHAT §23, garantir_resposta_telegram.py
 - 2026-10-12 | bot | Fabio confirmou: as duas coxinhas do lanche de 12/10 contam como fritura (1 de no máximo 2 na semana 12–18/10; a refeição livre de sábado 17/10, se frita, é a 2ª). Semana vai de segunda a domingo. | alimentacao.json (meta fritura), relato do Fabio
+- 2026-10-13 | app | Fabio: Início sem nada do dia; Hoje só com o programado e botão de iniciar (treino, corrida se programada, jogo, refeição); treino feito deduzido dos registros. Corrida guiada saiu do Início | painel/index.html, git
