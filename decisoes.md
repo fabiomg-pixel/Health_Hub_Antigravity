@@ -15,6 +15,7 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - Sempre commitar o que mudar; nunca dar push (o ambiente bloqueia o GitHub).
 - Sessão do bot: a resposta só chega ao Fabio pela ferramenta mcp__plugin_telegram_telegram__reply; texto no terminal não chega (gancho Stop bloqueia o turno sem reply).
 - Painel: o Início é da semana e do corpo, sem NADA específico do dia. A aba Hoje mostra só o que está programado para hoje, com botão para iniciar (treino, corrida só se estiver no plano, jogo, próxima refeição). "Treino feito" é deduzido dos registros do site, não de contador manual. (Fabio, 13/10)
+- Mensagens automáticas do copiloto (brief das 8h, avaliação das 22h30) saem pelo bot NOVO (@Silvester_TheTrainer_bot) com ./enviar_telegram_saude.py, nunca pelo plugin do Telegram de uma sessão agendada (é o bot antigo). O texto enviado fica em ultimo_envio.md e a passagem o mostra ao bot. Os roteiros vivem em rotinas/. (Fabio, 14/10)
 
 ## Registro
 - 2026-10-10 | app | Fabio: "Se não sabe, não toma decisão" | PROJETO_CHAT §18
@@ -27,3 +28,4 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - 2026-10-12 | app | Falha: as sessões do bot de 04h30 e 11h35 não enviaram a resposta (texto no terminal). Corrigido com aviso injetado + gancho Stop | PROJETO_CHAT §23, garantir_resposta_telegram.py
 - 2026-10-12 | bot | Fabio confirmou: as duas coxinhas do lanche de 12/10 contam como fritura (1 de no máximo 2 na semana 12–18/10; a refeição livre de sábado 17/10, se frita, é a 2ª). Semana vai de segunda a domingo. | alimentacao.json (meta fritura), relato do Fabio
 - 2026-10-13 | app | Fabio: Início sem nada do dia; Hoje só com o programado e botão de iniciar (treino, corrida se programada, jogo, refeição); treino feito deduzido dos registros. Corrida guiada saiu do Início | painel/index.html, git
+- 2026-10-14 | app | Fabio: o briefing foi apagado de propósito para ser refeito e passar pelo bot novo. Recriados o brief (8h03) e a avaliação (22h33), com roteiros em rotinas/ e envio por enviar_telegram_saude.py | rotinas/, enviar_telegram_saude.py, agendador

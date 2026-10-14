@@ -21,6 +21,15 @@ if [ -f "$DI" ]; then
   H=$(( ( $(date +%s) - $(stat -f %m "$DI") ) / 3600 ))
   [ "$H" -ge 36 ] && echo "!!! ALERTA: a análise automática diária parece parada: o diario_execucao.json não é atualizado há ${H} h (última vez: $(stat -f '%Sm' -t '%d/%m %H:%M' "$DI")). Registros feitos desde então podem não ter sido lidos por ninguém. Diga isso ao Fabio."
 fi
+# O que o bot enviou por último (brief das 8h, avaliação da noite): o Fabio responde A ISSO pelo Telegram.
+UE=ultimo_envio.md
+if [ -f "$UE" ]; then
+  HE=$(( ( $(date +%s) - $(stat -f %m "$UE") ) / 3600 ))
+  if [ "$HE" -lt 48 ]; then
+    echo "--- Última mensagem que o bot enviou ao Fabio (há ${HE} h). Se ele responder pelo Telegram, é sobre isto:"
+    head -16 "$UE" | cut -c1-220
+  fi
+fi
 echo "--- Regras vigentes (decisoes.md)"
 [ -f "$L" ] && awk '/^## Regras vigentes/{f=1;next} /^## /{f=0} f&&NF' "$L" || echo "(decisoes.md não encontrado)"
 echo "--- Últimas decisões registradas"

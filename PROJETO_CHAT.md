@@ -915,3 +915,23 @@ A causa: o cartão era fixo no Início. A regra, a partir daqui:
   `isoDiaDoPlano` com guarda `typeof`, `try/catch` na primeira renderização e espera de `load` para `#corrida` e
   `#treino` abertos direto. **Lição:** testar com o cache do service worker limpo e com os dados reais da API,
   não só com registros simulados.
+
+## 25. Brief e avaliação pelo bot novo (14/10/2026)
+
+O Fabio apagou os dois agendamentos diários de propósito, para refazê-los e passar as mensagens pelo bot novo
+(@Silvester_TheTrainer_bot). Antes eu tinha lido o sumiço como falha; a análise diária ficou parada de 11/10 a
+14/10 e o diário não foi atualizado (`diario_execucao.json` de 10/10 22h33). **Lição:** ao ver uma tarefa sumir,
+perguntar antes de afirmar que quebrou; mas o alarme da passagem (36 h sem atualizar o diário) continua válido.
+- **Envio:** `enviar_telegram_saude.py <brief|avaliacao|aviso>` lê o texto no stdin e envia pela API do bot novo.
+  O token só é lido dentro do script (a URL vai pelo stdin do curl, nunca em argv). Grava `ultimo_envio.md`;
+  a passagem o mostra ao bot, para ele saber a que o Fabio responde. `--verificar` confere bot e chat sem enviar.
+- **Roteiros:** `rotinas/brief_matinal.md` e `rotinas/avaliacao_noite.md`, versionados. As tarefas agendadas só
+  apontam para eles. Os textos antigos estão em `rotinas/arquivo/`. Mudanças em relação aos antigos: o bot agora
+  conversa (convida a responder), lê os registros pela API do site (não pelo Notion), cita só o que está
+  programado hoje, aplica as regras vigentes (fritura, vegetal, metas da nutricionista) e não recalcula o
+  semáforo (é do painel).
+- **Horários:** brief 08h03 e avaliação 22h33, todos os dias. Rodam em sessão própria com cwd na pasta-mãe
+  (`/Users/fabiogomes/Documents/Claude`), então o gancho do projeto NÃO dispara nelas: os roteiros mandam rodar
+  `./passagem.sh` na mão.
+- **Aprovações:** a primeira execução de uma tarefa nova para e espera o Fabio aprovar as permissões de shell
+  na tela da sessão; depois ficam guardadas na tarefa. Cada tarefa tem as suas.

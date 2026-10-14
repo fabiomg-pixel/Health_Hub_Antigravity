@@ -17,3 +17,6 @@ carryover.txt
 __pycache__/
 *.pyc
 logs/
+
+# Texto do último envio do bot (a passagem o mostra ao bot; é runtime)
+ultimo_envio.md
