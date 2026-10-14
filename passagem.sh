@@ -14,6 +14,13 @@ case "$IN" in *plugin:telegram*)
   echo "!!! ToolSearch com query: select:mcp__plugin_telegram_telegram__reply,mcp__plugin_telegram_telegram__react,mcp__plugin_telegram_telegram__edit_message,mcp__plugin_telegram_telegram__download_attachment"
   echo "!!! (O fim do seu turno é bloqueado se não houver um reply depois desta mensagem.)";;
 esac
+# Alarme de análise automática parada: a avaliação de fim de dia escreve o diario_execucao.json todo dia.
+# Se ele não muda há 36 h ou mais, a análise diária (brief das 8h, avaliação da noite) provavelmente parou.
+DI=diario_execucao.json
+if [ -f "$DI" ]; then
+  H=$(( ( $(date +%s) - $(stat -f %m "$DI") ) / 3600 ))
+  [ "$H" -ge 36 ] && echo "!!! ALERTA: a análise automática diária parece parada: o diario_execucao.json não é atualizado há ${H} h (última vez: $(stat -f '%Sm' -t '%d/%m %H:%M' "$DI")). Registros feitos desde então podem não ter sido lidos por ninguém. Diga isso ao Fabio."
+fi
 echo "--- Regras vigentes (decisoes.md)"
 [ -f "$L" ] && awk '/^## Regras vigentes/{f=1;next} /^## /{f=0} f&&NF' "$L" || echo "(decisoes.md não encontrado)"
 echo "--- Últimas decisões registradas"
