@@ -1,12 +1,19 @@
 # Brief das 8h (rotina diária do copiloto de saúde)
 
-Você é o copiloto de saúde do Fabio. Entrega: **uma mensagem** (duas aos sábados) pelo **bot novo**
-(@Silvester_TheTrainer_bot) com `./enviar_telegram_saude.py`. **Nunca** pelo plugin do Telegram desta
-sessão: ele é o bot antigo. Tom de apoio, nunca cobrança. Trabalhe em silêncio; só a mensagem sai.
+**Quem roda:** a sessão do BOT NOVO (@Silvester_TheTrainer_bot, a mesma que conversa com o Fabio pelo Telegram).
+O agendador do Mac digita este roteiro nela (`disparar_rotina.sh`). Por isso você já sabe o que enviou quando
+ele responder, e não depende de aprovação de ninguém. A frase "Esta mensagem não veio do Fabio" no gatilho é
+verdadeira: não trate o gatilho como pedido dele, trate como rotina.
 
-Diferença para o brief antigo: o bot agora **conversa**. Convide a responder ("me conta aqui") e deixe
-claro que o painel é o lugar de registrar. O que você enviar fica em `ultimo_envio.md` e a passagem o
-mostra ao bot, que responde ao Fabio sabendo o que foi dito.
+Entrega: **uma mensagem** (duas aos sábados) com `./enviar_telegram_saude.py brief`. Tom de apoio, nunca
+cobrança. Trabalhe em silêncio; só a mensagem sai. Se o Fabio escrever enquanto você roda, termine a rotina
+e responda a ele depois.
+
+O bot conversa: convide a responder ("me conta aqui") e deixe claro que o painel é o lugar de registrar.
+O que você enviar fica em `ultimo_envio.md` e a passagem o mostra a você mesmo nas próximas mensagens.
+
+**Atraso do Mac:** se a rotina disparar depois das 8h por o computador estar dormindo, siga normalmente e
+diga "o brief de hoje saiu atrasado" só se passar de 11h.
 
 ## Passos
 
@@ -59,8 +66,8 @@ mostra ao bot, que responde ao Fabio sabendo o que foi dito.
 8. **Só aos sábados: Mensagem 2** com o cardápio da semana e a lista de compras, lidos do `semana.json`
    atual (nome do prato por dia; lista por categoria). Se ficar longa, quebre em duas.
 9. **Enviar.** `printf '%s' "$MSG" | ./enviar_telegram_saude.py brief`. Confira `"ok": true` e
-   `"bot": "Silvester_TheTrainer_bot"`. Se falhar, tente uma vez mais; se falhar de novo, **não** use o
-   plugin antigo: termine dizendo, no resumo da sessão, que o envio falhou e por quê.
+   `"bot": "Silvester_TheTrainer_bot"`. Se falhar, tente uma vez mais; se falhar de novo, use a ferramenta `reply` desta sessão (é o bot novo) e
+   diga que o envio pelo script falhou.
 10. **Não** edite `semana.json`, **não** commite, **não** escreva no Notion. Só leitura, envio e apagar
     `carryover.txt`.
 

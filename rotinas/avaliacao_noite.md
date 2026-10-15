@@ -1,16 +1,21 @@
 # Avaliação de fim de dia (rotina diária do copiloto de saúde)
 
-Você é o copiloto de saúde do Fabio fechando o dia. Entrega: **uma mensagem curta** pelo **bot novo**
-(@Silvester_TheTrainer_bot) com `./enviar_telegram_saude.py avaliacao`, mais uma linha em
-`diario_execucao.json` e o `carryover.txt` de amanhã. **Nunca** pelo plugin do Telegram desta sessão (bot
-antigo). Tom de apoio. Adesão parcial é progresso, não falha. O plano é hipótese; mude pouca coisa.
+**Quem roda:** a sessão do BOT NOVO (@Silvester_TheTrainer_bot, a mesma que conversa com o Fabio). O agendador
+do Mac digita este roteiro nela (`disparar_rotina.sh`); a frase "Esta mensagem não veio do Fabio" no gatilho é
+verdadeira. Entrega: **uma mensagem curta** com `./enviar_telegram_saude.py avaliacao`, mais uma linha em
+`diario_execucao.json` e o `carryover.txt` de amanhã. Tom de apoio. Adesão parcial é progresso, não falha.
+O plano é hipótese; mude pouca coisa.
+
+**Qual dia avaliar (importante):** esta rotina é das 22h33. Se o Mac dormia e ela disparou de madrugada ou de
+manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o carryover com carimbo de HOJE
+(`para: ` a data de hoje). Depois das 12h, avalie HOJE e carimbe AMANHÃ.
 
 ## Passos
 
 0. **Passagem.** O gancho já injetou regras vigentes e decisões; se não, `./passagem.sh`. Respeite as
    regras vigentes (vegetal visível, metas da nutricionista, fritura) ao avaliar. Se houver `!!! ALERTA`,
    diga em uma linha.
-1. Datas: `date +%d/%m`, `date +%Y-%m-%d`.
+1. Datas: defina o DIA AVALIADO pela regra acima e use-o em todos os passos (`date -v-1d +%d/%m` ou `date +%d/%m`).
 2. **O que ele registrou hoje.** `curl -s https://painel-xi-three.vercel.app/api/registros` → `items[]`.
    Filtre `data` == hoje. Inclua os de tipo Treino (o painel grava série a série) e Observação.
 3. **O plano de hoje** em `painel/data/semana.json` (dia por `data` DD/MM): atividade programada e as
@@ -42,8 +47,7 @@ antigo). Tom de apoio. Adesão parcial é progresso, não falha. O plano é hip�
    Pode me responder aqui: eu anoto e ajusto.
    ```
 8. **Enviar.** `printf '%s' "$MSG" | ./enviar_telegram_saude.py avaliacao`. Confira `"ok": true` e
-   `"bot": "Silvester_TheTrainer_bot"`. Se falhar, tente uma vez mais; se falhar de novo, **não** use o
-   plugin antigo: diga no resumo da sessão que falhou.
+   `"bot": "Silvester_TheTrainer_bot"`. Se falhar, tente uma vez mais; se falhar de novo, use a ferramenta `reply` desta sessão (é o bot novo).
 9. **Autonomia.** Pode, sozinho: trocar dias entre si, cortar volume, mover treino para casa ou esteira,
    substituir sessão por chuva, calor, reunião ou índice vermelho. Precisa do conselho: mudar meta da
    semana, mexer em macro, mudar o molde fixo. **Parar e escalar:** dor articular, anti-inflamatório, dois

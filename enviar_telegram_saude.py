@@ -9,7 +9,7 @@ Aqui o envio vai direto pela API do bot novo, o mesmo que conversa com o Fabio, 
 ultimo_envio.md: a passagem (passagem.sh) o mostra ao bot, para ele saber a que o Fabio está respondendo.
 O token só é lido aqui dentro: não vai para argumentos de processo, saída nem log.
 """
-import datetime, json, os, subprocess, sys, tempfile
+import datetime, json, os, subprocess, sys, tempfile, time
 
 BASE = os.path.expanduser('~/.claude/channels/telegram-saude')
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -87,7 +87,11 @@ def main():
         sys.exit('ERRO: mensagem vazia')
     alvo, ids, usuario = chat(), [], None
     for p in partes(texto):
-        r = api('sendMessage', texto=p, chat_id=alvo)
+        for tentativa in range(3):   # o Telegram limita a taxa ("Too Many Requests: retry after N"): espera e repete
+            r = api('sendMessage', texto=p, chat_id=alvo)
+            espera = (r.get('parameters') or {}).get('retry_after')
+            if r.get('ok') or not espera or tentativa == 2: break
+            time.sleep(int(espera) + 1)
         if not r.get('ok'):
             sys.exit('ERRO: envio recusado: ' + str(r.get('description')))
         ids.append(r['result']['message_id']); usuario = (r['result'].get('from') or {}).get('username')

@@ -935,3 +935,26 @@ perguntar antes de afirmar que quebrou; mas o alarme da passagem (36 h sem atual
   `./passagem.sh` na mão.
 - **Aprovações:** a primeira execução de uma tarefa nova para e espera o Fabio aprovar as permissões de shell
   na tela da sessão; depois ficam guardadas na tarefa. Cada tarefa tem as suas.
+
+### 25b. A rota mudou: as rotinas rodam dentro do bot, disparadas pelo launchd (15/10/2026)
+
+Os agendamentos recriados no app (§25) **falharam no primeiro dia**: o Mac dormiu durante a avaliação (a sessão
+travou no meio e ficou "running"), a sessão do brief parou esperando aprovações de shell que só o Fabio dá na
+tela, e uma sessão parada bloqueia as seguintes. O Fabio ficou 2 dias sem mensagens. Solução: o brief e a avaliação
+passam a rodar **dentro da sessão do bot novo**, que já executa comandos sem aprovação (`auto mode`), conversa com o
+Fabio e, por isso, sabe o que enviou. As duas tarefas do app ficam **pausadas**.
+- **Disparo:** LaunchAgents `br.fabiogomes.saude.brief` (08h03) e `.avaliacao` (22h33) chamam
+  `~/.claude/channels/telegram-saude/disparar_rotina.sh`, que digita no `screen` "saude" uma linha curta mandando
+  executar `rotinas/brief_matinal.md` ou `rotinas/avaliacao_noite.md`. O launchd roda a tarefa perdida quando o Mac
+  acorda. O script fica fora de `~/Documents` de propósito (o launchd não acessa Documents sem permissão especial).
+  Registra em `disparos.log` e não dispara duas vezes no mesmo dia (`--forcar` ignora; `--simular` só mostra).
+- **Armadilhas achadas (todas no `screen` do macOS):** sem `-p 0` o `stuff` não entrega a digitação à sessão;
+  `stuff` acima de ~250 caracteres some em silêncio; digitar texto e Enter juntos pode virar colagem, então o Enter
+  vai 2 s depois. Se o Mac acordar tarde, a avaliação das 22h33 avalia ONTEM quando roda antes das 12h (regra no roteiro).
+- **Envio:** o script repete sozinho quando o Telegram responde "Too Many Requests". Ele já tinha um incidente: a
+  primeira tentativa do dia falhou por limite de taxa e a segunda passou (mensagem 154), sem duplicata.
+- **A sessão do bot pode estar sem conexão com o Telegram.** Em 15/10 o `bot.pid` não existia e o bot não recebia
+  mensagens; a sessão do secretário a reiniciou às 13h04 (o que derrubou o primeiro disparo). Sinal de alerta:
+  `~/.claude/channels/telegram-saude/bot.pid` ausente ou com processo morto.
+- **Lição:** uma rotina nova só vale depois de uma execução real, de ponta a ponta, pelo caminho que vai usar
+  (a de hoje, às 13h12, foi a primeira). Ver "tarefa criada" não prova nada.
