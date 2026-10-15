@@ -12,6 +12,7 @@ python3 renpho_pull.py --days 30 > renpho_out.json 2>/dev/null
 python3 synthesize.py > /dev/null 2>&1
 python3 fatos.py > fatos.json 2>/dev/null
 python3 dashboard.py
+python3 jornada.py || echo "⚠️ jornada.py falhou: a Campanha fica com o cálculo anterior"
 cd painel
 # A primeira chamada às vezes só gera preview; a segunda garante o alias de produção.
 npx vercel deploy --prod --yes > /dev/null 2>&1

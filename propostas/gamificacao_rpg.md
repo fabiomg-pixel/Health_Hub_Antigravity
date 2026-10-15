@@ -45,7 +45,7 @@ VO₂ máx de 46 a 47** (`metas.json`).
 |---|---|---|
 | **A Névoa** | Sono curto e cansaço | Noite abaixo de 6 h, ou observação de cansaço |
 | **A Tempestade das Agendas** | Reuniões, congressos, viagens, feriados ocupados | Observação ou relato de agenda |
-| **A Febre do Pântano** | Doença | Observação de resfriado, febre, dor |
+| **O Mal do Pântano** | Doença | Observação de doença registrada (resfriado, dor, febre) |
 | **O Banquete das Sereias** | Fritura e beliscos fora do plano, sem moralizar | Registro de fritura (conta o orçamento de 2 por semana) |
 
 ## 4. Estrutura da campanha
@@ -134,23 +134,9 @@ crônica diz isso com honestidade e sem culpa ("o platô resistiu esta semana").
 
 ## 8. Exemplo: prólogo e capítulo 1 (só fatos registrados)
 
-> **Prólogo.** No verão, Fabio encadeou cinco capítulos seguidos: de 13 de julho a 10 de agosto, nenhuma
-> semana teve menos de quatro dias ativos nem menos de quatro pesagens. Agosto foi o melhor mês do livro, com
-> 18 dias ativos. Então veio a Tempestade das Agendas: setembro fechou com 9 dias ativos, e as semanas seguintes
-> passaram sem nenhum capítulo concluído. Em outubro, depois do congresso, ele voltou ao ponto de partida: 95
-> quilos pela média das leituras neutras. Disse ao Conselho que ia "retomar, quase do zero, a constância".
-> O Guardião do Platô esperava logo à frente.
->
-> **Capítulo 1: O Retorno** (12 a 18 de outubro, escrito até quinta).
-> Segunda era feriado, e a corrida da manhã ficou para trás por compromissos de trabalho. Mas o almoço foi o
-> combinado (frango agridoce e salada), e a tarde virou uma longa caminhada até o ato e de volta. Às 17h, o
-> Banquete das Sereias cobrou o seu preço: duas coxinhas, a primeira das duas frituras da semana.
-> Na terça, o primeiro Lower A depois do congresso: 37 minutos, leg press com 150 kg em quatro séries de oito,
-> stiff com 50 kg. A Febre do Pântano chegou no mesmo dia, com garganta e cansaço, e uma reunião empurrou o
-> almoço para as quatro da tarde.
-> Na quarta, mesmo com o resfriado piorando, a corrida guiada de 30 minutos saiu inteira.
-> Na quinta, Silvester mediu a Vitalidade: índice 28, ferido. A estalagem está aberta. O jogo das 20h é
-> decisão do herói.
+O prólogo e o capítulo 1 vivem em `historia/livro/` e são lidos pelo motor (`jornada.py`). A primeira versão
+deste exemplo dizia que nenhum capítulo tinha sido concluído depois de agosto; o motor mostrou que 21 e 28/09
+foram concluídos, e o texto foi corrigido. É a regra 1 da crônica funcionando: o texto segue os dados.
 
 ## 9. Riscos específicos do RPG
 

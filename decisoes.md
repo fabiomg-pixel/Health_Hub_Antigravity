@@ -17,6 +17,8 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - Painel: o Início é da semana e do corpo, sem NADA específico do dia. A aba Hoje mostra só o que está programado para hoje, com botão para iniciar (treino, corrida só se estiver no plano, jogo, próxima refeição). "Treino feito" é deduzido dos registros do site, não de contador manual. (Fabio, 13/10)
 - Mensagens automáticas do copiloto (brief 8h03, avaliação 22h33) são rotinas que o launchd digita DENTRO da sessão do bot novo (@Silvester_TheTrainer_bot, screen "saude", via ~/.claude/channels/telegram-saude/disparar_rotina.sh); o bot envia com ./enviar_telegram_saude.py. Roteiros em rotinas/. As tarefas do app (agendador do Claude) ficam PAUSADAS: dependem de o Mac acordado e de aprovações na tela. (Fabio, 14-15/10)
 
+- A Campanha dos 85 (gamificação em RPG) está no ar: motor jornada.py, livro historia/livro/, tela #campanha. XP só por comportamento; o peso nunca dá nem tira XP; sem dado não pune. Estalagem (descanso que conta): o Silvester propõe, e só depois do "sim" do Fabio roda ./estalagem.py AAAA-MM-DD "motivo" e ./publicar_jornada.sh. Crônica do capítulo: o Silvester escreve no domingo, só com fatos registrados, sem culpa. (Fabio delegou todas as decisões em 15/10)
+
 ## Registro
 - 2026-10-10 | app | Fabio: "Se não sabe, não toma decisão" | PROJETO_CHAT §18
 - 2026-10-10 | app | Fabio fechou a semana 12–18/10: marmitas, futebol quinta, campeonato sábado; 2 forças e até 5 corridas | semana.json
@@ -31,3 +33,4 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - 2026-10-14 | app | Fabio: o briefing foi apagado de propósito para ser refeito e passar pelo bot novo. Recriados o brief (8h03) e a avaliação (22h33), com roteiros em rotinas/ e envio por enviar_telegram_saude.py | rotinas/, enviar_telegram_saude.py, agendador
 - 2026-10-15 | app | Rotinas diárias passaram do agendador do app para o launchd digitando na sessão do bot (auto mode, sem aprovações, e o bot sabe o que enviou). Brief 8h03 e avaliação 22h33; tarefas do app pausadas | rotinas/disparar_rotina.sh, LaunchAgents br.fabiogomes.saude.*
 - 2026-10-15 | app | Fabio: a gamificação será RPG do protótipo, contando uma história (Campanha dos 85). A mecânica da proposta v2 continua valendo; o RPG é a forma de contar | propostas/gamificacao_rpg.md
+- 2026-10-15 | app | Fabio delegou todas as decisões da Campanha ('me surpreenda'). Escolhi: começa já (capítulo 1 = semana de 12/10, XP desde julho), 5 missões, estalagem proposta pelo Silvester e confirmada por ele, esposa fora por ora, Campanha em tela escura, livro em 3ª pessoa e Silvester em 2ª | propostas/gamificacao_rpg.md, jornada.py, painel/campanha.js

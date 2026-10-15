@@ -1,0 +1,445 @@
+{
+ "gerado_em": "2026-10-15T16:38:15",
+ "fontes": {
+  "registros_ok": true,
+  "registros_desde": "2026-09-02",
+  "garmin_ate": "2026-10-15"
+ },
+ "personagem": {
+  "nome": "Fabio",
+  "classe": "Pesquisador de Campo",
+  "nivel": 4,
+  "titulo": "Veterano das Trilhas",
+  "xp_total": 6280,
+  "xp_no_nivel": 1780,
+  "xp_para_proximo": 2500
+ },
+ "vitalidade": {
+  "indice": 28,
+  "banda": "r",
+  "confiavel": true,
+  "sono_h": 6.65,
+  "estado": "ferido"
+ },
+ "atributos": [
+  {
+   "nome": "Fôlego",
+   "valor": 42.2,
+   "unidade": "VO₂ máx",
+   "nota": "meta 46 a 47, ao nível do mar"
+  },
+  {
+   "nome": "Força",
+   "valor": 4,
+   "unidade": "sessões em 8 semanas",
+   "nota": "maior leg press registrado: 150 kg"
+  },
+  {
+   "nome": "Constância",
+   "valor": 2,
+   "unidade": "de 8 capítulos",
+   "nota": "capítulos concluídos nas últimas 8 semanas"
+  }
+ ],
+ "capitulo": {
+  "numero": 1,
+  "segunda": "2026-10-12",
+  "status": "em_andamento",
+  "missoes": [
+   {
+    "id": "ativos",
+    "nome": "Dias ativos",
+    "feito": 3,
+    "meta": 5,
+    "cumprida": false
+   },
+   {
+    "id": "pesagens",
+    "nome": "Pesagens em jejum",
+    "feito": 3,
+    "meta": 4,
+    "cumprida": false
+   },
+   {
+    "id": "forcas",
+    "nome": "Sessões de força do plano",
+    "feito": 1,
+    "meta": 2,
+    "cumprida": false
+   },
+   {
+    "id": "almocos",
+    "nome": "Almoços registrados (seg a sex)",
+    "feito": 3,
+    "meta": 4,
+    "cumprida": false
+   },
+   {
+    "id": "lanches",
+    "nome": "Lanches das 17h registrados",
+    "feito": 0,
+    "meta": 4,
+    "cumprida": false
+   }
+  ],
+  "novo_arco": false,
+  "xp_semana": 0
+ },
+ "saga": {
+  "atual": 2,
+  "maior": 5,
+  "historico": [
+   {
+    "ate": "2026-08-17",
+    "capitulos": 5
+   }
+  ]
+ },
+ "hoje": {
+  "data": "2026-10-15",
+  "xp": 20,
+  "missoes": [
+   {
+    "nome": "Futebol de quinta (20h) (conta como dia ativo)",
+    "xp": 0,
+    "feito": false
+   },
+   {
+    "nome": "Dia ativo",
+    "xp": 30,
+    "feito": false,
+    "sem_dado": false
+   },
+   {
+    "nome": "Pesagem em jejum",
+    "xp": 20,
+    "feito": true
+   },
+   {
+    "nome": "Registrar o almoço",
+    "xp": 20,
+    "feito": false
+   },
+   {
+    "nome": "Registrar o lanche das 17h",
+    "xp": 20,
+    "feito": false
+   },
+   {
+    "nome": "Estalagem: descansar conta como cumprido (o Silvester confirma com você)",
+    "xp": 50,
+    "feito": false,
+    "estalagem": true
+   }
+  ],
+  "ferido": true
+ },
+ "arco": {
+  "num": "I",
+  "nome": "O Retorno",
+  "de": 95.0,
+  "ate": 92.5,
+  "chefe": "O Guardião do Platô",
+  "hp": 0.944
+ },
+ "media_28d": 94.86,
+ "paralela": {
+  "nome": "O Fôlego do Dragão",
+  "valor": 42.2,
+  "de": 42.2,
+  "ate": 46.0,
+  "progresso": 0.0,
+  "nota": "só leitura ao nível do mar conta; a última em altitude (Curitiba, 930 m) não entra"
+ },
+ "reliquias": [
+  {
+   "id": "verao",
+   "nome": "Os Cinco Capítulos do Verão",
+   "texto": "Cinco capítulos seguidos concluídos.",
+   "em": "2026-08-16"
+  },
+  {
+   "id": "cinco",
+   "nome": "A Semana dos Cinco",
+   "texto": "Cinco dias ativos numa mesma semana.",
+   "em": "2026-07-25"
+  },
+  {
+   "id": "retorno",
+   "nome": "O Primeiro Passo do Retorno",
+   "texto": "O primeiro Lower depois do congresso.",
+   "em": "2026-10-13"
+  },
+  {
+   "id": "corrida",
+   "nome": "A Corrida Inteira",
+   "texto": "Uma corrida guiada completa, do começo ao fim.",
+   "em": "2026-10-14"
+  },
+  {
+   "id": "cento50",
+   "nome": "Cento e Cinquenta",
+   "texto": "Leg press com 150 kg registrado.",
+   "em": "2026-10-13"
+  },
+  {
+   "id": "livro",
+   "nome": "O Livro de Bordo",
+   "texto": "30 dias com algum registro.",
+   "em": "2026-10-12"
+  },
+  {
+   "id": "estalagem",
+   "nome": "A Estalagem Honrada",
+   "texto": "Descansar quando o corpo pediu, e contar isso como vitória.",
+   "em": null
+  },
+  {
+   "id": "saga4",
+   "nome": "A Saga de Quatro",
+   "texto": "Quatro capítulos seguidos depois do retorno.",
+   "em": null
+  },
+  {
+   "id": "guardiao",
+   "nome": "O Guardião Derrotado",
+   "texto": "A média de 28 dias abaixo de 92,5 kg.",
+   "em": null
+  },
+  {
+   "id": "folego",
+   "nome": "O Fôlego do Dragão",
+   "texto": "VO₂ máx de 46 ao nível do mar.",
+   "em": null
+  },
+  {
+   "id": "mestre",
+   "nome": "Mestre dos 85",
+   "texto": "A média de 28 dias em 85 kg.",
+   "em": null
+  }
+ ],
+ "semanas": [
+  {
+   "segunda": "2026-07-13",
+   "status": "concluido",
+   "cumpridas": 2,
+   "xp_semana": 250,
+   "novo_arco": false,
+   "n": 2
+  },
+  {
+   "segunda": "2026-07-20",
+   "status": "concluido",
+   "cumpridas": 2,
+   "xp_semana": 250,
+   "novo_arco": false,
+   "n": 2
+  },
+  {
+   "segunda": "2026-07-27",
+   "status": "concluido",
+   "cumpridas": 2,
+   "xp_semana": 250,
+   "novo_arco": false,
+   "n": 2
+  },
+  {
+   "segunda": "2026-08-03",
+   "status": "concluido",
+   "cumpridas": 2,
+   "xp_semana": 250,
+   "novo_arco": false,
+   "n": 2
+  },
+  {
+   "segunda": "2026-08-10",
+   "status": "concluido",
+   "cumpridas": 2,
+   "xp_semana": 250,
+   "novo_arco": false,
+   "n": 2
+  },
+  {
+   "segunda": "2026-08-17",
+   "status": "nao_concluido",
+   "cumpridas": 0,
+   "xp_semana": 0,
+   "novo_arco": false,
+   "n": 2
+  },
+  {
+   "segunda": "2026-08-24",
+   "status": "nao_concluido",
+   "cumpridas": 1,
+   "xp_semana": 50,
+   "novo_arco": false,
+   "n": 2
+  },
+  {
+   "segunda": "2026-08-31",
+   "status": "nao_concluido",
+   "cumpridas": 1,
+   "xp_semana": 50,
+   "novo_arco": true,
+   "n": 4
+  },
+  {
+   "segunda": "2026-09-07",
+   "status": "nao_concluido",
+   "cumpridas": 1,
+   "xp_semana": 50,
+   "novo_arco": true,
+   "n": 4
+  },
+  {
+   "segunda": "2026-09-14",
+   "status": "nao_concluido",
+   "cumpridas": 0,
+   "xp_semana": 0,
+   "novo_arco": true,
+   "n": 4
+  },
+  {
+   "segunda": "2026-09-21",
+   "status": "concluido",
+   "cumpridas": 3,
+   "xp_semana": 300,
+   "novo_arco": true,
+   "n": 4
+  },
+  {
+   "segunda": "2026-09-28",
+   "status": "concluido",
+   "cumpridas": 3,
+   "xp_semana": 300,
+   "novo_arco": false,
+   "n": 4
+  },
+  {
+   "segunda": "2026-10-05",
+   "status": "resgate_possivel",
+   "cumpridas": 1,
+   "xp_semana": 50,
+   "novo_arco": false,
+   "n": 4
+  },
+  {
+   "segunda": "2026-10-12",
+   "status": "em_andamento",
+   "cumpridas": 0,
+   "xp_semana": 0,
+   "novo_arco": false,
+   "n": 5
+  }
+ ],
+ "xp_por_dia": {
+  "2026-07-13": 50,
+  "2026-07-14": 20,
+  "2026-07-15": 50,
+  "2026-07-16": 50,
+  "2026-07-17": 20,
+  "2026-07-18": 30,
+  "2026-07-19": 0,
+  "2026-07-20": 50,
+  "2026-07-21": 50,
+  "2026-07-22": 30,
+  "2026-07-23": 50,
+  "2026-07-24": 20,
+  "2026-07-25": 30,
+  "2026-07-26": 20,
+  "2026-07-27": 50,
+  "2026-07-28": 20,
+  "2026-07-29": 30,
+  "2026-07-30": 30,
+  "2026-07-31": 20,
+  "2026-08-01": 50,
+  "2026-08-02": 30,
+  "2026-08-03": 20,
+  "2026-08-04": 50,
+  "2026-08-05": 50,
+  "2026-08-06": 50,
+  "2026-08-07": 20,
+  "2026-08-08": 30,
+  "2026-08-09": 50,
+  "2026-08-10": 50,
+  "2026-08-11": 50,
+  "2026-08-12": 50,
+  "2026-08-13": 50,
+  "2026-08-14": 50,
+  "2026-08-15": 30,
+  "2026-08-16": 20,
+  "2026-08-17": 20,
+  "2026-08-18": 30,
+  "2026-08-19": 30,
+  "2026-08-20": 30,
+  "2026-08-21": 0,
+  "2026-08-22": 30,
+  "2026-08-23": 20,
+  "2026-08-24": 0,
+  "2026-08-25": 0,
+  "2026-08-26": 20,
+  "2026-08-27": 50,
+  "2026-08-28": 20,
+  "2026-08-29": 0,
+  "2026-08-30": 20,
+  "2026-08-31": 20,
+  "2026-09-01": 20,
+  "2026-09-02": 150,
+  "2026-09-03": 40,
+  "2026-09-04": 40,
+  "2026-09-05": 30,
+  "2026-09-06": 0,
+  "2026-09-07": 250,
+  "2026-09-08": 20,
+  "2026-09-09": 50,
+  "2026-09-10": 50,
+  "2026-09-11": 0,
+  "2026-09-12": 20,
+  "2026-09-13": 0,
+  "2026-09-14": 20,
+  "2026-09-15": 20,
+  "2026-09-16": 50,
+  "2026-09-17": 50,
+  "2026-09-18": 40,
+  "2026-09-19": 0,
+  "2026-09-20": 0,
+  "2026-09-21": 90,
+  "2026-09-22": 70,
+  "2026-09-23": 70,
+  "2026-09-24": 60,
+  "2026-09-25": 70,
+  "2026-09-26": 50,
+  "2026-09-27": 20,
+  "2026-09-28": 170,
+  "2026-09-29": 70,
+  "2026-09-30": 60,
+  "2026-10-01": 90,
+  "2026-10-02": 20,
+  "2026-10-03": 130,
+  "2026-10-04": 20,
+  "2026-10-05": 90,
+  "2026-10-06": 70,
+  "2026-10-07": 30,
+  "2026-10-08": 30,
+  "2026-10-09": 30,
+  "2026-10-10": 20,
+  "2026-10-11": 170,
+  "2026-10-12": 70,
+  "2026-10-13": 170,
+  "2026-10-14": 130,
+  "2026-10-15": 20
+ },
+ "livro": [
+  {
+   "arquivo": "00-prologo.md",
+   "titulo": "Prólogo: o verão e a tempestade",
+   "texto": "No verão, Fabio encadeou cinco capítulos seguidos. De 13 de julho a 16 de agosto, nenhuma semana teve menos de quatro dias ativos nem menos de quatro pesagens, e agosto terminou como o mês com mais dias ativos do livro: 18, pelo relógio.\n\nEntão veio a Tempestade das Agendas. De 17 de agosto a 20 de setembro, cinco capítulos seguidos ficaram sem conclusão, e setembro fechou com 9 dias ativos no relógio. A saga do verão terminou ali.\n\nNo fim de setembro veio o primeiro sinal de retorno: os capítulos de 21 e 28 de setembro foram concluídos, e uma nova saga começou, com dois capítulos. Na semana do congresso, em Curitiba, o capítulo ficou aberto: houve dias ativos, mas as pesagens e os registros ficaram para trás.\n\nDe volta para casa, em outubro, ele escreveu ao Conselho que ia \"retomar — quase do zero — recuperar a constância\". A média das últimas leituras neutras marcava 95,1 quilos. O Guardião do Platô esperava logo à frente."
+  },
+  {
+   "arquivo": "01-o-retorno.md",
+   "titulo": "Capítulo 1: O Retorno (12 a 18 de outubro, em andamento)",
+   "texto": "Segunda era feriado, e a corrida da manhã ficou para trás por compromissos de trabalho. O almoço foi o combinado, frango agridoce com salada, e a tarde virou uma caminhada de ida e volta até o ato. Às 17h, duas coxinhas.\n\nNa terça, o primeiro Lower A depois do congresso: 37 minutos, leg press com 150 kg em quatro séries de oito, stiff com 50 kg. No mesmo dia ele anotou garganta, cansaço e o efeito de um remédio: era o Mal do Pântano chegando. Uma reunião empurrou o almoço para as quatro da tarde.\n\nNa quarta, a corrida guiada de 30 minutos saiu inteira. No mesmo dia, ele anotou que o resfriado tinha piorado. Com a corrida, Fabio fechou três dias ativos em três dias corridos: o capítulo do congresso, que tinha ficado aberto, ainda pode ser resgatado, se este capítulo for concluído.\n\nNa quinta, Silvester mediu a Vitalidade: índice 28, ferido. A estalagem está aberta. O jogo das 20h é decisão do herói."
+  }
+ ]
+}

@@ -528,7 +528,7 @@ function renderDia(d, ehHoje) {
   const isoDia = new Date().getFullYear() + '-' + mm + '-' + dd;
   if (ehHoje) {
     const tp = tipoProgramado(d);
-    h += (['forca', 'corrida', 'jogo'].includes(tp) && typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoParaHoje(d, isoDia);
+    h += (['forca', 'corrida', 'jogo'].includes(tp) && typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoParaHoje(d, isoDia) + (typeof blocoMissoesHoje === 'function' ? blocoMissoesHoje() : '');
   } else h += (typeof linkTreino === 'function' ? linkTreino(isoDia) : '');
   h += (typeof blocoJanela === 'function' ? blocoJanela(d) : '');
 
@@ -767,7 +767,7 @@ function blocoCardapio() {
 }
 // Cada bloco do Início (menos o 'Agora') vira uma linha que abre ao toque. O resumo fica à vista
 // com o bloco fechado, e o que foi aberto fica lembrado neste aparelho.
-const ABERTOS_PADRAO = [];
+const ABERTOS_PADRAO = ['Capítulo'];   // o capítulo da semana (Campanha) abre sozinho; o resto, ao toque
 function dobrarSecoes(abertos = ABERTOS_PADRAO, chave = 'secoes') {
   let guardado = {}; try { guardado = JSON.parse(localStorage.getItem(chave) || '{}'); } catch (e) {}
   [...document.querySelectorAll('#view > section.bloco')].slice(1).forEach(sec => {
@@ -794,7 +794,7 @@ function renderInicio() {
   h += abasInicio('semana');
   // O Início é da semana e do corpo: nada daqui depende do dia de hoje. O que é de hoje (treino, corrida,
   // refeições, semáforo, "o que como agora") mora só na aba Hoje, com o botão de iniciar cada coisa.
-  h += quadroAgora() + blocoCardapio() + blocoDestino() + blocoEspecialistas();
+  h += quadroAgora() + (typeof blocoCapitulo === 'function' ? blocoCapitulo() : '') + blocoCardapio() + blocoDestino() + blocoEspecialistas();
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${Math.max(st.feito ?? 0, DATA.dias.filter(d => treinosRegistrados(isoDiaDoPlano(d.data)).length).length)} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
       return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${treinosRegistrados(isoDiaDoPlano(d.data)).length ? ' · treino feito' : ''}</small></span></a>`; }).join('') +
@@ -981,6 +981,7 @@ function renderEvo() {
     <div><div class="regua">${`<div class="eixo"></div>`}${REGUA_RISCOS}<div class="marca" id="ev-marca" style="left:0%"></div></div>
       <div class="legenda"><span>${fNum(P.partida, 1)} partida</span><span>${Math.round(prog * 100)}% do caminho</span><span>${fNum(P.alvo, 0)} meta</span></div></div>
   </div>${ONDA}</div>`;
+  h += (typeof linkCampanha === 'function' ? linkCampanha() : '');   // a porta da Campanha dos 85
 
   // VO2 máx
   const vv = V.serie.map(p => p.valor).concat(V.alvo), vlo = Math.min(38, Math.floor(Math.min(...vv)) - 1), vhi = Math.max(48, Math.ceil(Math.max(...vv)) + 1);
@@ -1266,6 +1267,7 @@ function route() {
   const id = (location.hash || '#home').slice(1);
   if (id === 'reg' || id.startsWith('reg/')) { const pr = id.split('/'); if (pr[1] === 'refeicao') { REG_TIPO = 'refeicao'; REG_PRESET = { refeicao: decodeURIComponent(pr[2] || ''), data: pr[3] || '' }; } renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
+  if (id === 'campanha') { if (typeof renderCampanha !== 'function') { window.addEventListener('load', route, { once: true }); return; } renderNav('evo'); renderCampanha(); window.scrollTo(0, 0); return; }
   if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
   if ((id === 'corrida' && typeof renderCorrida !== 'function') || (/^treino(\/|$)/.test(id) && typeof renderTreino !== 'function')) { window.addEventListener('load', route, { once: true }); return; }   // link direto antes dos scripts carregarem
   if (id === 'corrida') { renderNav('hoje'); renderCorrida(); window.scrollTo(0, 0); return; }
@@ -1303,6 +1305,7 @@ fetch("data/semana.json").then(r => r.json()).then(d => {
 <script src="treino.js"></script>
 <script src="corrida.js"></script>
 <script src="decisao.js"></script>
+<script src="campanha.js"></script>
 <script>if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
 </body>
 </html>

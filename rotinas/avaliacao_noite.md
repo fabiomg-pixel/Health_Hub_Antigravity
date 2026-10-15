@@ -46,6 +46,20 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
    [Uma linha: o que funcionou, OU o alerta de uma observação relevante]
    Pode me responder aqui: eu anoto e ajusto.
    ```
+7b. **A Campanha dos 85.** Rode `python3 jornada.py`. Na mensagem, troque a linha "Regras da semana" por uma linha
+   de cena, curta e em segunda pessoa: o que o dia somou de XP (campo `xp_por_dia` do dia avaliado) e como estão
+   as missões da semana. **Domingo à noite (ou segunda de manhã, se atrasou): escreva a crônica do capítulo.**
+   - Arquivo: `historia/livro/NN-titulo-curto.md` (NN = número do capítulo com dois dígitos), primeira linha
+     `# Capítulo N: Título (DD a DD de mês)`. Se já existir o do capítulo (escrito "em andamento"), reescreva-o
+     inteiro com a semana fechada.
+   - **Regras invioláveis** (desenho, seção 6): só o que está registrado (registros do site, relógio, balança, o
+     que ele disse ao bot e está no histórico desta sessão); nenhum número fora dos dados; recaída é cena, não
+     culpa; antagonistas (a Névoa, a Tempestade das Agendas, o Mal do Pântano, o Banquete das Sereias) só com
+     registro que os justifique; comida sem moralismo; doença como fato, sem conduta; terceira pessoa ("Fabio…"),
+     no máximo 12 linhas; feche com o que o próximo capítulo pede.
+   - Depois: `./publicar_jornada.sh` e commit de `historia/livro/`. Na mensagem de domingo, ofereça as missões da
+     semana seguinte (as do motor) e pergunte se ele quer trocar alguma.
+
 8. **Enviar.** `printf '%s' "$MSG" | ./enviar_telegram_saude.py avaliacao`. Confira `"ok": true` e
    `"bot": "Silvester_TheTrainer_bot"`. Se falhar, tente uma vez mais; se falhar de novo, use a ferramenta `reply` desta sessão (é o bot novo).
 9. **Autonomia.** Pode, sozinho: trocar dias entre si, cortar volume, mover treino para casa ou esteira,

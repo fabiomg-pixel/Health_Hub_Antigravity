@@ -958,3 +958,26 @@ Fabio e, por isso, sabe o que enviou. As duas tarefas do app ficam **pausadas**.
   `~/.claude/channels/telegram-saude/bot.pid` ausente ou com processo morto.
 - **Lição:** uma rotina nova só vale depois de uma execução real, de ponta a ponta, pelo caminho que vai usar
   (a de hoje, às 13h12, foi a primeira). Ver "tarefa criada" não prova nada.
+
+## 26. A Campanha dos 85 (gamificação em RPG), no ar em 15/10/2026
+
+Pedido do Fabio: "RPG do protótipo, contando uma história"; depois: "pode tomar todas as decisões, me surpreenda".
+Desenho: `propostas/gamificacao.md` (mecânica, dados dele, evidência e protocolo de 8 semanas) e
+`propostas/gamificacao_rpg.md` (história). Evidência: `evidencia/gamificacao.md`.
+- **Motor:** `jornada.py` (camada 0) lê registros do site, relógio, balança, `semana.json`, `fatos.json` e
+  `jornada_regras.json`; grava `painel/data/jornada.json`. Roda no `publicar_dados.sh` e no `publicar_jornada.sh`.
+  Se a API de registros não responder, **não grava** (o XP não pode cair por falta de dado).
+- **Regras invioláveis:** XP só por comportamento; nunca diminui; uma vez por dia por tipo; teto de 250 por dia; o
+  peso nunca dá nem tira XP (só move o mapa, pela média de 28 dias); sem dado não pune; futebol conta como dia ativo,
+  sem bônus. Registro de treino com negação ("não treinou") não conta; anotações escritas pelo copiloto não contam
+  como registro dele.
+- **Semana = capítulo**; concluído com todas as missões, ou todas menos uma. Meta de dias ativos adaptativa (média
+  de 4 semanas + 1, entre 3 e 5; cai para 3 depois de 2 capítulos sem conclusão). **Resgate** de um capítulo perdido
+  só quando há saga a proteger. **Estalagem**: descanso confirmado por ele conta como cumprido (`estalagem.py`).
+- **Telas:** Início (capítulo da semana), Hoje (missões de hoje, marcadas na hora pelo registro), Evolução → `#campanha`
+  (ficha, mapa com 4 arcos e chefes, missão paralela do VO₂, atributos, relíquias, o livro).
+- **Livro:** `historia/livro/NN-*.md`. O Silvester escreve a crônica no domingo (regras na `rotinas/avaliacao_noite.md`):
+  só fatos registrados, sem culpa, sem moralizar comida, doença como fato, terceira pessoa, até 12 linhas.
+- **Revisão do cético (15/10) mudou o produto:** registro "não treinou" rendia XP; API fora do ar derrubaria o XP; a
+  primeira versão do livro dizia que nenhum capítulo fora concluído depois de agosto (falso: 21 e 28/09 foram),
+  inventava "febre" e heroizava treinar resfriado. Tudo corrigido antes de publicar.

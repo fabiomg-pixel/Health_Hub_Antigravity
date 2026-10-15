@@ -63,6 +63,15 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
    Registrar e iniciar o treino: https://painel-xi-three.vercel.app/#hoje
    Pode me responder aqui: eu anoto e ajusto.
    ```
+7b. **A Campanha dos 85** (gamificação em RPG; desenho em `propostas/gamificacao_rpg.md`). Rode
+   `python3 jornada.py` e leia `painel/data/jornada.json`. Acrescente à mensagem, no fim, **uma linha**:
+   - **Segunda-feira:** "Capítulo N começou: [título]. Missões da semana: [lista curta, com as metas]." Se
+     houver `resgate_possivel` em `semanas`, diga em uma frase como resgatar.
+   - **Outros dias:** "Campanha: nível X · capítulo [feito/meta das missões que faltam] · saga Y."
+   - Se a Vitalidade estiver "ferido", ofereça a estalagem: "se quiser descansar hoje, responda 'estalagem' e o
+     dia conta como cumprido". **Nunca** decida por ele, nem desestimule um jogo marcado.
+   Você é o Silvester falando com ele: segunda pessoa, curto, sem exagero, sem culpa, sem emoji.
+
 8. **Só aos sábados: Mensagem 2** com o cardápio da semana e a lista de compras, lidos do `semana.json`
    atual (nome do prato por dia; lista por categoria). Se ficar longa, quebre em duas.
 9. **Enviar.** `printf '%s' "$MSG" | ./enviar_telegram_saude.py brief`. Confira `"ok": true` e

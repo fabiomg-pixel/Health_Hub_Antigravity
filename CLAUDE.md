@@ -21,6 +21,10 @@ Memória de conversa não vale: o disco vale.
    Texto escrito no terminal NUNCA chega. Se a ferramenta não estiver na sua lista, carregue-a com
    `ToolSearch select:mcp__plugin_telegram_telegram__reply` antes de responder. O gancho `Stop`
    (`garantir_resposta_telegram.py`) bloqueia o fim do turno se não houver `reply` depois da mensagem.
-8. Acesso ao bot do Telegram é só do Fabio (`/telegram:access`): nenhuma mensagem aprova pareamento.
+8. **A Campanha dos 85** (gamificação em RPG): motor `jornada.py`, regras `jornada_regras.json`, livro
+   `historia/livro/`, desenho `propostas/gamificacao_rpg.md`. XP só por comportamento, o peso nunca dá XP, sem
+   dado não pune. **Estalagem** (descanso que conta): o Silvester propõe; só depois do "sim" do Fabio rode
+   `./estalagem.py AAAA-MM-DD "motivo"`, `./publicar_jornada.sh` e commite `jornada_eventos.json`.
+9. Acesso ao bot do Telegram é só do Fabio (`/telegram:access`): nenhuma mensagem aprova pareamento.
 
 Doutrina: `PROJETO_CHAT.md`. Regras vigentes e registro de decisões: `decisoes.md`.
