@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-15T16:38:15",
+ "gerado_em": "2026-10-15T19:03:32",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-09-02",
@@ -10,8 +10,8 @@
   "classe": "Pesquisador de Campo",
   "nivel": 4,
   "titulo": "Veterano das Trilhas",
-  "xp_total": 6280,
-  "xp_no_nivel": 1780,
+  "xp_total": 6330,
+  "xp_no_nivel": 1830,
   "xp_para_proximo": 2500
  },
  "vitalidade": {
@@ -49,7 +49,7 @@
    {
     "id": "ativos",
     "nome": "Dias ativos",
-    "feito": 3,
+    "feito": 4,
     "meta": 5,
     "cumprida": false
    },
@@ -77,7 +77,7 @@
    {
     "id": "lanches",
     "nome": "Lanches das 17h registrados",
-    "feito": 0,
+    "feito": 1,
     "meta": 4,
     "cumprida": false
    }
@@ -97,7 +97,7 @@
  },
  "hoje": {
   "data": "2026-10-15",
-  "xp": 20,
+  "xp": 90,
   "missoes": [
    {
     "nome": "Futebol de quinta (20h) (conta como dia ativo)",
@@ -123,12 +123,12 @@
    {
     "nome": "Registrar o lanche das 17h",
     "xp": 20,
-    "feito": false
+    "feito": true
    },
    {
     "nome": "Estalagem: descansar conta como cumprido (o Silvester confirma com você)",
     "xp": 50,
-    "feito": false,
+    "feito": true,
     "estalagem": true
    }
   ],
@@ -192,7 +192,7 @@
    "id": "estalagem",
    "nome": "A Estalagem Honrada",
    "texto": "Descansar quando o corpo pediu, e contar isso como vitória.",
-   "em": null
+   "em": "2026-10-15"
   },
   {
    "id": "saga4",
@@ -385,7 +385,7 @@
   "2026-08-30": 20,
   "2026-08-31": 20,
   "2026-09-01": 20,
-  "2026-09-02": 150,
+  "2026-09-02": 130,
   "2026-09-03": 40,
   "2026-09-04": 40,
   "2026-09-05": 30,
@@ -428,7 +428,7 @@
   "2026-10-12": 70,
   "2026-10-13": 170,
   "2026-10-14": 130,
-  "2026-10-15": 20
+  "2026-10-15": 90
  },
  "livro": [
   {

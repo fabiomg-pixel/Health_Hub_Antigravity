@@ -1,4 +1,11 @@
 {
   "_nota": "Eventos confirmados pelo Fabio que o motor não deduz sozinho. Estalagem: dia de descanso (doença, índice vermelho, viagem) que conta como cumprido. O Silvester propõe e só grava depois do sim dele: {\"data\": \"AAAA-MM-DD\", \"tipo\": \"estalagem\", \"motivo\": \"...\", \"confirmado_em\": \"AAAA-MM-DD\"}.",
-  "eventos": []
+  "eventos": [
+    {
+      "data": "2026-10-15",
+      "tipo": "estalagem",
+      "motivo": "Vitalidade 28 (índice vermelho) e resfriado; Fabio ficou em descanso e confirmou",
+      "confirmado_em": "2026-10-15"
+    }
+  ]
 }
