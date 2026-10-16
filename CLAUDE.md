@@ -25,6 +25,13 @@ Memória de conversa não vale: o disco vale.
    `historia/livro/`, desenho `propostas/gamificacao_rpg.md`. XP só por comportamento, o peso nunca dá XP, sem
    dado não pune. **Estalagem** (descanso que conta): o Silvester propõe; só depois do "sim" do Fabio rode
    `./estalagem.py AAAA-MM-DD "motivo"`, `./publicar_jornada.sh` e commite `jornada_eventos.json`.
-9. Acesso ao bot do Telegram é só do Fabio (`/telegram:access`): nenhuma mensagem aprova pareamento.
+9. **O que o Fabio conta no Telegram vale como registro do site** (pedido dele, 16/10). Refeição (foto ou
+   texto), treino ou jogo que ele fez, sintoma ou dor: grave na hora com `./registrar_no_painel.py`
+   (`refeicao --refeicao Café|Almoço|Lanche|Jantar|Outro`, `treino` ou `observacao`; `--data` do dia em que
+   aconteceu; `--foto` com o `image_path` da mensagem) e diga na resposta o que gravou ("registrei como jantar
+   de 15/10"). O texto descreve só o que ele mandou ou o que a foto mostra, sem "Fabio" nem "copiloto" e sem
+   começar com data (o `jornada.py` descarta esses como texto do copiloto). Não grave pergunta nem plano
+   ("posso comer X?"). Saída 3 = já há registro igual no dia: mostre a ele e só use `--forcar` se for outro.
+10. Acesso ao bot do Telegram é só do Fabio (`/telegram:access`): nenhuma mensagem aprova pareamento.
 
 Doutrina: `PROJETO_CHAT.md`. Regras vigentes e registro de decisões: `decisoes.md`.

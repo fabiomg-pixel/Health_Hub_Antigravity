@@ -981,3 +981,23 @@ Desenho: `propostas/gamificacao.md` (mecânica, dados dele, evidência e protoco
 - **Revisão do cético (15/10) mudou o produto:** registro "não treinou" rendia XP; API fora do ar derrubaria o XP; a
   primeira versão do livro dizia que nenhum capítulo fora concluído depois de agosto (falso: 21 e 28/09 foram),
   inventava "febre" e heroizava treinar resfriado. Tudo corrigido antes de publicar.
+
+## 27. O Telegram registra no painel (pedido do Fabio, 16/10/2026)
+
+**Falha que motivou:** a foto do jantar de 15/10 chegou ao bot às 19h26 e foi analisada, mas ficou só na
+conversa: o bot não tinha como gravar no painel e esperou que ele registrasse também pelo site. O jantar
+não entrou no diário.
+
+**Regra:** tudo o que ele conta no Telegram (refeição, treino ou jogo feito, sintoma ou dor) é registro. O
+bot grava na hora com `./registrar_no_painel.py`, que usa a mesma entrada do site (`/api/log`, com foto no
+Blob), e confirma na resposta. Antes de gravar, o script lê `/api/registros` e para (saída 3) se já houver
+registro do mesmo tipo e refeição no dia; o bot mostra o que existe e só usa `--forcar` se for outra
+refeição. Rede e HTTPS vão por `curl` (o Python do Mac não acha os certificados), com 3 tentativas.
+
+- Data: a do dia em que aconteceu ("ontem à noite" vira ontem), não a da mensagem.
+- Texto: só o que ele disse ou o que a foto mostra. Sem "Fabio", "copiloto" ou data no começo, porque o
+  `jornada.py` trata esses como texto do copiloto e não conta.
+- Jogo de futebol entra como `treino` com "futebol" ou "jogo" no texto; o campeonato de sábado depende disso.
+- Pergunta ou plano ("posso comer X?") não é registro.
+- O jantar de 15/10 foi gravado a partir da foto do Telegram em 16/10.
+

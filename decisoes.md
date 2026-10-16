@@ -18,6 +18,7 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - Mensagens automáticas do copiloto (brief 8h03, avaliação 22h33) são rotinas que o launchd digita DENTRO da sessão do bot novo (@Silvester_TheTrainer_bot, screen "saude", via ~/.claude/channels/telegram-saude/disparar_rotina.sh); o bot envia com ./enviar_telegram_saude.py. Roteiros em rotinas/. As tarefas do app (agendador do Claude) ficam PAUSADAS: dependem de o Mac acordado e de aprovações na tela. (Fabio, 14-15/10)
 
 - A Campanha dos 85 (gamificação em RPG) está no ar: motor jornada.py, livro historia/livro/, tela #campanha. XP só por comportamento; o peso nunca dá nem tira XP; sem dado não pune. Estalagem (descanso que conta): o Silvester propõe, e só depois do "sim" do Fabio roda ./estalagem.py AAAA-MM-DD "motivo" e ./publicar_jornada.sh. Crônica do capítulo: o Silvester escreve no domingo, só com fatos registrados, sem culpa. (Fabio delegou todas as decisões em 15/10)
+- O que o Fabio manda no Telegram (refeição com foto ou texto, treino ou jogo feito, sintoma ou dor) vale como registro do site: o bot grava na hora com ./registrar_no_painel.py, com a data em que aconteceu, e confirma na resposta o que gravou. Pergunta ou plano não se grava. (Fabio, 16/10)
 
 ## Registro
 - 2026-10-10 | app | Fabio: "Se não sabe, não toma decisão" | PROJETO_CHAT §18
@@ -35,3 +36,4 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - 2026-10-15 | app | Fabio: a gamificação será RPG do protótipo, contando uma história (Campanha dos 85). A mecânica da proposta v2 continua valendo; o RPG é a forma de contar | propostas/gamificacao_rpg.md
 - 2026-10-15 | app | Fabio delegou todas as decisões da Campanha ('me surpreenda'). Escolhi: começa já (capítulo 1 = semana de 12/10, XP desde julho), 5 missões, estalagem proposta pelo Silvester e confirmada por ele, esposa fora por ora, Campanha em tela escura, livro em 3ª pessoa e Silvester em 2ª | propostas/gamificacao_rpg.md, jornada.py, painel/campanha.js
 - 2026-10-15 | bot | Fabio confirmou estalagem em 15/10 (descanso por índice 28 e resfriado, sem jogo) | jornada_eventos.json
+- 2026-10-16 | app | Fabio: o que ele manda no Telegram (refeição, treino, sintoma) o bot grava no painel na hora e confirma; jantar de 15/10 gravado da foto | registrar_no_painel.py, CLAUDE.md §9, PROJETO_CHAT §27
