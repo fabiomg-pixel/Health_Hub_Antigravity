@@ -1,6 +1,6 @@
 #!/bin/bash
 # Digita uma rotina diária DENTRO da sessão do bot (screen "saude"), como se fosse um prompt.
-# Uso: disparar_rotina.sh brief|avaliacao [--forcar|--simular]
+# Uso: disparar_rotina.sh brief|avaliacao [--forcar|--simular|--verificar]
 # Instalado em ~/.claude/channels/telegram-saude/ (fora de ~/Documents: o launchd não acessa Documents sem
 # permissão especial). Chamado pelos LaunchAgents br.fabiogomes.saude.brief (8h03) e .avaliacao (22h33): o
 # launchd roda a tarefa perdida quando o Mac acorda. Não envia nada ao Fabio: quem envia é o bot, no roteiro.
@@ -13,7 +13,22 @@ case "$R" in
 esac
 export SCREENDIR="${SCREENDIR:-$(ls -d /var/folders/*/*/T/.screen 2>/dev/null | head -1)}"
 HOJE=$(date +%F); AGORA=$(date '+%F %T')
-if [ "$OPC" != "--forcar" ] && [ "$OPC" != "--simular" ] && grep -q "^$HOJE $R " "$LOG" 2>/dev/null; then
+# --verificar: roda ~45 min depois do disparo. Se a rotina não enviou nada (ex.: o Mac sem rede, como em
+# 15 e 16/10), digita de novo, UMA vez, e só até 4 h depois do disparo (para não mandar brief de manhã à noite).
+if [ "$OPC" = "--verificar" ]; then
+  UE="$HOME/Documents/Claude/health-hub/ultimo_envio.md"
+  DISP=$(grep "^$HOJE $R .* disparado" "$LOG" 2>/dev/null | tail -1 | awk '{print $3}')
+  if [ -z "$DISP" ]; then OPC=""   # nada disparado hoje (Mac acordou agora): faz o disparo normal
+  else
+    T_DISP=$(date -j -f "%Y-%m-%d %H:%M:%S" "$HOJE $DISP" +%s)
+    T_ENV=$(stat -f %m "$UE" 2>/dev/null || echo 0)
+    if [ "$T_ENV" -gt "$T_DISP" ] && head -1 "$UE" | grep -q "($R)"; then echo "$AGORA $R confirmado: enviado" >> "$LOG"; exit 0; fi
+    if grep -q "^$HOJE $R .* reenviado" "$LOG"; then echo "$AGORA $R sem envio mesmo depois de reenviar" >> "$LOG"; exit 0; fi
+    if [ $(( $(date +%s) - T_DISP )) -gt 14400 ]; then echo "$AGORA $R perdido: passou da janela de 4 h" >> "$LOG"; exit 0; fi
+    OPC="--reenvio"
+  fi
+fi
+if [ "$OPC" != "--forcar" ] && [ "$OPC" != "--simular" ] && [ "$OPC" != "--reenvio" ] && grep -q "^$HOJE $R " "$LOG" 2>/dev/null; then
   echo "$AGORA $R ignorado: ja disparado hoje" >> "$LOG"; exit 0
 fi
 if ! /usr/bin/screen -ls 2>/dev/null | grep -q '\.saude'; then
@@ -27,5 +42,5 @@ if [ "$OPC" = "--simular" ]; then echo "SIMULACAO (nada digitado): $MSG"; exit 0
 /usr/bin/screen -S saude -p 0 -X stuff "$MSG"
 sleep 2
 /usr/bin/screen -S saude -p 0 -X stuff $'\r'
-echo "$HOJE $R $(date +%T) disparado" >> "$LOG"
+[ "$OPC" = "--reenvio" ] && echo "$HOJE $R $(date +%T) reenviado" >> "$LOG" || echo "$HOJE $R $(date +%T) disparado" >> "$LOG"
 echo "disparado: $R"
