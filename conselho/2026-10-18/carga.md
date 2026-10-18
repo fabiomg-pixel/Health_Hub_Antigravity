@@ -59,3 +59,9 @@ Relatório
 - Como está: resfriado não passou, melhorando; índice 22, 4º vermelho; FC de repouso 57 (costume 54); VFC 28 (costume 36). Jogar bem ontem mostra disposição; os dados mostram corpo em recuperação.
 - Para onde vai: segunda sem treino; corrida leve se a manhã melhorar e a FC baixar; força volta sem perna pesada; jogo de quinta fica, com freio se a manhã vier vermelha; intensidade só depois de a recuperação aparecer nos números.
 - O que eu não sei: quanto dói a lombar (0-10); se o antigripal tem antitérmico/anti-inflamatório; se há febre.
+
+## Seguimento pós-cético (18/10 21:58 do Telegram, palavra por palavra)
+"O antigripal tem antitérmico. Melhor passar a tomar apenas se tiver sintoma.
+Lombar hoje em 1/10
+Ok ... Faça o que for melhor, mas eu diria que uma corrida de 8km/h por 20-30 min não é muito esforço. Gasto mínimo para dar consistência."
+(Leitura: pergunta 1 = sim, tem antitérmico, e ele passa a tomar só com sintoma; 2 = lombar 1/10; 3 = "Ok", aceita o teto menor e o corte, delega a decisão, e opina que 20-30 min a 8 km/h é gasto mínimo para dar consistência.)
