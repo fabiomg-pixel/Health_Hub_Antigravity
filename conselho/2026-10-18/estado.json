@@ -7,8 +7,8 @@
   "logistica",
   "nutricao"
  ],
- "atual": "sintese",
- "fase": "sintese",
+ "atual": "publicado",
+ "fase": "publicado",
  "rodada": 0,
  "agentes": {
   "carga": "ac5e82c56bd325728",

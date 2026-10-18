@@ -511,7 +511,7 @@ function blocoParaHoje(d, iso) {
   }
   const pr = proximaRefeicao(d, iso);
   const refeicao = pr
-    ? `<div class="linha" style="align-items:flex-start;border-bottom:0;padding-top:18px"><span class="hora">${esc(pr.hora)}</span><span class="corpo">${esc(pr.nome)}<small>próxima refeição · ${pr.m.kcal} kcal · ${pr.m.prot} g de proteína</small></span></div>
+    ? `<div class="linha" style="align-items:flex-start;border-bottom:0;padding-top:18px"><span class="hora">${esc(pr.hora)}</span><span class="corpo">${esc(pr.nome)}<small>próxima refeição · ${pr.m.kcal != null ? pr.m.kcal + ' kcal' : (/a escolher/i.test(pr.nome) ? 'a escolher' : '')}${pr.m.prot != null ? ' · ' + pr.m.prot + ' g de proteína' : ''}</small></span></div>
        <a class="botao claro" href="#reg/refeicao/${encodeURIComponent(pr.ref)}/${iso}">Registrar ${esc(pr.ref.toLowerCase())}</a>`
     : `<div class="par" style="color:var(--sec);padding-top:18px">Todas as refeições do plano de hoje já têm registro.</div>`;
   return `<section class="bloco"><div class="cab"><h2>Para fazer hoje</h2><small>${esc(d.nome)} · ${esc(d.data)}</small></div>${atividade}${refeicao}</section>`;
@@ -563,8 +563,8 @@ function renderDia(d, ehHoje) {
     const nota = [m.origem ? semEmoji(m.origem) : '', m.nota ? semEmoji(m.nota) : ''].filter(Boolean).join(' ');
     return `<button type="button" class="linha refeicao" aria-expanded="false" data-n="${i}">
         <span class="boia ${feito ? 'feito' : ''}">${ico('visto', 12, 3.5).replace('currentColor', '#fff')}</span>
-        <span class="hora">${esc(hora)}</span><span class="corpo">${esc(nome)}<small>${m.kcal} kcal${feito ? ' · registrado' : ''}</small></span>
-        <span class="num">${m.prot}<small> g</small></span></button>
+        <span class="hora">${esc(hora)}</span><span class="corpo">${esc(nome)}<small>${[m.kcal != null ? m.kcal + ' kcal' : (/a escolher/i.test(m.nome) ? 'a escolher' : ''), feito ? 'registrado' : ''].filter(Boolean).join(' · ')}</small></span>
+        <span class="num">${m.prot != null ? m.prot + '<small> g</small>' : '—'}</span></button>
       <div class="nota" id="nota-${i}" hidden>${nota ? esc(nota) + '<br>' : ''}<a href="#reg/refeicao/${encodeURIComponent(ref)}/${isoDia}" style="font-weight:700">Registrar ${esc(ref.toLowerCase())}</a></div>`;
   }).join('');
   if (n) {
@@ -587,7 +587,7 @@ function renderDia(d, ehHoje) {
     const rec = DATA.receitas[r.janta.receita];
     h += `<section class="bloco"><div class="cab"><h2>Receita da janta</h2><small>${T(rec.tempo)}</small></div>
       <details><summary>${T(rec.nome)}</summary><div class="miolo">
-        <div class="par"><b>Rende:</b> ${T(rec.rende)} · ${rec.kcal} kcal · ${rec.prot} g</div>
+        <div class="par"><b>Rende:</b> ${T(rec.rende)}${rec.kcal != null ? ' · ' + rec.kcal + ' kcal · ' + rec.prot + ' g' : ''}</div>
         <div class="cat">Ingredientes</div>${rec.ingredientes.map(i => `<div class="par">${T(i)}</div>`).join('')}
         <div class="cat">Modo de fazer</div>${rec.passos.map((p, i) => `<div class="par"><b>${i + 1}.</b> ${T(p)}</div>`).join('')}
       </div></details></section>`;
@@ -756,10 +756,10 @@ function blocoCardapio() {
       let nome = semEmoji(m.nome), hora = rot;
       const t = nome.match(/^(~?\d{1,2}h\d{0,2}|\d{1,2}:\d{2})\s*·\s*/);
       if (t) { hora = t[1]; nome = nome.slice(t[0].length); }
-      return `<div class="crow"><span class="slot">${esc(hora)}</span><span class="oque">${esc(nome)}</span><span class="g">${m.prot} g</span></div>`; }).join('');
+      return `<div class="crow"><span class="slot">${esc(hora)}</span><span class="oque">${esc(nome)}</span><span class="g">${m.prot != null ? m.prot + ' g' : '—'}</span></div>`; }).join('');
     if (!linhas) return '';
     return `<details class="cdia" ${largo ? 'open' : ''}>
-      <summary><span class="hora">${esc(d.nome.slice(0, 3))} ${esc(d.data.slice(0, 2))}</span><span class="corpo">${kcal.toLocaleString('pt-BR')} kcal · ${prot} g de proteína<small>${esc(partirFoco((d.treino && d.treino.foco) || '').titulo)}</small></span></summary>
+      <summary><span class="hora">${esc(d.nome.slice(0, 3))} ${esc(d.data.slice(0, 2))}</span><span class="corpo">${kcal || prot ? kcal.toLocaleString('pt-BR') + ' kcal · ' + prot + ' g de proteína (sem o almoço a escolher)' : 'plano qualitativo, sem números por refeição'}<small>${esc(partirFoco((d.treino && d.treino.foco) || '').titulo)}</small></span></summary>
       <div class="miolo">${linhas}<a href="#${d.id}" style="display:inline-block;padding:14px 0 10px;font-size:13.5px;font-weight:700">abrir o dia inteiro</a></div></details>`; }).join('');
   if (!dias) return '';
   return `<section class="bloco"><div class="cab"><h2>Cardápio da semana</h2><small>meta: ${DATA.dieta.calorias.toLocaleString('pt-BR')} kcal · ${DATA.dieta.proteina} g</small></div>

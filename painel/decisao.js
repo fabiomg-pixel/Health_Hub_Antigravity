@@ -105,7 +105,7 @@ function blocoProteina(iso, planoG, ehHoje) {
       <div class="medio">${fNum(p.g, 0)}<small style="color:var(--sec)"> g</small></div></div>
     <div class="barra" role="img" aria-label="${fNum(p.g, 0)} g registrados de ${alvo}, piso ${piso}"><i style="width:${Math.min(100, p.g / alvo * 100)}%"></i><b style="left:${piso / alvo * 100}%"></b></div>
     <div class="legenda" style="color:var(--sec);font-weight:600"><span>0</span><span>piso ${piso} g</span><span>alvo ${alvo} g</span></div>
-    <div style="font-size:13.5px;color:var(--sec)">O plano do dia soma ${planoG} g. ${p.registradas ? (p.semNumero ? p.semNumero + ' refeição(ões) sem número entram só quando você informar a proteína ou fotografar o rótulo. ' : '') + (falta ? 'Faltam pelo menos ' + fNum(falta, 0) + ' g para o piso.' : 'O piso foi atingido com o que tem número.') : 'Anote a proteína ao registrar para a barra andar.'}</div>${dica}</div>`;
+    <div style="font-size:13.5px;color:var(--sec)">${planoG > 0 ? 'O plano do dia soma ' + planoG + ' g. ' : ''}${p.registradas ? (p.semNumero ? p.semNumero + ' refeição(ões) sem número entram só quando você informar a proteína ou fotografar o rótulo. ' : '') + (falta ? 'Faltam pelo menos ' + fNum(falta, 0) + ' g para o piso.' : 'O piso foi atingido com o que tem número.') : 'Anote a proteína ao registrar para a barra andar.'}</div>${dica}</div>`;
 }
 
 // ───────── previsão e janela do dia ─────────

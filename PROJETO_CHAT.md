@@ -1026,3 +1026,4 @@ prepara a avaliação; depois vem o próximo, e por aí vai.**
   pergunta vem assinada por quem pergunta.
 - Primeira entrevista: 18/10, começando às 18h40 a partir das análises da manhã.
 
+- **Regras da semana 19-25/10 (conselho de 18/10):** ver a linha em `decisoes.md` > Regras vigentes (passo A com 48 h/bula, passo B, corte de 3 vermelhos, sem reposição de corrida). O semáforo do painel mostra só a banda; os passos A e B quem confere é o Silvester no brief.

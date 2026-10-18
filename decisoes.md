@@ -5,6 +5,7 @@ ou comprar. O gancho em .claude/settings.json injeta o resumo a cada mensagem (.
 Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registrar_decisao.sh <origem> "<decisão>" "<onde vive>"
 
 ## Regras vigentes
+- Semana 19-25/10 (fisiologista, aceito pelo Fabio em 18/10): teto 1 força (membros superiores, sem perna/lombar pesada) e até 1 corrida fácil; nada intenso; corte de 3 manhãs vermelhas seguidas, jogo incluso. Passo A (corrida de terça, até 30 min a 8,0 km/h, FC até 150): índice>=50, FC de repouso<=54 sem antitérmico em 24 h, secreção só em nariz/garganta, e sem antigripal em 48 h OU bula sem anti-inflamatório; senão caminhada de 20 a 30 min, SEM reposição na semana. Passo B (2ª força, recreativo de domingo até 45 min): duas manhãs seguidas FC<=53, VFC>=37, sem antitérmico em 24 h e sem sintoma. Academia só de manhã; rua depois das 17h45 e, em sex/sáb, depois das 9h, vetadas. (conselho de 18/10)
 - Texto narrativo da Campanha cresce ao longo do capítulo: todo dia 1 a 3 linhas no livro, só com fatos registrados; no fechamento o capítulo é reescrito inteiro. O texto é metáfora de fábula de RPG, não repete o relato da semana. (Fabio, 18/10)
 - §18: sem informação, sem decisão. Número só de fatos.json; onde falta dado, escreva "não sei" e quando saberá. (PROJETO_CHAT §18)
 - Almoço seg–sex: marmita com ≥35 g de proteína NO RÓTULO e vegetal visível no prato (ou salada ao lado). O nome da marmita não basta. (nutricionista, 11/10)

@@ -1,19 +1,19 @@
 {
- "gerado_em": "2026-10-11",
+ "gerado_em": "2026-10-18",
  "semana": {
-  "id": "12-18/10",
-  "rotulo": "12 a 18/10",
-  "inicio": "2026-10-12",
-  "fim": "2026-10-18",
+  "id": "19-25/10",
+  "rotulo": "19 a 25/10",
+  "inicio": "2026-10-19",
+  "fim": "2026-10-25",
   "registros": {
    "refeicoes": 0,
    "principais": 0,
    "dias": 0
   }
  },
- "titulo": "Semana nova: vegetal, variedade, menos fritura, fruta e peixe",
- "subtitulo": "As barras começam zeradas e contam só o que você registrar de 12 a 18/10.",
- "base_das_metas": "As metas saem do que a semana 05 a 11/10 mostrou de bom e de faltante e valem só para o que for registrado de 12 a 18/10. Com poucos registros as barras ficam cinzas: esquecer de anotar nunca conta contra você. Eu atualizo as barras quando processo os seus registros.",
+ "titulo": "Semana nova: vegetal, leguminosa, menos fritura, fruta e peixe",
+ "subtitulo": "As barras começam zeradas e contam só o que você registrar de 19 a 25/10.",
+ "base_das_metas": "As metas saem do placar de 12 a 18/10 e das suas respostas de 18/10, e valem só para o que for registrado de 19 a 25/10. Mudança desta semana: a meta de 3 famílias de vegetal sai e entra leguminosa em 2 refeições (você aceitou em 18/10). Com poucos registros as barras ficam cinzas: esquecer de anotar nunca conta contra você. Eu atualizo as barras quando processo os seus registros.",
  "metas": [
   {
    "id": "vegetal",
@@ -22,18 +22,18 @@
    "meta": 4,
    "unidade": "refeições principais com vegetal visível",
    "atual": 0,
-   "leitura": "Semana anterior: 2 de 5 principais (espinafre e brócolis). Batata-doce e molho de tomate não contam: a batata-doce é base de carboidrato e o molho é tempero. Marmita com vegetal visível conta.",
-   "racional": "Vegetal foi o déficit mais claro, e a marmita já resolve metade."
+   "leitura": "Semana 12 a 18/10: 3 de 4 (almoço de 12/10, jantar de 15/10 e almoço de 17/10). Marmita com vegetal em pedaço conta; a salada fresca vai no jantar.",
+   "racional": "Vegetal continua sendo a meta mais perto de bater, e a marmita já resolve metade."
   },
   {
-   "id": "familias",
-   "nome": "Famílias de vegetal",
+   "id": "leguminosa",
+   "nome": "Leguminosa",
    "tipo": "alcancar",
-   "meta": 3,
-   "unidade": "famílias diferentes na semana",
+   "meta": 2,
+   "unidade": "refeições com feijão, lentilha ou grão-de-bico",
    "atual": 0,
-   "leitura": "Famílias: folha verde-escura, crucífera, laranja ou vermelho, outros. Na semana anterior apareceram 2: folha escura (espinafre) e crucífera (brócolis). Molho de tomate e batata-doce não contam.",
-   "racional": "Vegetal não é tudo igual. Variedade cobre mais micronutrientes sem pesar nada."
+   "leitura": "Não apareceu nos registros de 11 a 17/10. No plano: lentilha na janta de terça e feijão no almoço de sábado e domingo. Substitui a meta de 3 famílias de vegetal.",
+   "racional": "Fibra das marmitas ficou entre 2,9 e 4,8 g por refeição; leguminosa é fibra, ferro e magnésio sem pesar."
   },
   {
    "id": "fritura",
@@ -42,8 +42,8 @@
    "meta": 2,
    "unidade": "refeições registradas, no máximo",
    "atual": 0,
-   "leitura": "A refeição livre de sábado conta como uma. Ovo frito na frigideira não conta.",
-   "racional": "Os 2 jantares registrados na semana anterior tiveram fritura."
+   "leitura": "Até 17/10, 3 refeições com fritura nos registros: coxinhas do lanche de 12/10, pastel de siri e bolinho de bacalhau do almoço de 13/10 e a saída de 17/10 (a contagem de 2 de 2 que o bot deu deixou o 13/10 de fora). Em 13/10, almoço às 16h com dois fritos. A refeição livre de sábado conta como uma. Ovo frito na frigideira não conta.",
+   "racional": "Sem jantar fora até sexta, pelo que você disse; de sexta em diante, não sei."
   },
   {
    "id": "fruta",
@@ -52,8 +52,8 @@
    "meta": 2,
    "unidade": "dias com registro",
    "atual": 0,
-   "leitura": "Fruta inteira não aparece nos registros de 05 a 11/10. A banana das 17h já está no plano todos os dias: a meta é comê-la e registrá-la. Laranja ou mexerica também valem.",
-   "racional": "Não é regra nova: é fazer a banana do plano aparecer no registro, no horário em que o doce costuma entrar."
+   "leitura": "Em 12 a 18/10, 1 dia nos registros (tangerina, 13/10). A banana das 17h já está no plano todos os dias: a meta é comê-la e registrá-la. Laranja ou mexerica também valem.",
+   "racional": "É fazer a fruta do plano aparecer no registro, no horário em que o doce costuma entrar."
   },
   {
    "id": "peixe",
@@ -62,14 +62,14 @@
    "meta": 1,
    "unidade": "janta com peixe",
    "atual": 0,
-   "leitura": "Não aparece nos registros. Sardinha em lata serve.",
+   "leitura": "Peixe no jantar não apareceu nos registros das 2 últimas semanas (as jantas de 13 e 14/10 estão sem descrição). Sardinha ou atum em lata servem. Sem jantar fora até sexta.",
    "racional": "A fonte de ômega-3 mais direta que falta no mapa."
   }
  ],
  "anterior": {
   "rotulo": "05 a 11/10",
-  "provisoria": true,
-  "nota": "Provisório até o fim de 11/10: hoje só o café está registrado. Dias 07, 08 e 09 sem registro, o que não prova que você não comeu.",
+  "provisoria": false,
+  "nota": "O balanço por grupos de 12 a 18/10 não foi refeito: os gráficos abaixo ainda são de 05 a 11/10. O placar das metas de 12 a 18/10 está na leitura de cada meta. Dias 07, 08 e 09/10 sem registro, o que não prova que você não comeu.",
   "n_refeicoes": 9,
   "n_principais": 5,
   "n_dias": 4,
@@ -430,11 +430,12 @@
   ]
  },
  "atencao": [
-  "Escolha a marmita com vegetal visível e procure variar a família do legume ao longo da semana (meta: 3 famílias).",
-  "Jantar fora: peça uma opção sem fritura nos dias fora da refeição livre de sábado.",
-  "Compra: banana ou laranja para as 17h (fruta) e 2 latas de sardinha para uma janta (peixe)."
+  "Almoço cedo nos dias de entrevista: segunda por volta das 12h30, terça e quinta antes das 13h, nunca depois das 15h.",
+  "Almoço é marmita com vegetal em pedaço; a salada de material fresco vai no jantar.",
+  "Leguminosa em 2 refeições: lentilha, feijão ou grão-de-bico.",
+  "Compra: 2 a 3 latas de sardinha ou atum, fruta para 2 dias, folhas e legumes frescos, leguminosa se faltar. Marmitas só depois da sua lista ou foto."
  ],
- "definicoes": "Fritura: fritas, croquete e banana frita; ovo frito na frigideira não conta. Abacate conta como gordura, não como fruta. Refeição principal é almoço ou janta.",
+ "definicoes": "Fritura: fritas, croquete, coxinha, pastel, bolinho frito e banana frita; ovo frito na frigideira não conta. Leguminosa: feijão, lentilha e grão-de-bico. Abacate conta como gordura, não como fruta. Refeição principal é almoço ou janta. Refeição livre: Um prato servido uma vez, sem buffet livre, sem segunda rodada, no máximo um item frito; sobremesa e bebida contam como parte da mesma refeição; vale uma das 2 frituras da semana.",
  "aviso": "Só conta o que foi registrado. O que não aparece aqui pode ter sido comido e não registrado. A classificação dos pratos foi feita pelo copiloto a partir do texto, da foto e do rótulo. As metas foram definidas pelo agente de nutrição do copiloto em 11/10, a seu pedido. Não são prescrição de um profissional de saúde.",
  "refeicoes": [
   {

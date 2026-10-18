@@ -1,6 +1,6 @@
 {
  "definido_por": "carga",
- "em": "2026-10-11",
+ "em": "2026-10-18",
  "porteira_fase_2": "fechada",
  "sessoes": {
   "2026-10-12": {
@@ -159,52 +159,45 @@
     }
    ]
   },
-  "2026-10-18": {
-   "titulo": "Retomada curta pós-campeonato",
-   "porque": "É o dia seguinte ao jogo e não há dado do relógio do campeonato, então são 24 min com duas caminhadas: se as pernas pesarem, troque por caminhada. Joelho esquerdo: se a dor passar de 3/10, troque por caminhada a 5,5 km/h. Terreno plano, sem descida.",
+  "2026-10-20": {
+   "titulo": "Corrida fácil de 30 min (só se o painel liberar)",
+   "condicao": "Passo A (fisiologista): índice 50 ou mais E FC de repouso até 54, em manhã com 24 h sem antitérmico; E secreção só no nariz ou na garganta (nada no peito, sem febre, sem dor no corpo); E UMA destas: sem dose do antigripal nas últimas 48 h, ou a bula confirmando que ele não tem anti-inflamatório (quem confirma a bula é você; não opino sobre remédio). Com antitérmico nas últimas 24 h, FC e VFC não liberam, mas ainda vetam: FC de repouso 57 ou mais ou VFC 28 ou menos é vermelho. Sem registro da hora da última dose, assumo que tomou: caminhada. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Febre: zero treino. O painel e o Silvester conferem. Sem o passo A: caminhada de 20 a 30 min.",
+   "porque": "Única corrida até o passo B, e terça 20/10 é a única janela: terça 20/10 é a única janela antes do passo B. Se o passo A falhar, vira caminhada de 20 a 30 min; a corrida só volta depois do passo B, nunca em dia de força, quinta (jogo) ou sexta (leve). Decisão da fisiologista: até 30 min a 8,0 km/h, conversando sem esforço, FC até 150. Esteira preferida (local: não sei); na rua, pace de 7:30 min/km ou mais lento. Em 14/10 a FC máxima foi 164 a 8,0 km/h, então o teto de 150 vai pedir pausas de caminhada; é esperado. Pare e caminhe se surgir tosse no peito ou falta de ar. Porteira da fase 2 fechada: sem tiros nem degraus de cadência. Joelho esquerdo ou lombar acima de 3/10: caminhada leve. Só com o almoço feito antes das 13h.",
    "etapas": [
     {
      "n": "Aquecimento",
-     "s": 360,
-     "v": "5,5 a 6,5 km/h",
-     "fc": "FC abaixo de 115",
-     "t": "Caminhe e entre num trote leve só se as pernas deixarem.",
+     "s": 300,
+     "v": "caminhada ou trote leve (até 6,5 km/h)",
+     "fc": "FC abaixo de 125",
+     "t": "Caminhe e entre num trote leve só se o corpo deixar.",
      "marcas": 60
     },
     {
      "n": "Bloco 1 de 2",
-     "s": 360,
-     "v": "8,0 km/h",
-     "fc": "FC até 140",
-     "t": "Cadência 84, passo curto.",
-     "marcas": 60
-    },
-    {
-     "n": "Caminhada ativa",
-     "s": 120,
-     "v": "5,5 km/h",
-     "fc": "FC abaixo de 120",
-     "t": "Caminhe e solte as pernas.",
+     "s": 600,
+     "v": "8,0 km/h na esteira; na rua, pace de 7:30 min/km ou mais lento",
+     "fc": "FC até 145",
+     "t": "Fácil, passo solto e curto, cadência 84. Se a FC passar de 150, caminhe.",
      "marcas": 60
     },
     {
      "n": "Bloco 2 de 2",
-     "s": 360,
-     "v": "8,0 km/h",
-     "fc": "FC até 140",
-     "t": "Cadência 84. Se as pernas pesarem, caminhe.",
+     "s": 600,
+     "v": "8,0 km/h na esteira; na rua, pace de 7:30 min/km ou mais lento",
+     "fc": "FC até 150",
+     "t": "Fácil, cadência 84 a 86. Sem acelerar.",
      "marcas": 60
     },
     {
      "n": "Desaceleração",
-     "s": 240,
-     "v": "6,0 km/h",
-     "fc": "FC abaixo de 115",
+     "s": 300,
+     "v": "caminhada (6,0 km/h)",
+     "fc": "FC abaixo de 120",
      "t": "Caminhe e respire.",
      "marcas": 60
     }
    ]
   }
  },
- "nota": "11/10: teto de 8,0 km/h nos blocos enquanto o joelho esquerdo dói (carga)."
+ "nota": "11/10: teto de 8,0 km/h enquanto o joelho esquerdo dói (carga). 18/10: a sessão de 20/10 é condicional ao passo A e não há reposição na semana; depois do passo B, até 2 corridas fáceis."
 }
