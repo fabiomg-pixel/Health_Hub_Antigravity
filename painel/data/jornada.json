@@ -1,24 +1,24 @@
 {
- "gerado_em": "2026-10-15T19:03:32",
+ "gerado_em": "2026-10-18T09:20:20",
  "fontes": {
   "registros_ok": true,
-  "registros_desde": "2026-09-02",
-  "garmin_ate": "2026-10-15"
+  "registros_desde": "2026-09-05",
+  "garmin_ate": "2026-10-18"
  },
  "personagem": {
   "nome": "Fabio",
   "classe": "Pesquisador de Campo",
   "nivel": 4,
   "titulo": "Veterano das Trilhas",
-  "xp_total": 6330,
-  "xp_no_nivel": 1830,
+  "xp_total": 6800,
+  "xp_no_nivel": 2300,
   "xp_para_proximo": 2500
  },
  "vitalidade": {
-  "indice": 28,
+  "indice": 22,
   "banda": "r",
   "confiavel": true,
-  "sono_h": 6.65,
+  "sono_h": 6.57,
   "estado": "ferido"
  },
  "atributos": [
@@ -30,13 +30,13 @@
   },
   {
    "nome": "Força",
-   "valor": 4,
+   "valor": 5,
    "unidade": "sessões em 8 semanas",
    "nota": "maior leg press registrado: 150 kg"
   },
   {
    "nome": "Constância",
-   "valor": 2,
+   "valor": 4,
    "unidade": "de 8 capítulos",
    "nota": "capítulos concluídos nas últimas 8 semanas"
   }
@@ -44,49 +44,49 @@
  "capitulo": {
   "numero": 1,
   "segunda": "2026-10-12",
-  "status": "em_andamento",
+  "status": "concluido",
   "missoes": [
    {
     "id": "ativos",
     "nome": "Dias ativos",
-    "feito": 4,
+    "feito": 6,
     "meta": 5,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "pesagens",
     "nome": "Pesagens em jejum",
-    "feito": 3,
+    "feito": 4,
     "meta": 4,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "forcas",
     "nome": "Sessões de força do plano",
-    "feito": 1,
+    "feito": 2,
     "meta": 2,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "almocos",
     "nome": "Almoços registrados (seg a sex)",
-    "feito": 3,
+    "feito": 4,
     "meta": 4,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "lanches",
     "nome": "Lanches das 17h registrados",
-    "feito": 1,
+    "feito": 2,
     "meta": 4,
     "cumprida": false
    }
   ],
   "novo_arco": false,
-  "xp_semana": 0
+  "xp_semana": 350
  },
  "saga": {
-  "atual": 2,
+  "atual": 3,
   "maior": 5,
   "historico": [
    {
@@ -96,12 +96,12 @@
   ]
  },
  "hoje": {
-  "data": "2026-10-15",
-  "xp": 90,
+  "data": "2026-10-18",
+  "xp": 20,
   "missoes": [
    {
-    "nome": "Futebol de quinta (20h) (conta como dia ativo)",
-    "xp": 0,
+    "nome": "Corrida: Corrida de 30 min + preparo da semana",
+    "xp": 80,
     "feito": false
    },
    {
@@ -123,12 +123,12 @@
    {
     "nome": "Registrar o lanche das 17h",
     "xp": 20,
-    "feito": true
+    "feito": false
    },
    {
     "nome": "Estalagem: descansar conta como cumprido (o Silvester confirma com você)",
     "xp": 50,
-    "feito": true,
+    "feito": false,
     "estalagem": true
    }
   ],
@@ -140,9 +140,9 @@
   "de": 95.0,
   "ate": 92.5,
   "chefe": "O Guardião do Platô",
-  "hp": 0.944
+  "hp": 0.948
  },
- "media_28d": 94.86,
+ "media_28d": 94.87,
  "paralela": {
   "nome": "O Fôlego do Dragão",
   "valor": 42.2,
@@ -186,7 +186,7 @@
    "id": "livro",
    "nome": "O Livro de Bordo",
    "texto": "30 dias com algum registro.",
-   "em": "2026-10-12"
+   "em": "2026-10-15"
   },
   {
    "id": "estalagem",
@@ -318,7 +318,7 @@
   },
   {
    "segunda": "2026-10-05",
-   "status": "resgate_possivel",
+   "status": "resgatado",
    "cumpridas": 1,
    "xp_semana": 50,
    "novo_arco": false,
@@ -326,9 +326,9 @@
   },
   {
    "segunda": "2026-10-12",
-   "status": "em_andamento",
-   "cumpridas": 0,
-   "xp_semana": 0,
+   "status": "concluido",
+   "cumpridas": 4,
+   "xp_semana": 350,
    "novo_arco": false,
    "n": 5
   }
@@ -385,9 +385,9 @@
   "2026-08-30": 20,
   "2026-08-31": 20,
   "2026-09-01": 20,
-  "2026-09-02": 130,
-  "2026-09-03": 40,
-  "2026-09-04": 40,
+  "2026-09-02": 50,
+  "2026-09-03": 20,
+  "2026-09-04": 20,
   "2026-09-05": 30,
   "2026-09-06": 0,
   "2026-09-07": 250,
@@ -428,7 +428,10 @@
   "2026-10-12": 70,
   "2026-10-13": 170,
   "2026-10-14": 130,
-  "2026-10-15": 90
+  "2026-10-15": 90,
+  "2026-10-16": 170,
+  "2026-10-17": 50,
+  "2026-10-18": 20
  },
  "livro": [
   {

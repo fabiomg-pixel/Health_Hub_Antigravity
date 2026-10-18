@@ -354,6 +354,21 @@
    "data": "2026-10-12",
    "peso_kg": 95.3,
    "gordura_pct": 19.4
+  },
+  {
+   "data": "2026-10-13",
+   "peso_kg": 95.3,
+   "gordura_pct": 19.4
+  },
+  {
+   "data": "2026-10-15",
+   "peso_kg": 94.75,
+   "gordura_pct": 19.3
+  },
+  {
+   "data": "2026-10-18",
+   "peso_kg": 93.95,
+   "gordura_pct": 19.2
   }
  ]
 }
