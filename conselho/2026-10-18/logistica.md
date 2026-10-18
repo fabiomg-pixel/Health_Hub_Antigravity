@@ -34,3 +34,21 @@ Teto da carga: força 1 sem perna pesada, corrida até 1 fácil de 30 min, nada 
 2. Esteira utilizável sex, sáb ou dom quando a rua não serve? sim/não. (pior caso: não)
 3. Compromisso fora da agenda no fim da tarde de ter ou qua (15h30-17h45)? sim/não. (pior caso: sim nos dois)
 Resposta dele: (aguardando)
+
+Resposta dele (palavra por palavra, 18/10 21:43 do Telegram):
+"Não tenho jogo de campeonato no fim de semana. Se tiver algo, apenas recreativo no Domingo. Principalmente se for sugerido para completar a semana.
+
+Sim.
+
+Não."
+(Leitura: 1 = sem campeonato; só recreativo no domingo, e aceita se for sugerido para completar a semana; 2 = sim, esteira; 3 = não, sem compromisso fora da agenda.)
+
+## Avaliação (logístico, 18/10)
+Bloco técnico
+- Seg 19: sem treino (carga; chuva 97%). Ter 20: corrida fácil 30 min na rua, 15h30-17h45, só se o passo A bater (índice >=50, FC de repouso <=54, resfriado passado); senão nada. Qua 21: academia de manhã (sair ~7h30, voltar antes das 12h), força 1 de parte superior, sem perna pesada; reserva da corrida na rua 16h00-17h45. Qui 22: só o jogo 20h; manhã vermelha limita a 45 min. Sex 23: leve, caminhada antes das 9h ou esteira (sensação 32 °C). Sáb 24: sem treino (36 °C, UV 9). Dom 25: chuva 67% e 9 mm; recreativo só no lugar da 2ª força, nunca somado, só no passo B; se chover, esteira ou nada.
+- Veto: academia à tarde de seg a qui; rua depois das 17h45; rua sex/sáb depois das 9h; "completar a semana" no domingo acima do teto da carga.
+- Não sei: hora e esforço do recreativo; onde fica a esteira; a manhã de cada dia.
+Relatório
+- Como está: sem campeonato, com esteira e tarde de ter/qua livre, mas o corpo manda mais que a agenda (índice 22, 4º vermelho; FC de repouso 57 vs 54).
+- Para onde vai: corrida leve na terça se a manhã melhorar; força de parte superior na quarta de manhã; sex e sáb leves por causa do calor; recreativo de domingo conta como a 2ª força e não completa nada; se chover, em casa.
+- O que eu não sei: como você acorda a cada manhã; hora e intensidade do recreativo; onde fica a esteira.

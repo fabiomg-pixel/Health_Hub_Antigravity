@@ -7,15 +7,16 @@
   "logistica",
   "nutricao"
  ],
- "atual": "logistica",
- "fase": "aguardando",
- "rodada": 1,
+ "atual": "nutricao",
+ "fase": "analise",
+ "rodada": 0,
  "agentes": {
   "carga": "ac5e82c56bd325728",
   "logistica": "ad2a426d991849654"
  },
  "concluidos": [
-  "carga"
+  "carga",
+  "logistica"
  ],
  "sem_resposta": [],
  "nota": "Primeira entrevista. As análises da manhã já estão nos .md: na fase análise, o especialista parte delas e só confirma com o fatos.json do momento."
