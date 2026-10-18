@@ -144,7 +144,17 @@ def tipo_plano(dia):
     return 'forca' if dia.get('tipo') == 'treino' else 'leve'
 
 
-PLANO = {iso_ddmm(x['data']).isoformat(): x for x in SEMANA.get('dias', [])}
+PLANO = {}
+# semanas anteriores arquivadas (a semana.json é substituída no domingo à noite, antes de a semana velha acabar)
+for arq in sorted(glob.glob(os.path.join(AQUI, 'historico_semanas', '*.json'))):
+    try:
+        ini = dt.date.fromisoformat(os.path.basename(arq)[:10])
+        for x in json.load(open(arq, encoding='utf-8')).get('dias', []):
+            dd, mm = x['data'].split('/')
+            PLANO[dt.date(ini.year, int(mm), int(dd)).isoformat()] = x
+    except (OSError, ValueError, KeyError):
+        pass
+PLANO.update({iso_ddmm(x['data']).isoformat(): x for x in SEMANA.get('dias', [])})
 
 # ── semanas: missões, capítulos, resgate, saga
 inicio = D(R['inicio_campanha'])

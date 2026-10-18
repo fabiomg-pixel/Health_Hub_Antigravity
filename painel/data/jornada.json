@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-18T19:58:48",
+ "gerado_em": "2026-10-18T20:11:38",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-09-07",
@@ -10,8 +10,8 @@
   "classe": "Pesquisador de Campo",
   "nivel": 4,
   "titulo": "Veterano das Trilhas",
-  "xp_total": 6750,
-  "xp_no_nivel": 2250,
+  "xp_total": 6800,
+  "xp_no_nivel": 2300,
   "xp_para_proximo": 2500
  },
  "vitalidade": {
@@ -61,6 +61,13 @@
     "cumprida": true
    },
    {
+    "id": "forcas",
+    "nome": "Sessões de força do plano",
+    "feito": 2,
+    "meta": 2,
+    "cumprida": true
+   },
+   {
     "id": "almocos",
     "nome": "Almoços registrados (seg a sex)",
     "feito": 4,
@@ -76,7 +83,7 @@
    }
   ],
   "novo_arco": false,
-  "xp_semana": 300
+  "xp_semana": 350
  },
  "saga": {
   "atual": 3,
@@ -91,7 +98,40 @@
  "hoje": {
   "data": "2026-10-18",
   "xp": 20,
-  "missoes": [],
+  "missoes": [
+   {
+    "nome": "Corrida: Corrida de 30 min + preparo da semana",
+    "xp": 80,
+    "feito": false
+   },
+   {
+    "nome": "Dia ativo",
+    "xp": 30,
+    "feito": false,
+    "sem_dado": false
+   },
+   {
+    "nome": "Pesagem em jejum",
+    "xp": 20,
+    "feito": true
+   },
+   {
+    "nome": "Registrar o almoço",
+    "xp": 20,
+    "feito": false
+   },
+   {
+    "nome": "Registrar o lanche das 17h",
+    "xp": 20,
+    "feito": false
+   },
+   {
+    "nome": "Estalagem: descansar conta como cumprido (o Silvester confirma com você)",
+    "xp": 50,
+    "feito": false,
+    "estalagem": true
+   }
+  ],
   "ferido": true
  },
  "arco": {
@@ -287,10 +327,10 @@
   {
    "segunda": "2026-10-12",
    "status": "concluido",
-   "cumpridas": 3,
-   "xp_semana": 300,
+   "cumpridas": 4,
+   "xp_semana": 350,
    "novo_arco": false,
-   "n": 4
+   "n": 5
   }
  ],
  "xp_por_dia": {

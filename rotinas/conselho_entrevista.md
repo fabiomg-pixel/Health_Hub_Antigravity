@@ -67,7 +67,7 @@ carga; a nutrição sabe o teto e a agenda.
 `fase: "sintese"`. Siga `.claude/skills/revisao-semanal/SKILL.md` do **passo 4 ao 6**, usando as três
 avaliações como a saída dos especialistas (não chame de novo). Os quatro relatórios (carga, logística,
 nutrição, cético) vão para `relatorios` do `semana.json`. O cético (`subagent_type` `cetico`) é bloqueante.
-Depois: `./publicar_jornada.sh` (as missões do capítulo novo leem o `semana.json`), commit, `fase: "publicado"`.
+ANTES de substituir o `semana.json`, arquive a semana que acaba: `cp painel/data/semana.json historico_semanas/AAAA-MM-DD.json` (segunda da semana velha); o `jornada.py` lê esses arquivos, senão a semana velha perde as missões do plano e o XP cai. Depois: `./publicar_jornada.sh` (as missões do capítulo novo leem o `semana.json`), commit, `fase: "publicado"`.
 
 Mensagem final (`./enviar_telegram_saude.py conselho`, até 10 linhas): uma linha por resposta dele no formato
 "você disse X → ficou Y"; o que foi decidido pelo lado seguro por falta de resposta; o foco da semana; o link

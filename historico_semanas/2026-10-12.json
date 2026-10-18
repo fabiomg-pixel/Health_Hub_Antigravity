@@ -1,0 +1,1069 @@
+{
+ "gerado_em": "2026-10-11",
+ "semana": "12 a 18/out · retomar a constância, sem pressa e sem palpite",
+ "objetivo": "Constância: corrida fácil de 30 min de manhã, duas forças, futebol na quinta e campeonato no sábado. Nada intenso além dos jogos.",
+ "peso_atual": 95.14,
+ "peso_rotulo": "média das 7 leituras neutras, até 06/10",
+ "fontes_status": {
+  "garmin": "ok, noite de 11/10 incluída (sono 6,43 h, HRV 45, FC de repouso 49)",
+  "peso": "última pesagem 06/10 (95,05 kg)",
+  "nutricao": "parcial: sem registro de 07 a 09/10; 10/10 processado (café estimado pela foto, almoço com rótulo sem a proteína legível, jantar sem quantidade)",
+  "strava": "consultado em 11/10: última atividade em 08/10, nada ainda em 11/10",
+  "clima": "Open-Meteo, puxado em 10/10 (só os dois primeiros dias são firmes)"
+ },
+ "dieta": {
+  "calorias": 1900,
+  "proteina": 175,
+  "proteina_piso": 140,
+  "gordura": 60,
+  "carbo": 175,
+  "fibra": 30,
+  "proteina_alvo": 160
+ },
+ "regra_prato": {
+  "titulo": "Quatro regras. O resto é o de sempre.",
+  "linhas": [
+   "O Yopro da manhã é ADICIONAL: se virar o almoço, o almoço das 13h acontece mesmo assim.",
+   "Segunda a sexta, almoço às 13h: marmita com 35 g de proteína ou mais no rótulo e com vegetal visível no prato (brócolis, espinafre, legumes); quando a marmita não traz o vegetal, salada ao lado. O nome da marmita não basta. Sábado e domingo: almoço em casa.",
+   "17h, todo dia: iogurte, whey, granola e banana, antes de qualquer salgado ou doce.",
+   "Uma refeição livre, sábado à noite. Só uma."
+  ]
+ },
+ "tendencias": {
+  "prontidao_garmin_hoje": 54,
+  "indice_agudo_hoje": 83,
+  "indice_medio_7d": 44.0,
+  "sono_media_7d": 6.11,
+  "sono_score_hoje": 80,
+  "rem_hoje": null,
+  "training_status": null,
+  "prontidao": [
+   {
+    "data": "04/10",
+    "valor": 55,
+    "banda": "r",
+    "meu": 5
+   },
+   {
+    "data": "05/10",
+    "valor": 53,
+    "banda": "y",
+    "meu": 56
+   },
+   {
+    "data": "06/10",
+    "valor": 75,
+    "banda": "y",
+    "meu": 63
+   },
+   {
+    "data": "07/10",
+    "valor": 50,
+    "banda": "r",
+    "meu": 26
+   },
+   {
+    "data": "08/10",
+    "valor": 6,
+    "banda": "r",
+    "meu": 2
+   },
+   {
+    "data": "09/10",
+    "valor": 1,
+    "banda": "r",
+    "meu": 1
+   },
+   {
+    "data": "10/10",
+    "valor": 50,
+    "banda": "g",
+    "meu": 76
+   }
+  ],
+  "prontidao_media_7d": 41
+ },
+ "status_treino": {
+  "planejado": 7,
+  "feito": 0,
+  "dias_feitos": []
+ },
+ "relatorio": [
+  "Semana fechada com as suas respostas de 10/10: há marmitas, há futebol na quinta 15/10, há campeonato no sábado 17/10, e você aceitou a proposta dos especialistas (2 forças, até 5 corridas).",
+  "Como ficou: corrida fácil de 30 min na segunda, quarta e domingo; força na terça (Lower A) e na sexta (Upper B); futebol na quinta; campeonato no sábado. São 3 corridas, e não 5: quinta e sábado viraram jogo. Por isso esta semana ainda não conta para a porteira da Fase 2.",
+  "Atualização de 11/10: a noite de hoje foi melhor que a média, mas curta (sono 6,43 h, HRV 45, FC de repouso 49, índice 83, prontidão do Garmin 54). A semana ainda não mostra recuperação: índice médio de 7 dias 44, HRV de 7 dias 34 contra 37 de base, sono médio 6,11 h. Hoje, por conversa de 11/10, você faz um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, com carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18/10 não muda.",
+  "Peso: média das 7 leituras neutras 95,14 kg (28 dias: 94,83); última pesagem 06/10. Sono, HRV e FC de repouso de hoje estão na linha de atualização acima.",
+  "Sessão intensa continua fora, pela regra do §15: só abre com FC de repouso ≤52 por 3 dias seguidos, HRV ≥38 e duas semanas com 5 corridas ou mais. Os dois jogos são a intensidade da semana.",
+  "O que ainda não sei: a carga da última perna pesada. O campeonato não tem relógio, então o seu relato depois do jogo é o registro.",
+  "Almoço, segunda a sexta: marmitas do pedido de 11/10, um prato por dia, em dobro. Seg N35, ter N83, qua N49, qui N02, sex N53. Calorias e proteína de cada uma vêm do rótulo do cardápio do iFood, sem estimativa; a proteína da N53 (51 g), que estava ilegível, está confirmada. Salada ao lado de segunda a quinta, pela regra do vegetal visível. A ordem dos pratos na semana foi escolha do copiloto, sem critério fisiológico: pode trocar os dias à vontade."
+ ],
+ "lista_compra": [
+  {
+   "cat": "Feira de hoje",
+   "itens": [
+    "Banana (a do lanche das 17h, mais 1 para sábado de manhã)",
+    "Folhas e tomate, para lavar e guardar secos",
+    "Frutas à vista na bancada",
+    "Quantidade: não sei o que já há em casa, então conte antes de comprar"
+   ]
+  },
+  {
+   "cat": "Proteína da semana",
+   "itens": [
+    "Não sei o que há no freezer: conte antes de comprar.",
+    "Frango, carne ou peixe para 6 jantas e 2 almoços em casa (sábado e domingo), com uma janta de peixe (sardinha ou atum em lata servem)",
+    "Ovos: 12 cozidos no domingo, mais os do café"
+   ]
+  },
+  {
+   "cat": "Para sete dias",
+   "itens": [
+    "Iogurte Danone natural desnatado 160 g (rótulo: 84 kcal, 8,9 g de proteína, sem açúcar adicionado), um por dia",
+    "Whey: confira se o pote chega até domingo",
+    "Yopro, um por dia"
+   ]
+  },
+  {
+   "cat": "Marmitas (pedido de 11/10, segunda a sexta)",
+   "itens": [
+    "Já pedidas no iFood (Food Brasil): 10 porções = 5 pratos × 2, para você e sua esposa. Guardar no freezer ao chegar.",
+    "Seg N35 frango agridoce · Ter N83 cenoura com carne moída · Qua N49 frango com batata doce · Qui N02 fricassê · Sex N53 curry com brócolis",
+    "Salada de folhas e tomate ao lado de segunda a quinta, porque o rótulo não mostra vegetal em quantidade (N53 já traz brócolis)",
+    "Não sei quantas marmitas já havia no freezer: conte e guarde como reserva"
+   ]
+  }
+ ],
+ "receitas": {
+  "rA": {
+   "nome": "Frango piccata (limão siciliano e alcaparras) com arroz e brócolis",
+   "tempo": "25 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 700,
+   "prot": 54,
+   "ingredientes": [
+    "440 g filé de peito de frango em bifes finos",
+    "Suco de 1 limão siciliano",
+    "2 col. sopa alcaparras",
+    "3 dentes de alho",
+    "1 col. manteiga + azeite",
+    "Farinha de trigo (leve, pra selar)",
+    "Salsinha",
+    "1 xíc arroz",
+    "Brócolis no vapor"
+   ],
+   "passos": [
+    "Cozinhe o arroz e o brócolis no vapor.",
+    "Passe os bifes levemente na farinha e sele dos dois lados (~3 min/lado). Reserve.",
+    "Na mesma frigideira, refogue o alho, junte limão, alcaparras e um pouco de água; deixe encorpar.",
+    "Volte o frango ao molho por 2 min, finalize com manteiga e salsinha.",
+    "Divida em 2 — o molho cítrico segura a umidade. Congele a 2ª porção."
+   ]
+  },
+  "rB": {
+   "nome": "Galinhada mineira (arroz com frango e açafrão)",
+   "tempo": "35 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 720,
+   "prot": 52,
+   "ingredientes": [
+    "440 g frango em pedaços (coxa/sobrecoxa sem pele ou peito)",
+    "1,5 xíc arroz",
+    "1 cebola, 3 alhos, 1 tomate",
+    "1 col. chá açafrão-da-terra (cúrcuma)",
+    "Cheiro-verde, pimenta",
+    "Caldo de galinha ~3 xíc",
+    "Cenoura em cubos"
+   ],
+   "passos": [
+    "Doure o frango temperado com alho, sal e açafrão.",
+    "Junte cebola e tomate, refogue.",
+    "Adicione o arroz, envolva, e cubra com o caldo quente.",
+    "Cozinhe ~18 min em fogo baixo, tampado; junte a cenoura na metade.",
+    "Finalize com cheiro-verde. Divida em 2 e congele a 2ª."
+   ]
+  },
+  "rC": {
+   "nome": "Peixe à espanhola (assado com batata, pimentão e azeitona)",
+   "tempo": "30 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 680,
+   "prot": 50,
+   "ingredientes": [
+    "440 g filé de peixe branco (pescada/tilápia)",
+    "400 g batata em rodelas finas",
+    "1 pimentão, 1 cebola, 2 tomates",
+    "Azeitonas pretas, páprica, azeite",
+    "Suco de 1 limão, salsinha"
+   ],
+   "passos": [
+    "Forre a assadeira com a batata em rodelas, tempere e asse 15 min a 200 °C.",
+    "Cubra com cebola, pimentão e tomate em rodelas.",
+    "Ponha o peixe por cima, regue com azeite, limão e páprica; espalhe as azeitonas.",
+    "Asse mais ~15 min. Divida em 2 — o molho da assadeira mantém tudo úmido."
+   ]
+  },
+  "rD": {
+   "nome": "Frango teriyaki com brócolis e arroz",
+   "tempo": "25 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 710,
+   "prot": 52,
+   "ingredientes": [
+    "440 g peito de frango em cubos",
+    "Molho: shoyu, mel, gengibre, alho, 1 col. maisena",
+    "Brócolis, cenoura",
+    "Gergelim",
+    "1 xíc arroz"
+   ],
+   "passos": [
+    "Cozinhe o arroz.",
+    "Sele o frango em fogo alto.",
+    "Junte o molho (shoyu+mel+gengibre+alho+maisena dissolvida) e deixe engrossar e brilhar.",
+    "Adicione brócolis e cenoura no vapor, envolva.",
+    "Finalize com gergelim. Divida em 2 e congele a 2ª."
+   ]
+  },
+  "rE": {
+   "nome": "Caldo de carne com abóbora e couve (inverno)",
+   "tempo": "35 min (pressão)",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 650,
+   "prot": 50,
+   "ingredientes": [
+    "440 g músculo ou patinho em cubos",
+    "500 g abóbora cabotiá",
+    "1 maço de couve fatiada fina",
+    "1 cebola, 3 alhos, 1 tomate",
+    "Louro, cominho, pimenta",
+    "Caldo de carne"
+   ],
+   "passos": [
+    "Sele a carne na pressão com cebola e alho.",
+    "Cubra com água/caldo e cozinhe ~20 min na pressão.",
+    "Abra, junte a abóbora e cozinhe até desmanchar e engrossar o caldo.",
+    "Desligue e junte a couve fatiada (murcha no calor).",
+    "Divida em 2 — caldo é a melhor comida pra congelar e requentar."
+   ]
+  },
+  "rF": {
+   "nome": "Macarrão à bolonhesa de carne moída",
+   "tempo": "30 min",
+   "rende": "2 porções — a 2ª vai pro FREEZER como backup",
+   "kcal": 730,
+   "prot": 52,
+   "ingredientes": [
+    "400 g patinho moído",
+    "1 lata de tomate pelado (ou 4 tomates)",
+    "1 cebola, 3 alhos, 1 cenoura ralada",
+    "Manjericão, orégano, louro",
+    "Macarrão integral 160 g",
+    "Parmesão ralado"
+   ],
+   "passos": [
+    "Refogue cebola, alho e cenoura ralada; doure a carne.",
+    "Junte o tomate e as ervas, apure ~20 min em fogo baixo.",
+    "Cozinhe o macarrão al dente.",
+    "Sirva com parmesão. Divida em 2 — guarde o molho separado do macarrão pra congelar melhor."
+   ]
+  },
+  "rG": {
+   "nome": "Paella mista (frango e frutos do mar) — pra fazer a dois",
+   "tempo": "50 min",
+   "rende": "2 porções generosas — pra comer na hora",
+   "kcal": 800,
+   "prot": 58,
+   "ingredientes": [
+    "250 g peito de frango em cubos",
+    "300 g frutos do mar (camarão, lula, mexilhão)",
+    "1,5 xíc arroz (bomba ou arbóreo)",
+    "1 pimentão vermelho, 1 cebola, 2 tomates",
+    "Açafrão (ou cúrcuma), páprica",
+    "Caldo quente ~3,5 xíc",
+    "Ervilha, limão, salsinha, azeite"
+   ],
+   "passos": [
+    "Doure o frango temperado; reserve.",
+    "Refogue cebola, pimentão e tomate com páprica e açafrão.",
+    "Junte o arroz, envolva, e adicione o caldo quente. Não mexa depois disso.",
+    "Aos 12 min, distribua o frango e os frutos do mar por cima; cozinhe mais ~8 min.",
+    "Descanse 5 min tampado. Sirva com limão e salsinha."
+   ]
+  },
+  "rH": {
+   "nome": "Moqueca de peixe e camarão (capixaba, sem dendê)",
+   "tempo": "35 min",
+   "rende": "3 porções — a 3ª vai pro FREEZER (começa o estoque de agosto)",
+   "kcal": 620,
+   "prot": 52,
+   "ingredientes": [
+    "500 g filé de peixe branco firme (badejo, pescada, robalo)",
+    "300 g camarão limpo",
+    "2 tomates, 1 cebola grande, 1 pimentão vermelho (tudo em rodelas)",
+    "200 ml leite de coco",
+    "3 alhos, suco de 2 limões, coentro e cebolinha",
+    "Azeite, colorau (urucum), sal, pimenta",
+    "Acompanhar: arroz (1 xíc crua) + pirão feito com o caldo"
+   ],
+   "passos": [
+    "Tempere peixe e camarão com limão, alho, sal e pimenta — deixe 15 min enquanto corta o resto.",
+    "Na panela larga, faça CAMADAS: azeite, metade da cebola/tomate/pimentão, o peixe, o resto dos legumes por cima. Não mexa.",
+    "Regue com o leite de coco e um fio de azeite com colorau. Tampe e cozinhe 12–15 min em fogo médio-baixo.",
+    "Jogue o camarão por cima nos ÚLTIMOS 4 min — mais que isso ele borracha.",
+    "Coentro no fim, fora do fogo. Separe 1 porção ainda quente pro pote do freezer ANTES de servir — o que fica na mesa some."
+   ]
+  },
+  "rI": {
+   "nome": "Bloco de proteína do domingo (rosbife + frango fatiados pra semana)",
+   "tempo": "50 min no domingo — resolve os 5 lanches da semana",
+   "rende": "~7 porções de 100 g · guarda fatiado em potes de 2 porções",
+   "kcal": 190,
+   "prot": 30,
+   "ingredientes": [
+    "700 g de coxão mole ou alcatra em peça (o rosbife)",
+    "600 g de peito de frango inteiro",
+    "2 latas de atum (pra pasta)",
+    "3 col. sopa de iogurte grego + mostarda (a pasta de atum SEM maionese)",
+    "Alho, alecrim, tomilho, pimenta-do-reino, sal grosso, azeite",
+    "Pão integral ou wrap, folhas, tomate (a montagem do sanduíche)"
+   ],
+   "passos": [
+    "ROSBIFE: tempere a peça com sal grosso, alho e alecrim. Sele em fogo ALTO nos 4 lados (~2 min cada) até criar crosta.",
+    "Leve ao forno a 200 °C por 20–25 min (mal passado por dentro — é o que mantém suculento depois de frio).",
+    "⚠️ Deixe esfriar COMPLETAMENTE antes de fatiar, de preferência na geladeira. Fatiar quente esfarela e resseca.",
+    "FRANGO: tempere com limão, alho e tomilho; asse a 200 °C por 30 min. Esfrie e fatie ou desfie.",
+    "PASTA DE ATUM: atum escorrido + iogurte grego + mostarda + cebolinha. Nada de maionese — troca 0 g de proteína por gordura.",
+    "Guarde em potes de 2 porções (100 g cada) etiquetados. Rosbife e frango aguentam 4 dias na geladeira; congele metade.",
+    "Na hora do lanche: 100 g de rosbife ou frango = 30 g de proteína. É a dose que fechava o buraco do dia."
+   ]
+  },
+  "rJ": {
+   "nome": "Estrogonofe de frango com iogurte grego (a versão que reaquece bem)",
+   "tempo": "35 min",
+   "rende": "4 porções — família + a sua separada",
+   "kcal": 640,
+   "prot": 54,
+   "ingredientes": [
+    "700 g de peito de frango em tiras",
+    "300 g de champignon fatiado (fresco ou em conserva bem escorrido)",
+    "1 cebola grande e 3 dentes de alho",
+    "3 col. sopa de extrato de tomate",
+    "200 g de iogurte grego natural (substitui o creme de leite)",
+    "1 col. sopa de mostarda Dijon + 1 col. sopa de molho inglês",
+    "Páprica doce, sal, pimenta-do-reino, azeite",
+    "Arroz (1,5 xíc cru) · batata palha SERVIDA À PARTE"
+   ],
+   "passos": [
+    "Tempere o frango com sal, pimenta e páprica. Sele em fogo ALTO, em duas levas — panela cheia cozinha no vapor e o frango solta água em vez de dourar.",
+    "Reserve o frango. Na mesma panela, refogue cebola e alho; junte o champignon e deixe soltar e evaporar a água dele.",
+    "Volte o frango, adicione o extrato de tomate, a mostarda e o molho inglês. Um dedo de água se ficar seco. Cozinhe 5 min.",
+    "⚠️ DESLIGUE O FOGO. Espere baixar a fervura e SÓ ENTÃO misture o iogurte grego. Iogurte fervido talha e vira grumo — é o único jeito de errar esta receita.",
+    "Acerte o sal. A batata palha vai numa tigela à parte, nunca por cima da travessa.",
+    "🍱 SEPARE A PORÇÃO DELE ANTES de levar à mesa: frango cheio, arroz pela metade, sem batata palha. Guarde tampada — reaquece bem no micro-ondas em 2 min."
+   ]
+  },
+  "rK": {
+   "nome": "Escondidinho de batata doce com patinho moído",
+   "tempo": "40 min",
+   "rende": "3 porções — 1 vai pro freezer",
+   "kcal": 620,
+   "prot": 45,
+   "ingredientes": [
+    "500 g de patinho moído",
+    "700 g de batata doce",
+    "1 cebola roxa, 3 alhos, 2 tomates",
+    "2 col. sopa de extrato de tomate",
+    "50 g de queijo prato ou mussarela fatiado (a cobertura)",
+    "Cheiro-verde, azeite, sal, pimenta",
+    "Um fio de leite pra dar liga no purê (sem manteiga extra)"
+   ],
+   "passos": [
+    "Cozinhe a batata doce em cubos até garfo entrar fácil. Amasse ainda quente com um fio de leite e sal — ela já é doce, não precisa de manteiga pra ficar boa.",
+    "Refogue cebola e alho, junte o patinho e sele em fogo ALTO até dourar de verdade (carne moída solta água; espere evaporar antes de temperar).",
+    "Adicione tomate e extrato, cozinhe 8 min. Cheiro-verde no fim.",
+    "Monte: carne embaixo, purê por cima, queijo fatiado no topo. Forno 200 °C por 15 min pra gratinar.",
+    "🧊 Separe 1 porção ANTES de levar à mesa."
+   ]
+  },
+  "rL": {
+   "nome": "Berinjela e abobrinha recheadas com carne moída",
+   "tempo": "45 min",
+   "rende": "3 porções",
+   "kcal": 480,
+   "prot": 42,
+   "ingredientes": [
+    "400 g de patinho moído",
+    "1 berinjela grande",
+    "2 abobrinhas italianas",
+    "1 cebola, 3 alhos, 2 tomates",
+    "3 col. sopa de molho de tomate",
+    "Queijo fatiado pra gratinar",
+    "Orégano, azeite, sal, pimenta"
+   ],
+   "passos": [
+    "Corte berinjela e abobrinha ao meio no comprimento e cave o miolo com colher. Reserve o miolo picado.",
+    "Pincele azeite e sal e asse as 'canoas' 15 min a 200 °C — pré-assar evita o recheio pronto com legume cru.",
+    "Refogue cebola, alho, o miolo picado e o tomate; junte a carne e sele bem. Molho de tomate e orégano no fim.",
+    "Recheie, cubra com queijo e volte ao forno 12 min.",
+    "Acompanhe com arroz. Prato leve o suficiente pra véspera de futebol."
+   ]
+  },
+  "rM": {
+   "nome": "Feijão preto com couve e paio (versão contida)",
+   "tempo": "50 min (panela de pressão)",
+   "rende": "4 porções",
+   "kcal": 600,
+   "prot": 38,
+   "ingredientes": [
+    "400 g de feijão preto seco (deixe de molho de véspera)",
+    "150 g de paio fatiado fino — SÓ 150 g, não os 370 g do pacote",
+    "300 g de patinho em cubos, se tiver",
+    "1 maço de couve manteiga fatiada fina",
+    "1 cebola, 4 alhos, louro",
+    "Arroz, laranja ou tangerina pra acompanhar"
+   ],
+   "passos": [
+    "Feijão de molho na véspera — corta o tempo de panela e melhora a digestão.",
+    "Doure o paio primeiro e ESCORRA a gordura que soltar. É esse passo que separa um feijão de 600 kcal de um de 900.",
+    "Refogue cebola e alho na panela de pressão, junte a carne, o feijão, louro e água. 25 min após pegar pressão.",
+    "Couve refogada rápida à parte, com alho — não cozinhe junto, ela vira papa.",
+    "🍊 A tangerina no fim não é decoração: vitamina C junto com feijão aumenta a absorção do ferro."
+   ]
+  },
+  "rN": {
+   "nome": "Lentilha com legumes e ovo poché",
+   "tempo": "35 min",
+   "rende": "2 porções",
+   "kcal": 520,
+   "prot": 34,
+   "ingredientes": [
+    "200 g de lentilha seca",
+    "2 cenouras, 1 abobrinha, 1 cebola, 3 alhos",
+    "2 tomates ou 3 col. de molho",
+    "2 ovos por porção",
+    "Cheiro-verde, azeite, cominho, louro",
+    "Vinagre de maçã (pro poché)"
+   ],
+   "passos": [
+    "Refogue cebola, alho, cenoura e abobrinha. Junte a lentilha, louro, cominho e água (3 partes pra 1 de lentilha).",
+    "Cozinhe 20-25 min. Lentilha NÃO precisa de molho prévio e cozinha mais rápido que feijão — é o que a torna prática em dia de semana.",
+    "Ovo poché: água fervendo com um fio de vinagre, fogo baixo, 3 min. Ou frite com pouco azeite se preferir.",
+    "Monte a lentilha no prato com os ovos por cima. Cheiro-verde e um fio de azeite cru."
+   ]
+  },
+  "rO": {
+   "nome": "Frango assado com abobrinha, berinjela e cebola roxa",
+   "tempo": "45 min (forno faz sozinho)",
+   "rende": "4 porções — 2 vão pro freezer",
+   "kcal": 560,
+   "prot": 52,
+   "ingredientes": [
+    "800 g de frango (peito, coxa ou sobrecoxa — o que estiver no freezer)",
+    "2 abobrinhas, 1 berinjela, 1 cebola roxa, 3 tomates",
+    "4 alhos, suco de 1 limão, azeite",
+    "Páprica, orégano, sal, pimenta",
+    "Arroz pra acompanhar"
+   ],
+   "passos": [
+    "Descongele o frango na GELADEIRA, não na pia — 12 h antes. Descongelar em temperatura ambiente estraga textura e é o que faz frango ficar borrachudo.",
+    "Tempere com limão, alho amassado, páprica, sal e pimenta. 20 min de descanso já fazem diferença.",
+    "Corte os legumes em pedaços grandes (pedaço pequeno vira purê no forno). Espalhe na assadeira com azeite.",
+    "Frango por cima dos legumes — o suco dele tempera tudo por baixo. Forno 200 °C, 35–40 min.",
+    "🧊 Separe 2 porções antes de servir: uma abastece os LANCHES da semana (desfiada) e outra vai pro freezer."
+   ]
+  },
+  "rP": {
+   "nome": "Tilápia assada com tomate, cebola roxa e limão",
+   "tempo": "30 min",
+   "rende": "2 porções",
+   "kcal": 460,
+   "prot": 48,
+   "ingredientes": [
+    "500 g de filé de tilápia",
+    "3 tomates, 1 cebola roxa em rodelas",
+    "Suco de 2 limões, 3 alhos",
+    "Azeite, páprica, cheiro-verde, sal",
+    "Arroz + salada de alface pra acompanhar"
+   ],
+   "passos": [
+    "Descongele na geladeira. Peixe descongelado rápido solta água e cozinha no próprio caldo em vez de assar.",
+    "SEQUE os filés com papel-toalha antes de temperar — é o passo que quase todo mundo pula e o que garante que asse em vez de ferver.",
+    "Tempere com limão, alho, sal e páprica. Não deixe no limão mais que 15 min: ácido demais 'cozinha' o peixe e ele desmancha.",
+    "Forre a assadeira com as rodelas de tomate e cebola, peixe por cima, fio de azeite. Forno 200 °C, 18–20 min.",
+    "Cheiro-verde fora do fogo. Prato leve — por isso está na véspera do futebol."
+   ]
+  }
+ },
+ "dias": [
+  {
+   "id": "seg",
+   "nome": "Segunda",
+   "data": "12/10",
+   "tipo": "treino",
+   "flex": false,
+   "treino": {
+    "foco": "Feriado: corrida fácil de 30 min, de manhã",
+    "exercicios": [
+     {
+      "nome": "30 min a 8,0–8,5 km/h, FC até 150, cadência 84–86, rua entre 6h e 9h.",
+      "series": 1,
+      "reps": "30 min"
+     },
+     {
+      "nome": "Sem academia na segunda: as 2 forças da semana são terça e sexta.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro (≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Marmita N35 Frango agridoce com arroz + salada",
+     "kcal": 448,
+     "prot": 45,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 448 kcal, 45 g de proteína, 44 g de carboidrato, 9.6 g de gordura, sódio 599 mg (porção declarada de 400 g). Vegetal declarado no rótulo: pimentão verde. Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas. Se a entrega ainda não tiver chegado, almoço em casa: proteína grelhada + arroz + feijão + salada. A ordem dos pratos na semana foi escolha do copiloto, sem critério fisiológico: pode trocar os dias à vontade."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada (180 g) + legumes + salada",
+     "kcal": 560,
+     "prot": 55,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Feriado em 12/10. Corrida de 30 min de manhã.",
+    "plano_b": "Se chover: esteira ou 20 min em casa, sem compensar."
+   }
+  },
+  {
+   "id": "ter",
+   "nome": "Terça",
+   "data": "13/10",
+   "tipo": "treino",
+   "flex": false,
+   "treino": {
+    "foco": "Lower A, de volta — força 1 de 2",
+    "exercicios": [
+     {
+      "nome": "Primeira força plena depois do congresso. Carga: não sei qual foi a última (o último relato confirmado é Costas, 01/10). Comece leve e deixe 3 repetições na reserva. Tornozelo liberado, segundo você em 11/10: o joelho esquerdo e a lombar pedem reforço (11/10), então o búlgaro sai por enquanto e entra o step-up, o stiff vai a 3 séries e o fim da sessão tem um bloco de core e glúteo (leg press até cerca de 90°). Se aparecer dor, pare e avise.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "0 · Antes de começar, abra o painel: o semáforo já lê o relógio de 13/10. Se disser Segurar (sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56), faça o Lower A em 3 séries por exercício, com cargas 10% menores e só o reforço de core no fim. Se disser Ajustar, tire 1 série de cada exercício. Se disser Pode, moderando, siga o plano com 2 ou mais repetições de sobra e sem subir carga. Esses cortes (VFC 32 e FC de repouso 56) foram definidos pela carga, a fisiologista do copiloto, e você delegou essa decisão aos especialistas em 11/10.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "1 · Leg press — 4×6–8",
+      "series": 4,
+      "reps": "6–8"
+     },
+     {
+      "nome": "2 · Stiff — 3×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "3 · Step-up (no lugar do búlgaro) — 2×8 cada",
+      "series": 3,
+      "reps": "8 cada"
+     },
+     {
+      "nome": "4 · Leg curl — 3×10",
+      "series": 3,
+      "reps": "10"
+     },
+     {
+      "nome": "5 · Panturrilha unilateral — 3×12",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "Sem corrida hoje.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "6 · Reforço no fim — dead bug, prancha lateral, bird dog, ponte unilateral e caminhada lateral (12 a 15 min)",
+      "series": 2,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro (≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Marmita N83 Creme de cenoura com queijo e carne moída + salada",
+     "kcal": 525,
+     "prot": 49,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 525 kcal, 49 g de proteína, 50 g de carboidrato, 14 g de gordura, sódio 513 mg (porção declarada de 400 g). Vegetal declarado no rótulo: cenoura (dentro do creme). Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada (180 g) + legumes + salada",
+     "kcal": 560,
+     "prot": 55,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Academia, a 40 a 50 min de trânsito, com teto de 30 min de sala. Lower A.",
+    "plano_b": "Se a academia ou uma reunião do fim da tarde atrapalhar: versão em casa (stiff, afundo e panturrilha com halteres, 3 séries) ou sem treino, sem compensar."
+   }
+  },
+  {
+   "id": "qua",
+   "nome": "Quarta",
+   "data": "14/10",
+   "tipo": "treino",
+   "flex": false,
+   "treino": {
+    "foco": "Corrida de 30 min fácil, de manhã",
+    "exercicios": [
+     {
+      "nome": "30 min a 8,0–8,5 km/h, FC até 150, rua 6h–9h. Previsão de quarta é só tendência: confirme na manhã do dia.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Sem tiros: amanhã tem futebol e a porteira do §15 não abre nesta semana.",
+      "series": 1,
+      "reps": "30 min"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro (≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Marmita N49 Frango desfiado com purê de batata doce + salada",
+     "kcal": 461,
+     "prot": 45,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 461 kcal, 45 g de proteína, 44 g de carboidrato, 13 g de gordura, sódio 487 mg (porção declarada de 400 g). Vegetal declarado no rótulo: nenhum vegetal listado (batata doce é tubérculo). Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada (180 g) + legumes + salada",
+     "kcal": 560,
+     "prot": 55,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Corrida de 30 min de manhã, antes do calor, na rua.",
+    "plano_b": "Se estiver quente ou chover: esteira ou 30 min de caminhada."
+   }
+  },
+  {
+   "id": "qui",
+   "nome": "Quinta",
+   "data": "15/10",
+   "tipo": "futebol",
+   "flex": false,
+   "treino": {
+    "foco": "Futebol de quinta (20h)",
+    "exercicios": [
+     {
+      "nome": "O jogo é o treino do dia. Sem corrida de manhã e sem academia.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Vá de relógio: é o registro da carga do jogo.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Lanche das 17h antes de sair, como todo dia.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro (≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Marmita N02 Fricassê de frango com arroz + salada",
+     "kcal": 542,
+     "prot": 49,
+     "peso_g": 400,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 542 kcal, 49 g de proteína, 49 g de carboidrato, 14 g de gordura, sódio 641 mg (porção declarada de 400 g). Vegetal declarado no rótulo: milho. Para cumprir a regra do vegetal visível, salada de folhas e tomate ao lado. Preparo do cardápio: 5 a 7 min no micro-ondas."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada (180 g) + legumes + salada",
+     "kcal": 560,
+     "prot": 55,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Futebol às 20h no campo. Sem corrida e sem academia. O lanche das 17h acontece antes de sair.",
+    "plano_b": "Se o jogo cair: caminhada ou treino leve em casa, sem compensar."
+   }
+  },
+  {
+   "id": "sex",
+   "nome": "Sexta",
+   "data": "16/10",
+   "tipo": "treino",
+   "flex": false,
+   "treino": {
+    "foco": "Upper B — força 2 de 2",
+    "exercicios": [
+     {
+      "nome": "Última força plena da semana. Sem corrida hoje: amanhã tem campeonato, e Upper não pesa nas pernas.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "1 · Pec deck ou crucifixo — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "2 · Puxada alta — 4×8",
+      "series": 4,
+      "reps": "8"
+     },
+     {
+      "nome": "3 · Remada unilateral — 3×10",
+      "series": 3,
+      "reps": "10 cada"
+     },
+     {
+      "nome": "4 · Elevação lateral — 3×12",
+      "series": 3,
+      "reps": "12"
+     },
+     {
+      "nome": "5 · Rosca e tríceps — 2×10",
+      "series": 2,
+      "reps": "10"
+     },
+     {
+      "nome": "6 · Core — dead bug, prancha lateral e bird dog, ~6 min",
+      "series": 2,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro (≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Marmita N53 Frango ao curry e arroz com brócolis",
+     "kcal": 461,
+     "prot": 51,
+     "peso_g": 380,
+     "nota": "Pedido do iFood de 11/10: 2 porções deste prato, a sua e a da sua esposa. Rótulo: 461 kcal, 51 g de proteína, 38 g de carboidrato, 12 g de gordura, sódio 474 mg (porção declarada de 380 g). Brócolis já vem no prato. Preparo do cardápio: 5 a 7 min no micro-ondas."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada + arroz + legumes",
+     "kcal": 600,
+     "prot": 55,
+     "peso_g": null,
+     "nota": "Véspera de campeonato: janta normal com arroz. Nada de porção extra."
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Academia (Upper B), teto de 30 min de sala. Véspera do campeonato: sem corrida.",
+    "plano_b": "Se a academia ou uma reunião atrapalhar: versão em casa (flexão ou supino com halteres, remada unilateral, desenvolvimento e rosca, 3 séries) ou sem treino, sem compensar."
+   }
+  },
+  {
+   "id": "sab",
+   "nome": "Sábado",
+   "data": "17/10",
+   "tipo": "futebol",
+   "flex": false,
+   "treino": {
+    "foco": "Campeonato (9h)",
+    "exercicios": [
+     {
+      "nome": "Dia de jogo. Sem corrida e sem academia.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Campeonato não tem relógio: depois do jogo, escreva em Registrar quanto tempo jogou e como as pernas ficaram. Esse texto é o registro.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Jogo às 9h (informado por você em 11/10). As refeições do dia já estão ajustadas a esse horário: Yopro por volta das 7h30 com banana, almoço às 13h.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Refeição livre da semana: uma só, sábado à noite.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~7h30 · 1 Yopro (≥15 g de proteína) + 1 banana",
+     "kcal": 230,
+     "prot": 16,
+     "peso_g": null,
+     "nota": "Jogo às 9h: tome o Yopro por volta das 7h30, com uma banana, e não deixe o almoço das 13h de fora. Se virar o almoço, o das 13h acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Casa · Proteína grelhada + arroz + feijão + salada",
+     "kcal": 640,
+     "prot": 50,
+     "peso_g": null,
+     "nota": null
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Refeição livre da semana · uma só, sem repetir",
+     "kcal": 800,
+     "prot": 40,
+     "peso_g": null,
+     "nota": "Uma só. A proteína do sábado fica abaixo da meta no papel de propósito: é o dia da refeição livre."
+    },
+    "petisco": null
+   },
+   "janela": {
+    "quando": "Campeonato às 9h, sem relógio: depois do jogo, registre quanto tempo jogou e como as pernas ficaram. Yopro por volta das 7h30, com banana.",
+    "plano_b": "Se o jogo cair por chuva: caminhada ou treino leve em casa, sem compensar."
+   }
+  },
+  {
+   "id": "dom",
+   "nome": "Domingo",
+   "data": "18/10",
+   "tipo": "treino",
+   "flex": true,
+   "treino": {
+    "foco": "Corrida de 30 min + preparo da semana",
+    "exercicios": [
+     {
+      "nome": "Corrida de 30 min fácil, de manhã (8,0–8,5 km/h). É o dia seguinte ao campeonato e eu não sei como as pernas vão acordar: se estiverem pesadas, troque por caminhada e me avise.",
+      "series": 1,
+      "reps": "30 min"
+     },
+     {
+      "nome": "25 min de preparo: 12 ovos cozidos, legumes lavados e cortados, potes de iogurte e Yopro na frente da geladeira.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Pese em jejum. Depois de campeonato e refeição livre, essa leitura vem fora do normal e não conta como progresso.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro (≥15 g de proteína)",
+     "kcal": 140,
+     "prot": 15,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, como em 30/09, o almoço das 13h acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Casa · Proteína grelhada + arroz + feijão + salada",
+     "kcal": 640,
+     "prot": 50,
+     "peso_g": null,
+     "nota": null
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola (30 g) + banana",
+     "kcal": 480,
+     "prot": 38,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada (180 g) + legumes + salada",
+     "kcal": 560,
+     "prot": 55,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey (30 g) com água ou leite",
+     "kcal": 130,
+     "prot": 24,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Corrida de 30 min de manhã e preparo da semana (compras).",
+    "plano_b": "Se chover: esteira ou caminhada. Se não der, não repõe."
+   }
+  }
+ ],
+ "relatorios": [
+  {
+   "id": "carga",
+   "especialista": "Carga e recuperação",
+   "assina": "seu fisiologista",
+   "como_esta": "A noite de hoje foi melhor que a média, mas curta: índice 83, HRV 45 e FC de repouso 49, com 6,43 h de sono. A semana ainda não mostra recuperação: índice médio de 7 dias 44, HRV de 7 dias 34 contra 37 de base, sono médio 6,11 h e prontidão do Garmin em 54. O relógio não trouxe a carga acumulada (ACWR) desta semana, então não prescrevo por ela.",
+   "para_onde": "Hoje, um treino leve por escolha sua: core e full body, 30 a 40 min, 3 séries de 12 por exercício, carga que deixa 4 repetições de sobra, sem agachamento e sem leg press. A semana de 12 a 18 segue como combinada: 2 forças e até 5 corridas fáceis, sendo 3 as planejadas. Na terça, ao abrir o relógio, a leitura de 13/10 decide: sono abaixo de 6 h e (HRV abaixo de 32 ou FC de repouso a partir de 56) reduz o Lower A para 3 séries, sem o búlgaro. Os cortes de VFC e de FC de repouso desse aviso foram definidos pela carga e você delegou essa decisão aos especialistas.",
+   "nao_sei": [
+    "A carga acumulada do relógio (ACWR) desta semana",
+    "Como será o sono da noite antes de terça, que decide o Lower A",
+    "O VO2max de 39,5 foi medido a 930 m e não mostra a sua forma"
+   ]
+  },
+  {
+   "id": "nutricao",
+   "especialista": "Alimentação",
+   "assina": "sua nutricionista",
+   "como_esta": "Os registros são poucos: nove refeições em quatro dias (05, 06, 10 e 11/10), e nada de 07 a 09/10, que não prova que você não comeu. Sábado 10/10, à noite, foi uma refeição livre só (linguiça, joelho de porco e croquete, sem quantidade nem foto). Pelo que deu para ler na foto, o café de sábado tinha ovo, pão integral e abacate (estimativa de 15 a 20 g de proteína, sem rótulo), e o rótulo da marmita N53 mostra 461 kcal e 474 mg de sódio; a proteína, ilegível na foto, o cardápio do iFood informa: 51 g. A média do peso é 95,14 kg e a última pesagem é de 06/10.",
+   "para_onde": "Hoje e segunda seguem o plano como está, inclusive o whey da noite e o iogurte das 17h. Nada a mais, nada a menos. Proteína primeiro no prato. Em 05/10 a leitura veio alta (96,40) e em 06/10 caiu (95,05): se subir de novo, vale a média de 95,14, não a leitura do dia. As marmitas de segunda a sexta já foram pedidas no iFood em 11/10: cinco pratos em dobro, para você e sua esposa, todos com 35 g de proteína ou mais no rótulo. Em quatro deles falta vegetal visível, então a salada ao lado fecha a regra.",
+   "nao_sei": [
+    "O que você comeu de 07 a 09/10",
+    "O que você comeu além da refeição livre no sábado",
+    "Quantas marmitas já há no freezer",
+    "quando o pedido do iFood chega: segunda depende da entrega, e sem ela o almoço é em casa"
+   ]
+  },
+  {
+   "id": "logistica",
+   "especialista": "Rotina e tempo",
+   "assina": "seu logístico",
+   "como_esta": "O treino leve de hoje cabe em casa, sem deslocamento: a academia custa 40 a 50 min de trânsito e não compensa para uma sessão leve. A previsão do tempo só é firme para os dois primeiros dias do último puxão, então do meio da semana em diante vale como tendência, não como plano. O futebol de quinta é sempre às 20h e o campeonato de sábado é às 9h (informado por você em 11/10).",
+   "para_onde": "Corrida de manhã. O personal ajusta se o tempo ou a agenda mudarem.",
+   "nao_sei": [
+    "Se há reunião no fim de terça ou sexta",
+    "O clima depois de segunda"
+   ]
+  },
+  {
+   "id": "cetico",
+   "especialista": "Revisão",
+   "assina": "o revisor",
+   "como_esta": "Conferi a atualização de hoje contra o relógio: sono 6,43 h, índice 83, FC de repouso 49 e prontidão 54 batem. A revisão barrou o aviso de terça, que disparava quase toda semana, e textos que ligavam o treino de hoje a sábado ou misturavam números de ontem com os de hoje. Tudo isso foi corrigido.",
+   "para_onde": "O aviso de terça agora usa cortes reais do projeto (sono abaixo de 6 h e HRV abaixo de 32 ou FC de repouso a partir de 56). O treino de hoje é leve por escolha sua e está definido (3 séries de 12, sem agachamento nem leg press). As regras de calor, chuva e reunião saíram do seu texto: o personal resolve na hora. A semana de 12 a 18 não muda.",
+   "nao_sei": [
+    "Como você dorme na noite antes de terça: é isso que decide o Lower A",
+    "O clima depois de segunda"
+   ]
+  }
+ ]
+}
