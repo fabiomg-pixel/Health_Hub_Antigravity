@@ -34,7 +34,7 @@ Se `conselho/<domingo>/estado.json` já existe, não recomece: continue de onde 
 
 ### 1. Análise e perguntas (um especialista)
 Chame o subagente do especialista atual (`subagent_type` = `carga`, `logistica` ou `nutricao`) com:
-"MODO ENTREVISTA, fase análise. Semana planejada: <datas>. Leia fatos.json, conselho/<domingo>/ (inclusive as
+"MODO ENTREVISTA, fase análise (siga a seção 'Modo entrevista' de .claude/agents/<esp>.md). Semana planejada: <datas>. Leia fatos.json, conselho/<domingo>/ (inclusive as
 avaliações dos especialistas anteriores) e as fontes do seu papel." Guarde o `agentId` em `estado.json`
 para continuar a mesma conversa depois (SendMessage). Grave a análise em `<esp>.md`.
 
