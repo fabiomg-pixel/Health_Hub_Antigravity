@@ -33,3 +33,12 @@ duplicado de 14/10 é um prato ou dois.
 Perguntas candidatas: fez novo pedido de marmitas (sim/não) e, se não, quantas porções há no freezer?; o
 pastel e o bolinho de 13/10 eram fritos (sim/não)?; aceita trocar "famílias de vegetal" por "leguminosa em 2
 refeições" (sim/não)?
+
+## Análise (fase entrevista, 18/10 18:44)
+fatos.json: 19 refeições registradas em 7 dias (11 a 17/10). Fritura: o campo só marca 13/10 (pastel de siri e bolinho de bacalhau); pelo texto dos registros também há as coxinhas de 12/10 e a saída de 17/10, ou seja, a semana 12-18 fechou em 3 (acima do máximo de 2). Corrige a contagem "2 de 2" que o bot disse ao Fabio. Peixe: nenhuma janta com peixe pela 2ª semana; jantas de 13 e 14/10 sem descrição. Leguminosa não aparece. Teto da carga não pede mais comida; entrevistas seg-qui caem em volta do almoço (marmita antes, almoço nunca depois das 15h).
+
+## Rodada 1 (perguntas enviadas)
+1. Porções de marmita no freezer: A) 10 ou mais, B) 5 a 9, C) menos de 5 ou não sei. (pior caso: C)
+2. Saída ou jantar fora, além da refeição livre de sábado, em 19 a 25/10? sim/não. (pior caso: sim, com fritura)
+3. Trocar "3 famílias de vegetal" por "leguminosa em 2 refeições"? sim/não. (pior caso: não)
+Resposta dele: (aguardando)
