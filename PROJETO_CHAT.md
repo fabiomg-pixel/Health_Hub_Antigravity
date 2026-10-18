@@ -1027,3 +1027,11 @@ prepara a avaliação; depois vem o próximo, e por aí vai.**
 - Primeira entrevista: 18/10, começando às 18h40 a partir das análises da manhã.
 
 - **Regras da semana 19-25/10 (conselho de 18/10):** ver a linha em `decisoes.md` > Regras vigentes (passo A com 48 h/bula, passo B, corte de 3 vermelhos, sem reposição de corrida). O semáforo do painel mostra só a banda; os passos A e B quem confere é o Silvester no brief.
+
+## 29. Regimes que funcionaram para o Fabio (relato dele, 18/10/2026)
+
+Pedido dele: "informe aos próximos especialistas; isso pode influenciar a dinâmica". É relato, não medida: não há número no `fatos.json` para essas épocas (§18). Os três especialistas leem esta seção antes de montar a semana.
+- **1ª perda grande de peso (menos de 30 anos):** comida reduzida, em geral 300 a 400 g concentrados em carne no almoço; corrida de 30 min e musculação de 6 exercícios de 3x6 repetições.
+- **2ª perda grande (há poucos anos):** corrida pesada (5 a 10 km) 3 a 4 vezes por semana, mais futebol; sem comer depois das 21h.
+- **Nos dois casos** o peso voltou quando ele relaxou o exercício e, principalmente, a alimentação.
+- **Como usar:** é um hipótese de adesão, não prescrição. Comida simples e concentrada em proteína no almoço, janela de jantar que fecha às 21h e volume de corrida acima do atual funcionaram nele. Hoje o teto de carga manda (resfriado, índice vermelho, §10, §15), então nada disto muda a semana 19-25/10. Qualquer proposta que se apoie nisso volta ao Fabio como "propõe e confirma".
