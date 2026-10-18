@@ -65,3 +65,10 @@ Relatório
 Lombar hoje em 1/10
 Ok ... Faça o que for melhor, mas eu diria que uma corrida de 8km/h por 20-30 min não é muito esforço. Gasto mínimo para dar consistência."
 (Leitura: pergunta 1 = sim, tem antitérmico, e ele passa a tomar só com sintoma; 2 = lombar 1/10; 3 = "Ok", aceita o teto menor e o corte, delega a decisão, e opina que 20-30 min a 8 km/h é gasto mínimo para dar consistência.)
+
+## Decisão final da fisiologista (18/10, pós-cético)
+- Aceito pelo Fabio em 18/10 21:58: teto menor e corte de 3 vermelhos seguidos (jogo incluso); antigripal tem antitérmico e passa a ser tomado só com sintoma; lombar 1/10.
+- Passo A (corrida): índice >=50 e FC de repouso <=54 sem antitérmico nas últimas 24 h, secreção só em nariz/garganta (sem febre, dor no corpo ou tosse no peito) e (sem dose do antigripal nas últimas 48 h OU bula confirmando que não tem anti-inflamatório; §5). Sem registro da hora da última dose: assume que tomou. FC de repouso >=57 ou VFC <=28 veta mesmo com remédio.
+- Terça 20/10: corrida até 30 min a 8,0 km/h, FC até 150, se o passo A fechar; senão caminhada 20-30 min. SEM reposição na semana; corrida só depois do passo B, nunca em dia de força, quinta (jogo) ou sexta (leve). Máx 1 corrida até o passo B; depois até 2, fáceis.
+- Quarta 21/10 força de membros superiores (11 séries, RIR 3, sem carga axial): banda não vermelha, sem febre, sem tosse no peito; até 40 min; vermelha = só caminhada 20-30 min. Perna/lombar pesada segue o portão do passo A.
+- Domingo 25/10: recreativo até 45 min só com passo B (duas manhãs seguidas FC<=53, VFC>=37, sem antitérmico nas 24 h anteriores, sem sintoma); sem passo B no máx 30 min leve ou fora; dia seguinte só caminhada.
