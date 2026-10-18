@@ -1,4 +1,19 @@
-{"semana": "19 a 25/10", "domingo": "2026-10-18", "inicio": "2026-10-18T18:38",
- "ordem": ["carga", "logistica", "nutricao"], "atual": "carga", "fase": "analise", "rodada": 0,
- "agentes": {}, "concluidos": [], "sem_resposta": [],
- "nota": "Primeira entrevista. As análises da manhã já estão nos .md: na fase análise, o especialista parte delas e só confirma com o fatos.json do momento."}
+{
+ "semana": "19 a 25/10",
+ "domingo": "2026-10-18",
+ "inicio": "2026-10-18T18:38",
+ "ordem": [
+  "carga",
+  "logistica",
+  "nutricao"
+ ],
+ "atual": "carga",
+ "fase": "aguardando",
+ "rodada": 1,
+ "agentes": {
+  "carga": "ac5e82c56bd325728"
+ },
+ "concluidos": [],
+ "sem_resposta": [],
+ "nota": "Primeira entrevista. As análises da manhã já estão nos .md: na fase análise, o especialista parte delas e só confirma com o fatos.json do momento."
+}

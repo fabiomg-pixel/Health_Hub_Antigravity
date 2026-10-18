@@ -32,3 +32,12 @@ esforço real dos jogos; se há jogo no fim de semana.
 Perguntas candidatas para a entrevista: resfriado (passou? febre ou dor no corpo?); anti-inflamatório desde
 13/10 (sim/não: muda a leitura do peso, §5); dor de lombar e joelho esquerdo de 0 a 10 hoje; aceita o teto menor
 e o jogo entrar no corte de 3 vermelhos seguidos.
+
+## Análise (fase entrevista, 18/10 18:39)
+Índice 22 (vermelho), 4º dia seguido; Garmin 53; FC de repouso 57 (média 28d 54); VFC 28 (média 28d 36); sono 6,57 h não explica o vermelho. Peso 93,95 kg é pós-esforço, não uso como tendência. Teto provisório: força 1, corrida 0 a 1 fácil, nada intenso; segunda 19 sem treino.
+
+## Rodada 1 (perguntas enviadas)
+1. Resfriado/corpo hoje: A) passou, sem febre nem dor no corpo; B) sintoma só na garganta ou nariz; C) febre, dor no corpo ou cansaço fora do normal. (pior caso: C)
+2. Anti-inflamatório ou antitérmico desde 13/10: sim/não. (pior caso: sim)
+3. Dor hoje na lombar e no joelho esquerdo, maior valor de 0 a 10. (pior caso: 4)
+Resposta dele: (aguardando)
