@@ -42,3 +42,22 @@ fatos.json: 19 refeições registradas em 7 dias (11 a 17/10). Fritura: o campo 
 2. Saída ou jantar fora, além da refeição livre de sábado, em 19 a 25/10? sim/não. (pior caso: sim, com fritura)
 3. Trocar "3 famílias de vegetal" por "leguminosa em 2 refeições"? sim/não. (pior caso: não)
 Resposta dele: (aguardando)
+
+Resposta dele (palavra por palavra, 18/10 21:45 do Telegram):
+"Ainda tenho alguma quentinha para o almoço, vamos comprar mais. Vou lhe mostrar para vc escolher o almoço. As saladas de material fresco tem que ocorrer na janta.
+
+Não tenho jantar fora até sexta.
+
+Sim."
+(Leitura: 1 = sem número de porções ("alguma quentinha"), quer comprar mais, vai mostrar as opções para a nutricionista escolher; saladas de material fresco no jantar, não no almoço; 2 = sem jantar fora até sexta (sexta em diante e sábado: não disse); 3 = sim, troca a meta de 3 famílias por leguminosa em 2 refeições.)
+
+## Avaliação (nutricionista, 18/10)
+Bloco técnico
+- Regras: (1) dia de entrevista, marmita antes: seg ~12h30, ter e qui antes das 13h; nunca almoço depois das 15h. (2) Salada fresca no JANTAR (decisão dele); almoço é marmita com vegetal em pedaço. (3) Meta nova: leguminosa (feijão, lentilha, grão-de-bico) em 2 refeições, substitui as 3 famílias de vegetal. (4) Mantidas: fritura no máximo 2 (a semana 12-18 fechou em 3), fruta inteira 2 dias, peixe 1 janta.
+- Compra: marmitas só depois da lista/foto dele (critério: >=35 g de proteína no rótulo, sem sobretaxa de R$ 3,99, vegetal em pedaço, só a diferença até 5 porções por pessoa seg-sex; pior caso assumido: menos de 5 no freezer); 2 a 3 latas de sardinha ou atum; leguminosa se faltar; fruta para 2 dias; folhas e legumes frescos para os jantares.
+- Veto: nenhum. Condição: corrida de terça 15h30 só com almoço feito antes das 13h.
+- Não sei: porções no freezer; jantas de 13 e 14/10; saída de sexta em diante.
+Relatório
+- Como está: 19 refeições registradas em 11-17/10; fritos acima do limite (3 na semana 12-18); sem peixe no jantar nas 2 últimas semanas; sem leguminosa; o que atrapalha é o vazio da tarde e o almoço atrasado pelas entrevistas.
+- Para onde vai: almoço cedo nos dias de entrevista, salada fresca no jantar, leguminosa em 2 refeições; sem jantar fora até sexta, boa semana para o peixe. Escolho as marmitas quando ele mostrar as opções.
+- O que eu não sei: quantas marmitas ainda tem; jantas de 13 e 14/10; saída a partir de sexta.
