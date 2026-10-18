@@ -41,3 +41,21 @@ e o jogo entrar no corte de 3 vermelhos seguidos.
 2. Anti-inflamatório ou antitérmico desde 13/10: sim/não. (pior caso: sim)
 3. Dor hoje na lombar e no joelho esquerdo, maior valor de 0 a 10. (pior caso: 4)
 Resposta dele: (aguardando)
+
+Resposta dele (palavra por palavra, 18/10 21:41 do Telegram):
+"O resfriado não passou. Estou na curva de melhora, mas ainda com muita secreção. A disposição não está 100%, mas eu consegui jogar relativamente bem ontem. Não deixaria de tentar correr, por exemplo. Não daria meu máximo.
+
+Venho tomando antigripal constantemente.
+
+Não tenho sentido dor no joelho. Alguma dor na lombar, mas menos intensa do que quando reportei."
+
+## Avaliação (fisiologista, 18/10)
+Bloco técnico
+- Teto 19-25/10: força 1, sem perna pesada (lombar assumida em 4/10, sem número dele; regra de parar acima de 3/10 vale). Corrida até 1, fácil, 30 min, FC até 150, só com manhã amarela/verde (índice >=50) e FC de repouso <=54 (hoje 57). Intensa: não.
+- Intocáveis: seg 19 sem treino (4º vermelho após 130 min de jogo); qui 22 só o jogo (manhã vermelha: máx 45 min); sex 23 leve.
+- Corte: 3 vermelhos seguidos cortam qualquer sessão, jogo incluso; contagem zera só com manhã não vermelha. Febre ou dor no corpo: zero treino. Segunda força (passo B): duas manhãs seguidas com FC de repouso <=53, VFC >=37, dor <=3/10.
+- Não sei: número da lombar; conteúdo do antigripal (encaminhado à bula/farmacêutico/médico; se tiver antitérmico ou anti-inflamatório, FC e VFC podem estar mascaradas); temperatura medida; esforço real dos jogos.
+Relatório
+- Como está: resfriado não passou, melhorando; índice 22, 4º vermelho; FC de repouso 57 (costume 54); VFC 28 (costume 36). Jogar bem ontem mostra disposição; os dados mostram corpo em recuperação.
+- Para onde vai: segunda sem treino; corrida leve se a manhã melhorar e a FC baixar; força volta sem perna pesada; jogo de quinta fica, com freio se a manhã vier vermelha; intensidade só depois de a recuperação aparecer nos números.
+- O que eu não sei: quanto dói a lombar (0-10); se o antigripal tem antitérmico/anti-inflamatório; se há febre.
