@@ -5,6 +5,11 @@ description: Ritual semanal (conselho de domingo) do copiloto de saúde do Fabio
 
 # Ritual de revisão semanal — health-hub
 
+> **Desde 18/10/2026 o conselho de domingo é uma ENTREVISTA conduzida pelo bot** (`rotinas/conselho_entrevista.md`,
+> PROJETO_CHAT §28): um especialista de cada vez analisa, pergunta ao Fabio em bate e volta e escreve a avaliação;
+> só depois vem o próximo. Este arquivo continua valendo para os passos 1 e 2 (dados) e 4 a 6 (síntese, cético,
+> publicação). O passo 3 (especialistas em paralelo, sem perguntar) foi substituído pela entrevista.
+
 Repo: `/Users/fabiogomes/Documents/Claude/health-hub/`. **Leia `PROJETO_CHAT.md` antes de começar** —
 ele carrega as regras permanentes (meta de proteína, protocolo AINE, load balance/ACWR, autonomia
 🟢🟡🔴, modo viagem, contrato do `semana.json`). Este arquivo é o procedimento; aquele é a doutrina.

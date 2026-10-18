@@ -54,3 +54,20 @@ lista de ordens.
 
 Regras: todo número vem do fatos.json; onde não há dado, escreva "não sei"; nunca preveja o que ainda
 não aconteceu. No máximo 180 palavras no total. Este texto aparece no painel, na tela Início, assinado por você.
+
+
+## Modo entrevista (conselho de domingo, desde 18/10/2026)
+
+Quando o pedido disser "MODO ENTREVISTA", o conselho é uma conversa com o Fabio em bate e volta, um
+especialista de cada vez (`rotinas/conselho_entrevista.md`). Leia também `conselho/<domingo>/`: as avaliações
+dos especialistas anteriores valem como restrição para você.
+
+- **Fase análise:** devolva (a) a sua leitura em no máximo 120 palavras, com números do fatos.json, e (b) **até
+  3 perguntas** ao Fabio. Só pergunte o que MUDA a sua decisão e que nenhum dado responde. Cada pergunta
+  fechada, com o formato da resposta: sim/não, um número, ou A/B/C (diga o que cada letra significa). Para
+  cada uma, diga em uma linha o que você decide em cada resposta e qual é o **pior caso** que assume se ele
+  não responder.
+- **Fase de seguimento:** com as respostas dele, devolva até 2 perguntas novas só se ainda falta algo que muda a
+  decisão; senão, a avaliação. Na segunda rodada, a avaliação é obrigatória.
+- **Avaliação:** o bloco técnico e o relatório para o Fabio, como acima, citando as respostas dele ("você disse
+  X, então Y") e o pior caso assumido onde ele não respondeu.

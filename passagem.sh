@@ -30,6 +30,19 @@ if [ -f "$UE" ]; then
     head -16 "$UE" | cut -c1-220
   fi
 fi
+# Entrevista do conselho de domingo em andamento (rotinas/conselho_entrevista.md): a resposta dele é para ela.
+EC=$(ls -d conselho/20*/ 2>/dev/null | sort | tail -1)
+if [ -n "$EC" ] && [ -f "${EC}estado.json" ]; then
+  python3 - "${EC}" <<'PY' 2>/dev/null
+import json, sys
+d = sys.argv[1]; e = json.load(open(d + 'estado.json'))
+if e.get('fase') != 'publicado':
+    print('!!! ENTREVISTA DO CONSELHO EM ANDAMENTO (%s): especialista atual %s, fase %s, rodada %s; concluídos: %s.'
+          % (d, e.get('atual'), e.get('fase'), e.get('rodada'), ', '.join(e.get('concluidos') or []) or 'nenhum'))
+    if e.get('fase') == 'aguardando':
+        print('!!! A próxima mensagem do Fabio provavelmente RESPONDE às perguntas abertas em %s%s.md. Siga rotinas/conselho_entrevista.md, passo 2.' % (d, e.get('atual')))
+PY
+fi
 echo "--- Regras vigentes (decisoes.md)"
 [ -f "$L" ] && awk '/^## Regras vigentes/{f=1;next} /^## /{f=0} f&&NF' "$L" || echo "(decisoes.md não encontrado)"
 echo "--- Últimas decisões registradas"

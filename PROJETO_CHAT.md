@@ -1002,3 +1002,27 @@ refeição. Rede e HTTPS vão por `curl` (o Python do Mac não acha os certifica
 - Pergunta ou plano ("posso comer X?") não é registro.
 - O jantar de 15/10 foi gravado a partir da foto do Telegram em 16/10.
 
+## 28. O conselho virou entrevista (pedido do Fabio, 18/10/2026)
+
+**Por quê:** no conselho de 18/10 os três especialistas montaram a semana sem perguntar e terminaram com quatro
+"não sei" que mudavam o plano (resfriado, marmitas no freezer, jogo no fim de semana, aceite do teto menor). Só ele
+sabia. O Fabio propôs a entrevista e definiu a forma: **cada especialista analisa, pergunta em bate e volta e
+prepara a avaliação; depois vem o próximo, e por aí vai.**
+
+**Como roda** (`rotinas/conselho_entrevista.md`, na sessão do bot):
+- Domingo 10h03 o launchd abre (`disparar_rotina.sh conselho`; verificação 10h50). Ordem: carga → logística →
+  nutrição. Cada um lê as avaliações anteriores como restrição (a logística sabe o teto; a nutrição, o teto e a agenda).
+- Cada especialista: análise curta + até 3 perguntas fechadas (sim/não, número, A/B/C), só o que muda a decisão e
+  que nenhum dado responde, com o pior caso declarado; até 2 rodadas; depois a avaliação. O Silvester conduz e diz
+  quem pergunta ("Conselho 1/3 · a fisiologista").
+- Depois do terceiro: síntese, cético e publicação (skill `revisao-semanal`, passos 4 a 6), e uma mensagem final
+  "você disse X → ficou Y".
+- Sem resposta: às 21h03 (`conselho_fechar`) fecha com o pior caso de cada pergunta aberta, se a entrevista começou
+  há 6 h ou mais; senão, o brief de segunda fecha. "Decide você" = o especialista decide pela própria recomendação.
+- Estado no disco: `conselho/<domingo>/` (`estado.json`, um `.md` por especialista com análise, rodadas e
+  avaliação). A passagem avisa todas as sessões quando há pergunta aberta.
+- A tarefa `conselho-semanal-saude` do app (domingo 20h08) foi pausada.
+- A doutrina "os especialistas nunca falam com o Fabio" (§13) muda pouco: quem fala ainda é o Silvester, mas a
+  pergunta vem assinada por quem pergunta.
+- Primeira entrevista: 18/10, começando às 18h40 a partir das análises da manhã.
+

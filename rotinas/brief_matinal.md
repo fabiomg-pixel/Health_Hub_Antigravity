@@ -17,6 +17,9 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
 
 ## Passos
 
+**Segunda-feira, antes de tudo:** se a pasta mais recente `conselho/AAAA-MM-DD/estado.json` não estiver com
+`fase: "publicado"`, rode primeiro o passo 5 (fechar) de `rotinas/conselho_entrevista.md`, e só depois o brief.
+
 0. **Passagem.** O gancho do projeto já injetou as regras vigentes, as decisões recentes e os commits.
    Se não aparecer no seu contexto, rode `./passagem.sh`. Se houver `!!! ALERTA`, diga em uma linha no fim.
 1. **Dados do dia.** `./publicar_dados.sh` (pulls do Garmin e do Renpho, `fatos.json`, `dashboard.json`,

@@ -1,6 +1,7 @@
 #!/bin/bash
 # Digita uma rotina diária DENTRO da sessão do bot (screen "saude"), como se fosse um prompt.
-# Uso: disparar_rotina.sh brief|avaliacao [--forcar|--simular|--verificar]
+# Uso: disparar_rotina.sh brief|avaliacao|conselho|conselho_fechar [--forcar|--simular|--verificar]
+# conselho (dom 10h03) e conselho_fechar (dom 21h03): a entrevista do conselho de domingo (PROJETO_CHAT §28).
 # Instalado em ~/.claude/channels/telegram-saude/ (fora de ~/Documents: o launchd não acessa Documents sem
 # permissão especial). Chamado pelos LaunchAgents br.fabiogomes.saude.brief (8h03) e .avaliacao (22h33): o
 # launchd roda a tarefa perdida quando o Mac acorda. Não envia nada ao Fabio: quem envia é o bot, no roteiro.
@@ -9,7 +10,9 @@ BASE="$HOME/.claude/channels/telegram-saude"; LOG="$BASE/disparos.log"
 case "$R" in
   brief)     ARQ="rotinas/brief_matinal.md" ;;
   avaliacao) ARQ="rotinas/avaliacao_noite.md" ;;
-  *) echo "uso: $0 brief|avaliacao [--forcar|--simular]"; exit 2 ;;
+  conselho)  ARQ="rotinas/conselho_entrevista.md (abrir, passo 0)" ;;
+  conselho_fechar) ARQ="rotinas/conselho_entrevista.md (fechar, passo 5)" ;;
+  *) echo "uso: $0 brief|avaliacao|conselho|conselho_fechar [--forcar|--simular|--verificar]"; exit 2 ;;
 esac
 export SCREENDIR="${SCREENDIR:-$(ls -d /var/folders/*/*/T/.screen 2>/dev/null | head -1)}"
 HOJE=$(date +%F); AGORA=$(date '+%F %T')
