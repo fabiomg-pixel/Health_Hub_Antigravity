@@ -971,6 +971,7 @@ Desenho: `propostas/gamificacao.md` (mecânica, dados dele, evidência e protoco
   peso nunca dá nem tira XP (só move o mapa, pela média de 28 dias); sem dado não pune; futebol conta como dia ativo,
   sem bônus. Registro de treino com negação ("não treinou") não conta; anotações escritas pelo copiloto não contam
   como registro dele.
+- **Narrativa contínua (18/10, pedido do Fabio):** o texto do capítulo é escrito ao longo da semana, não só no domingo: a avaliação da noite acrescenta 1 a 3 linhas por dia ao arquivo do capítulo em andamento, só com fatos registrados. Capítulo 1 fechado em 18/10 (4 de 5 missões).
 - **Semana = capítulo**; concluído com todas as missões, ou todas menos uma. Meta de dias ativos adaptativa (média
   de 4 semanas + 1, entre 3 e 5; cai para 3 depois de 2 capítulos sem conclusão). **Resgate** de um capítulo perdido
   só quando há saga a proteger. **Estalagem**: descanso confirmado por ele conta como cumprido (`estalagem.py`).
