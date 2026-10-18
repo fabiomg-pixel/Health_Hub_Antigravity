@@ -100,6 +100,24 @@
     "Quantidade do jantar",
     "Pesagem (última 06/10)"
    ]
+  },
+  {
+   "data": "2026-10-17",
+   "planejado": "Campeonato às 9h (sem relógio; o relato dele é o registro); Yopro + banana às 7h30, almoço em casa às 13h, lanche das 17h, refeição livre à noite (a única da semana)",
+   "feito": "NÃO SEI. Nenhum registro no painel com data 17/10 (último registro é de 16/10: Upper B, almoço, lanche). Sem registro ≠ sem jogo nem sem refeição.",
+   "adaptacao": "Nada mudado. Carryover para domingo: registrar o jogo antes de decidir a corrida; caminhada se as pernas estiverem pesadas. Contexto: índice 32 (vermelho) e prontidão 69 nos últimos valores sincronizados; garmin_out.json sem atualização desde 17/10 12:47, então a leitura de 18/10 ainda não chegou.",
+   "respostas": {
+    "q1": null,
+    "q2": null
+   },
+   "nao_sei": [
+    "se o campeonato aconteceu e por quanto tempo",
+    "como ficaram as pernas, a lombar e o joelho esquerdo",
+    "refeições de 17/10 e se a refeição livre teve fritura (fritura da semana: 1 de 2 contada, as coxinhas de 12/10)",
+    "resfriado: sem relato desde 14/10",
+    "pesagem (última 15/10)",
+    "corridas da semana: segunda não aconteceu, quarta (14/10) sim; falta domingo"
+   ]
   }
  ]
 }
