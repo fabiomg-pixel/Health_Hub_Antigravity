@@ -8,10 +8,11 @@
   "nutricao"
  ],
  "atual": "logistica",
- "fase": "analise",
- "rodada": 0,
+ "fase": "aguardando",
+ "rodada": 1,
  "agentes": {
-  "carga": "ac5e82c56bd325728"
+  "carga": "ac5e82c56bd325728",
+  "logistica": "ad2a426d991849654"
  },
  "concluidos": [
   "carga"

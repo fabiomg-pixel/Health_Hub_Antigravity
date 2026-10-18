@@ -25,3 +25,12 @@ Não sei: reuniões fora do Google Calendar; horário de jogo no fim de semana; 
 
 Perguntas candidatas: há jogo no sábado ou domingo, e a que horas?; reunião fora da agenda que tranque o fim
 da tarde (qual dia)?; a esteira da corrida de 14/10 fica onde (casa, academia, trabalho)?
+
+## Análise (fase entrevista, 18/10 18:42)
+Teto da carga: força 1 sem perna pesada, corrida até 1 fácil de 30 min, nada intenso. Clima (Open-Meteo): ter 20 e qua 21 secos; sex 23 sensação 32,1 °C e sáb 24 36,1 °C (UV 9); dom 25 com 67% de chuva e 9 mm; seg 19 com 97% de chuva. Rua do Fundão cabe depois das entrevistas (ter 15h30-17h45, apertado; qua 16h00-17h45). Academia só de manhã, longe do jogo de quinta.
+
+## Rodada 1 (perguntas enviadas)
+1. Jogo no fim de semana 24-25/10? A) nenhum, B) só sábado, C) só domingo, D) os dois. (pior caso: D, sábado 10h-12h)
+2. Esteira utilizável sex, sáb ou dom quando a rua não serve? sim/não. (pior caso: não)
+3. Compromisso fora da agenda no fim da tarde de ter ou qua (15h30-17h45)? sim/não. (pior caso: sim nos dois)
+Resposta dele: (aguardando)
