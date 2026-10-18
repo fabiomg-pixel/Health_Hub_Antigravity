@@ -59,7 +59,7 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
      no máximo 12 linhas; feche com o que o próximo capítulo pede.
    - **Texto narrativo ao longo do capítulo** (pedido do Fabio, 18/10): além da crônica de domingo, **todo dia**
      acrescente 1 a 3 linhas ao arquivo do capítulo em andamento (cabeçalho "em andamento"), só com o que ficou
-     registrado naquele dia, mesmas regras invioláveis. Dia sem registro: uma linha neutra ("o dia ficou sem
+     registrado naquele dia, mesmas regras invioláveis. **Estilo (Fabio, 18/10): metáfora de fábula de RPG (forja, estrada, estalagem, planície, as criaturas do arco), sem repetir o relato da semana: nada de lista de exercícios, cargas, refeições ou minutos; o fato aparece como imagem, e continua verdadeiro.** Dia sem registro: uma linha neutra ("o dia ficou sem
      registro"), sem culpa. Quando o capítulo fechar, reescreva-o inteiro como concluído.
    - Depois: `./publicar_jornada.sh` e commit de `historia/livro/`. Na mensagem de domingo, ofereça as missões da
      semana seguinte (as do motor) e pergunte se ele quer trocar alguma.

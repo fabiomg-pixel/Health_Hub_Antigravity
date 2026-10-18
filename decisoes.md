@@ -5,7 +5,7 @@ ou comprar. O gancho em .claude/settings.json injeta o resumo a cada mensagem (.
 Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registrar_decisao.sh <origem> "<decisão>" "<onde vive>"
 
 ## Regras vigentes
-- Texto narrativo da Campanha cresce ao longo do capítulo: todo dia 1 a 3 linhas no livro, só com fatos registrados; no fechamento o capítulo é reescrito inteiro. (Fabio, 18/10)
+- Texto narrativo da Campanha cresce ao longo do capítulo: todo dia 1 a 3 linhas no livro, só com fatos registrados; no fechamento o capítulo é reescrito inteiro. O texto é metáfora de fábula de RPG, não repete o relato da semana. (Fabio, 18/10)
 - §18: sem informação, sem decisão. Número só de fatos.json; onde falta dado, escreva "não sei" e quando saberá. (PROJETO_CHAT §18)
 - Almoço seg–sex: marmita com ≥35 g de proteína NO RÓTULO e vegetal visível no prato (ou salada ao lado). O nome da marmita não basta. (nutricionista, 11/10)
 - Metas da nutricionista, vigentes desde 11/10 (alimentacao.json): Vegetais e folhas: alcancar 4 refeições principais com vegetal visível; Famílias de vegetal: alcancar 3 famílias diferentes na semana; Fritura: limitar 2 refeições registradas, no máximo; Fruta inteira: alcancar 2 dias com registro; Peixe: alcancar 1 janta com peixe.
@@ -39,3 +39,4 @@ Quem ouvir uma decisão do Fabio ou de uma especialista registra aqui: ./registr
 - 2026-10-15 | bot | Fabio confirmou estalagem em 15/10 (descanso por índice 28 e resfriado, sem jogo) | jornada_eventos.json
 - 2026-10-16 | app | Fabio: o que ele manda no Telegram (refeição, treino, sintoma) o bot grava no painel na hora e confirma; jantar de 15/10 gravado da foto | registrar_no_painel.py, CLAUDE.md §9, PROJETO_CHAT §27
 - 2026-10-18 | app | Fabio: o texto narrativo da Campanha deve ser criado ao longo do progresso, não só no domingo; avaliação da noite acrescenta 1 a 3 linhas por dia ao capítulo em andamento. Capítulo 1 escrito como concluído | rotinas/avaliacao_noite.md, decisoes.md, PROJETO_CHAT §26, historia/livro/01-o-retorno.md
+- 2026-10-18 | app | Fabio: o texto do livro da Campanha deve ser metáfora de fábula de RPG e não repetir o que aconteceu na semana; capítulo 1 reescrito nesse estilo | rotinas/avaliacao_noite.md, decisoes.md, historia/livro/01-o-retorno.md
