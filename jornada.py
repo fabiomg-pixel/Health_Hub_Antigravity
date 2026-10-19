@@ -47,6 +47,7 @@ SEMANA = ler('painel/data/semana.json', {})
 FATOS = ler('fatos.json', {})
 DASH = ler('painel/data/dashboard.json', {})
 EVENTOS = ler('jornada_eventos.json', {}).get('eventos', [])
+ANTERIOR = ler('painel/data/jornada.json', {})
 REG, REG_OK = registros()
 if not REG_OK or not REG:
     raise SystemExit('jornada: a API de registros não respondeu; nada foi gravado (o XP não pode cair por falta de dado)')
@@ -221,6 +222,11 @@ xp_total, xp_por_dia = 0, {}
 d = inicio
 while d <= HOJE:
     t, itens = xp_do_dia(d)
+    # a API de registros devolve só os últimos ~100 itens: o dia mais antigo da janela vem incompleto.
+    # O XP nunca diminui: vale o maior entre o que já foi gravado e o recalculado.
+    ant = (ANTERIOR.get('xp_por_dia') or {}).get(d.isoformat()) or 0
+    if ant > t:
+        t, itens = ant, [('XP já gravado', ant)]
     xp_por_dia[d.isoformat()] = {'xp': t, 'itens': itens}
     xp_total += t; d += dt.timedelta(days=1)
 xp_total += sum(s['xp_semana'] for s in resultado)
