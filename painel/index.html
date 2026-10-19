@@ -238,14 +238,20 @@
   .tab-ref td:first-child { white-space: nowrap; font-weight: 700; }
   .form { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
   .form label, .redit label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
-  input[type=date], select, textarea { width: 100%; min-height: 48px; padding: 10px 12px; border: 2px solid var(--tinta); border-radius: 0;
+  input[type=date], input[type=time], input[type=number], select, textarea { width: 100%; min-height: 48px; padding: 10px 12px; border: 2px solid var(--tinta); border-radius: 0;
     background: var(--branco); color: var(--tinta); font: inherit; font-size: 16px; }
   textarea { min-height: 96px; resize: vertical; }
   .photo { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .filebtn { display: inline-flex !important; align-items: center; min-height: 46px; padding: 0 16px; border: 2px solid var(--tinta); cursor: pointer;
     font-size: 14px !important; letter-spacing: 0 !important; text-transform: none !important; margin: 0 !important; }
   .filebtn input { display: none; }
-  #rg-prev { display: none; max-width: 120px; max-height: 120px; border: 2px solid var(--tinta); }
+  .rg-fotos { display: flex; gap: 8px; flex-wrap: wrap; width: 100%; }
+  .rg-fotos:empty { display: none; }
+  .rg-foto { position: relative; width: 96px; height: 96px; border: 2px solid var(--tinta); }
+  .rg-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .rg-foto button { position: absolute; top: -10px; right: -10px; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--tinta);
+    background: var(--papel, #fff); color: var(--tinta); font-weight: 700; line-height: 1; cursor: pointer; padding: 0; }
+  .rg-dh { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .status { font-size: 14px; font-weight: 600; min-height: 20px; }
   .status.ok { color: #0A5A3C; } .status.err { color: #8C1D12; }
   .aviso { margin-top: 16px; padding: 12px 0; border-top: 1px solid var(--fraca); font-size: 13.5px; color: var(--sec); line-height: 1.45; }
@@ -1061,7 +1067,9 @@ function renderEvo() {
 }
 
 // ───────── registrar (a lógica de gravação não mudou) ─────────
-let PHOTO_DATA = null, REG_TIPO = 'refeicao', REG_PRESET = null;
+// Até 3 fotos por registro; câmera e galeria em botões separados (no Android, sem `capture` só abre o arquivo).
+const MAX_FOTOS = 3;
+let PHOTOS = [], REG_TIPO = 'refeicao', REG_PRESET = null;
 function resizeImage(dataUrl, maxDim, quality, cb) {
   const im = new Image();
   im.onload = () => {
@@ -1074,15 +1082,27 @@ function resizeImage(dataUrl, maxDim, quality, cb) {
   };
   im.src = dataUrl;
 }
-function previewPhoto(e) {
-  const f = e.target.files[0]; if (!f) return;
-  const reader = new FileReader();
-  reader.onload = () => resizeImage(reader.result, 1000, 0.6, (url) => {
-    PHOTO_DATA = url;
-    const img = document.getElementById('rg-prev'); img.src = url; img.style.display = 'block';
-  });
-  reader.readAsDataURL(f);
+function mostrarFotos() {
+  const box = document.getElementById('rg-fotos'); if (!box) return;
+  box.innerHTML = PHOTOS.map((u, i) => `<div class="rg-foto"><img src="${u}" alt="foto ${i + 1}"><button type="button" data-i="${i}" aria-label="Tirar a foto ${i + 1}">×</button></div>`).join('');
+  box.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { PHOTOS.splice(+b.dataset.i, 1); mostrarFotos(); }));
+  const cheio = PHOTOS.length >= MAX_FOTOS;
+  document.querySelectorAll('.filebtn').forEach(l => { l.style.opacity = cheio ? .4 : 1; const inp = l.querySelector('input'); if (inp) inp.disabled = cheio; });
+  const cnt = document.getElementById('rg-nfotos'); if (cnt) cnt.textContent = PHOTOS.length ? `${PHOTOS.length} de ${MAX_FOTOS}` : `até ${MAX_FOTOS}`;
 }
+function previewPhoto(e) {
+  const arquivos = Array.from(e.target.files || []).slice(0, MAX_FOTOS - PHOTOS.length);
+  arquivos.forEach(f => {
+    const reader = new FileReader();
+    reader.onload = () => resizeImage(reader.result, 1000, 0.6, (url) => {
+      if (PHOTOS.length < MAX_FOTOS) PHOTOS.push(url);
+      mostrarFotos();
+    });
+    reader.readAsDataURL(f);
+  });
+  e.target.value = '';
+}
+function horaAgora() { const d = new Date(); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); }
 async function submitLog() {
   const btn = document.getElementById('rg-send'), st = document.getElementById('rg-status');
   const tipo = REG_TIPO;
@@ -1092,20 +1112,21 @@ async function submitLog() {
     tipo,
     refeicao: tipo === 'refeicao' ? (refEl ? refEl.value : 'Outro') : undefined,
     data: document.getElementById('rg-data').value,
+    hora: (document.getElementById('rg-hora') || {}).value || undefined,
     texto: document.getElementById('rg-txt').value.trim(),
-    photoBase64: PHOTO_DATA || undefined,
+    photos: PHOTOS.length ? PHOTOS.slice(0, MAX_FOTOS) : undefined,
   };
   const protEl = document.getElementById('rg-prot'), prot = protEl && parseFloat(protEl.value);
   if (prot > 0) payload.texto = (payload.texto ? payload.texto + ' ' : '') + 'Proteína informada: ' + prot + ' g.';
-  if (!payload.texto && !payload.photoBase64) { st.className = 'status err'; st.textContent = treino ? 'Anexe a screenshot do treino (ou escreva as notas).' : 'Escreva algo ou anexe uma foto.'; return; }
+  if (!payload.texto && !payload.photos) { st.className = 'status err'; st.textContent = treino ? 'Anexe a screenshot do treino (ou escreva as notas).' : 'Escreva algo ou anexe uma foto.'; return; }
   btn.disabled = true; st.className = 'status'; st.textContent = 'Enviando…';
   try {
     const r = await fetch('/api/log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     const j = await r.json().catch(() => ({}));
     if (r.ok && j.ok) {
-      st.className = 'status ok'; st.textContent = `Anotado: ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} em ${j.dia}${j.foto ? ', com foto' : ''}.`;
-      document.getElementById('rg-txt').value = ''; PHOTO_DATA = null; if (document.getElementById('rg-prot')) document.getElementById('rg-prot').value = '';
-      const img = document.getElementById('rg-prev'); img.style.display = 'none'; document.getElementById('rg-foto').value = '';
+      st.className = 'status ok'; st.textContent = `Anotado: ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} em ${j.dia}${j.hora ? ' às ' + j.hora : ''}${j.fotos > 1 ? ', com ' + j.fotos + ' fotos' : j.foto ? ', com foto' : ''}.`;
+      document.getElementById('rg-txt').value = ''; PHOTOS = []; mostrarFotos(); if (document.getElementById('rg-prot')) document.getElementById('rg-prot').value = '';
+      if (document.getElementById('rg-hora')) document.getElementById('rg-hora').value = horaAgora();
       // mantém a aba Corrigir em dia — se a data saiu errada, o conserto está a um toque
       fetch('/api/registros').then((x) => x.ok ? x.json() : { items: [] })
         .then((jj) => { REGISTROS = jj.items || []; }).catch(() => {});
@@ -1155,20 +1176,21 @@ function renderListaRegistros() {
   if (!itens.length) return `<div class="rdays">${chips}</div><div class="aviso">Nenhum registro nos últimos ${RFILTRO} dias.</div>`;
   const linhas = itens.map((x) => {
     const rotulo = x.tipo === 'Refeição' ? (x.refeicao || 'Refeição') : x.tipo;
-    const marcas = [x.foto ? 'foto' : '', x.processado ? 'lido' : 'na fila'].filter(Boolean).join(' · ');
+    const marcas = [x.fotos > 1 ? x.fotos + ' fotos' : x.foto ? 'foto' : '', x.processado ? 'lido' : 'na fila'].filter(Boolean).join(' · ');
     if (EDIT_ID === x.id) {
       const opts = REFS.map((r) => `<option${r === x.refeicao ? ' selected' : ''}>${r}</option>`).join('');
       return `<div class="ritem editing" data-id="${x.id}">
         <div class="rhead"><span class="rd">Corrigindo ${esc(rotulo)}</span><span class="rk">${marcas}</span></div>
         <div class="redit">
-          <div><label>Data</label><input type="date" class="e-data" value="${x.data}"></div>
+          <div class="rg-dh"><div><label>Data</label><input type="date" class="e-data" value="${x.data}"></div>
+            <div><label>Horário</label><input type="time" class="e-hora" value="${x.hora || ''}"></div></div>
           ${x.tipo === 'Refeição' ? `<div><label>Refeição</label><select class="e-ref">${opts}</select></div>` : ''}
           <div><label>Texto</label><textarea class="e-txt">${esc(x.texto || '')}</textarea></div>
           <div class="ract"><button class="e-save cheio">Salvar</button><button class="e-cancel">Cancelar</button></div>
         </div></div>`;
     }
     return `<div class="ritem" data-id="${x.id}">
-      <div class="rhead"><span class="rd">${esc(rotulo)} · ${rotuloData(x.data)}</span><span class="rk">${marcas}</span></div>
+      <div class="rhead"><span class="rd">${esc(rotulo)} · ${rotuloData(x.data)}${x.hora ? ' · ' + x.hora : ''}</span><span class="rk">${marcas}</span></div>
       ${x.texto ? `<div class="rtxt">${esc(x.texto.slice(0, 160))}${x.texto.length > 160 ? '…' : ''}</div>`
                 : `<div class="rtxt">sem texto${x.foto ? ', só a foto' : ''}</div>`}
       <div class="ract"><button class="r-edit">Corrigir</button><button class="r-del">Excluir</button></div>
@@ -1190,7 +1212,7 @@ function ligarListaRegistros() {
     });
     el.querySelector('.e-cancel')?.addEventListener('click', () => { EDIT_ID = null; renderReg(); });
     el.querySelector('.e-save')?.addEventListener('click', () => {
-      const corpo = { data: el.querySelector('.e-data').value, texto: el.querySelector('.e-txt').value.trim() };
+      const corpo = { data: el.querySelector('.e-data').value, hora: el.querySelector('.e-hora').value, texto: el.querySelector('.e-txt').value.trim() };
       const ref = el.querySelector('.e-ref');
       if (ref) corpo.refeicao = ref.value;
       if (!corpo.data) { st.className = 'status err'; st.textContent = 'Escolha uma data.'; return; }
@@ -1211,10 +1233,10 @@ function renderReg() {
     <div class="topo"><div class="rot">${corrigir ? 'Últimos registros' : 'Vai cru para o diário'}</div></div>
     <h1 class="titulo">${corrigir ? 'Corrigir' : 'Registrar'}</h1></div></div>`;
   const ligarAbas = () => {
-    document.getElementById('tab-ref').addEventListener('click', () => { REG_TIPO = 'refeicao'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
-    document.getElementById('tab-tre').addEventListener('click', () => { REG_TIPO = 'treino'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
-    document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; EDIT_ID = null; PHOTO_DATA = null; renderReg(); });
-    document.getElementById('tab-fix').addEventListener('click', () => { REG_TIPO = 'corrigir'; PHOTO_DATA = null; EDIT_ID = null; renderReg(); });
+    document.getElementById('tab-ref').addEventListener('click', () => { REG_TIPO = 'refeicao'; EDIT_ID = null; PHOTOS = []; renderReg(); });
+    document.getElementById('tab-tre').addEventListener('click', () => { REG_TIPO = 'treino'; EDIT_ID = null; PHOTOS = []; renderReg(); });
+    document.getElementById('tab-obs').addEventListener('click', () => { REG_TIPO = 'observacao'; EDIT_ID = null; PHOTOS = []; renderReg(); });
+    document.getElementById('tab-fix').addEventListener('click', () => { REG_TIPO = 'corrigir'; PHOTOS = []; EDIT_ID = null; renderReg(); });
   };
   if (corrigir) {
     $("view").innerHTML = topo + `<section class="bloco" style="padding-top:8px">${abas}${renderListaRegistros()}
@@ -1227,21 +1249,26 @@ function renderReg() {
     <div class="form">
       ${tipo === 'refeicao' ? `<div><label for="rg-ref">Refeição</label><select id="rg-ref">
         <option>Café</option><option selected>Almoço</option><option>Jantar</option><option>Lanche</option><option>Outro</option></select></div>` : ''}
-      <div><label for="rg-data">Data</label><input type="date" id="rg-data"></div>
+      <div class="rg-dh"><div><label for="rg-data">Data</label><input type="date" id="rg-data"></div>
+        <div><label for="rg-hora">Horário</label><input type="time" id="rg-hora"></div></div>
       ${tipo === 'refeicao' ? `<div><label for="rg-prot">Proteína em gramas, se souber (opcional)</label><input type="number" inputmode="decimal" id="rg-prot" min="0" max="300" placeholder="ex.: 35"></div>` : ''}
       <div><label for="rg-txt">${treino ? 'Notas (opcional)' : obs ? 'Observação' : 'O que comeu'}</label>
         <textarea id="rg-txt" placeholder="${treino ? 'ex.: Lower A, RPE 7, tornozelo ok' : obs ? 'ex.: dor no ombro direito ao levantar peso, começou hoje' : 'ex.: 150 g de frango grelhado, arroz, salada'}"></textarea></div>
-      <div><label>${treino ? 'Screenshot do treino (Fitbod)' : obs ? 'Foto (opcional)' : 'Foto do prato ou do rótulo (opcional)'}</label><div class="photo">
-        <label class="filebtn">${treino ? 'Anexar screenshot' : 'Tirar ou escolher foto'}<input type="file" id="rg-foto" accept="image/*"></label>
-        <img id="rg-prev" alt=""></div></div>
+      <div><label>${treino ? 'Screenshot do treino' : obs ? 'Fotos (opcional)' : 'Fotos do prato ou do rótulo (opcional)'} · <span id="rg-nfotos">até 3</span></label><div class="photo">
+        ${treino ? '' : `<label class="filebtn">Tirar foto<input type="file" id="rg-camera" accept="image/*" capture="environment"></label>`}
+        <label class="filebtn">${treino ? 'Anexar screenshot' : 'Escolher da galeria'}<input type="file" id="rg-foto" accept="image/*" multiple></label>
+        <div class="rg-fotos" id="rg-fotos"></div></div></div>
       <button class="botao" id="rg-send">Registrar ${label} ${ico('mais')}</button>
       <div id="rg-status" class="status"></div>
       <div class="aviso">${treino ? 'Sem análise agora: a screenshot vai crua. No fechamento da semana eu extraio exercícios, séries e carga.' : obs ? 'Sem análise agora: fica na caixa bruta para eu considerar no próximo resumo.' : 'Sem análise agora: vai cru para a caixa. No fechamento da semana eu leio tudo.'}</div>
     </div></section>`;
   document.getElementById('rg-data').value = (REG_PRESET && REG_PRESET.data) || isoLocal();
+  document.getElementById('rg-hora').value = (REG_PRESET && REG_PRESET.hora) || horaAgora();
   if (REG_PRESET && REG_PRESET.refeicao && document.getElementById('rg-ref')) document.getElementById('rg-ref').value = REG_PRESET.refeicao;
   REG_PRESET = null;
   document.getElementById('rg-foto').addEventListener('change', previewPhoto);
+  if (document.getElementById('rg-camera')) document.getElementById('rg-camera').addEventListener('change', previewPhoto);
+  mostrarFotos();
   document.getElementById('rg-send').addEventListener('click', submitLog);
   ligarAbas();
 }

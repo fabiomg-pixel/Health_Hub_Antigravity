@@ -63,6 +63,11 @@ export default async function handler(req, res) {
     const dia = (body.data || pr.Data?.date?.start || '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dia)) return res.status(400).json({ error: 'data inválida (use AAAA-MM-DD)' });
 
+    // Horário: o que veio no pedido; senão, o que já estava gravado (corrigir a data não apaga a hora).
+    const horaAtual = (pr.Data?.date?.start || '').length > 10 ? pr.Data.date.start.slice(11, 16) : '';
+    const hora = body.hora !== undefined ? String(body.hora || '') : horaAtual;
+    if (hora && !/^([01]\d|2[0-3]):[0-5]\d$/.test(hora)) return res.status(400).json({ error: 'hora inválida (use HH:MM)' });
+
     const tipo = body.tipo || pr.Tipo?.select?.name || 'Refeição';
     if (!TIPOS.has(tipo)) return res.status(400).json({ error: 'tipo inválido' });
 
@@ -73,7 +78,7 @@ export default async function handler(req, res) {
 
     const props = {
       'Entrada': { title: [{ text: { content: titulo(tipo, refeicao, dia) } }] },
-      'Data': { date: { start: dia } },
+      'Data': { date: { start: hora ? `${dia}T${hora}:00.000-03:00` : dia } },
       'Tipo': { select: { name: tipo } },
     };
     if (body.texto !== undefined)
@@ -82,7 +87,7 @@ export default async function handler(req, res) {
     props['Refeição'] = refeicao ? { select: { name: refeicao } } : { select: null };
 
     // Corrigir um registro o devolve pra fila: a leitura anterior estava errada.
-    if (body.data || body.texto !== undefined || body.refeicao || body.tipo)
+    if (body.data || body.hora !== undefined || body.texto !== undefined || body.refeicao || body.tipo)
       props['Processado'] = { checkbox: false };
 
     const r = await fetch(`${NOTION}/pages/${id}`, {

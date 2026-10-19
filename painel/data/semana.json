@@ -104,6 +104,7 @@
   {
    "cat": "Mercado e feira (antes de segunda)",
    "itens": [
+    "Marmitas: pedido do iFood de 18/10 (Food Brasil), 10 porções = 5 pratos × 2 (casal): N14, N65, N41, N62 e N72. As quentinhas que sobraram do pedido de 11/10 ficam de reserva.",
     "Fruta inteira para 2 dias (banana, laranja ou tangerina)",
     "Folhas e legumes frescos para as saladas e os legumes dos jantares",
     "Quantidade: não sei o que já há em casa, então conte antes de comprar"
@@ -197,11 +198,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
     },
     "almoco": {
-     "nome": "~12h30 · Casa · Proteína grelhada + vegetal + arroz",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Até 12h30 (entrevista às 14h00). Sem marmita na segunda: as marmitas novas dependem da sua lista ou foto."
+     "nome": "~12h30 · Marmita N14 Risoto de frango com alho-poró e espinafre",
+     "kcal": 498,
+     "prot": 46,
+     "peso_g": 400,
+     "nota": "Você levou hoje. Rótulo (porção de 400 g): 498 kcal, 46 g de proteína, 47 g de carboidrato, 13 g de gordura (5,1 g saturada), fibra 5,0 g, sódio 442 mg. Espinafre e alho-poró no prato. Até 12h30: entrevista às 14h00."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola + banana",
@@ -281,11 +282,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
     },
     "almoco": {
-     "nome": "~12h30 · Marmita a escolher com a nutricionista",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Marmita a escolher com a nutricionista: você mostra a lista ou a foto e ela escolhe (35 g de proteína ou mais no rótulo, sem sobretaxa de R$ 3,99, vegetal em pedaço). Pode vir do freezer ou do pedido novo; quantas sobraram do pedido de 11/10, não sei. Dia de entrevista (13h00 às 15h15) e de corrida às 15h30: almoço antes das 13h, nunca depois das 15h."
+     "nome": "~12h30 · Marmita N65 Maxi carbo de frango (batata-doce e brócolis)",
+     "kcal": 471,
+     "prot": 40,
+     "peso_g": 400,
+     "nota": "Rótulo (400 g): 471 kcal, 40 g de proteína, 59 g de carboidrato, 8,5 g de gordura, fibra 6,9 g, sódio 332 mg. É a de mais carboidrato: fica na terça porque, se a manhã liberar, a corrida é às 15h30. Coma antes das 13h (entrevista às 13h00)."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola + banana",
@@ -371,11 +372,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
     },
     "almoco": {
-     "nome": "13h · Marmita a escolher com a nutricionista",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Marmita a escolher com a nutricionista: você mostra a lista ou a foto e ela escolhe (35 g de proteína ou mais no rótulo, sem sobretaxa de R$ 3,99, vegetal em pedaço). Pode vir do freezer ou do pedido novo; quantas sobraram do pedido de 11/10, não sei. Entrevista só às 15h00: almoço às 13h."
+     "nome": "13h · Marmita N41 Salada de lentilha com frango desfiado",
+     "kcal": 370,
+     "prot": 49,
+     "peso_g": 330,
+     "nota": "Rótulo (porção de 400 g declarada): 370 kcal, 49 g de proteína, 34 g de carboidrato, 7,9 g de gordura, fibra 18,6 g, sódio 368 mg. Lentilha conta para a meta de leguminosa (1 de 2); tomate, pimentão e cebola roxa no prato. Entrevista só às 15h00."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola + banana",
@@ -445,11 +446,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
     },
     "almoco": {
-     "nome": "~12h30 · Marmita a escolher com a nutricionista",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Marmita a escolher com a nutricionista: você mostra a lista ou a foto e ela escolhe (35 g de proteína ou mais no rótulo, sem sobretaxa de R$ 3,99, vegetal em pedaço). Pode vir do freezer ou do pedido novo; quantas sobraram do pedido de 11/10, não sei. Entrevistas das 13h00 às 16h00: almoço antes das 13h, nunca depois das 15h."
+     "nome": "~12h30 · Marmita N62 Frango com quiabo e arroz",
+     "kcal": 489,
+     "prot": 41,
+     "peso_g": 400,
+     "nota": "Rótulo (400 g): 489 kcal, 41 g de proteína, 50 g de carboidrato, 13 g de gordura, fibra 7,4 g, sódio 542 mg. Quiabo no prato; o arroz é a base para o jogo das 20h. Coma antes das 13h (entrevistas das 13h00 às 16h00)."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola + banana",
@@ -514,11 +515,11 @@
      "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
     },
     "almoco": {
-     "nome": "13h · Marmita a escolher com a nutricionista",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Marmita a escolher com a nutricionista: você mostra a lista ou a foto e ela escolhe (35 g de proteína ou mais no rótulo, sem sobretaxa de R$ 3,99, vegetal em pedaço). Pode vir do freezer ou do pedido novo; quantas sobraram do pedido de 11/10, não sei. Sem entrevista; almoço às 13h."
+     "nome": "13h · Marmita N72 Frango xadrez com creme de milho",
+     "kcal": 490,
+     "prot": 43,
+     "peso_g": 400,
+     "nota": "Rótulo (400 g): 490 kcal, 43 g de proteína, 48 g de carboidrato, 12 g de gordura, fibra 5,1 g, sódio 759 mg. Pimentões e cebola roxa no prato. Entrou no lugar do salpicão de grão-de-bico, que fica aguado ao descongelar (você, 18/10)."
     },
     "pre_lanche": {
      "nome": "17h · Iogurte natural + whey + granola + banana",

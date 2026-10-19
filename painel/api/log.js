@@ -22,23 +22,31 @@ export default async function handler(req, res) {
     return res.status(401).json({ error: 'unauthorized' });
 
   try {
-    const { texto = '', refeicao = 'Outro', tipo = 'refeicao', data, photoBase64, fileName } = req.body || {};
+    const { texto = '', refeicao = 'Outro', tipo = 'refeicao', data, hora, photoBase64, photos, fileName } = req.body || {};
     const dia = (data || new Date().toISOString().slice(0, 10)).slice(0, 10);
+    // Horário opcional (pedido do Fabio, 19/10): vai junto na Data do Notion, no fuso do Rio. Quem lê pela
+    // /api/registros continua recebendo `data` só com o dia, e o horário à parte em `hora`.
+    const temHora = /^([01]\d|2[0-3]):[0-5]\d$/.test(String(hora || ''));
     const isTreino = tipo === 'treino';
     const isObs = tipo === 'observacao';
     const tipoLabel = isTreino ? 'Treino' : isObs ? 'Observação' : 'Refeição';
 
+    // Até 3 fotos por registro (pedido do Fabio, 19/10). `photoBase64` sozinho continua valendo.
+    const lista = (Array.isArray(photos) ? photos : []).concat(photoBase64 ? [photoBase64] : []).filter(Boolean).slice(0, 3);
     let fotoProp;
-    if (photoBase64) {
-      const buf = Buffer.from(String(photoBase64).split(',').pop(), 'base64');
-      const safe = `diario/${dia}-${Date.now()}.jpg`;
-      const blob = await put(safe, buf, { access: 'public', contentType: 'image/jpeg' });
-      fotoProp = { files: [{ type: 'external', name: fileName || 'foto.jpg', external: { url: blob.url } }] };
+    if (lista.length) {
+      const files = [];
+      for (let i = 0; i < lista.length; i++) {
+        const buf = Buffer.from(String(lista[i]).split(',').pop(), 'base64');
+        const blob = await put(`diario/${dia}-${Date.now()}-${i + 1}.jpg`, buf, { access: 'public', contentType: 'image/jpeg' });
+        files.push({ type: 'external', name: lista.length > 1 ? `foto-${i + 1}.jpg` : (fileName || 'foto.jpg'), external: { url: blob.url } });
+      }
+      fotoProp = { files };
     }
 
     const props = {
       'Entrada': { title: [{ text: { content: isTreino ? `Treino ${dia}` : isObs ? `Observação ${dia}` : `${refeicao} ${dia}` } }] },
-      'Data': { date: { start: dia } },
+      'Data': { date: { start: temHora ? `${dia}T${hora}:00.000-03:00` : dia } },
       'Tipo': { select: { name: tipoLabel } },
       'Texto': { rich_text: texto ? [{ text: { content: String(texto).slice(0, 1900) } }] : [] },
       'Processado': { checkbox: false },
@@ -57,7 +65,7 @@ export default async function handler(req, res) {
     });
 
     if (!r.ok) return res.status(502).json({ error: 'notion', detail: await r.text() });
-    return res.status(200).json({ ok: true, dia, tipo: isTreino ? 'treino' : isObs ? 'observacao' : 'refeicao', refeicao: (isTreino || isObs) ? null : refeicao, foto: !!fotoProp });
+    return res.status(200).json({ ok: true, dia, tipo: isTreino ? 'treino' : isObs ? 'observacao' : 'refeicao', refeicao: (isTreino || isObs) ? null : refeicao, hora: temHora ? hora : null, foto: !!fotoProp, fotos: lista.length });
   } catch (e) {
     return res.status(500).json({ error: String(e && e.message || e) });
   }

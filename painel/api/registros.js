@@ -29,11 +29,13 @@ export default async function handler(req, res) {
       const pr = p.properties || {};
       return {
         id: p.id,
-        data: pr.Data?.date?.start || null,
+        data: (pr.Data?.date?.start || '').slice(0, 10) || null,
+        hora: (pr.Data?.date?.start || '').length > 10 ? pr.Data.date.start.slice(11, 16) : null,
         tipo: pr.Tipo?.select?.name || 'Refeição',
         refeicao: pr['Refeição']?.select?.name || null,
         texto: (pr.Texto?.rich_text || []).map((t) => t.plain_text).join(''),
         foto: (pr.Foto?.files || []).length > 0,
+        fotos: (pr.Foto?.files || []).length,
         processado: pr.Processado?.checkbox === true,
       };
     }).filter((x) => x.data);

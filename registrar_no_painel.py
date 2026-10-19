@@ -5,7 +5,7 @@ O bot usa isto para que refeição, treino ou sintoma contado no Telegram valha 
 (decisão do Fabio em 16/10/2026). Só grava o que ele mandou; nada inventado.
 
 Uso:
-  ./registrar_no_painel.py refeicao --refeicao Jantar --data 2026-10-15 --texto "frango, arroz" [--foto caminho.jpg]
+  ./registrar_no_painel.py refeicao --refeicao Jantar --data 2026-10-15 --hora 20:15 --texto "frango, arroz" [--foto a.jpg --foto b.jpg]
   ./registrar_no_painel.py treino --texto "Campeonato de futebol, 3 jogos" [--data AAAA-MM-DD]
   ./registrar_no_painel.py observacao --texto "dor no joelho esquerdo 3/10"
   ... [--forcar]   grava mesmo se já houver registro igual no dia
@@ -13,7 +13,7 @@ Uso:
 Saída: 0 gravado; 3 já existe registro parecido no dia (mostra qual; pergunte ao Fabio ou use --forcar);
 1 erro de rede ou da API (nada gravado).
 """
-import argparse, base64, datetime, json, subprocess, sys, time
+import argparse, base64, datetime, json, os, re, subprocess, sys, tempfile, time
 
 BASE = 'https://painel-xi-three.vercel.app'
 REFEICOES = ['Café', 'Almoço', 'Lanche', 'Jantar', 'Outro']
@@ -44,13 +44,18 @@ def main():
     ap.add_argument('--texto', default='')
     ap.add_argument('--refeicao', choices=REFEICOES)
     ap.add_argument('--data', default=datetime.date.today().isoformat())
-    ap.add_argument('--foto')
+    ap.add_argument('--hora', help='HH:MM em que aconteceu (opcional)')
+    ap.add_argument('--foto', action='append', default=[], help='até 3; repita --foto para cada uma')
     ap.add_argument('--forcar', action='store_true')
     a = ap.parse_args()
 
     datetime.date.fromisoformat(a.data)
     if a.tipo == 'refeicao' and not a.refeicao:
         ap.error('refeição pede --refeicao (Café, Almoço, Lanche, Jantar ou Outro)')
+    if a.hora and not re.fullmatch(r'([01]\d|2[0-3]):[0-5]\d', a.hora):
+        ap.error('--hora no formato HH:MM')
+    if len(a.foto) > 3:
+        ap.error('no máximo 3 fotos por registro')
     if not a.texto.strip() and not a.foto:
         ap.error('sem texto e sem foto não há o que registrar')
 
@@ -68,19 +73,30 @@ def main():
     corpo = {'tipo': a.tipo, 'texto': a.texto.strip(), 'data': a.data}
     if a.refeicao:
         corpo['refeicao'] = a.refeicao
-    if a.foto:
-        with open(a.foto, 'rb') as f:
+    if a.hora:
+        corpo['hora'] = a.hora
+    fotos = []
+    for caminho in a.foto:
+        with open(caminho, 'rb') as f:
             bruto = f.read()
-        if len(bruto) > 4_000_000:
-            raise SystemExit('foto acima de 4 MB; reduza antes (sips -Z 1600 arquivo.jpg)')
-        corpo['photoBase64'] = base64.b64encode(bruto).decode()
+        if len(bruto) > 900_000:   # 3 fotos têm de caber no limite de ~4,5 MB do Vercel: reduz com o sips do macOS
+            menor = os.path.join(tempfile.mkdtemp(), 'foto.jpg')
+            subprocess.run(['sips', '-Z', '1400', '-s', 'format', 'jpeg', '-s', 'formatOptions', '70', caminho, '--out', menor],
+                           capture_output=True)
+            with open(menor, 'rb') as f:
+                bruto = f.read()
+        fotos.append(base64.b64encode(bruto).decode())
+    if fotos:
+        corpo['photos'] = fotos
         corpo['fileName'] = 'telegram.jpg'
 
     r = pedir(f'{BASE}/api/log', corpo)
     if not r.get('ok'):
         raise SystemExit(f'a API não confirmou: {r}')
     oque = r.get('refeicao') or ROTULO[a.tipo]
-    print(f"gravado no painel: {oque} de {r['dia']}{' com foto' if r.get('foto') else ''}")
+    hora = f" às {r['hora']}" if r.get('hora') else ''
+    fotos_txt = f" com {r['fotos']} fotos" if (r.get('fotos') or 0) > 1 else (' com foto' if r.get('foto') else '')
+    print(f"gravado no painel: {oque} de {r['dia']}{hora}{fotos_txt}")
 
 
 if __name__ == '__main__':
