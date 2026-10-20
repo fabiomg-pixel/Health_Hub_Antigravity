@@ -135,6 +135,23 @@
     "corrida de domingo: não aconteceu; corridas da semana 12-18: 1 (14/10)",
     "a leitura do relógio de 19/10 (não sincronizou até 08h40)"
    ]
+  },
+  {
+   "data": "2026-10-19",
+   "planejado": "Segunda sem treino (4 manhãs vermelhas seguidas). Almoço da marmita N14 por volta de 12h30, lanche das 17h, janta em casa com salada fresca. Perguntas pendentes: lombar, hora da última dose e bula do antigripal.",
+   "feito": "Sem treino. Registros no painel: café Yopro (sem número), almoço com foto e proteína informada de 30 g, brownie às 15h54 ('stress eating'), lanche às 18h30 Yopro com 23 g informados, janta às 20h40 com 2 fotos e sem texto. Pelo Telegram, sem relato da lombar, do resfriado nem da bula.",
+   "adaptacao": "Nenhuma. Terça abre com o painel decidindo corrida ou caminhada pelo passo A.",
+   "respostas": {
+    "q1": null,
+    "q2": null
+   },
+   "nao_sei": [
+    "lombar, resfriado e hora da última dose do antigripal em 19/10",
+    "se a bula do antigripal tem anti-inflamatório",
+    "vegetal visível no almoço e na janta (só fotos, sem texto)",
+    "se o almoço de 30 g informados era a marmita N14 (rótulo: 46 g)",
+    "pesagem de 19/10 (Renpho com falha de login)"
+   ]
   }
  ]
 }
