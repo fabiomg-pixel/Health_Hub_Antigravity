@@ -1,27 +1,17 @@
 {
- "gerado_em": "2026-10-18T10:35:17",
+ "gerado_em": "2026-10-20T08:59:51",
  "janela": {
-  "hoje": "2026-10-18",
-  "dia_semana": "Sunday",
-  "semana_desde": "2026-10-11"
+  "hoje": "2026-10-20",
+  "dia_semana": "Tuesday",
+  "semana_desde": "2026-10-13"
  },
  "peso": {
   "ultima": {
-   "data": "2026-10-18",
-   "peso_kg": 93.95,
-   "pos_esforco": true
+   "data": "2026-10-20",
+   "peso_kg": 94.55,
+   "pos_esforco": false
   },
   "serie_14d": [
-   {
-    "data": "2026-09-25",
-    "peso_kg": 94.95,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-26",
-    "peso_kg": 95.25,
-    "pos_esforco": false
-   },
    {
     "data": "2026-09-27",
     "peso_kg": 94.35,
@@ -81,45 +71,45 @@
     "data": "2026-10-18",
     "peso_kg": 93.95,
     "pos_esforco": true
+   },
+   {
+    "data": "2026-10-19",
+    "peso_kg": 94.05,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-10-20",
+    "peso_kg": 94.55,
+    "pos_esforco": false
    }
   ],
-  "media_ultimas_7_leituras": 95.11,
-  "media_neutras_nas_ultimas_7": 95.44,
+  "media_ultimas_7_leituras": 94.71,
+  "media_neutras_nas_ultimas_7": 94.74,
   "n_neutras_nas_ultimas_7": 4,
-  "media_7_neutras_de_verdade": 95.19,
-  "media_28d_neutras": 94.87,
+  "media_7_neutras_de_verdade": 95.01,
+  "media_28d_neutras": 94.8,
   "n_leituras_pos_esforco_14d": 3,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 22,
-  "banda_hoje": "r",
-  "prontidao_garmin_hoje": 53,
-  "dias_vermelhos_seguidos": 4,
-  "sono_ultima_noite_h": 6.57,
-  "sono_ultima_noite_score": 57,
-  "hrv_ultima_noite": 28,
-  "fc_repouso_hoje": 57,
-  "indice_medio_7d": 48.0,
-  "sono_medio_7d": 6.92,
-  "hrv_medio_7d": 37.0,
-  "hrv_medio_28d": 36.0,
-  "fc_repouso_7d": 55.0,
+  "indice_hoje": 83,
+  "banda_hoje": "g",
+  "prontidao_garmin_hoje": 82,
+  "dias_vermelhos_seguidos": 0,
+  "sono_ultima_noite_h": 7.73,
+  "sono_ultima_noite_score": 86,
+  "hrv_ultima_noite": 46,
+  "fc_repouso_hoje": 55,
+  "indice_medio_7d": 42.0,
+  "sono_medio_7d": 6.87,
+  "hrv_medio_7d": 36.0,
+  "hrv_medio_28d": 37.0,
+  "fc_repouso_7d": 56.0,
   "fc_repouso_28d": 54.0,
   "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-10-11",
-    "kcal_ativas": 353.0,
-    "passos": 12646
-   },
-   {
-    "data": "2026-10-12",
-    "kcal_ativas": 396.0,
-    "passos": 12751
-   },
    {
     "data": "2026-10-14",
     "kcal_ativas": 503.0,
@@ -134,6 +124,11 @@
     "data": "2026-10-17",
     "kcal_ativas": 303.0,
     "passos": 6021
+   },
+   {
+    "data": "2026-10-18",
+    "kcal_ativas": 341.0,
+    "passos": 7787
    }
   ],
   "atividades_garmin": [
@@ -202,25 +197,6 @@
      }
     ],
     "garmin": null
-   },
-   {
-    "data": "2026-10-11",
-    "sessao": "upper_leve_e_core",
-    "duracao_min": 22,
-    "esforco": "ok",
-    "exercicios": 6,
-    "series_feitas": 17,
-    "trocas": [
-     {
-      "feito": "supino_com_halteres",
-      "plano": "supino_com_barra"
-     },
-     {
-      "feito": "x_remada_alta_com_halter",
-      "plano": "remada_baixa_ou_puxada"
-     }
-    ],
-    "garmin": null
    }
   ],
   "registros_de_treino": [
@@ -238,14 +214,9 @@
     "data": "2026-10-13",
     "tem_foto": false,
     "texto": "Treino feito no painel: Lower A com reforço, 37 min. Let presa na máquina (no lugar de Leg press): 150 kg × 8, 150 kg × "
-   },
-   {
-    "data": "2026-10-11",
-    "tem_foto": false,
-    "texto": "Treino feito no painel: Upper leve e core, 22 min, esforço no ponto. Supino com halteres (no lugar de Supino com barra):"
    }
   ],
-  "sessoes_registradas": 4,
+  "sessoes_registradas": 3,
   "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço. A FC no pulso oscila na musculação: tendência, não medida exata. Séries e cargas vêm do painel, não da contagem do Garmin."
  },
  "vo2max": {
@@ -281,23 +252,23 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-10-11",
-   "2026-10-12",
    "2026-10-13",
    "2026-10-14",
    "2026-10-15",
    "2026-10-16",
-   "2026-10-17"
+   "2026-10-17",
+   "2026-10-18",
+   "2026-10-19"
   ],
   "n_refeicoes_registradas": 19,
   "por_dia": {
-   "2026-10-11": 4,
-   "2026-10-12": 2,
    "2026-10-13": 3,
    "2026-10-14": 4,
    "2026-10-15": 2,
    "2026-10-16": 2,
-   "2026-10-17": 2
+   "2026-10-17": 2,
+   "2026-10-18": 1,
+   "2026-10-19": 5
   },
   "ocorrencias": {
    "fritura": [
@@ -341,35 +312,14 @@
      "data": "2026-10-14",
      "refeicao": "Almoço",
      "texto": "350g churrasco (80% carne)"
-    },
-    {
-     "data": "2026-10-12",
-     "refeicao": "Jantar",
-     "texto": "Picanha grelhada, risoto cogumelo"
-    },
-    {
-     "data": "2026-10-12",
-     "refeicao": "Almoço",
-     "texto": "Alimentação feita com o frango agridoce planejado e complementado com a salada de folha, c"
-    },
-    {
-     "data": "2026-10-11",
-     "refeicao": "Lanche",
-     "texto": "Lanche das 17h: iogurte Danone natural desnatado (160 g; rótulo: 84 kcal, 8,9 g de proteín"
-    },
-    {
-     "data": "2026-10-11",
-     "refeicao": "Almoço",
-     "texto": "Salada de alface, rúcula, cenoura, tomate cereja, avocado com molho a base de iogurte e jo"
-    },
-    {
-     "data": "2026-10-11",
-     "refeicao": "Café",
-     "texto": "Repetiu a torrada com avocado e ovo, Yopro 23g proteína"
     }
    ]
   },
   "observacoes": [
+   {
+    "data": "2026-10-18",
+    "texto": "Resfriado não passou, na curva de melhora, com muita secreção; disposição não está 100%. Toma antigripal constantemente. Sem dor no joelho; alguma dor na lombar"
+   },
    {
     "data": "2026-10-17",
     "texto": "A janta de 17/10 (pequenas comidas na saída) teve fritura: é a segunda fritura da semana."
@@ -385,14 +335,6 @@
    {
     "data": "2026-10-13",
     "texto": "Resfriado chegando, cansaço, efeito de remédio, dor de garganta. Somado ao almoço atrasado por conta de reunião."
-   },
-   {
-    "data": "2026-10-11",
-    "texto": "Linha de base visual da recomposição corporal em 11/10/2026: o Fábio enviou duas fotos (frente e perfil) pelo Telegram e confirmou que são a base do trabalho. A"
-   },
-   {
-    "data": "2026-10-11",
-    "texto": "Conselho de domingo 11/10. DADOS: noite de 11/10 sono 6,43 h (score 80), HRV 45 (base 28d 37), FC de repouso 49, índice 83 (confiável), prontidão Garmin 54. Méd"
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."

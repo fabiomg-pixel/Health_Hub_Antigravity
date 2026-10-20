@@ -60,6 +60,31 @@ def normalizar(m):
     return d
 
 
+def remendar_login(cliente):
+    """Remendo para a mudança do servidor Renpho de 19/10/2026 (erro -114 "Decryption failed").
+
+    A lib renpho-api (0.1.0 e 0.2.0) manda o login com o app antigo. O servidor passou a exigir os cabeçalhos
+    appVersion e platform JÁ NO LOGIN e os valores de login do app novo. Correção descrita e confirmada por três
+    usuários em https://github.com/danvaneijck/renpho-api/issues/12; aplicada aqui por fora, sem mexer na lib.
+    Quando a lib corrigir isso, este remendo pode sair.
+    """
+    import renpho.client as rc
+
+    versao = "7.0.0"
+    rc.APP_VERSION = versao
+    cliente._session.headers.update({"appVersion": versao, "platform": rc.PLATFORM})
+    original = rc.encrypt_request
+
+    def encrypt_com_login_novo(obj, *a, **k):
+        if isinstance(obj, dict) and isinstance(obj.get("login"), dict):
+            obj["login"]["appRevision"] = versao
+            obj["login"]["cellphoneType"] = "MCP-Server"
+            obj["bindingList"] = {"deviceTypes": ["2"]}
+        return original(obj, *a, **k)
+
+    rc.encrypt_request = encrypt_com_login_novo
+
+
 def main():
     ap = argparse.ArgumentParser(description="Puxa peso/composição do Renpho")
     ap.add_argument("--days", type=int, default=7, help="janela de dias até hoje")
@@ -89,6 +114,7 @@ def main():
         from renpho.client import RenphoClient
 
         cliente = RenphoClient(email, senha)
+        remendar_login(cliente)
         medidas = cliente.get_all_measurements() or []
         log(f"{len(medidas)} medições recebidas")
     except Exception as e:
