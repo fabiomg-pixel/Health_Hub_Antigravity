@@ -252,6 +252,11 @@
       "reps": "—"
      },
      {
+      "nome": "ATUALIZADO 20/10, 09h (parecer da fisiologista): com índice 83, VFC 46 e sono 7,7 h, ela aceita a FC de repouso 55 e libera a corrida de hoje com condições: nenhum antitérmico desde as 15h30 de segunda, sem febre, dor no corpo ou tosse no peito. Na esteira: 5 min caminhando e depois até 30 min a 8,0 km/h; FC acima de 150 por 2 min, reduza ou pare; aperto no peito, tontura ou calafrio, pare. Sem saber a hora da última dose, vale caminhada de 20 a 30 min. Corrida e força não ficam no mesmo dia: a força é amanhã.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
       "nome": "Passo A (fisiologista): índice 50 ou mais E FC de repouso até 54, em manhã com 24 h sem antitérmico; E secreção só no nariz ou na garganta (nada no peito, sem febre, sem dor no corpo); E UMA destas: sem dose do antigripal nas últimas 48 h, ou a bula confirmando que ele não tem anti-inflamatório (quem confirma a bula é você; não opino sobre remédio). Com antitérmico nas últimas 24 h, FC e VFC não liberam, mas ainda vetam: FC de repouso 57 ou mais ou VFC 28 ou menos é vermelho. Sem registro da hora da última dose, assumo que tomou: caminhada. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Febre: zero treino. O painel e o Silvester conferem.",
       "series": 1,
       "reps": "—"
@@ -324,7 +329,7 @@
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "Membros superiores — força 1 de 1, sem carga axial",
+    "foco": "Costas, ombro posterior e glúteo — força 1 de 1, sem carga axial",
     "exercicios": [
      {
       "nome": "Primeiro passo: diga a dor da lombar de 0 a 10 (hoje, 18/10: 1/10). Acima de 3, não treina.",
@@ -342,24 +347,39 @@
       "reps": "até 40 min"
      },
      {
-      "nome": "1 · Pec deck ou crucifixo — 3×8",
-      "series": 3,
-      "reps": "8"
+      "nome": "Pedido seu de 20/10: os músculos pouco trabalhados nos treinos de 11, 13 e 16/10 (costas, ombro posterior, glúteo), dentro do teto da fisiologista: 11 séries, RIR 3, sem subir carga. Quinta é jogo: sem leg curl nem stiff.",
+      "series": 1,
+      "reps": "—"
      },
      {
-      "nome": "2 · Puxada alta — 3×8",
-      "series": 3,
-      "reps": "8"
-     },
-     {
-      "nome": "3 · Elevação lateral — 3×12",
-      "series": 3,
-      "reps": "12"
-     },
-     {
-      "nome": "4 · Rosca e tríceps — 2×10",
+      "nome": "1 · Remada baixa no cabo — 2×6",
       "series": 2,
-      "reps": "10"
+      "reps": "6"
+     },
+     {
+      "nome": "2 · Puxada com pegada neutra — 2×6 (45 kg)",
+      "series": 2,
+      "reps": "6"
+     },
+     {
+      "nome": "3 · Crucifixo inverso na máquina — 2×8",
+      "series": 2,
+      "reps": "8"
+     },
+     {
+      "nome": "4 · Rotação externa do ombro no cabo — 1×10 cada",
+      "series": 1,
+      "reps": "10 cada"
+     },
+     {
+      "nome": "5 · Ponte de glúteo unilateral — 2×6 cada (RIR 4)",
+      "series": 2,
+      "reps": "6 cada"
+     },
+     {
+      "nome": "6 · Caminhada lateral com mini-band — 2×10 passos cada lado",
+      "series": 2,
+      "reps": "10 passos"
      }
     ]
    },

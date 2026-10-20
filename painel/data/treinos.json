@@ -269,6 +269,74 @@
      "nota": "Reforço de core. Pausa de 3 s no alto."
     }
    ]
+  },
+  "2026-10-21": {
+   "titulo": "Costas, ombro posterior e glúteo",
+   "duracao_min": 40,
+   "pesada": true,
+   "regra": "Proposta pedida pelo Fabio (20/10) para os músculos pouco trabalhados nos treinos de 11, 13 e 16/10, dentro do teto da fisiologista: 11 séries no máximo, 3 repetições de sobra (RIR 3; o glúteo com 4), sem carga axial e sem subir carga. Lombar acima de 3/10: pare. Banda vermelha, febre ou tosse no peito: sem força, só caminhada. Sem leg curl nem stiff: quinta é jogo. Perna pesada espera o passo B.",
+   "exercicios": [
+    {
+     "id": "remada_baixa_no_cabo",
+     "nome": "Remada baixa no cabo",
+     "series": 2,
+     "reps": "6",
+     "kg": null,
+     "descanso_s": 90,
+     "grupo": "costas",
+     "nota": "Sem histórico de carga: use uma com a qual você faria uns 9. Tronco firme e ereto."
+    },
+    {
+     "id": "puxada_pegada_neutra",
+     "nome": "Puxada com pegada neutra (triângulo)",
+     "series": 2,
+     "reps": "6",
+     "kg": 45,
+     "descanso_s": 90,
+     "grupo": "costas",
+     "nota": "Comece em 45 kg, um pouco abaixo dos 50 kg × 6 da puxada alta de 16/10 (pegada diferente). Se sobrarem mais de 3 repetições, mantenha: não suba carga."
+    },
+    {
+     "id": "crucifixo_inverso_na_maquina",
+     "nome": "Crucifixo inverso na máquina",
+     "series": 2,
+     "reps": "8",
+     "kg": null,
+     "descanso_s": 75,
+     "grupo": "costas",
+     "nota": "Ombro posterior responde melhor a 8 do que a 6. Carga leve; sem histórico."
+    },
+    {
+     "id": "rotacao_externa_no_cabo",
+     "nome": "Rotação externa do ombro no cabo",
+     "series": 1,
+     "reps": "10 cada",
+     "kg": null,
+     "descanso_s": 45,
+     "grupo": "costas",
+     "nota": "Manguito rotador: bem leve, sem dor."
+    },
+    {
+     "id": "ponte_gluteo_unilateral",
+     "nome": "Ponte de glúteo unilateral",
+     "series": 2,
+     "reps": "6 cada",
+     "kg": 0,
+     "descanso_s": 60,
+     "grupo": "gluteo",
+     "nota": "4 de sobra. Suba em 1 s e desça em 3 s, sem arquear a lombar. Lombar acima de 3/10: pare."
+    },
+    {
+     "id": "caminhada_lateral_mini_band",
+     "nome": "Caminhada lateral com mini-band",
+     "series": 2,
+     "reps": "10 passos cada lado",
+     "kg": null,
+     "descanso_s": 45,
+     "grupo": "gluteo",
+     "nota": "Joelho sempre na direção do pé."
+    }
+   ]
   }
  },
  "biblioteca": {
@@ -392,6 +460,16 @@
       "id": "remada_cavalinho",
       "nome": "Remada cavalinho",
       "dica": "Se houver apoio para o peito, use. Puxe até o abdômen com os cotovelos junto ao corpo, sem balançar o tronco."
+     },
+     {
+      "id": "crucifixo_inverso_na_maquina",
+      "nome": "Crucifixo inverso na máquina (pec deck invertido)",
+      "dica": "Peito apoiado no suporte, braços na altura dos ombros. Abra os braços para trás juntando as escápulas, sem encolher o pescoço, e volte devagar. Trabalha o ombro posterior e a parte alta das costas."
+     },
+     {
+      "id": "rotacao_externa_no_cabo",
+      "nome": "Rotação externa do ombro no cabo",
+      "dica": "Cotovelo colado ao corpo, dobrado em 90°. Gire o antebraço para fora sem mexer o cotovelo e volte devagar. Carga leve: é o manguito rotador. Se o ombro doer, pare."
      }
     ]
    },
