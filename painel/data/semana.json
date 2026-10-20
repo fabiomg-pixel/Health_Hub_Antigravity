@@ -257,6 +257,11 @@
       "reps": "—"
      },
      {
+      "nome": "Força curta DEPOIS da corrida, só se o corpo responder (exceção de hoje, pedida por você e aceita pela fisiologista): corrida de 30 min com FC máxima até 150, sem tosse no peito, aperto, tontura, calafrio ou febre, lombar até 2/10 e nenhum antitérmico desde as 15h30 de segunda. Comece 30 min depois e termine antes das 19h. Até 6 séries, RIR 3 a 4: remada baixa no cabo 2×6, puxada neutra 1×6 (45 kg), crucifixo inverso 1×8, rotação externa 1×10, ponte unilateral 1×6 cada. Falhou algum critério: só caminhada.",
+      "series": 6,
+      "reps": "6"
+     },
+     {
       "nome": "Passo A (fisiologista): índice 50 ou mais E FC de repouso até 54, em manhã com 24 h sem antitérmico; E secreção só no nariz ou na garganta (nada no peito, sem febre, sem dor no corpo); E UMA destas: sem dose do antigripal nas últimas 48 h, ou a bula confirmando que ele não tem anti-inflamatório (quem confirma a bula é você; não opino sobre remédio). Com antitérmico nas últimas 24 h, FC e VFC não liberam, mas ainda vetam: FC de repouso 57 ou mais ou VFC 28 ou menos é vermelho. Sem registro da hora da última dose, assumo que tomou: caminhada. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Febre: zero treino. O painel e o Silvester conferem.",
       "series": 1,
       "reps": "—"
@@ -331,6 +336,11 @@
    "treino": {
     "foco": "Costas, ombro posterior e glúteo — força 1 de 1, sem carga axial",
     "exercicios": [
+     {
+      "nome": "IMPORTANTE: a fisiologista permite 1 força até o passo B. Se você fez a força curta de terça, hoje é só caminhada de 20 a 30 min. Se terça não aconteceu, vale a sessão abaixo.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "Primeiro passo: diga a dor da lombar de 0 a 10 (hoje, 18/10: 1/10). Acima de 3, não treina.",
       "series": 1,

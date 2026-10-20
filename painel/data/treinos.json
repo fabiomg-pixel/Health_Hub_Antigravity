@@ -271,10 +271,10 @@
    ]
   },
   "2026-10-21": {
-   "titulo": "Costas, ombro posterior e glúteo",
+   "titulo": "Costas, ombro posterior e glúteo (só se a força de hoje não aconteceu)",
    "duracao_min": 40,
    "pesada": true,
-   "regra": "Proposta pedida pelo Fabio (20/10) para os músculos pouco trabalhados nos treinos de 11, 13 e 16/10, dentro do teto da fisiologista: 11 séries no máximo, 3 repetições de sobra (RIR 3; o glúteo com 4), sem carga axial e sem subir carga. Lombar acima de 3/10: pare. Banda vermelha, febre ou tosse no peito: sem força, só caminhada. Sem leg curl nem stiff: quinta é jogo. Perna pesada espera o passo B.",
+   "regra": "Se você fez a força curta de terça 20/10, hoje é só caminhada de 20 a 30 min: a fisiologista permite 1 força até o passo B. Proposta pedida pelo Fabio (20/10) para os músculos pouco trabalhados nos treinos de 11, 13 e 16/10, dentro do teto da fisiologista: 11 séries no máximo, 3 repetições de sobra (RIR 3; o glúteo com 4), sem carga axial e sem subir carga. Lombar acima de 3/10: pare. Banda vermelha, febre ou tosse no peito: sem força, só caminhada. Sem leg curl nem stiff: quinta é jogo. Perna pesada espera o passo B.",
    "exercicios": [
     {
      "id": "remada_baixa_no_cabo",
@@ -335,6 +335,64 @@
      "descanso_s": 45,
      "grupo": "gluteo",
      "nota": "Joelho sempre na direção do pé."
+    }
+   ]
+  },
+  "2026-10-20": {
+   "titulo": "Força curta depois da corrida (só se o corpo responder)",
+   "duracao_min": 20,
+   "pesada": false,
+   "regra": "Exceção só de hoje, pedida por você e aceita pela fisiologista. Só começa se a corrida cumpriu TUDO: 30 min com FC máxima até 150; sem tosse no peito, aperto, tontura, calafrio ou febre; lombar até 2/10; nenhum antitérmico desde as 15h30 de segunda. Comece pelo menos 30 min depois da corrida e termine antes das 19h. Máximo de 6 séries, 3 a 4 repetições de sobra, sem carga axial e sem subir carga (use a carga das séries de 8 que você já fez). Pare com tosse no peito, aperto, tontura, calafrio ou lombar acima de 3/10. Se qualquer critério falhar: só caminhada, sem força. Esta é a 1 força permitida até o passo B: com ela feita, quarta vira caminhada.",
+   "exercicios": [
+    {
+     "id": "remada_baixa_no_cabo",
+     "nome": "Remada baixa no cabo",
+     "series": 2,
+     "reps": "6",
+     "kg": null,
+     "descanso_s": 75,
+     "grupo": "costas",
+     "nota": "Sem histórico de carga: leve, com 3 a 4 repetições de sobra."
+    },
+    {
+     "id": "puxada_pegada_neutra",
+     "nome": "Puxada com pegada neutra (triângulo)",
+     "series": 1,
+     "reps": "6",
+     "kg": 45,
+     "descanso_s": 75,
+     "grupo": "costas",
+     "nota": "45 kg, abaixo dos 50 kg × 6 da puxada alta de 16/10. Não suba."
+    },
+    {
+     "id": "crucifixo_inverso_na_maquina",
+     "nome": "Crucifixo inverso na máquina",
+     "series": 1,
+     "reps": "8",
+     "kg": null,
+     "descanso_s": 60,
+     "grupo": "costas",
+     "nota": "Ombro posterior. Carga leve."
+    },
+    {
+     "id": "rotacao_externa_no_cabo",
+     "nome": "Rotação externa do ombro no cabo",
+     "series": 1,
+     "reps": "10 cada",
+     "kg": null,
+     "descanso_s": 45,
+     "grupo": "costas",
+     "nota": "Manguito rotador: bem leve, sem dor."
+    },
+    {
+     "id": "ponte_gluteo_unilateral",
+     "nome": "Ponte de glúteo unilateral",
+     "series": 1,
+     "reps": "6 cada",
+     "kg": 0,
+     "descanso_s": 45,
+     "grupo": "gluteo",
+     "nota": "4 de sobra. Desça em 3 s, sem arquear a lombar. Lombar acima de 3/10: pare."
     }
    ]
   }
