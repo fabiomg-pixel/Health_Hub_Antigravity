@@ -2,3 +2,5 @@
 A segunda amanheceu com a névoa ainda no vale. Fabio deixou a forja apagada e acendeu só a lareira: a estrada de pedra à frente pede passos curtos, e o Guardião do Platô pode esperar mais um dia.
 
 Ao cair da noite a estalagem serviu mesa e um quitute de pressa passou pelo caminho; a estrada de pedra ficou intocada, como o mapa pedia.
+
+Na terça Fabio percorreu o trecho inteiro da estrada de pedra em passo de conversa, sem pressa e sem tropeço; a estalagem esperou com o caldo do mar.
