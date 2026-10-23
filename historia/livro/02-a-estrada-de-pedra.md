@@ -6,3 +6,5 @@ Ao cair da noite a estalagem serviu mesa e um quitute de pressa passou pelo cami
 Na terça Fabio percorreu o trecho inteiro da estrada de pedra em passo de conversa, sem pressa e sem tropeço; a estalagem esperou com o caldo do mar.
 
 Na quarta Fabio visitou a forja por pouco tempo e a deixou acesa; ao entardecer ainda desceu à estrada de pedra, trecho curto, e a lareira da estalagem recebeu a sombra do mercado e do doce que veio sem ser chamado.
+
+Na quinta a estrada de pedra ficou sem pegadas: Fabio guardou a lanterna do jogo e deixou o corpo descansar na estalagem, enquanto a mesa recebeu três visitas.
