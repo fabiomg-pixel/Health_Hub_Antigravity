@@ -13,6 +13,8 @@ python3 synthesize.py > /dev/null 2>&1
 python3 fatos.py > fatos.json 2>/dev/null
 python3 dashboard.py
 python3 jornada.py || echo "⚠️ jornada.py falhou: a Campanha fica com o cálculo anterior"
+python3 historia.py || echo "⚠️ historia.py falhou: a aventura fica como estava"
+python3 jornada.py > /dev/null   # segunda passada: o livro passa a incluir os capítulos que o historia.py acabou de escrever
 cd painel
 # A primeira chamada às vezes só gera preview; a segunda garante o alias de produção.
 npx vercel deploy --prod --yes > /dev/null 2>&1

@@ -1,0 +1,124 @@
+{
+ "gerado_em": "2026-10-24T16:46:26",
+ "arco": {
+  "id": "I",
+  "nome": "O Retorno",
+  "chefe": "O Guardião do Platô",
+  "chefe_texto": "O Guardião do Platô é de pedra e de teimosia. Não se vence a golpes de uma semana: cede aos poucos, quando o caminho inteiro anda firme."
+ },
+ "etapa": 1,
+ "etapas": [
+  {
+   "nome": "A Estalagem do Retorno",
+   "estado": "feita"
+  },
+  {
+   "nome": "A Estrada de Pedra",
+   "estado": "atual"
+  },
+  {
+   "nome": "A Ponte Partida",
+   "estado": "futura"
+  },
+  {
+   "nome": "O Bosque de Brumas",
+   "estado": "futura"
+  },
+  {
+   "nome": "O Vau do Rio Cinza",
+   "estado": "futura"
+  },
+  {
+   "nome": "Os Degraus do Platô",
+   "estado": "futura"
+  },
+  {
+   "nome": "O Platô",
+   "estado": "futura"
+  }
+ ],
+ "companhia": [
+  {
+   "id": "brisa",
+   "nome": "Brisa",
+   "papel": "a Batedora",
+   "texto": "Corre na frente, lê o vento e traz notícia da estrada antes de ela chegar.",
+   "g": "a",
+   "estado": "ativa"
+  },
+  {
+   "id": "dorn",
+   "nome": "Dorn",
+   "papel": "o Ferreiro",
+   "texto": "Carrega a forja nas costas. Onde há ferro, há caminho.",
+   "g": "o",
+   "estado": "ativa"
+  },
+  {
+   "id": "ysa",
+   "nome": "Ysa",
+   "papel": "a Cartógrafa",
+   "texto": "Guarda o mapa e o livro de bordo. Sem ela, a companhia anda, mas não sabe onde está.",
+   "g": "a",
+   "estado": "ativa"
+  }
+ ],
+ "guia": {
+  "nome": "Silvester",
+  "papel": "o Lanterneiro",
+  "texto": "Vai à frente com a lanterna. Não se perde, não se captura: sem ele não haveria história."
+ },
+ "mochila": [
+  {
+   "id": "forcas",
+   "nome": "Martelo de Dorn",
+   "texto": "Cabo de freixo, cabeça de ferro-de-forja."
+  }
+ ],
+ "regra_item": "Cada talismã absorve uma derrota: quando uma semana ruim chegaria, o talismã quebra e a derrota cai um nível. A mochila leva até 3.",
+ "crise": null,
+ "semana": {
+  "n": 2,
+  "segunda": "2026-10-19",
+  "titulo": "A Estrada de Pedra",
+  "periodo": "19 a 25 de outubro",
+  "abertura": "Um céu de chumbo rolava trovões sobre as Marcas do Sal. A Estrada de Pedra sobe em degraus gastos, e o vale lá embaixo está cheio de névoa. Dorn bateu o cabo do martelo numa laje: soou oca. Adiante, onde a estrada faz a curva, alguma coisa antiga rangia no vento. Era a Ponte Partida.",
+  "em_jogo": "Chegar à Ponte Partida com a companhia inteira.",
+  "ambiente": {
+   "clima": "tempestade",
+   "lua": null
+  },
+  "ok": 3,
+  "total": 5
+ },
+ "capitulos": [
+  {
+   "n": 1,
+   "titulo": "A Estalagem do Retorno",
+   "periodo": "12 a 18 de outubro",
+   "tier": "avanco",
+   "ok": 4,
+   "total": 5,
+   "abertura": "Chuva fina e teimosa cobria as Marcas do Sal. A Estalagem do Retorno ficou para trás à primeira luz. Silvester ergueu a lanterna e apontou a Estrada de Pedra, que sobe entre campos de névoa. A companhia partia leve, com mais dúvida do que mantimento.",
+   "em_jogo": "Pôr o pé na estrada, ou voltar ao abrigo.",
+   "desfecho": "A Estrada de Pedra começou sob os pés da companhia. Ninguém falou em voltar; os passos eram curtos, mas todos para a frente.",
+   "efeitos": [
+    "A companhia ganhou um talismã: Martelo de Dorn.",
+    "A companhia avançou até A Estrada de Pedra."
+   ],
+   "concluido": true
+  },
+  {
+   "n": 2,
+   "titulo": "A Estrada de Pedra",
+   "periodo": "19 a 25 de outubro",
+   "tier": null,
+   "concluido": false,
+   "abertura": "Um céu de chumbo rolava trovões sobre as Marcas do Sal. A Estrada de Pedra sobe em degraus gastos, e o vale lá embaixo está cheio de névoa. Dorn bateu o cabo do martelo numa laje: soou oca. Adiante, onde a estrada faz a curva, alguma coisa antiga rangia no vento. Era a Ponte Partida.",
+   "em_jogo": "Chegar à Ponte Partida com a companhia inteira.",
+   "desfecho": "",
+   "efeitos": []
+  }
+ ],
+ "marcos": []
+}

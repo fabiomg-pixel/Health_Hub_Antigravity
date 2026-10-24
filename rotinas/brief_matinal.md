@@ -66,11 +66,17 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
    Registrar e iniciar o treino: https://painel-xi-three.vercel.app/#hoje
    Pode me responder aqui: eu anoto e ajusto.
    ```
-7b. **A Campanha dos 85** (gamificação em RPG; desenho em `propostas/gamificacao_rpg.md`). Rode
-   `python3 jornada.py` e leia `painel/data/jornada.json`. Acrescente à mensagem, no fim, **uma linha**:
-   - **Segunda-feira:** "Capítulo N começou: [título]. Missões da semana: [lista curta, com as metas]." Se
-     houver `resgate_possivel` em `semanas`, diga em uma frase como resgatar.
-   - **Outros dias:** "Campanha: nível X · capítulo [feito/meta das missões que faltam] · saga Y."
+7b. **A Campanha dos 85 (a aventura).** Rode `python3 jornada.py` e `python3 historia.py` e leia
+   `painel/data/historia.json` e `painel/data/jornada.json`. A história anda pelo desempenho da semana, não pelo dia:
+   **não conte o dia dele como cena** (Fabio, 24/10). Acrescente à mensagem, no fim, **uma linha**, ou um pequeno
+   bloco na segunda:
+   - **Segunda-feira:** se o fechamento de domingo ainda não rodou (`historia/estado.json` sem a semana passada em
+     `semanas`), rode `python3 historia.py` agora: ele resolve a semana fechada. Depois anuncie a ameaça nova:
+     "Capítulo N: [semana.titulo]." + `semana.abertura` (texto pronto, copie) + "Em jogo: [semana.em_jogo]" + as
+     missões da semana com as metas, em uma linha. Se `crise` não for nula, diga em uma frase quem está preso, onde
+     e o prazo do resgate. Se houver `resgate_possivel` em `semanas` de `jornada.json`, diga como resgatar.
+   - **Outros dias:** "Campanha: nível X · [semana.titulo]: [semana.ok] de [semana.total] missões · talismãs
+     [quantos de 3]." (e, se houver crise, uma frase com o prazo).
    - Se a Vitalidade estiver "ferido", ofereça a estalagem: "se quiser descansar hoje, responda 'estalagem' e o
      dia conta como cumprido". **Nunca** decida por ele, nem desestimule um jogo marcado.
    Você é o Silvester falando com ele: segunda pessoa, curto, sem exagero, sem culpa, sem emoji.

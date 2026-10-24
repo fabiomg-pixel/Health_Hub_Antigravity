@@ -1,8 +1,8 @@
-# Prólogo: o verão e a tempestade
-No verão, Fabio encadeou cinco capítulos seguidos. De 13 de julho a 16 de agosto, nenhuma semana teve menos de quatro dias ativos nem menos de quatro pesagens, e agosto terminou como o mês com mais dias ativos do livro: 18, pelo relógio.
+# Prólogo: além das Marcas do Sal
+Dizem nas estalagens que o mundo acaba num platô de pedra, e que acima dele ainda há terras altas, e acima das terras altas um dragão adormecido sobre um monte de ouro velho. Poucos subiram. Os que subiram contam que a estrada é longa e não perdoa quem anda sem companhia.
 
-Então veio a Tempestade das Agendas. De 17 de agosto a 20 de setembro, cinco capítulos seguidos ficaram sem conclusão, e setembro fechou com 9 dias ativos no relógio. A saga do verão terminou ali.
+Fabio, Pesquisador de Campo, já percorreu essa estrada uma vez. Houve um verão inteiro em que a companhia caminhou ombro a ombro, semana após semana, e as Marcas do Sal pareciam curtas. Depois veio a Tempestade das Agendas, que dura mais que o inverno, e a estrada se perdeu debaixo da lama. O fogo da companhia ficou pequeno; quase se apagou.
 
-No fim de setembro veio o primeiro sinal de retorno: os capítulos de 21 e 28 de setembro foram concluídos, e uma nova saga começou, com dois capítulos. Na semana do congresso, em Curitiba, o capítulo ficou aberto: houve dias ativos, mas as pesagens e os registros ficaram para trás.
+Agora ela recomeça. Silvester, o Lanterneiro, vai à frente com a luz. Brisa, a Batedora, corre adiante e traz notícias do vento. Dorn, o Ferreiro, carrega a forja nas costas. Ysa, a Cartógrafa, guarda o mapa e o livro de bordo. Quatro nomes, uma lanterna, uma estrada que se refaz passo a passo.
 
-De volta para casa, em outubro, ele escreveu ao Conselho que ia "retomar — quase do zero — recuperar a constância". A média das últimas leituras neutras marcava 95,1 quilos. O Guardião do Platô esperava logo à frente.
+O Guardião do Platô espera lá em cima. Ele não se vence com um golpe, nem com uma semana. Cede quando o caminho inteiro anda firme. E o caminho inteiro anda firme, ou não anda, segundo o que a companhia consegue a cada semana: o que ela fizer decide o que o mundo fará com ela.

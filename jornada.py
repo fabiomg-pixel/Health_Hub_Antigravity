@@ -335,7 +335,7 @@ out = {
     'saga': {'atual': saga, 'maior': saga_max, 'historico': sagas},
     'hoje': {'data': hoje_s, 'xp': xp_por_dia.get(hoje_s, {}).get('xp', 0), 'missoes': missoes_hoje, 'ferido': ferido},
     'arco': arco, 'media_28d': m28, 'paralela': paralela,
-    'reliquias': rel, 'semanas': [{k: s[k] for k in ('segunda', 'status', 'cumpridas', 'xp_semana', 'novo_arco')} | {'n': len(s['missoes'])} for s in resultado],
+    'reliquias': rel, 'semanas': [{k: s[k] for k in ('segunda', 'status', 'cumpridas', 'xp_semana', 'novo_arco')} | {'n': len(s['missoes']), 'missoes': s['missoes']} for s in resultado],
     'xp_por_dia': {k: v['xp'] for k, v in xp_por_dia.items()},
     'livro': livro,
 }

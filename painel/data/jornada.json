@@ -1,24 +1,24 @@
 {
- "gerado_em": "2026-10-20T08:59:52",
+ "gerado_em": "2026-10-24T16:46:27",
  "fontes": {
   "registros_ok": true,
-  "registros_desde": "2026-09-09",
-  "garmin_ate": "2026-10-20"
+  "registros_desde": "2026-09-22",
+  "garmin_ate": "2026-10-24"
  },
  "personagem": {
   "nome": "Fabio",
   "classe": "Pesquisador de Campo",
-  "nivel": 4,
-  "titulo": "Veterano das Trilhas",
-  "xp_total": 6880,
-  "xp_no_nivel": 2380,
-  "xp_para_proximo": 2500
+  "nivel": 5,
+  "titulo": "Escudeiro do Conselho",
+  "xp_total": 7360,
+  "xp_no_nivel": 360,
+  "xp_para_proximo": 3000
  },
  "vitalidade": {
-  "indice": 83,
+  "indice": 94,
   "banda": "g",
   "confiavel": true,
-  "sono_h": 7.73,
+  "sono_h": 7.5,
   "estado": "de pé"
  },
  "atributos": [
@@ -30,13 +30,13 @@
   },
   {
    "nome": "Força",
-   "valor": 4,
+   "valor": 5,
    "unidade": "sessões em 8 semanas",
    "nota": "maior leg press registrado: 150 kg"
   },
   {
    "nome": "Constância",
-   "valor": 4,
+   "valor": 3,
    "unidade": "de 8 capítulos",
    "nota": "capítulos concluídos nas últimas 8 semanas"
   }
@@ -49,44 +49,44 @@
    {
     "id": "ativos",
     "nome": "Dias ativos",
-    "feito": 0,
+    "feito": 3,
     "meta": 5,
     "cumprida": false
    },
    {
     "id": "pesagens",
     "nome": "Pesagens em jejum",
-    "feito": 2,
+    "feito": 5,
     "meta": 4,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "forcas",
     "nome": "Sessões de força do plano",
-    "feito": 0,
+    "feito": 1,
     "meta": 1,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "almocos",
     "nome": "Almoços registrados (seg a sex)",
-    "feito": 1,
+    "feito": 5,
     "meta": 4,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "lanches",
     "nome": "Lanches das 17h registrados",
-    "feito": 1,
+    "feito": 3,
     "meta": 4,
     "cumprida": false
    }
   ],
   "novo_arco": false,
-  "xp_semana": 0
+  "xp_semana": 150
  },
  "saga": {
-  "atual": 3,
+  "atual": 2,
   "maior": 5,
   "historico": [
    {
@@ -96,14 +96,9 @@
   ]
  },
  "hoje": {
-  "data": "2026-10-20",
+  "data": "2026-10-24",
   "xp": 20,
   "missoes": [
-   {
-    "nome": "Corrida: Corrida fácil de 30 min",
-    "xp": 80,
-    "feito": false
-   },
    {
     "nome": "Dia ativo",
     "xp": 30,
@@ -113,12 +108,12 @@
    {
     "nome": "Pesagem em jejum",
     "xp": 20,
-    "feito": true
+    "feito": false
    },
    {
     "nome": "Registrar o almoço",
     "xp": 20,
-    "feito": false
+    "feito": true
    },
    {
     "nome": "Registrar o lanche das 17h",
@@ -134,9 +129,9 @@
   "de": 95.0,
   "ate": 92.5,
   "chefe": "O Guardião do Platô",
-  "hp": 0.92
+  "hp": 0.964
  },
- "media_28d": 94.8,
+ "media_28d": 94.91,
  "paralela": {
   "nome": "O Fôlego do Dragão",
   "valor": 42.2,
@@ -180,7 +175,7 @@
    "id": "livro",
    "nome": "O Livro de Bordo",
    "texto": "30 dias com algum registro.",
-   "em": "2026-10-18"
+   "em": null
   },
   {
    "id": "estalagem",
@@ -220,7 +215,23 @@
    "cumpridas": 2,
    "xp_semana": 250,
    "novo_arco": false,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 4,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 5,
+     "meta": 4,
+     "cumprida": true
+    }
+   ]
   },
   {
    "segunda": "2026-07-20",
@@ -228,7 +239,23 @@
    "cumpridas": 2,
    "xp_semana": 250,
    "novo_arco": false,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 5,
+     "meta": 5,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 5,
+     "meta": 4,
+     "cumprida": true
+    }
+   ]
   },
   {
    "segunda": "2026-07-27",
@@ -236,7 +263,23 @@
    "cumpridas": 2,
    "xp_semana": 250,
    "novo_arco": false,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 5,
+     "meta": 5,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 4,
+     "meta": 4,
+     "cumprida": true
+    }
+   ]
   },
   {
    "segunda": "2026-08-03",
@@ -244,7 +287,23 @@
    "cumpridas": 2,
    "xp_semana": 250,
    "novo_arco": false,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 5,
+     "meta": 5,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 6,
+     "meta": 4,
+     "cumprida": true
+    }
+   ]
   },
   {
    "segunda": "2026-08-10",
@@ -252,7 +311,23 @@
    "cumpridas": 2,
    "xp_semana": 250,
    "novo_arco": false,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 6,
+     "meta": 5,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 6,
+     "meta": 4,
+     "cumprida": true
+    }
+   ]
   },
   {
    "segunda": "2026-08-17",
@@ -260,7 +335,23 @@
    "cumpridas": 0,
    "xp_semana": 0,
    "novo_arco": false,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 4,
+     "meta": 5,
+     "cumprida": false
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 2,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   },
   {
    "segunda": "2026-08-24",
@@ -268,7 +359,23 @@
    "cumpridas": 1,
    "xp_semana": 50,
    "novo_arco": false,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 1,
+     "meta": 5,
+     "cumprida": false
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 4,
+     "meta": 4,
+     "cumprida": true
+    }
+   ]
   },
   {
    "segunda": "2026-08-31",
@@ -276,7 +383,23 @@
    "cumpridas": 1,
    "xp_semana": 50,
    "novo_arco": true,
-   "n": 2
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 2,
+     "meta": 3,
+     "cumprida": false
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 5,
+     "meta": 4,
+     "cumprida": true
+    }
+   ]
   },
   {
    "segunda": "2026-09-07",
@@ -284,7 +407,23 @@
    "cumpridas": 0,
    "xp_semana": 0,
    "novo_arco": true,
-   "n": 4
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 2,
+     "meta": 3,
+     "cumprida": false
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 3,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   },
   {
    "segunda": "2026-09-14",
@@ -292,23 +431,99 @@
    "cumpridas": 0,
    "xp_semana": 0,
    "novo_arco": true,
-   "n": 4
+   "n": 2,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 1,
+     "meta": 3,
+     "cumprida": false
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 3,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   },
   {
    "segunda": "2026-09-21",
-   "status": "concluido",
-   "cumpridas": 3,
-   "xp_semana": 300,
+   "status": "nao_concluido",
+   "cumpridas": 2,
+   "xp_semana": 100,
    "novo_arco": true,
-   "n": 4
+   "n": 4,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 5,
+     "meta": 3,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 7,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "almocos",
+     "nome": "Almoços registrados (seg a sex)",
+     "feito": 3,
+     "meta": 4,
+     "cumprida": false
+    },
+    {
+     "id": "lanches",
+     "nome": "Lanches das 17h registrados",
+     "feito": 1,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   },
   {
    "segunda": "2026-09-28",
    "status": "concluido",
    "cumpridas": 3,
    "xp_semana": 300,
-   "novo_arco": false,
-   "n": 4
+   "novo_arco": true,
+   "n": 4,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 4,
+     "meta": 3,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 5,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "almocos",
+     "nome": "Almoços registrados (seg a sex)",
+     "feito": 4,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "lanches",
+     "nome": "Lanches das 17h registrados",
+     "feito": 3,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   },
   {
    "segunda": "2026-10-05",
@@ -316,7 +531,37 @@
    "cumpridas": 1,
    "xp_semana": 50,
    "novo_arco": false,
-   "n": 4
+   "n": 4,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 6,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 2,
+     "meta": 4,
+     "cumprida": false
+    },
+    {
+     "id": "almocos",
+     "nome": "Almoços registrados (seg a sex)",
+     "feito": 2,
+     "meta": 4,
+     "cumprida": false
+    },
+    {
+     "id": "lanches",
+     "nome": "Lanches das 17h registrados",
+     "feito": 2,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   },
   {
    "segunda": "2026-10-12",
@@ -324,15 +569,89 @@
    "cumpridas": 4,
    "xp_semana": 350,
    "novo_arco": false,
-   "n": 5
+   "n": 5,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 7,
+     "meta": 5,
+     "cumprida": true
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 4,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "forcas",
+     "nome": "Sessões de força do plano",
+     "feito": 2,
+     "meta": 2,
+     "cumprida": true
+    },
+    {
+     "id": "almocos",
+     "nome": "Almoços registrados (seg a sex)",
+     "feito": 4,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "lanches",
+     "nome": "Lanches das 17h registrados",
+     "feito": 2,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   },
   {
    "segunda": "2026-10-19",
    "status": "em_andamento",
-   "cumpridas": 0,
-   "xp_semana": 0,
+   "cumpridas": 3,
+   "xp_semana": 150,
    "novo_arco": false,
-   "n": 5
+   "n": 5,
+   "missoes": [
+    {
+     "id": "ativos",
+     "nome": "Dias ativos",
+     "feito": 3,
+     "meta": 5,
+     "cumprida": false
+    },
+    {
+     "id": "pesagens",
+     "nome": "Pesagens em jejum",
+     "feito": 5,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "forcas",
+     "nome": "Sessões de força do plano",
+     "feito": 1,
+     "meta": 1,
+     "cumprida": true
+    },
+    {
+     "id": "almocos",
+     "nome": "Almoços registrados (seg a sex)",
+     "feito": 5,
+     "meta": 4,
+     "cumprida": true
+    },
+    {
+     "id": "lanches",
+     "nome": "Lanches das 17h registrados",
+     "feito": 3,
+     "meta": 4,
+     "cumprida": false
+    }
+   ]
   }
  ],
  "xp_por_dia": {
@@ -435,23 +754,27 @@
   "2026-10-17": 50,
   "2026-10-18": 70,
   "2026-10-19": 60,
-  "2026-10-20": 20
+  "2026-10-20": 150,
+  "2026-10-21": 250,
+  "2026-10-22": 40,
+  "2026-10-23": 90,
+  "2026-10-24": 20
  },
  "livro": [
   {
    "arquivo": "00-prologo.md",
-   "titulo": "Prólogo: o verão e a tempestade",
-   "texto": "No verão, Fabio encadeou cinco capítulos seguidos. De 13 de julho a 16 de agosto, nenhuma semana teve menos de quatro dias ativos nem menos de quatro pesagens, e agosto terminou como o mês com mais dias ativos do livro: 18, pelo relógio.\n\nEntão veio a Tempestade das Agendas. De 17 de agosto a 20 de setembro, cinco capítulos seguidos ficaram sem conclusão, e setembro fechou com 9 dias ativos no relógio. A saga do verão terminou ali.\n\nNo fim de setembro veio o primeiro sinal de retorno: os capítulos de 21 e 28 de setembro foram concluídos, e uma nova saga começou, com dois capítulos. Na semana do congresso, em Curitiba, o capítulo ficou aberto: houve dias ativos, mas as pesagens e os registros ficaram para trás.\n\nDe volta para casa, em outubro, ele escreveu ao Conselho que ia \"retomar — quase do zero — recuperar a constância\". A média das últimas leituras neutras marcava 95,1 quilos. O Guardião do Platô esperava logo à frente."
+   "titulo": "Prólogo: além das Marcas do Sal",
+   "texto": "Dizem nas estalagens que o mundo acaba num platô de pedra, e que acima dele ainda há terras altas, e acima das terras altas um dragão adormecido sobre um monte de ouro velho. Poucos subiram. Os que subiram contam que a estrada é longa e não perdoa quem anda sem companhia.\n\nFabio, Pesquisador de Campo, já percorreu essa estrada uma vez. Houve um verão inteiro em que a companhia caminhou ombro a ombro, semana após semana, e as Marcas do Sal pareciam curtas. Depois veio a Tempestade das Agendas, que dura mais que o inverno, e a estrada se perdeu debaixo da lama. O fogo da companhia ficou pequeno; quase se apagou.\n\nAgora ela recomeça. Silvester, o Lanterneiro, vai à frente com a luz. Brisa, a Batedora, corre adiante e traz notícias do vento. Dorn, o Ferreiro, carrega a forja nas costas. Ysa, a Cartógrafa, guarda o mapa e o livro de bordo. Quatro nomes, uma lanterna, uma estrada que se refaz passo a passo.\n\nO Guardião do Platô espera lá em cima. Ele não se vence com um golpe, nem com uma semana. Cede quando o caminho inteiro anda firme. E o caminho inteiro anda firme, ou não anda, segundo o que a companhia consegue a cada semana: o que ela fizer decide o que o mundo fará com ela."
   },
   {
-   "arquivo": "01-o-retorno.md",
-   "titulo": "Capítulo 1: O Retorno (12 a 18 de outubro)",
-   "texto": "Fabio voltou do congresso como quem volta de terras distantes: a bagagem ainda por abrir, o mapa da trilha meio apagado. A Tempestade das Agendas rondou o primeiro dia e levou a manhã de corrida, mas ele não discutiu com o vento; seguiu caminhando.\n\nNo meio da semana reencontrou a forja, e o ferro pesado voltou a pesar nas mãos. No mesmo dia o Mal do Pântano veio sussurrar na garganta. Ele ouviu o aviso. Quando Silvester ergueu a lanterna e mostrou a Vitalidade baixa, Fabio aceitou a estalagem e dormiu sob um teto, sem render a trilha.\n\nPassada a névoa, a forja acendeu de novo, agora para os ombros e as costas. Ao fim da semana a planície se abriu duas vezes: uma batalha longa de manhã, outra curta ao cair do dia, e a noite acabou na taverna, entre petiscos. No último dia ele descansou à beira do rio e pesou a bagagem, sem pressa.\n\nO Guardião do Platô não saiu do lugar. Mas o capítulo perdido no congresso foi resgatado, a saga voltou a crescer, e a trilha, que parecia apagada, já tem pegadas novas. O próximo capítulo pede apenas que elas continuem."
+   "arquivo": "01-a-estalagem-do-retorno.md",
+   "titulo": "Capítulo 1: A Estalagem do Retorno (12 a 18 de outubro)",
+   "texto": "Chuva fina e teimosa cobria as Marcas do Sal. A Estalagem do Retorno ficou para trás à primeira luz. Silvester ergueu a lanterna e apontou a Estrada de Pedra, que sobe entre campos de névoa. A companhia partia leve, com mais dúvida do que mantimento.\n\nA Estrada de Pedra começou sob os pés da companhia. Ninguém falou em voltar; os passos eram curtos, mas todos para a frente.\n\nA companhia ganhou um talismã: Martelo de Dorn. A companhia avançou até A Estrada de Pedra."
   },
   {
    "arquivo": "02-a-estrada-de-pedra.md",
    "titulo": "Capítulo 2: A Estrada de Pedra (19 a 25 de outubro, em andamento)",
-   "texto": "A segunda amanheceu com a névoa ainda no vale. Fabio deixou a forja apagada e acendeu só a lareira: a estrada de pedra à frente pede passos curtos, e o Guardião do Platô pode esperar mais um dia.\n\nAo cair da noite a estalagem serviu mesa e um quitute de pressa passou pelo caminho; a estrada de pedra ficou intocada, como o mapa pedia."
+   "texto": "Um céu de chumbo rolava trovões sobre as Marcas do Sal. A Estrada de Pedra sobe em degraus gastos, e o vale lá embaixo está cheio de névoa. Dorn bateu o cabo do martelo numa laje: soou oca. Adiante, onde a estrada faz a curva, alguma coisa antiga rangia no vento. Era a Ponte Partida.\n\nEm jogo: Chegar à Ponte Partida com a companhia inteira.\n\nO desfecho vem quando a semana fechar, e depende de como ela for."
   }
  ]
 }

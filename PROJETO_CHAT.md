@@ -1035,3 +1035,32 @@ Pedido dele: "informe aos próximos especialistas; isso pode influenciar a dinâ
 - **2ª perda grande (há poucos anos):** corrida pesada (5 a 10 km) 3 a 4 vezes por semana, mais futebol; sem comer depois das 21h.
 - **Nos dois casos** o peso voltou quando ele relaxou o exercício e, principalmente, a alimentação.
 - **Como usar:** é um hipótese de adesão, não prescrição. Comida simples e concentrada em proteína no almoço, janela de jantar que fecha às 21h e volume de corrida acima do atual funcionaram nele. Hoje o teto de carga manda (resfriado, índice vermelho, §10, §15), então nada disto muda a semana 19-25/10. Qualquer proposta que se apoie nisso volta ao Fabio como "propõe e confirma".
+
+## 29. A Campanha virou aventura (pedido do Fabio, 24/10/2026)
+
+**Por quê:** o livro estava literal: cada dia virava uma cena ("na terça Fabio percorreu o trecho..."), uma
+retrospectiva do dia disfarçada de fábula. O Fabio pediu um jogo de verdade, com enredo próprio, em que o
+desempenho guia o que acontece: item extra pelo cumprimento de métricas, avanço importante por uma boa semana, e
+por um momento ruim a perda de membros da companhia, uma derrota ou uma crise que se abre. Elementos do ambiente
+podem ser sincronizados. Não pode ser retrospectiva do dia.
+
+**Desenho (`historia.py`, canon `historia/mundo.json`, estado `historia/estado.json`):**
+- A semana tem uma **ameaça** (evento) anunciada na segunda, com o que está em jogo; o **desfecho** sai quando a
+  semana fecha e depende do desempenho. O mundo tem arcos (I a IV, com o chefe de cada degrau pela balança), etapas,
+  uma companhia (Brisa, a Batedora; Dorn, o Ferreiro; Ysa, a Cartógrafa), o guia Silvester e talismãs.
+- Desfechos: **triunfo** (todas as missões) = 2 etapas, 2 talismãs, a companhia se recupera, volta quem se perdeu;
+  **avanço** (capítulo concluído) = 1 etapa, 1 talismã; **sustenta** (metade ou mais) = fica onde está; **revés** =
+  um companheiro ferido; **crise** (semana vazia, ou 2 fracas seguidas) = recuo de 1 etapa, um companheiro
+  capturado e prazo de 3 semanas para o resgate (semana boa); se o prazo acaba, ele se perde.
+- **Talismã** (ganho por missão cumprida, até 3) absorve uma derrota. **Proteções:** estalagem confirmada, 3 ou mais
+  manhãs vermelhas ou semana sem dado nunca viram revés nem crise. O **XP nunca diminui**: a perda é do mundo da
+  história e tem sempre um caminho de volta. O **peso** continua sem dar nada; o chefe do arco cai pela média de 28
+  dias (jornada.py).
+- **Ambiente:** o tempo no Rio da semana (Open-Meteo) e a lua entram na abertura do capítulo.
+- Os textos são escritos à mão em `mundo.json` (abertura e desfechos por evento; crise, resgate e perda por
+  antagonista); o motor escolhe e encaixa. O bot **não escreve capítulos**: anuncia. Os arquivos `historia/livro/NN-*.md`
+  são regenerados a cada execução (o prólogo `00` é à mão).
+- No painel: Campanha mostra a semana (abertura, em jogo, consequências), a estrada, a companhia, a mochila e a crise.
+- Retroativo: a semana de 12/10 (capítulo 1) resolveu como avanço; as de antes de 12/10 ficam no prólogo.
+- Pendente: eventos escritos à mão só para o arco I; os arcos II a IV usam eventos genéricos até serem escritos.
+

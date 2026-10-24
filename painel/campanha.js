@@ -10,6 +10,14 @@ fetch('data/jornada.json').then(r => r.ok ? r.json() : null).then(j => {
   if (['home', 'hoje', 'campanha', ''].includes(id) || /^(seg|ter|qua|qui|sex|sab|dom)$/.test(id)) route();
 }).catch(() => {});
 
+let HISTORIA = null;
+fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
+  if (!j) return; HISTORIA = j;
+  const id = (location.hash || '#home').slice(1);
+  if (typeof DATA === 'undefined' || !DATA) return;
+  if (['home', 'campanha', ''].includes(id)) route();
+}).catch(() => {});
+
 (function estilos() {
   const css = `
   .cp-escuro { background: var(--tinta); color: var(--branco); }
@@ -69,6 +77,29 @@ fetch('data/jornada.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-mh .tx { flex: 1; min-width: 0; font-size: 14.5px; font-weight: 600; } .cp-mh .tx small { display: block; font-weight: 500; font-size: 12px; color: var(--sec); }
   .cp-mh .xp { font-family: var(--display); font-weight: 800; font-size: 14px; color: var(--campo); white-space: nowrap; }
   .cp-mh.ok .tx { text-decoration: line-through; text-decoration-thickness: 1.5px; color: var(--sec); }
+  .cp-aventura { margin-top: 4px; }
+  .cp-semana { border: 2px solid rgba(255,255,255,0.35); padding: 16px 16px 14px; margin-bottom: 14px; }
+  .cp-semana .abre { font-family: Georgia, 'Times New Roman', serif; font-size: 15.5px; line-height: 1.62; margin: 10px 0 12px; opacity: 0.95; }
+  .cp-semana .jogo { font-size: 13.5px; font-weight: 700; color: var(--sol); }
+  .cp-semana .cons { font-size: 12.5px; line-height: 1.5; opacity: 0.78; margin-top: 10px; }
+  .cp-crise { border: 2px solid #FF6B5E; padding: 14px 16px; margin-bottom: 14px; background: rgba(255,107,94,0.10); }
+  .cp-crise b.t { font-family: var(--display); font-size: 17px; color: #FF9A90; }
+  .cp-trilha { display: grid; gap: 0; margin-top: 4px; }
+  .cp-et { display: flex; align-items: center; gap: 12px; padding: 7px 0; font-size: 14.5px; border-bottom: 1px solid rgba(255,255,255,0.10); }
+  .cp-et i { flex: none; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.5); border-radius: 50%; box-sizing: border-box; }
+  .cp-et.feita { opacity: 0.55; } .cp-et.feita i { background: var(--sol); border-color: var(--sol); }
+  .cp-et.atual { font-weight: 800; } .cp-et.atual i { background: #fff; border-color: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.2); }
+  .cp-et.chefe { font-family: var(--display); }
+  .cp-comp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .cp-pers { border: 2px solid rgba(255,255,255,0.35); padding: 10px 10px 9px; min-width: 0; }
+  .cp-pers b { display: block; font-family: var(--display); font-size: 16px; }
+  .cp-pers span { display: block; font-size: 12px; opacity: 0.75; margin-top: 1px; }
+  .cp-pers em { display: inline-block; font-style: normal; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-top: 8px; padding: 2px 6px; border: 1.5px solid currentColor; }
+  .cp-pers.ativa em { color: #5FD3C4; } .cp-pers.ferida em { color: #FFD166; } .cp-pers.capturada, .cp-pers.perdida { opacity: 0.7; border-color: #FF6B5E; } .cp-pers.capturada em, .cp-pers.perdida em { color: #FF9A90; }
+  .cp-bag { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .cp-slot { border: 2px dashed rgba(255,255,255,0.3); padding: 10px; min-height: 64px; font-size: 13px; }
+  .cp-slot.cheio { border-style: solid; border-color: var(--sol); } .cp-slot b { display: block; font-family: var(--display); font-size: 14.5px; }
+  .cp-slot span { display: block; font-size: 12px; opacity: 0.75; margin-top: 2px; }
   @keyframes cp-boia { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-3px) rotate(5deg); } }
   .cp-marca { animation: cp-boia 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
   `;
@@ -98,11 +129,17 @@ function cpResgate() {
 }
 
 // ── Início: o capítulo da semana (é da semana, não do dia)
+function cpAmeacaCurta() {
+  const H = typeof HISTORIA !== 'undefined' ? HISTORIA : null; if (!H || !H.semana) return '';
+  const aviso = H.crise ? `<b>Crise:</b> ${esc(H.crise.companheiro)} está pres${H.crise.g} (${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}). ` : '';
+  return `<div class="par" style="padding:10px 0 4px">${aviso}<b>${esc(H.semana.titulo)}.</b> Em jogo: ${esc(H.semana.em_jogo)}</div>`;
+}
 function blocoCapitulo() {
   if (!JORNADA) return '';
   const j = JORNADA, p = j.personagem, c = j.capitulo;
   return `<section class="bloco"><div class="cab"><h2>${esc(cpTituloCapitulo())}</h2><small>nível ${p.nivel} · ${esc(p.titulo)}</small></div>
     ${cpBarraXP()}
+    ${cpAmeacaCurta()}
     ${cpMissoes(c.missoes)}
     <div class="par" style="padding-top:12px">Saga: <b>${j.saga.atual} ${j.saga.atual === 1 ? 'capítulo' : 'capítulos'}</b> seguidos · maior: ${j.saga.maior}. ${c.status === 'concluido' ? 'Este capítulo já está concluído.' : 'Capítulo concluído = todas as missões, ou todas menos uma.'}</div>
     ${cpResgate()}
@@ -172,6 +209,35 @@ function cpPosicionarMarca() {
 }
 const CP_REL = '<path d="M12 2l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 15.6 6.6 18.5l1.2-6L3.3 8.3l6.1-.7z"/>';
 const CP_TRANCA = '<rect x="5" y="11" width="14" height="10"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>';
+
+// ── A aventura: o mundo muda pelo desempenho da semana (historia.py). Não recita o dia: mostra a estrada, a companhia e o que está em jogo.
+const CP_ESTADO = { ativa: 'de pé', ferida: 'ferida', capturada: 'capturada', perdida: 'perdida' };
+function cpEstadoDe(c) { const m = c.g === 'o'; return { ativa: 'de pé', ferida: m ? 'ferido' : 'ferida', capturada: m ? 'capturado' : 'capturada', perdida: m ? 'perdido' : 'perdida' }[c.estado] || c.estado; }
+function cpAventura() {
+  const H = HISTORIA; if (!H) return '';
+  let h = '<div class="cp-aventura">';
+  if (H.crise) {
+    const g = H.crise.g, ela = g === 'o' ? 'ele' : 'ela', a = g === 'o' ? 'o' : 'a';
+    h += `<div class="cp-crise"><b class="t">Crise aberta: ${esc(H.crise.companheiro)}</b><div class="par" style="margin-top:6px">${esc(H.crise.companheiro)} está pres${g} em ${esc(H.crise.onde)}. Uma semana boa (capítulo concluído) ${a} traz de volta. Prazo: <b>${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}</b>; se acabar, ${ela} se perde, e só uma grande vitória ${a} resgata depois.</div></div>`;
+  }
+  const s = H.semana;
+  if (s) {
+    const falta = Math.max(0, (s.total - 1) - s.ok);
+    h += `<div class="cp-semana"><div class="rot" style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.75">Esta semana · capítulo ${s.n} · ${esc(s.periodo)}</div>
+      <h3 style="font-family:var(--display);font-size:22px;margin:4px 0 0">${esc(s.titulo)}</h3>
+      <p class="abre">${esc(s.abertura)}</p><div class="jogo">Em jogo: ${esc(s.em_jogo)}</div>
+      <div class="cons" style="opacity:1;margin-top:12px"><b>${s.ok} de ${s.total}</b> missões cumpridas. ${s.ok >= s.total - 1 ? 'O capítulo já se conclui: a companhia avança.' : `Mais ${falta} ${falta === 1 ? 'missão' : 'missões'} para concluir.`}</div>
+      <div class="cons">Como a semana termina: <b>todas as missões</b> = grande avanço, 2 etapas e 2 talismãs. <b>Capítulo concluído</b> = 1 etapa e 1 talismã. <b>Metade</b> = a companhia se mantém. <b>Semana fraca</b> = um companheiro ferido. <b>Duas seguidas, ou uma vazia</b> = crise: recuo e um companheiro capturado. Um talismã absorve uma derrota. Doença e descanso confirmado protegem. O XP nunca diminui.</div></div>`;
+  }
+  h += `<section class="bloco"><div class="cab"><h2>A estrada</h2><small>Arco ${esc(H.arco.id)}: ${esc(H.arco.nome)}</small></div><div class="cp-trilha">` +
+    H.etapas.map((e, i) => `<div class="cp-et ${e.estado} ${i === H.etapas.length - 1 ? 'chefe' : ''}"><i></i><span>${esc(e.nome)}${i === H.etapas.length - 1 ? ' · só cai pela balança (média de 28 dias)' : ''}</span></div>`).join('') + `</div></section>`;
+  h += `<section class="bloco"><div class="cab"><h2>A companhia</h2><small>${esc(H.guia.nome)}, ${esc(H.guia.papel)}, guia o grupo</small></div><div class="cp-comp">` +
+    H.companhia.map(c => `<div class="cp-pers ${c.estado}"><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
+  h += `<section class="bloco"><div class="cab"><h2>A mochila</h2><small>${H.mochila.length} de 3 talismãs</small></div><div class="cp-bag">` +
+    [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
+    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Cada missão cumprida numa semana boa rende um talismã.</div></section></div>`;
+  return h;
+}
 function renderCampanha() {
   if (!JORNADA) { $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">A Campanha dos 85</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div>`; return; }
   const j = JORNADA, p = j.personagem, v = j.vitalidade, a = j.arco || {}, pr = j.paralela;
@@ -191,6 +257,7 @@ function renderCampanha() {
       <div class="cp-chip"><b>+${fNum(j.hoje.xp || 0, 0)}</b><span>XP de hoje até a última leitura</span></div></div>
   </div></div>`;
 
+  h += cpAventura();
   h += `<section class="bloco"><div class="cab"><h2>O mapa</h2><small>de 95 a 85 kg, pela média de 28 dias</small></div>${cpMapa()}
     ${a.chefe ? `<div class="cp-hp"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><b style="font-family:var(--display);font-size:19px">${esc(a.chefe)}</b><span style="font-weight:700">${Math.round((a.hp || 0) * 100)}%</span></div>
       <div class="tr" role="img" aria-label="Vida do chefe: ${Math.round((a.hp || 0) * 100)} por cento"><i style="width:${((a.hp || 0) * 100).toFixed(1)}%"></i></div>
@@ -209,7 +276,7 @@ function renderCampanha() {
     j.reliquias.map(r => `<div class="${r.em ? '' : 'tr'}"><svg viewBox="0 0 24 24" fill="${r.em ? 'var(--sol)' : 'none'}" stroke="${r.em ? 'var(--sol)' : '#fff'}" stroke-width="1.8" stroke-linejoin="round">${r.em ? CP_REL : CP_TRANCA}</svg>
       <span><b>${esc(r.nome)}</b><small>${esc(r.texto)}${r.em ? ' · ' + cpDDMM(r.em) : ''}</small></span></div>`).join('') + `</div></section>`;
 
-  h += `<section class="bloco cp-livro"><div class="cab"><h2>O livro</h2><small>a crônica, escrita só com o que foi registrado</small></div>` +
+  h += `<section class="bloco cp-livro"><div class="cab"><h2>O livro</h2><small>a aventura, capítulo por capítulo</small></div>` +
     (j.livro || []).map((c, i) => `<details ${i === (j.livro.length - 1) ? 'open' : ''}><summary>${esc(c.titulo)}</summary>${c.texto.split(/\n\s*\n/).map(par => `<p>${esc(par)}</p>`).join('')}</details>`).join('') + `</section>`;
 
   h += `<section class="bloco cp-regras"><details><summary style="padding:14px 0;font-weight:700;cursor:pointer">Como a Campanha funciona</summary>
@@ -217,6 +284,7 @@ function renderCampanha() {
     <div class="par">O XP nunca diminui. O peso não dá nem tira XP: ele só move o mapa, pela média de 28 dias. O futebol conta como dia ativo, sem bônus.</div>
     <div class="par">Capítulo é a semana, de segunda a domingo. Concluído = todas as missões, ou todas menos uma. A meta de dias ativos segue a sua fase: média das últimas 4 semanas mais 1, entre 3 e 5; depois de 2 capítulos sem conclusão, cai para 3 e começa um arco de retorno.</div>
     <div class="par">Saga é a sequência de capítulos concluídos. Um capítulo perdido pode ser resgatado na semana seguinte (3 dias ativos em 4 dias corridos e o capítulo seguinte concluído), uma vez a cada 4 semanas. Dia de descanso confirmado conta como cumprido.</div>
+    <div class="par">A aventura anda pelo desempenho da semana, não pelo dia: a semana traz uma ameaça, e o desfecho depende de quantas missões você cumprir. Semana forte avança a companhia e rende talismãs; semana fraca fere um companheiro; duas fracas seguidas, ou uma vazia, abrem uma crise com prazo de resgate. Doença, descanso confirmado e semana sem dado nunca viram perda. As perdas são do mundo da história, nunca do XP.</div>
     <div class="par">Sem dado, sem XP e sem punição. Tudo é recalculado do zero a partir dos registros, do relógio e da balança (jornada.py).</div></details></section></div>`;
   $('view').innerHTML = h;
   cpPosicionarMarca();

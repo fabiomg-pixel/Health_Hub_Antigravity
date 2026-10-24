@@ -46,23 +46,23 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
    [Uma linha: o que funcionou, OU o alerta de uma observação relevante]
    Pode me responder aqui: eu anoto e ajusto.
    ```
-7b. **A Campanha dos 85.** Rode `python3 jornada.py`. Na mensagem, troque a linha "Regras da semana" por uma linha
-   de cena, curta e em segunda pessoa: o que o dia somou de XP (campo `xp_por_dia` do dia avaliado) e como estão
-   as missões da semana. **Domingo à noite (ou segunda de manhã, se atrasou): escreva a crônica do capítulo.**
-   - Arquivo: `historia/livro/NN-titulo-curto.md` (NN = número do capítulo com dois dígitos), primeira linha
-     `# Capítulo N: Título (DD a DD de mês)`. Se já existir o do capítulo (escrito "em andamento"), reescreva-o
-     inteiro com a semana fechada.
-   - **Regras invioláveis** (desenho, seção 6): só o que está registrado (registros do site, relógio, balança, o
-     que ele disse ao bot e está no histórico desta sessão); nenhum número fora dos dados; recaída é cena, não
-     culpa; antagonistas (a Névoa, a Tempestade das Agendas, o Mal do Pântano, o Banquete das Sereias) só com
-     registro que os justifique; comida sem moralismo; doença como fato, sem conduta; terceira pessoa ("Fabio…"),
-     no máximo 12 linhas; feche com o que o próximo capítulo pede.
-   - **Texto narrativo ao longo do capítulo** (pedido do Fabio, 18/10): além da crônica de domingo, **todo dia**
-     acrescente 1 a 3 linhas ao arquivo do capítulo em andamento (cabeçalho "em andamento"), só com o que ficou
-     registrado naquele dia, mesmas regras invioláveis. **Estilo (Fabio, 18/10): metáfora de fábula de RPG (forja, estrada, estalagem, planície, as criaturas do arco), sem repetir o relato da semana: nada de lista de exercícios, cargas, refeições ou minutos; o fato aparece como imagem, e continua verdadeiro.** Dia sem registro: uma linha neutra ("o dia ficou sem
-     registro"), sem culpa. Quando o capítulo fechar, reescreva-o inteiro como concluído.
-   - Depois: `./publicar_jornada.sh` e commit de `historia/livro/`. Na mensagem de domingo, ofereça as missões da
-     semana seguinte (as do motor) e pergunte se ele quer trocar alguma.
+7b. **A Campanha dos 85 (a aventura).** Rode `python3 jornada.py` e depois `python3 historia.py` (no **domingo**, use
+   `python3 historia.py --fechar-hoje`: ele fecha a semana que está acabando e resolve o desfecho). **A história não
+   é retrospectiva do dia** (Fabio, 24/10): o dia nunca vira cena. O desempenho da SEMANA decide o que acontece com a
+   companhia (motor `historia.py`, canon em `historia/mundo.json`); você só anuncia.
+   - **Segunda a sábado:** na mensagem, troque a linha "Regras da semana" por UMA linha: o XP do dia
+     (`xp_por_dia` do dia avaliado) e quantas missões da semana estão cumpridas (`painel/data/historia.json`,
+     `semana.ok` de `semana.total`). Nada de cena, nada de recitar o que ele fez.
+   - **Domingo à noite:** depois do `historia.py --fechar-hoje`, leia `painel/data/historia.json` → o último item de
+     `capitulos` com `concluido: true`. Mande na mensagem, em até 6 linhas: o título do capítulo, o `desfecho` (texto
+     já escrito pelo motor; copie, não reescreva) e os `efeitos` (talismã ganho, etapa avançada, companheiro ferido ou
+     capturado, crise aberta e prazo). Tom de narrador, sem culpa: revés e crise são acontecimentos do mundo, nunca
+     uma bronca; diga qual é o caminho de volta (o resgate, o talismã). Se `tier` for `sem_dado`, diga só que a semana
+     ficou fora do livro. Termine com a ameaça da semana que abre (`semana.abertura` e `semana.em_jogo`).
+   - **Proibido:** escrever ou editar arquivos em `historia/livro/` (o motor os regenera), inventar desfecho, citar
+     exercícios, cargas, refeições ou minutos na história, ou prometer o que o motor não decidiu.
+   - Depois: `./publicar_jornada.sh` e commite `historia/` e `painel/data/historia.json`. Na mensagem de domingo,
+     ofereça as missões da semana seguinte (as do motor) e pergunte se ele quer trocar alguma.
 
 8. **Enviar.** `printf '%s' "$MSG" | ./enviar_telegram_saude.py avaliacao`. Confira `"ok": true` e
    `"bot": "Silvester_TheTrainer_bot"`. Se falhar, tente uma vez mais; se falhar de novo, use a ferramenta `reply` desta sessão (é o bot novo).
