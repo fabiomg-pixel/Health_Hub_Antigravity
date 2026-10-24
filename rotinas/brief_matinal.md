@@ -75,8 +75,10 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
      dia conta como cumprido". **Nunca** decida por ele, nem desestimule um jogo marcado.
    Você é o Silvester falando com ele: segunda pessoa, curto, sem exagero, sem culpa, sem emoji.
 
-8. **Só aos sábados: Mensagem 2** com o cardápio da semana e a lista de compras, lidos do `semana.json`
-   atual (nome do prato por dia; lista por categoria). Se ficar longa, quebre em duas.
+8. **Só aos sábados: Mensagem 2** com o cardápio e a lista de compras **da semana que começa na segunda**
+   (pedido do Fabio, 24/10: nada de plano para o passado). Só envie se o `semana.json` já for da semana
+   seguinte (primeiro dia == próxima segunda); se ainda for o da semana corrente, **não envie a Mensagem 2** e
+   diga numa linha que o cardápio e as compras da próxima semana saem depois do conselho de domingo.
 9. **Enviar.** `printf '%s' "$MSG" | ./enviar_telegram_saude.py brief`. Confira `"ok": true` e
    `"bot": "Silvester_TheTrainer_bot"`. Se falhar, tente uma vez mais; se falhar de novo, use a ferramenta `reply` desta sessão (é o bot novo) e
    diga que o envio pelo script falhou.
