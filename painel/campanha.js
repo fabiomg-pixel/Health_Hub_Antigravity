@@ -100,6 +100,15 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-slot { border: 2px dashed rgba(255,255,255,0.3); padding: 10px; min-height: 64px; font-size: 13px; }
   .cp-slot.cheio { border-style: solid; border-color: var(--sol); } .cp-slot b { display: block; font-family: var(--display); font-size: 14.5px; }
   .cp-slot span { display: block; font-size: 12px; opacity: 0.75; margin-top: 2px; }
+  .cp-pixel { width: 100%; display: block; image-rendering: pixelated; image-rendering: crisp-edges; border: 2px solid rgba(255,255,255,0.35); background: #0B1530; aspect-ratio: 16 / 9; }
+  .cp-cena { margin-bottom: 14px; }
+  .cp-cena h3 { font-family: var(--display); font-size: 21px; margin: 12px 0 0; }
+  .cp-cena .tx { font-family: Georgia, 'Times New Roman', serif; font-size: 15.5px; line-height: 1.62; margin: 8px 0 0; opacity: 0.95; }
+  .cp-cena .ef { font-size: 13px; line-height: 1.55; margin-top: 8px; color: var(--sol); font-weight: 600; }
+  .cp-tiers { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .cp-tiers button { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 7px 10px; font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; min-height: 36px; }
+  .cp-tiers button.on { background: var(--sol); color: var(--tinta); border-color: var(--sol); }
+  .cp-mini { width: 32px; height: 36px; image-rendering: pixelated; display: block; margin-bottom: 6px; }
   @keyframes cp-boia { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-3px) rotate(5deg); } }
   .cp-marca { animation: cp-boia 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
   `;
@@ -131,6 +140,12 @@ function cpResgate() {
 // ── Início: o capítulo da semana (é da semana, não do dia)
 function cpAmeacaCurta() {
   const H = typeof HISTORIA !== 'undefined' ? HISTORIA : null; if (!H || !H.semana) return '';
+  const rec = cpUltimoDesfecho(), hoje = isoLocal();
+  if (rec && rec.fim && (new Date(hoje) - new Date(rec.fim)) / 86400000 <= 3)
+    return `<div class="par" style="padding:10px 0 4px"><b>O desfecho da semana saiu:</b> ${esc(rec.titulo)}. <a href="#campanha" style="text-decoration:underline">Ver a cena</a></div>` + cpAmeacaBase(H);
+  return cpAmeacaBase(H);
+}
+function cpAmeacaBase(H) {
   const aviso = H.crise ? `<b>Crise:</b> ${esc(H.crise.companheiro)} está pres${H.crise.g} (${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}). ` : '';
   return `<div class="par" style="padding:10px 0 4px">${aviso}<b>${esc(H.semana.titulo)}.</b> Em jogo: ${esc(H.semana.em_jogo)}</div>`;
 }
@@ -213,9 +228,56 @@ const CP_TRANCA = '<rect x="5" y="11" width="14" height="10"/><path d="M8 11V7a4
 // ── A aventura: o mundo muda pelo desempenho da semana (historia.py). Não recita o dia: mostra a estrada, a companhia e o que está em jogo.
 const CP_ESTADO = { ativa: 'de pé', ferida: 'ferida', capturada: 'capturada', perdida: 'perdida' };
 function cpEstadoDe(c) { const m = c.g === 'o'; return { ativa: 'de pé', ferida: m ? 'ferido' : 'ferida', capturada: m ? 'capturado' : 'capturada', perdida: m ? 'perdido' : 'perdida' }[c.estado] || c.estado; }
+
+// ── A cena em pixel art do desfecho da semana (pixel.js)
+const CP_TIERS = [
+  ['atual', 'Desta semana'], ['triunfo', 'Triunfo'], ['avanco', 'Avanço'], ['sustenta', 'Sustenta'], ['reves', 'Revés'], ['crise', 'Crise'],
+];
+const CP_TIER_TXT = {
+  triunfo: 'Triunfo: todas as missões. A companhia avança 2 etapas, ganha 2 talismãs e quem estava ferido ou perdido volta.',
+  avanco: 'Avanço: capítulo concluído. A companhia avança 1 etapa e ganha 1 talismã.',
+  sustenta: 'Sustenta: metade das missões ou mais. A companhia acampa e se recupera, sem avançar nem recuar.',
+  reves: 'Revés: semana fraca. Um companheiro sai ferido do trecho.',
+  crise: 'Crise: semana vazia, ou duas fracas seguidas. A companhia recua uma etapa e um companheiro é capturado; há 3 semanas para o resgate.',
+  sem_dado: 'Sem dado: a névoa cobriu o mapa e nada foi decidido.',
+};
+function cpUltimoDesfecho() { const cs = ((HISTORIA || {}).capitulos || []).filter(c => c.concluido && c.cena); return cs[cs.length - 1] || null; }
+function cpParamsPreview(tier) {
+  const H = HISTORIA, amb = (H.semana && H.semana.ambiente) || {}, comp = {};
+  H.companhia.forEach(c => { comp[c.id] = c.estado === 'ativa' || c.estado === 'ferida' ? c.estado : 'ativa'; });
+  const e = H.etapa, cap = H.etapas.length - 2;
+  const depois = { triunfo: Math.min(e + 2, cap), avanco: Math.min(e + 1, cap), crise: Math.max(e - 1, 0) }[tier];
+  return { tier, etapa_antes: e, etapa_depois: depois == null ? e : depois, arco: H.arco.id, clima: amb.clima, lua: amb.lua, companhia: comp,
+    afetado: ['reves', 'crise'].includes(tier) ? 'brisa' : null, retorna: null, itens: ['forcas', 'ativos'].slice(0, tier === 'triunfo' ? 2 : (tier === 'avanco' ? 1 : 0)), talisma: tier === 'sustenta' };
+}
+function cpDesfecho() {
+  const H = HISTORIA; if (!H) return '';
+  const u = cpUltimoDesfecho();
+  return `<section class="bloco cp-cena"><div class="cab"><h2>O desfecho</h2><small>${u ? 'capítulo ' + u.n + ' · ' + esc(u.periodo) : 'pré-visualização'}</small></div>
+    <canvas id="cp-pixel" class="cp-pixel" role="img" aria-label="Cena em pixel art do desfecho da semana"></canvas>
+    <div class="cp-tiers" id="cp-tiers">${CP_TIERS.filter(t => t[0] !== 'atual' || u).map(t => `<button data-t="${t[0]}">${t[1]}</button>`).join('')}</div>
+    <div id="cp-cena-txt"></div></section>`;
+}
+function cpLigarPixel() {
+  const H = HISTORIA, cv = document.getElementById('cp-pixel'); if (!H || !cv || typeof PIXEL === 'undefined') return;
+  const u = cpUltimoDesfecho(), tx = document.getElementById('cp-cena-txt');
+  const mostrar = (t) => {
+    document.querySelectorAll('#cp-tiers button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
+    if (t === 'atual' && u) {
+      PIXEL.iniciar(cv, u.cena);
+      tx.innerHTML = `<h3>${esc(u.titulo)}</h3><p class="tx">${esc(u.desfecho)}</p>${(u.efeitos || []).length ? `<div class="ef">${u.efeitos.map(esc).join(' ')}</div>` : ''}<div class="cons" style="font-size:12.5px;opacity:.75;margin-top:8px">${u.ok} de ${u.total} missões nesta semana.</div>`;
+    } else {
+      PIXEL.iniciar(cv, cpParamsPreview(t));
+      tx.innerHTML = `<div class="cons" style="font-size:13.5px;line-height:1.55;margin-top:12px"><b>Pré-visualização.</b> ${esc(CP_TIER_TXT[t] || '')}</div>`;
+    }
+  };
+  document.querySelectorAll('#cp-tiers button').forEach(b => b.addEventListener('click', () => mostrar(b.dataset.t)));
+  mostrar(u ? 'atual' : 'avanco');
+  document.querySelectorAll('canvas.cp-mini').forEach(m => PIXEL.miniatura(m, m.dataset.id, m.dataset.estado));
+}
 function cpAventura() {
   const H = HISTORIA; if (!H) return '';
-  let h = '<div class="cp-aventura">';
+  let h = '<div class="cp-aventura">' + cpDesfecho();
   if (H.crise) {
     const g = H.crise.g, ela = g === 'o' ? 'ele' : 'ela', a = g === 'o' ? 'o' : 'a';
     h += `<div class="cp-crise"><b class="t">Crise aberta: ${esc(H.crise.companheiro)}</b><div class="par" style="margin-top:6px">${esc(H.crise.companheiro)} está pres${g} em ${esc(H.crise.onde)}. Uma semana boa (capítulo concluído) ${a} traz de volta. Prazo: <b>${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}</b>; se acabar, ${ela} se perde, e só uma grande vitória ${a} resgata depois.</div></div>`;
@@ -232,7 +294,7 @@ function cpAventura() {
   h += `<section class="bloco"><div class="cab"><h2>A estrada</h2><small>Arco ${esc(H.arco.id)}: ${esc(H.arco.nome)}</small></div><div class="cp-trilha">` +
     H.etapas.map((e, i) => `<div class="cp-et ${e.estado} ${i === H.etapas.length - 1 ? 'chefe' : ''}"><i></i><span>${esc(e.nome)}${i === H.etapas.length - 1 ? ' · só cai pela balança (média de 28 dias)' : ''}</span></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>A companhia</h2><small>${esc(H.guia.nome)}, ${esc(H.guia.papel)}, guia o grupo</small></div><div class="cp-comp">` +
-    H.companhia.map(c => `<div class="cp-pers ${c.estado}"><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
+    H.companhia.map(c => `<div class="cp-pers ${c.estado}"><canvas class="cp-mini" data-id="${c.id}" data-estado="${c.estado}"></canvas><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>A mochila</h2><small>${H.mochila.length} de 3 talismãs</small></div><div class="cp-bag">` +
     [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
     `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Cada missão cumprida numa semana boa rende um talismã.</div></section></div>`;
@@ -288,4 +350,5 @@ function renderCampanha() {
     <div class="par">Sem dado, sem XP e sem punição. Tudo é recalculado do zero a partir dos registros, do relógio e da balança (jornada.py).</div></details></section></div>`;
   $('view').innerHTML = h;
   cpPosicionarMarca();
+  cpLigarPixel();
 }

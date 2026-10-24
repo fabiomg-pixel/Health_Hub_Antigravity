@@ -1064,3 +1064,16 @@ podem ser sincronizados. Não pode ser retrospectiva do dia.
 - Retroativo: a semana de 12/10 (capítulo 1) resolveu como avanço; as de antes de 12/10 ficam no prólogo.
 - Pendente: eventos escritos à mão só para o arco I; os arcos II a IV usam eventos genéricos até serem escritos.
 
+### 29b. A cena em pixel art do desfecho (pedido do Fabio, 24/10/2026)
+
+No encerramento da semana, além do texto, há uma **animação em pixel art** (`painel/pixel.js`, canvas de 192×108
+ampliado, desenhada por código, sem imagens externas, 12 quadros por segundo, laço de 9 s). Cada desfecho tem a sua
+cena: **triunfo** (confete, corrida, talismãs brilhando, a companhia passa por duas etapas), **avanço** (a companhia
+caminha até o marco novo), **sustenta** (acampamento noturno com fogueira), **revés** (chuva, o companheiro ferido
+ficando para trás e depois sentado), **crise** (tempestade, uma sombra leva o companheiro capturado, a companhia
+foge para trás), **sem dado** (névoa). O céu vem do tempo e da lua da semana; quem está capturado ou perdido não
+aparece na fila; quem foi resgatado volta com um brilho. Os dados da cena (`cena`) são gravados por `historia.py`
+em cada capítulo resolvido. Na tela Campanha, o bloco "O desfecho" mostra a cena da última semana fechada e botões
+para pré-visualizar os cinco desfechos possíveis (o que está em jogo, visto de antemão). Com "reduzir movimento"
+ligado no aparelho, mostra o quadro final parado. No Início, uma linha avisa nos 3 dias depois do fechamento.
+

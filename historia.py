@@ -233,16 +233,26 @@ def resolver(segunda, semana):
     eid = (atual or {}).get('evento') or escolher_evento(segunda)[0]
     ev = evento_por_id(eid, E['etapa'])
     efeitos, regs = [], {}
+    companhia_antes = {k: v['estado'] for k, v in E['companhia'].items()}
+    etapa_antes = E['etapa']; mochila_antes = [i['id'] for i in E['mochila']]
+    afetado = retorna = None; talisma = False; semana_de_resgate = bool(E['crise'])
+    amb = (atual or {}).get('ambiente') or {}
+
+    def cena_de(tier_final):
+        tc = 'reves' if (semana_de_resgate and tier_final in ('reves', 'crise')) else tier_final
+        novos = [i['id'] for i in E['mochila'] if i['id'] not in mochila_antes]
+        return {'tier': tc, 'etapa_antes': etapa_antes, 'etapa_depois': E['etapa'], 'arco': E['arco'], 'clima': amb.get('clima'), 'lua': amb.get('lua'),
+                'companhia': companhia_antes, 'afetado': afetado, 'retorna': retorna, 'itens': novos, 'talisma': talisma}
     if com_dado < 3:
         return {'segunda': segunda.isoformat(), 'evento': eid, 'tier': 'sem_dado', 'ok': ok, 'n': n, 'efeitos': ['Esta semana ficou fora do livro: a névoa cobriu o mapa e nada foi decidido.'],
-                'texto': 'A névoa cobriu o mapa esta semana. A companhia ficou onde estava, e o livro não registra o que não se viu.', 'titulo': ev['titulo']}
+                'texto': 'A névoa cobriu o mapa esta semana. A companhia ficou onde estava, e o livro não registra o que não se viu.', 'titulo': ev['titulo'], 'cena': cena_de('sem_dado')}
     abrigo = est >= 1 or vermelhos >= 3
     base = tier_base(ok, n, concl, E['falhas_seguidas'])
     t = base
     if base in ('reves', 'crise') and abrigo:
         t = 'sustenta'; efeitos.append('A companhia se abrigou na estalagem e esperou a tempestade passar. Nada foi perdido.')
     if t in ('reves', 'crise') and E['mochila']:
-        item = E['mochila'].pop(0)
+        item = E['mochila'].pop(0); talisma = True
         t = {'crise': 'reves', 'reves': 'sustenta'}[t]
         efeitos.append(f'O talismã {mundo["itens"][item["id"]]["nome"]} quebrou e levou o golpe no lugar da companhia.')
     # falhas seguidas: só semana fraca de verdade (sem abrigo) conta
@@ -254,13 +264,13 @@ def resolver(segunda, semana):
         c = E['crise']['companheiro']; ant = mundo['antagonistas'][E['crise']['antagonista']]
         kw = dict(lugar=ant['lugar'])
         if t in ('triunfo', 'avanco'):
-            E['companhia'][c]['estado'] = 'ativa'; texto_extra = fmt(mundo['resgate']['libertado'], c, mundo, **kw)
+            E['companhia'][c]['estado'] = 'ativa'; retorna = c; texto_extra = fmt(mundo['resgate']['libertado'], c, mundo, **kw)
             efeitos.append(f'{mundo["companhia"][c]["nome"]} foi resgatad{mundo["companhia"][c]["g"]} e voltou à companhia.'); E['crise'] = None
         else:
             E['crise']['prazo'] -= 1
             if t in ('reves', 'crise'):
                 outro = escolher_companheiro(LIGA.get(pior_missao(missoes)))
-                if outro and outro != c: E['companhia'][outro]['estado'] = 'ferida'; efeitos.append(f'{mundo["companhia"][outro]["nome"]} saiu ferid{mundo["companhia"][outro]["g"]} da tentativa.')
+                if outro and outro != c: afetado = outro; E['companhia'][outro]['estado'] = 'ferida'; efeitos.append(f'{mundo["companhia"][outro]["nome"]} saiu ferid{mundo["companhia"][outro]["g"]} da tentativa.')
             if E['crise']['prazo'] <= 0:
                 E['companhia'][c]['estado'] = 'perdida'; texto_extra = fmt(mundo['resgate']['perdido'], c, mundo, **kw)
                 efeitos.append(f'{mundo["companhia"][c]["nome"]} está perdid{mundo["companhia"][c]["g"]}. Só uma grande vitória a traz de volta.'); E['crise'] = None
@@ -276,7 +286,7 @@ def resolver(segunda, semana):
                 if E['companhia'][k]['estado'] == 'ferida': E['companhia'][k]['estado'] = 'ativa'
             perdida = next((k for k, v in E['companhia'].items() if v['estado'] == 'perdida'), None)
             if perdida:
-                E['companhia'][perdida]['estado'] = 'ativa'; efeitos.append(f'{mundo["companhia"][perdida]["nome"]} voltou: a grande vitória reabriu o caminho.')
+                E['companhia'][perdida]['estado'] = 'ativa'; retorna = perdida; efeitos.append(f'{mundo["companhia"][perdida]["nome"]} voltou: a grande vitória reabriu o caminho.')
         elif t == 'avanco':
             E['etapa'] = min(E['etapa'] + 1, cap); dar_item(missoes, 1, efeitos)
             for k in E['companhia']:
@@ -286,13 +296,13 @@ def resolver(segunda, semana):
                 if E['companhia'][k]['estado'] == 'ferida': E['companhia'][k]['estado'] = 'ativa'
         elif t == 'reves':
             c = escolher_companheiro(LIGA.get(pior_missao(missoes)))
-            if c: E['companhia'][c]['estado'] = 'ferida'; efeitos.append(f'{mundo["companhia"][c]["nome"]} ficou ferid{mundo["companhia"][c]["g"]} e não ajuda no próximo trecho.')
+            if c: afetado = c; E['companhia'][c]['estado'] = 'ferida'; efeitos.append(f'{mundo["companhia"][c]["nome"]} ficou ferid{mundo["companhia"][c]["g"]} e não ajuda no próximo trecho.')
         elif t == 'crise':
             pior = pior_missao(missoes); ant_id = ANTAG.get(pior, 'nevoa')
             c = escolher_companheiro(LIGA.get(pior))
             E['etapa'] = max(E['etapa'] - 1, 0)
             if c:
-                E['companhia'][c]['estado'] = 'capturada'
+                afetado = c; E['companhia'][c]['estado'] = 'capturada'
                 E['crise'] = {'companheiro': c, 'antagonista': ant_id, 'prazo': 3, 'aberta_em': segunda.isoformat()}
                 efeitos.append(f'{mundo["companhia"][c]["nome"]} foi capturad{mundo["companhia"][c]["g"]}. Resgate em até 3 semanas: uma semana boa (capítulo concluído) a traz de volta.')
             if E['etapa'] < antes: efeitos.append(f'A companhia recuou até {a_etapa(arco["etapas"][E["etapa"]])}.')
@@ -305,7 +315,7 @@ def resolver(segunda, semana):
             c_ferida = next((k for k, v in E['companhia'].items() if v['estado'] == 'ferida'), None) if t == 'reves' else None
             desfecho = fmt(ev.get(t if t in ('triunfo', 'avanco', 'sustenta', 'reves') else 'sustenta', ''), c_ferida or 'brisa', mundo)
     return {'segunda': segunda.isoformat(), 'evento': eid, 'tier': t, 'tier_base': base, 'ok': ok, 'n': n, 'efeitos': efeitos,
-            'texto': desfecho, 'titulo': ev['titulo']}
+            'texto': desfecho, 'titulo': ev['titulo'], 'cena': cena_de(t)}
 
 
 # ──────────────── abertura da semana corrente
@@ -369,9 +379,9 @@ for segunda_s, reg in sorted(E['semanas'].items()):
     if reg.get('abertura'): corpo.append(reg['abertura'][0])
     corpo.append(reg['texto'])
     if reg.get('efeitos'): corpo.append(' '.join(reg['efeitos']))
-    capitulos.append({'n': n, 'titulo': reg['titulo'], 'periodo': periodo(sd), 'tier': reg['tier'], 'ok': reg['ok'], 'total': reg['n'],
+    capitulos.append({'n': n, 'titulo': reg['titulo'], 'periodo': periodo(sd), 'fim': (sd + dt.timedelta(days=6)).isoformat(), 'tier': reg['tier'], 'ok': reg['ok'], 'total': reg['n'],
                       'abertura': (reg.get('abertura') or ['', ''])[0], 'em_jogo': (reg.get('abertura') or ['', ''])[1] if len(reg.get('abertura') or []) > 1 else '',
-                      'desfecho': reg['texto'], 'efeitos': reg.get('efeitos', []), 'concluido': True, 'md': '\n\n'.join(corpo)})
+                      'desfecho': reg['texto'], 'efeitos': reg.get('efeitos', []), 'concluido': True, 'cena': reg.get('cena'), 'md': '\n\n'.join(corpo)})
 sa = E['semana_atual']
 semana_painel = None
 if sa:

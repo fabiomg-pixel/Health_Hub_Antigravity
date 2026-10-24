@@ -3,4 +3,4 @@ Chuva fina e teimosa cobria as Marcas do Sal. A Estalagem do Retorno ficou para 
 
 A Estrada de Pedra começou sob os pés da companhia. Ninguém falou em voltar; os passos eram curtos, mas todos para a frente.
 
-A companhia ganhou um talismã: Martelo de Dorn. A companhia avançou até A Estrada de Pedra.
+A companhia ganhou um talismã: Martelo de Dorn. A companhia avançou até a Estrada de Pedra.

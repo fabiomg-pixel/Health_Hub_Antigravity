@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-24T16:46:26",
+ "gerado_em": "2026-10-24T18:52:12",
  "arco": {
   "id": "I",
   "nome": "O Retorno",
@@ -96,6 +96,7 @@
    "n": 1,
    "titulo": "A Estalagem do Retorno",
    "periodo": "12 a 18 de outubro",
+   "fim": "2026-10-18",
    "tier": "avanco",
    "ok": 4,
    "total": 5,
@@ -104,9 +105,28 @@
    "desfecho": "A Estrada de Pedra começou sob os pés da companhia. Ninguém falou em voltar; os passos eram curtos, mas todos para a frente.",
    "efeitos": [
     "A companhia ganhou um talismã: Martelo de Dorn.",
-    "A companhia avançou até A Estrada de Pedra."
+    "A companhia avançou até a Estrada de Pedra."
    ],
-   "concluido": true
+   "concluido": true,
+   "cena": {
+    "tier": "avanco",
+    "etapa_antes": 0,
+    "etapa_depois": 1,
+    "arco": "I",
+    "clima": "chuvosa",
+    "lua": null,
+    "companhia": {
+     "brisa": "ativa",
+     "dorn": "ativa",
+     "ysa": "ativa"
+    },
+    "afetado": null,
+    "retorna": null,
+    "itens": [
+     "forcas"
+    ],
+    "talisma": false
+   }
   },
   {
    "n": 2,
