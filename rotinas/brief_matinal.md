@@ -70,6 +70,9 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
    `painel/data/historia.json` e `painel/data/jornada.json`. A história anda pelo desempenho da semana, não pelo dia:
    **não conte o dia dele como cena** (Fabio, 24/10). Acrescente à mensagem, no fim, **uma linha**, ou um pequeno
    bloco na segunda:
+   - **Segunda-feira, antes de tudo da Campanha:** se `historia/escritos/<segunda passada>-encerramento.md` não existir
+     ou ainda estiver com `simulacao: sim`, rode primeiro `rotinas/capitulo_semana.md` (o fechamento de domingo falhou).
+     Depois anuncie a aventura nova pelo título da premissa e uma frase de gancho, com o link da Campanha.
    - **Segunda-feira:** se o fechamento de domingo ainda não rodou (`historia/estado.json` sem a semana passada em
      `semanas`), rode `python3 historia.py` agora: ele resolve a semana fechada. Depois anuncie a ameaça nova:
      "Capítulo N: [semana.titulo]." + `semana.abertura` (texto pronto, copie) + "Em jogo: [semana.em_jogo]" + as

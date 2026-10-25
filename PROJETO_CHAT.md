@@ -1077,3 +1077,34 @@ em cada capítulo resolvido. Na tela Campanha, o bloco "O desfecho" mostra a cen
 para pré-visualizar os cinco desfechos possíveis (o que está em jogo, visto de antemão). Com "reduzir movimento"
 ligado no aparelho, mostra o quadro final parado. No Início, uma linha avisa nos 3 dias depois do fechamento.
 
+### 29c. Densidade: premissa, diário de bordo e capítulo (pedido do Fabio, 25/10/2026)
+
+**Por quê:** a primeira versão da aventura era curta e mecânica (2 a 4 frases por desfecho). O Fabio pediu densidade
+de lore, personagens e narrativa, para se importar com eles; que o que acontece numa semana influencie as
+seguintes; que ao longo dos dias se acumulem conquistas, percalços e derrotas, mencionados por baixo (um item
+mágico, um bônus, um item que se quebra, uma maldição); e que só no fim da semana venha o capítulo, integrando os
+eventos, com o desfecho produto da eficiência e do cumprimento das regras. Ele lê 15 a 30 minutos.
+
+**Como ficou:**
+- **Livro do Mundo** (`historia/biblia.md`): canon longo do mundo, da companhia (desejos, feridas, segredos), das
+  forças, dos guardiões, da gente da estrada e dos objetos. Aparece no painel.
+- **Diário de bordo** (`historia/eventos_dia.json`, com `./evento_aventura.py`): a avaliação da noite traduz o dia
+  real em acontecimentos do mundo, com efeito guardado para a Hora do Balanço: força = lasca de ferro-estrela (três
+  forjam a Lâmina do Marco), pesagem = medida de Ysa (o mapa rasgado se refaz), dia ativo no plano = pena de vento,
+  regras da nutrição cumpridas = relíquias, manhã vermelha = abrigo, **juramento quebrado** (treino fora do plano,
+  acima do teto ou em manhã vermelha; fritura além de 2) = talismã partido, Febre do Orgulho, Canto das Sereias.
+- **Relíquias e maldições** (`mundo.json`): Escama do Rio Cinza (sobe um nível no Vau), Sementes do Vale (evitam uma
+  ferida), Sal Limpo (espanta uma maldição das Sereias), Lâmina do Marco (vence o chefe sem perdas); Febre do Orgulho
+  (companheiro ferido até uma semana inteira dentro da lei; nova quebra o leva à Torre da Névoa), Canto das Sereias
+  (a semana seguinte cai um nível).
+- **Fios** (`historia/fios.json`): o que está em aberto e volta mais à frente (os sete nomes no vidro, a Lâmina, o mapa
+  rasgado, a dívida com Mãe Tarsila, os aspirantes, a mãe de Brisa).
+- **Textos longos** (`historia/escritos/<segunda>-premissa.md` e `-encerramento.md`): escritos no domingo à noite pela
+  rotina `rotinas/capitulo_semana.md` (launchd 23h05), seguindo o desfecho do motor. O encerramento pode trazer finais
+  alternativos (`<!-- alternativa: tier -->`); o painel mostra o que bate com o desfecho.
+- **Projeção:** enquanto a semana não fecha, o painel mostra como ela fecharia agora (nível, consequências) e quantas
+  missões faltam para mudar o final.
+- **Simulação de 25/10:** encerramento do capítulo 2 (A Estrada de Pedra, sustenta, com final alternativo de avanço se
+  o lanche de domingo for anotado) e premissa do capítulo 3 (A Noite das Lanternas: lua cheia na segunda, cheia do rio
+  na quinta e sexta, sol de ferro no sábado e a véspera de Finados no domingo), escritas com os dados até sábado.
+

@@ -109,6 +109,29 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-tiers button { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 7px 10px; font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; min-height: 36px; }
   .cp-tiers button.on { background: var(--sol); color: var(--tinta); border-color: var(--sol); }
   .cp-mini { width: 32px; height: 36px; image-rendering: pixelated; display: block; margin-bottom: 6px; }
+  .cp-leitura { position: relative; }
+  .cp-leitura p { font-family: Georgia, 'Times New Roman', serif; font-size: 16.5px; line-height: 1.72; margin: 0 0 15px; opacity: 0.96; }
+  .cp-leitura h4 { font-family: var(--display); font-size: 18px; letter-spacing: 0.01em; margin: 26px 0 10px; color: var(--sol); }
+  .cp-leitura ul { margin: 0 0 15px; padding-left: 20px; } .cp-leitura li { font-family: Georgia, serif; font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
+  .cp-leitura.fechada { max-height: 340px; overflow: hidden; }
+  .cp-leitura.fechada::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(rgba(11,27,38,0), var(--tinta)); }
+  .cp-ler { margin-top: 12px; background: transparent; color: #fff; border: 2px solid var(--sol); padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; min-height: 44px; }
+  .cp-selo { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; border: 1.5px solid var(--sol); color: var(--sol); margin-right: 8px; }
+  .cp-nota { font-size: 12.5px; opacity: 0.72; line-height: 1.5; margin-top: 8px; }
+  .cp-conseq { border-left: 3px solid var(--sol); padding: 8px 0 8px 12px; margin: 14px 0 4px; font-size: 13.5px; line-height: 1.55; }
+  .cp-conseq li { margin-bottom: 4px; }
+  .cp-dia { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .cp-dia > b { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+  .cp-ev { display: grid; grid-template-columns: 20px 1fr; gap: 8px; margin-top: 7px; font-size: 14px; line-height: 1.5; }
+  .cp-ev i { font-style: normal; text-align: center; font-weight: 800; }
+  .cp-ev small { display: block; font-size: 12px; color: var(--sol); opacity: 0.9; margin-top: 2px; }
+  .cp-ev.juramento_quebrado, .cp-ev.percalco, .cp-ev.nevoa { color: #FFC9C3; }
+  .cp-lista { display: grid; gap: 8px; } .cp-lista > div { border: 2px solid rgba(255,255,255,0.25); padding: 10px 12px; font-size: 13.5px; line-height: 1.5; }
+  .cp-lista > div b { display: block; font-family: var(--display); font-size: 15px; margin-bottom: 2px; }
+  .cp-lista > div.mal { border-color: #FF6B5E; } .cp-lista > div.usada { opacity: 0.5; }
+  .cp-mundo details { border-bottom: 1px solid rgba(255,255,255,0.18); }
+  .cp-mundo summary { padding: 13px 0; font-family: var(--display); font-weight: 700; font-size: 16px; cursor: pointer; list-style: none; }
+  .cp-mundo summary::after { content: "+"; float: right; } .cp-mundo details[open] summary::after { content: "–"; }
   @keyframes cp-boia { 0%, 100% { transform: translateY(0) rotate(-5deg); } 50% { transform: translateY(-3px) rotate(5deg); } }
   .cp-marca { animation: cp-boia 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
   `;
@@ -146,6 +169,10 @@ function cpAmeacaCurta() {
   return cpAmeacaBase(H);
 }
 function cpAmeacaBase(H) {
+  const p = H.premissa_proxima, e = H.encerramento;
+  const novo = (e ? `<div class="par" style="padding:10px 0 2px"><b>Capítulo ${e.n}${e.simulacao ? ' (simulação)' : ''}:</b> ${esc(e.titulo)}, ≈ ${e.minutos} min. ` : '<div class="par" style="padding:10px 0 2px">') +
+    (p ? `<b>Próxima aventura:</b> ${esc(p.titulo)}, ≈ ${p.minutos} min. ` : '') + ((e || p) ? `<a href="#campanha" style="text-decoration:underline">Ler na Campanha</a></div>` : '</div>');
+  if (e || p) return novo;
   const aviso = H.crise ? `<b>Crise:</b> ${esc(H.crise.companheiro)} está pres${H.crise.g} (${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}). ` : '';
   return `<div class="par" style="padding:10px 0 4px">${aviso}<b>${esc(H.semana.titulo)}.</b> Em jogo: ${esc(H.semana.em_jogo)}</div>`;
 }
@@ -260,9 +287,11 @@ function cpDesfecho() {
 }
 function cpLigarPixel() {
   const H = HISTORIA, cv = document.getElementById('cp-pixel'); if (!H || !cv || typeof PIXEL === 'undefined') return;
-  const u = cpUltimoDesfecho(), tx = document.getElementById('cp-cena-txt');
+  const proj = H.encerramento && H.projecao && H.encerramento.simulacao ? { cena: H.projecao.cena, titulo: H.encerramento.titulo, desfecho: '', efeitos: [], ok: H.projecao.ok, total: H.projecao.n } : null;
+  const u = proj || cpUltimoDesfecho(), tx = document.getElementById('cp-cena-txt');
   const mostrar = (t) => {
     document.querySelectorAll('#cp-tiers button').forEach(b => b.classList.toggle('on', b.dataset.t === t));
+    if (t === 'atual' && u && proj) { PIXEL.iniciar(cv, u.cena); tx.innerHTML = ''; return; }
     if (t === 'atual' && u) {
       PIXEL.iniciar(cv, u.cena);
       tx.innerHTML = `<h3>${esc(u.titulo)}</h3><p class="tx">${esc(u.desfecho)}</p>${(u.efeitos || []).length ? `<div class="ef">${u.efeitos.map(esc).join(' ')}</div>` : ''}<div class="cons" style="font-size:12.5px;opacity:.75;margin-top:8px">${u.ok} de ${u.total} missões nesta semana.</div>`;
@@ -273,17 +302,86 @@ function cpLigarPixel() {
   };
   document.querySelectorAll('#cp-tiers button').forEach(b => b.addEventListener('click', () => mostrar(b.dataset.t)));
   mostrar(u ? 'atual' : 'avanco');
+  cpLigarLeituras();
   document.querySelectorAll('canvas.cp-mini').forEach(m => PIXEL.miniatura(m, m.dataset.id, m.dataset.estado));
+}
+
+// ── Leitura longa: o capítulo que fecha, a aventura que abre, o diário de bordo e o Livro do Mundo
+function cpMd(txt) {
+  const linha = t => esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+  return (txt || '').split(/\n\s*\n/).map(bl => {
+    bl = bl.trim(); if (!bl) return '';
+    if (bl.startsWith('## ')) return `<h4>${linha(bl.slice(3))}</h4>`;
+    if (/^- /.test(bl)) return '<ul>' + bl.split(/\n(?=- )/).map(li => `<li>${linha(li.replace(/^- /, ''))}</li>`).join('') + '</ul>';
+    return `<p>${linha(bl).replace(/\n/g, '<br>')}</p>`;
+  }).join('');
+}
+function cpLeitura(id, txt, minutos, rotulo) {
+  return `<div class="cp-leitura fechada" id="${id}">${cpMd(txt)}</div>
+    <button class="cp-ler" data-alvo="${id}">${rotulo} (≈ ${minutos} min de leitura)</button>`;
+}
+function cpLigarLeituras() {
+  document.querySelectorAll('.cp-ler').forEach(b => b.addEventListener('click', () => {
+    const el = document.getElementById(b.dataset.alvo); const fechada = el.classList.toggle('fechada');
+    b.textContent = fechada ? b.textContent.replace(/^Recolher/, 'Ler') : 'Recolher'; if (fechada) el.scrollIntoView({ block: 'start' });
+  }));
+}
+const CP_ICO = { conquista: '+', presente: '✦', bencao: '✦', aurora: '☀', encontro: '•', neutro: '·', percalco: '−', nevoa: '≈', juramento_quebrado: '!' };
+function cpEncerramento() {
+  const H = HISTORIA, e = H && H.encerramento; if (!e) return '';
+  const pj = H.projecao, aberta = pj && e.simulacao;
+  const ef = (pj && pj.efeitos) || [];
+  return `<section class="bloco cp-cena"><div class="cab"><h2>O capítulo da semana</h2><small>${e.simulacao ? '<span class="cp-selo">simulação</span>' : ''}capítulo ${e.n}</small></div>
+    <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(e.titulo)}</h3>${e.subtitulo ? `<div style="font-family:Georgia,serif;font-style:italic;opacity:.8;margin-top:2px">${esc(e.subtitulo)}</div>` : ''}
+    ${e.nota ? `<div class="cp-nota">${esc(e.nota)}</div>` : ''}
+    <canvas id="cp-pixel" class="cp-pixel" style="margin-top:14px" role="img" aria-label="Cena em pixel art do desfecho"></canvas>
+    ${aberta && pj.falta_para_avanco > 0 ? `<div class="cp-conseq"><b>O desfecho ainda pode mudar.</b> Até agora: ${pj.ok} de ${pj.n} missões, a semana <b>se sustenta</b>. Mais ${pj.falta_para_avanco} ${pj.falta_para_avanco === 1 ? 'missão' : 'missões'} até o fechamento e o capítulo vira <b>avanço</b>: o final do texto muda.</div>` : ''}
+    ${ef.length ? `<div class="cp-conseq"><b>Consequências${aberta ? ' (se fechasse agora)' : ''}:</b><ul style="margin:6px 0 0;padding-left:18px">${ef.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
+    <div style="margin-top:16px">${cpLeitura('cp-enc', e.texto, e.minutos, 'Ler o capítulo inteiro')}</div>
+    <div class="cp-tiers" id="cp-tiers" style="margin-top:18px">${CP_TIERS.map(t => `<button data-t="${t[0]}">${t[0] === 'atual' ? 'Esta cena' : t[1]}</button>`).join('')}</div>
+    <div id="cp-cena-txt"></div></section>`;
+}
+function cpPremissa() {
+  const H = HISTORIA; if (!H) return '';
+  const p = H.premissa_proxima || H.premissa_atual; if (!p) return '';
+  const proxima = p === H.premissa_proxima;
+  return `<section class="bloco"><div class="cab"><h2>${proxima ? 'A próxima aventura' : 'A aventura desta semana'}</h2><small>${p.simulacao ? '<span class="cp-selo">simulação</span>' : ''}capítulo ${p.n}</small></div>
+    <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(p.titulo)}</h3>${p.nota ? `<div class="cp-nota">${esc(p.nota)}</div>` : ''}
+    <div style="margin-top:14px">${cpLeitura('cp-prem', p.texto, p.minutos, 'Ler a premissa inteira')}</div></section>`;
+}
+function cpDiario() {
+  const H = HISTORIA, d = H && H.diario; if (!d || !d.length) return '';
+  return `<section class="bloco"><div class="cab"><h2>Diário de bordo</h2><small>o que aconteceu por baixo, dia a dia; o preço e o prêmio chegam na Hora do Balanço</small></div>` +
+    d.map(x => `<div class="cp-dia"><b>${esc(x.dia)}</b>${x.eventos.map(ev => `<div class="cp-ev ${ev.tipo}"><i>${CP_ICO[ev.tipo] || '·'}</i><span>${esc(ev.texto)}${ev.marcas.length ? `<small>${ev.marcas.map(esc).join(' · ')}</small>` : ''}</span></div>`).join('')}</div>`).join('') + `</section>`;
+}
+function cpTesouro() {
+  const H = HISTORIA; if (!H) return '';
+  const rel = H.reliquias || [], mal = H.maldicoes || [], mat = H.materiais || {}, pj = H.projecao;
+  const proj = pj && pj.depois ? `<div class="cp-nota" style="margin-top:10px">Se a semana fechasse agora: ${pj.depois.reliquias.length} relíquias, ${pj.depois.maldicoes.length ? 'maldição: ' + pj.depois.maldicoes.map(m => m === 'febre_do_orgulho' ? 'Febre do Orgulho' : 'Canto das Sereias').join(', ') : 'nenhuma maldição'}, ${pj.depois.mochila.length} de 3 talismãs, ${pj.depois.materiais.ferro || 0} de 3 lascas de ferro-estrela.</div>` : '';
+  return `<section class="bloco"><div class="cab"><h2>Relíquias e maldições</h2><small>o que fica de uma semana para outra</small></div><div class="cp-lista">` +
+    (rel.length ? rel.map(r => `<div class="${r.usada ? 'usada' : ''}"><b>${esc(r.nome)}${r.usada ? ' (usada)' : ''}</b>${esc(r.texto)}</div>`).join('') : '<div>Nenhuma relíquia ainda. Elas chegam com a Hora do Balanço.</div>') +
+    mal.map(m => `<div class="mal"><b>${esc(m.nome)}</b>${esc(m.texto)}</div>`).join('') +
+    `<div><b>Materiais</b>${Object.values(mat).map(x => `${x.qtd} ${esc(x.nome)}${x.forja ? ' (de ' + x.forja + ' para a Lâmina do Marco)' : ''}`).join(' · ')}</div></div>${proj}</section>`;
+}
+function cpFios() {
+  const f = (HISTORIA || {}).fios || []; if (!f.length) return '';
+  return `<section class="bloco"><div class="cab"><h2>Fios em aberto</h2><small>o que vai voltar mais à frente</small></div><div class="cp-lista">` +
+    f.map(x => `<div><b>${esc(x.titulo)}</b>${esc(x.estado)}<span style="display:block;opacity:.75;margin-top:4px">A seguir: ${esc(x.proximo)}</span></div>`).join('') + `</div></section>`;
+}
+function cpLivroMundo() {
+  const b = (HISTORIA || {}).biblia || []; if (!b.length) return '';
+  return `<section class="bloco cp-mundo"><div class="cab"><h2>O Livro do Mundo</h2><small>lugares, gente e forças das Marcas do Sal</small></div>` +
+    b.map(x => `<details><summary>${esc(x.titulo)}</summary><div class="cp-leitura">${cpMd(x.texto)}</div></details>`).join('') + `</section>`;
 }
 function cpAventura() {
   const H = HISTORIA; if (!H) return '';
-  let h = '<div class="cp-aventura">' + cpDesfecho();
+  let h = '<div class="cp-aventura">' + (H.encerramento ? cpEncerramento() : cpDesfecho()) + cpPremissa() + cpDiario();
   if (H.crise) {
     const g = H.crise.g, ela = g === 'o' ? 'ele' : 'ela', a = g === 'o' ? 'o' : 'a';
     h += `<div class="cp-crise"><b class="t">Crise aberta: ${esc(H.crise.companheiro)}</b><div class="par" style="margin-top:6px">${esc(H.crise.companheiro)} está pres${g} em ${esc(H.crise.onde)}. Uma semana boa (capítulo concluído) ${a} traz de volta. Prazo: <b>${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}</b>; se acabar, ${ela} se perde, e só uma grande vitória ${a} resgata depois.</div></div>`;
   }
   const s = H.semana;
-  if (s) {
+  if (s && !H.encerramento && !H.premissa_atual) {
     const falta = Math.max(0, (s.total - 1) - s.ok);
     h += `<div class="cp-semana"><div class="rot" style="font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;opacity:0.75">Esta semana · capítulo ${s.n} · ${esc(s.periodo)}</div>
       <h3 style="font-family:var(--display);font-size:22px;margin:4px 0 0">${esc(s.titulo)}</h3>
@@ -297,7 +395,7 @@ function cpAventura() {
     H.companhia.map(c => `<div class="cp-pers ${c.estado}"><canvas class="cp-mini" data-id="${c.id}" data-estado="${c.estado}"></canvas><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>A mochila</h2><small>${H.mochila.length} de 3 talismãs</small></div><div class="cp-bag">` +
     [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
-    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Cada missão cumprida numa semana boa rende um talismã.</div></section></div>`;
+    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Cada missão cumprida numa semana boa rende um talismã.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
   return h;
 }
 function renderCampanha() {

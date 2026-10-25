@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-24T18:52:12",
+ "gerado_em": "2026-10-25T00:13:19",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-09-22",
@@ -96,14 +96,14 @@
   ]
  },
  "hoje": {
-  "data": "2026-10-24",
-  "xp": 20,
+  "data": "2026-10-25",
+  "xp": 0,
   "missoes": [
    {
     "nome": "Dia ativo",
     "xp": 30,
-    "feito": false,
-    "sem_dado": false
+    "feito": null,
+    "sem_dado": true
    },
    {
     "nome": "Pesagem em jejum",
@@ -113,7 +113,7 @@
    {
     "nome": "Registrar o almoço",
     "xp": 20,
-    "feito": true
+    "feito": false
    },
    {
     "nome": "Registrar o lanche das 17h",
@@ -758,7 +758,289 @@
   "2026-10-21": 250,
   "2026-10-22": 40,
   "2026-10-23": 90,
-  "2026-10-24": 20
+  "2026-10-24": 20,
+  "2026-10-25": 0
+ },
+ "dias": {
+  "2026-10-05": {
+   "xp": 90,
+   "itens": [
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "lanche",
+    "outro",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-06": {
+   "xp": 70,
+   "itens": [
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "registro"
+   ],
+   "ativo": true
+  },
+  "2026-10-07": {
+   "xp": 30,
+   "itens": [
+    "Dia ativo"
+   ],
+   "marcas": [],
+   "ativo": true
+  },
+  "2026-10-08": {
+   "xp": 30,
+   "itens": [
+    "Dia ativo"
+   ],
+   "marcas": [],
+   "ativo": true
+  },
+  "2026-10-09": {
+   "xp": 30,
+   "itens": [
+    "Dia ativo"
+   ],
+   "marcas": [],
+   "ativo": true
+  },
+  "2026-10-10": {
+   "xp": 20,
+   "itens": [
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "registro"
+   ],
+   "ativo": false
+  },
+  "2026-10-11": {
+   "xp": 170,
+   "itens": [
+    "Sessão de força",
+    "Dia ativo",
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "forca",
+    "lanche",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-12": {
+   "xp": 70,
+   "itens": [
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "registro"
+   ],
+   "ativo": true
+  },
+  "2026-10-13": {
+   "xp": 170,
+   "itens": [
+    "Sessão de força",
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "forca",
+    "lower",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-14": {
+   "xp": 130,
+   "itens": [
+    "Corrida",
+    "Dia ativo",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "corrida",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-15": {
+   "xp": 90,
+   "itens": [
+    "Estalagem",
+    "Pesagem",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "estalagem",
+    "lanche",
+    "registro"
+   ],
+   "ativo": false
+  },
+  "2026-10-16": {
+   "xp": 170,
+   "itens": [
+    "Sessão de força",
+    "Dia ativo",
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "forca",
+    "lanche",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-17": {
+   "xp": 50,
+   "itens": [
+    "Dia ativo",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "jogo",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-18": {
+   "xp": 70,
+   "itens": [
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "registro"
+   ],
+   "ativo": true
+  },
+  "2026-10-19": {
+   "xp": 60,
+   "itens": [
+    "Pesagem",
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "lanche",
+    "registro"
+   ],
+   "ativo": false
+  },
+  "2026-10-20": {
+   "xp": 150,
+   "itens": [
+    "Corrida",
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "corrida",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-21": {
+   "xp": 250,
+   "itens": [
+    "Sessão de força",
+    "Corrida",
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "corrida",
+    "forca",
+    "lanche",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-22": {
+   "xp": 40,
+   "itens": [
+    "Pesagem",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "registro"
+   ],
+   "ativo": false
+  },
+  "2026-10-23": {
+   "xp": 90,
+   "itens": [
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "lanche",
+    "registro"
+   ],
+   "ativo": true
+  },
+  "2026-10-24": {
+   "xp": 20,
+   "itens": [
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "registro"
+   ],
+   "ativo": false
+  },
+  "2026-10-25": {
+   "xp": 0,
+   "itens": [],
+   "marcas": [],
+   "ativo": null
+  }
  },
  "livro": [
   {

@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-24T18:52:12",
+ "gerado_em": "2026-10-25T00:13:19",
  "arco": {
   "id": "I",
   "nome": "O Retorno",
@@ -140,5 +140,401 @@
    "efeitos": []
   }
  ],
- "marcos": []
+ "marcos": [],
+ "reliquias": [],
+ "maldicoes": [],
+ "materiais": {
+  "ferro": {
+   "qtd": 0,
+   "nome": "lascas de ferro-estrela",
+   "dono": "dorn",
+   "forja": 3
+  },
+  "rumo": {
+   "qtd": 0,
+   "nome": "medidas no mapa",
+   "dono": "ysa"
+  },
+  "pena": {
+   "qtd": 0,
+   "nome": "penas de vento",
+   "dono": "brisa"
+  }
+ },
+ "dividas": [],
+ "fios": [
+  {
+   "id": "nomes_no_vidro",
+   "titulo": "Os sete nomes no vidro",
+   "personagem": "silvester",
+   "semente": "2026-10-19",
+   "estado": "Silvester revelou o primeiro nome, Aurel, que corria quando a lanterna dizia vermelho. Um risco novo foi gravado no vidro depois que Fabio quebrou a lei da lanterna.",
+   "proximo": "Na Noite das Lanternas, Silvester se recusa a atravessar a ponte. Alguém do outro lado o espera.",
+   "gatilho": "constância (a saga) e respeito à lei da lanterna"
+  },
+  {
+   "id": "lamina_do_marco",
+   "titulo": "A Lâmina do Marco",
+   "personagem": "dorn",
+   "semente": "2026-10-21",
+   "estado": "1 de 3 lascas de ferro-estrela. O martelo do pai partiu-se; Dorn ainda não abriu o pano com os pedaços.",
+   "proximo": "A Prova do Fogo de segunda e os pregos da ponte.",
+   "gatilho": "sessões de força do plano cumpridas"
+  },
+  {
+   "id": "mapa_rasgado",
+   "titulo": "O mapa rasgado do Platô",
+   "personagem": "ysa",
+   "semente": "2026-10-24",
+   "estado": "Cinco medidas na semana fizeram aparecer sozinho um traço de degrau na borda rasgada. Ysa jura que ele se mexeu na lua cheia.",
+   "proximo": "O desenho da ponte antiga, na camada funda do mapa. O Mercador das Brumas olhou demais para a borda rasgada.",
+   "gatilho": "pesagens ao amanhecer"
+  },
+  {
+   "id": "febre_do_orgulho",
+   "titulo": "A Febre do Orgulho",
+   "personagem": "brisa",
+   "semente": "2026-10-25",
+   "estado": "Brisa acordou com a febre nas pernas depois de duas quebras da lei da lanterna.",
+   "proximo": "Sai sozinha numa semana inteira dentro da lei; cresce com nova quebra.",
+   "gatilho": "lei da lanterna (portões da fisiologista)"
+  },
+  {
+   "id": "divida_tarsila",
+   "titulo": "A dívida com Mãe Tarsila",
+   "personagem": "fabio",
+   "semente": "2026-10-21",
+   "estado": "O remédio amargo funcionou. Ela cobrou o favor: a ponte de pé até a Noite das Lanternas.",
+   "proximo": "A Noite das Lanternas, domingo 1/11.",
+   "gatilho": "o desfecho do capítulo 3"
+  },
+  {
+   "id": "aspirantes",
+   "titulo": "Os aspirantes",
+   "personagem": "fabio",
+   "semente": "2026-10-19",
+   "estado": "Lia, neta de Tarsila, e Teo, o rapaz dos insetos, pedem para trabalhar com a companhia.",
+   "proximo": "Fabio decide se os aceita na obra da ponte.",
+   "gatilho": "escolha do Fabio"
+  },
+  {
+   "id": "mae_de_brisa",
+   "titulo": "A mãe de Brisa",
+   "personagem": "brisa",
+   "semente": "2026-10-19",
+   "estado": "Levada pela Tempestade das Agendas para a Cidadela dos Prazos quando Brisa tinha doze anos.",
+   "proximo": "Ainda distante: a Cidadela fica além do Platô.",
+   "gatilho": "o arco II"
+  }
+ ],
+ "biblia": [
+  {
+   "titulo": "As Marcas do Sal",
+   "texto": "Entre o mar e as montanhas existe uma terra que ninguém consegue desenhar inteira, porque ela muda de forma conforme é andada. Os antigos a chamaram de Marcas do Sal, por causa das salinas brancas que cobrem as planícies baixas e do gosto que o vento traz até as estalagens do interior. Ali o chão é de pedra clara, a chuva vem do mar em cortinas e os rios descem cinzentos dos platôs, carregando o sal das alturas.\n\nNas Marcas do Sal vale uma lei que todo viajante aprende cedo ou paga para aprender: a estrada responde a quem anda. Uma trilha percorrida com constância se firma, ganha pedras, ganha marcos, ganha estalagens. Uma trilha abandonada se apaga em poucas luas, e o mato, a lama e a bruma fecham o que antes era caminho. Por isso nada ali é permanente, nem as derrotas. Por isso também nada ali é de graça, nem as vitórias.\n\nAs pessoas das Marcas medem o tempo em semanas, não em dias. Dizem que um dia é pequeno demais para o mundo notar, mas uma semana o mundo sempre nota. É ao fim de cada semana, quando os sinos das vilas tocam a Hora do Balanço, que as consequências chegam: pontes que se firmam ou caem, companheiros que voltam ou se perdem, portas que se abrem na estrada adiante."
+  },
+  {
+   "titulo": "A subida e os marcos",
+   "texto": "Desde a costa até o alto do mundo, a estrada antiga é medida por marcos de pedra numerados de cem para baixo. O Marco Cem fica na praia, onde as gaivotas fazem ninho. O último, o Marco Oitenta e Cinco, fica no topo do Monte da Medida, onde dorme o Dragão.\n\nNinguém sabe quem ergueu os marcos. As inscrições estão numa escrita que só os cartógrafos mais velhos leem, e todas terminam com a mesma frase: *o que se mede, se alcança*. Cada trecho entre marcos é vigiado por um guardião, criatura antiga que não ataca e não foge: espera. Quem chega até um guardião com o caminho firme sob os pés passa. Quem chega cambaleando, desce.\n\nA companhia de Fabio está no trecho entre o Marco Noventa e Cinco e o Marco Noventa e Dois e Meio, a região que os mapas chamam de O Retorno: a Estalagem do Retorno, a Estrada de Pedra, a Ponte Partida, o Bosque de Brumas, o Vau do Rio Cinza, os Degraus e, no alto, o Platô, onde o Guardião de pedra observa o vale há séculos. Os cartógrafos dizem que o Guardião só cede quando a altitude verdadeira da companhia, medida ao longo de quatro luas, passa abaixo do marco que ele guarda. Não adianta uma semana heroica. É preciso um mês inteiro de caminho firme."
+  },
+  {
+   "titulo": "Fabio, o Pesquisador de Campo",
+   "texto": "Fabio não é guerreiro nem mago. É um pesquisador de campo, do tipo que passa horas agachado à beira de um charco anotando o voo dos insetos que carregam as febres do Pântano. Foi esse ofício que o trouxe às Marcas pela primeira vez: queria entender por que o Mal do Pântano escolhe uns e poupa outros. Acabou entendendo outra coisa, que o corpo de quem caminha também é um charco, um lugar vivo que guarda ou expulsa o que recebe.\n\nJá subiu essa estrada uma vez. Houve um verão em que a companhia andou ombro a ombro, semana após semana, e chegou a ver de longe o Platô. Depois veio a Tempestade das Agendas e o arrastou de volta para as cidades, para congressos, salões e papéis. Quando voltou à Estalagem do Retorno, em outubro, tinha a bagagem por abrir e o mapa meio apagado, e escreveu no livro de bordo uma frase que Ysa nunca esqueceu: *retomar, quase do zero, recuperar a constância*.\n\nFabio lidera pela curiosidade e pelo exemplo, e isso é força e é perigo. Quando se sente bem, quer fazer mais do que o combinado: correr mais um trecho, erguer mais um ferro, subir mais um degrau. Silvester chama isso de Fome do Caminho e já viu essa fome derrubar gente melhor do que ele. Fabio também tem uma qualidade rara nas Marcas: sabe recuar quando o corpo pede, e não tem vergonha de dormir na estalagem enquanto os outros esperam. O problema é que nem sempre sabe as duas coisas no mesmo dia.\n\nNas vilas, começa a correr a notícia de que o pesquisador da estrada está aceitando aprendizes. Jovens aparecem nas estalagens pedindo uma conversa. Ele recebe um por um, pergunta o que leram, o que os inquieta, o que querem aprender. Ainda não decidiu quem leva."
+  },
+  {
+   "titulo": "Silvester, o Lanterneiro",
+   "texto": "Silvester é mais velho do que parece e parece muito velho. Carrega uma lanterna de latão e vidro grosso que nunca se apaga de todo, mas brilha mais ou menos conforme a companhia anda: forte nas semanas firmes, fraca e fumacenta nas semanas perdidas. Os viajantes dizem que o óleo dela é feito de constância, e Silvester não desmente.\n\nNo vidro da lanterna há sete nomes gravados com ponta de faca. São os nomes da companhia que ele guiou antes, há muito tempo, até os Degraus do Platô. Ele não fala dela. Sabe-se apenas que chegaram até o Guardião, que alguém quis subir rápido demais, e que só Silvester desceu. Desde então ele guia outras companhias, uma de cada vez, e nunca deixa ninguém andar mais rápido do que a lanterna consegue iluminar.\n\nSilvester fala pouco e escolhe as palavras como quem escolhe pedras para atravessar um rio. Gosta de Fabio, e é exatamente por isso que se preocupa com ele: reconhece no pesquisador a mesma fome que viu, um dia, no rosto de alguém cujo nome está gravado no vidro. Ele não pode ser capturado nem se perder; dizem que a estrada não deixa. Mas a lanterna pode enfraquecer, e quando ela enfraquece, ninguém enxerga longe."
+  },
+  {
+   "titulo": "Brisa, a Batedora",
+   "texto": "Brisa tem vinte e poucos anos, cabelo cor de ferrugem preso num rabo que o vento desmancha, e pernas que parecem não saber ficar paradas. Vai sempre na frente, lendo o terreno, contando as pedras soltas, sentindo pelo cheiro do ar se vem chuva ou calor. Quando volta, traz notícia da estrada antes de a estrada chegar.\n\nNasceu na Vila das Gaivotas, no Marco Noventa e Nove, filha de uma copista. Quando Brisa tinha doze anos, a Tempestade das Agendas passou pela vila e levou a mãe para a Cidadela dos Prazos, onde os escribas trabalham sem dormir copiando compromissos que nunca acabam. Brisa corre desde então. Diz que é porque gosta. Silvester acha que é porque parar a deixa sozinha com a lembrança.\n\nEla é a primeira a acordar e a última a reclamar, mas tem um defeito que a companhia conhece bem: vai longe demais. Corre além do combinado, entra em trilhas que ninguém explorou, volta tarde. Quando o corpo da companhia está cansado, é Brisa quem se machuca primeiro, porque nunca economiza. Está ligada aos dias de estrada: quando a companhia anda com constância, ela floresce; quando a companhia exagera ou some, é ela quem paga."
+  },
+  {
+   "titulo": "Dorn, o Ferreiro",
+   "texto": "Dorn é grande, calado e carrega nas costas uma forja de viagem, uma caixa de ferro com fole de couro que pesa o mesmo que uma criança. O martelo que ele usa era do pai, com cabo de freixo e cabeça escurecida por mil fogueiras. Com ele, Dorn forja os talismãs da companhia a partir de lascas de ferro-estrela, um metal que, segundo as lendas, só cai do céu onde alguém cumpre o que prometeu.\n\nHouve um inverno em que a forja de Dorn esfriou. Não por falta de carvão: o fogo simplesmente não pegava. Ele passou semanas olhando a caixa fria, sem vontade de tocar no martelo. Foi a companhia que o salvou, voltando à estrada todo dia até que, numa manhã qualquer, a brasa acendeu sozinha. Dorn aprendeu ali que fogo de forja depende de ritmo, não de força. Desde então trata cada sessão como uma promessa.\n\nSeu sonho é forjar a Lâmina do Marco, uma arma de ferro-estrela capaz de rachar o selo do Guardião do Platô. Para isso precisa de três lascas boas e de um fogo que não apague no meio. Está ligado aos dias de forja: cada vez que a companhia acende o fogo e trabalha o ferro, ele fica mais perto da lâmina. Quando a companhia exagera no ferro, é a ferramenta dele que racha."
+  },
+  {
+   "titulo": "Ysa, a Cartógrafa",
+   "texto": "Ysa é magra, de cabelos pretos e longos, dedos manchados de tinta e uma paciência que irrita e salva. Guarda o mapa da companhia e o livro de bordo, onde anota tudo: o que se comeu, quanto se andou, onde se dormiu, como estava o céu. Sabe que um mapa nas Marcas do Sal só se mantém verdadeiro se alguém medir a posição com regularidade. Todo amanhecer, antes de comer, ela fixa a posição pelas estrelas e marca um ponto no papel. Pula uma manhã, e o desenho começa a borrar.\n\nO mapa que ela carrega não foi desenhado por ela. Foi feito pela companhia anterior de Silvester e tem um buraco: o trecho do Platô foi arrancado, deixando uma borda rasgada onde deveria estar o caminho dos Degraus até o topo. Ysa acredita que o pedaço existe em algum lugar das Marcas e que, se medir com cuidado o bastante, consegue reconstruir o que falta. Já recuperou algumas linhas.\n\nYsa é a memória da companhia, e por isso é também a mais vulnerável às forças que apagam memórias. A Névoa a odeia. Está ligada às medidas e aos registros: às pesagens do amanhecer, às refeições anotadas, ao livro de bordo em dia."
+  },
+  {
+   "titulo": "As quatro forças",
+   "texto": "**A Névoa** desce dos vales nas noites curtas. Não é maligna como um monstro; é fome de descanso, e devora as lanternas de quem dorme pouco. Onde ela passa, o mapa borra, as pernas pesam, os rostos ficam cinzentos. Mora na Torre da Névoa, um farol apagado sobre o Bosque de Brumas, e leva para lá quem se afasta do fogo.\n\n**A Tempestade das Agendas** é uma tempestade de pergaminho e sinos. Rola sobre as estradas trovejando horários e convocações, e quem é pego por ela se vê arrastado para longe da trilha, cumprindo compromissos alheios. Leva seus prisioneiros para a Cidadela dos Prazos, onde ninguém dorme e nada termina. Foi ela que levou a mãe de Brisa.\n\n**O Mal do Pântano** sobe das águas paradas, carregado pelos insetos que Fabio estuda. Entra pela garganta e pelo peito, tira a cor dos dias e prende os doentes na Palafita do Lodo. Não se vence com coragem; vence-se com abrigo, com remédio e com tempo.\n\n**O Banquete das Sereias** é uma mesa sem fim, posta à beira das estradas e dos rios, que canta. A comida das Sereias não é veneno: é demais. Quem senta uma vez levanta; quem senta três vezes na mesma semana esquece de levantar, e as águas fecham sobre a cadeira. Moram na Ilha do Banquete. Seu poder cresce com a gordura do óleo fervente: quem resiste ao frito resiste ao canto."
+  },
+  {
+   "titulo": "Os guardiões",
+   "texto": "**O Guardião do Platô** é de pedra cinzenta, alto como três homens, com olhos de brasa. Vigia o Marco Noventa e Dois e Meio. Não luta; observa. Quem sobe os Degraus com firmeza sente o olhar dele pesar menos a cada semana. Dizem que seu selo só racha com ferro-estrela.\n\n**A Barreira dos Noventa**, adiante, é uma muralha viva de sal que se move ao longo da planície. **O Vigia das Terras Altas** é uma ave de pedra que nunca dorme. **O Dragão dos 85** dorme no Monte da Medida, sobre um monte de ouro velho, e ninguém sabe o que acontece quando ele acorda."
+  },
+  {
+   "titulo": "Gente da estrada",
+   "texto": "**Mãe Tarsila, a Herborista de Vau Seco**, é uma mulher pequena e enrugada que vive na vila ao pé da Ponte Partida. Conhece todas as febres do Pântano e as ervas que as quebram. Seus remédios são amargos e funcionam. Ela nunca cobra em moeda: cobra em favores, e sempre lembra de cobrar.\n\n**O Mercador das Brumas** aparece onde ninguém espera, com uma carroça cheia de coisas que ninguém pediu. Vende estradas curtas, mapas suspeitos e favos de mel que consolam tardes ruins. Ysa desconfia que ele tem o pedaço que falta do mapa.\n\n**Os aspirantes** são jovens das vilas que procuram o pesquisador da estrada pedindo para aprender. Fabio os entrevista um a um. Alguns podem, um dia, caminhar com a companhia.\n\n**Os pescadores do Rio Cinza** conhecem o rio melhor do que ninguém e só ajudam quem come do que eles pescam."
+  },
+  {
+   "titulo": "Objetos que importam",
+   "texto": "**A lanterna de Silvester**: brilha conforme a constância da companhia. Tem sete nomes gravados no vidro.\n\n**O mapa de Ysa**: verdadeiro só se medido todo amanhecer. Falta o trecho do Platô.\n\n**O martelo de Dorn**: era do pai dele. Forja talismãs a partir de ferro-estrela.\n\n**Talismãs**: objetos forjados por Dorn que absorvem um golpe e se quebram no lugar da companhia. A mochila leva três.\n\n**Ferro-estrela**: metal que cai do céu onde promessas se cumprem. Três lascas boas permitem forjar a Lâmina do Marco.\n\n**Relíquias**: presentes do mundo que não se gastam e esperam a hora certa. Cada uma tem um lugar na estrada onde faz diferença."
+  },
+  {
+   "titulo": "Como o mundo responde",
+   "texto": "Ao longo da semana, pequenas coisas acontecem: um veio de ferro-estrela achado na encosta, uma estrela que confirma o rumo, um presente de um pescador, uma rachadura no cabo do martelo, uma noite em que a Névoa chega perto demais do fogo. A companhia nem sempre percebe na hora o que cada coisa significa.\n\nAs missões da semana são o caminho: os dias de estrada de Brisa, as medidas de Ysa, o fogo de Dorn, as provisões anotadas no livro de bordo. Os juramentos são as regras: os limites que a curandeira e o Lanterneiro impõem ao corpo, os acordos com a mesa das Sereias. Cumprir um juramento atrai bênçãos. Quebrar um juramento tem preço, mesmo quando a intenção era boa.\n\nSó na Hora do Balanço, quando a semana fecha, tudo se junta. Os pequenos acontecimentos dos dias se amarram numa história, e o desfecho, avanço ou recuo, presente ou perda, é exatamente o que a companhia construiu passo a passo. Nas Marcas do Sal, o mundo não pune nem premia: ele responde."
+  }
+ ],
+ "diario": [
+  {
+   "data": "2026-10-19",
+   "dia": "segunda",
+   "eventos": [
+    {
+     "tipo": "percalco",
+     "texto": "O Mal do Pântano pesou sobre o acampamento. A companhia não pôs o pé na estrada e esperou a chuva passar sob o telhado da estalagem.",
+     "marcas": [
+      "abrigo"
+     ]
+    },
+    {
+     "tipo": "conquista",
+     "texto": "Ysa fixou a posição ao amanhecer, debaixo de chuva. Uma linha nova apareceu no mapa.",
+     "marcas": [
+      "+1 medida no mapa"
+     ]
+    },
+    {
+     "tipo": "encontro",
+     "texto": "Dois aspirantes chegaram à estalagem pedindo uma conversa. Fabio passou a tarde ouvindo cada um.",
+     "marcas": []
+    },
+    {
+     "tipo": "neutro",
+     "texto": "Um favo de mel do Mercador das Brumas consolou a tarde ruim.",
+     "marcas": []
+    }
+   ]
+  },
+  {
+   "data": "2026-10-20",
+   "dia": "terça",
+   "eventos": [
+    {
+     "tipo": "aurora",
+     "texto": "Manhã clara depois de quatro manhãs de névoa. A lanterna de Silvester voltou a iluminar até a curva.",
+     "marcas": []
+    },
+    {
+     "tipo": "conquista",
+     "texto": "Brisa percorreu o trecho inteiro em passo de conversa, sem forçar, e voltou com uma pena de vento presa no cabelo.",
+     "marcas": [
+      "+1 pena de vento"
+     ]
+    },
+    {
+     "tipo": "conquista",
+     "texto": "Ysa fixou a posição ao amanhecer.",
+     "marcas": [
+      "+1 medida no mapa"
+     ]
+    },
+    {
+     "tipo": "presente",
+     "texto": "Pescadores do Rio Cinza cozinharam um caldo de peixe na beira da estrada. A companhia comeu com eles, e o mais velho deu a Fabio uma escama de prata.",
+     "marcas": [
+      "relíquia: Escama do Rio Cinza"
+     ]
+    }
+   ]
+  },
+  {
+   "data": "2026-10-21",
+   "dia": "quarta",
+   "eventos": [
+    {
+     "tipo": "conquista",
+     "texto": "Dorn acendeu a forja por pouco tempo, mas o fogo pegou. Entre as cinzas, uma lasca de ferro-estrela.",
+     "marcas": [
+      "+1 lasca de ferro-estrela"
+     ]
+    },
+    {
+     "tipo": "encontro",
+     "texto": "Fabio desceu até Vau Seco para ver Mãe Tarsila, a herborista. Voltou com um remédio amargo e uma dívida: ela disse que cobraria o favor depois.",
+     "marcas": [
+      "dívida com Mãe Tarsila"
+     ]
+    },
+    {
+     "tipo": "bencao",
+     "texto": "Baião de dois ao meio-dia e pasta de grão à noite: as sementes do vale entraram na bagagem.",
+     "marcas": [
+      "relíquia: Sementes do Vale"
+     ]
+    },
+    {
+     "tipo": "conquista",
+     "texto": "Ysa fixou a posição ao amanhecer.",
+     "marcas": [
+      "+1 medida no mapa"
+     ]
+    },
+    {
+     "tipo": "juramento_quebrado",
+     "texto": "Ao entardecer, num dia em que a forja já tinha trabalhado, Brisa saiu para correr de novo, mais rápido do que a lanterna mandava. No mesmo instante, o cabo do martelo de Dorn trincou.",
+     "marcas": [
+      "juramento quebrado: o preço vem no fim da semana"
+     ]
+    }
+   ]
+  },
+  {
+   "data": "2026-10-22",
+   "dia": "quinta",
+   "eventos": [
+    {
+     "tipo": "bencao",
+     "texto": "Havia uma disputa marcada na arena da vila. Fabio recusou, para não levar o Mal do Pântano aos outros. Silvester apenas assentiu.",
+     "marcas": [
+      "abrigo"
+     ]
+    },
+    {
+     "tipo": "conquista",
+     "texto": "Ysa fixou a posição ao amanhecer.",
+     "marcas": [
+      "+1 medida no mapa"
+     ]
+    },
+    {
+     "tipo": "neutro",
+     "texto": "O remédio de Tarsila começou a agir. A febre cedeu; a tosse ficou.",
+     "marcas": []
+    }
+   ]
+  },
+  {
+   "data": "2026-10-23",
+   "dia": "sexta",
+   "eventos": [
+    {
+     "tipo": "nevoa",
+     "texto": "Noite curta. A Névoa chegou à beira do fogo e apagou metade da lanterna.",
+     "marcas": [
+      "abrigo"
+     ]
+    },
+    {
+     "tipo": "conquista",
+     "texto": "Ysa fixou a posição ao amanhecer, com a lanterna fraca.",
+     "marcas": [
+      "+1 medida no mapa"
+     ]
+    },
+    {
+     "tipo": "presente",
+     "texto": "Num pomar abandonado, frutos de ouro ainda no pé. Ninguém precisou subir.",
+     "marcas": []
+    },
+    {
+     "tipo": "juramento_quebrado",
+     "texto": "Mesmo com a lanterna dizendo vermelho, Fabio pegou o ferro ao fim da tarde e foi à estrada, fora do combinado. Silvester não disse nada. Gravou um risco novo no vidro.",
+     "marcas": [
+      "juramento quebrado: o preço vem no fim da semana"
+     ]
+    }
+   ]
+  },
+  {
+   "data": "2026-10-24",
+   "dia": "sábado",
+   "eventos": [
+    {
+     "tipo": "aurora",
+     "texto": "A Névoa se ergueu de vez. Aurora limpa, a lanterna inteira de novo. Fabio deixou de lado o unguento de casca de salgueiro, que só adormece a dor.",
+     "marcas": []
+    },
+    {
+     "tipo": "neutro",
+     "texto": "Dia de remendar botas e afiar facas. Arroz de lentilha no almoço.",
+     "marcas": []
+    },
+    {
+     "tipo": "bencao",
+     "texto": "A semana inteira longe da mesa das Sereias. Silvester desceu às salinas e recolheu um punhado de Sal Limpo num vidrinho.",
+     "marcas": [
+      "relíquia: Sal Limpo"
+     ]
+    }
+   ]
+  }
+ ],
+ "premissa_atual": null,
+ "premissa_proxima": {
+  "titulo": "A Noite das Lanternas",
+  "n": 3,
+  "semana": "2026-10-26",
+  "simulacao": true,
+  "nota": "Premissa escrita na madrugada de domingo, 25/10, junto com a simulação do fechamento. As metas exatas da semana saem do conselho de domingo; o enredo não depende dos números.",
+  "texto": "## A vila ao pé da ponte\n\nVau Seco é uma vila que existe por causa de uma ponte e sofre por causa dela.\n\nFica numa dobra do vale onde a Estrada de Pedra termina e o Rio Cinza faz uma curva larga antes de se jogar no desfiladeiro. São umas quarenta casas de taipa e pedra, com telhados de palha escura, quintais de mandioca e de ervas, um terreiro de terra batida que serve de arena às quintas e de mercado aos sábados, e uma capelinha sem santo, onde as pessoas deixam lamparinas acesas para quem já foi. Do lado de cá do rio vive a vila. Do lado de lá começa o Bosque de Brumas, e entre os dois, há trinta anos, está a Ponte Partida.\n\nNinguém em Vau Seco fala da ponte com raiva. Falam como se fala de um parente doente. Era uma ponte boa, de pilares de pedra e tabuleiro de madeira de lei, larga o bastante para duas carroças. Numa cheia de fim de outubro, trinta anos atrás, o rio subiu mais do que qualquer um lembrava e arrancou o vão central inteiro. Os pilares ficaram de pé, as duas metades do tabuleiro ficaram penduradas nas margens como braços estendidos, e entre elas ficou um buraco de seis passos sobre a água rápida. A vila tentou consertar três vezes. Três vezes uma cheia levou o remendo.\n\nE há uma coisa que os viajantes não sabem, e que a companhia está prestes a descobrir.\n\n## O favor de Mãe Tarsila\n\nNa segunda de manhã, debaixo de uma chuva fina que vem do mar desde a madrugada, Mãe Tarsila sobe até a Casa do Meio para cobrar o favor. Vem a pé, apoiada no cajado, com o xale molhado nos ombros, e não aceita sentar.\n\n— Nas Marcas do Sal — começa ela, olhando para Fabio —, os mortos não vão para baixo da terra. Vão para cima. Sobem a estrada, como vocês, rumo ao Monte da Medida, onde dizem que o Dragão guarda um lugar para cada um. Mas eles só caminham uma noite por ano: a Noite das Lanternas, a véspera do Dia dos que Foram. Saem das vilas carregando a luz que os vivos acenderam para eles e atravessam o vale. — Ela aponta pela janela, para a silhueta torta lá embaixo. — E o caminho passa pela ponte.\n\nFaz-se silêncio na estalagem. Só a chuva bate nas telhas.\n\n— Faz trinta anos que eles não atravessam. Chegam até a beira do vão, olham a água, e voltam. Ficam rondando Vau Seco, perdidos, sem conseguir subir. E sabe o que acontece com os mortos que não conseguem subir, pesquisador? — Ela não espera resposta. — Viram névoa. A cada ano que passa, a Névoa do vale fica mais grossa. As noites em Vau Seco são curtas, as crianças dormem mal, os velhos não dormem. A Névoa que chegou ao fogo de vocês na sexta não veio da Torre. Veio da minha vila.\n\nEla pousa o cajado no chão de pedra.\n\n— O favor é este: a ponte tem que estar de pé até a noite do próximo domingo. Uma ponte que aguente o peso de quem passa. Vocês têm um ferreiro, uma cartógrafa, uma batedora, um homem que entende de bichos e de febres e um velho com uma lanterna. É mais do que a vila teve em trinta anos.\n\nNinguém responde de imediato. Então Silvester, que estava sentado no canto com a lanterna no colo, levanta-se devagar.\n\n— A companhia aceita — diz. A voz dele está diferente, mais baixa, como se viesse de muito longe. — Mas eu não atravesso a ponte na Noite das Lanternas. Isso eu não faço.\n\nE sai para a chuva sem explicar.\n\n## A semana que vem\n\nO céu desta semana não vai ajudar, e Ysa já sabe disso. Na noite de segunda sobe a **lua cheia**, a Lua do Caçador, enorme e amarela sobre as salinas. É uma lua bonita e traiçoeira: ilumina o trabalho até tarde e convida a trabalhar demais. Na terça a chuva afina; na quarta o céu dá uma trégua, nublado e quieto, o único dia seco antes da tempestade. Porque na **quinta e na sexta vem a cheia**: os pescadores do Rio Cinza já recolheram os barcos, e o velho Abiah mandou dizer que a água vai subir dois palmos acima das pedras do vau. Qualquer andaime armado no vão até quarta-feira vai ter que aguentar a força do rio. Depois, no fim de semana, o vento vira e chega o **sol de ferro**: sábado quente como uma bigorna, o ar tremendo sobre as salinas, e é justo no sábado à noite que Vau Seco faz a Festa das Lanternas, a véspera da véspera.\n\nE no domingo, ao escurecer, os mortos saem.\n\n## A companhia, nesta semana\n\n**Brisa** acorda na segunda com a Febre do Orgulho nas pernas. Não é dor: é peso. Cada passo dela parece carregar os passos a mais que deu na semana passada. Na lua cheia a febre esquenta, e Brisa, que nunca pediu ajuda a ninguém, pede a Ysa que confira se tem alguma coisa errada com as pernas dela. Mãe Tarsila foi clara: a Febre do Orgulho sai sozinha se a companhia passar uma semana inteira dentro da lei da lanterna. Mas se a companhia exagerar de novo, ela cresce, e uma febre dessas, crescida, já tirou batedoras melhores da estrada para sempre. Brisa sabe que a ponte precisa dela. Precisa carregar madeira e pedra de Vau Seco até as margens, todos os dias. E precisa fazer isso sem correr.\n\n**Dorn** está sem o martelo do pai. Os pedaços estão embrulhados num pano dentro da forja, e ele ainda não teve coragem de abrir. Na segunda de manhã vai acontecer a Prova do Fogo: Silvester pediu que Dorn acenda a forja e trabalhe ferro pesado pela primeira vez desde a febre, para que todos saibam o que os braços dele aguentam agora. Se a prova for boa, Dorn passa a semana forjando os pregos e as braçadeiras de ferro-estrela que vão segurar o vão novo da ponte. Esta semana o trabalho é mais pesado do que o da semana passada, bem mais: uma ponte não se faz com sessões tímidas. Ele precisa de ferro bom, e cada sessão de forja do plano cumprida pode render uma lasca. Com três lascas, a Lâmina do Marco deixa de ser um sonho. Mas Dorn também sabe o que aconteceu na quarta passada, quando alguém foi à estrada num dia de forja. Ele não quer perder mais nada.\n\n**Ysa** tem a tarefa mais estranha. Para saber onde armar o andaime, precisa encontrar o desenho da ponte antiga, e o desenho está no mapa, na camada mais funda, aquela que só aparece quando ela fixa a posição todo amanhecer, sem falhar. Quatro medidas ao amanhecer, diz ela, e o mapa mostra onde estavam as vigas originais e qual pilar aguenta a cheia. Ysa também está inquieta por outro motivo: o traço do Platô que apareceu sozinho no sábado continua lá, e na lua cheia ela jura que ele se mexeu.\n\n**Fabio** tem que decidir sobre os aspirantes. A moça de Vau Seco chama-se Lia e é neta de Mãe Tarsila: conhece cada pedra da vila e quer ajudar na ponte. O rapaz da costa chama-se Teo, desenha insetos com uma precisão que deixou Fabio impressionado, e diz que sabe calcular o peso que uma viga aguenta. Os dois pedem para trabalhar com a companhia esta semana. Aceitar significa mais mãos e mais olhos. Também significa mais responsabilidade, mais bocas para alimentar, e uma escolha que vai durar mais que uma ponte. E há a tosse, ainda presa na garganta, e o remédio amargo de Tarsila, que tem que ser tomado até o fim, mesmo depois de ele se sentir bem. *Principalmente* depois de ele se sentir bem.\n\n**Silvester** passa os dias calado, olhando a ponte de longe. Ysa o vê, na madrugada de segunda, de pé no muro da estalagem, com a lanterna erguida na direção do vão, como quem procura alguém do outro lado. Os sete nomes no vidro brilham mais forte quando ele faz isso. O risco novo, logo abaixo, também.\n\n## O que espreita\n\nA **Névoa** desta semana é a de Vau Seco, feita de trinta anos de mortos sem caminho. Ela fica mais forte nas noites curtas e vai tentar entrar no acampamento todas as noites, sobretudo nas de lua cheia, quando ninguém tem vontade de dormir. Cada noite mal dormida é uma rachadura por onde ela entra.\n\nO **Banquete das Sereias** chega no sábado. Na Festa das Lanternas, as Sereias armam a mesa no terreiro de Vau Seco, toda iluminada, com pastéis, bolinhos, torresmo e frituras douradas que cantam no óleo. É a noite da festa, e a lei antiga permite uma cadeira: uma refeição livre, sentada e inteira. A mesa, porém, fica posta a semana toda na beira do rio, e quem já sentou duas vezes na semana ouve o canto mais alto. O Sal Limpo que Silvester guardou espanta o canto uma vez, só uma.\n\nE o **Rio Cinza** não é inimigo, mas não perdoa. Na quinta e na sexta ele vai testar tudo o que a companhia construir.\n\n## O que a semana pede\n\nNas Marcas do Sal, a ponte não se ergue por desejo. Ergue-se por trabalho contado:\n\n- **O fogo de Dorn**: as sessões de forja do plano. Cada uma cumprida firma os pregos de ferro-estrela e pode render uma lasca para a Lâmina.\n- **Os dias de estrada**: madeira e pedra carregadas de Vau Seco até a ponte. Brisa conta os dias, e cada dia ativo leva uma viga.\n- **As medidas de Ysa**: a posição fixada ao amanhecer, antes de comer. Quatro medidas revelam o desenho da ponte antiga.\n- **As provisões do livro de bordo**: o almoço e o lanche da tarde anotados. Quem trabalha na ponte precisa comer, e o que não está no livro, para o mundo, não existe.\n\nE há os **juramentos**, que esta semana pesam mais:\n\n- **A lei da lanterna**: manhã vermelha é manhã de caminhada curta, e o que não está no combinado não se soma por conta própria. Se a companhia cumprir a lei a semana inteira, a Febre do Orgulho deixa Brisa. Se quebrar, a febre cresce, e alguma coisa de novo se parte.\n- **A mesa das Sereias**: no máximo duas frituras na semana, e o Banquete de sábado conta como uma cadeira só.\n- **As bênçãos possíveis**: peixe do rio, o povo de Abiah cozinha toda semana e retribui; o feijão, a lentilha e o grão que alimentam os trabalhadores; e o descanso honesto, quando o corpo pede.\n\n## Como a semana pode terminar\n\nNinguém sabe ainda como a ponte vai estar no domingo à noite. O que se sabe é o que cada caminho custa:\n\nSe a companhia cumprir **tudo o que a semana pede**, a ponte fica de pé antes da cheia, e na Noite das Lanternas os mortos de Vau Seco atravessam o vão pela primeira vez em trinta anos. Dizem que, quando isso acontece, os que sobem deixam um presente para quem construiu o caminho. E talvez Silvester encontre coragem para atravessar com eles um trecho, por alguém cujo nome está gravado no vidro.\n\nSe o **capítulo se concluir**, a ponte aguenta: os mortos atravessam, a dívida com Mãe Tarsila se paga, e a companhia segue depois deles para dentro do Bosque de Brumas.\n\nSe a semana **ficar pela metade**, a ponte fica pela metade. Os mortos chegam à beira do vão, olham a água e voltam, e a Névoa de Vau Seco engrossa por mais um ano. A companhia fica na vila, devendo.\n\nSe a semana **for fraca**, a cheia de quinta leva o andaime, e alguém se machuca tentando segurá-lo.\n\nE se a semana **for vazia**, ou a companhia **quebrar de novo a lei da lanterna** com a Febre do Orgulho já instalada, a Noite das Lanternas encontra o vão aberto. Os mortos se espalham pela vila, a Névoa fica mais forte do que nunca, e ao amanhecer de segunda-feira alguém da companhia terá atravessado a ponte do jeito errado, para o lado de lá, na direção da Torre.\n\nSilvester, ao ouvir isso de Mãe Tarsila, disse uma única frase antes de sair para a chuva:\n\n— Ponte não se faz em um dia. Faz-se em sete, ou não se faz.",
+  "minutos": 10
+ },
+ "projecao": {
+  "tier": "sustenta",
+  "ok": 3,
+  "n": 5,
+  "efeitos": [
+   "Relíquia ganha: Escama do Rio Cinza.",
+   "Relíquia ganha: Sementes do Vale.",
+   "O talismã Martelo de Dorn partiu-se: a lei da lanterna foi quebrada.",
+   "Maldição: a Febre do Orgulho pegou Brisa. Sai com uma semana inteira dentro da lei da lanterna.",
+   "Relíquia ganha: Sal Limpo."
+  ],
+  "cena": {
+   "tier": "sustenta",
+   "etapa_antes": 1,
+   "etapa_depois": 1,
+   "arco": "I",
+   "clima": "tempestade",
+   "lua": null,
+   "companhia": {
+    "brisa": "ativa",
+    "dorn": "ativa",
+    "ysa": "ativa"
+   },
+   "afetado": null,
+   "retorna": null,
+   "itens": [],
+   "talisma": true
+  },
+  "depois": {
+   "etapa": 1,
+   "companhia": {
+    "brisa": "ferida",
+    "dorn": "ativa",
+    "ysa": "ativa"
+   },
+   "mochila": [],
+   "reliquias": [
+    "escama_rio_cinza",
+    "sementes_do_vale",
+    "sal_limpo"
+   ],
+   "maldicoes": [
+    "febre_do_orgulho"
+   ],
+   "materiais": {
+    "rumo": 5,
+    "pena": 1,
+    "ferro": 1
+   }
+  },
+  "falta_para_avanco": 1
+ },
+ "encerramento": {
+  "titulo": "A Estrada de Pedra",
+  "subtitulo": "O preço da fome",
+  "n": 2,
+  "simulacao": true,
+  "nota": "Simulação escrita na madrugada de domingo, 25/10, com os dados até sábado. O fechamento oficial é hoje à noite e pode mudar o desfecho.",
+  "texto": "## I. A chuva na estalagem\n\nA semana começou com a companhia presa debaixo de um telhado.\n\nA estalagem ficava no terceiro lance da Estrada de Pedra, uma construção baixa de pedra clara e telhas cor de ferrugem que os viajantes chamavam de Casa do Meio, porque estava exatamente a meio caminho entre a Estalagem do Retorno e a Ponte Partida. Na segunda de manhã a chuva vinha do mar em cortinas, uma atrás da outra, e o Mal do Pântano, que rondava a companhia desde a semana anterior, resolveu ficar. Fabio acordou com a garganta em brasa e o peito pesado, e Silvester, olhando a lanterna, viu a chama encolhida no fundo do vidro como um animal com frio.\n\n— Hoje ninguém anda — disse o Lanterneiro, e ninguém discutiu.\n\nHá uma coisa que só quem caminha nas Marcas do Sal entende: parar também é um jeito de seguir. A estrada não se apaga por um dia de chuva bem dormido; apaga-se pela soma de dias fingidos. Silvester ensinou isso a muitas companhias, e quase todas aprenderam tarde.\n\nYsa não parou. Antes de o dia clarear, saiu para o pátio com o capuz enfiado até os olhos, ergueu o astrolábio de latão para o pedaço de céu que a chuva deixava ver e fixou a posição. Voltou encharcada, sentou-se perto da lareira e marcou um ponto no mapa. Uma linha nova, fina como cabelo, apareceu ligando a Casa do Meio à curva onde começava a descida para a ponte.\n\n— Estamos aqui — disse ela, sem tirar os olhos do papel. — Exatamente aqui. É bom saber.\n\nÀ tarde chegaram os aspirantes. Eram dois: uma moça de Vau Seco, de olhos atentos e mãos de quem trabalha com terra, e um rapaz da costa, magro, com um caderno debaixo do braço onde tinha desenhado, com uma paciência quase dolorosa, as asas de doze tipos de insetos do pântano. Tinham ouvido nas vilas que o pesquisador da estrada procurava aprendizes, e caminharam meio dia na chuva para uma conversa. Fabio os recebeu na mesa do canto, perto da janela, com a voz rouca e uma caneca de chá de gengibre. Perguntou o que tinham lido, o que não entendiam, o que gostariam de descobrir antes de morrer. Ouviu muito mais do que falou. Ysa anotou os nomes no livro de bordo e, ao lado deles, uma palavra só: *talvez*.\n\nNo fim da tarde, quando a febre subiu de novo e a chuva parecia não ter fundo, o Mercador das Brumas apareceu na porta da estalagem como aparecia sempre, sem barulho de rodas. Vendeu a Fabio um favo de mel embrulhado em folha de bananeira. Fabio comeu de pé, olhando a chuva. Não resolveu nada, mas a tarde ficou um pouco menos cinza. Ysa, que desconfiava do Mercador mais do que de qualquer criatura das Marcas, reparou que ele demorou os olhos no mapa aberto sobre a mesa, exatamente na borda rasgada onde deveria estar o Platô.\n\n## II. A manhã clara e a escama de prata\n\nNa terça, o mundo se lembrou de que tinha sol.\n\nDepois de quatro manhãs de névoa, a luz entrou pelas frestas da Casa do Meio como uma notícia boa. A lanterna de Silvester, pendurada no gancho da porta, voltou a iluminar até a curva da estrada. O Lanterneiro olhou para ela, depois para Fabio, e permitiu-se meio sorriso.\n\n— Um trecho — disse. — Em passo de conversa. Nem um passo a mais.\n\nBrisa foi na frente, como sempre, mas dessa vez obedeceu. Andou o trecho inteiro sem correr, conversando com Dorn sobre a melhor madeira para cabo de martelo, parando para mostrar a Fabio um ninho de corruíra num buraco do muro de pedra. Voltou ao meio da tarde com uma pena de vento presa no cabelo, uma pena cinza-azulada que só se encontra no chão quando o vento está contente com quem passou. Guardou-a no bolso de dentro do casaco sem dizer nada, mas passou o resto do dia tocando nela.\n\nFoi também na terça que conheceram os pescadores do Rio Cinza. Estavam acampados na beira da estrada, onde um braço do rio encosta nas pedras, três homens e uma mulher de pele queimada de sol, cozinhando um caldo de peixe num caldeirão de ferro preto. Chamaram a companhia para comer. Nas Marcas do Sal, quem recusa a comida do rio nunca mais atravessa o rio em paz, e Silvester sabia disso. Sentaram-se no chão, comeram de colher de pau, ouviram histórias de cheias antigas e de peixes que falam.\n\nO mais velho dos pescadores, um homem chamado Abiah, de barba branca e dedos tortos, observou Fabio comer até o fim. Depois tirou do bolso uma escama de prata do tamanho de uma moeda grande e a pôs na mão dele.\n\n— É do Peixe-Velho — disse. — Ele mora no Vau, lá embaixo, depois do bosque. Quando vocês chegarem lá, a escama vai saber onde pisar. O rio respeita quem comeu do rio.\n\nYsa anotou: *relíquia: Escama do Rio Cinza. Lugar: o Vau.* E desenhou, ao lado, um peixe pequeno.\n\n## III. A forja, a curandeira e a trinca\n\nNa quarta, Dorn acendeu a forja.\n\nFoi uma sessão curta, quase tímida: a caixa de ferro aberta no pátio da Casa do Meio, o fole de couro arfando, o martelo do pai subindo e descendo sobre um pedaço de ferro comum. Dorn trabalhou pouco, menos do que gostaria, porque Silvester tinha dito que seria pouco. Mas o fogo pegou, e para Dorn isso era tudo. Quando esvaziou a caixa, achou entre as cinzas uma lasca escura que brilhava por dentro como céu de madrugada. Ferro-estrela. A primeira em muitas semanas. Segurou-a na palma aberta por um longo tempo, sem dizer nada, e depois a guardou numa bolsinha de couro presa ao cinto, onde tinha espaço para três.\n\n— Uma — disse, para ninguém.\n\nEnquanto Dorn trabalhava, Fabio desceu a encosta até Vau Seco. A febre não tinha ido embora; tinha só mudado de lugar, descido da garganta para o peito, e Silvester foi categórico: aquilo era coisa para a herborista. Mãe Tarsila morava numa casa de taipa coberta de trepadeiras na entrada da vila, com um jardim de ervas que cheirava a hortelã, arruda e terra molhada. Era pequena, enrugada, com olhos que pareciam enxergar através das pessoas e um modo de falar que não admitia réplica. Auscultou o peito de Fabio com a orelha encostada, apertou-lhe o pulso, olhou a língua. Depois foi até uma prateleira cheia de potes de barro e voltou com um frasco de líquido escuro.\n\n— Amargo. Três vezes ao dia, até acabar, mesmo que você se sinta bem antes. Principalmente se se sentir bem antes. — Ela segurou o frasco um instante a mais antes de entregá-lo. — Não cobro em moeda, pesquisador. Cobro depois. E eu sempre lembro.\n\nFabio voltou à Casa do Meio com o frasco no bolso e uma dívida no peito. No caminho, a filha de um lavrador ofereceu à companhia um prato de baião de dois, e à noite Ysa preparou uma pasta de grão com azeite que tinha comprado em Vau Seco. As sementes que sobraram foram para um saquinho de pano que Ysa amarrou na bagagem. *Sementes do vale*, anotou. *Curam o que a estrada fere, uma vez.*\n\nE então, ao entardecer, aconteceu a primeira trinca.\n\nBrisa estava inquieta desde a manhã. O sol da terça tinha devolvido a ela a vontade de correr, e o pouco da manhã de quarta, um trecho miúdo, só serviu para acendê-la. Quando o céu ficou laranja sobre as salinas, ela olhou para Fabio, Fabio olhou para a estrada, e os dois saíram. Não estava no combinado. A forja já tinha trabalhado naquele dia, e a lei de Silvester era clara: dia de forja não é dia de estrada. Brisa correu mais rápido do que a lanterna mandava, com Fabio atrás, e por meia hora foi a melhor sensação do mundo.\n\nNa Casa do Meio, no mesmo instante, ouviu-se um estalo seco. Dorn, que limpava o martelo do pai junto ao fogo, ergueu-o contra a luz e viu uma rachadura fina correndo pelo cabo de freixo, do punho até a cabeça.\n\nQuando Brisa e Fabio voltaram, suados e felizes, Dorn não disse nada. Apenas mostrou o cabo. E não olhou para Brisa. Olhou para Fabio.\n\n## IV. A arena recusada\n\nNa quinta, havia uma disputa marcada na arena da vila.\n\nEm Vau Seco, toda quinta ao entardecer, os jovens se reúnem num terreiro de terra batida para uma espécie de batalha sem armas, corrida e empurrão e bola de couro, que os mais velhos assistem sentados nos muros. Fabio gostava daquilo mais do que de quase tudo nas Marcas. Mas o Mal do Pântano ainda estava no peito dele, e Mãe Tarsila tinha avisado que a febre passa de um para outro no suor das disputas.\n\nEle não foi. Mandou um recado pelo filho do lavrador: o pesquisador não joga esta semana, para não espalhar o mal. Ficou na Casa do Meio tomando o remédio amargo e ouvindo, de longe, os gritos da arena.\n\nSilvester, sentado à porta com a lanterna no colo, não disse nada. Apenas assentiu, devagar, como quem confirma uma suspeita boa. À noite, a febre cedeu pela primeira vez em dez dias. A tosse ficou, mas a cor voltou ao rosto de Fabio, e Ysa, ao fixar a posição no amanhecer seguinte, notou que a linha do mapa estava mais nítida.\n\n## V. A Névoa e o risco no vidro\n\nA sexta trouxe a pior noite da semana.\n\nNinguém soube explicar por quê. Talvez fosse o calor que começava a subir das salinas, talvez fosse o remédio, talvez fosse a cabeça de Fabio, que não parava. A verdade é que a companhia mal dormiu, e a Névoa, que sente noites curtas a léguas de distância, desceu do vale e chegou até a beira do fogo. Quando Silvester acordou de madrugada, a lanterna estava pela metade, e o mapa de Ysa, aberto sobre a mesa, tinha uma mancha cinzenta bem em cima da Casa do Meio.\n\nO dia amanheceu vermelho na lanterna. Na lei do Lanterneiro, manhã vermelha é manhã de caminhada curta e nada mais. Ysa fixou a posição mesmo assim, com a luz fraca, e a companhia passou o dia devagar. No meio da tarde, num pomar abandonado atrás da estalagem, Brisa achou frutos de ouro ainda no pé, um melão rajado e mangas que ninguém tinha colhido, e todos comeram sentados na grama, em silêncio, com o caldo doce escorrendo pelos dedos.\n\nE ainda assim, no fim da tarde, Fabio pegou o ferro.\n\nTalvez porque se sentisse melhor, ou porque o pomar tivesse devolvido alguma força, ou porque a Fome do Caminho é exatamente isto: uma voz que diz que hoje está bom, que hoje dá, que amanhã a gente vê. Ele foi até a caixa de Dorn, ergueu os ferros pequenos, trabalhou os braços, e depois saiu para um trecho curto de estrada. Não estava no combinado. A lanterna dizia vermelho.\n\nSilvester não o impediu. Ficou sentado à porta, olhando. Quando Fabio voltou, o Lanterneiro tirou do bolso uma faca pequena e gravou no vidro da lanterna, logo abaixo dos sete nomes, um risco curto. Fabio viu. Sentou-se ao lado dele.\n\n— O que é isso?\n\nSilvester demorou a responder. A chama dentro do vidro tremia.\n\n— O primeiro nome aqui é Aurel — disse, por fim, tocando com a unha a palavra gravada no alto. — Aurel corria mais do que todos nós. Nunca economizava. Quando a lanterna dizia vermelho, ele dizia que a lanterna exagerava. — Fez uma pausa. — Um dia ela não exagerou.\n\nNão disse mais nada. Fabio também não. Ficaram os dois olhando a estrada escurecer, e o risco novo no vidro brilhava fraco à luz da chama.\n\n## VI. A aurora limpa\n\nNo sábado, a Névoa se ergueu de vez.\n\nFoi uma aurora daquelas que as Marcas do Sal guardam para os dias que merecem: céu lavado, ar fino, a lanterna inteira e brilhante no gancho da porta como se nunca tivesse fraquejado. Fabio acordou sem febre, sem dor, com a tosse recolhida na garganta. Pegou o pote de unguento de casca de salgueiro, que usava nas noites piores para adormecer a dor das costas, e o guardou no fundo da bagagem. Não precisava mais dele, e Mãe Tarsila tinha dito que unguento que adormece a dor também adormece o aviso.\n\nFoi um dia de remendar botas, afiar facas, lavar roupa na água fria do rio. Dorn passou horas lixando o cabo trincado do martelo, tentando decidir se dava para salvar. Brisa dormiu até tarde, coisa que nunca fazia. Ysa sentou-se ao sol com o mapa aberto e contou os pontos da semana: cinco medidas ao amanhecer, uma em cada dia em que o céu permitiu. A linha da Casa do Meio até a ponte estava firme, nítida, quase em relevo. E, na borda rasgada do Platô, uma coisa nova: um traço pequeno, que ela não tinha desenhado, apareceu sozinho. Uma linha de degrau.\n\n— O mapa está lembrando — disse ela, em voz baixa. — Quando a gente mede todo dia, ele lembra.\n\nNo almoço comeram arroz com lentilhas e cebola tostada, e à tarde a companhia ficou sentada no muro da estalagem vendo, lá embaixo, a silhueta torta da Ponte Partida contra o rio.\n\n## VII. A Hora do Balanço\n\nNo domingo, os sinos das vilas tocaram a Hora do Balanço, e o mundo respondeu à semana.\n\nA companhia sustentou a estrada. Não avançou até a Ponte Partida; ela continua lá embaixo, à vista, a meio dia de caminhada. Mas também não recuou um passo, apesar da febre, da chuva, da noite em que a Névoa chegou ao fogo. O Mal do Pântano foi enfrentado com abrigo, com remédio e com prudência, e a estrada não cobrou nada por isso. Nas Marcas do Sal, a doença não é culpa: é tempo.\n\nO que cobrou foi a fome.\n\nPrimeiro o martelo. Dorn tentou salvar o cabo, mas na manhã de domingo, quando foi erguê-lo, a trinca abriu de vez e a cabeça de ferro caiu no chão do pátio com um som de sino rachado. O talismã que ele carregava há duas semanas, forjado com esse martelo, partiu-se junto, em dois pedaços limpos. Ninguém se feriu. O talismã fez o que talismãs fazem: quebrou no lugar da companhia. Mas Dorn ficou muito tempo de joelhos olhando os pedaços.\n\nDepois a febre que não era do Pântano. Brisa acordou com as pernas quentes e pesadas, uma febre estranha que não subia para a cabeça nem descia para o peito, ficava só nos músculos, como se o corpo dela tivesse guardado cada passo dado além da conta. Mãe Tarsila, que subiu até a Casa do Meio no meio da manhã para ver como estava o pesquisador, olhou as pernas de Brisa e franziu a testa.\n\n— Isso não é coisa minha — disse. — Isso é a Febre do Orgulho. Pega em quem anda além da lanterna. Sai sozinha, se a companhia andar uma semana inteira dentro da lei. Senão, cresce.\n\nMas a semana também deixou presentes, e eles ficam. A Escama do Rio Cinza, que vai saber onde pisar quando a companhia chegar ao Vau. As Sementes do Vale, que curam uma ferida da estrada. O Sal Limpo, que Silvester recolheu das salinas no sábado e guardou num vidrinho, porque a companhia passou a semana inteira sem sentar à mesa das Sereias, e quem resiste ao frito uma semana inteira ganha um punhado de sal que espanta o canto delas uma vez. Uma lasca de ferro-estrela na bolsinha de Dorn. Uma pena de vento no bolso de Brisa. Cinco pontos novos no mapa, e um traço do Platô que ninguém desenhou.\n\nE uma dívida. Antes de descer de volta para Vau Seco, Mãe Tarsila parou na porta, apoiada no cajado, e olhou para Fabio.\n\n— Lembra do favor, pesquisador? Vou cobrar esta semana. A lua cheia vem na segunda, a cheia do rio vem na quinta, e a Noite das Lanternas vem no domingo. A ponte tem que estar de pé até lá. Você vai entender por quê.\n\nE foi embora sem esperar resposta. Silvester, que ouvia da porta com a lanterna no colo, ficou de repente muito quieto. Ysa reparou que ele passou a semana inteira olhando para a ponte, mas só naquele momento olhou para os sete nomes no vidro.",
+  "minutos": 14,
+  "tier": "sustenta",
+  "outros_desfechos": [
+   "avanco"
+  ]
+ }
 }

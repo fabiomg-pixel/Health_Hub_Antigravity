@@ -25,9 +25,11 @@ Memória de conversa não vale: o disco vale.
    `historia/livro/`, desenho `propostas/gamificacao_rpg.md`. XP só por comportamento, o peso nunca dá XP, sem
    dado não pune. **Estalagem** (descanso que conta): o Silvester propõe; só depois do "sim" do Fabio rode
    `./estalagem.py AAAA-MM-DD "motivo"`, `./publicar_jornada.sh` e commite `jornada_eventos.json`.
-   **A história é uma aventura (24/10):** `historia.py` (canon `historia/mundo.json`, estado `historia/estado.json`) resolve
-   a semana fechada pelo desempenho: etapa, companhia, talismãs, crise. Nunca escreva capítulos à mão nem recite o
-   dia do Fabio; o bot só anuncia o que o motor decidiu.
+   **A história é uma aventura (24 e 25/10):** `historia.py` (canon `historia/mundo.json` e `historia/biblia.md`, estado
+   `historia/estado.json`) decide o desfecho da semana pelo desempenho e pelos eventos do diário de bordo
+   (`historia/eventos_dia.json`, registrados todo dia com `./evento_aventura.py`). Os textos longos (encerramento da
+   semana e premissa da próxima, em `historia/escritos/`) são escritos só pela rotina `rotinas/capitulo_semana.md`,
+   no domingo à noite, seguindo o desfecho do motor. Nunca recite o dia do Fabio na história.
 9. **O que o Fabio conta no Telegram vale como registro do site** (pedido dele, 16/10). Refeição (foto ou
    texto), treino ou jogo que ele fez, sintoma ou dor: grave na hora com `./registrar_no_painel.py`
    (`refeicao --refeicao Café|Almoço|Lanche|Jantar|Outro`, `treino` ou `observacao`; `--data` do dia em que

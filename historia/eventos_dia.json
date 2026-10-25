@@ -1,0 +1,180 @@
+{
+ "_nota": "Diário de bordo da aventura: o que acontece por baixo, dia a dia, antes de a semana fechar. Cada evento tem um efeito que o historia.py aplica na Hora do Balanço (fim da semana). Escrito pela avaliação da noite (bot), a partir do dia real: o que foi cumprido, o que foi quebrado, o que o mundo deu. Tipos: conquista, presente, percalco, juramento_quebrado, bencao, encontro, nevoa, aurora, neutro. Efeitos possíveis: ferro (lascas de ferro-estrela), rumo (medidas de Ysa), pena (penas de vento de Brisa), reliquia (id em mundo.json), juramento (limite|sereias) com consequencia (trinca|febre_do_orgulho|sal), npc, divida, abrigo, fio.",
+ "eventos": [
+  {
+   "data": "2026-10-19",
+   "tipo": "percalco",
+   "texto": "O Mal do Pântano pesou sobre o acampamento. A companhia não pôs o pé na estrada e esperou a chuva passar sob o telhado da estalagem.",
+   "efeito": {
+    "abrigo": true
+   }
+  },
+  {
+   "data": "2026-10-19",
+   "tipo": "conquista",
+   "texto": "Ysa fixou a posição ao amanhecer, debaixo de chuva. Uma linha nova apareceu no mapa.",
+   "efeito": {
+    "rumo": 1
+   }
+  },
+  {
+   "data": "2026-10-19",
+   "tipo": "encontro",
+   "texto": "Dois aspirantes chegaram à estalagem pedindo uma conversa. Fabio passou a tarde ouvindo cada um.",
+   "efeito": {
+    "fio": "aspirantes"
+   }
+  },
+  {
+   "data": "2026-10-19",
+   "tipo": "neutro",
+   "texto": "Um favo de mel do Mercador das Brumas consolou a tarde ruim.",
+   "efeito": {}
+  },
+  {
+   "data": "2026-10-20",
+   "tipo": "aurora",
+   "texto": "Manhã clara depois de quatro manhãs de névoa. A lanterna de Silvester voltou a iluminar até a curva.",
+   "efeito": {}
+  },
+  {
+   "data": "2026-10-20",
+   "tipo": "conquista",
+   "texto": "Brisa percorreu o trecho inteiro em passo de conversa, sem forçar, e voltou com uma pena de vento presa no cabelo.",
+   "efeito": {
+    "pena": 1
+   }
+  },
+  {
+   "data": "2026-10-20",
+   "tipo": "conquista",
+   "texto": "Ysa fixou a posição ao amanhecer.",
+   "efeito": {
+    "rumo": 1
+   }
+  },
+  {
+   "data": "2026-10-20",
+   "tipo": "presente",
+   "texto": "Pescadores do Rio Cinza cozinharam um caldo de peixe na beira da estrada. A companhia comeu com eles, e o mais velho deu a Fabio uma escama de prata.",
+   "efeito": {
+    "reliquia": "escama_rio_cinza"
+   }
+  },
+  {
+   "data": "2026-10-21",
+   "tipo": "conquista",
+   "texto": "Dorn acendeu a forja por pouco tempo, mas o fogo pegou. Entre as cinzas, uma lasca de ferro-estrela.",
+   "efeito": {
+    "ferro": 1
+   }
+  },
+  {
+   "data": "2026-10-21",
+   "tipo": "encontro",
+   "texto": "Fabio desceu até Vau Seco para ver Mãe Tarsila, a herborista. Voltou com um remédio amargo e uma dívida: ela disse que cobraria o favor depois.",
+   "efeito": {
+    "npc": "tarsila",
+    "divida": 1
+   }
+  },
+  {
+   "data": "2026-10-21",
+   "tipo": "bencao",
+   "texto": "Baião de dois ao meio-dia e pasta de grão à noite: as sementes do vale entraram na bagagem.",
+   "efeito": {
+    "reliquia": "sementes_do_vale"
+   }
+  },
+  {
+   "data": "2026-10-21",
+   "tipo": "conquista",
+   "texto": "Ysa fixou a posição ao amanhecer.",
+   "efeito": {
+    "rumo": 1
+   }
+  },
+  {
+   "data": "2026-10-21",
+   "tipo": "juramento_quebrado",
+   "texto": "Ao entardecer, num dia em que a forja já tinha trabalhado, Brisa saiu para correr de novo, mais rápido do que a lanterna mandava. No mesmo instante, o cabo do martelo de Dorn trincou.",
+   "efeito": {
+    "juramento": "limite",
+    "consequencia": "trinca"
+   }
+  },
+  {
+   "data": "2026-10-22",
+   "tipo": "bencao",
+   "texto": "Havia uma disputa marcada na arena da vila. Fabio recusou, para não levar o Mal do Pântano aos outros. Silvester apenas assentiu.",
+   "efeito": {
+    "abrigo": true
+   }
+  },
+  {
+   "data": "2026-10-22",
+   "tipo": "conquista",
+   "texto": "Ysa fixou a posição ao amanhecer.",
+   "efeito": {
+    "rumo": 1
+   }
+  },
+  {
+   "data": "2026-10-22",
+   "tipo": "neutro",
+   "texto": "O remédio de Tarsila começou a agir. A febre cedeu; a tosse ficou.",
+   "efeito": {}
+  },
+  {
+   "data": "2026-10-23",
+   "tipo": "nevoa",
+   "texto": "Noite curta. A Névoa chegou à beira do fogo e apagou metade da lanterna.",
+   "efeito": {
+    "abrigo": true
+   }
+  },
+  {
+   "data": "2026-10-23",
+   "tipo": "conquista",
+   "texto": "Ysa fixou a posição ao amanhecer, com a lanterna fraca.",
+   "efeito": {
+    "rumo": 1
+   }
+  },
+  {
+   "data": "2026-10-23",
+   "tipo": "presente",
+   "texto": "Num pomar abandonado, frutos de ouro ainda no pé. Ninguém precisou subir.",
+   "efeito": {}
+  },
+  {
+   "data": "2026-10-23",
+   "tipo": "juramento_quebrado",
+   "texto": "Mesmo com a lanterna dizendo vermelho, Fabio pegou o ferro ao fim da tarde e foi à estrada, fora do combinado. Silvester não disse nada. Gravou um risco novo no vidro.",
+   "efeito": {
+    "juramento": "limite",
+    "consequencia": "febre_do_orgulho"
+   }
+  },
+  {
+   "data": "2026-10-24",
+   "tipo": "aurora",
+   "texto": "A Névoa se ergueu de vez. Aurora limpa, a lanterna inteira de novo. Fabio deixou de lado o unguento de casca de salgueiro, que só adormece a dor.",
+   "efeito": {}
+  },
+  {
+   "data": "2026-10-24",
+   "tipo": "neutro",
+   "texto": "Dia de remendar botas e afiar facas. Arroz de lentilha no almoço.",
+   "efeito": {}
+  },
+  {
+   "data": "2026-10-24",
+   "tipo": "bencao",
+   "texto": "A semana inteira longe da mesa das Sereias. Silvester desceu às salinas e recolheu um punhado de Sal Limpo num vidrinho.",
+   "efeito": {
+    "reliquia": "sal_limpo"
+   }
+  }
+ ]
+}

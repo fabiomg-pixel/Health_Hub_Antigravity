@@ -127,6 +127,22 @@ def estado_novo():
 
 
 E = ler('historia/estado.json') or estado_novo()
+for _k, _v in (('materiais', {}), ('reliquias', []), ('maldicoes', []), ('dividas', [])): E.setdefault(_k, _v)
+EVD = sorted(ler('historia/eventos_dia.json', {}).get('eventos', []), key=lambda e: e['data'])
+NIVEIS = ['crise', 'reves', 'sustenta', 'avanco', 'triunfo']
+
+
+def eventos_da_semana(segunda):
+    fim = segunda + dt.timedelta(days=6)
+    return [e for e in EVD if segunda.isoformat() <= e['data'] <= fim.isoformat()]
+
+
+def maldicao_ativa(mid, antes_de=None):
+    return next((m for m in E['maldicoes'] if m['id'] == mid and (antes_de is None or m['desde'] < antes_de)), None)
+
+
+def alvos_amaldicoados():
+    return {m.get('alvo') for m in E['maldicoes'] if m.get('alvo')}
 arco_de = lambda: next(a for a in ARCOS if a['id'] == E['arco'])
 CAP = lambda arco: len(arco['etapas']) - 2        # a última etapa (o chefe) só cai pela balança
 
@@ -237,6 +253,55 @@ def resolver(segunda, semana):
     etapa_antes = E['etapa']; mochila_antes = [i['id'] for i in E['mochila']]
     afetado = retorna = None; talisma = False; semana_de_resgate = bool(E['crise'])
     amb = (atual or {}).get('ambiente') or {}
+    seg_s = segunda.isoformat()
+    # ── o que aconteceu por baixo, dia a dia (eventos_dia.json): materiais, relíquias, dívidas e juramentos
+    quebras = 0
+    for evd in eventos_da_semana(segunda):
+        ef = evd.get('efeito') or {}
+        for mat in ('ferro', 'rumo', 'pena'):
+            if ef.get(mat): E['materiais'][mat] = E['materiais'].get(mat, 0) + ef[mat]
+        rid = ef.get('reliquia')
+        if rid and rid in mundo.get('reliquias', {}) and rid not in [r['id'] for r in E['reliquias']]:
+            E['reliquias'].append({'id': rid, 'desde': evd['data']}); efeitos.append(f'Relíquia ganha: {mundo["reliquias"][rid]["nome"]}.')
+        if ef.get('divida') and not any(d['npc'] == ef.get('npc') for d in E['dividas']):
+            E['dividas'].append({'npc': ef.get('npc'), 'desde': evd['data']})
+        if ef.get('juramento'):
+            quebras += 1; cons = ef.get('consequencia')
+            if cons == 'trinca':
+                if E['mochila']:
+                    it = E['mochila'].pop(0); talisma = True
+                    efeitos.append(f'O talismã {mundo["itens"][it["id"]]["nome"]} partiu-se: a lei da lanterna foi quebrada.')
+                else:
+                    E['companhia']['dorn']['estado'] = 'ferida' if E['companhia']['dorn']['estado'] == 'ativa' else E['companhia']['dorn']['estado']
+                    efeitos.append('Sem talismã para partir, quem pagou foi Dorn: saiu ferido da semana.')
+            elif cons == 'febre_do_orgulho':
+                velha = maldicao_ativa('febre_do_orgulho', seg_s)
+                alvo = mundo['maldicoes']['febre_do_orgulho']['alvo']
+                if velha and E['companhia'][alvo]['estado'] in ('ativa', 'ferida') and not E['crise']:
+                    E['companhia'][alvo]['estado'] = 'capturada'; afetado = alvo
+                    E['crise'] = {'companheiro': alvo, 'antagonista': 'nevoa', 'prazo': 3, 'aberta_em': seg_s}
+                    E['maldicoes'] = [m for m in E['maldicoes'] if m['id'] != 'febre_do_orgulho']
+                    efeitos.append(f'A Febre do Orgulho cresceu e levou {mundo["companhia"][alvo]["nome"]} para a Torre da Névoa. Resgate em até 3 semanas.')
+                elif not maldicao_ativa('febre_do_orgulho'):
+                    E['maldicoes'].append({'id': 'febre_do_orgulho', 'alvo': alvo, 'desde': seg_s})
+                    if E['companhia'][alvo]['estado'] == 'ativa': E['companhia'][alvo]['estado'] = 'ferida'
+                    efeitos.append(f'Maldição: a Febre do Orgulho pegou {mundo["companhia"][alvo]["nome"]}. Sai com uma semana inteira dentro da lei da lanterna.')
+            elif cons == 'sal':
+                sal = next((r for r in E['reliquias'] if r['id'] == 'sal_limpo' and not r.get('usada')), None)
+                if sal:
+                    sal['usada'] = True; efeitos.append('O Sal Limpo espantou o canto das Sereias.')
+                elif not maldicao_ativa('canto_das_sereias'):
+                    E['maldicoes'].append({'id': 'canto_das_sereias', 'desde': seg_s}); efeitos.append('Maldição: o Canto das Sereias ficou no ouvido da companhia.')
+    # a febre sai numa semana inteira dentro da lei
+    velha = maldicao_ativa('febre_do_orgulho', seg_s)
+    if velha and quebras == 0:
+        E['maldicoes'] = [m for m in E['maldicoes'] if m is not velha]
+        if E['companhia'][velha['alvo']]['estado'] == 'ferida': E['companhia'][velha['alvo']]['estado'] = 'ativa'
+        efeitos.append(f'A Febre do Orgulho deixou {mundo["companhia"][velha["alvo"]]["nome"]}: a companhia passou a semana inteira dentro da lei.')
+    # semana sem fritura além da conta e sem quebra das Sereias: o sal das salinas (registrado como bênção pelo escritor)
+    if E['materiais'].get('ferro', 0) >= mundo.get('materiais', {}).get('ferro', {}).get('forja', 3) and not any(r['id'] == 'lamina_do_marco' for r in E['reliquias']):
+        E['materiais']['ferro'] -= 3; E['reliquias'].append({'id': 'lamina_do_marco', 'desde': seg_s})
+        efeitos.append('Com três lascas de ferro-estrela, Dorn forjou a Lâmina do Marco.')
 
     def cena_de(tier_final):
         tc = 'reves' if (semana_de_resgate and tier_final in ('reves', 'crise')) else tier_final
@@ -251,6 +316,14 @@ def resolver(segunda, semana):
     t = base
     if base in ('reves', 'crise') and abrigo:
         t = 'sustenta'; efeitos.append('A companhia se abrigou na estalagem e esperou a tempestade passar. Nada foi perdido.')
+    canto = maldicao_ativa('canto_das_sereias', seg_s)
+    if canto:
+        t = NIVEIS[max(0, NIVEIS.index(t) - 1)]; E['maldicoes'] = [m for m in E['maldicoes'] if m is not canto]
+        efeitos.append('O Canto das Sereias puxou a semana um nível para baixo, e então se calou.')
+    esc = next((r for r in E['reliquias'] if r['id'] == 'escama_rio_cinza' and not r.get('usada')), None)
+    if esc and eid == 'vau-do-rio-cinza':
+        t = NIVEIS[min(len(NIVEIS) - 1, NIVEIS.index(t) + 1)]; esc['usada'] = True
+        efeitos.append('A Escama do Rio Cinza soube onde pisar: a travessia subiu um nível.')
     if t in ('reves', 'crise') and E['mochila']:
         item = E['mochila'].pop(0); talisma = True
         t = {'crise': 'reves', 'reves': 'sustenta'}[t]
@@ -283,19 +356,22 @@ def resolver(segunda, semana):
         if t == 'triunfo':
             E['etapa'] = min(E['etapa'] + 2, cap); dar_item(missoes, 2, efeitos)
             for k in E['companhia']:
-                if E['companhia'][k]['estado'] == 'ferida': E['companhia'][k]['estado'] = 'ativa'
+                if E['companhia'][k]['estado'] == 'ferida' and k not in alvos_amaldicoados(): E['companhia'][k]['estado'] = 'ativa'
             perdida = next((k for k, v in E['companhia'].items() if v['estado'] == 'perdida'), None)
             if perdida:
                 E['companhia'][perdida]['estado'] = 'ativa'; retorna = perdida; efeitos.append(f'{mundo["companhia"][perdida]["nome"]} voltou: a grande vitória reabriu o caminho.')
         elif t == 'avanco':
             E['etapa'] = min(E['etapa'] + 1, cap); dar_item(missoes, 1, efeitos)
             for k in E['companhia']:
-                if E['companhia'][k]['estado'] == 'ferida': E['companhia'][k]['estado'] = 'ativa'
+                if E['companhia'][k]['estado'] == 'ferida' and k not in alvos_amaldicoados(): E['companhia'][k]['estado'] = 'ativa'
         elif t == 'sustenta':
             for k in E['companhia']:
-                if E['companhia'][k]['estado'] == 'ferida': E['companhia'][k]['estado'] = 'ativa'
+                if E['companhia'][k]['estado'] == 'ferida' and k not in alvos_amaldicoados(): E['companhia'][k]['estado'] = 'ativa'
         elif t == 'reves':
             c = escolher_companheiro(LIGA.get(pior_missao(missoes)))
+            sem = next((r for r in E['reliquias'] if r['id'] == 'sementes_do_vale' and not r.get('usada')), None)
+            if c and sem:
+                sem['usada'] = True; efeitos.append(f'As Sementes do Vale curaram {mundo["companhia"][c]["nome"]} antes que a ferida pegasse.'); c = None
             if c: afetado = c; E['companhia'][c]['estado'] = 'ferida'; efeitos.append(f'{mundo["companhia"][c]["nome"]} ficou ferid{mundo["companhia"][c]["g"]} e não ajuda no próximo trecho.')
         elif t == 'crise':
             pior = pior_missao(missoes); ant_id = ANTAG.get(pior, 'nevoa')
@@ -366,6 +442,90 @@ if J.get('media_28d') is not None and J['media_28d'] <= arco['ate'] and E['arco'
 abrir_semana_atual()
 arco = arco_de()
 
+
+# ──────────────── projeção: como a semana corrente fecharia agora (nada é gravado)
+def projetar():
+    global E
+    sa = E.get('semana_atual')
+    if not sa: return None
+    salvo = json.loads(json.dumps(E))
+    try:
+        reg = resolver(D(sa['segunda']), {'missoes': (J.get('capitulo') or {}).get('missoes', [])})
+        reg['depois'] = {'etapa': E['etapa'], 'companhia': {k: v['estado'] for k, v in E['companhia'].items()},
+                         'mochila': [i['id'] for i in E['mochila']], 'reliquias': [r['id'] for r in E['reliquias']],
+                         'maldicoes': [m['id'] for m in E['maldicoes']], 'materiais': dict(E['materiais'])}
+    finally:
+        E = salvo
+    return reg
+
+
+PROJ = projetar()
+
+
+# ──────────────── textos longos escritos a cada semana (historia/escritos/AAAA-MM-DD-premissa.md e -encerramento.md)
+def ler_escrito(segunda_s, tipo):
+    p = os.path.join(AQUI, 'historia', 'escritos', f'{segunda_s}-{tipo}.md')
+    if not os.path.exists(p): return None
+    txt = open(p, encoding='utf-8').read()
+    meta = {}
+    if txt.startswith('---'):
+        cab, _, txt = txt[3:].partition('\n---')
+        for linha in cab.strip().splitlines():
+            if ':' in linha: k, _, v = linha.partition(':'); meta[k.strip()] = v.strip()
+    return meta, txt.strip()
+
+
+def texto_do_desfecho(segunda_s, tier):
+    e = ler_escrito(segunda_s, 'encerramento')
+    if not e: return None
+    meta, txt = e
+    partes = re.split(r'<!--\s*alternativa:\s*(\w+)\s*-->', txt)
+    principal, alts = partes[0].strip(), {partes[i]: partes[i + 1].strip() for i in range(1, len(partes) - 1, 2)}
+    if tier and tier != meta.get('desfecho_padrao', tier) and tier in alts:
+        corte = principal.rfind('\n## ')
+        principal = (principal[:corte] if corte > 0 else principal) + '\n\n' + alts[tier]
+    palavras = len(re.findall(r'\w+', principal))
+    return {'titulo': meta.get('titulo', ''), 'subtitulo': meta.get('subtitulo', ''), 'n': int(meta.get('capitulo', 0) or 0), 'simulacao': meta.get('simulacao') == 'sim',
+            'nota': meta.get('nota', ''), 'texto': principal, 'minutos': max(1, round(palavras / 200)), 'tier': tier, 'outros_desfechos': sorted(alts)}
+
+
+def premissa_de(segunda_s):
+    e = ler_escrito(segunda_s, 'premissa')
+    if not e: return None
+    meta, txt = e
+    palavras = len(re.findall(r'\w+', txt))
+    return {'titulo': meta.get('titulo', ''), 'n': int(meta.get('capitulo', 0) or 0), 'semana': segunda_s, 'simulacao': meta.get('simulacao') == 'sim',
+            'nota': meta.get('nota', ''), 'texto': txt, 'minutos': max(1, round(palavras / 200))}
+
+
+ROTULO_EF = {'ferro': '+{n} lasca de ferro-estrela', 'rumo': '+{n} medida no mapa', 'pena': '+{n} pena de vento'}
+DIAS_PT = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
+
+
+def diario_da_semana(segunda):
+    dias = []
+    for i in range(7):
+        d = (segunda + dt.timedelta(days=i)).isoformat()
+        evs = []
+        for e in [x for x in EVD if x['data'] == d]:
+            ef = e.get('efeito') or {}; marcas = []
+            for k, f in ROTULO_EF.items():
+                if ef.get(k): marcas.append(f.format(n=ef[k]))
+            if ef.get('reliquia') in mundo.get('reliquias', {}): marcas.append('relíquia: ' + mundo['reliquias'][ef['reliquia']]['nome'])
+            if ef.get('divida'): marcas.append('dívida com Mãe Tarsila' if ef.get('npc') == 'tarsila' else 'dívida')
+            if ef.get('juramento'): marcas.append('juramento quebrado: o preço vem no fim da semana')
+            if ef.get('abrigo'): marcas.append('abrigo')
+            evs.append({'tipo': e['tipo'], 'texto': e['texto'], 'marcas': marcas})
+        if evs: dias.append({'data': d, 'dia': DIAS_PT[i], 'eventos': evs})
+    return dias
+
+
+def biblia():
+    p = os.path.join(AQUI, 'historia', 'biblia.md')
+    if not os.path.exists(p): return []
+    secs = re.split(r'\n## ', '\n' + open(p, encoding='utf-8').read().split('\n', 1)[1])
+    return [{'titulo': x.split('\n', 1)[0].strip(), 'texto': x.split('\n', 1)[1].strip() if '\n' in x else ''} for x in secs if x.strip()]
+
 # ──────────────── capítulos (arquivos do livro) e saída para o painel
 def slug(t):
     t = unicodedata.normalize('NFKD', t.lower()).encode('ascii', 'ignore').decode()
@@ -376,8 +536,12 @@ capitulos = []
 for segunda_s, reg in sorted(E['semanas'].items()):
     sd = D(segunda_s); n = (sd - INICIO).days // 7 + 1
     corpo = []
-    if reg.get('abertura'): corpo.append(reg['abertura'][0])
-    corpo.append(reg['texto'])
+    longo = texto_do_desfecho(segunda_s, reg['tier'])
+    if longo:
+        corpo.append(longo['texto'])
+    else:
+        if reg.get('abertura'): corpo.append(reg['abertura'][0])
+        corpo.append(reg['texto'])
     if reg.get('efeitos'): corpo.append(' '.join(reg['efeitos']))
     capitulos.append({'n': n, 'titulo': reg['titulo'], 'periodo': periodo(sd), 'fim': (sd + dt.timedelta(days=6)).isoformat(), 'tier': reg['tier'], 'ok': reg['ok'], 'total': reg['n'],
                       'abertura': (reg.get('abertura') or ['', ''])[0], 'em_jogo': (reg.get('abertura') or ['', ''])[1] if len(reg.get('abertura') or []) > 1 else '',
@@ -412,7 +576,26 @@ painel = {
     'crise': ({'companheiro': mundo['companhia'][E['crise']['companheiro']]['nome'], 'g': mundo['companhia'][E['crise']['companheiro']]['g'], 'onde': mundo['antagonistas'][E['crise']['antagonista']]['lugar'],
                'antagonista': mundo['antagonistas'][E['crise']['antagonista']]['nome'], 'prazo': E['crise']['prazo']} if E['crise'] else None),
     'semana': semana_painel, 'capitulos': [{k: v for k, v in c.items() if k != 'md'} for c in capitulos], 'marcos': E['marcos'],
+    'reliquias': [{'id': r['id'], **mundo['reliquias'][r['id']], 'usada': bool(r.get('usada')), 'desde': r['desde']} for r in E['reliquias'] if r['id'] in mundo.get('reliquias', {})],
+    'maldicoes': [{'id': m['id'], **mundo['maldicoes'][m['id']], 'desde': m['desde']} for m in E['maldicoes'] if m['id'] in mundo.get('maldicoes', {})],
+    'materiais': {k: {'qtd': E['materiais'].get(k, 0), **v} for k, v in mundo.get('materiais', {}).items()},
+    'dividas': E['dividas'],
+    'fios': (ler('historia/fios.json', {}) or {}).get('fios', []),
+    'biblia': biblia(),
 }
+if sa:
+    sd_atual = D(sa['segunda'])
+    painel['diario'] = diario_da_semana(sd_atual)
+    painel['premissa_atual'] = premissa_de(sa['segunda'])
+    painel['premissa_proxima'] = premissa_de((sd_atual + dt.timedelta(days=7)).isoformat())
+    if PROJ:
+        painel['projecao'] = {'tier': PROJ['tier'], 'ok': PROJ['ok'], 'n': PROJ['n'], 'efeitos': PROJ['efeitos'], 'cena': PROJ.get('cena'), 'depois': PROJ.get('depois'),
+                              'falta_para_avanco': max(0, (PROJ['n'] - 1) - PROJ['ok'])}
+        painel['encerramento'] = texto_do_desfecho(sa['segunda'], PROJ['tier'])
+# a última semana fechada com texto longo (depois que a semana vira)
+fechadas = [s_ for s_ in sorted(E['semanas']) if ler_escrito(s_, 'encerramento')]
+if fechadas and not painel.get('encerramento'):
+    painel['encerramento'] = texto_do_desfecho(fechadas[-1], E['semanas'][fechadas[-1]]['tier'])
 gravar('historia/estado.json', E)
 gravar('painel/data/historia.json', painel)
 res = {c['n']: c['tier'] for c in capitulos if c['concluido']}

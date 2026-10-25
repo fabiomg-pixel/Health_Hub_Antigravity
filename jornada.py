@@ -337,6 +337,9 @@ out = {
     'arco': arco, 'media_28d': m28, 'paralela': paralela,
     'reliquias': rel, 'semanas': [{k: s[k] for k in ('segunda', 'status', 'cumpridas', 'xp_semana', 'novo_arco')} | {'n': len(s['missoes']), 'missoes': s['missoes']} for s in resultado],
     'xp_por_dia': {k: v['xp'] for k, v in xp_por_dia.items()},
+    # os últimos 21 dias em detalhe, para o diário de bordo da aventura (historia.py)
+    'dias': {k: {'xp': v['xp'], 'itens': [i[0] for i in v['itens']], 'marcas': sorted(por_dia[k]), 'ativo': ativo(D(k))}
+             for k, v in xp_por_dia.items() if D(k) >= HOJE - dt.timedelta(days=20)},
     'livro': livro,
 }
 os.makedirs(os.path.join(AQUI, 'painel', 'data'), exist_ok=True)
