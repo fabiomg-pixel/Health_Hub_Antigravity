@@ -205,6 +205,42 @@
     "lanche das 17h de 22/10 (sem registro)",
     "caminhada de recuperação, se foi feita"
    ]
+  },
+  {
+   "data": "2026-10-23",
+   "planejado": "Sexta leve: caminhada de 20 a 30 min antes das 9h ou mobilidade; marmita N72, lanche das 17h, janta de proteína grelhada com legumes e salada.",
+   "feito": "Manhã vermelha (índice 10, FC 60, VFC 30). Registros: almoço feijoada com empadão de camarão (12h), melão e manga (16h), lanche Campo Verde coco com 21 g de proteína informados (18h48). Às 18h46 ele contou musculação leve (crucifixo, rosca bíceps, rosca invertida) e corrida curta, fora do plano, e perguntou do ibuprofeno e de leve inchaço.",
+   "adaptacao": "Nenhuma feita pelo bot. Treino fora do plano e acima do teto da semana levado à carga; ibuprofeno sinalizado como anti-inflamatório para a carga e a fisiologista. Fechamento de 23/10 só foi escrito em 24/10 (a rotina da noite não rodou).",
+   "respostas": {
+    "q1": null,
+    "q2": null
+   },
+   "nao_sei": [
+    "duração, ritmo e FC da corrida de 23/10",
+    "esforço percebido nos exercícios",
+    "se a marmita N72 foi comida em outro momento",
+    "vegetal visível no almoço (feijoada)",
+    "janta de 23/10 (sem registro)",
+    "hora da última dose de ibuprofeno"
+   ]
+  },
+  {
+   "data": "2026-10-24",
+   "planejado": "Sábado de descanso (sem jogo por decisão dele): almoço em casa com proteína, arroz, feijão e legumes; lanche das 17h; janta é a refeição livre da semana. Avaliação de força proposta pela carga para hoje.",
+   "feito": "Manhã verde (índice 94, FC 45, VFC 45, sono 7,5 h). Disse: tosse só na garganta e no nariz, sem febre e sem dor, urinou bastante à noite, ibuprofeno interrompido (só usava se houvesse dor) e já com 24 h sem. Registro: almoço às 14h01, kafta de frango, tabule, arroz de lentilha, com foto. Sem registro de lanche das 17h, janta, pesagem ou treino até 22h33.",
+   "adaptacao": "A carga adiou a avaliação de força para 26/10 (Passo B exige duas manhãs seguidas verdes; sexta foi vermelha; teto da semana já usado). Hoje só caminhada leve, sem reposição.",
+   "respostas": {
+    "q1": null,
+    "q2": null
+   },
+   "nao_sei": [
+    "se fez a caminhada leve",
+    "janta de sábado (refeição livre)",
+    "lanche das 17h",
+    "se o médico liberou exercício com o antibiótico e qual é o antibiótico",
+    "como se sentiu à noite depois do treino de 23/10",
+    "hora exata da última dose de ibuprofeno"
+   ]
   }
  ]
 }
