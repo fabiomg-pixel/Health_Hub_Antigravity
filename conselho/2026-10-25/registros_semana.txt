@@ -1,0 +1,30 @@
+2026-10-19 None Refeição Café | Yopro energy boost
+2026-10-19 11:57 Refeição Almoço | Proteína informada: 30 g.
+2026-10-19 15:54 Refeição Outro | Brownie - stress eating
+2026-10-19 18:30 Refeição Lanche | Yopro Proteína informada: 23 g.
+2026-10-19 20:40 Refeição Jantar | 
+2026-10-20 09:00 Refeição Café | Yopro 23g Proteína informada: 23 g.
+2026-10-20 12:28 Refeição Almoço | Proteína informada: 45 g.
+2026-10-20 18:22 Observação None | Corrida guiada (Corrida fácil de 30 min (só se o painel liberar)): 30 min, completa.
+
+Ritmo bem fácil
+2026-10-20 19:54 Refeição Jantar | Curry peixe
+2026-10-21 None Treino None | Treino feito no painel: Costas, ombro posterior e glúteo (só se a força de hoje não aconteceu), 13 min, esforço leve. Remada baixa no cabo: 50 kg × 6, 50 kg × 6; Puxada com pegada neutra (triângulo): 50 kg × 6, 60 kg × 6; Crucifixo inverso na máquina: 40 kg × 10, 50 kg × 8; Rotação externa do ombro no cabo: 12 kg × 10 #sets {"v":1,"t":"costas_ombro_posterior_e_gluteo_so_se_a_forca_de_hoje_nao_aconteceu","dur":13,"ef":"leve","ex":[{"i":"remada_baixa_no_cabo","s":[[50,6,"d"],[50,6,"d"]]},{"i":"puxada_pegada_neutra","s":[[50,6,"d"],[60,6,"l"]]},{"i":"crucifixo_inverso_na_maquina","s":[[40,10,"f"],[50,8,"d"]]},{"i":"rotacao_externa_no_cabo","s":[[12,10]]}]}
+2026-10-21 09:00 Refeição Café | Pão de queijo, suco manga
+2026-10-21 11:07 Refeição Almoço | Yopro
+2026-10-21 13:12 Refeição Almoço | 350g churrasco (80%) com baião de dois (20%)
+2026-10-21 16:00 Refeição Lanche | Fatia de bolo
+2026-10-21 20:11 Treino None | 22 min de corrida, segundo recomendação de treino do Garmin (comecei a marcar um pouco mais tarde) a 8,5km/h
+2026-10-21 20:47 Refeição Jantar | Kafta de frango, tabule, húmus
+2026-10-22 09:08 Observação None | Foi ao médico em 21/10 e começou antibiótico. Hoje se sente bem melhor. Sem jogo hoje por escolha própria; sem jogo no fim de semana.
+2026-10-22 09:50 Refeição Café | 
+2026-10-22 17:06 Refeição Almoço | 
+2026-10-22 20:49 Refeição Jantar | Proteína informada: 41 g.
+2026-10-22 22:34 Observação None | Dia bem melhor com o antibiótico; ainda um pouco de tosse. Jogo cancelado para poupar da gripe; alternativa combinada foi descanso.
+2026-10-23 12:00 Refeição Almoço | Feijoada + empadão de camarão
+2026-10-23 16:00 Refeição Lanche | Melão e manga
+2026-10-23 18:46 Observação None | Treino leve para complementar. Curta musculação (crucifixo, rosca biceps, rosca invertida)0e corrida somente para agitar o corpo. Sentimento de leve inchaço. Influência do ibuprofeno?
+2026-10-23 18:48 Refeição Lanche | Campo Verde coco Proteína informada: 21 g.
+2026-10-24 09:38 Observação None | Acordou com tosse, sem febre e sem dor. Urinou bastante durante a noite.
+2026-10-24 09:39 Observação None | Tosse só na garganta e no nariz. Ibuprofeno interrompido; só era usado se houvesse dor.
+2026-10-24 14:01 Refeição Almoço | Kafta frango, tabule, arroz de lentilha e cebola
