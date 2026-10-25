@@ -50,24 +50,19 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
    `python3 historia.py --fechar-hoje`: ele fecha a semana que está acabando e resolve o desfecho). **A história não
    é retrospectiva do dia** (Fabio, 24/10): o dia nunca vira cena. O desempenho da SEMANA decide o que acontece com a
    companhia (motor `historia.py`, canon em `historia/mundo.json`); você só anuncia.
-   - **Diário de bordo (todo dia):** registre de 1 a 4 acontecimentos do dia com `./evento_aventura.py`, pela tabela
-     de `rotinas/capitulo_semana.md` (força = lasca de ferro-estrela, pesagem = medida de Ysa, dia ativo dentro do
-     plano = pena de vento, treino fora do plano ou em manhã vermelha = juramento quebrado, fritura além de 2 = Sereias,
-     manhã vermelha = percalço com abrigo...). Texto no mundo, 1 a 2 frases, sem números do corpo. Rode
-     `python3 historia.py` depois, para o painel mostrar o diário.
+   - **Diário de bordo (todo dia):** é automático (o motor tira uma carta pela qualidade do dia). Você só registra,
+     se houver, o juramento quebrado do dia: `./juramento_quebrado.py AAAA-MM-DD limite` (portão ou teto da
+     fisiologista desrespeitado: treino fora do plano, acima do teto ou em manhã vermelha) ou `mesa` (fritura além de 2
+     na semana). Depois `python3 historia.py`. Na mensagem, cite numa linha a carta do dia (texto como está em
+     `painel/data/historia.json` → `diario`), sem explicar por que saiu. **A história nunca espelha o dia dele.**
    - **Segunda a sábado:** na mensagem, troque a linha "Regras da semana" por UMA linha: o XP do dia
      (`xp_por_dia` do dia avaliado) e quantas missões da semana estão cumpridas (`painel/data/historia.json`,
      `semana.ok` de `semana.total`). Nada de cena, nada de recitar o que ele fez.
-   - **Domingo à noite:** o capítulo longo e a próxima aventura são escritos pela rotina `rotinas/capitulo_semana.md`
-     (23h05). Aqui, só registre o diário de domingo e mande a mensagem normal, sem desfecho. Se essa rotina não existir
-     por algum motivo, siga o modo curto abaixo: depois do `historia.py --fechar-hoje`, leia `painel/data/historia.json` → o último item de
-     `capitulos` com `concluido: true`. Mande na mensagem, em até 6 linhas: o título do capítulo, o `desfecho` (texto
-     já escrito pelo motor; copie, não reescreva) e os `efeitos` (talismã ganho, etapa avançada, companheiro ferido ou
-     capturado, crise aberta e prazo). Tom de narrador, sem culpa: revés e crise são acontecimentos do mundo, nunca
-     uma bronca; diga qual é o caminho de volta (o resgate, o talismã). Se `tier` for `sem_dado`, diga só que a semana
-     ficou fora do livro. Termine com a ameaça da semana que abre (`semana.abertura` e `semana.em_jogo`).
-   - **Proibido:** escrever ou editar arquivos em `historia/livro/` (o motor os regenera), inventar desfecho, citar
-     exercícios, cargas, refeições ou minutos na história, ou prometer o que o motor não decidiu.
+   - **Domingo à noite:** a parte longa e a próxima são escritas pela rotina `rotinas/capitulo_semana.md` (23h05).
+     Aqui, registre o juramento de domingo (se houver) e mande a mensagem normal, sem desfecho. Não improvise o
+     fechamento: se a rotina das 23h05 falhar, o brief de segunda a roda.
+   - **Proibido:** escrever ou editar arquivos em `historia/livro/` (o motor os regenera), inventar desfecho, ligar a
+     história a qualquer fato do dia dele, ou prometer o que o motor não decidiu.
    - Depois: `./publicar_jornada.sh` e commite `historia/` e `painel/data/historia.json`. Na mensagem de domingo,
      ofereça as missões da semana seguinte (as do motor) e pergunte se ele quer trocar alguma.
 

@@ -74,8 +74,8 @@ const PIXEL = (() => {
   function relampago(c, t, instantes) { for (const a of instantes) { const d = t - a; if (d >= 0 && d < 0.18) { c.globalAlpha = 0.65 * (1 - d / 0.18); ret(c, 0, 0, W, H, '#FFFFFF'); c.globalAlpha = 1; } } }
 
   // ── cenário
-  const KIND = ['estalagem', 'estrada', 'ponte', 'bosque', 'vau', 'degraus'];
-  const GENERICO = ['estalagem', 'estrada', 'bosque', 'ponte', 'vau', 'estrada'];
+  const KIND = ['farois', 'farol', 'vau', 'bosque', 'ruinas', 'degraus'];
+  const GENERICO = ['farois', 'estrada', 'bosque', 'ruinas', 'vau', 'estrada'];
   const kindDe = (p, i) => (p.arco === 'I' || !p.arco ? KIND : GENERICO)[Math.max(0, Math.min(5, i))] || 'estrada';
 
   function chao(c, esc, noite) {
@@ -88,6 +88,22 @@ const PIXEL = (() => {
   function marco(c, kind, x, t, noite) {
     x = Math.round(x);
     if (x < -70 || x > W + 70) return;
+    if (kind === 'farois') {   // torres de farol apagadas, uma perto e outra ao longe
+      [[x - 26, 1], [x + 34, 0.6]].forEach(([tx, e]) => { const w = Math.round(10 * e), h = Math.round(34 * e);
+        ret(c, tx - w / 2, CHAO - h, w, h, '#3E3A40'); ret(c, tx - w / 2 - 1, CHAO - h - 3, w + 2, 3, '#2A272C'); ret(c, tx - 2, CHAO - h - 6, 4, 3, '#1E1C20');
+        ret(c, tx - 1, CHAO - h + 6, 2, 3, '#1E1C20'); c.globalAlpha = 0.5; ret(c, tx - w / 2, CHAO - h, w, 2, '#B9B4AE'); c.globalAlpha = 1; });
+      return;
+    }
+    if (kind === 'farol') {   // Ost: torre branca com a brasa no alto
+      ret(c, x - 8, CHAO - 50, 16, 50, '#E8E4D8'); ret(c, x - 10, CHAO - 54, 20, 4, '#B9B4AE'); ret(c, x - 5, CHAO - 62, 10, 8, '#8C8F94'); ret(c, x - 2, CHAO - 20, 4, 8, '#5E3D26');
+      const f = 0.55 + 0.45 * Math.sin(t * 5); ret(c, x - 2, CHAO - 61, 4, 5, '#7CFFB0'); c.globalAlpha = 0.18 * f; ret(c, x - 26, CHAO - 80, 52, 40, '#7CFFB0'); c.globalAlpha = 1;
+      return;
+    }
+    if (kind === 'ruinas') {
+      for (let i = 0; i < 5; i++) { const h = [26, 14, 30, 9, 18][i]; ret(c, x - 34 + i * 16, CHAO - h, 7, h, '#CFC8BC'); ret(c, x - 35 + i * 16, CHAO - h - 2, 9, 2, '#B9B4AE'); }
+      ret(c, x - 20, CHAO - 4, 30, 4, '#B9B4AE');
+      return;
+    }
     if (kind === 'estalagem') {
       ret(c, x - 20, CHAO - 26, 40, 26, COR.madeira); ret(c, x - 22, CHAO - 34, 44, 8, COR.telha); ret(c, x - 16, CHAO - 40, 32, 6, COR.telha);
       ret(c, x - 14, CHAO - 20, 8, 8, COR.luz); ret(c, x - 14, CHAO - 16, 8, 1, COR.madeira2); ret(c, x + 6, CHAO - 18, 10, 18, COR.madeira2); ret(c, x + 9, CHAO - 9, 1, 1, COR.luz);
@@ -109,7 +125,7 @@ const PIXEL = (() => {
       for (let i = 0; i < 4; i++) { ret(c, x - 22 + i * 14, CHAO - 1, 7, 3, COR.pedra1); ret(c, x - 22 + i * 14, CHAO + 2, 7, 1, COR.pedra3); }
     } else if (kind === 'degraus') {
       for (let i = 0; i < 9; i++) ret(c, x - 34 + i * 7, CHAO - 4 - i * 3, 40 - i * 4 + 14, 3 + i * 3 + 4, i % 2 ? COR.pedra2 : COR.pedra1);
-      ret(c, x + 26, CHAO - 56, 9, 26, '#14161B'); ret(c, x + 28, CHAO - 62, 5, 7, '#14161B'); ret(c, x + 28, CHAO - 60, 1, 1, '#FF4B2B'); ret(c, x + 31, CHAO - 60, 1, 1, '#FF4B2B');
+      ret(c, x + 24, CHAO - 58, 13, 28, '#7A2E25'); ret(c, x + 27, CHAO - 65, 7, 8, '#7A2E25'); ret(c, x + 28, CHAO - 60, 1, 1, '#FF4B2B'); ret(c, x + 31, CHAO - 60, 1, 1, '#FF4B2B');
     }
   }
 

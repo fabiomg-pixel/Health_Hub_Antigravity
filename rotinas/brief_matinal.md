@@ -74,12 +74,12 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
      ou ainda estiver com `simulacao: sim`, rode primeiro `rotinas/capitulo_semana.md` (o fechamento de domingo falhou).
      Depois anuncie a aventura nova pelo título da premissa e uma frase de gancho, com o link da Campanha.
    - **Segunda-feira:** se o fechamento de domingo ainda não rodou (`historia/estado.json` sem a semana passada em
-     `semanas`), rode `python3 historia.py` agora: ele resolve a semana fechada. Depois anuncie a ameaça nova:
-     "Capítulo N: [semana.titulo]." + `semana.abertura` (texto pronto, copie) + "Em jogo: [semana.em_jogo]" + as
-     missões da semana com as metas, em uma linha. Se `crise` não for nula, diga em uma frase quem está preso, onde
-     e o prazo do resgate. Se houver `resgate_possivel` em `semanas` de `jornada.json`, diga como resgatar.
-   - **Outros dias:** "Campanha: nível X · [semana.titulo]: [semana.ok] de [semana.total] missões · talismãs
-     [quantos de 3]." (e, se houver crise, uma frase com o prazo).
+     `semanas`), rode `rotinas/capitulo_semana.md` antes. Depois anuncie a parte nova: "Parte <romano>: <título da
+     premissa>" e uma frase de gancho tirada da premissa, com o link da Campanha. Se `crise` não for nula, diga em uma
+     frase quem está preso, onde e o prazo. **Nunca ligue a história ao dia dele.**
+   - **Outros dias:** "Campanha: nível X · Parte <romano>, [semana.titulo]: [semana.ok] de [semana.total] missões · runas
+     [quantas de 3]." e, numa segunda linha, a carta de ontem do diário de bordo (texto como está). Se houver crise, uma
+     frase com o prazo.
    - Se a Vitalidade estiver "ferido", ofereça a estalagem: "se quiser descansar hoje, responda 'estalagem' e o
      dia conta como cumprido". **Nunca** decida por ele, nem desestimule um jogo marcado.
    Você é o Silvester falando com ele: segunda pessoa, curto, sem exagero, sem culpa, sem emoji.

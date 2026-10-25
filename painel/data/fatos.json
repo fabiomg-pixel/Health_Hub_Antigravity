@@ -1,32 +1,17 @@
 {
- "gerado_em": "2026-10-20T08:59:51",
+ "gerado_em": "2026-10-24T22:33:18",
  "janela": {
-  "hoje": "2026-10-20",
-  "dia_semana": "Tuesday",
-  "semana_desde": "2026-10-13"
+  "hoje": "2026-10-24",
+  "dia_semana": "Saturday",
+  "semana_desde": "2026-10-17"
  },
  "peso": {
   "ultima": {
-   "data": "2026-10-20",
+   "data": "2026-10-23",
    "peso_kg": 94.55,
-   "pos_esforco": false
+   "pos_esforco": true
   },
   "serie_14d": [
-   {
-    "data": "2026-09-27",
-    "peso_kg": 94.35,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-28",
-    "peso_kg": 94.9,
-    "pos_esforco": false
-   },
-   {
-    "data": "2026-09-29",
-    "peso_kg": 95.1,
-    "pos_esforco": false
-   },
    {
     "data": "2026-09-30",
     "peso_kg": 94.75,
@@ -81,45 +66,50 @@
     "data": "2026-10-20",
     "peso_kg": 94.55,
     "pos_esforco": false
+   },
+   {
+    "data": "2026-10-21",
+    "peso_kg": 94.35,
+    "pos_esforco": false
+   },
+   {
+    "data": "2026-10-22",
+    "peso_kg": 94.55,
+    "pos_esforco": true
+   },
+   {
+    "data": "2026-10-23",
+    "peso_kg": 94.55,
+    "pos_esforco": true
    }
   ],
-  "media_ultimas_7_leituras": 94.71,
-  "media_neutras_nas_ultimas_7": 94.74,
-  "n_neutras_nas_ultimas_7": 4,
-  "media_7_neutras_de_verdade": 95.01,
-  "media_28d_neutras": 94.8,
-  "n_leituras_pos_esforco_14d": 3,
+  "media_ultimas_7_leituras": 94.39,
+  "media_neutras_nas_ultimas_7": 94.32,
+  "n_neutras_nas_ultimas_7": 3,
+  "media_7_neutras_de_verdade": 94.96,
+  "media_28d_neutras": 94.91,
+  "n_leituras_pos_esforco_14d": 5,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 83,
+  "indice_hoje": 94,
   "banda_hoje": "g",
-  "prontidao_garmin_hoje": 82,
+  "prontidao_garmin_hoje": 62,
   "dias_vermelhos_seguidos": 0,
-  "sono_ultima_noite_h": 7.73,
-  "sono_ultima_noite_score": 86,
-  "hrv_ultima_noite": 46,
-  "fc_repouso_hoje": 55,
-  "indice_medio_7d": 42.0,
-  "sono_medio_7d": 6.87,
-  "hrv_medio_7d": 36.0,
+  "sono_ultima_noite_h": 7.5,
+  "sono_ultima_noite_score": 84,
+  "hrv_ultima_noite": 45,
+  "fc_repouso_hoje": 45,
+  "indice_medio_7d": 51.0,
+  "sono_medio_7d": 6.69,
+  "hrv_medio_7d": 37.0,
   "hrv_medio_28d": 37.0,
-  "fc_repouso_7d": 56.0,
+  "fc_repouso_7d": 54.0,
   "fc_repouso_28d": 54.0,
   "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-10-14",
-    "kcal_ativas": 503.0,
-    "passos": 14534
-   },
-   {
-    "data": "2026-10-16",
-    "kcal_ativas": 343.0,
-    "passos": 10904
-   },
    {
     "data": "2026-10-17",
     "kcal_ativas": 303.0,
@@ -129,91 +119,106 @@
     "data": "2026-10-18",
     "kcal_ativas": 341.0,
     "passos": 7787
+   },
+   {
+    "data": "2026-10-20",
+    "kcal_ativas": 355.0,
+    "passos": 14588
+   },
+   {
+    "data": "2026-10-21",
+    "kcal_ativas": 485.0,
+    "passos": 13990
+   },
+   {
+    "data": "2026-10-23",
+    "kcal_ativas": 493.0,
+    "passos": 16262
    }
   ],
   "atividades_garmin": [
    {
-    "id": 24727270794,
+    "id": 24829379113,
+    "tipo": "treadmill_running",
+    "nome": "Base",
+    "inicio_local": "2026-10-23 17:49:20",
+    "duracao_min": 19.9,
+    "distancia_km": 2.75,
+    "fc_media": 148.0,
+    "fc_max": 156.0,
+    "kcal": 234.0,
+    "tempo_em_zona_s": [
+     23,
+     29,
+     1124,
+     0,
+     0
+    ]
+   },
+   {
+    "id": 24808587471,
+    "tipo": "treadmill_running",
+    "nome": "Base",
+    "inicio_local": "2026-10-21 19:50:18",
+    "duracao_min": 20.7,
+    "distancia_km": 2.97,
+    "fc_media": 138.0,
+    "fc_max": 144.0,
+    "kcal": 214.0,
+    "tempo_em_zona_s": [
+     0,
+     870,
+     370,
+     0,
+     0
+    ]
+   },
+   {
+    "id": 24796069966,
     "tipo": "treadmill_running",
     "nome": "Corrida em esteira",
-    "inicio_local": "2026-10-14 18:32:01",
+    "inicio_local": "2026-10-20 17:52:50",
     "duracao_min": 29.9,
-    "distancia_km": 3.63,
-    "fc_media": 141.0,
-    "fc_max": 164.0,
-    "kcal": 316.0,
+    "distancia_km": 3.55,
+    "fc_media": 130.0,
+    "fc_max": 148.0,
+    "kcal": 265.0,
     "tempo_em_zona_s": [
-     56,
-     572,
-     1107,
-     19,
+     249,
+     958,
+     549,
+     0,
      0
     ]
    }
   ],
   "sessoes_do_painel": [
    {
-    "data": "2026-10-16",
-    "sessao": "upper_b_com_core",
-    "duracao_min": 36,
-    "esforco": null,
-    "exercicios": 7,
-    "series_feitas": 18,
-    "trocas": [
-     {
-      "feito": "abdominal_na_maquina",
-      "plano": "dead_bug"
-     }
-    ],
-    "garmin": null
-   },
-   {
-    "data": "2026-10-13",
-    "sessao": "lower_a_com_reforco",
-    "duracao_min": 37,
-    "esforco": null,
-    "exercicios": 7,
-    "series_feitas": 19,
-    "trocas": [
-     {
-      "feito": "x_let_presa_na_maquina",
-      "plano": "leg_press"
-     },
-     {
-      "feito": "bulgaro",
-      "plano": "step_up"
-     },
-     {
-      "feito": "x_rotary_calf",
-      "plano": "panturrilha_unilateral"
-     },
-     {
-      "feito": "abdominal_na_maquina",
-      "plano": "dead_bug"
-     },
-     {
-      "feito": "prancha",
-      "plano": "prancha_lateral"
-     }
-    ],
+    "data": "2026-10-21",
+    "sessao": "costas_ombro_posterior_e_gluteo_so_se_a_forca_de_hoje_nao_aconteceu",
+    "duracao_min": 13,
+    "esforco": "leve",
+    "exercicios": 4,
+    "series_feitas": 7,
+    "trocas": [],
     "garmin": null
    }
   ],
   "registros_de_treino": [
    {
+    "data": "2026-10-21",
+    "tem_foto": false,
+    "texto": "22 min de corrida, segundo recomendação de treino do Garmin (comecei a marcar um pouco mais tarde) a 8,5km/h"
+   },
+   {
+    "data": "2026-10-21",
+    "tem_foto": false,
+    "texto": "Treino feito no painel: Costas, ombro posterior e glúteo (só se a força de hoje não aconteceu), 13 min, esforço leve. Re"
+   },
+   {
     "data": "2026-10-17",
     "tem_foto": false,
     "texto": "Dois jogos de futebol: de manhã 90 minutos em campo de 11; ao final do dia 40 minutos em campo de 7."
-   },
-   {
-    "data": "2026-10-16",
-    "tem_foto": false,
-    "texto": "Treino feito no painel: Upper B com core, 36 min. Pec deck ou crucifixo: 80 kg × 8, 80 kg × 8, 80 kg × 8, 70 kg × 6; Pux"
-   },
-   {
-    "data": "2026-10-13",
-    "tem_foto": false,
-    "texto": "Treino feito no painel: Lower A com reforço, 37 min. Let presa na máquina (no lugar de Leg press): 150 kg × 8, 150 kg × "
    }
   ],
   "sessoes_registradas": 3,
@@ -252,70 +257,85 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-10-13",
-   "2026-10-14",
-   "2026-10-15",
-   "2026-10-16",
    "2026-10-17",
    "2026-10-18",
-   "2026-10-19"
+   "2026-10-19",
+   "2026-10-20",
+   "2026-10-21",
+   "2026-10-22",
+   "2026-10-23",
+   "2026-10-24"
   ],
-  "n_refeicoes_registradas": 19,
+  "n_refeicoes_registradas": 23,
   "por_dia": {
-   "2026-10-13": 3,
-   "2026-10-14": 4,
-   "2026-10-15": 2,
-   "2026-10-16": 2,
    "2026-10-17": 2,
    "2026-10-18": 1,
-   "2026-10-19": 5
+   "2026-10-19": 5,
+   "2026-10-20": 3,
+   "2026-10-21": 5,
+   "2026-10-22": 3,
+   "2026-10-23": 3,
+   "2026-10-24": 1
   },
   "ocorrencias": {
-   "fritura": [
-    {
-     "data": "2026-10-13",
-     "refeicao": "Almoço",
-     "texto": "Almoço tarde por volta das 16h: risoto de camarão com pastel de siri e bolinho de bacalhau"
-    }
-   ],
+   "fritura": [],
    "doce": [
     {
-     "data": "2026-10-13",
-     "refeicao": "Outro",
-     "texto": "Tangerina e chocolate"
+     "data": "2026-10-21",
+     "refeicao": "Lanche",
+     "texto": "Fatia de bolo"
     }
    ],
    "buffet": [],
    "alcool": [],
    "proteina_clara": [
     {
+     "data": "2026-10-24",
+     "refeicao": "Almoço",
+     "texto": "Kafta frango, tabule, arroz de lentilha e cebola"
+    },
+    {
+     "data": "2026-10-21",
+     "refeicao": "Jantar",
+     "texto": "Kafta de frango, tabule, húmus"
+    },
+    {
+     "data": "2026-10-20",
+     "refeicao": "Jantar",
+     "texto": "Curry peixe"
+    },
+    {
      "data": "2026-10-17",
      "refeicao": "Almoço",
      "texto": "Contra filé com ovo, arroz com brócolis, batata portuguesa."
-    },
-    {
-     "data": "2026-10-16",
-     "refeicao": "Almoço",
-     "texto": "Almoço (350g) carne com tomate"
-    },
-    {
-     "data": "2026-10-15",
-     "refeicao": "Jantar",
-     "texto": "Frango grelhado (2 filés), arroz branco, cenoura ralada e batata-doce assada. Enviado pelo"
-    },
-    {
-     "data": "2026-10-14",
-     "refeicao": "Almoço",
-     "texto": "350g churrasco (80% carne)"
-    },
-    {
-     "data": "2026-10-14",
-     "refeicao": "Almoço",
-     "texto": "350g churrasco (80% carne)"
     }
    ]
   },
   "observacoes": [
+   {
+    "data": "2026-10-24",
+    "texto": "Tosse só na garganta e no nariz. Ibuprofeno interrompido; só era usado se houvesse dor."
+   },
+   {
+    "data": "2026-10-24",
+    "texto": "Acordou com tosse, sem febre e sem dor. Urinou bastante durante a noite."
+   },
+   {
+    "data": "2026-10-23",
+    "texto": "Treino leve para complementar. Curta musculação (crucifixo, rosca biceps, rosca invertida)0e corrida somente para agitar o corpo. Sentimento de leve inchaço. In"
+   },
+   {
+    "data": "2026-10-22",
+    "texto": "Dia bem melhor com o antibiótico; ainda um pouco de tosse. Jogo cancelado para poupar da gripe; alternativa combinada foi descanso."
+   },
+   {
+    "data": "2026-10-22",
+    "texto": "Foi ao médico em 21/10 e começou antibiótico. Hoje se sente bem melhor. Sem jogo hoje por escolha própria; sem jogo no fim de semana."
+   },
+   {
+    "data": "2026-10-20",
+    "texto": "Corrida guiada (Corrida fácil de 30 min (só se o painel liberar)): 30 min, completa.\n\nRitmo bem fácil"
+   },
    {
     "data": "2026-10-18",
     "texto": "Resfriado não passou, na curva de melhora, com muita secreção; disposição não está 100%. Toma antigripal constantemente. Sem dor no joelho; alguma dor na lombar"
@@ -323,21 +343,11 @@
    {
     "data": "2026-10-17",
     "texto": "A janta de 17/10 (pequenas comidas na saída) teve fritura: é a segunda fritura da semana."
-   },
-   {
-    "data": "2026-10-14",
-    "texto": "Resfriado piorou"
-   },
-   {
-    "data": "2026-10-14",
-    "texto": "Corrida guiada (Duas escadas de cadência): 30 min, completa."
-   },
-   {
-    "data": "2026-10-13",
-    "texto": "Resfriado chegando, cansaço, efeito de remédio, dor de garganta. Somado ao almoço atrasado por conta de reunião."
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
- "lacunas": []
+ "lacunas": [
+  "sem pesagem hoje (última: 2026-10-23)"
+ ]
 }

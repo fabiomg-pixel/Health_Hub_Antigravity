@@ -312,7 +312,7 @@ for s in pos_retorno:
     run = run + 1 if s['status'] in ('concluido', 'resgatado') else 0
     if run >= 4 and not saga4: saga4 = (D(s['segunda']) + dt.timedelta(days=6)).isoformat()
 rel.append({'id': 'saga4', 'nome': 'A Saga de Quatro', 'texto': 'Quatro capítulos seguidos depois do retorno.', 'em': saga4})
-rel.append({'id': 'guardiao', 'nome': 'O Guardião Derrotado', 'texto': 'A média de 28 dias abaixo de 92,5 kg.', 'em': None if (m28 is None or m28 > 92.5) else hoje_s})
+rel.append({'id': 'guardiao', 'nome': 'O Colosso Derrotado', 'texto': 'A média de 28 dias abaixo de 92,5 kg.', 'em': None if (m28 is None or m28 > 92.5) else hoje_s})
 rel.append({'id': 'folego', 'nome': 'O Fôlego do Dragão', 'texto': 'VO₂ máx de 46 ao nível do mar.', 'em': hoje_s if (vo2 or 0) >= 46 else None})
 rel.append({'id': 'mestre', 'nome': 'Mestre dos 85', 'texto': 'A média de 28 dias em 85 kg.', 'em': None if (m28 is None or m28 > 85) else hoje_s})
 

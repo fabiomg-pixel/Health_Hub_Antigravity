@@ -1108,3 +1108,30 @@ eventos, com o desfecho produto da eficiência e do cumprimento das regras. Ele 
   o lanche de domingo for anotado) e premissa do capítulo 3 (A Noite das Lanternas: lua cheia na segunda, cheia do rio
   na quinta e sexta, sol de ferro no sábado e a véspera de Finados no domingo), escritas com os dados até sábado.
 
+### 29d. A história refeita: autônoma (pedido do Fabio, 25/10/2026)
+
+**Por quê:** a versão de 24 e 25/10 continuava traduzindo os dias em cenas (força virava forja, pesagem virava a
+cartógrafa medindo o mapa, peixe virava o presente de um pescador, o antibiótico virava a curandeira, Finados virava a
+Noite das Lanternas). O Fabio: "A história é definida por si só. Paralelos com a vida real deixam tudo mais pobre. A vida
+real não serve de referência. A única influência da vida real está associada com as métricas." Pediu refazer tudo, com
+o contexto e o lore num prólogo, e tratar esta semana como a primeira parte da campanha, sem que a parte corresponda a
+uma semana dentro da história.
+
+**Como ficou (v2):**
+- Mundo novo, **A Semente de Aurora**: Ardena, o Véu tecido pelos Tecelões, a Cinza que apaga memórias, a Noite em que o
+  Véu Caiu (Aelis de Vhar, a Rainha de Cinza), o Muro de Brasa e os Faroleiros, os quatro guardiões (o Colosso do Platô
+  Vermelho, a Muralha Viva, o Vigia das Terras Altas, Vharunax). Companhia: Fabio, o Andarilho (a Marca da Aurora);
+  Teodoro, o último Faroleiro do norte; Iara, a Rastreadora; Bram, o Ferreiro; Maren, a Arquivista. Antagonistas: a
+  Cinza, os Esquecidos, Mestre Corvino e a Liga do Sal. Prólogo em `historia/escritos/prologo.md`; Livro do Mundo em
+  `historia/biblia.md`; canon mecânico em `historia/mundo.json`. Os nomes dos arcos e chefes do jornada foram trocados.
+- **Diário de bordo automático:** cada dia fechado tira uma carta do baralho da parte (`historia/partes/<segunda>.json`)
+  pela quantidade de missões cumpridas no dia (4+ bênção/estilha, 2-3 achado/pista, 1 quieto, 0 percalço/desgaste). O
+  texto da carta é só história.
+- **Juramentos:** `historia/juramentos.json` (via `./juramento_quebrado.py`), só data e tipo (limite, mesa).
+- **Fechamento** (`historia.py`): nível pelas missões da semana; runas, Mácula de Cinza, Sussurro da Rainha, Pena da
+  Garça, Sal dos Faróis, Lâmina Estelar (5 estilhas), desgaste; manhãs vermelhas protegem de revés e crise.
+- Removidos: sincronia de tempo e lua, eventos traduzidos do dia, a semana de 12/10 como capítulo (a Parte I é a semana
+  de 19/10). A v1 inteira ficou em `historia/arquivo_v1/`.
+- **Simulação de 25/10:** Parte I (A Estrada dos Faróis Apagados, impasse, com final alternativo de avanço) e Parte II
+  (O Coração de Ost), com baralho.
+

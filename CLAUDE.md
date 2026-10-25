@@ -25,11 +25,11 @@ Memória de conversa não vale: o disco vale.
    `historia/livro/`, desenho `propostas/gamificacao_rpg.md`. XP só por comportamento, o peso nunca dá XP, sem
    dado não pune. **Estalagem** (descanso que conta): o Silvester propõe; só depois do "sim" do Fabio rode
    `./estalagem.py AAAA-MM-DD "motivo"`, `./publicar_jornada.sh` e commite `jornada_eventos.json`.
-   **A história é uma aventura (24 e 25/10):** `historia.py` (canon `historia/mundo.json` e `historia/biblia.md`, estado
-   `historia/estado.json`) decide o desfecho da semana pelo desempenho e pelos eventos do diário de bordo
-   (`historia/eventos_dia.json`, registrados todo dia com `./evento_aventura.py`). Os textos longos (encerramento da
-   semana e premissa da próxima, em `historia/escritos/`) são escritos só pela rotina `rotinas/capitulo_semana.md`,
-   no domingo à noite, seguindo o desfecho do motor. Nunca recite o dia do Fabio na história.
+   **A história é autônoma (25/10):** nada nela corresponde aos dias do Fabio; a única ligação são as métricas, que
+   decidem se os desfechos são favoráveis (`historia.py`: cartas do dia pela qualidade do dia, juramentos quebrados em
+   `historia/juramentos.json`, nível da parte pelas missões). Canon: `historia/escritos/prologo.md`, `historia/biblia.md`,
+   `historia/mundo.json`. Textos longos só pela rotina `rotinas/capitulo_semana.md` (domingo 23h05). Nunca escreva cena
+   que espelhe treino, refeição, pesagem, doença, compromisso, tempo ou data reais.
 9. **O que o Fabio conta no Telegram vale como registro do site** (pedido dele, 16/10). Refeição (foto ou
    texto), treino ou jogo que ele fez, sintoma ou dor: grave na hora com `./registrar_no_painel.py`
    (`refeicao --refeicao Café|Almoço|Lanche|Jantar|Outro`, `treino` ou `observacao`; `--data` do dia em que

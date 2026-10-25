@@ -1,8 +1,8 @@
 {
- "versao": 1,
- "inicio": "2026-10-12",
+ "versao": 2,
+ "inicio": "2026-10-19",
  "arco": "I",
- "etapa": 1,
+ "etapa": 0,
  "companhia": {
   "brisa": {
    "estado": "ativa"
@@ -16,68 +16,16 @@
  },
  "mochila": [
   {
-   "id": "forcas",
-   "desde": "2026-10-24"
+   "id": "escudo",
+   "desde": "2026-10-19"
   }
  ],
  "crise": null,
  "falhas_seguidas": 0,
- "semanas": {
-  "2026-10-12": {
-   "segunda": "2026-10-12",
-   "evento": "a-estalagem",
-   "tier": "avanco",
-   "tier_base": "avanco",
-   "ok": 4,
-   "n": 5,
-   "efeitos": [
-    "A companhia ganhou um talismã: Martelo de Dorn.",
-    "A companhia avançou até a Estrada de Pedra."
-   ],
-   "texto": "A Estrada de Pedra começou sob os pés da companhia. Ninguém falou em voltar; os passos eram curtos, mas todos para a frente.",
-   "titulo": "A Estalagem do Retorno",
-   "cena": {
-    "tier": "avanco",
-    "etapa_antes": 0,
-    "etapa_depois": 1,
-    "arco": "I",
-    "clima": "chuvosa",
-    "lua": null,
-    "companhia": {
-     "brisa": "ativa",
-     "dorn": "ativa",
-     "ysa": "ativa"
-    },
-    "afetado": null,
-    "retorna": null,
-    "itens": [
-     "forcas"
-    ],
-    "talisma": false
-   },
-   "abertura": [
-    "Chuva fina e teimosa cobria as Marcas do Sal. A Estalagem do Retorno ficou para trás à primeira luz. Silvester ergueu a lanterna e apontou a Estrada de Pedra, que sobe entre campos de névoa. A companhia partia leve, com mais dúvida do que mantimento.",
-    "Pôr o pé na estrada, ou voltar ao abrigo."
-   ],
-   "ambiente": {
-    "clima": "chuvosa",
-    "lua": null
-   }
-  }
- },
- "semana_atual": {
-  "segunda": "2026-10-19",
-  "evento": "estrada-de-pedra",
-  "ambiente": {
-   "clima": "tempestade",
-   "lua": null
-  },
-  "etapa": 1
- },
- "ultimo_evento": "a-estalagem",
- "marcos": [],
+ "semanas": {},
  "materiais": {},
  "reliquias": [],
  "maldicoes": [],
- "dividas": []
+ "aflicoes": 0,
+ "marcos": []
 }

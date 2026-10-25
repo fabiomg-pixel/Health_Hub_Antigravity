@@ -1,85 +1,79 @@
-# O capítulo da semana e a próxima aventura (rotina do bot, domingo à noite)
+# Fechar a parte da semana e abrir a próxima (rotina do bot, domingo às 23h05)
 
-**Quem roda:** a sessão do BOT. O launchd digita este roteiro no domingo às 23h05
-(`disparar_rotina.sh capitulo`), depois da avaliação da noite. O gatilho não veio do Fabio. Desenho pedido por
-ele em 25/10/2026 (PROJETO_CHAT §29c): **quando a semana é organizada surge uma aventura nova, com densidade de
-lore, personagens e narrativa; ao longo dos dias acumulam-se conquistas, percalços e derrotas, mencionados por
-baixo; só no fim da semana vem o capítulo, em que esses eventos se integram numa história cujo desfecho é produto
-da eficiência e do cumprimento das regras.** Ele lê 15 a 30 minutos sem problema: não economize.
+**Quem roda:** a sessão do BOT. O launchd digita este roteiro no domingo às 23h05 (`disparar_rotina.sh capitulo`).
+O gatilho não veio do Fabio.
 
-## Antes de escrever, leia tudo
+## A regra que não se quebra (Fabio, 25/10/2026)
 
-- `historia/biblia.md`: o Livro do Mundo. É canon: lugares, personagens (desejos, feridas, segredos), forças.
-- `historia/fios.json`: os fios em aberto. O que aconteceu nas semanas passadas tem de importar mais à frente.
-- `historia/escritos/`: os capítulos e premissas anteriores (estilo, nomes, o que já foi dito). Releia pelo menos
-  o último encerramento e a premissa desta semana.
-- `historia/eventos_dia.json`: o diário de bordo desta semana (o que aconteceu por baixo, dia a dia).
-- `painel/data/historia.json`, depois de rodar o motor (passo 1): `capitulos` (o último com `concluido: true` é o
-  desfecho oficial desta semana: `tier`, `efeitos`, `cena`), `reliquias`, `maldicoes`, `materiais`, `companhia`.
-- `painel/data/semana.json` da semana que começa (o plano do conselho): as missões e os limites da próxima semana.
-- O tempo da próxima semana (Open-Meteo, -22,86/-43,23) e a lua (cheia/nova). Feriados e datas da semana.
+**A história é autônoma.** Nada nela corresponde aos dias do Fabio: nenhuma cena espelha um treino, uma refeição,
+uma pesagem, uma doença, um compromisso, um remédio, o tempo lá fora, um feriado ou qualquer fato da vida dele.
+Paralelos com a vida real empobrecem a história. **A única ligação é mecânica:** as métricas decidem se os
+desfechos são favoráveis ou não, e isso o motor (`historia.py`) já calculou. Você escreve a história que o
+desfecho pede, com densidade de lore, personagens e narrativa. Ele lê de 15 a 30 minutos sem problema.
+
+Cada semana real é uma **parte** da campanha. A parte não corresponde a uma semana dentro da história: pode durar
+dias ou meses no mundo, o que a trama pedir.
+
+## Leia antes de escrever
+
+- `historia/escritos/prologo.md` e `historia/biblia.md` (o Livro do Mundo): canon.
+- `historia/fios.json`: os fios em aberto. O que aconteceu antes tem de importar mais à frente.
+- O encerramento e a premissa anteriores (`historia/escritos/`), para manter voz, nomes e fatos.
+- `historia/partes/<segunda desta semana>.json`: o baralho desta parte.
 
 ## Passos
 
-1. **Fechar.** `python3 jornada.py && python3 historia.py --fechar-hoje`. O motor decide o desfecho (pelas missões
-   e pelos eventos do diário) e grava relíquias, maldições, talismãs, ferimentos e crise. **Você não decide nada
-   disso: você conta.**
+1. **Fechar.** `python3 jornada.py && python3 historia.py --fechar-hoje && python3 jornada.py`. Depois leia
+   `painel/data/historia.json`: em `capitulos`, o último item é a parte que fechou (`tier`, `efeitos`, `cena`); em
+   `historia/estado.json`, `semanas.<segunda>.cartas` diz quantas bênçãos, achados, percalços e maldições a parte teve.
+   Para a ordem das cartas, rode `python3 -c` sobre `historia.py` ou leia o diário que o painel mostrou durante a semana.
+   **Você não decide o desfecho: você conta.** `tier`: triunfo, avanco, sustenta (impasse), reves, crise.
 2. **Escrever o encerramento** em `historia/escritos/<segunda desta semana>-encerramento.md`:
    ```
    ---
    capitulo: N
-   titulo: <nome do capítulo>
-   subtitulo: <frase curta>
+   titulo: <título da parte>
+   subtitulo: Parte <romano>
    semana: AAAA-MM-DD
    simulacao: nao
    desfecho_padrao: <tier oficial>
    ---
    ```
-   - **1.800 a 3.000 palavras**, em seções `## I. ...`, `## II. ...`, terceira pessoa, com diálogo.
-   - Integre os eventos do diário como cenas da história, na ordem da semana, **sem recitar o dia do Fabio**: nada
-     de minutos, quilos, cargas, quilômetros, nomes de exercícios ou refeições literais. O fato vira acontecimento
-     do mundo (a lasca de ferro-estrela, a medida de Ysa, a escama do pescador, a trinca no martelo).
-   - A última seção é a **Hora do Balanço**: o desfecho oficial (`tier`) e **todas** as consequências que o motor
-     aplicou (`efeitos`), explicadas dentro da história. Revés e crise são acontecimentos do mundo, nunca bronca;
-     diga o caminho de volta (resgate, relíquia, a semana dentro da lei).
-   - Se já existir um arquivo de **simulação** desta semana (`simulacao: sim`), aproveite o corpo, troque a nota,
-     marque `simulacao: nao` e escolha o final que bate com o tier oficial (se houver bloco
-     `<!-- alternativa: <tier> -->`, use-o como final; senão, reescreva a última seção).
-3. **Atualizar os fios** (`historia/fios.json`): o que avançou, o que nasceu, o que se fechou. Plante pelo menos uma
-   semente que só vai florescer em semanas futuras.
-4. **Escrever a próxima aventura** em `historia/escritos/<próxima segunda>-premissa.md` (mesmo cabeçalho, sem
-   `desfecho_padrao`): **1.500 a 2.500 palavras**. Um episódio novo, com lugar, gente e conflito próprios, dentro
-   do arco (a etapa atual em `historia.json`). Precisa ter: a situação e quem pede o quê; o céu da semana (tempo
-   real e lua); a companhia nesta semana (o estado de cada um: ferido, amaldiçoado, o que deseja); o que espreita
-   (as forças); **o que a semana pede** (as missões do plano, como tarefas do mundo: o fogo de Dorn = sessões de
-   força, os dias de estrada = dias ativos, as medidas de Ysa = pesagens, as provisões do livro = almoços e lanches
-   anotados); **os juramentos** (a lei da lanterna = os portões da fisiologista; a mesa das Sereias = fritura no
-   máximo 2; as bênçãos possíveis); e **como a semana pode terminar** (triunfo, avanço, sustenta, revés, crise),
-   com o preço de cada caminho. Se já existir uma simulação da premissa, revise com o plano do conselho e marque
-   `simulacao: nao`.
+   - **2.000 a 3.500 palavras**, em seções `## I. ...`, terceira pessoa, com diálogo, cenas e interioridade.
+   - As **cartas** que saíram nesta parte (na ordem) são acontecimentos da trama e têm de aparecer integradas na
+     história. As **consequências** (`efeitos`: runa partida, mácula, ferida, captura, relíquia, estilhas, avanço ou
+     recuo de etapa) têm de acontecer na história, explicadas por ela mesma.
+   - A última seção é o desfecho da parte, coerente com o `tier`: triunfo = grande vitória; avanço = o objetivo da
+     parte é alcançado; impasse = a companhia segura o que tem mas não alcança o objetivo; revés = derrota com ferida;
+     crise = derrota grave (captura, recuo). Sem culpa nem lição moral.
+   - Se já houver uma **simulação** desta semana (`simulacao: sim`): mantenha o corpo, escolha o final pelo tier oficial
+     (o bloco `<!-- alternativa: <tier> -->`, se houver; senão reescreva a última seção), troque a nota e marque
+     `simulacao: nao`.
+3. **Atualizar os fios** (`historia/fios.json`) e, se nasceu lore novo, o `historia/biblia.md`. Plante pelo menos uma
+   semente que só floresce semanas adiante.
+4. **Escrever a próxima parte**:
+   - **Premissa** em `historia/escritos/<próxima segunda>-premissa.md` (cabeçalho igual, sem `desfecho_padrao`), **1.500
+     a 2.500 palavras**: um episódio novo dentro do arco (a etapa atual em `historia.json`), que continua o desfecho que
+     acabou de acontecer. Lugar, gente, conflito, o que cada membro da companhia quer e teme agora (inclua ferimentos e
+     maldições ativas), o que espreita, e **como a parte pode terminar** (triunfo, avanço, impasse, revés, crise), com o
+     que está em jogo em cada caso. **Proibido** mapear missões ou regras para tarefas do mundo ("o fogo da forja =
+     sessões de força"): o leitor vê as métricas no painel, fora da história.
+   - **Baralho** em `historia/partes/<próxima segunda>.json`, no formato de `historia/partes/2026-10-26.json`:
+     `parte`, `titulo`, `clima` (céu da parte, inventado: `seca`, `chuvosa`, `tempestade` ou `quente`), `antagonista`
+     (`cinza`, `corvino` ou `esquecidos`), `recompensa_limpa` (id de relíquia de `mundo.json`) e as pilhas: pelo menos
+     5 `bencao` (efeito `{"estilha": 1}`), 4 `achado` (`{"pista": 1}`), 3 `quieto` (`{}`), 3 `percalco`
+     (`{"desgaste": 1}`) e 3 `maldicao` (sem efeito; texto agourento que não diga qual é o preço). Cartas curtas
+     (1 a 2 frases), só história, ligadas à trama desta parte, na ordem em que fariam sentido.
 5. **Publicar.** `./publicar_jornada.sh`, commit de `historia/` e `painel/data/historia.json`.
-6. **Avisar** (`./enviar_telegram_saude.py capitulo`), em até 8 linhas: o título do capítulo e o desfecho em uma
-   frase; as consequências que mais pesam; o título da próxima aventura e uma frase de gancho; o link
-   `https://painel-xi-three.vercel.app/#campanha`. Não cole o texto longo no Telegram.
+6. **Avisar** (`./enviar_telegram_saude.py capitulo`), em até 8 linhas: o título da parte que fechou e o desfecho numa
+   frase da história; as consequências que pesam; o título da próxima parte e uma frase de gancho; o link
+   `https://painel-xi-three.vercel.app/#campanha`.
 
-## Ao longo da semana (avaliação da noite)
+## Durante a semana (avaliação da noite)
 
-Todo dia, a avaliação da noite registra **de 1 a 4 acontecimentos** do dia com `./evento_aventura.py`, a partir do
-que aconteceu de verdade. Tabela de tradução (use esta, para o mundo ser coerente):
-
-| No dia real | Tipo | Efeito |
-|---|---|---|
-| Sessão de força do plano feita | conquista (Dorn, a forja) | `ferro=1` |
-| Pesagem em jejum | conquista (Ysa fixa a posição) | `rumo=1` |
-| Corrida ou dia ativo dentro do plano | conquista (Brisa explora) | `pena=1` |
-| Peixe numa refeição (a primeira da semana) | presente (os pescadores) | relíquia, se o canon tiver uma pendente |
-| Leguminosa, fruta, semana sem fritura | bênção | relíquia do canon, quando couber |
-| Manhã vermelha, doença, noite curta | percalço ou névoa | `abrigo=sim` |
-| Manhã verde depois de vermelhas | aurora | nenhum |
-| Treino fora do plano, acima do teto, ou em manhã vermelha (a lei da lanterna quebrada) | juramento_quebrado | `juramento=limite`, `consequencia=trinca` na 1ª da semana; `consequencia=febre_do_orgulho` na 2ª ou se a febre já estiver ativa |
-| Fritura além do limite de 2 na semana | juramento_quebrado | `juramento=sereias`, `consequencia=sal` |
-| Médico, remédio, entrevista, visita, decisão sensata | encontro ou bênção | `npc`, `divida`, `fio`, ou nenhum |
-
-Texto do acontecimento: 1 a 2 frases, no mundo, sem números do corpo nem nomes de exercício. Na mensagem da
-noite, mencione por baixo, numa linha, o acontecimento do dia ("No diário de bordo: Dorn achou uma lasca de
-ferro-estrela."). O preço e o prêmio só chegam no domingo.
+O diário de bordo é automático: o motor tira as cartas pela qualidade do dia. A avaliação da noite só:
+- registra, quando houver, o **juramento quebrado** do dia: `./juramento_quebrado.py AAAA-MM-DD limite` (portão ou
+  teto da fisiologista desrespeitado) ou `mesa` (fritura além de 2 na semana). Só a data e o tipo; a história nunca
+  diz o que foi feito;
+- roda `python3 historia.py` e cita na mensagem, numa linha, a carta do dia (o texto, como está), sem explicar por
+  que ela saiu.

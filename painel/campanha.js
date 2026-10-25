@@ -125,7 +125,7 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-ev { display: grid; grid-template-columns: 20px 1fr; gap: 8px; margin-top: 7px; font-size: 14px; line-height: 1.5; }
   .cp-ev i { font-style: normal; text-align: center; font-weight: 800; }
   .cp-ev small { display: block; font-size: 12px; color: var(--sol); opacity: 0.9; margin-top: 2px; }
-  .cp-ev.juramento_quebrado, .cp-ev.percalco, .cp-ev.nevoa { color: #FFC9C3; }
+  .cp-ev.maldicao, .cp-ev.percalco, .cp-ev.juramento_quebrado { color: #FFC9C3; }
   .cp-lista { display: grid; gap: 8px; } .cp-lista > div { border: 2px solid rgba(255,255,255,0.25); padding: 10px 12px; font-size: 13.5px; line-height: 1.5; }
   .cp-lista > div b { display: block; font-family: var(--display); font-size: 15px; margin-bottom: 2px; }
   .cp-lista > div.mal { border-color: #FF6B5E; } .cp-lista > div.usada { opacity: 0.5; }
@@ -141,6 +141,8 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
 const CP_STATUS = { concluido: 'concluído', em_andamento: 'em andamento', nao_concluido: 'não concluído', resgatado: 'resgatado', resgate_possivel: 'pode ser resgatado' };
 const cpDDMM = iso => iso ? iso.slice(8, 10) + '/' + iso.slice(5, 7) : '';
 function cpTituloCapitulo() {
+  const H = typeof HISTORIA !== 'undefined' ? HISTORIA : null;
+  if (H && H.semana && H.semana.titulo) return `Parte ${H.semana.parte}: ${H.semana.titulo}`;
   const j = JORNADA, n = j.capitulo.numero;
   const c = (j.livro || []).find(l => new RegExp('^Cap[ií]tulo ' + n + '\\b').test(l.titulo));
   return c ? c.titulo.replace(/\s*\(.*\)\s*$/, '') : 'Capítulo ' + n;
@@ -160,7 +162,7 @@ function cpResgate() {
   return r ? `<div class="par" style="padding-top:12px">O capítulo de ${cpDDMM(r.segunda)} pode ser <b>resgatado</b>: conclua este capítulo, com 3 dias ativos em 4 dias corridos, e a saga continua.</div>` : '';
 }
 
-// ── Início: o capítulo da semana (é da semana, não do dia)
+// ── Início: a parte da semana
 function cpAmeacaCurta() {
   const H = typeof HISTORIA !== 'undefined' ? HISTORIA : null; if (!H || !H.semana) return '';
   const rec = cpUltimoDesfecho(), hoje = isoLocal();
@@ -170,8 +172,8 @@ function cpAmeacaCurta() {
 }
 function cpAmeacaBase(H) {
   const p = H.premissa_proxima, e = H.encerramento;
-  const novo = (e ? `<div class="par" style="padding:10px 0 2px"><b>Capítulo ${e.n}${e.simulacao ? ' (simulação)' : ''}:</b> ${esc(e.titulo)}, ≈ ${e.minutos} min. ` : '<div class="par" style="padding:10px 0 2px">') +
-    (p ? `<b>Próxima aventura:</b> ${esc(p.titulo)}, ≈ ${p.minutos} min. ` : '') + ((e || p) ? `<a href="#campanha" style="text-decoration:underline">Ler na Campanha</a></div>` : '</div>');
+  const novo = (e ? `<div class="par" style="padding:10px 0 2px"><b>Parte ${e.parte || e.n}${e.simulacao ? ' (simulação)' : ''}:</b> ${esc(e.titulo)}, ≈ ${e.minutos} min. ` : '<div class="par" style="padding:10px 0 2px">') +
+    (p ? `<b>Parte ${p.parte || p.n}:</b> ${esc(p.titulo)}, ≈ ${p.minutos} min. ` : '') + ((e || p) ? `<a href="#campanha" style="text-decoration:underline">Ler na Campanha</a></div>` : '</div>');
   if (e || p) return novo;
   const aviso = H.crise ? `<b>Crise:</b> ${esc(H.crise.companheiro)} está pres${H.crise.g} (${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}). ` : '';
   return `<div class="par" style="padding:10px 0 4px">${aviso}<b>${esc(H.semana.titulo)}.</b> Em jogo: ${esc(H.semana.em_jogo)}</div>`;
@@ -214,7 +216,7 @@ function blocoMissoesHoje() {
 function linkCampanha() {
   if (!JORNADA) return '';
   const p = JORNADA.personagem;
-  return `<section class="bloco" style="padding-bottom:0"><a class="linha" href="#campanha"><span class="corpo">A Campanha dos 85<small>nível ${p.nivel} · ${esc(p.titulo)} · ${esc(cpTituloCapitulo())}</small></span><span class="num">abrir</span></a></section>`;
+  return `<section class="bloco" style="padding-bottom:0"><a class="linha" href="#campanha"><span class="corpo">A Campanha<small>nível ${p.nivel} · ${esc(p.titulo)} · ${esc(cpTituloCapitulo())}</small></span><span class="num">abrir</span></a></section>`;
 }
 
 // ── a tela da Campanha
@@ -225,7 +227,7 @@ const CP_CHEFE = {
   'IV': '<path d="M3 14c3-1 5-4 6-8 1 3 3 5 6 5 2 0 4-1 6-3-1 5-4 9-9 10-4 .5-7-1-9-4z"/><circle cx="15" cy="12" r="1"/>'
 };
 function cpMapa() {
-  const j = JORNADA, arcos = [['I', 'O Retorno', 'O Guardião do Platô'], ['II', 'Abaixo dos 90', 'A Barreira dos Noventa'], ['III', 'As Terras Altas', 'O Vigia das Terras Altas'], ['IV', 'O Último Porto', 'O Dragão dos 85']];
+  const j = JORNADA, arcos = [['I', 'O Muro de Brasa', 'O Colosso'], ['II', 'A Planície de Sal', 'A Muralha Viva'], ['III', 'As Terras Altas', 'O Vigia'], ['IV', 'O Monte Vhar', 'Vharunax']];
   const pts = [[24, 196], [96, 150], [176, 172], [250, 104], [312, 40]];   // 95, 92,5, 90, 87,5, 85
   const atual = j.arco ? j.arco.num : 'I';
   const d = 'M24 196 C 56 196, 70 150, 96 150 S 150 176, 176 172 S 226 112, 250 104 S 300 60, 312 40';
@@ -258,12 +260,12 @@ function cpEstadoDe(c) { const m = c.g === 'o'; return { ativa: 'de pé', ferida
 
 // ── A cena em pixel art do desfecho da semana (pixel.js)
 const CP_TIERS = [
-  ['atual', 'Desta semana'], ['triunfo', 'Triunfo'], ['avanco', 'Avanço'], ['sustenta', 'Sustenta'], ['reves', 'Revés'], ['crise', 'Crise'],
+  ['atual', 'Desta semana'], ['triunfo', 'Triunfo'], ['avanco', 'Avanço'], ['sustenta', 'Impasse'], ['reves', 'Revés'], ['crise', 'Crise'],
 ];
 const CP_TIER_TXT = {
-  triunfo: 'Triunfo: todas as missões. A companhia avança 2 etapas, ganha 2 talismãs e quem estava ferido ou perdido volta.',
-  avanco: 'Avanço: capítulo concluído. A companhia avança 1 etapa e ganha 1 talismã.',
-  sustenta: 'Sustenta: metade das missões ou mais. A companhia acampa e se recupera, sem avançar nem recuar.',
+  triunfo: 'Triunfo: todas as missões. A companhia avança 2 etapas, ganha 2 runas e quem estava ferido ou perdido volta.',
+  avanco: 'Avanço: parte concluída (todas as missões menos uma). A companhia avança 1 etapa e ganha 1 runa.',
+  sustenta: 'Impasse: metade das missões ou mais. A companhia segura o terreno e se recupera, sem avançar.',
   reves: 'Revés: semana fraca. Um companheiro sai ferido do trecho.',
   crise: 'Crise: semana vazia, ou duas fracas seguidas. A companhia recua uma etapa e um companheiro é capturado; há 3 semanas para o resgate.',
   sem_dado: 'Sem dado: a névoa cobriu o mapa e nada foi decidido.',
@@ -326,16 +328,22 @@ function cpLigarLeituras() {
     b.textContent = fechada ? b.textContent.replace(/^Recolher/, 'Ler') : 'Recolher'; if (fechada) el.scrollIntoView({ block: 'start' });
   }));
 }
-const CP_ICO = { conquista: '+', presente: '✦', bencao: '✦', aurora: '☀', encontro: '•', neutro: '·', percalco: '−', nevoa: '≈', juramento_quebrado: '!' };
+const CP_ICO = { bencao: '✦', achado: '+', quieto: '·', percalco: '−', maldicao: '!', conquista: '+', presente: '✦', neutro: '·', juramento_quebrado: '!' };
+function cpPrologo() {
+  const p = (HISTORIA || {}).prologo; if (!p) return '';
+  return `<section class="bloco"><div class="cab"><h2>Prólogo</h2><small>o mundo e a companhia</small></div>
+    <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(p.subtitulo || p.titulo)}</h3>
+    <div style="margin-top:14px">${cpLeitura('cp-prol', p.texto, p.minutos, 'Ler o prólogo inteiro')}</div></section>`;
+}
 function cpEncerramento() {
   const H = HISTORIA, e = H && H.encerramento; if (!e) return '';
   const pj = H.projecao, aberta = pj && e.simulacao;
   const ef = (pj && pj.efeitos) || [];
-  return `<section class="bloco cp-cena"><div class="cab"><h2>O capítulo da semana</h2><small>${e.simulacao ? '<span class="cp-selo">simulação</span>' : ''}capítulo ${e.n}</small></div>
+  return `<section class="bloco cp-cena"><div class="cab"><h2>Parte ${esc(e.parte || String(e.n))}</h2><small>${e.simulacao ? '<span class="cp-selo">simulação</span>' : ''}${aberta ? 'o desfecho desta semana' : 'a última parte fechada'}</small></div>
     <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(e.titulo)}</h3>${e.subtitulo ? `<div style="font-family:Georgia,serif;font-style:italic;opacity:.8;margin-top:2px">${esc(e.subtitulo)}</div>` : ''}
     ${e.nota ? `<div class="cp-nota">${esc(e.nota)}</div>` : ''}
     <canvas id="cp-pixel" class="cp-pixel" style="margin-top:14px" role="img" aria-label="Cena em pixel art do desfecho"></canvas>
-    ${aberta && pj.falta_para_avanco > 0 ? `<div class="cp-conseq"><b>O desfecho ainda pode mudar.</b> Até agora: ${pj.ok} de ${pj.n} missões, a semana <b>se sustenta</b>. Mais ${pj.falta_para_avanco} ${pj.falta_para_avanco === 1 ? 'missão' : 'missões'} até o fechamento e o capítulo vira <b>avanço</b>: o final do texto muda.</div>` : ''}
+    ${aberta && pj.falta_para_avanco > 0 ? `<div class="cp-conseq"><b>O desfecho ainda pode mudar.</b> Até agora, ${pj.ok} de ${pj.n} missões da semana: a parte termina em <b>${{ triunfo: 'triunfo', avanco: 'avanço', sustenta: 'impasse', reves: 'revés', crise: 'crise' }[pj.tier] || pj.tier}</b>. Mais ${pj.falta_para_avanco} ${pj.falta_para_avanco === 1 ? 'missão' : 'missões'} até o fechamento e ela vira <b>avanço</b>: o final do texto muda.</div>` : ''}
     ${ef.length ? `<div class="cp-conseq"><b>Consequências${aberta ? ' (se fechasse agora)' : ''}:</b><ul style="margin:6px 0 0;padding-left:18px">${ef.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
     <div style="margin-top:16px">${cpLeitura('cp-enc', e.texto, e.minutos, 'Ler o capítulo inteiro')}</div>
     <div class="cp-tiers" id="cp-tiers" style="margin-top:18px">${CP_TIERS.map(t => `<button data-t="${t[0]}">${t[0] === 'atual' ? 'Esta cena' : t[1]}</button>`).join('')}</div>
@@ -345,23 +353,23 @@ function cpPremissa() {
   const H = HISTORIA; if (!H) return '';
   const p = H.premissa_proxima || H.premissa_atual; if (!p) return '';
   const proxima = p === H.premissa_proxima;
-  return `<section class="bloco"><div class="cab"><h2>${proxima ? 'A próxima aventura' : 'A aventura desta semana'}</h2><small>${p.simulacao ? '<span class="cp-selo">simulação</span>' : ''}capítulo ${p.n}</small></div>
+  return `<section class="bloco"><div class="cab"><h2>Parte ${esc(p.parte || String(p.n))}</h2><small>${p.simulacao ? '<span class="cp-selo">simulação</span>' : ''}${proxima ? 'a próxima aventura' : 'a aventura desta semana'}</small></div>
     <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(p.titulo)}</h3>${p.nota ? `<div class="cp-nota">${esc(p.nota)}</div>` : ''}
     <div style="margin-top:14px">${cpLeitura('cp-prem', p.texto, p.minutos, 'Ler a premissa inteira')}</div></section>`;
 }
 function cpDiario() {
   const H = HISTORIA, d = H && H.diario; if (!d || !d.length) return '';
-  return `<section class="bloco"><div class="cab"><h2>Diário de bordo</h2><small>o que aconteceu por baixo, dia a dia; o preço e o prêmio chegam na Hora do Balanço</small></div>` +
+  return `<section class="bloco"><div class="cab"><h2>Diário de bordo</h2><small>o que acontece ao longo da parte; o preço e o prêmio chegam no fechamento</small></div>` +
     d.map(x => `<div class="cp-dia"><b>${esc(x.dia)}</b>${x.eventos.map(ev => `<div class="cp-ev ${ev.tipo}"><i>${CP_ICO[ev.tipo] || '·'}</i><span>${esc(ev.texto)}${ev.marcas.length ? `<small>${ev.marcas.map(esc).join(' · ')}</small>` : ''}</span></div>`).join('')}</div>`).join('') + `</section>`;
 }
 function cpTesouro() {
   const H = HISTORIA; if (!H) return '';
   const rel = H.reliquias || [], mal = H.maldicoes || [], mat = H.materiais || {}, pj = H.projecao;
-  const proj = pj && pj.depois ? `<div class="cp-nota" style="margin-top:10px">Se a semana fechasse agora: ${pj.depois.reliquias.length} relíquias, ${pj.depois.maldicoes.length ? 'maldição: ' + pj.depois.maldicoes.map(m => m === 'febre_do_orgulho' ? 'Febre do Orgulho' : 'Canto das Sereias').join(', ') : 'nenhuma maldição'}, ${pj.depois.mochila.length} de 3 talismãs, ${pj.depois.materiais.ferro || 0} de 3 lascas de ferro-estrela.</div>` : '';
+  const proj = pj && pj.depois ? `<div class="cp-nota" style="margin-top:10px">Se a semana fechasse agora: ${pj.depois.reliquias.length} relíquias, ${pj.depois.maldicoes.length ? 'maldição: ' + pj.depois.maldicoes.map(m => m === 'macula_de_cinza' ? 'Mácula de Cinza' : 'Sussurro da Rainha').join(', ') : 'nenhuma maldição'}, ${pj.depois.mochila.length} de 3 runas, ${pj.depois.materiais.estilha || 0} de 5 estilhas para a Lâmina Estelar, ${pj.depois.materiais.pista || 0} pistas do Códice.</div>` : '';
   return `<section class="bloco"><div class="cab"><h2>Relíquias e maldições</h2><small>o que fica de uma semana para outra</small></div><div class="cp-lista">` +
-    (rel.length ? rel.map(r => `<div class="${r.usada ? 'usada' : ''}"><b>${esc(r.nome)}${r.usada ? ' (usada)' : ''}</b>${esc(r.texto)}</div>`).join('') : '<div>Nenhuma relíquia ainda. Elas chegam com a Hora do Balanço.</div>') +
-    mal.map(m => `<div class="mal"><b>${esc(m.nome)}</b>${esc(m.texto)}</div>`).join('') +
-    `<div><b>Materiais</b>${Object.values(mat).map(x => `${x.qtd} ${esc(x.nome)}${x.forja ? ' (de ' + x.forja + ' para a Lâmina do Marco)' : ''}`).join(' · ')}</div></div>${proj}</section>`;
+    (rel.length ? rel.map(r => `<div class="${r.usada ? 'usada' : ''}"><b>${esc(r.nome)}${r.usada ? ' (usada)' : ''}</b>${esc(r.texto)}</div>`).join('') : '<div>Nenhuma relíquia ainda. Elas chegam no fechamento das partes.</div>') +
+    mal.map(m => `<div class="mal"><b>${esc(m.nome)}${m.alvo ? ' · ' + esc(m.alvo) : ''}</b>${esc(m.texto)}</div>`).join('') +
+    `<div><b>Materiais</b>${Object.values(mat).map(x => `${x.qtd} ${esc(x.nome)}${x.forja ? ' (de ' + x.forja + ' para a Lâmina Estelar)' : ''}`).join(' · ')}</div></div>${proj}</section>`;
 }
 function cpFios() {
   const f = (HISTORIA || {}).fios || []; if (!f.length) return '';
@@ -375,7 +383,7 @@ function cpLivroMundo() {
 }
 function cpAventura() {
   const H = HISTORIA; if (!H) return '';
-  let h = '<div class="cp-aventura">' + (H.encerramento ? cpEncerramento() : cpDesfecho()) + cpPremissa() + cpDiario();
+  let h = '<div class="cp-aventura">' + cpPrologo() + (H.encerramento ? cpEncerramento() : cpDesfecho()) + cpPremissa() + cpDiario();
   if (H.crise) {
     const g = H.crise.g, ela = g === 'o' ? 'ele' : 'ela', a = g === 'o' ? 'o' : 'a';
     h += `<div class="cp-crise"><b class="t">Crise aberta: ${esc(H.crise.companheiro)}</b><div class="par" style="margin-top:6px">${esc(H.crise.companheiro)} está pres${g} em ${esc(H.crise.onde)}. Uma semana boa (capítulo concluído) ${a} traz de volta. Prazo: <b>${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}</b>; se acabar, ${ela} se perde, e só uma grande vitória ${a} resgata depois.</div></div>`;
@@ -393,17 +401,17 @@ function cpAventura() {
     H.etapas.map((e, i) => `<div class="cp-et ${e.estado} ${i === H.etapas.length - 1 ? 'chefe' : ''}"><i></i><span>${esc(e.nome)}${i === H.etapas.length - 1 ? ' · só cai pela balança (média de 28 dias)' : ''}</span></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>A companhia</h2><small>${esc(H.guia.nome)}, ${esc(H.guia.papel)}, guia o grupo</small></div><div class="cp-comp">` +
     H.companhia.map(c => `<div class="cp-pers ${c.estado}"><canvas class="cp-mini" data-id="${c.id}" data-estado="${c.estado}"></canvas><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
-  h += `<section class="bloco"><div class="cab"><h2>A mochila</h2><small>${H.mochila.length} de 3 talismãs</small></div><div class="cp-bag">` +
+  h += `<section class="bloco"><div class="cab"><h2>As runas de Bram</h2><small>${H.mochila.length} de 3</small></div><div class="cp-bag">` +
     [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
-    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Cada missão cumprida numa semana boa rende um talismã.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
+    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende runa nova.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
   return h;
 }
 function renderCampanha() {
-  if (!JORNADA) { $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">A Campanha dos 85</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div>`; return; }
+  if (!JORNADA) { $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">A Semente de Aurora</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div>`; return; }
   const j = JORNADA, p = j.personagem, v = j.vitalidade, a = j.arco || {}, pr = j.paralela;
   const vit = v.indice == null ? ['—', 'Vitalidade: sem dado'] : [fNum(v.indice, 0), v.estado === 'ferido' ? 'Vitalidade: ferido' : 'Vitalidade: de pé'];
   let h = `<div class="cp-escuro"><div class="campo tinta"><div class="dentro" style="padding-bottom:26px">
-    <div class="topo"><div class="rot">A Campanha dos 85</div><div class="selo">${esc(cpTituloCapitulo())}</div></div>
+    <div class="topo"><div class="rot">A Semente de Aurora</div><div class="selo">${esc(cpTituloCapitulo())}</div></div>
     <div class="cp-ficha"><svg viewBox="0 0 74 86" role="img" aria-label="Nível ${p.nivel}">
       <path d="M37 3l32 11v24c0 21-14 37-32 45C19 75 5 59 5 38V14z" fill="none" stroke="var(--sol)" stroke-width="3"/>
       <path d="M37 11l24 8v19c0 16-10 29-24 36-14-7-24-20-24-36V19z" fill="var(--sol)" opacity="0.14"/>
@@ -444,7 +452,7 @@ function renderCampanha() {
     <div class="par">O XP nunca diminui. O peso não dá nem tira XP: ele só move o mapa, pela média de 28 dias. O futebol conta como dia ativo, sem bônus.</div>
     <div class="par">Capítulo é a semana, de segunda a domingo. Concluído = todas as missões, ou todas menos uma. A meta de dias ativos segue a sua fase: média das últimas 4 semanas mais 1, entre 3 e 5; depois de 2 capítulos sem conclusão, cai para 3 e começa um arco de retorno.</div>
     <div class="par">Saga é a sequência de capítulos concluídos. Um capítulo perdido pode ser resgatado na semana seguinte (3 dias ativos em 4 dias corridos e o capítulo seguinte concluído), uma vez a cada 4 semanas. Dia de descanso confirmado conta como cumprido.</div>
-    <div class="par">A aventura anda pelo desempenho da semana, não pelo dia: a semana traz uma ameaça, e o desfecho depende de quantas missões você cumprir. Semana forte avança a companhia e rende talismãs; semana fraca fere um companheiro; duas fracas seguidas, ou uma vazia, abrem uma crise com prazo de resgate. Doença, descanso confirmado e semana sem dado nunca viram perda. As perdas são do mundo da história, nunca do XP.</div>
+    <div class="par">A história é autônoma: nada nela corresponde aos seus dias. A única ligação são as métricas. Cada dia fechado tira uma carta do baralho da parte, pela quantidade de missões do dia: dia forte, bênção (estilha do céu); dia bom, achado (pista do Códice); dia fraco, dia quieto; dia vazio, percalço. Juramento quebrado (limites da fisiologista, fritura além de 2) tira uma carta de maldição: a 1ª da parte parte uma runa, a 2ª lança a Mácula de Cinza; com a mácula ativa, um novo juramento quebrado entrega a pessoa marcada à Cinza. Parte sem juramento quebrado tira a mácula e dá uma relíquia. No fechamento, as missões da semana decidem o nível: triunfo, avanço, impasse, revés ou crise. Manhãs vermelhas protegem de revés e crise. As perdas são da história, nunca do XP.</div>
     <div class="par">Sem dado, sem XP e sem punição. Tudo é recalculado do zero a partir dos registros, do relógio e da balança (jornada.py).</div></details></section></div>`;
   $('view').innerHTML = h;
   cpPosicionarMarca();

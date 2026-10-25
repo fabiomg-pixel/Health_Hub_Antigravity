@@ -1,85 +1,85 @@
 {
-  "_nota": "Regras da Campanha dos 85 (gamificação). Desenho: propostas/gamificacao_rpg.md e propostas/gamificacao.md. Mudanças: especialistas propõem, o Fabio aprova, a decisão vai para decisoes.md.",
-  "inicio_campanha": "2026-07-13",
-  "inicio_livro": "2026-10-12",
-  "xp": {
-    "forca": 100,
-    "corrida": 80,
-    "dia_ativo": 30,
-    "estalagem": 50,
-    "pesagem": 20,
-    "almoco": 20,
-    "lanche": 20,
-    "missao_semana": 50,
-    "capitulo": 150,
-    "teto_diario": 250
+ "_nota": "Regras da Campanha dos 85 (gamificação). Desenho: propostas/gamificacao_rpg.md e propostas/gamificacao.md. Mudanças: especialistas propõem, o Fabio aprova, a decisão vai para decisoes.md.",
+ "inicio_campanha": "2026-07-13",
+ "inicio_livro": "2026-10-12",
+ "xp": {
+  "forca": 100,
+  "corrida": 80,
+  "dia_ativo": 30,
+  "estalagem": 50,
+  "pesagem": 20,
+  "almoco": 20,
+  "lanche": 20,
+  "missao_semana": 50,
+  "capitulo": 150,
+  "teto_diario": 250
+ },
+ "dia_ativo_kcal": 300,
+ "missoes": {
+  "pesagens": 4,
+  "almocos_uteis": 4,
+  "lanches": 4,
+  "ativos_min": 3,
+  "ativos_max": 5,
+  "ativos_janela_semanas": 4
+ },
+ "capitulo": {
+  "regra": "todas as missoes, ou todas menos uma quando ha 3 ou mais"
+ },
+ "resgate": {
+  "dias_ativos": 3,
+  "em_dias_corridos": 4,
+  "uma_vez_a_cada_semanas": 4
+ },
+ "novo_arco_apos_semanas_sem_capitulo": 2,
+ "nivel": {
+  "primeiro": 1000,
+  "incremento": 500
+ },
+ "titulos": [
+  "Atleta em Readaptação",
+  "Caçador de Hábitos",
+  "Guardião Metabólico",
+  "Veterano das Trilhas",
+  "Escudeiro do Conselho",
+  "Cavaleiro da Constância",
+  "Senhor das Marés",
+  "Campeão do Conselho"
+ ],
+ "arcos": [
+  {
+   "num": "I",
+   "nome": "O Muro de Brasa",
+   "de": 95.0,
+   "ate": 92.5,
+   "chefe": "O Colosso do Platô Vermelho"
   },
-  "dia_ativo_kcal": 300,
-  "missoes": {
-    "pesagens": 4,
-    "almocos_uteis": 4,
-    "lanches": 4,
-    "ativos_min": 3,
-    "ativos_max": 5,
-    "ativos_janela_semanas": 4
+  {
+   "num": "II",
+   "nome": "A Planície de Sal",
+   "de": 92.5,
+   "ate": 90.0,
+   "chefe": "A Muralha Viva"
   },
-  "capitulo": {
-    "regra": "todas as missoes, ou todas menos uma quando ha 3 ou mais"
+  {
+   "num": "III",
+   "nome": "As Terras Altas",
+   "de": 90.0,
+   "ate": 87.5,
+   "chefe": "O Vigia das Terras Altas"
   },
-  "resgate": {
-    "dias_ativos": 3,
-    "em_dias_corridos": 4,
-    "uma_vez_a_cada_semanas": 4
-  },
-  "novo_arco_apos_semanas_sem_capitulo": 2,
-  "nivel": {
-    "primeiro": 1000,
-    "incremento": 500
-  },
-  "titulos": [
-    "Atleta em Readaptação",
-    "Caçador de Hábitos",
-    "Guardião Metabólico",
-    "Veterano das Trilhas",
-    "Escudeiro do Conselho",
-    "Cavaleiro da Constância",
-    "Senhor das Marés",
-    "Campeão do Conselho"
-  ],
-  "arcos": [
-    {
-      "num": "I",
-      "nome": "O Retorno",
-      "de": 95.0,
-      "ate": 92.5,
-      "chefe": "O Guardião do Platô"
-    },
-    {
-      "num": "II",
-      "nome": "Abaixo dos 90",
-      "de": 92.5,
-      "ate": 90.0,
-      "chefe": "A Barreira dos Noventa"
-    },
-    {
-      "num": "III",
-      "nome": "As Terras Altas",
-      "de": 90.0,
-      "ate": 87.5,
-      "chefe": "O Vigia das Terras Altas"
-    },
-    {
-      "num": "IV",
-      "nome": "O Último Porto",
-      "de": 87.5,
-      "ate": 85.0,
-      "chefe": "O Dragão dos 85"
-    }
-  ],
-  "paralela": {
-    "nome": "O Fôlego do Dragão",
-    "de": 42.2,
-    "ate": 46.0,
-    "nota": "VO2 máx; só leitura ao nível do mar conta"
+  {
+   "num": "IV",
+   "nome": "O Monte Vhar",
+   "de": 87.5,
+   "ate": 85.0,
+   "chefe": "Vharunax, o Dragão Adormecido"
   }
+ ],
+ "paralela": {
+  "nome": "VO₂ máx",
+  "de": 42.2,
+  "ate": 46.0,
+  "nota": "VO2 máx; só leitura ao nível do mar conta"
+ }
 }
