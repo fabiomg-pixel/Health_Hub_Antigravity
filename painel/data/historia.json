@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-25T00:39:50",
+ "gerado_em": "2026-10-25T21:09:25",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -319,9 +319,11 @@
    "dia": "sábado",
    "eventos": [
     {
-     "tipo": "quieto",
-     "texto": "Um dia inteiro dentro de um farol vazio, esperando a Cinza baixar. Teodoro contou uma história sobre Lúcia.",
-     "marcas": []
+     "tipo": "achado",
+     "texto": "Teodoro desenhou no mapa um atalho que não aparece em nenhum outro mapa de Ardena.",
+     "marcas": [
+      "+1 pista do Códice"
+     ]
     }
    ]
   }
@@ -375,8 +377,9 @@
     "macula_de_cinza"
    ],
    "materiais": {
-    "pista": 2,
-    "estilha": 3
+    "pista": 3,
+    "estilha": 3,
+    "desgaste": 1
    }
   },
   "falta_para_avanco": 1

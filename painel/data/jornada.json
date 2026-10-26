@@ -1,24 +1,24 @@
 {
- "gerado_em": "2026-10-25T00:39:51",
+ "gerado_em": "2026-10-25T21:09:25",
  "fontes": {
   "registros_ok": true,
-  "registros_desde": "2026-09-22",
-  "garmin_ate": "2026-10-24"
+  "registros_desde": "2026-09-23",
+  "garmin_ate": "2026-10-25"
  },
  "personagem": {
   "nome": "Fabio",
   "classe": "Pesquisador de Campo",
   "nivel": 5,
   "titulo": "Escudeiro do Conselho",
-  "xp_total": 7360,
-  "xp_no_nivel": 360,
+  "xp_total": 7390,
+  "xp_no_nivel": 390,
   "xp_para_proximo": 3000
  },
  "vitalidade": {
-  "indice": 94,
+  "indice": 82,
   "banda": "g",
   "confiavel": true,
-  "sono_h": 7.5,
+  "sono_h": 6.46,
   "estado": "de pé"
  },
  "atributos": [
@@ -49,7 +49,7 @@
    {
     "id": "ativos",
     "nome": "Dias ativos",
-    "feito": 3,
+    "feito": 4,
     "meta": 5,
     "cumprida": false
    },
@@ -102,8 +102,8 @@
    {
     "nome": "Dia ativo",
     "xp": 30,
-    "feito": null,
-    "sem_dado": true
+    "feito": false,
+    "sem_dado": false
    },
    {
     "nome": "Pesagem em jejum",
@@ -460,7 +460,7 @@
     {
      "id": "ativos",
      "nome": "Dias ativos",
-     "feito": 5,
+     "feito": 4,
      "meta": 3,
      "cumprida": true
     },
@@ -619,7 +619,7 @@
     {
      "id": "ativos",
      "nome": "Dias ativos",
-     "feito": 3,
+     "feito": 4,
      "meta": 5,
      "cumprida": false
     },
@@ -758,7 +758,7 @@
   "2026-10-21": 250,
   "2026-10-22": 40,
   "2026-10-23": 90,
-  "2026-10-24": 20,
+  "2026-10-24": 50,
   "2026-10-25": 0
  },
  "dias": {
@@ -1025,21 +1025,24 @@
    "ativo": true
   },
   "2026-10-24": {
-   "xp": 20,
+   "xp": 50,
    "itens": [
+    "Dia ativo",
     "Almoço registrado"
    ],
    "marcas": [
     "almoco",
     "registro"
    ],
-   "ativo": false
+   "ativo": true
   },
   "2026-10-25": {
    "xp": 0,
    "itens": [],
-   "marcas": [],
-   "ativo": null
+   "marcas": [
+    "registro"
+   ],
+   "ativo": false
   }
  },
  "livro": [

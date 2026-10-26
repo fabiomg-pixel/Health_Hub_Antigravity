@@ -1,6 +1,6 @@
 {
  "definido_por": "carga",
- "em": "2026-10-18",
+ "em": "2026-10-25",
  "porteira_fase_2": "fechada",
  "sessoes": {
   "2026-10-12": {
@@ -163,6 +163,45 @@
    "titulo": "Corrida fácil de 30 min (só se o painel liberar)",
    "condicao": "ATUALIZADO 20/10, 09h (parecer da fisiologista): liberada com índice 83, FC de repouso 55 (aceita; o veto é 57) e VFC 46, com estas condições: nenhum antitérmico desde as 15h30 de segunda, sem febre, dor no corpo ou tosse no peito; 5 min caminhando e depois 8,0 km/h por até 30 min; FC acima de 150 por 2 min, reduza ou pare; aperto no peito, tontura ou calafrio, pare. Sem saber a hora da última dose: caminhada de 20 a 30 min. Passo A (fisiologista): índice 50 ou mais E FC de repouso até 54, em manhã com 24 h sem antitérmico; E secreção só no nariz ou na garganta (nada no peito, sem febre, sem dor no corpo); E UMA destas: sem dose do antigripal nas últimas 48 h, ou a bula confirmando que ele não tem anti-inflamatório (quem confirma a bula é você; não opino sobre remédio). Com antitérmico nas últimas 24 h, FC e VFC não liberam, mas ainda vetam: FC de repouso 57 ou mais ou VFC 28 ou menos é vermelho. Sem registro da hora da última dose, assumo que tomou: caminhada. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Febre: zero treino. O painel e o Silvester conferem. Sem o passo A: caminhada de 20 a 30 min.",
    "porque": "Única corrida até o passo B, e terça 20/10 é a única janela: terça 20/10 é a única janela antes do passo B. Se o passo A falhar, vira caminhada de 20 a 30 min; a corrida só volta depois do passo B, nunca em dia de força, quinta (jogo) ou sexta (leve). Decisão da fisiologista: até 30 min a 8,0 km/h, conversando sem esforço, FC até 150. Esteira preferida (local: não sei); na rua, pace de 7:30 min/km ou mais lento. Em 14/10 a FC máxima foi 164 a 8,0 km/h, então o teto de 150 vai pedir pausas de caminhada; é esperado. Pare e caminhe se surgir tosse no peito ou falta de ar. Porteira da fase 2 fechada: sem tiros nem degraus de cadência. Joelho esquerdo ou lombar acima de 3/10: caminhada leve. Só com o almoço feito antes das 13h.",
+   "etapas": [
+    {
+     "n": "Aquecimento",
+     "s": 300,
+     "v": "caminhada ou trote leve (até 6,5 km/h)",
+     "fc": "FC abaixo de 125",
+     "t": "Caminhe e entre num trote leve só se o corpo deixar.",
+     "marcas": 60
+    },
+    {
+     "n": "Bloco 1 de 2",
+     "s": 600,
+     "v": "8,0 km/h na esteira; na rua, pace de 7:30 min/km ou mais lento",
+     "fc": "FC até 145",
+     "t": "Fácil, passo solto e curto, cadência 84. Se a FC passar de 150, caminhe.",
+     "marcas": 60
+    },
+    {
+     "n": "Bloco 2 de 2",
+     "s": 600,
+     "v": "8,0 km/h na esteira; na rua, pace de 7:30 min/km ou mais lento",
+     "fc": "FC até 150",
+     "t": "Fácil, cadência 84 a 86. Sem acelerar.",
+     "marcas": 60
+    },
+    {
+     "n": "Desaceleração",
+     "s": 300,
+     "v": "caminhada (6,0 km/h)",
+     "fc": "FC abaixo de 120",
+     "t": "Caminhe e respire.",
+     "marcas": 60
+    }
+   ]
+  },
+  "2026-10-28": {
+   "titulo": "Corrida fácil de 30 min (só se a manhã e a tarde deixarem)",
+   "condicao": "Conselho de 25/10 (fisiologista): corrida 1 de 2, quarta 28/10, rua entre 16h45 e 17h45. Condições: manhã não vermelha (índice 50 ou mais, FC de repouso até 54), sem febre, sem tosse piorando, sem falta de ar nem aperto no peito; almoço feito antes das 13h e lanche das 15h cumprido (nutricionista). Teto de 8,0 km/h e FC até 150; FC acima de 150 por 2 min, reduza ou pare. Duas manhãs vermelhas seguidas derrubam a corrida. Sem janela: caminhada de 20 a 30 min, sem reposição.",
+   "porque": "Volta ao volume depois da gripe, em zona 2. A corrida de 20/10 (29,9 min, FC máxima 148) é a referência; as de 21 e 23/10 passaram do teto (8,5 km/h e FC máxima 156), por isso o teto de 8,0 km/h e FC 150 vale. Sem intensidade nesta semana.",
    "etapas": [
     {
      "n": "Aquecimento",

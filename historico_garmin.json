@@ -2127,11 +2127,11 @@
   },
   {
    "data": "2026-10-24",
-   "passos": 1787,
-   "gasto_kcal": 866.0,
-   "kcal_ativas": 47.0,
+   "passos": 14621,
+   "gasto_kcal": 2648.0,
+   "kcal_ativas": 396.0,
    "fc_repouso": 45,
-   "estresse_medio": 13,
+   "estresse_medio": 27,
    "body_battery_max": 89,
    "body_battery_min": 9,
    "sono_h": 7.5,
@@ -2144,6 +2144,27 @@
    "hrv_status": "BALANCED",
    "vo2max": null,
    "training_status": "MAINTAINING_1",
+   "vazio": false
+  },
+  {
+   "data": "2026-10-25",
+   "passos": 43,
+   "gasto_kcal": 755.0,
+   "kcal_ativas": 0.0,
+   "fc_repouso": 48,
+   "estresse_medio": 14,
+   "body_battery_max": 86,
+   "body_battery_min": 18,
+   "sono_h": 6.46,
+   "sono_profundo_h": 1.25,
+   "sono_rem_h": 1.28,
+   "sono_score": 79,
+   "prontidao": 81,
+   "prontidao_nivel": "HIGH",
+   "hrv_ms": 43,
+   "hrv_status": "BALANCED",
+   "vo2max": null,
+   "training_status": "RECOVERY_1",
    "vazio": false
   }
  ]

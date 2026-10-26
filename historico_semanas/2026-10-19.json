@@ -1,0 +1,776 @@
+{
+ "gerado_em": "2026-10-18",
+ "semana": "19 a 25/out · recuperar primeiro: teto menor, resfriado ainda aí",
+ "objetivo": "Recuperar sem pressa: segunda sem treino; corrida fácil de até 30 min na terça só se o passo A fechar (senão, caminhada de 20 a 30 min, sem reposição); 1 força de membros superiores na quarta; o jogo de quinta; sexta leve; sábado sem treino; domingo com recreativo só no passo B. Nada intenso.",
+ "peso_atual": 95.19,
+ "peso_rotulo": "média das 7 leituras neutras, até 13/10 (28 dias: 94,87 kg); a pesagem de 18/10 (93,95 kg) foi pós-esforço e não entra",
+ "fontes_status": {
+  "garmin": "ok, fatos.json de 18/10 às 10h35 (noite de 17/10: sono 6,57 h, VFC 28, FC de repouso 57, índice 22, vermelho pelo 4º dia seguido). Respostas do Fabio de 18/10 às 21h58 incorporadas (antigripal com antitérmico; lombar 1/10)",
+  "peso": "última pesagem 18/10 (93,95 kg, pós-esforço, não conta como tendência); última neutra em 13/10 (95,30 kg)",
+  "nutricao": "parcial: 19 refeições registradas de 11 a 17/10; 18/10 sem registro; jantas de 13 e 14/10 sem descrição",
+  "strava": "não consultado nesta síntese; o Garmin (fatos.json) mostra a última corrida em 14/10, na esteira",
+  "clima": "Open-Meteo, puxado em 18/10 (Fundão): firme para segunda a quarta; do meio da semana em diante vale como tendência"
+ },
+ "dieta": {
+  "calorias": 1900,
+  "proteina": 175,
+  "proteina_piso": 140,
+  "gordura": 60,
+  "carbo": 175,
+  "fibra": 30,
+  "proteina_alvo": 160
+ },
+ "regra_prato": {
+  "titulo": "Seis regras. O resto é o de sempre.",
+  "linhas": [
+   "O Yopro da manhã é ADICIONAL: se virar o almoço, o almoço do dia acontece mesmo assim.",
+   "Segunda: almoço em casa até 12h30 (proteína grelhada, vegetal e arroz). Terça a sexta: marmita com 35 g de proteína ou mais no rótulo e vegetal em pedaço no prato; o nome da marmita não basta. Nos dias de entrevista o almoço vem cedo: terça e quinta antes das 13h, e nunca depois das 15h. Sábado e domingo: almoço em casa.",
+   "Salada de material fresco no JANTAR, não no almoço.",
+   "Leguminosa (feijão, lentilha ou grão-de-bico) em 2 refeições na semana.",
+   "17h, todo dia: iogurte, whey, granola e banana, antes de qualquer salgado ou doce.",
+   "Uma refeição livre, sábado à noite, uma só: Um prato servido uma vez, sem buffet livre, sem segunda rodada, no máximo um item frito; sobremesa e bebida contam como parte da mesma refeição; vale uma das 2 frituras da semana."
+  ]
+ },
+ "tendencias": {
+  "prontidao_garmin_hoje": 53,
+  "indice_agudo_hoje": 22,
+  "indice_medio_7d": 48.0,
+  "sono_media_7d": 6.92,
+  "sono_score_hoje": 57,
+  "rem_hoje": null,
+  "training_status": null,
+  "prontidao": [
+   {
+    "data": "12/10",
+    "valor": 74,
+    "banda": "g",
+    "meu": 89
+   },
+   {
+    "data": "13/10",
+    "valor": 68,
+    "banda": "y",
+    "meu": 70
+   },
+   {
+    "data": "14/10",
+    "valor": 50,
+    "banda": "y",
+    "meu": 68
+   },
+   {
+    "data": "15/10",
+    "valor": 53,
+    "banda": "r",
+    "meu": 26
+   },
+   {
+    "data": "16/10",
+    "valor": 67,
+    "banda": "r",
+    "meu": 35
+   },
+   {
+    "data": "17/10",
+    "valor": 69,
+    "banda": "r",
+    "meu": 28
+   },
+   {
+    "data": "18/10",
+    "valor": 53,
+    "banda": "r",
+    "meu": 22
+   }
+  ],
+  "prontidao_media_7d": 62
+ },
+ "status_treino": {
+  "planejado": 3,
+  "feito": 0,
+  "dias_feitos": []
+ },
+ "relatorio": [
+  "Semana 19 a 25/10, montada com as suas respostas de 18/10: o resfriado não passou, você toma antigripal (tem antitérmico) e não há campeonato no fim de semana. Lombar hoje: 1/10; joelho sem dor.",
+  "Índice 22 (vermelho) no domingo 18/10, a 4ª manhã vermelha seguida; FC de repouso 57 (costume 54); VFC 28 (costume 36); sono 6,57 h. O sono (6,57 h) não explica sozinho: em 11/10, 6,43 h deu índice 83. Segunda sem treino por 4 manhãs vermelhas seguidas; o dado não separa resfriado de carga acumulada.",
+  "Você aceitou em 18/10 o teto menor e o corte de 3 vermelhos, e delegou o resto à fisiologista. Teto: 1 força de membros superiores, sem perna pesada; 1 corrida até o passo B, depois até 2, ambas fáceis; nada intenso. 3 manhãs vermelhas seguidas cortam qualquer sessão, jogo incluso. Segunda: sem treino. Terça: corrida fácil de até 30 min a 8,0 km/h, FC até 150, só se o passo A fechar; senão, caminhada de 20 a 30 min. Não há reposição de corrida na semana: terça 20/10 é a única janela antes do passo B. Se o passo A falhar, vira caminhada de 20 a 30 min; a corrida só volta depois do passo B, nunca em dia de força, quinta (jogo) ou sexta (leve). Quarta: força de membros superiores (11 séries, RIR 3, sem carga axial, até 40 min), com banda não vermelha, sem febre e sem tosse no peito; banda vermelha é só caminhada de 20 a 30 min. Quinta: só o jogo. Sexta: caminhada ou mobilidade, sem corrida. Sábado: sem treino. Domingo: recreativo de até 45 min só no passo B; sem ele, no máximo 30 min leve ou nada, sem meio-termo.",
+  "Passo A (fisiologista): índice 50 ou mais E FC de repouso até 54, em manhã com 24 h sem antitérmico; E secreção só no nariz ou na garganta (nada no peito, sem febre, sem dor no corpo); E UMA destas: sem dose do antigripal nas últimas 48 h, ou a bula confirmando que ele não tem anti-inflamatório (quem confirma a bula é você; não opino sobre remédio). Com antitérmico nas últimas 24 h, FC e VFC não liberam, mas ainda vetam: FC de repouso 57 ou mais ou VFC 28 ou menos é vermelho. Sem registro da hora da última dose, assumo que tomou: caminhada. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Febre: zero treino. Você toma o antigripal só se tiver sintoma e registra a hora da última dose. Passo B (2ª força e recreativo; a 2ª corrida só na semana seguinte): duas manhãs seguidas com FC de repouso até 53, VFC 37 ou mais, sem antitérmico nas 24 h anteriores e sem sintoma. Lombar: acima de 3/10 não treina.",
+  "O que você precisa me dar: a lombar de manhã (0 a 10), a hora da última dose do antigripal, onde está a secreção (nariz, garganta ou peito) e a bula do antigripal (tem anti-inflamatório?). O resto são regras que o painel e o Silvester conferem: passos A e B, corte de 3 vermelhos, limites de dor e FC. Manhã vermelha: sem treino, exceto o jogo de quinta, limitado a 45 min. Na mesa: almoço cedo nos dias de entrevista, salada fresca no jantar, leguminosa em 2 refeições e a lista ou foto das marmitas. Peixe, fruta, fritura e vegetal estão como barras na aba Alimentação.",
+  "A porteira da Fase 2 não abre nesta semana; falta duas semanas com 5 corridas ou mais, que o teto atual não permite.",
+  "Peso: média das 7 leituras neutras 95,19 kg (28 dias: 94,87 kg). A pesagem de 18/10, 93,95 kg, foi pós-esforço e não vale como tendência. Se o antigripal tiver anti-inflamatório (o antitérmico você confirmou; anti-inflamatório, não sei), as leituras desta semana também não entram na série. A pesagem de sexta 23/10 (manhã após o jogo) e a de segunda 26/10 (após recreativo, se houver) são pós-esforço e não entram na tendência.",
+  "O que não sei: a hora das doses de antigripal; se ele tem também anti-inflamatório (a bula é com você); onde está a secreção (nariz, garganta ou peito); temperatura; quantas marmitas há no freezer; como você acorda a cada manhã; hora e esforço de um recreativo; onde fica a esteira; saída de sexta em diante."
+ ],
+ "lista_compra": [
+  {
+   "cat": "Mercado e feira (antes de segunda)",
+   "itens": [
+    "Marmitas: pedido do iFood de 18/10 (Food Brasil), 10 porções = 5 pratos × 2 (casal): N14, N65, N41, N62 e N72. As quentinhas que sobraram do pedido de 11/10 ficam de reserva.",
+    "Fruta inteira para 2 dias (banana, laranja ou tangerina)",
+    "Folhas e legumes frescos para as saladas e os legumes dos jantares",
+    "Quantidade: não sei o que já há em casa, então conte antes de comprar"
+   ]
+  },
+  {
+   "cat": "Proteína e peixe",
+   "itens": [
+    "2 a 3 latas de sardinha ou atum (a janta de peixe da semana)",
+    "Frango, carne ou ovos só para o que faltar: não sei o que há no freezer, conte antes de comprar",
+    "Ovos: 12 cozidos no domingo, mais os do café"
+   ]
+  },
+  {
+   "cat": "Leguminosa (meta de 2 refeições)",
+   "itens": [
+    "Feijão, lentilha ou grão-de-bico, só se faltar: conte antes de comprar"
+   ]
+  },
+  {
+   "cat": "Para sete dias",
+   "itens": [
+    "Iogurte Danone natural desnatado 160 g (rótulo: 84 kcal, 8,9 g de proteína, sem açúcar adicionado), um por dia",
+    "Whey: confira se o pote chega até domingo",
+    "Yopro, um por dia"
+   ]
+  },
+  {
+   "cat": "Marmitas (só depois da sua lista ou foto)",
+   "itens": [
+    "Você tem alguma quentinha e quer comprar mais. Quantas há no freezer, não sei: conte e me diga.",
+    "Mostre a lista ou a foto das opções e a nutricionista escolhe. Critério: 35 g de proteína ou mais no rótulo, sem sobretaxa de R$ 3,99 e vegetal em pedaço no prato.",
+    "Pedir só a diferença até 5 porções por pessoa, de segunda a sexta, em pratos duplicados (casal)."
+   ]
+  }
+ ],
+ "receitas": {
+  "rN": {
+   "nome": "Lentilha com legumes e ovo poché",
+   "tempo": "35 min",
+   "rende": "2 porções",
+   "ingredientes": [
+    "200 g de lentilha seca",
+    "2 cenouras, 1 abobrinha, 1 cebola, 3 alhos",
+    "2 tomates ou 3 col. de molho",
+    "2 ovos por porção",
+    "Cheiro-verde, azeite, cominho, louro",
+    "Vinagre de maçã (pro poché)"
+   ],
+   "passos": [
+    "Refogue cebola, alho, cenoura e abobrinha. Junte a lentilha, louro, cominho e água (3 partes pra 1 de lentilha).",
+    "Cozinhe 20-25 min. Lentilha NÃO precisa de molho prévio e cozinha mais rápido que feijão — é o que a torna prática em dia de semana.",
+    "Ovo poché: água fervendo com um fio de vinagre, fogo baixo, 3 min. Ou frite com pouco azeite se preferir.",
+    "Monte a lentilha no prato com os ovos por cima. Cheiro-verde e um fio de azeite cru."
+   ]
+  }
+ },
+ "dias": [
+  {
+   "id": "seg",
+   "nome": "Segunda",
+   "data": "19/10",
+   "tipo": "descanso",
+   "flex": false,
+   "treino": {
+    "foco": "Sem treino — descanso",
+    "exercicios": [
+     {
+      "nome": "Sem treino, de qualquer jeito: 4 manhãs vermelhas seguidas, a última no domingo 18/10 (índice 22, FC de repouso 57 contra 54, VFC 28 contra 36). O dado não separa resfriado de carga acumulada.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Chuva de manhã (provável, previsão de 18/10): nada a decidir sobre a rua.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Entrevistas das 14h00 às 15h30: o almoço vem por volta das 12h30.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "~12h30 · Marmita N14 Risoto de frango com alho-poró e espinafre",
+     "kcal": 498,
+     "prot": 46,
+     "peso_g": 400,
+     "nota": "Você levou hoje. Rótulo (porção de 400 g): 498 kcal, 46 g de proteína, 47 g de carboidrato, 13 g de gordura (5,1 g saturada), fibra 5,0 g, sódio 442 mg. Espinafre e alho-poró no prato. Até 12h30: entrevista às 14h00."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola + banana",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada + legumes + salada fresca",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey com água ou leite",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Sem treino. Entrevistas no Fundão das 14h00 às 15h30; almoço em casa até 12h30.",
+    "plano_b": "Segunda é sem treino, sem compensar."
+   }
+  },
+  {
+   "id": "ter",
+   "nome": "Terça",
+   "data": "20/10",
+   "tipo": "treino",
+   "flex": false,
+   "treino": {
+    "foco": "Corrida fácil de 30 min — só se o painel liberar; senão, caminhada",
+    "exercicios": [
+     {
+      "nome": "Primeiro passo: diga a dor da lombar de 0 a 10 (hoje, 18/10: 1/10). Acima de 3, não treina.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Perguntas do Silvester na manhã de terça: a hora da última dose de antigripal (sem registro, assumo que tomou), onde está a secreção (nariz, garganta ou peito) e a bula do antigripal: tem anti-inflamatório? Quem confirma a bula é você; não opino sobre remédio. Febre ou dor no corpo: nenhum treino.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "ATUALIZADO 20/10, 09h (parecer da fisiologista): com índice 83, VFC 46 e sono 7,7 h, ela aceita a FC de repouso 55 e libera a corrida de hoje com condições: nenhum antitérmico desde as 15h30 de segunda, sem febre, dor no corpo ou tosse no peito. Na esteira: 5 min caminhando e depois até 30 min a 8,0 km/h; FC acima de 150 por 2 min, reduza ou pare; aperto no peito, tontura ou calafrio, pare. Sem saber a hora da última dose, vale caminhada de 20 a 30 min. Corrida e força não ficam no mesmo dia: a força é amanhã.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Força curta DEPOIS da corrida, só se o corpo responder (exceção de hoje, pedida por você e aceita pela fisiologista): corrida de 30 min com FC máxima até 150, sem tosse no peito, aperto, tontura, calafrio ou febre, lombar até 2/10 e nenhum antitérmico desde as 15h30 de segunda. Comece 30 min depois e termine antes das 19h. Até 6 séries, RIR 3 a 4: remada baixa no cabo 2×6, puxada neutra 1×6 (45 kg), crucifixo inverso 1×8, rotação externa 1×10, ponte unilateral 1×6 cada. Falhou algum critério: só caminhada.",
+      "series": 6,
+      "reps": "6"
+     },
+     {
+      "nome": "Passo A (fisiologista): índice 50 ou mais E FC de repouso até 54, em manhã com 24 h sem antitérmico; E secreção só no nariz ou na garganta (nada no peito, sem febre, sem dor no corpo); E UMA destas: sem dose do antigripal nas últimas 48 h, ou a bula confirmando que ele não tem anti-inflamatório (quem confirma a bula é você; não opino sobre remédio). Com antitérmico nas últimas 24 h, FC e VFC não liberam, mas ainda vetam: FC de repouso 57 ou mais ou VFC 28 ou menos é vermelho. Sem registro da hora da última dose, assumo que tomou: caminhada. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Febre: zero treino. O painel e o Silvester conferem.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Se o passo A fechar: corrida de até 30 min entre 15h30 e 17h45 (entrevistas até 15h15) a 8,0 km/h, conversando sem esforço, FC até 150. Esteira preferida (local: não sei); na rua, pace de 7:30 min/km ou mais lento, plano e sem descida. Em 14/10 a FC máxima foi 164 a 8,0 km/h na esteira, então o teto de 150 vai pedir pausas de caminhada; é esperado. Pare e caminhe também se surgir tosse no peito ou falta de ar. A sessão está no #corrida.",
+      "series": 1,
+      "reps": "30 min"
+     },
+     {
+      "nome": "Se o passo A não fechar: caminhada de 20 a 30 min. Não há reposição de corrida na semana: terça 20/10 é a única janela antes do passo B. Se o passo A falhar, vira caminhada de 20 a 30 min; a corrida só volta depois do passo B, nunca em dia de força, quinta (jogo) ou sexta (leve).",
+      "series": 1,
+      "reps": "20 a 30 min"
+     },
+     {
+      "nome": "Só com o almoço feito antes das 13h. Joelho esquerdo acima de 3/10: caminhada leve.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "~12h30 · Marmita N65 Maxi carbo de frango (batata-doce e brócolis)",
+     "kcal": 471,
+     "prot": 40,
+     "peso_g": 400,
+     "nota": "Rótulo (400 g): 471 kcal, 40 g de proteína, 59 g de carboidrato, 8,5 g de gordura, fibra 6,9 g, sódio 332 mg. É a de mais carboidrato: fica na terça porque, se a manhã liberar, a corrida é às 15h30. Coma antes das 13h (entrevista às 13h00)."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola + banana",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Se a corrida acontecer, o lanche vem logo depois dela."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Lentilha com legumes e ovo poché + salada fresca",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Leguminosa 1 de 2 da semana. Receita rN.",
+     "receita": "rN"
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey com água ou leite",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Esteira ou rua plana, 15h30 às 17h45, só se o passo A fechar.",
+    "plano_b": "Sem o passo A: caminhada de 20 a 30 min, sem reposição na semana. Chuva: esteira (onde fica, não sei) ou a caminhada."
+   }
+  },
+  {
+   "id": "qua",
+   "nome": "Quarta",
+   "data": "21/10",
+   "tipo": "treino",
+   "flex": false,
+   "treino": {
+    "foco": "Costas, ombro posterior e glúteo — força 1 de 1, sem carga axial",
+    "exercicios": [
+     {
+      "nome": "IMPORTANTE: a fisiologista permite 1 força até o passo B. Se você fez a força curta de terça, hoje é só caminhada de 20 a 30 min. Se terça não aconteceu, vale a sessão abaixo.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Primeiro passo: diga a dor da lombar de 0 a 10 (hoje, 18/10: 1/10). Acima de 3, não treina.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Portão da força de hoje: banda não vermelha, sem febre e sem tosse no peito (o Silvester confere no brief; o semáforo do painel mostra só a banda). Banda vermelha: sem força, só caminhada de 20 a 30 min. Força de perna ou lombar pesada não entra esta semana.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Membros superiores, 11 séries, RIR 3 (3 repetições de sobra), sem carga axial e sem subir carga. Academia de manhã (sair por volta das 7h30, voltar ao Fundão antes das 12h; a entrevista é às 15h00), até 40 min.",
+      "series": 1,
+      "reps": "até 40 min"
+     },
+     {
+      "nome": "Pedido seu de 20/10: os músculos pouco trabalhados nos treinos de 11, 13 e 16/10 (costas, ombro posterior, glúteo), dentro do teto da fisiologista: 11 séries, RIR 3, sem subir carga. Quinta é jogo: sem leg curl nem stiff.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "1 · Remada baixa no cabo — 2×6",
+      "series": 2,
+      "reps": "6"
+     },
+     {
+      "nome": "2 · Puxada com pegada neutra — 2×6 (45 kg)",
+      "series": 2,
+      "reps": "6"
+     },
+     {
+      "nome": "3 · Crucifixo inverso na máquina — 2×8",
+      "series": 2,
+      "reps": "8"
+     },
+     {
+      "nome": "4 · Rotação externa do ombro no cabo — 1×10 cada",
+      "series": 1,
+      "reps": "10 cada"
+     },
+     {
+      "nome": "5 · Ponte de glúteo unilateral — 2×6 cada (RIR 4)",
+      "series": 2,
+      "reps": "6 cada"
+     },
+     {
+      "nome": "6 · Caminhada lateral com mini-band — 2×10 passos cada lado",
+      "series": 2,
+      "reps": "10 passos"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Marmita N41 Salada de lentilha com frango desfiado",
+     "kcal": 370,
+     "prot": 49,
+     "peso_g": 330,
+     "nota": "Rótulo (porção de 400 g declarada): 370 kcal, 49 g de proteína, 34 g de carboidrato, 7,9 g de gordura, fibra 18,6 g, sódio 368 mg. Lentilha conta para a meta de leguminosa (1 de 2); tomate, pimentão e cebola roxa no prato. Entrevista só às 15h00."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola + banana",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Peixe (sardinha ou atum em lata) + legumes + salada fresca",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Janta de peixe da semana."
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey com água ou leite",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Academia só de manhã (saída por volta das 7h30). À tarde, academia está vetada de segunda a quinta.",
+    "plano_b": "Banda vermelha: sem força, só caminhada de 20 a 30 min. Não há reposição de corrida na quarta."
+   }
+  },
+  {
+   "id": "qui",
+   "nome": "Quinta",
+   "data": "22/10",
+   "tipo": "futebol",
+   "flex": false,
+   "treino": {
+    "foco": "Futebol de quinta (20h) — só o jogo",
+    "exercicios": [
+     {
+      "nome": "O jogo é o treino do dia. Sem corrida de manhã e sem academia.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Manhã vermelha: o jogo fica em no máximo 45 min; o Silvester confere no brief, e o painel mostra só a banda. Três manhãs vermelhas seguidas cortam o jogo.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Vá de relógio: é o registro da carga do jogo. Escreva em Registrar quanto jogou e como ficou.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Entrevistas das 13h00 às 16h00: almoço antes das 13h. Lanche das 17h antes de sair.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "~12h30 · Marmita N62 Frango com quiabo e arroz",
+     "kcal": 489,
+     "prot": 41,
+     "peso_g": 400,
+     "nota": "Rótulo (400 g): 489 kcal, 41 g de proteína, 50 g de carboidrato, 13 g de gordura, fibra 7,4 g, sódio 542 mg. Quiabo no prato; o arroz é a base para o jogo das 20h. Coma antes das 13h (entrevistas das 13h00 às 16h00)."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola + banana",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada + legumes + salada fresca",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Janta depois do jogo das 20h."
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey com água ou leite",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Futebol às 20h. Sem corrida e sem academia.",
+    "plano_b": "Se o jogo cair: caminhada leve ou nada, sem compensar."
+   }
+  },
+  {
+   "id": "sex",
+   "nome": "Sexta",
+   "data": "23/10",
+   "tipo": "leve",
+   "flex": false,
+   "treino": {
+    "foco": "Dia leve — caminhada ou mobilidade",
+    "exercicios": [
+     {
+      "nome": "Caminhada de 20 a 30 min, em ritmo de conversa, antes das 9h (sensação passa de 30 °C às 11h; previsão de 18/10, só tendência), ou mobilidade em casa. Sem corrida: sexta é leve.",
+      "series": 1,
+      "reps": "20 a 30 min"
+     },
+     {
+      "nome": "Se passar das 9h ou estiver quente: esteira (onde fica, não sei), mobilidade em casa ou nada.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Sem agenda no calendário. Pesagem desta manhã (após o jogo de quinta) é pós-esforço e não entra na tendência.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Marmita N72 Frango xadrez com creme de milho",
+     "kcal": 490,
+     "prot": 43,
+     "peso_g": 400,
+     "nota": "Rótulo (400 g): 490 kcal, 43 g de proteína, 48 g de carboidrato, 12 g de gordura, fibra 5,1 g, sódio 759 mg. Pimentões e cebola roxa no prato. Entrou no lugar do salpicão de grão-de-bico, que fica aguado ao descongelar (você, 18/10)."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola + banana",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada + legumes + salada fresca",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Saída ou jantar fora a partir de sexta: não sei. Se sair, vale a regra do sábado: Um prato servido uma vez, sem buffet livre, sem segunda rodada, no máximo um item frito; sobremesa e bebida contam como parte da mesma refeição; vale uma das 2 frituras da semana."
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey com água ou leite",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Caminhada antes das 9h, ou esteira. Calor forte depois das 9h (previsão de 18/10, tendência).",
+    "plano_b": "Se não der: sem treino, sem compensar."
+   }
+  },
+  {
+   "id": "sab",
+   "nome": "Sábado",
+   "data": "24/10",
+   "tipo": "descanso",
+   "flex": false,
+   "treino": {
+    "foco": "Sem treino — descanso",
+    "exercicios": [
+     {
+      "nome": "Sem treino. Calor forte (sensação de 36,1 °C e UV 9 entre 10h e 12h; previsão de 18/10, tendência).",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Sem campeonato neste fim de semana, pelo que você disse em 18/10.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Refeição livre da semana, sábado à noite: uma só. Um prato servido uma vez, sem buffet livre, sem segunda rodada, no máximo um item frito; sobremesa e bebida contam como parte da mesma refeição; vale uma das 2 frituras da semana.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Casa · Proteína grelhada + arroz + feijão + legumes cozidos",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Feijão no prato: leguminosa. Conta para a meta de 2 refeições."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola + banana",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Refeição livre da semana · uma só, sem repetir",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Um prato servido uma vez, sem buffet livre, sem segunda rodada, no máximo um item frito; sobremesa e bebida contam como parte da mesma refeição; vale uma das 2 frituras da semana."
+    },
+    "petisco": null
+   },
+   "janela": {
+    "quando": "Sem treino. Calor forte de manhã (previsão de 18/10, tendência).",
+    "plano_b": "Não há treino a compensar."
+   }
+  },
+  {
+   "id": "dom",
+   "nome": "Domingo",
+   "data": "25/10",
+   "tipo": "descanso",
+   "flex": true,
+   "treino": {
+    "foco": "Domingo: descanso — recreativo só no passo B",
+    "exercicios": [
+     {
+      "nome": "Primeiro passo: diga a dor da lombar de 0 a 10 (hoje, 18/10: 1/10). Acima de 3, não treina.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Recreativo de até 45 min SÓ se o passo B estiver cumprido: duas manhãs seguidas com FC de repouso até 53, VFC 37 ou mais, sem antitérmico nas 24 h anteriores e sem sintoma. Ocupa o lugar da 2ª força, nunca somado. Sem o passo B: no máximo 30 min leve, ou fora; sem meio-termo. Dia seguinte (segunda 26/10): só caminhada. Hora e esforço do recreativo: não sei.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Chuva provável (previsão de 18/10): esteira ou nada.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "25 min de preparo: 12 ovos cozidos, legumes lavados e cortados, potes de iogurte e Yopro na frente da geladeira.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Pese em jejum. Depois de refeição livre, a leitura vem fora do normal e não conta como progresso; se o antigripal tiver anti-inflamatório (a bula é com você), ela não entra na série. A pesagem de segunda 26/10, após recreativo, também é pós-esforço.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "~8h · 1 Yopro",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "É ADICIONAL. Se ele virar o almoço, o almoço do dia acontece mesmo assim."
+    },
+    "almoco": {
+     "nome": "13h · Casa · Proteína grelhada + arroz + feijão + legumes cozidos",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Feijão no prato: leguminosa."
+    },
+    "pre_lanche": {
+     "nome": "17h · Iogurte natural + whey + granola + banana",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Todo dia, sem negociar. Vem antes de qualquer salgado ou doce."
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Casa · Proteína grelhada + legumes + salada fresca",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": {
+     "nome": "Ceia ou pós-treino · whey com água ou leite",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Dose 2."
+    }
+   },
+   "janela": {
+    "quando": "Preparo da semana e compras; recreativo só no passo B.",
+    "plano_b": "Chuva: esteira ou nada. Se não der, não repõe."
+   }
+  }
+ ],
+ "relatorios": [
+  {
+   "id": "carga",
+   "especialista": "Carga e recuperação",
+   "assina": "seu fisiologista",
+   "como_esta": "O resfriado não passou: você melhora, ainda com muita secreção, e o antigripal que você toma tem antitérmico; a lombar está em 1/10 hoje e o joelho não dói. Índice 22 (vermelho) na 4ª manhã seguida, FC de repouso 57 (costume 54), VFC 28 (costume 36). O sono (6,57 h) não explica sozinho: em 11/10, 6,43 h deu índice 83. Com antitérmico, FC e VFC podem estar mascaradas. Segunda sem treino por 4 manhãs vermelhas seguidas; o dado não separa resfriado de carga acumulada.",
+   "para_onde": "Teto aceito por você em 18/10: 1 força de membros superiores sem perna pesada; 1 corrida até o passo B, depois até 2, ambas fáceis; nada intenso. Terça: corrida de até 30 min a 8,0 km/h, FC até 150, só se o passo A fechar: índice 50 ou mais e FC de repouso até 54 com 24 h sem antitérmico, secreção só no nariz ou na garganta, e sem dose do antigripal nas últimas 48 h ou bula confirmando que não tem anti-inflamatório. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Sem o passo A, caminhada de 20 a 30 min, sem reposição na semana: a corrida só volta depois do passo B, nunca em dia de força, quinta ou sexta. Quarta: força de membros superiores (11 séries, RIR 3, sem carga axial, até 40 min) com banda não vermelha, sem febre e sem tosse no peito. Domingo: recreativo de até 45 min só no passo B; sem ele, até 30 min leve ou nada. Quinta: manhã vermelha limita o jogo a 45 min. Três vermelhos seguidos cortam tudo, jogo incluso.",
+   "nao_sei": [
+    "A hora das doses de antigripal e onde está a secreção (nariz, garganta ou peito)",
+    "Se o antigripal tem também anti-inflamatório (a bula é com você)",
+    "Se há febre: temperatura não medida",
+    "O esforço real dos jogos"
+   ]
+  },
+  {
+   "id": "logistica",
+   "especialista": "Rotina e tempo",
+   "assina": "seu logístico",
+   "como_esta": "Sem campeonato, com esteira e com a tarde de terça e quarta livre depois das entrevistas, a agenda cabe. O corpo manda mais que a agenda: índice 22, 4º vermelho, FC de repouso 57 contra 54. Pela previsão de 18/10 (só tendência para o fim da semana): sexta com sensação de 32 °C, sábado com 36 °C e UV 9, domingo com chuva provável.",
+   "para_onde": "Terça: corrida fácil das 15h30 às 17h45, de preferência na esteira (local: não sei) ou em rua plana, só se o passo A fechar; senão, caminhada de 20 a 30 min, sem reposição na semana. Quarta: academia de manhã (sair por volta das 7h30, voltar antes das 12h), membros superiores, até 40 min. Quinta: só o jogo das 20h. Sexta: caminhada de 20 a 30 min antes das 9h, ou mobilidade; sem corrida. Sábado: sem treino. Domingo: recreativo de até 45 min só no passo B, no lugar da 2ª força; sem ele, até 30 min leve ou nada; chuva é esteira ou nada. Academia à tarde de segunda a quinta e rua depois das 17h45 ficam vetadas.",
+   "nao_sei": [
+    "Como você acorda a cada manhã, que decide cada dia",
+    "Hora e esforço de um recreativo no domingo",
+    "Onde fica a esteira"
+   ]
+  },
+  {
+   "id": "nutricao",
+   "especialista": "Alimentação",
+   "assina": "sua nutricionista",
+   "como_esta": "Em 11 a 17/10 você registrou 19 refeições. Até 17/10 há 3 refeições com fritura nos registros (coxinhas de 12/10, pastel de siri e bolinho de bacalhau de 13/10 e a saída de 17/10); em 13/10, almoço às 16h com dois fritos. Peixe no jantar não apareceu nos registros das 2 últimas semanas, nem leguminosa, e fruta inteira só em 1 dia. Lanches sem proteína em 13/10 (tangerina e chocolate) e 16/10 (pão com manteiga).",
+   "para_onde": "Almoço cedo nos dias de entrevista: segunda por volta das 12h30, terça e quinta antes das 13h, nunca depois das 15h. Almoço é marmita com vegetal em pedaço; a salada fresca fica para o jantar. Leguminosa em 2 refeições, no lugar das 3 famílias de vegetal. Sem jantar fora de segunda a quinta; de sexta em diante, não sei. A marmita fica a escolher com a nutricionista quando você mostrar a lista ou a foto. As barras de vegetal, fritura, fruta e peixe estão na aba Alimentação. Compra: sardinha ou atum, fruta para 2 dias, folhas e legumes frescos, leguminosa se faltar.",
+   "nao_sei": [
+    "Quantas marmitas ainda há no freezer",
+    "O que foram as jantas de 13 e 14/10",
+    "Se há saída de sexta em diante"
+   ]
+  },
+  {
+   "id": "cetico",
+   "especialista": "Revisão",
+   "assina": "o revisor",
+   "como_esta": "Conferi o plano da semana de 19 a 25/10 contra os seus dados e contra as regras já combinadas, em três revisões. As datas e os dias batem, não há corrida de reposição, a sexta é leve e a quarta é só força de membros superiores, com a condição certa.",
+   "para_onde": "Tudo depende de duas coisas suas: dizer a hora da última dose do antigripal e olhar a bula para saber se ele tem anti-inflamatório. Sem isso, a terça vira caminhada, e está certo assim. O semáforo do painel mostra só a cor da manhã; os passos A e B quem confere é o Silvester no brief.",
+   "nao_sei": [
+    "Se o antigripal tem também anti-inflamatório",
+    "Se a corrida de terça acontece ou vira caminhada",
+    "Quantas marmitas há no freezer"
+   ]
+  }
+ ]
+}

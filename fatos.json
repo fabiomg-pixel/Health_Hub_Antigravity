@@ -1,9 +1,9 @@
 {
- "gerado_em": "2026-10-24T22:33:18",
+ "gerado_em": "2026-10-25T10:33:57",
  "janela": {
-  "hoje": "2026-10-24",
-  "dia_semana": "Saturday",
-  "semana_desde": "2026-10-17"
+  "hoje": "2026-10-25",
+  "dia_semana": "Sunday",
+  "semana_desde": "2026-10-18"
  },
  "peso": {
   "ultima": {
@@ -92,29 +92,24 @@
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 94,
+  "indice_hoje": 82,
   "banda_hoje": "g",
-  "prontidao_garmin_hoje": 62,
+  "prontidao_garmin_hoje": 81,
   "dias_vermelhos_seguidos": 0,
-  "sono_ultima_noite_h": 7.5,
-  "sono_ultima_noite_score": 84,
-  "hrv_ultima_noite": 45,
-  "fc_repouso_hoje": 45,
-  "indice_medio_7d": 51.0,
-  "sono_medio_7d": 6.69,
-  "hrv_medio_7d": 37.0,
+  "sono_ultima_noite_h": 6.46,
+  "sono_ultima_noite_score": 79,
+  "hrv_ultima_noite": 43,
+  "fc_repouso_hoje": 48,
+  "indice_medio_7d": 60.0,
+  "sono_medio_7d": 6.68,
+  "hrv_medio_7d": 39.0,
   "hrv_medio_28d": 37.0,
-  "fc_repouso_7d": 54.0,
+  "fc_repouso_7d": 53,
   "fc_repouso_28d": 54.0,
   "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-10-17",
-    "kcal_ativas": 303.0,
-    "passos": 6021
-   },
    {
     "data": "2026-10-18",
     "kcal_ativas": 341.0,
@@ -134,6 +129,11 @@
     "data": "2026-10-23",
     "kcal_ativas": 493.0,
     "passos": 16262
+   },
+   {
+    "data": "2026-10-24",
+    "kcal_ativas": 396.0,
+    "passos": 14621
    }
   ],
   "atividades_garmin": [
@@ -214,14 +214,9 @@
     "data": "2026-10-21",
     "tem_foto": false,
     "texto": "Treino feito no painel: Costas, ombro posterior e glúteo (só se a força de hoje não aconteceu), 13 min, esforço leve. Re"
-   },
-   {
-    "data": "2026-10-17",
-    "tem_foto": false,
-    "texto": "Dois jogos de futebol: de manhã 90 minutos em campo de 11; ao final do dia 40 minutos em campo de 7."
    }
   ],
-  "sessoes_registradas": 3,
+  "sessoes_registradas": 2,
   "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço. A FC no pulso oscila na musculação: tendência, não medida exata. Séries e cargas vêm do painel, não da contagem do Garmin."
  },
  "vo2max": {
@@ -257,7 +252,6 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-10-17",
    "2026-10-18",
    "2026-10-19",
    "2026-10-20",
@@ -266,9 +260,8 @@
    "2026-10-23",
    "2026-10-24"
   ],
-  "n_refeicoes_registradas": 23,
+  "n_refeicoes_registradas": 21,
   "por_dia": {
-   "2026-10-17": 2,
    "2026-10-18": 1,
    "2026-10-19": 5,
    "2026-10-20": 3,
@@ -303,11 +296,6 @@
      "data": "2026-10-20",
      "refeicao": "Jantar",
      "texto": "Curry peixe"
-    },
-    {
-     "data": "2026-10-17",
-     "refeicao": "Almoço",
-     "texto": "Contra filé com ovo, arroz com brócolis, batata portuguesa."
     }
    ]
   },
@@ -339,10 +327,6 @@
    {
     "data": "2026-10-18",
     "texto": "Resfriado não passou, na curva de melhora, com muita secreção; disposição não está 100%. Toma antigripal constantemente. Sem dor no joelho; alguma dor na lombar"
-   },
-   {
-    "data": "2026-10-17",
-    "texto": "A janta de 17/10 (pequenas comidas na saída) teve fritura: é a segunda fritura da semana."
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."

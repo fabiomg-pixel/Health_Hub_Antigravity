@@ -1,76 +1,45 @@
 {
- "semana": "19/10 a 25/10",
- "gerado_em": "2026-10-18",
+ "semana": "26/10 a 01/11",
  "limites": {
-  "teto_forca_plena": 1,
-  "proposta_forca": "Aceito pelo Fabio em 18/10 (\"Ok ... Faça o que for melhor\"), que delegou o resto à carga: 1 força de parte superior sem perna pesada até o passo B; a 2ª só depois do passo B.",
-  "teto_corrida": "1 até o passo B; depois do passo B, até 2, ambas fáceis",
+  "teto_forca": 2,
+  "teto_corrida": 2,
+  "intensa": false,
   "duracao_max_corrida_min": 30,
   "fc_max_corrida": 150,
   "teto_velocidade_kmh": 8.0,
-  "intensa_liberada": false,
-  "condicao_para_liberar_intensa": "§15: FC de repouso ≤52 por 3 dias seguidos E HRV ≥38 E duas semanas com 5 corridas ou mais. Em 18/10: FC de repouso 57 e VFC 28. Não abre nesta semana; falta o histórico de corridas por semana, que não está em fatos.json.",
-  "passo_a": "Passo A (fisiologista): índice 50 ou mais E FC de repouso até 54, em manhã com 24 h sem antitérmico; E secreção só no nariz ou na garganta (nada no peito, sem febre, sem dor no corpo); E UMA destas: sem dose do antigripal nas últimas 48 h, ou a bula confirmando que ele não tem anti-inflamatório (quem confirma a bula é você; não opino sobre remédio). Com antitérmico nas últimas 24 h, FC e VFC não liberam, mas ainda vetam: FC de repouso 57 ou mais ou VFC 28 ou menos é vermelho. Sem registro da hora da última dose, assumo que tomou: caminhada. Se a última dose foi na segunda 19/10, terça não fecha 48 h: caminhada, a menos que a bula resolva. Febre: zero treino.",
-  "passo_b": "Libera a 2ª força, a 2ª corrida e o recreativo de domingo (até 45 min, no lugar da 2ª força): duas manhãs seguidas com FC de repouso ≤53, VFC ≥37, sem antitérmico nas 24 h anteriores e sem sintoma; dor ≤3/10. Sem o passo B, domingo: no máximo 30 min leve ou nada, sem meio-termo; dia seguinte só caminhada. Manhã vermelha zera a contagem.",
   "dias_intocaveis": [
-   "seg",
-   "qui",
-   "sex"
+   "ter"
   ],
-  "gatilho_corte": "Aceito pelo Fabio em 18/10: 3 manhãs vermelhas seguidas cortam qualquer sessão, jogo incluso (a contagem está em 4 e só zera com manhã não vermelha). Febre ou dor no corpo: zero treino. Quinta com manhã vermelha: jogo de no máximo 45 min. Com antitérmico nas últimas 24 h, FC de repouso ≥57 ou VFC ≤28 conta como vermelho.",
-  "escalar": "dor articular ou no tornozelo, uso de anti-inflamatório ou dois treinos-chave perdidos na semana: parar e avisar o fisio ou o médico. Lombar acima de 3/10: parar. O conteúdo do antigripal (antitérmico ou anti-inflamatório) vai à bula, ao farmacêutico ou ao médico.",
-  "regra": "sem informação, sem decisão (PROJETO_CHAT §18)",
-  "quem_avalia": "O painel e o Silvester avaliam passos A e B, corte de 3 vermelhos e limites de dor e FC; o Fabio decide 6 coisas (almoço cedo, salada no jantar, leguminosa 2x, lista de marmitas, manhã vermelha = sem treino, quinta só o jogo).",
-  "sem_reposicao_de_corrida": "Não há reposição de corrida na semana: terça 20/10 é a única janela antes do passo B. Se o passo A falhar, vira caminhada de 20 a 30 min; a corrida só volta depois do passo B, nunca em dia de força, quinta (jogo) ou sexta (leve).",
-  "forca_quarta": "Quarta 21/10: membros superiores, 11 séries, RIR 3, sem carga axial, até 40 min; portão: banda não vermelha, sem febre e sem tosse no peito. Banda vermelha: só caminhada de 20 a 30 min. Força de perna ou lombar pesada segue o portão do passo A."
- },
- "pendencias_do_fabio": {
-  "respondido_em": "2026-10-18",
-  "respostas": {
-   "resfriado": "não passou; na curva de melhora, ainda com muita secreção; disposição não está 100%; 'não deixaria de tentar correr, por exemplo. Não daria meu máximo'",
-   "antigripal": "toma constantemente desde o resfriado (conteúdo: não sei)",
-   "dor": "joelho sem dor; alguma dor na lombar, menos intensa que no relato anterior (sem número)",
-   "jogo_fim_de_semana": "sem campeonato; só recreativo no domingo, 'principalmente se for sugerido para completar a semana'",
-   "esteira": "sim",
-   "compromisso_fora_da_agenda_ter_qua": "não",
-   "marmitas": "tem alguma quentinha, quer comprar mais, vai mostrar as opções para a nutricionista escolher",
-   "salada": "material fresco na janta",
-   "jantar_fora_ate_sexta": "não",
-   "meta_leguminosa": "sim, troca as 3 famílias de vegetal por leguminosa em 2 refeições",
-   "antigripal_21h58": "O antigripal tem antitérmico. Melhor passar a tomar apenas se tiver sintoma.",
-   "lombar_21h58": "1/10 hoje",
-   "teto_menor_e_corte_21h58": "Ok ... Faça o que for melhor, mas eu diria que uma corrida de 8km/h por 20-30 min não é muito esforço. Gasto mínimo para dar consistência."
-  }
+  "gatilho_corte": "2 manhãs vermelhas seguidas, febre ou tosse piorando derrubam a próxima corrida; FC de repouso ≥53 por 2 manhãs derruba a próxima força; falta de ar ou aperto no peito derruba tudo e avisa o médico",
+  "avaliacao_forca_segunda": "só com manhã verde de segunda (2ª seguida)",
+  "segunda_forca": "só com passo B cumprido",
+  "origem": "carga, conselho de 25/10",
+  "portao_ibuprofeno": "sem ibuprofeno ou anti-inflamatório nas últimas 48 h; sem hora da última dose, caminhada"
  },
  "perguntas": [
   {
    "id": "q1",
-   "texto": "O passo A fechou na terça 20/10 e a corrida fácil de até 30 min aconteceu (ou virou caminhada de 20 a 30 min)?",
-   "como_responder": "manhã de terça no fatos.json, a hora da última dose de antigripal, a bula e a atividade no Garmin ou no Strava. Sem o passo A, a resposta é \"caminhou, como combinado\".",
+   "texto": "A avaliação de força de segunda (braços e costas) é tolerada sem tosse, dor ou queda na manhã seguinte?",
+   "como_responder": "relato na terça e FC/VFC da manhã",
    "resposta": null
   },
   {
    "id": "q2",
-   "texto": "O passo B bateu antes do domingo 25/10: duas manhãs seguidas com FC de repouso ≤53, VFC ≥37, sem antitérmico nas 24 h anteriores e dor ≤3/10?",
-   "como_responder": "fatos.json das manhãs de 21 a 25/10 e o relato de dor da lombar (0 a 10). Decide se o recreativo de domingo ocupa o lugar da 2ª força ou se o domingo fica sem treino.",
+   "texto": "A corrida fácil de quarta mantém FC até 150 e não piora a tosse?",
+   "como_responder": "dado do Garmin e relato",
    "resposta": null
   },
   {
    "id": "q3",
-   "texto": "Nos dias de entrevista o almoço aconteceu cedo (segunda por volta das 12h30, terça e quinta antes das 13h) e nunca depois das 15h?",
-   "como_responder": "registro de refeição Almoço de 19, 20, 21 e 22/10, com a hora no relato; sem hora no registro, a resposta é 'não sei'.",
+   "texto": "O lanche das 15h com fruta e iogurte evita o doce da tarde?",
+   "como_responder": "registro do lanche e do doce em 3 dias",
    "resposta": null
-  }
- ],
- "perguntas_pendentes_ao_fabio": [
+  },
   {
-   "id": "p4",
-   "texto": "Na manhã de terça (brief do Silvester): a hora da última dose de antigripal, onde está a secreção (nariz, garganta ou peito) e o que diz a bula: tem anti-inflamatório? (hora; nariz/garganta/peito; sim/não)",
-   "efeito": "define se terça é corrida (passo A, com 48 h sem dose ou bula sem anti-inflamatório) ou caminhada de 20 a 30 min; sem registro da hora, assume-se que tomou",
+   "id": "q4",
+   "texto": "Para segunda: hora da última dose de ibuprofeno, dias que faltam do antibiótico, onde você estará no fim de semana, se há jogo e quantas marmitas tem.",
+   "como_responder": "resposta ao brief de segunda (uma mensagem)",
    "resposta": null
   }
- ],
- "respondidas": [
-  "p1 antigripal (tem antitérmico), p2 lombar (1/10), p3 teto menor e corte (Ok): respostas literais em pendencias_do_fabio.respostas"
  ]
 }
