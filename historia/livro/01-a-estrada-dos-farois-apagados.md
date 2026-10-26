@@ -117,11 +117,11 @@ Teodoro examinou o braço dela sob a luz da brasa, e o rosto dele ficou mais vel
 
 Iara não chorou. Pediu a Maren que cantasse alguma coisa, qualquer coisa, e Maren, que não sabia nenhuma canção, cantou a de ninar que Iara lhe tinha ensinado, a da língua que ninguém fala. Iara dormiu antes do fim.
 
-## VIII. O farol vazio
+## VIII. O atalho de Teodoro
 
 Passaram um dia inteiro no sétimo farol, esperando a Cinza assentar.
 
-Foi um dia sem acontecimentos, e foi o mais longo da viagem. Bram limpou e organizou as três estilhas sobre um pano, com o cuidado de quem arruma relíquias, e explicou a Fabio o que dava para fazer com elas: com três, uma runa forte, ou duas fracas; com cinco, uma coisa que nenhum ferreiro vivo tinha feito, a Lâmina Estelar das canções antigas, a única arma que, segundo os Tecelões, consegue ferir os guardiões do norte. Maren passou o dia copiando a inscrição do terceiro farol e a frase do sonho em todas as margens do Códice, como se a repetição fosse revelar alguma coisa. Iara dormiu quase o tempo todo, com o braço maculado enrolado num pano.
+Foi um dia de poucos acontecimentos, e foi o mais longo da viagem. Bram limpou e organizou as três estilhas sobre um pano, com o cuidado de quem arruma relíquias, e explicou a Fabio o que dava para fazer com elas: com três, uma runa forte, ou duas fracas; com cinco, uma coisa que nenhum ferreiro vivo tinha feito, a Lâmina Estelar das canções antigas, a única arma que, segundo os Tecelões, consegue ferir os guardiões do norte. Maren passou o dia copiando a inscrição do terceiro farol e a frase do sonho em todas as margens do Códice, como se a repetição fosse revelar alguma coisa. Iara dormiu quase o tempo todo, com o braço maculado enrolado num pano.
 
 À noite, Teodoro contou uma história. Era sobre Lúcia, o primeiro nome gravado no vidro da lanterna. Lúcia era a cartógrafa da expedição de quarenta anos atrás, filha de um pescador do sul, e tinha um riso que fazia os outros rirem mesmo nas piores noites. Teodoro contou como os dois atravessaram o Vau das Garças de mãos dadas numa cheia, como ela desenhou o mapa das ruínas de Lis à luz de uma vela, como ela cantava mal e não se importava. Contou até o ponto em que chegaram ao Platô Vermelho e pararam.
 
@@ -129,9 +129,13 @@ Foi um dia sem acontecimentos, e foi o mais longo da viagem. Bram limpou e organ
 
 — Depois eu conto — disse Teodoro. — Quando a gente chegar lá.
 
+Mais tarde, quando todos dormiam, ele abriu o mapa de Isolda sobre o chão da torre e, com um toco de carvão, desenhou uma linha que não existia em mapa nenhum de Ardena: uma trilha que deixava a estrada depois de Ost, contornava o Vau das Garças pelo oeste e subia direto para as Ruínas de Lis. Maren acordou com o barulho do carvão e ficou olhando, sem dizer nada. Teodoro não explicou como conhecia aquele caminho. Ela anotou no Códice: *o atalho de Lúcia?*, e um ponto de interrogação que depois apagou.
+
 ## IX. Ost
 
-O Farol de Ost apareceu na manhã seguinte, no alto de uma colina, contra as montanhas.
+A última légua cobrou o que pôde. Num riacho cheio de Cinza, a ponte de tábuas cedeu debaixo da carroça, e metade das provisões foi rio abaixo antes que Bram conseguisse segurar o eixo. Ninguém se feriu. Seguiram com as bolsas mais leves e a barriga mais vazia.
+
+O Farol de Ost apareceu ao entardecer, no alto de uma colina, contra as montanhas.
 
 Era maior do que os outros, com o dobro da altura e uma torre de pedra branca, não escura, porque tinha sido construído sobre as fundações de uma torre mais antiga, dos próprios Tecelões. Lá em cima, o braseiro estava frio havia um ano. Teodoro parou ao pé da colina e ficou muito tempo olhando para ele.
 
@@ -153,7 +157,7 @@ Fizeram as contas naquela noite, dentro da torre, à luz da brasa que tremia.
 
 A companhia estava inteira, mas não ilesa. A Runa do Escudo tinha virado pó, e Bram ainda não tinha gravado outra. Iara carregava a Mácula de Cinza no braço, e ela não ia embora sozinha: precisava de tempo e de cuidado, e qualquer descuido a faria crescer. Mestre Corvino estava em algum lugar atrás deles, com tempo e com uma dívida para cobrar. E o coração de Ost estava nas mãos de alguém.
 
-Mas também havia coisas novas sobre o pano de Bram: três estilhas do céu, das cinco que faltam para a Lâmina Estelar. E havia duas frases no Códice de Maren que não estavam lá quando partiram de Vesperal. *Procurem a Semente em quem a carrega.* *Eu abri a porta para trazê-los de volta.*
+Mas também havia coisas novas sobre o pano de Bram: três estilhas do céu, das cinco que faltam para a Lâmina Estelar. E havia no Códice de Maren duas frases e um traço que não estavam lá quando partiram de Vesperal. *Procurem a Semente em quem a carrega.* *Eu abri a porta para trazê-los de volta.* E o atalho de Teodoro, que nenhum mapa conhece.
 
 Antes de dormir, Maren foi até o parapeito e olhou para o norte, para o escuro onde ficavam as montanhas e, além delas, o Monte Vhar. Na parede branca da torre, perto do braseiro, à luz verde da brasa, ela viu de relance uma linha de nós dos Tecelões que não estava lá de dia. Quando trouxe a lanterna para ler, a linha tinha sumido.
 
