@@ -1,0 +1,95 @@
+{
+ "_nota": "Baralho genérico, usado só se a parte da semana não tiver baralho próprio (o escritor esqueceu). Textos neutros.",
+ "parte": 0,
+ "titulo": "",
+ "clima": "seca",
+ "antagonista": "cinza",
+ "recompensa_limpa": "pena_da_garca",
+ "baralho": {
+  "bencao": [
+   {
+    "texto": "Um brilho verde no fundo de uma vala: uma estilha do céu.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Um brilho verde no fundo de uma vala: uma estilha do céu.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Um brilho verde no fundo de uma vala: uma estilha do céu.",
+    "efeito": {
+     "estilha": 1
+    }
+   }
+  ],
+  "achado": [
+   {
+    "texto": "Maren decifrou mais um nó do Códice de Vhar.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "Maren decifrou mais um nó do Códice de Vhar.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "Maren decifrou mais um nó do Códice de Vhar.",
+    "efeito": {
+     "pista": 1
+    }
+   }
+  ],
+  "quieto": [
+   {
+    "texto": "Um dia de estrada sem acontecimentos.",
+    "efeito": {}
+   },
+   {
+    "texto": "Um dia de estrada sem acontecimentos.",
+    "efeito": {}
+   },
+   {
+    "texto": "Um dia de estrada sem acontecimentos.",
+    "efeito": {}
+   }
+  ],
+  "percalco": [
+   {
+    "texto": "Uma noite ruim: os Esquecidos rondaram o acampamento.",
+    "efeito": {
+     "desgaste": 1
+    }
+   },
+   {
+    "texto": "Uma noite ruim: os Esquecidos rondaram o acampamento.",
+    "efeito": {
+     "desgaste": 1
+    }
+   },
+   {
+    "texto": "Uma noite ruim: os Esquecidos rondaram o acampamento.",
+    "efeito": {
+     "desgaste": 1
+    }
+   }
+  ],
+  "maldicao": [
+   {
+    "texto": "Alguma coisa se rompeu naquela noite, e ninguém soube dizer o quê."
+   },
+   {
+    "texto": "Alguma coisa se rompeu naquela noite, e ninguém soube dizer o quê."
+   },
+   {
+    "texto": "Alguma coisa se rompeu naquela noite, e ninguém soube dizer o quê."
+   }
+  ]
+ }
+}

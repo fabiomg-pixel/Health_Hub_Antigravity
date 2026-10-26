@@ -5,7 +5,7 @@
  "etapa": 0,
  "companhia": {
   "brisa": {
-   "estado": "ativa"
+   "estado": "ferida"
   },
   "dorn": {
    "estado": "ativa"
@@ -14,18 +14,60 @@
    "estado": "ativa"
   }
  },
- "mochila": [
+ "mochila": [],
+ "crise": null,
+ "falhas_seguidas": 0,
+ "semanas": {
+  "2026-10-19": {
+   "segunda": "2026-10-19",
+   "parte": 1,
+   "titulo": "A Estrada dos Faróis Apagados",
+   "tier": "sustenta",
+   "tier_base": "sustenta",
+   "ok": 3,
+   "n": 5,
+   "efeitos": [
+    "A Runa do Escudo se partiu.",
+    "Maldição: a Mácula de Cinza marcou Iara."
+   ],
+   "cena": {
+    "tier": "sustenta",
+    "etapa_antes": 0,
+    "etapa_depois": 0,
+    "arco": "I",
+    "clima": "chuvosa",
+    "lua": null,
+    "companhia": {
+     "brisa": "ativa",
+     "dorn": "ativa",
+     "ysa": "ativa"
+    },
+    "afetado": null,
+    "retorna": null,
+    "itens": [],
+    "talisma": true
+   },
+   "cartas": {
+    "bencao": 3,
+    "achado": 3,
+    "percalco": 1,
+    "maldicao": 2
+   }
+  }
+ },
+ "materiais": {
+  "pista": 3,
+  "estilha": 3,
+  "desgaste": 1
+ },
+ "reliquias": [],
+ "maldicoes": [
   {
-   "id": "escudo",
+   "id": "macula_de_cinza",
+   "alvo": "brisa",
    "desde": "2026-10-19"
   }
  ],
- "crise": null,
- "falhas_seguidas": 0,
- "semanas": {},
- "materiais": {},
- "reliquias": [],
- "maldicoes": [],
- "aflicoes": 0,
+ "aflicoes": 1,
  "marcos": []
 }

@@ -1,0 +1,13 @@
+{
+ "_nota": "Juramentos quebrados: dias em que uma regra foi quebrada (limite = portões e tetos da fisiologista; mesa = fritura além de 2 na semana). Só a data e o tipo entram na história, nunca o que foi feito. Registrado pela avaliação da noite com ./juramento_quebrado.py.",
+ "quebras": [
+  {
+   "data": "2026-10-21",
+   "tipo": "limite"
+  },
+  {
+   "data": "2026-10-23",
+   "tipo": "limite"
+  }
+ ]
+}

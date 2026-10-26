@@ -1,0 +1,113 @@
+{
+ "_nota": "Parte II. O baralho dos acontecimentos desta parte: cada dia tira cartas pela qualidade do dia (métricas), em ordem. Textos só de história. Efeitos aplicados no fechamento.",
+ "parte": 2,
+ "titulo": "O Coração de Ost",
+ "clima": "seca",
+ "antagonista": "corvino",
+ "recompensa_limpa": "sal_dos_farois",
+ "baralho": {
+  "bencao": [
+   {
+    "texto": "O menino que trouxe o bilhete voltou à noite, sozinho, e deixou no degrau da torre um embrulho de pano: dentro, uma estilha roubada dos armazéns da Liga.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Iara achou, no leito seco de um poço abandonado de Salmoura, um estilhaço do céu que a Liga não tinha visto.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Na luz da brasa, a Marca de Fabio apontou para o chão da torre. Debaixo de uma laje solta, havia uma estilha que algum guardião antigo escondeu ali.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Uma moradora de Salmoura, que lembrava de Teodoro dos tempos em que Ost brilhava, passou pela muralha uma estilha costurada na barra da saia.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Bram fundiu a sucata de uma lanterna velha da Liga e encontrou, dentro do vidro, pó de estilhaço suficiente para uma lasca inteira.",
+    "efeito": {
+     "estilha": 1
+    }
+   }
+  ],
+  "achado": [
+   {
+    "texto": "Maren desenhou de memória a planta dos armazéns de Salmoura a partir do que os moradores contavam em voz baixa no poço.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "Teodoro reconheceu, no estandarte de um dos guardas da Liga, um símbolo que estava costurado na mochila de Bento, quarenta anos atrás.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "Quando Iara cantou perto do Códice, uma página queimada mostrou por um instante metade de um mapa das ruínas de Lis.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "O menino de Salmoura disse o nome da Senhora dos Poços, e Teodoro ficou branco.",
+    "efeito": {
+     "pista": 1
+    }
+   }
+  ],
+  "quieto": [
+   {
+    "texto": "Um dia de espera no alto de Ost, vigiando os muros de Salmoura pela luneta de Teodoro.",
+    "efeito": {}
+   },
+   {
+    "texto": "Vento frio das montanhas. Bram afiou o martelo de Tomas a tarde inteira, sem usar.",
+    "efeito": {}
+   },
+   {
+    "texto": "Maren e Iara passaram a noite trocando palavras: a língua da canção tem uma palavra para luz que se parece com uma da Escrita dos Tecelões.",
+    "efeito": {}
+   }
+  ],
+  "percalco": [
+   {
+    "texto": "Os Esquecidos chegaram tão perto da luz que um deles tocou a porta da torre. Ninguém dormiu.",
+    "efeito": {
+     "desgaste": 1
+    }
+   },
+   {
+    "texto": "Uma patrulha da Liga achou o caminho que a companhia usava para vigiar Salmoura. Tiveram de recuar pelo barranco, perdendo cordas e mantimentos.",
+    "efeito": {
+     "desgaste": 1
+    }
+   },
+   {
+    "texto": "A brasa de Ost enfraqueceu durante a noite, e a Cinza avançou dez passos sobre a colina antes do amanhecer.",
+    "efeito": {
+     "desgaste": 1
+    }
+   }
+  ],
+  "maldicao": [
+   {
+    "texto": "Naquela noite a brasa de Ost apagou sozinha por um instante, e quando voltou a acender todos sentiram que alguma coisa tinha se rompido."
+   },
+   {
+    "texto": "Um corvo pousou no parapeito da torre e ficou olhando a companhia até o amanhecer. Teodoro não deixou ninguém espantá-lo."
+   },
+   {
+    "texto": "O vento trouxe de Salmoura o som de correntes sendo arrastadas, e depois um silêncio muito longo."
+   }
+  ]
+ }
+}

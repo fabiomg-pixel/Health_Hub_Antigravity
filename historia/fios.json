@@ -1,0 +1,12 @@
+{
+ "_nota": "Fios em aberto da campanha (v2). Atualizados por quem escreve o encerramento de cada parte. Só história: nenhum fio corresponde a algo da vida real.",
+ "fios": [
+  {"id": "marca_da_aurora", "titulo": "A Marca da Aurora", "personagem": "fabio", "semente": "prólogo", "estado": "A cicatriz de prata acende estilhas apagadas. Desde Ost, aponta para o oeste. A inscrição do terceiro farol diz: procurem a Semente em quem a carrega.", "proximo": "O que aconteceu no moinho da Ponte de Lis, sete anos atrás."},
+  {"id": "sete_nomes", "titulo": "Os sete nomes", "personagem": "teodoro", "semente": "prólogo", "estado": "Lúcia, Bento, Ícaro, Joana, Rui, Mira, Davi: a expedição de quarenta anos atrás. Os mesmos nomes aparecem por dentro da pedra de Ost, numa torre trezentos anos mais velha que eles.", "proximo": "Teodoro prometeu contar o que houve no Platô Vermelho quando chegarem lá."},
+  {"id": "rainha_de_cinza", "titulo": "Aelis e a porta", "personagem": "maren", "semente": "prólogo", "estado": "No sonho, a Rainha de Cinza disse a Maren: eu não traí, eu abri a porta para trazê-los de volta. A mesma frase cobria uma parede das ruínas de Lis.", "proximo": "Quem Aelis queria trazer de volta, e de onde."},
+  {"id": "macula_iara", "titulo": "A mácula de Iara", "personagem": "iara", "semente": "Parte I", "estado": "A Cinza, que nunca grudava nela, marcou seu braço. A canção de ninar acalma a mácula e faz aparecer uma garça nas páginas queimadas do Códice.", "proximo": "Recua se a companhia não vacilar; se vacilar, a Cinza a leva."},
+  {"id": "divida_bram", "titulo": "A dívida de Bram", "personagem": "bram", "semente": "prólogo", "estado": "Mestre Corvino quer Bram de volta nas arenas da Liga do Sal e oferece o coração de Ost em troca.", "proximo": "Salmoura."},
+  {"id": "lamina_estelar", "titulo": "A Lâmina Estelar", "personagem": "bram", "semente": "Parte I", "estado": "Três estilhas do céu sobre o pano de Bram. Com cinco, ele forja a lâmina das canções.", "proximo": "As estilhas que a Liga guarda em Salmoura."},
+  {"id": "liga_do_sal", "titulo": "A luz guardada", "personagem": "fabio", "semente": "prólogo", "estado": "A Liga compra estilhaços em segredo e quer o Muro apagado. A Senhora dos Poços de Salmoura tem um mapa antigo do norte com letra miúda e redonda.", "proximo": "De quem é a letra do mapa."}
+ ]
+}

@@ -241,6 +241,25 @@
     "como se sentiu à noite depois do treino de 23/10",
     "hora exata da última dose de ibuprofeno"
    ]
+  },
+  {
+   "data": "25/10",
+   "planejado": "Domingo de descanso; recreativo só no passo B (conselho decidiu pelo lado seguro: sem sessão)",
+   "feito": "Nenhum treino nem refeição registrados até 22h33; registrou só a observação de que o médico liberou exercício com a amoxicilina com clavulanato, sem falta de ar nem aperto no peito. Respondeu ao conselho às 17h02.",
+   "adaptacao": "Conselho publicou a semana de 26/10 com teto de 2 forças e 2 corridas fáceis.",
+   "respostas": {
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
+   },
+   "nao_sei": [
+    "almoço, lanche e janta de 25/10",
+    "se pesou em jejum",
+    "dias restantes do antibiótico",
+    "hora da última dose de ibuprofeno",
+    "fim de semana, jogo e marmitas"
+   ]
   }
  ]
 }

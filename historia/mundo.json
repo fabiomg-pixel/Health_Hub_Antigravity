@@ -1,0 +1,59 @@
+{
+ "_nota": "Canon fixo da campanha (v2, 25/10/2026). A história é autônoma: nenhum elemento corresponde a um hábito, um dia ou um fato da vida do Fabio. A ÚNICA ligação com a vida real é mecânica: as métricas da semana decidem se os desfechos são favoráveis ou não (historia.py). Estado que muda vive em estado.json.",
+ "titulo": "A Semente de Aurora",
+ "regiao": "Ardena",
+ "inicio": "2026-10-19",
+ "premissa": "Trezentos anos depois da Noite em que o Véu Caiu, a Cinza avança sobre Ardena e os faróis do Muro de Brasa se apagam um a um. Fabio, o Andarilho, ex-capitão da Guarda de Vesperal e portador de uma marca de prata que ninguém sabe explicar, parte para o norte com uma companhia pequena atrás da Semente de Aurora, a única coisa capaz de tecer o céu de novo.",
+ "companhia": {
+  "brisa": {"nome": "Iara", "papel": "a Rastreadora", "g": "a", "texto": "Arqueira do Clã das Garças, sem memória da própria infância. Lembra só de uma canção."},
+  "dorn": {"nome": "Bram", "papel": "o Ferreiro", "g": "o", "texto": "Ex-gladiador da Liga do Sal. Forja runas com estilhas do céu e jurou nunca mais matar."},
+  "ysa": {"nome": "Maren", "papel": "a Arquivista", "g": "a", "texto": "Leitora da Escrita dos Tecelões, vinda da Biblioteca Afogada. Carrega o Códice de Vhar, meio queimado."}
+ },
+ "guia": {"nome": "Teodoro", "papel": "o Último Faroleiro do Norte", "texto": "Guardou o Farol de Ost até ele se apagar. Leva na lanterna a última brasa da torre e sete nomes gravados no vidro."},
+ "ordem_aflicao": ["brisa", "ysa", "dorn"],
+ "runas": {
+  "escudo": {"nome": "Runa do Escudo", "texto": "Gravada por Bram em ferro-de-estrela. Quebra no lugar de quem a carrega."},
+  "vento": {"nome": "Runa do Vento", "texto": "Desvia flechas e golpes de lado."},
+  "raiz": {"nome": "Runa da Raiz", "texto": "Prende os pés ao chão quando o mundo tenta derrubar."},
+  "brasa": {"nome": "Runa da Brasa", "texto": "Arde quando a Cinza chega perto."},
+  "mare": {"nome": "Runa da Maré", "texto": "Devolve um golpe com a força que ele veio."}
+ },
+ "regra_runa": "Cada runa absorve uma derrota: quando uma semana ruim chegaria, a runa se parte e a derrota cai um nível. A bolsa de Bram leva até 3.",
+ "reliquias": {
+  "pena_da_garca": {"nome": "Pena da Garça Branca", "texto": "Impede, uma vez, que um companheiro saia ferido."},
+  "sal_dos_farois": {"nome": "Sal dos Faróis", "texto": "Desfaz uma maldição, uma vez."},
+  "lamina_estelar": {"nome": "Lâmina Estelar", "texto": "Forjada com cinco estilhas. Fere os guardiões: a luta contra o chefe do arco termina sem perdas."}
+ },
+ "maldicoes": {
+  "macula_de_cinza": {"nome": "Mácula de Cinza", "texto": "Veias cinzentas sob a pele. Quem carrega a mácula fica ferido até uma semana inteira sem juramento quebrado; um juramento quebrado com a mácula ativa entrega a pessoa à Cinza."},
+  "sussurro_da_rainha": {"nome": "Sussurro da Rainha", "texto": "Uma voz que puxa para trás. A semana seguinte termina um nível abaixo, a não ser que algo a desfaça."}
+ },
+ "materiais": {
+  "estilha": {"nome": "estilhas do céu", "forja": 5, "texto": "Cinco estilhas permitem forjar a Lâmina Estelar."},
+  "pista": {"nome": "pistas do Códice", "texto": "Fragmentos da verdade sobre Aelis e a Semente."},
+  "desgaste": {"nome": "desgaste", "texto": "Dois desgastes na mesma semana ferem alguém da companhia."}
+ },
+ "antagonistas": {
+  "cinza": {"nome": "a Cinza", "lugar": "o Ermo Cinzento", "crise": "A Cinza desceu como neve suja e apagou as tochas uma a uma. Quando a última voltou a acender, {c} não estava mais no círculo: tinha sido levad{g} para dentro do Ermo."},
+  "corvino": {"nome": "Mestre Corvino", "lugar": "as arenas da Liga do Sal", "crise": "Os homens de Mestre Corvino vieram à meia-noite, com redes e porretes. Quando a luta acabou, {c} tinha sido levad{g} acorrentad{g} para as arenas da Liga do Sal."},
+  "esquecidos": {"nome": "os Esquecidos", "lugar": "a Procissão Cinzenta", "crise": "Os Esquecidos cercaram o acampamento em silêncio, centenas deles, e quando recuaram para a escuridão levaram {c} junto, caminhando entre eles de olhos vazios."}
+ },
+ "resgate": {
+  "abertura": "{c} está em {lugar}. Esta parte da campanha é para ir buscá-l{g}. Se o prazo se esgotar, {c} se perde.",
+  "libertado": "A companhia foi buscar {c} em {lugar}, e {c} voltou libertad{g}.",
+  "adiado": "A companhia ainda não chegou a {lugar}. O prazo encolheu.",
+  "perdido": "O prazo se esgotou, e {c} ficou em {lugar}. Só um triunfo pode reabrir esse caminho.",
+  "reencontro": "No auge do triunfo, {c} voltou, como se nunca tivesse partido."
+ },
+ "arcos": [
+  {"id": "I", "nome": "O Muro de Brasa", "chefe": "O Colosso do Platô Vermelho",
+   "etapas": ["A Estrada dos Faróis Apagados", "O Farol de Ost", "O Vau das Garças", "A Floresta Cinzenta", "As Ruínas de Lis", "A Escadaria do Colosso", "O Platô Vermelho"],
+   "chefe_texto": "Um titã de pedra vermelha erguido pelos Tecelões para guardar a passagem. Não se vence com bravura: cede quando a companhia chega até ele inteira."},
+  {"id": "II", "nome": "A Planície de Sal", "chefe": "A Muralha Viva",
+   "etapas": ["O Acampamento do Platô", "As Salinas Brancas", "Forte Salgema", "O Cânion dos Ecos", "A Ponte de Cordas", "O Pé da Muralha", "A Muralha Viva"]},
+  {"id": "III", "nome": "As Terras Altas", "chefe": "O Vigia das Terras Altas",
+   "etapas": ["O Posto Avançado", "O Campo de Urzes", "A Geleira Mansa", "O Passo do Corvo", "A Cidade Suspensa", "A Torre do Vigia", "O Vigia das Terras Altas"]},
+  {"id": "IV", "nome": "O Monte Vhar", "chefe": "Vharunax, o Dragão Adormecido",
+   "etapas": ["O Sopé do Monte", "A Trilha dos Tecelões", "O Lago de Vidro", "As Seis Torres Caídas", "A Porta de Aelis", "A Sétima Torre", "Vharunax"]}
+ ]
+}
