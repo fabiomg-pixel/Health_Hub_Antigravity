@@ -260,6 +260,24 @@
     "hora da última dose de ibuprofeno",
     "fim de semana, jogo e marmitas"
    ]
+  },
+  {
+   "data": "26/10",
+   "planejado": "Braços e costas (RIR 3) só com manhã verde e 48 h sem ibuprofeno; manhã amarela (FC repouso 55), então o plano valia caminhada de 20 a 30 min",
+   "feito": "Registrou treino às 21h13 (corrida mais forte que a média, ver Strava; Garmin: Threshold de 30 min na esteira, FC média 145, máxima 167). Almoço 12h: Yopro. Janta 18h30: frango com quiabo. Sem registro de café, lanche das 15h, pesagem ou dor.",
+   "adaptacao": "Corrida conta como 1ª das 2 corridas da semana e como treino fora do plano (juramento de limite já registrado); fim de semana só caminhada.",
+   "respostas": {
+    "q1": null,
+    "q2": null
+   },
+   "nao_sei": [
+    "hora da última dose de ibuprofeno",
+    "dias restantes do antibiótico",
+    "dor da lombar e do joelho hoje",
+    "como se sentiu depois da corrida",
+    "se almoçou algo além do Yopro",
+    "lanche das 15h"
+   ]
   }
  ]
 }
