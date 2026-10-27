@@ -40,3 +40,6 @@ Atenção: (1) fruta + iogurte às 15h30; (2) conferir rótulo da marmita de 30 
 **Como está:** Nos registros de 19 a 24/10, o peixe e o feijão apareceram: curry de peixe numa janta e feijão ou lentilha em três refeições. Fritura não apareceu. O que escapou foi a tarde: brownie às 15h54 e bolo às 16h. Seu peso médio está estável, em 94,96 kg.
 **Para onde vai:** Na próxima semana o ponto é o lanche das 15h, com fruta e iogurte na mão antes do doce. Peixe sobe para 2 jantas e feijão ou lentilha para 3 refeições. Com o fim de semana possivelmente fora, a conta é um sábado livre e comida sem frito.
 **O que eu não sei:** quantas marmitas você ainda tem; onde estará no fim de semana; quantos dias de antibiótico faltam; o que comeu em 25/10.
+
+## Resposta do Fabio (26/10, 21h50, pelo app)
+- Marmitas no freezer: nenhuma. Pedido novo em preparação (critério de sempre: ≥35 g de proteína no rótulo, sem sobretaxa, vegetal em pedaço; leguminosa ajuda a meta de 3 refeições).

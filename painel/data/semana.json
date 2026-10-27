@@ -46,6 +46,7 @@
   "dias_feitos": []
  },
  "relatorio": [
+  "Atualizado em 26/10 à noite com as suas respostas: quarta livre para a corrida na rua; fim de semana em casa, sem jogo; nenhuma marmita no freezer. A corrida de segunda (Threshold do Garmin) foi fora do plano e usa a 1ª das 2 corridas da semana: no fim de semana fica só caminhada.",
   "Semana 26/10 a 01/11. A manhã de 25/10 veio verde: índice 82, FC de repouso 48, VFC 43. A média de 7 dias do índice é 60: a recuperação está começando e ainda é uma manhã verde só.",
   "Você disse que o médico liberou o exercício com a amoxicilina com clavulanato e que não há falta de ar nem aperto no peito. Não sei quantos dias de antibiótico faltam: assumi a semana toda.",
   "A demanda sobe dois níveis pelo volume, não pela intensidade: até 2 forças e 2 corridas fáceis, sem tiros nem teste. A avaliação de força de segunda só vale se a manhã de segunda também vier verde.",
@@ -100,6 +101,11 @@
    "treino": {
     "foco": "Braços e costas, RIR 3, sem subir carga — força 1 de 2",
     "exercicios": [
+     {
+      "nome": "O que aconteceu em 26/10: a manhã veio amarela (FC de repouso 55, acima do corte de 53), então o plano era caminhada. O painel não tinha a sessão montada, e você fez o treino Threshold do Garmin (30 min na esteira, FC média 145, máxima 167). Conta como a 1ª corrida da semana e como treino fora do plano.",
+      "series": 1,
+      "reps": "—"
+     },
      {
       "nome": "Primeiro passo: diga a dor da lombar de 0 a 10 (último dado: 1/10 em 18/10). Acima de 3, não treina. Joelho esquerdo acima de 3: para.",
       "series": 1,
@@ -198,7 +204,7 @@
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99. "
+     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99.  Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
     },
     "pre_lanche": {
      "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
@@ -242,7 +248,7 @@
       "reps": "—"
      },
      {
-      "nome": "Corrida fácil de até 30 min a 8,0 km/h no máximo, FC até 150, plano. Rua entre 16h45 e 17h45 (pôr do sol 18h01) só se a tarde estiver livre; sensação de 27 °C, chuva 2%.",
+      "nome": "Corrida fácil de até 30 min a 8,0 km/h no máximo, FC até 150, plano. Rua entre 16h45 e 17h45 (pôr do sol 18h01): você confirmou a tarde livre em 26/10. Sensação de 27 °C, chuva 2%. É a 2ª e última corrida da semana: a 1ª foi o treino Threshold de segunda.",
       "series": 1,
       "reps": "—"
      },
@@ -276,7 +282,7 @@
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99. Corrida às 16h45: almoço feito antes das 13h."
+     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99. Corrida às 16h45: almoço feito antes das 13h. Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
     },
     "pre_lanche": {
      "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
@@ -296,8 +302,8 @@
     "petisco": null
    },
    "janela": {
-    "quando": "16h45 a 17h45, na rua.",
-    "plano_b": "Sem janela: caminhada leve de 20 a 30 min. Sem reposição."
+    "quando": "16h45 a 17h45, na rua (tarde livre, confirmada em 26/10).",
+    "plano_b": "Se chover ou a manhã vier vermelha: caminhada leve de 20 a 30 min. Sem reposição."
    }
   },
   {
@@ -334,7 +340,7 @@
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99. "
+     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99.  Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
     },
     "pre_lanche": {
      "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
@@ -407,7 +413,7 @@
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99. "
+     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99.  Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
     },
     "pre_lanche": {
      "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
@@ -438,20 +444,20 @@
    "tipo": "descanso",
    "flex": true,
    "treino": {
-    "foco": "Sem sessão marcada",
+    "foco": "Caminhada leve, em casa",
     "exercicios": [
      {
-      "nome": "Não sei onde você estará, se há jogo e em que horário. Sem essa informação, nenhuma sessão fica marcada.",
+      "nome": "Em casa e sem jogo (você, 26/10). O teto de corridas da semana (2) já foi usado: o treino Threshold de segunda e a corrida fácil de quarta. Por isso, no fim de semana, só caminhada.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Se estiver em casa e a manhã estiver verde: caminhada leve. Sem corrida, sem força extra.",
+      "nome": "Caminhada leve de 30 a 40 min de manhã cedo (chuva de 55% à tarde).",
       "series": 1,
-      "reps": "—"
+      "reps": "30 a 40 min"
      },
      {
-      "nome": "Chuva 55%: só de manhã.",
+      "nome": "Se a força de sexta não aconteceu por falta do passo B, ela não é reposta no fim de semana.",
       "series": 1,
       "reps": "—"
      }
@@ -490,8 +496,8 @@
     "petisco": null
    },
    "janela": {
-    "quando": "Sem janela marcada.",
-    "plano_b": "Sem reposição."
+    "quando": "Manhã cedo, em casa.",
+    "plano_b": "Cansado ou com tosse no peito: descanso, sem reposição."
    }
   },
   {
@@ -501,20 +507,20 @@
    "tipo": "descanso",
    "flex": true,
    "treino": {
-    "foco": "Sem sessão marcada",
+    "foco": "Caminhada leve + pesagem, em casa",
     "exercicios": [
      {
-      "nome": "A 2ª corrida fácil só entra se você me disser onde estará e se há esteira ou rua cedo; sem essa resposta, não fica marcada e não repõe.",
+      "nome": "Em casa e sem jogo (você, 26/10). O teto de corridas da semana (2) já foi usado: o treino Threshold de segunda e a corrida fácil de quarta. Por isso, no fim de semana, só caminhada.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Fora de casa: grelhado + salada, sem frito. Preparo da semana seguinte só depois do conselho.",
+      "nome": "Caminhada leve de 30 a 40 min antes das 8h (sensação de 30 °C ao meio-dia). Pese em jejum antes de sair: depois da refeição livre de sábado, a leitura vem fora do normal e não conta como progresso.",
       "series": 1,
-      "reps": "—"
+      "reps": "30 a 40 min"
      },
      {
-      "nome": "Pese em jejum. Depois de refeição livre, a leitura vem fora do normal e não conta como progresso.",
+      "nome": "Se a força de sexta não aconteceu por falta do passo B, ela não é reposta no fim de semana.",
       "series": 1,
       "reps": "—"
      }
@@ -553,8 +559,8 @@
     "petisco": null
    },
    "janela": {
-    "quando": "Sem janela marcada.",
-    "plano_b": "Descanso."
+    "quando": "Manhã cedo, em casa.",
+    "plano_b": "Cansado ou com tosse no peito: descanso, sem reposição."
    }
   }
  ],

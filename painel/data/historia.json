@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-26T21:41:28",
+ "gerado_em": "2026-10-26T22:09:58",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -287,9 +287,7 @@
   "ok": 0,
   "n": 5,
   "efeitos": [
-   "A Mácula de Cinza recuou: Iara está livre dela.",
-   "Parte sem juramento quebrado. Relíquia ganha: Sal dos Faróis.",
-   "Os homens de Mestre Corvino vieram à meia-noite, com redes e porretes. Quando a luta acabou, Maren tinha sido levada acorrentada para as arenas da Liga do Sal. Resgate em até 3 partes."
+   "A Mácula de Cinza se abriu de vez, e a Cinza levou Iara. Resgate em até 3 partes."
   ],
   "cena": {
    "tier": "crise",
@@ -303,7 +301,7 @@
     "dorn": "ativa",
     "ysa": "ativa"
    },
-   "afetado": "ysa",
+   "afetado": "brisa",
    "retorna": null,
    "itens": [],
    "talisma": false
@@ -311,14 +309,12 @@
   "depois": {
    "etapa": 0,
    "companhia": {
-    "brisa": "ativa",
+    "brisa": "capturada",
     "dorn": "ativa",
-    "ysa": "capturada"
+    "ysa": "ativa"
    },
    "mochila": [],
-   "reliquias": [
-    "sal_dos_farois"
-   ],
+   "reliquias": [],
    "maldicoes": [],
    "materiais": {
     "pista": 4,

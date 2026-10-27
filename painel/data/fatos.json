@@ -1,9 +1,9 @@
 {
- "gerado_em": "2026-10-25T10:33:57",
+ "gerado_em": "2026-10-26T10:34:48",
  "janela": {
-  "hoje": "2026-10-25",
-  "dia_semana": "Sunday",
-  "semana_desde": "2026-10-18"
+  "hoje": "2026-10-26",
+  "dia_semana": "Monday",
+  "semana_desde": "2026-10-19"
  },
  "peso": {
   "ultima": {
@@ -87,34 +87,29 @@
   "media_neutras_nas_ultimas_7": 94.32,
   "n_neutras_nas_ultimas_7": 3,
   "media_7_neutras_de_verdade": 94.96,
-  "media_28d_neutras": 94.91,
+  "media_28d_neutras": 94.88,
   "n_leituras_pos_esforco_14d": 5,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 82,
-  "banda_hoje": "g",
+  "indice_hoje": 50,
+  "banda_hoje": "y",
   "prontidao_garmin_hoje": 81,
   "dias_vermelhos_seguidos": 0,
-  "sono_ultima_noite_h": 6.46,
-  "sono_ultima_noite_score": 79,
-  "hrv_ultima_noite": 43,
-  "fc_repouso_hoje": 48,
-  "indice_medio_7d": 60.0,
-  "sono_medio_7d": 6.68,
-  "hrv_medio_7d": 39.0,
+  "sono_ultima_noite_h": 6.13,
+  "sono_ultima_noite_score": 74,
+  "hrv_ultima_noite": 38,
+  "fc_repouso_hoje": 55,
+  "indice_medio_7d": 62.0,
+  "sono_medio_7d": 6.65,
+  "hrv_medio_7d": 40.0,
   "hrv_medio_28d": 37.0,
-  "fc_repouso_7d": 53,
+  "fc_repouso_7d": 53.0,
   "fc_repouso_28d": 54.0,
   "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-10-18",
-    "kcal_ativas": 341.0,
-    "passos": 7787
-   },
    {
     "data": "2026-10-20",
     "kcal_ativas": 355.0,
@@ -252,7 +247,6 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-10-18",
    "2026-10-19",
    "2026-10-20",
    "2026-10-21",
@@ -260,9 +254,8 @@
    "2026-10-23",
    "2026-10-24"
   ],
-  "n_refeicoes_registradas": 21,
+  "n_refeicoes_registradas": 20,
   "por_dia": {
-   "2026-10-18": 1,
    "2026-10-19": 5,
    "2026-10-20": 3,
    "2026-10-21": 5,
@@ -301,6 +294,10 @@
   },
   "observacoes": [
    {
+    "data": "2026-10-25",
+    "texto": "Médico liberou exercício com o antibiótico (amoxicilina com clavulanato). Sem falta de ar nem aperto no peito."
+   },
+   {
     "data": "2026-10-24",
     "texto": "Tosse só na garganta e no nariz. Ibuprofeno interrompido; só era usado se houvesse dor."
    },
@@ -323,10 +320,6 @@
    {
     "data": "2026-10-20",
     "texto": "Corrida guiada (Corrida fácil de 30 min (só se o painel liberar)): 30 min, completa.\n\nRitmo bem fácil"
-   },
-   {
-    "data": "2026-10-18",
-    "texto": "Resfriado não passou, na curva de melhora, com muita secreção; disposição não está 100%. Toma antigripal constantemente. Sem dor no joelho; alguma dor na lombar"
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."

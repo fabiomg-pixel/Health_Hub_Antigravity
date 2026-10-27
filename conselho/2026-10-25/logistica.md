@@ -30,3 +30,8 @@ Não sei: agenda da semana (reuniões), horário de jogo, onde ele estará no fi
 **Como está:** a semana tem chuva forte em 26/10, 29/10 e 30/10, e sexta ainda abafada, com sensação de 31 °C. Quarta (28/10) é o único dia seco e fresco para correr na rua, e o sol se põe às 18:01. Você não respondeu às perguntas, então planejei pelo pior caso.
 **Para onde vai:** a força cabe em casa, de manhã, e é ela que sustenta a semana. A corrida fácil fica para quarta, se a tarde estiver livre. Fim de semana sem sessão marcada até haver horário de jogo e lugar.
 **O que eu não sei:** reuniões da semana; horário dos jogos; onde você estará no fim de semana; se há esteira ao alcance.
+
+## Respostas do Fabio (26/10, 21h50, pelo app)
+- Quarta 16h45-17h45: livre, na rua.
+- Fim de semana: em casa, sem jogo.
+(Aplicado ao plano: corrida de quarta confirmada; fim de semana só caminhada, porque o treino Threshold de segunda usou a 1ª das 2 corridas.)
