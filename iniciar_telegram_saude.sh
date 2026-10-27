@@ -5,6 +5,11 @@
 # dentro de um screen: ver com `screen -r saude`; sair sem fechar com Ctrl-A depois D.
 cd "$(dirname "$0")"
 export TELEGRAM_STATE_DIR="$HOME/.claude/channels/telegram-saude"
+# Token de longa duração (1 ano), gerado pelo Fabio com `claude setup-token` em 26/10/2026 e salvo por ele em
+# oauth_token (chmod 600). Se existir, a sessão do bot não depende do login que expira. Nunca imprimir o conteúdo.
+if [ -s "$TELEGRAM_STATE_DIR/oauth_token" ]; then
+  export CLAUDE_CODE_OAUTH_TOKEN="$(tr -d '[:space:]' < "$TELEGRAM_STATE_DIR/oauth_token")"
+fi
 # Claude Code embutido no app (a pasta já mudou de formato entre versões); a instalação via npm é a reserva.
 BASE="$HOME/Library/Application Support/Claude/claude-code"
 setopt null_glob
