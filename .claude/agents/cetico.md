@@ -46,6 +46,10 @@ meio). Plano grande demais é violação, não capricho.
 fora do ar, dias vazios do Garmin), o plano precisa dizer o que não sabe em vez de
 preencher com estimativa.
 
+**8. Sessão montada.** Todo dia de força do plano tem sessão com exercícios, séries e kg em
+`painel/data/treinos.json` (a data da sessão), e todo dia de corrida tem sessão em `painel/data/corridas.json`. Dia de
+treino sem sessão é GRAVE: o painel abre "Iniciar o treino" vazio (aconteceu em 26/10).
+
 ## Formato da resposta
 
 Para cada achado: `[GRAVE|MÉDIO|LEVE] <dia ou campo> — <o que está errado> → <a

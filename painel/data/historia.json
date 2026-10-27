@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-26T07:45:41",
+ "gerado_em": "2026-10-26T21:41:28",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -321,7 +321,7 @@
    ],
    "maldicoes": [],
    "materiais": {
-    "pista": 3,
+    "pista": 4,
     "estilha": 3,
     "desgaste": 1
    }

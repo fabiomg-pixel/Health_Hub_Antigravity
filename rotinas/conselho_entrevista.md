@@ -65,6 +65,11 @@ carga; a nutrição sabe o teto e a agenda.
 
 ### 4. Síntese, cético e publicação (depois do terceiro)
 `fase: "sintese"`. Siga `.claude/skills/revisao-semanal/SKILL.md` do **passo 4 ao 6**, usando as três
+**Obrigatório (falha de 26/10):** todo dia de força do plano tem de ganhar uma sessão com exercícios, séries e
+carga em `painel/data/treinos.json` (data AAAA-MM-DD, formato das sessões existentes, cargas tiradas dos últimos
+registros com `#sets`), e todo dia de corrida uma sessão em `painel/data/corridas.json`. Sem isso o botão "Iniciar o
+treino" abre vazio ("Nenhum dia da semana publicada tem exercícios com séries"). O cético confere.
+
 avaliações como a saída dos especialistas (não chame de novo). Os quatro relatórios (carga, logística,
 nutrição, cético) vão para `relatorios` do `semana.json`. O cético (`subagent_type` `cetico`) é bloqueante.
 ANTES de substituir o `semana.json`, arquive a semana que acaba: `cp painel/data/semana.json historico_semanas/AAAA-MM-DD.json` (segunda da semana velha); o `jornada.py` lê esses arquivos, senão a semana velha perde as missões do plano e o XP cai. Depois: `./publicar_jornada.sh` (as missões do capítulo novo leem o `semana.json`), commit, `fase: "publicado"`.

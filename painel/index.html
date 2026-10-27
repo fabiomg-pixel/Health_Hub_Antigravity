@@ -460,7 +460,7 @@ function renderNav(ativo) {
 function faixaDias(ativoId) {
   const hoje = hojeDDMM();
   return '<div class="dias">' + DATA.dias.map(d =>
-    `<a href="#${d.id}" class="${d.id === ativoId ? 'on' : ''} ${d.data === hoje ? 'hoje' : ''} ${treinosRegistrados(isoDiaDoPlano(d.data)).length ? 'feito' : ''}" aria-label="${esc(d.nome)} ${esc(d.data)}${treinosRegistrados(isoDiaDoPlano(d.data)).length ? ', treino feito' : ''}"><span>${esc(d.nome.slice(0, 3))}</span><b>${esc(d.data.slice(0, 2))}</b></a>`).join('') + '</div>';
+    `<a href="#${d.id}" class="${d.id === ativoId ? 'on' : ''} ${d.data === hoje ? 'hoje' : ''} ${treinosRegistrados(isoDiaDoPlano(d.data), tipoDoDia(d)).length ? 'feito' : ''}" aria-label="${esc(d.nome)} ${esc(d.data)}${treinosRegistrados(isoDiaDoPlano(d.data), tipoDoDia(d)).length ? ', treino feito' : ''}"><span>${esc(d.nome.slice(0, 3))}</span><b>${esc(d.data.slice(0, 2))}</b></a>`).join('') + '</div>';
 }
 
 // ───────── o dia (Hoje e qualquer dia da semana) ─────────
@@ -473,7 +473,15 @@ function isoDiaDoPlano(ddmm) {   // não depende do decisao.js (que carrega depo
   if (typeof isoDoDia === 'function') return isoDoDia(ddmm);
   const [dd, mm] = ddmm.split('/'); return new Date().getFullYear() + '-' + mm + '-' + dd;
 }
-function treinosRegistrados(iso) { return (REGISTROS || []).filter(x => x.tipo === 'Treino' && x.data === iso); }
+// "Feito" só vale para o tipo de treino do plano: uma corrida registrada não marca a força do dia (bug de 26/10).
+const RX_TREINO = { forca: /lower|upper|for[çc]a|muscula|academia|bra[çc]os|costas|ombro|peito|supino|remada|puxada|leg press|agachamento|full body|#sets/i,
+  corrida: /corrida|correr|esteira|trote|\bkm\b|threshold|limiar/i, jogo: /futebol|jogo|campeonato|pelada|partida/i };
+function treinosRegistrados(iso, tipo) {
+  const rs = (REGISTROS || []).filter(x => x.tipo === 'Treino' && x.data === iso);
+  return RX_TREINO[tipo] ? rs.filter(x => RX_TREINO[tipo].test(x.texto || '')) : rs;
+}
+function diaDoPlano(iso) { return (DATA && DATA.dias || []).find(x => isoDiaDoPlano(x.data) === iso); }
+function feitoNoDia(iso) { const d = diaDoPlano(iso); return treinosRegistrados(iso, d ? tipoDoDia(d) : null); }
 function resumoTreino(r) {
   const t = String(r.texto || '').replace(/\s*#sets[\s\S]*$/, '').replace(/^Treino feito no painel:\s*/i, '').trim();
   const p = t.split(/\.\s/)[0]; return p.length > 70 ? p.slice(0, 67) + '…' : p;
@@ -495,14 +503,15 @@ function proximaRefeicao(d, iso) {   // a primeira refeição do plano que ainda
   return null;
 }
 function blocoParaHoje(d, iso) {
-  const tipo = tipoProgramado(d), feitos = treinosRegistrados(iso), f = partirFoco((d.treino && d.treino.foco) || 'Dia livre');
+  const tipo = tipoProgramado(d), feitos = treinosRegistrados(iso, tipo), outros = treinosRegistrados(iso).filter(x => !treinosRegistrados(iso, tipo).includes(x)), f = partirFoco((d.treino && d.treino.foco) || 'Dia livre');
   const sessao = typeof sessaoDe === 'function' ? sessaoDe(iso) : null;
   const linha = (t, sub, fim) => `<div class="linha" style="align-items:flex-start;border-bottom:0">${glifo(d)}<span class="corpo">${esc(t)}<small>${esc(sub)}</small></span>${fim ? `<span class="num">${fim}</span>` : ''}</div>`;
   let atividade = '';
   if (tipo === 'forca') {
     atividade = linha(f.titulo, (f.sub ? f.sub + ' · ' : '') + (sessao ? sessao.exercicios.length + ' exercícios' : 'sessão no corpo da página'), feitos.length ? 'feito' : '') +
       (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +
-      (sessao ? `<a class="botao${feitos.length ? ' claro' : ''}" href="#treino/${iso}">${feitos.length ? 'Abrir o treino de novo' : 'Iniciar o treino'}</a>` : '');
+      (outros.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado fora do plano: ${esc(resumoTreino(outros[0]))}</div>` : '') +
+      (sessao ? `<a class="botao${feitos.length ? ' claro' : ''}" href="#treino/${iso}">${feitos.length ? 'Abrir o treino de novo' : 'Iniciar o treino'}</a>` : `<div class="par" style="padding-top:0">A sessão com exercícios ainda não foi montada para hoje. Siga o plano abaixo.</div>`);
   } else if (tipo === 'corrida') {
     atividade = linha(f.titulo, f.sub || 'etapas, tempo e voz na tela', feitos.length ? 'feito' : '') +
       (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +
@@ -527,7 +536,7 @@ function renderDia(d, ehHoje) {
   const foco = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
   const regs = (REGISTROS || []).filter(x => isoDDMM(x.data) === d.data);
   let h = `<div class="campo"><div class="dentro">
-    <div class="topo"><div class="rot">${esc(d.nome)} · ${esc(dd)} ${MES[+mm - 1] || ''}</div><div class="selo">${ehHoje ? 'hoje' : esc(GLIFOS[tipoDoDia(d)][2].toLowerCase())}${treinosRegistrados(new Date().getFullYear() + '-' + mm + '-' + dd).length ? ' · feito' : ''}</div></div>
+    <div class="topo"><div class="rot">${esc(d.nome)} · ${esc(dd)} ${MES[+mm - 1] || ''}</div><div class="selo">${ehHoje ? 'hoje' : esc(GLIFOS[tipoDoDia(d)][2].toLowerCase())}${treinosRegistrados(new Date().getFullYear() + '-' + mm + '-' + dd, tipoDoDia(d)).length ? ' · feito' : ''}</div></div>
     <h1 class="titulo ${foco.titulo.length > 22 ? 'longo' : ''}">${esc(foco.titulo)}</h1>
     ${foco.sub ? `<div class="sub">${esc(foco.sub)}</div>` : ''}
   </div>${ONDA}</div>` + faixaDias(d.id);
@@ -701,7 +710,7 @@ function renderStatus() {
     <div class="trilho-s" role="img" aria-label="Progresso até ${n(alvo, 0)} kg: ${Math.round(prog * 100)}%"><i style="width:${prog * 100}%"></i><span class="falta${prog > 0.55 ? ' esq' : ''}">faltam ${n(peso - alvo, 1)} kg · ${Math.round(prog * 100)}% do caminho</span><svg class="mb${prog < 0.03 ? ' ini' : ''}" viewBox="0 0 14 20" aria-hidden="true" style="left:${(prog * 100).toFixed(1)}%"><path d="M2 18C0 12 1 6 7 5c6 1 7 7 5 13z" fill="#FFB48F" stroke="#fff" stroke-width="1.2"/><rect x="1" y="12" width="12" height="2.6" fill="#fff"/><circle cx="7" cy="3" r="1.8" fill="#FFB48F" stroke="#fff" stroke-width="1"/></svg><svg class="meta-f" viewBox="0 0 14 16" aria-hidden="true"><path d="M3 15V2" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M3 2.5h8l-2 3 2 3H3z" fill="#FFB48F"/></svg></div>
     <div class="cartoes">
       <div class="cartao"><div class="picto p-${at.tipo}${sem ? ' vazio' : ''}"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${pa[1]}</svg></div>
-        <div class="tx"><div class="rt">Hoje${treinosRegistrados(isoLocal()).length ? ' · feito' : ''}</div><div class="vl">${esc(pa[0])}</div><div class="sb">${esc(at.sub)}</div></div></div>
+        <div class="tx"><div class="rt">Hoje${feitoNoDia(isoLocal()).length ? ' · feito' : ''}</div><div class="vl">${esc(pa[0])}</div><div class="sb">${esc(at.sub)}</div></div></div>
       <div class="cartao"><div class="picto mar${ec.amp ? '' : ' vazio'}">${pictoMar(ec)}</div>
         <div class="tx"><div class="rt">Corpo</div><div class="vl">${esc(ec.nome)}</div><div class="sb">${esc(ec.sub)}</div></div></div>
     </div>
@@ -1294,6 +1303,7 @@ function route() {
   const id = (location.hash || '#home').slice(1);
   if (id === 'reg' || id.startsWith('reg/')) { const pr = id.split('/'); if (pr[1] === 'refeicao') { REG_TIPO = 'refeicao'; REG_PRESET = { refeicao: decodeURIComponent(pr[2] || ''), data: pr[3] || '' }; } renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
+  if (id === 'jornada') { location.replace('#campanha'); return; }
   if (id === 'campanha') { if (typeof renderCampanha !== 'function') { window.addEventListener('load', route, { once: true }); return; } renderNav('evo'); renderCampanha(); window.scrollTo(0, 0); return; }
   if (id === 'alim') { renderNav('home'); renderAlim(); window.scrollTo(0, 0); return; }
   if ((id === 'corrida' && typeof renderCorrida !== 'function') || (/^treino(\/|$)/.test(id) && typeof renderTreino !== 'function')) { window.addEventListener('load', route, { once: true }); return; }   // link direto antes dos scripts carregarem

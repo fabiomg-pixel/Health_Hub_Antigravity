@@ -395,6 +395,82 @@
      "nota": "4 de sobra. Desça em 3 s, sem arquear a lombar. Lombar acima de 3/10: pare."
     }
    ]
+  },
+  "2026-10-30": {
+   "titulo": "Braços, costas e core",
+   "duracao_min": 40,
+   "pesada": true,
+   "regra": "Força da semana (conselho de 25/10): só com o passo B cumprido, isto é, duas manhãs verdes seguidas (FC de repouso até 53, VFC 37 ou mais, sem antitérmico nas 24 h, sem sintoma). Sem ibuprofeno nas 48 h anteriores. Até 11 séries, 3 repetições de sobra, sem subir carga e sem carga na coluna. Tosse no peito, falta de ar ou lombar acima de 3/10: pare.",
+   "exercicios": [
+    {
+     "id": "puxada_pegada_neutra",
+     "nome": "Puxada com pegada neutra (triângulo)",
+     "series": 2,
+     "reps": "8",
+     "kg": 50,
+     "descanso_s": 90,
+     "grupo": "costas",
+     "nota": "Em 21/10: 50 kg × 6 e 60 kg × 6. Para 8 com 3 de sobra, 50 kg."
+    },
+    {
+     "id": "remada_baixa_no_cabo",
+     "nome": "Remada baixa no cabo",
+     "series": 2,
+     "reps": "8",
+     "kg": 45,
+     "descanso_s": 90,
+     "grupo": "costas",
+     "nota": "Em 21/10: 50 kg × 6. Para 8 com 3 de sobra, 45 kg."
+    },
+    {
+     "id": "crucifixo_na_maquina",
+     "nome": "Pec deck ou crucifixo",
+     "series": 2,
+     "reps": "8",
+     "kg": 75,
+     "descanso_s": 90,
+     "grupo": "peito_empurrar",
+     "nota": "Em 16/10: 80 kg × 8. Com 3 de sobra, 75 kg."
+    },
+    {
+     "id": "elevacao_lateral_com_halteres",
+     "nome": "Elevação lateral",
+     "series": 2,
+     "reps": "12",
+     "kg": 6,
+     "descanso_s": 60,
+     "grupo": "ombro_lateral",
+     "halter": true
+    },
+    {
+     "id": "rosca_com_barra",
+     "nome": "Rosca com barra",
+     "series": 1,
+     "reps": "10",
+     "kg": 22,
+     "descanso_s": 60,
+     "grupo": "biceps"
+    },
+    {
+     "id": "triceps_no_cabo",
+     "nome": "Tríceps no cabo",
+     "series": 1,
+     "reps": "10",
+     "kg": 25,
+     "descanso_s": 60,
+     "grupo": "triceps"
+    },
+    {
+     "id": "prancha_lateral",
+     "nome": "Prancha lateral",
+     "tipo": "tempo",
+     "series": 1,
+     "alvo_s": 30,
+     "descanso_s": 40,
+     "grupo": "core_tempo",
+     "nota": "30 s de cada lado."
+    }
+   ]
   }
  },
  "biblioteca": {
