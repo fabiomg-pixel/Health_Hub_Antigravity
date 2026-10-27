@@ -2,11 +2,14 @@
 // de fato foi registrada, a janela de cada dia com a previsão e o que comer agora. Tudo derivado de dados
 // que já existem (fatos.json, semana.json, registros). Quando falta dado, diz que falta: nunca palpite.
 //
-// Regras (propostas pela carga e pela nutrição, aceitas pelo Fabio em 11/10; cortes do PROJETO_CHAT §20d):
-//   SEGURAR : 3 ou mais dias seguidos em banda vermelha, OU sono < 6 h E (VFC < 32 OU FC de repouso >= 56).
-//   AJUSTAR : dia fora da banda verde, OU prontidão Garmin < 50, OU média de 7 dias baixa (sono < 6 h,
-//             VFC < 32, FC de repouso >= 56).
-//   PODE    : o resto. Com 2 ou mais médias de 7 dias em faixa média, "pode, sem pressa para subir carga".
+// Regras (NÍVEL DE BASE SUBIDO pelo Fabio em 27/10/2026; antes, cortes da fase do resfriado, de 11/10):
+//   SEGURAR : 3 ou mais dias seguidos em banda vermelha, OU prontidão do Garmin < 30, OU noite < 5,5 h com
+//             VFC < 30 ou FC de repouso >= 58. Volume 30% menor e nada intenso.
+//   AJUSTAR : prontidão do Garmin 30-44, OU noite < 5,5 h, OU índice próprio vermelho. Faz o treino do plano,
+//             sem a parte intensa e sem recorde de carga.
+//   PODE    : o resto (índice amarelo e prontidão de 45 para cima são dias normais de treino). Com prontidão
+//             >= 60 e FC de repouso média < 57, a carga pode subir (progressão dupla).
+// O índice próprio é cerca de 30 pontos mais duro que o Garmin por desenho: sozinho, amarelo não corta nada.
 // Usa os helpers do index.html: esc, fNum, isoLocal, isoDDMM, FATOS, REGISTROS, DATA, DASH.
 
 // ───────── semáforo ─────────
@@ -19,35 +22,30 @@ function avaliarSemaforo() {
   const s7 = rc.sono_medio_7d, h7 = rc.hrv_medio_7d, f7 = rc.fc_repouso_7d;
   const segurar = [], ajustar = [];
   if ((rc.dias_vermelhos_seguidos || 0) >= 3) segurar.push(rc.dias_vermelhos_seguidos + ' dias seguidos em banda vermelha');
-  // PROJETO_CHAT §7: prontidão do Garmin em 50-74 mas índice próprio vermelho e sono < 6 h: trata como vermelho
-  if (pront != null && pront >= 50 && pront < 75 && confiavel && rc.banda_hoje === 'r' && sono != null && sono < 6) segurar.push('prontidão ' + pront + ' com índice próprio vermelho e sono de ' + fNum(sono, 1) + ' h');
-  if (sono != null && sono < 6 && ((hrv != null && hrv < 32) || (fc != null && fc >= 56)))
-    segurar.push('noite de ' + fNum(sono, 1) + ' h com ' + (hrv != null && hrv < 32 ? 'VFC ' + hrv + ' ms' : 'FC de repouso ' + fc + ' bpm'));
-  if (confiavel && rc.banda_hoje && rc.banda_hoje !== 'g') ajustar.push('o índice de hoje (' + fNum(idx, 0) + ') não está na faixa alta');
-  if (pront != null && pront < 50) ajustar.push('prontidão do Garmin em ' + pront + ' (abaixo de 50: recuperar)');
+  if (pront != null && pront < 30) segurar.push('prontidão do Garmin em ' + pront + ' (abaixo de 30)');
+  if (sono != null && sono < 5.5 && ((hrv != null && hrv < 30) || (fc != null && fc >= 58)))
+    segurar.push('noite de ' + fNum(sono, 1) + ' h com ' + (hrv != null && hrv < 30 ? 'VFC ' + hrv + ' ms' : 'FC de repouso ' + fc + ' bpm'));
+  if (pront != null && pront >= 30 && pront < 45) ajustar.push('prontidão do Garmin em ' + pront + ' (30 a 44)');
   if (sono != null && sono < 5.5) ajustar.push('noite curta: ' + fNum(sono, 1) + ' h de sono');
-  if (s7 != null && s7 < 6) ajustar.push('sono médio de 7 dias em ' + fNum(s7, 1) + ' h (abaixo de 6)');
-  if (h7 != null && h7 < 32) ajustar.push('VFC média de 7 dias em ' + fNum(h7, 0) + ' ms (abaixo de 32)');
-  if (f7 != null && f7 >= 56) ajustar.push('FC de repouso média de 7 dias em ' + fNum(f7, 0) + ' bpm (56 ou mais)');
-  const medios = [h7 != null && h7 < 38, f7 != null && f7 > 52, s7 != null && s7 < 7].filter(Boolean).length;
+  if (confiavel && rc.banda_hoje === 'r') ajustar.push('o índice próprio de hoje (' + fNum(idx, 0) + ') está vermelho');
+  const medios = [h7 != null && h7 < 35, f7 != null && f7 >= 57, s7 != null && s7 < 6].filter(Boolean).length;
   const resumo7 = 'sono ' + fNum(s7, 1) + ' h, VFC ' + fNum(h7, 0) + ' ms, FC de repouso ' + fNum(f7, 0) + ' bpm';
   let estado = 'pode', motivos = [];
-  if (dadosDe && dadosDe !== hoje) { estado = 'sem_dado'; motivos = ['A última leitura do relógio é de ' + isoDDMM(dadosDe) + ': ainda não há a de hoje.']; }
+  if (dadosDe && dadosDe !== hoje) { estado = 'sem_dado'; motivos = ['A última leitura do relógio é de ' + isoDDMM(dadosDe) + ': ainda não há a de hoje. Treine o plano e ajuste pelo que sentir.']; }
   else if (segurar.length) { estado = 'segurar'; motivos = segurar; }
   else if (ajustar.length) { estado = 'ajustar'; motivos = ajustar; }
-  else if (!confiavel) { estado = 'sem_dado'; motivos = ['O relógio ainda não mandou o sono e a VFC de hoje: decida pela média de 7 dias (' + resumo7 + ') e pelo que você sente.']; }
-  else motivos = ['O dia está na faixa alta (índice ' + fNum(idx, 0) + ').'];
-  // §7: prontidão 50-74 = moderar (teto RPE 8). Também modera a semana com 2 ou mais médias de 7 dias em faixa média.
-  const moderar = estado === 'pode' && ((pront != null && pront >= 50 && pront < 75) || medios >= 2);
-  if (moderar && pront != null && pront >= 50 && pront < 75) motivos.push('prontidão do Garmin em ' + pront + ' (50 a 74: moderar)');
-  const liberaCarga = estado === 'pode' && !moderar && medios <= 1 && !(h7 != null && h7 < 35) && !(f7 != null && f7 >= 55);
+  else if (!confiavel && pront == null) { estado = 'sem_dado'; motivos = ['O relógio ainda não mandou o sono e a VFC de hoje: treine o plano pela média de 7 dias (' + resumo7 + ') e pelo que sentir.']; }
+  else motivos = ['Dia normal de treino' + (pront != null ? ' (prontidão do Garmin ' + pront + ')' : '') + '.'];
+  const moderar = estado === 'pode' && medios >= 2;
+  if (moderar) motivos.push('duas ou mais médias de 7 dias baixas: sem recorde de carga esta semana');
+  const liberaCarga = estado === 'pode' && !moderar && (pront == null || pront >= 60) && !(f7 != null && f7 >= 57);
   return { estado, moderar, liberaCarga, motivos, medios, resumo7, dadosEm: f.gerado_em || '' };
 }
 const SEM_TXT = {
-  pode: ['Pode', 'Siga o plano.'],
-  moderar: ['Pode, moderando', 'Siga o plano com teto de esforço 8 de 10 (deixe 2 ou mais repetições de sobra) e sem subir carga hoje.'],
-  ajustar: ['Ajustar', 'Mantenha as cargas e tire 1 série de cada exercício. Sem subir carga e sem intensidade extra.'],
-  segurar: ['Segurar', 'Só volume reduzido: cargas 10% menores, 3 ou mais repetições de sobra. Se for corrida, caminhada leve. No Lower A: 3 séries por exercício, sem o búlgaro.'],
+  pode: ['Pode', 'Siga o plano. Bateu o topo das repetições com 2 de sobra em todas as séries? Na próxima, suba a carga.'],
+  moderar: ['Pode, sem recorde', 'Siga o plano inteiro, com 2 repetições de sobra e sem subir carga hoje.'],
+  ajustar: ['Ajustar', 'Faça o treino do plano sem a parte intensa: mesmas cargas, 2 a 3 repetições de sobra; na corrida, tudo em zona 2.'],
+  segurar: ['Segurar', 'Volume 30% menor e nada intenso: tire 1 série de cada exercício; corrida vira 20 a 30 min bem fácil.'],
   sem_dado: ['Sem leitura', 'Sem dado de hoje não há decisão: use a média de 7 dias e o que você sente.']
 };
 function blocoSemaforo() {
@@ -57,10 +55,10 @@ function blocoSemaforo() {
     <div class="linha" style="align-items:flex-start;border-bottom:0"><span class="sem sem-${s.estado}" role="img" aria-label="${esc(t[0])}">${esc(t[0])}</span>
       <span class="corpo" style="font-weight:500">${esc(t[1])}<small>${s.motivos.map(esc).join(' · ')}</small></span></div>${atencao}
     <details><summary>Como eu decido</summary><div class="miolo">
-      <div class="par"><b>Segurar:</b> 3 ou mais dias seguidos em banda vermelha, sono abaixo de 6 h com VFC abaixo de 32 ou FC de repouso a partir de 56, ou prontidão 50 a 74 com índice próprio vermelho e sono abaixo de 6 h.</div>
-      <div class="par"><b>Ajustar:</b> dia fora da faixa alta, prontidão do Garmin abaixo de 50, noite abaixo de 5,5 h, ou média de 7 dias baixa (sono abaixo de 6 h, VFC abaixo de 32, FC de repouso a partir de 56).</div>
-      <div class="par"><b>Pode, moderando:</b> prontidão de 50 a 74 (faixa do projeto: moderar, teto de esforço 8) ou 2 ou mais médias de 7 dias em faixa média. A carga só sobe com a semana fora dessa faixa.</div>
-      <div class="par"><b>Pode:</b> o resto. Os cortes de VFC 32 e FC 56 foram definidos pela carga (a fisiologista do copiloto) e você delegou essa decisão aos especialistas em 11/10.</div></div></details></section>`;
+      <div class="par"><b>Segurar:</b> 3 ou mais dias seguidos em banda vermelha, prontidão do Garmin abaixo de 30, ou noite abaixo de 5,5 h com VFC abaixo de 30 ou FC de repouso a partir de 58.</div>
+      <div class="par"><b>Ajustar:</b> prontidão do Garmin de 30 a 44, noite abaixo de 5,5 h, ou índice próprio vermelho.</div>
+      <div class="par"><b>Pode, sem recorde:</b> duas ou mais médias de 7 dias baixas (VFC abaixo de 35, FC de repouso a partir de 57, sono abaixo de 6 h).</div>
+      <div class="par"><b>Pode:</b> o resto. Índice amarelo e prontidão de 45 para cima são dias normais de treino. Nível de base subido por você em 27/10: os cortes antigos eram da fase do resfriado.</div></details></section>`;
 }
 // A sessão do dia é pesada? (força de verdade, não o treino leve nem a corrida fácil)
 function sessaoPesada(sessao) { return !!sessao && sessao.pesada !== false && /lower|upper|for[çc]a|costas|peito|ombro/i.test(sessao.titulo + ' ' + (sessao.regra || '')); }

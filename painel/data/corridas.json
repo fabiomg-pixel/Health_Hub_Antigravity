@@ -1,7 +1,7 @@
 {
  "definido_por": "carga",
  "em": "2026-10-25",
- "porteira_fase_2": "fechada",
+ "porteira_fase_2": "aberta (27/10, decisão do Fabio): 1 sessão de qualidade por semana",
  "sessoes": {
   "2026-10-12": {
    "titulo": "Base em degraus de cadência",
@@ -199,44 +199,100 @@
    ]
   },
   "2026-10-28": {
-   "titulo": "Corrida fácil de 30 min (só se a manhã e a tarde deixarem)",
-   "condicao": "Conselho de 25/10 (fisiologista): corrida 1 de 2, quarta 28/10, rua entre 16h45 e 17h45. Condições: manhã não vermelha (índice 50 ou mais, FC de repouso até 54), sem febre, sem tosse piorando, sem falta de ar nem aperto no peito; almoço feito antes das 13h e lanche das 15h cumprido (nutricionista). Teto de 8,0 km/h e FC até 150; FC acima de 150 por 2 min, reduza ou pare. Duas manhãs vermelhas seguidas derrubam a corrida. Sem janela: caminhada de 20 a 30 min, sem reposição.",
-   "porque": "Volta ao volume depois da gripe, em zona 2. A corrida de 20/10 (29,9 min, FC máxima 148) é a referência; as de 21 e 23/10 passaram do teto (8,5 km/h e FC máxima 156), por isso o teto de 8,0 km/h e FC 150 vale. Sem intensidade nesta semana.",
+   "titulo": "Corrida fácil de 40 min, zona 2",
+   "porque": "Base aeróbica. Sem teto de velocidade: a régua é a FC (130 a 145) e conseguir falar frases inteiras. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
    "etapas": [
     {
      "n": "Aquecimento",
      "s": 300,
-     "v": "caminhada ou trote leve (até 6,5 km/h)",
-     "fc": "FC abaixo de 125",
-     "t": "Caminhe e entre num trote leve só se o corpo deixar.",
+     "v": "trote leve",
+     "fc": "FC abaixo de 130",
+     "t": "Solte o corpo.",
      "marcas": 60
     },
     {
-     "n": "Bloco 1 de 2",
-     "s": 600,
-     "v": "8,0 km/h na esteira; na rua, pace de 7:30 min/km ou mais lento",
-     "fc": "FC até 145",
-     "t": "Fácil, passo solto e curto, cadência 84. Se a FC passar de 150, caminhe.",
-     "marcas": 60
-    },
-    {
-     "n": "Bloco 2 de 2",
-     "s": 600,
-     "v": "8,0 km/h na esteira; na rua, pace de 7:30 min/km ou mais lento",
-     "fc": "FC até 150",
-     "t": "Fácil, cadência 84 a 86. Sem acelerar.",
-     "marcas": 60
+     "n": "Zona 2",
+     "s": 1800,
+     "v": "ritmo de conversa (na esteira, 8,5 a 9,5 km/h)",
+     "fc": "FC 130 a 145",
+     "t": "Passe de 148 por mais de 1 min: diminua até voltar.",
+     "marcas": 300
     },
     {
      "n": "Desaceleração",
      "s": 300,
-     "v": "caminhada (6,0 km/h)",
+     "v": "trote e caminhada",
      "fc": "FC abaixo de 120",
-     "t": "Caminhe e respire.",
+     "t": "Termine caminhando.",
+     "marcas": 60
+    }
+   ]
+  },
+  "2026-10-30": {
+   "titulo": "Qualidade: limiar 3 × 6 min",
+   "porque": "A sessão que move o VO₂ máx. Na segunda, o Threshold do Garmin mostrou que você aguenta este tipo de trabalho. Sexta tem chuva forte: esteira. Se o semáforo disser Ajustar ou Segurar, vira corrida fácil de 30 min. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+   "etapas": [
+    {
+     "n": "Aquecimento",
+     "s": 600,
+     "v": "zona 2, termine com 3 acelerações de 20 s",
+     "fc": "FC até 145",
+     "t": "Prepare as pernas.",
+     "marcas": 120
+    },
+    {
+     "n": "Limiar 1 de 3",
+     "s": 360,
+     "v": "forte e controlado (na esteira, 10,5 a 11,5 km/h)",
+     "fc": "FC 155 a 165",
+     "t": "Esforço 7 a 8 de 10: frases curtas, nunca no limite.",
+     "marcas": 60,
+     "tiro": true
+    },
+    {
+     "n": "Recuperação 1",
+     "s": 120,
+     "v": "trote",
+     "fc": "FC abaixo de 140",
+     "t": "Respire e solte.",
+     "marcas": 60
+    },
+    {
+     "n": "Limiar 2 de 3",
+     "s": 360,
+     "v": "forte e controlado (na esteira, 10,5 a 11,5 km/h)",
+     "fc": "FC 155 a 165",
+     "t": "Esforço 7 a 8 de 10: frases curtas, nunca no limite.",
+     "marcas": 60,
+     "tiro": true
+    },
+    {
+     "n": "Recuperação 2",
+     "s": 120,
+     "v": "trote",
+     "fc": "FC abaixo de 140",
+     "t": "Respire e solte.",
+     "marcas": 60
+    },
+    {
+     "n": "Limiar 3 de 3",
+     "s": 360,
+     "v": "forte e controlado (na esteira, 10,5 a 11,5 km/h)",
+     "fc": "FC 155 a 165",
+     "t": "Esforço 7 a 8 de 10: frases curtas, nunca no limite.",
+     "marcas": 60,
+     "tiro": true
+    },
+    {
+     "n": "Desaceleração",
+     "s": 360,
+     "v": "trote e caminhada",
+     "fc": "FC abaixo de 125",
+     "t": "Termine caminhando.",
      "marcas": 60
     }
    ]
   }
  },
- "nota": "11/10: teto de 8,0 km/h enquanto o joelho esquerdo dói (carga). 18/10: a sessão de 20/10 é condicional ao passo A e não há reposição na semana; depois do passo B, até 2 corridas fáceis."
+ "nota": "27/10: teto de 8,0 km/h e FC 150 retirados (eram da dor no joelho e do resfriado). Corrida fácil é por zona 2 (FC 130 a 145, ritmo de conversa), sem teto de velocidade; 1 sessão de qualidade por semana."
 }

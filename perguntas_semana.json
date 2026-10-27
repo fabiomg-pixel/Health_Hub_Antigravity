@@ -1,20 +1,16 @@
 {
  "semana": "26/10 a 01/11",
  "limites": {
-  "teto_forca": 2,
-  "teto_corrida": 2,
-  "intensa": false,
-  "duracao_max_corrida_min": 30,
-  "fc_max_corrida": 150,
-  "teto_velocidade_kmh": 8.0,
-  "dias_intocaveis": [
-   "ter"
-  ],
-  "gatilho_corte": "2 manhãs vermelhas seguidas, febre ou tosse piorando derrubam a próxima corrida; FC de repouso ≥53 por 2 manhãs derruba a próxima força; falta de ar ou aperto no peito derruba tudo e avisa o médico",
-  "avaliacao_forca_segunda": "só com manhã verde de segunda (2ª seguida)",
-  "segunda_forca": "só com passo B cumprido",
-  "origem": "carga, conselho de 25/10",
-  "portao_ibuprofeno": "sem ibuprofeno ou anti-inflamatório nas últimas 48 h; sem hora da última dose, caminhada"
+  "teto_forca": 3,
+  "teto_corrida": 3,
+  "intensa": "1 por semana (qualidade)",
+  "rir_padrao": 2,
+  "progressao": "dupla: topo das repetições em todas as séries com 2 de sobra = sobe 2,5 a 5% na próxima",
+  "corrida_facil": "zona 2 (FC 130-145), sem teto de velocidade",
+  "seguranca": "febre, falta de ar, aperto ou tosse no peito = não treina; dor articular > 3/10 = para o exercício",
+  "semaforo": "decisao.js de 27/10 (Segurar: 3 vermelhos, prontidão < 30, noite < 5,5 h com VFC < 30 ou FC >= 58; Ajustar: prontidão 30-44, noite < 5,5 h, índice vermelho)",
+  "reposicao": "sessão perdida pode ir para o próximo dia livre, sem 3 dias seguidos de treino pesado",
+  "origem": "Fabio, 27/10: subir o nível de base"
  },
  "perguntas": [
   {

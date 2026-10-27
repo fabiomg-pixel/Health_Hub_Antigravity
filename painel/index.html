@@ -760,7 +760,7 @@ function blocoEspecialistas() {
     R.map((r, i) => `<details class="rel" ${i === 0 ? 'open' : ''}><summary><span class="corpo">${esc(r.especialista)}<small>${esc(r.assina || '')}</small></span></summary>
       <div class="miolo"><div class="cat" style="padding-top:4px">Como está</div><div class="par">${esc(r.como_esta)}</div>
         <div class="cat">Para onde vai</div><div class="par">${esc(r.para_onde)}</div>
-        ${(r.nao_sei || []).length ? `<div class="cat">O que eu não sei</div>${r.nao_sei.map(x => `<div class="par" style="color:var(--sec)">${esc(x)}</div>`).join('')}` : ''}</div></details>`).join('') + `</section>`;
+        ${(ns => ns.length ? `<div class="cat">O que eu não sei</div>${ns.map(x => `<div class="par" style="color:var(--sec)">${esc(x)}</div>`).join('')}` : '')(Array.isArray(r.nao_sei) ? r.nao_sei : (r.nao_sei ? String(r.nao_sei).split(/;\s*|\n/).filter(Boolean) : []))}</div></details>`).join('') + `</section>`;
 }
 function blocoCardapio() {
   const largo = matchMedia('(min-width: 720px)').matches;
@@ -809,7 +809,8 @@ function renderInicio() {
   h += abasInicio('semana');
   // O Início é da semana e do corpo: nada daqui depende do dia de hoje. O que é de hoje (treino, corrida,
   // refeições, semáforo, "o que como agora") mora só na aba Hoje, com o botão de iniciar cada coisa.
-  h += quadroAgora() + (typeof blocoCapitulo === 'function' ? blocoCapitulo() : '') + blocoCardapio() + blocoDestino() + blocoEspecialistas();
+  const seguro = (f) => { try { return f(); } catch (e) { console.error('Início: bloco com erro', e); return ''; } };   // um bloco com dado errado não derruba a tela (falha de 27/10)
+  h += seguro(quadroAgora) + seguro(() => typeof blocoCapitulo === 'function' ? blocoCapitulo() : '') + seguro(blocoCardapio) + seguro(blocoDestino) + seguro(blocoEspecialistas);
   const dias = `<section class="bloco"><div class="cab"><h2>Os dias</h2><small>${Math.max(st.feito ?? 0, DATA.dias.filter(d => treinosRegistrados(isoDiaDoPlano(d.data)).length).length)} de ${st.planejado ?? '—'} treinos</small></div>` +
     DATA.dias.map(d => { const f = partirFoco((d.treino && d.treino.foco) || d.cardio || 'Dia livre');
       return `<a class="linha" href="#${d.id}">${glifo(d)}<span class="corpo">${esc(f.titulo)}<small>${esc(d.nome)} · ${esc(d.data)}${treinosRegistrados(isoDiaDoPlano(d.data)).length ? ' · treino feito' : ''}</small></span></a>`; }).join('') +

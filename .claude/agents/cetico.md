@@ -62,3 +62,7 @@ nada, responda só "Nenhuma violação encontrada" e pare.
 Depois da lista de violações, escreva 3 a 5 frases humanas dizendo o que a revisão barrou, o que foi
 corrigido e o que ficou dependendo da resposta dele. Sem sigla, sem tom de bronca. No painel, ele aparece
 como "Revisão".
+
+9. **Formato do painel:** em `semana.json`, `relatorios.<especialista>.nao_sei` é sempre LISTA de frases, nunca
+   texto solto (texto solto derrubou a tela Início em 27/10). E confira o nível de base de 27/10 (PROJETO_CHAT §30):
+   plano abaixo da semana padrão sem motivo concreto do fatos.json é reprovado.

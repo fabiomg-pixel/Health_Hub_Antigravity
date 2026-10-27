@@ -396,48 +396,60 @@
     }
    ]
   },
-  "2026-10-30": {
-   "titulo": "Braços, costas e core",
-   "duracao_min": 40,
+  "2026-10-27": {
+   "titulo": "Superior: costas, peito e braços",
+   "duracao_min": 55,
    "pesada": true,
-   "regra": "Força da semana (conselho de 25/10): só com o passo B cumprido, isto é, duas manhãs verdes seguidas (FC de repouso até 53, VFC 37 ou mais, sem antitérmico nas 24 h, sem sintoma). Sem ibuprofeno nas 48 h anteriores. Até 11 séries, 3 repetições de sobra, sem subir carga e sem carga na coluna. Tosse no peito, falta de ar ou lombar acima de 3/10: pare.",
+   "regra": "Nível de base novo (27/10): 15 séries, 2 repetições de sobra (RIR 2). Bateu o topo das repetições em todas as séries com 2 de sobra: na próxima, sobe 2,5 a 5%. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
    "exercicios": [
+    {
+     "id": "supino_com_halteres",
+     "nome": "Supino com halteres",
+     "series": 3,
+     "reps": "8",
+     "kg": 26,
+     "descanso_s": 120,
+     "grupo": "peito_empurrar",
+     "nota": "Em 11/10: 26 kg × 8 a 10.",
+     "halter": true
+    },
     {
      "id": "puxada_pegada_neutra",
      "nome": "Puxada com pegada neutra (triângulo)",
-     "series": 2,
+     "series": 3,
      "reps": "8",
-     "kg": 50,
-     "descanso_s": 90,
+     "kg": 55,
+     "descanso_s": 120,
      "grupo": "costas",
-     "nota": "Em 21/10: 50 kg × 6 e 60 kg × 6. Para 8 com 3 de sobra, 50 kg."
+     "nota": "Em 21/10: 50 × 6 e 60 × 6."
     },
     {
      "id": "remada_baixa_no_cabo",
      "nome": "Remada baixa no cabo",
-     "series": 2,
+     "series": 3,
      "reps": "8",
-     "kg": 45,
+     "kg": 50,
      "descanso_s": 90,
      "grupo": "costas",
-     "nota": "Em 21/10: 50 kg × 6. Para 8 com 3 de sobra, 45 kg."
+     "nota": "Em 21/10: 50 kg × 6, fácil."
     },
     {
-     "id": "crucifixo_na_maquina",
-     "nome": "Pec deck ou crucifixo",
+     "id": "desenvolvimento_com_halteres",
+     "nome": "Desenvolvimento com halteres, sentado",
      "series": 2,
-     "reps": "8",
-     "kg": 75,
+     "reps": "10",
+     "kg": 16,
      "descanso_s": 90,
-     "grupo": "peito_empurrar",
-     "nota": "Em 16/10: 80 kg × 8. Com 3 de sobra, 75 kg."
+     "grupo": "ombro_empurrar",
+     "nota": "Em 11/10: 16 kg × 12.",
+     "halter": true
     },
     {
      "id": "elevacao_lateral_com_halteres",
      "nome": "Elevação lateral",
      "series": 2,
      "reps": "12",
-     "kg": 6,
+     "kg": 8,
      "descanso_s": 60,
      "grupo": "ombro_lateral",
      "halter": true
@@ -447,7 +459,7 @@
      "nome": "Rosca com barra",
      "series": 1,
      "reps": "10",
-     "kg": 22,
+     "kg": 25,
      "descanso_s": 60,
      "grupo": "biceps"
     },
@@ -456,19 +468,134 @@
      "nome": "Tríceps no cabo",
      "series": 1,
      "reps": "10",
-     "kg": 25,
+     "kg": 27.5,
      "descanso_s": 60,
      "grupo": "triceps"
+    }
+   ]
+  },
+  "2026-10-29": {
+   "titulo": "Lower A",
+   "duracao_min": 55,
+   "pesada": true,
+   "regra": "Nível de base novo (27/10): 17 séries, RIR 2. Joelho sem dor desde 18/10: o búlgaro volta na semana que vem (regra: 2 semanas com dor até 2/10); hoje, step-up. Leg press até cerca de 90°, stiff de coluna neutra. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+   "exercicios": [
+    {
+     "id": "leg_press",
+     "nome": "Leg press",
+     "series": 4,
+     "reps": "8",
+     "kg": 150,
+     "descanso_s": 150,
+     "grupo": "quadriceps_composto",
+     "nota": "Em 13/10: 150 kg × 8 nas 4 séries. Com 2 de sobra em todas, suba para 160 na próxima."
+    },
+    {
+     "id": "stiff",
+     "nome": "Stiff",
+     "series": 3,
+     "reps": "8",
+     "kg": 50,
+     "descanso_s": 120,
+     "grupo": "posterior",
+     "nota": "Em 13/10: 50 kg × 8."
+    },
+    {
+     "id": "step_up",
+     "nome": "Subida no banco (step-up), com halteres",
+     "series": 2,
+     "reps": "8 cada",
+     "kg": 10,
+     "descanso_s": 90,
+     "grupo": "unilateral",
+     "halter": true
+    },
+    {
+     "id": "leg_curl",
+     "nome": "Leg curl",
+     "series": 3,
+     "reps": "10",
+     "kg": 30,
+     "descanso_s": 90,
+     "grupo": "posterior",
+     "nota": "Em 13/10: 30 × 10, 30 × 7, 25 × 8: comece em 30 e segure 10."
+    },
+    {
+     "id": "panturrilha_unilateral",
+     "nome": "Panturrilha (máquina ou unilateral)",
+     "series": 3,
+     "reps": "12",
+     "kg": 30,
+     "descanso_s": 60,
+     "grupo": "panturrilha"
+    },
+    {
+     "id": "prancha",
+     "nome": "Prancha",
+     "series": 2,
+     "reps": "40 s",
+     "kg": null,
+     "descanso_s": 45,
+     "grupo": "core_tempo",
+     "tipo": "tempo",
+     "alvo_s": 40
+    }
+   ]
+  },
+  "2026-10-31": {
+   "titulo": "Corpo inteiro B (casa ou academia)",
+   "duracao_min": 40,
+   "pesada": false,
+   "regra": "Sábado em casa: 13 séries, RIR 2, com halteres. Se estiver na academia, troque o goblet por leg press leve e a remada unilateral pela remada baixa. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+   "exercicios": [
+    {
+     "id": "agachamento_goblet",
+     "nome": "Agachamento goblet",
+     "series": 3,
+     "reps": "10",
+     "kg": 20,
+     "descanso_s": 90,
+     "grupo": "quadriceps_composto",
+     "halter": true
+    },
+    {
+     "id": "remada_unilateral_com_halter",
+     "nome": "Remada unilateral com halter",
+     "series": 3,
+     "reps": "10 cada",
+     "kg": 24,
+     "descanso_s": 75,
+     "grupo": "costas",
+     "halter": true
+    },
+    {
+     "id": "flexao",
+     "nome": "Flexão de braço",
+     "series": 3,
+     "reps": "até 2 antes da falha",
+     "kg": 0,
+     "descanso_s": 75,
+     "grupo": "peito_empurrar"
+    },
+    {
+     "id": "ponte_gluteo_unilateral",
+     "nome": "Ponte de glúteo unilateral",
+     "series": 2,
+     "reps": "10 cada",
+     "kg": 0,
+     "descanso_s": 60,
+     "grupo": "gluteo"
     },
     {
      "id": "prancha_lateral",
      "nome": "Prancha lateral",
-     "tipo": "tempo",
-     "series": 1,
-     "alvo_s": 30,
-     "descanso_s": 40,
+     "series": 2,
+     "reps": "40 s cada",
+     "kg": null,
+     "descanso_s": 45,
      "grupo": "core_tempo",
-     "nota": "30 s de cada lado."
+     "tipo": "tempo",
+     "alvo_s": 40
     }
    ]
   }

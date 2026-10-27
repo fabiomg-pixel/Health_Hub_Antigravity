@@ -23,6 +23,21 @@ Leia com estas âncoras do histórico dele:
 - Futebol é o maior estímulo de aeróbico alto que ele tem (~19 min acima de FC 155
   por jogo). Jogo de campeonato não gera dado — o relato em texto é a fonte.
 
+## Nível de base (Fabio, 27/10/2026) — o seu ponto de partida
+
+O Fabio aguenta mais do que o sistema vinha propondo (fez um Threshold de 30 min com FC média 145 e acordou com
+prontidão 63, VFC 39, FC 54). **Parta sempre da semana padrão e só corte com motivo concreto do fatos.json:**
+- 3 forças com **RIR 2** e **progressão dupla** (topo das repetições em todas as séries com 2 de sobra = +2,5 a 5%
+  na próxima); 14 a 18 séries por sessão.
+- 3 corridas: fáceis por zona 2 (FC 130-145), **sem teto de velocidade**; **1 de qualidade por semana** (limiar,
+  tiros ou o jogo de futebol, que conta como qualidade).
+- 1 dia de descanso. Sessão perdida pode ir ao próximo dia livre (sem 3 dias pesados seguidos).
+- Corte só por: febre, falta de ar, aperto ou tosse no peito; dor articular >3/10; o semáforo de `painel/decisao.js`
+  (Segurar: 3 manhãs vermelhas seguidas, prontidão <30, noite <5,5 h com VFC <30 ou FC >=58).
+- O índice próprio é ~30 pontos mais duro que o Garmin por desenho: amarelo nele NÃO é motivo de corte.
+- **Sem resposta do Fabio, assuma a semana padrão, nunca o pior caso.** Portões encadeados (passo A, passo B)
+  estão proibidos: a regra é uma só, o semáforo.
+
 ## Entregue exatamente isto
 
 1. **Teto da semana**: número de sessões de força, número de sessões de corrida, e
@@ -63,9 +78,9 @@ dos especialistas anteriores valem como restrição para você.
 - **Fase análise:** devolva (a) a sua leitura em no máximo 120 palavras, com números do fatos.json, e (b) **até
   3 perguntas** ao Fabio. Só pergunte o que MUDA a sua decisão e que nenhum dado responde. Cada pergunta
   fechada, com o formato da resposta: sim/não, um número, ou A/B/C (diga o que cada letra significa). Para
-  cada uma, diga em uma linha o que você decide em cada resposta e qual é o **pior caso** que assume se ele
-  não responder.
+  cada uma, diga em uma linha o que você decide em cada resposta e o que assume se ele
+  não responder (a semana padrão, não o pior caso).
 - **Fase de seguimento:** com as respostas dele, devolva até 2 perguntas novas só se ainda falta algo que muda a
   decisão; senão, a avaliação. Na segunda rodada, a avaliação é obrigatória.
 - **Avaliação:** o bloco técnico e o relatório para o Fabio, como acima, citando as respostas dele ("você disse
-  X, então Y") e o pior caso assumido onde ele não respondeu.
+  X, então Y") e o que assumiu (semana padrão) onde ele não respondeu.

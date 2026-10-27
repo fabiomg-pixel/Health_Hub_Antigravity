@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-26T22:33:39",
+ "gerado_em": "2026-10-27T09:33:17",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -270,7 +270,28 @@
   "em_jogo": "",
   "abertura": ""
  },
- "diario": [],
+ "diario": [
+  {
+   "data": "2026-10-26",
+   "dia": "segunda",
+   "eventos": [
+    {
+     "tipo": "achado",
+     "texto": "Maren desenhou de memória a planta dos armazéns de Salmoura a partir do que os moradores contavam em voz baixa no poço.",
+     "marcas": [
+      "+1 pista do Códice"
+     ]
+    },
+    {
+     "tipo": "maldicao",
+     "texto": "Naquela noite a brasa de Ost apagou sozinha por um instante, e quando voltou a acender todos sentiram que alguma coisa tinha se rompido.",
+     "marcas": [
+      "juramento quebrado: o preço vem no fim da parte"
+     ]
+    }
+   ]
+  }
+ ],
  "premissa_atual": {
   "parte": "II",
   "n": 2,
@@ -319,7 +340,7 @@
    "materiais": {
     "pista": 4,
     "estilha": 3,
-    "desgaste": 1
+    "desgaste": 2
    }
   },
   "falta_para_avanco": 4

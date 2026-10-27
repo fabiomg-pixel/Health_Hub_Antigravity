@@ -464,6 +464,7 @@ pós-exercício; frequência de força para reter massa magra em déficit.
 ---
 
 ## 15. Protocolo de corrida — reconstrução da base (10/10/2026)
+> **27/10/2026:** fase 1 encerrada e porteira da fase 2 aberta por decisão do Fabio; teto de 8,0 km/h retirado. Ver §30.
 
 **O pedido dele:** corrida diária de ~30 min, lenta na maior parte dos dias, começando em
 8,5 km/h, voltando "rapidamente" a 9,5–10 e chegando a 12 km/h.
@@ -1135,3 +1136,22 @@ uma semana dentro da história.
 - **Simulação de 25/10:** Parte I (A Estrada dos Faróis Apagados, impasse, com final alternativo de avanço) e Parte II
   (O Coração de Ost), com baralho.
 
+
+
+## 30. Nível de base subido (pedido do Fabio, 27/10/2026)
+
+"As escolhas estão muito leves… Temos que subir o tom. Senão, vamos acabar tendo que usar o Garmin como indicador
+de treino." O diagnóstico: os cortes da fase do resfriado e do antibiótico (18/10 e 25/10) nunca saíram. Estavam em
+cinco lugares: o teto da carga (1-2 forças, 2 corridas, nada intenso, 8,0 km/h, FC 150, passo A/B, sem reposição),
+a fase 1 deste documento (§15, com porteira quase impossível), o teto de 8 km/h da dor no joelho de 11/10 (joelho
+0/10 desde 18/10), o semáforo do painel (dizia Ajustar sempre que o índice próprio não era verde, e ele é ~30 pontos
+mais duro que o Garmin) e o "pior caso" assumido quando faltava resposta no conselho.
+
+Regra nova, que vale para toda sessão e especialista:
+- **Semana padrão:** 3 forças (RIR 2, progressão dupla, 14-18 séries), 3 corridas (zona 2 sem teto de velocidade,
+  1 de qualidade por semana; o jogo conta como qualidade), 1 descanso.
+- **Corte só por** febre, falta de ar, aperto ou tosse no peito; dor articular >3/10; ou o semáforo de
+  `painel/decisao.js` (Segurar: 3 manhãs vermelhas seguidas, prontidão <30, noite <5,5 h com VFC <30 ou FC >=58;
+  Ajustar: prontidão 30-44, noite <5,5 h ou índice vermelho). Amarelo no índice próprio não corta.
+- **Sem resposta, semana padrão.** Nada de pior caso nem de portões encadeados.
+- A fase 1 de §15 está encerrada; a porteira da fase 2 (qualidade semanal) foi aberta por decisão do Fabio em 27/10.

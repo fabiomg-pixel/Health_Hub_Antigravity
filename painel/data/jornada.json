@@ -1,9 +1,9 @@
 {
- "gerado_em": "2026-10-26T22:33:40",
+ "gerado_em": "2026-10-27T09:33:18",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-09-24",
-  "garmin_ate": "2026-10-26"
+  "garmin_ate": "2026-10-27"
  },
  "personagem": {
   "nome": "Fabio",
@@ -15,10 +15,10 @@
   "xp_para_proximo": 3000
  },
  "vitalidade": {
-  "indice": 50,
+  "indice": 63,
   "banda": "y",
   "confiavel": true,
-  "sono_h": 6.13,
+  "sono_h": 7.15,
   "estado": "de pé"
  },
  "atributos": [
@@ -64,7 +64,7 @@
     "id": "forcas",
     "nome": "Sessões de força do plano",
     "feito": 0,
-    "meta": 2,
+    "meta": 4,
     "cumprida": false
    },
    {
@@ -100,18 +100,18 @@
   ]
  },
  "hoje": {
-  "data": "2026-10-26",
-  "xp": 130,
+  "data": "2026-10-27",
+  "xp": 0,
   "missoes": [
    {
-    "nome": "Sessão de força: Braços e costas, RIR 3, sem subir carga",
+    "nome": "Sessão de força: Força: superior (costas, peito e braços)",
     "xp": 100,
     "feito": false
    },
    {
     "nome": "Dia ativo",
     "xp": 30,
-    "feito": true,
+    "feito": false,
     "sem_dado": false
    },
    {
@@ -122,7 +122,7 @@
    {
     "nome": "Registrar o almoço",
     "xp": 20,
-    "feito": true
+    "feito": false
    },
    {
     "nome": "Registrar o lanche das 17h",
@@ -138,9 +138,9 @@
   "de": 95.0,
   "ate": 92.5,
   "chefe": "O Colosso do Platô Vermelho",
-  "hp": 0.952
+  "hp": 0.972
  },
- "media_28d": 94.88,
+ "media_28d": 94.93,
  "paralela": {
   "nome": "VO₂ máx",
   "valor": 42.2,
@@ -688,7 +688,7 @@
      "id": "forcas",
      "nome": "Sessões de força do plano",
      "feito": 0,
-     "meta": 2,
+     "meta": 4,
      "cumprida": false
     },
     {
@@ -814,22 +814,10 @@
   "2026-10-23": 90,
   "2026-10-24": 50,
   "2026-10-25": 0,
-  "2026-10-26": 130
+  "2026-10-26": 130,
+  "2026-10-27": 0
  },
  "dias": {
-  "2026-10-06": {
-   "xp": 70,
-   "itens": [
-    "Dia ativo",
-    "Pesagem",
-    "Almoço registrado"
-   ],
-   "marcas": [
-    "almoco",
-    "registro"
-   ],
-   "ativo": true
-  },
   "2026-10-07": {
    "xp": 30,
    "itens": [
@@ -1096,6 +1084,12 @@
     "treino"
    ],
    "ativo": true
+  },
+  "2026-10-27": {
+   "xp": 0,
+   "itens": [],
+   "marcas": [],
+   "ativo": false
   }
  },
  "livro": [

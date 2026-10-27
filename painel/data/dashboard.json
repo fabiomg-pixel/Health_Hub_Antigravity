@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-26T10:34:49",
+ "gerado_em": "2026-10-27T09:20:19",
  "metas": {
   "_nota": "Ponto de destino de MEIO TERMO, definido pelo Fabio em 10/10/2026. A partir dele entra o 'modo avançado'.",
   "partida": {
@@ -30,9 +30,9 @@
   "partida": 95.14,
   "alvo": 85.0,
   "progresso": 0.018,
-  "ritmo_kg_semana_28d": 0.08,
+  "ritmo_kg_semana_28d": 0.06,
   "eta_no_ritmo_atual": null,
-  "eta_ritmo_saudavel": "2027-03-14",
+  "eta_ritmo_saudavel": "2027-03-15",
   "ritmo_saudavel": 0.5,
   "serie": [
    {
@@ -561,10 +561,6 @@
  "recuperacao": {
   "hrv": [
    {
-    "data": "2026-07-29",
-    "valor": 35.0
-   },
-   {
     "data": "2026-07-30",
     "valor": 32.0
    },
@@ -919,13 +915,13 @@
    {
     "data": "2026-10-26",
     "valor": 40.0
+   },
+   {
+    "data": "2026-10-27",
+    "valor": 39.0
    }
   ],
   "fc_repouso": [
-   {
-    "data": "2026-07-29",
-    "valor": 57.0
-   },
    {
     "data": "2026-07-30",
     "valor": 57.0
@@ -1281,13 +1277,13 @@
    {
     "data": "2026-10-26",
     "valor": 53.0
+   },
+   {
+    "data": "2026-10-27",
+    "valor": 53.0
    }
   ],
   "sono": [
-   {
-    "data": "2026-07-29",
-    "valor": 6.94
-   },
    {
     "data": "2026-07-30",
     "valor": 6.82
@@ -1643,6 +1639,10 @@
    {
     "data": "2026-10-26",
     "valor": 6.65
+   },
+   {
+    "data": "2026-10-27",
+    "valor": 6.57
    }
   ]
  },
@@ -1727,9 +1727,9 @@
   },
   {
    "semana": "2026-10-26",
-   "ativos": 0,
+   "ativos": 1,
    "pesados": 0,
-   "com_dado": 1
+   "com_dado": 2
   }
  ]
 }

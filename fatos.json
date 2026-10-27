@@ -1,9 +1,9 @@
 {
- "gerado_em": "2026-10-25T10:33:57",
+ "gerado_em": "2026-10-27T09:27:40",
  "janela": {
-  "hoje": "2026-10-25",
-  "dia_semana": "Sunday",
-  "semana_desde": "2026-10-18"
+  "hoje": "2026-10-27",
+  "dia_semana": "Tuesday",
+  "semana_desde": "2026-10-20"
  },
  "peso": {
   "ultima": {
@@ -87,34 +87,29 @@
   "media_neutras_nas_ultimas_7": 94.32,
   "n_neutras_nas_ultimas_7": 3,
   "media_7_neutras_de_verdade": 94.96,
-  "media_28d_neutras": 94.91,
+  "media_28d_neutras": 94.93,
   "n_leituras_pos_esforco_14d": 5,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 82,
-  "banda_hoje": "g",
-  "prontidao_garmin_hoje": 81,
+  "indice_hoje": 63,
+  "banda_hoje": "y",
+  "prontidao_garmin_hoje": 65,
   "dias_vermelhos_seguidos": 0,
-  "sono_ultima_noite_h": 6.46,
-  "sono_ultima_noite_score": 79,
-  "hrv_ultima_noite": 43,
-  "fc_repouso_hoje": 48,
-  "indice_medio_7d": 60.0,
-  "sono_medio_7d": 6.68,
+  "sono_ultima_noite_h": 7.15,
+  "sono_ultima_noite_score": 75,
+  "hrv_ultima_noite": 39,
+  "fc_repouso_hoje": 54,
+  "indice_medio_7d": 59.0,
+  "sono_medio_7d": 6.57,
   "hrv_medio_7d": 39.0,
   "hrv_medio_28d": 37.0,
-  "fc_repouso_7d": 53,
+  "fc_repouso_7d": 53.0,
   "fc_repouso_28d": 54.0,
   "indice_hoje_confiavel": true
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-10-18",
-    "kcal_ativas": 341.0,
-    "passos": 7787
-   },
    {
     "data": "2026-10-20",
     "kcal_ativas": 355.0,
@@ -134,60 +129,29 @@
     "data": "2026-10-24",
     "kcal_ativas": 396.0,
     "passos": 14621
+   },
+   {
+    "data": "2026-10-26",
+    "kcal_ativas": 480.0,
+    "passos": 14111
    }
   ],
   "atividades_garmin": [
    {
-    "id": 24829379113,
+    "id": 24863558015,
     "tipo": "treadmill_running",
-    "nome": "Base",
-    "inicio_local": "2026-10-23 17:49:20",
-    "duracao_min": 19.9,
-    "distancia_km": 2.75,
-    "fc_media": 148.0,
-    "fc_max": 156.0,
-    "kcal": 234.0,
-    "tempo_em_zona_s": [
-     23,
-     29,
-     1124,
-     0,
-     0
-    ]
-   },
-   {
-    "id": 24808587471,
-    "tipo": "treadmill_running",
-    "nome": "Base",
-    "inicio_local": "2026-10-21 19:50:18",
-    "duracao_min": 20.7,
-    "distancia_km": 2.97,
-    "fc_media": 138.0,
-    "fc_max": 144.0,
-    "kcal": 214.0,
-    "tempo_em_zona_s": [
-     0,
-     870,
-     370,
-     0,
-     0
-    ]
-   },
-   {
-    "id": 24796069966,
-    "tipo": "treadmill_running",
-    "nome": "Corrida em esteira",
-    "inicio_local": "2026-10-20 17:52:50",
+    "nome": "Threshold",
+    "inicio_local": "2026-10-26 20:38:55",
     "duracao_min": 29.9,
-    "distancia_km": 3.55,
-    "fc_media": 130.0,
-    "fc_max": 148.0,
-    "kcal": 265.0,
+    "distancia_km": 4.5,
+    "fc_media": 145.0,
+    "fc_max": 167.0,
+    "kcal": 337.0,
     "tempo_em_zona_s": [
-     249,
-     958,
-     549,
-     0,
+     69,
+     500,
+     814,
+     362,
      0
     ]
    }
@@ -206,6 +170,11 @@
   ],
   "registros_de_treino": [
    {
+    "data": "2026-10-26",
+    "tem_foto": false,
+    "texto": "Corrida mais forte que a média. Ver no Strava"
+   },
+   {
     "data": "2026-10-21",
     "tem_foto": false,
     "texto": "22 min de corrida, segundo recomendação de treino do Garmin (comecei a marcar um pouco mais tarde) a 8,5km/h"
@@ -216,7 +185,7 @@
     "texto": "Treino feito no painel: Costas, ombro posterior e glúteo (só se a força de hoje não aconteceu), 13 min, esforço leve. Re"
    }
   ],
-  "sessoes_registradas": 2,
+  "sessoes_registradas": 3,
   "aviso": "Jogo de campeonato não gera dado de relógio (regra da competição) — ausência de atividade não é ausência de esforço. A FC no pulso oscila na musculação: tendência, não medida exata. Séries e cargas vêm do painel, não da contagem do Garmin."
  },
  "vo2max": {
@@ -252,23 +221,21 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-10-18",
-   "2026-10-19",
    "2026-10-20",
    "2026-10-21",
    "2026-10-22",
    "2026-10-23",
-   "2026-10-24"
+   "2026-10-24",
+   "2026-10-26"
   ],
-  "n_refeicoes_registradas": 21,
+  "n_refeicoes_registradas": 17,
   "por_dia": {
-   "2026-10-18": 1,
-   "2026-10-19": 5,
    "2026-10-20": 3,
    "2026-10-21": 5,
    "2026-10-22": 3,
    "2026-10-23": 3,
-   "2026-10-24": 1
+   "2026-10-24": 1,
+   "2026-10-26": 2
   },
   "ocorrencias": {
    "fritura": [],
@@ -282,6 +249,11 @@
    "buffet": [],
    "alcool": [],
    "proteina_clara": [
+    {
+     "data": "2026-10-26",
+     "refeicao": "Jantar",
+     "texto": "Frango com quiabo"
+    },
     {
      "data": "2026-10-24",
      "refeicao": "Almoço",
@@ -300,6 +272,10 @@
    ]
   },
   "observacoes": [
+   {
+    "data": "2026-10-25",
+    "texto": "Médico liberou exercício com o antibiótico (amoxicilina com clavulanato). Sem falta de ar nem aperto no peito."
+   },
    {
     "data": "2026-10-24",
     "texto": "Tosse só na garganta e no nariz. Ibuprofeno interrompido; só era usado se houvesse dor."
@@ -323,10 +299,6 @@
    {
     "data": "2026-10-20",
     "texto": "Corrida guiada (Corrida fácil de 30 min (só se o painel liberar)): 30 min, completa.\n\nRitmo bem fácil"
-   },
-   {
-    "data": "2026-10-18",
-    "texto": "Resfriado não passou, na curva de melhora, com muita secreção; disposição não está 100%. Toma antigripal constantemente. Sem dor no joelho; alguma dor na lombar"
    }
   ],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
