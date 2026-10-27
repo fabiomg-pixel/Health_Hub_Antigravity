@@ -6,7 +6,8 @@
 //   SEGURAR : 3 ou mais dias seguidos em banda vermelha, OU prontidão do Garmin < 30, OU noite < 5,5 h com
 //             VFC < 30 ou FC de repouso >= 58. Volume 30% menor e nada intenso.
 //   AJUSTAR : prontidão do Garmin 30-44, OU noite < 5,5 h, OU índice próprio vermelho. Faz o treino do plano,
-//             sem a parte intensa e sem recorde de carga.
+//             com todas as séries, sem a parte intensa e sem recorde de carga (tirar 1 série é só sugestão,
+//             se ele não estiver bem; nunca o padrão, Fabio 27/10).
 //   PODE    : o resto (índice amarelo e prontidão de 45 para cima são dias normais de treino). Com prontidão
 //             >= 60 e FC de repouso média < 57, a carga pode subir (progressão dupla).
 // O índice próprio é cerca de 30 pontos mais duro que o Garmin por desenho: sozinho, amarelo não corta nada.
@@ -44,7 +45,7 @@ function avaliarSemaforo() {
 const SEM_TXT = {
   pode: ['Pode', 'Siga o plano. Bateu o topo das repetições com 2 de sobra em todas as séries? Na próxima, suba a carga.'],
   moderar: ['Pode, sem recorde', 'Siga o plano inteiro, com 2 repetições de sobra e sem subir carga hoje.'],
-  ajustar: ['Ajustar', 'Faça o treino do plano sem a parte intensa: mesmas cargas, 2 a 3 repetições de sobra; na corrida, tudo em zona 2.'],
+  ajustar: ['Ajustar', 'Faça o treino do plano inteiro, todas as séries, sem subir carga hoje; na corrida, tudo em zona 2. Se não estiver se sentindo bem, tirar 1 série de cada exercício é uma opção, não a regra.'],
   segurar: ['Segurar', 'Volume 30% menor e nada intenso: tire 1 série de cada exercício; corrida vira 20 a 30 min bem fácil.'],
   sem_dado: ['Sem leitura', 'Sem dado de hoje não há decisão: use a média de 7 dias e o que você sente.']
 };
@@ -69,7 +70,7 @@ function avisoDaSessao(sessao) {
   if (s.estado === 'sem_dado') return 'Sem a leitura de hoje: decida pela média de 7 dias (' + s.resumo7 + ') e pelo que sente.';
   const bulg = (sessao.exercicios || []).some(e => /bulgaro/.test(e.id));
   if (s.estado === 'segurar') return 'Hoje o relógio pede para segurar (' + s.motivos.join('; ') + '). Faça a versão reduzida: 3 séries por exercício' + (bulg ? ', sem o búlgaro' : '') + ', cargas 10% menores e 3 ou mais repetições de sobra.';
-  return 'Hoje o relógio pede para ajustar (' + s.motivos.join('; ') + '). Mantenha as cargas e tire 1 série de cada exercício.';
+  return 'Hoje o relógio pede para ajustar (' + s.motivos.join('; ') + '). Faça todas as séries, sem subir carga. Se não estiver se sentindo bem, pode tirar 1 série de cada exercício.';
 }
 
 // ───────── proteína registrada ─────────
