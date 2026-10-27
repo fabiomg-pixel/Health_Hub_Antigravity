@@ -75,6 +75,15 @@ function estadoDe(iso) {
   st.data = iso; gravarEstado(st);
   return st;
 }
+// Flexibilidade (Fabio, 27/10): séries a mais por exercício e exercícios extras entram no treino do dia e no registro.
+const NOME_GRUPO = { peito_empurrar: 'Peito', ombro_empurrar: 'Ombro (empurrar)', costas: 'Costas', biceps: 'Bíceps', triceps: 'Tríceps', ombro_lateral: 'Ombro lateral', core_tempo: 'Core (tempo)', core_dinamico: 'Abdominal', quadriceps_composto: 'Pernas (composto)', extensao: 'Extensora', posterior: 'Posterior', unilateral: 'Unilateral', panturrilha: 'Panturrilha', gluteo: 'Glúteo' };
+function comExtras(sessao, st) { return { ...sessao, exercicios: sessao.exercicios.concat(st.extras || []) }; }
+function novoExtra(op, grupo, sessao) {
+  const usados = new Set(sessao.exercicios.map(e => e.id)); let id = op.id, n = 2;
+  while (usados.has(id)) id = op.id + '_' + n++;
+  const tempo = grupo === 'core_tempo';
+  return { id, nome: op.nome, series: 3, reps: tempo ? '' : '10', kg: null, descanso_s: 75, halter: !!op.halter, grupo: grupo || undefined, extra: true, ...(tempo ? { tipo: 'tempo', alvo_s: 40 } : {}) };
+}
 // o exercício de fato feito: o do plano ou o que ele trocou por equivalente
 const efetivo = (e, st) => st.troca[e.id] || { id: e.id, nome: e.nome, halter: !!e.halter };
 function acharGrupo(e) {
@@ -137,8 +146,8 @@ function preencher(sessao, st, hist) {
       if (pr.subiu && ++aumentos > 2) { pr.kg = pr.kg - pr.salto; pr.subiu = false; pr.motivo = 'Carga mantida: no máximo 2 aumentos por treino.'; }
       st.prog[e.id] = pr; }); }
   sessao.exercicios.forEach(e => {
-    const l = st.s[e.id] = st.s[e.id] || [];
-    for (let i = 0; i < e.series; i++) {
+    const novo = !st.s[e.id], l = st.s[e.id] = st.s[e.id] || [];
+    for (let i = 0; novo && i < e.series; i++) {   // só monta na primeira vez: depois, + Série e − Série mandam
       if (l[i]) continue;
       if (e.tipo === 'tempo') { l[i] = { seg: e.alvo_s || 30, ok: false }; continue; }
       l[i] = { kg: kgInicial(e, efetivo(e, st), i, hist, st), reps: topoReps(e.reps), ok: false };
@@ -150,7 +159,8 @@ function preencher(sessao, st, hist) {
 // ───────── a tela ─────────
 function renderTreino(id) {
   pararRelogios();
-  const pedida = id.split('/')[1], iso = pedida || isoLocal(), dataOk = /^\d{4}-\d{2}-\d{2}$/.test(iso), sessao = dataOk ? sessaoDe(iso) : null;
+  const pedida = id.split('/')[1], iso = pedida || isoLocal(), dataOk = /^\d{4}-\d{2}-\d{2}$/.test(iso);
+  let sessao = dataOk ? sessaoDe(iso) : null;
   const topo = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
     <div class="topo"><div class="rot">Treino${dataOk ? ' · ' + esc(iso.slice(8, 10) + '/' + iso.slice(5, 7)) : ''}</div><div class="selo" id="t-clock" role="timer" aria-label="tempo de treino">0:00</div></div>
     <h1 class="titulo longo">${sessao ? esc(sessao.titulo) : 'Sem treino com séries hoje'}</h1>
@@ -161,6 +171,7 @@ function renderTreino(id) {
     return;
   }
   const st = estadoDe(iso), hist = historicoDeCargas();
+  sessao = comExtras(sessao, st);
   preencher(sessao, st, hist);
   const fila = lsGet(T_FILA, []);
   const alerta = typeof avisoDaSessao === 'function' ? avisoDaSessao(sessao) : null;
@@ -168,7 +179,7 @@ function renderTreino(id) {
   h += sessao.exercicios.map((e, xi) => {
     const ef = efetivo(e, st), ult = hist[ef.id], tempo = e.tipo === 'tempo', opcoes = opcoesDe(e), trocado = ef.id !== e.id;
     const lastTxt = ult ? 'Última vez (' + isoDDMM(ult.data) + '): ' + ult.s.map(s => tempo ? s[0] + ' s' : (s[0] != null ? fNum(s[0], s[0] % 1 ? 1 : 0) + ' kg × ' + s[1] : s[1])).join(', ') : '';
-    return `<section class="bloco"><div class="cab"><h2 style="font-size:20px">${esc(ef.nome)}</h2><small>${e.series} × ${tempo ? (e.alvo_s || '') + ' s' : esc(e.reps)} · descanso ${e.descanso_s || 60} s</small></div>
+    return `<section class="bloco"><div class="cab"><h2 style="font-size:20px">${esc(ef.nome)}</h2><small>${e.extra ? 'extra · ' : ''}${st.s[e.id].length} × ${tempo ? (e.alvo_s || '') + ' s' : esc(e.reps)}${st.s[e.id].length !== e.series ? ' (plano: ' + e.series + ')' : ''} · descanso ${e.descanso_s || 60} s</small></div>
       ${(!trocado && e.kg == null && st.prog && st.prog[e.id] && st.prog[e.id].motivo) ? `<div class="alim-leitura" style="padding-bottom:4px">${esc(st.prog[e.id].motivo)}</div>` : ''}
       ${trocado ? `<div class="alim-leitura" style="padding-bottom:4px">No lugar de ${esc(e.nome)}. ${ef.halter ? 'A carga é por halter (cada mão). ' : ''}${ult ? '' : 'Sem histórico nesse exercício: use uma carga com a qual você faria uns 16 repetições.'}</div>` : (e.nota ? `<div class="alim-leitura" style="padding-bottom:4px">${esc(e.nota)}</div>` : '')}
       <button type="button" class="trocar" data-x="${xi}" aria-expanded="false">Aparelho ocupado? Trocar exercício</button>
@@ -182,8 +193,13 @@ function renderTreino(id) {
           : `<label class="cp"><input class="n" inputmode="decimal" data-c="kg" value="${esc(s.kg)}" aria-label="carga da série ${i + 1}"><small>${ef.halter ? 'kg/halter' : 'kg'}</small></label>
              <label class="cp"><input class="n" inputmode="numeric" data-c="reps" value="${esc(s.reps)}" aria-label="repetições da série ${i + 1}"><small>reps</small></label>`}
         <button type="button" class="okb ${s.ok ? 'on' : ''}" aria-pressed="${s.ok}" aria-label="série ${i + 1} feita">${s.ok ? 'Feita' : 'Fazer'}</button></div>${s.ok && e.tipo !== 'tempo' ? rirHtml(s) : ''}`).join('')}
+      <div class="flex-serie"><button type="button" data-mais="${xi}">+ Série</button>${st.s[e.id].length > 1 && !st.s[e.id][st.s[e.id].length - 1].ok ? `<button type="button" data-menos="${xi}">− Série</button>` : ''}${e.extra && !st.s[e.id].some(x => x.ok) ? `<button type="button" data-tira="${xi}">Tirar exercício</button>` : ''}</div>
     </section>`;
   }).join('');
+  const gs = (TREINOS && TREINOS.biblioteca && TREINOS.biblioteca.grupos) || {};
+  h += `<section class="bloco"><button type="button" class="trocar" id="t-add" aria-expanded="false">+ Adicionar exercício</button>
+    <div id="t-addbox" hidden>${Object.keys(gs).map(g => `<div class="ml" style="font-size:13px;font-weight:700;color:var(--sec);padding:10px 0 0">${esc(NOME_GRUPO[g] || g)}</div><div class="opcoes">${gs[g].opcoes.map(op => `<button type="button" data-addg="${esc(g)}" data-addop="${esc(op.id)}">${esc(op.nome)}${op.halter ? ' · por halter' : ''}</button>`).join('')}</div>`).join('')}
+      <div class="opcoes"><button type="button" data-addop="__outro">Outro (digitar o nome)</button></div></div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>Como foi</h2><small>opcional</small></div>
     <div class="seg" style="margin-top:12px;grid-template-columns:repeat(3,minmax(0,1fr))">${[['leve', 'Leve'], ['ok', 'No ponto'], ['pesado', 'Pesado']].map(([k, r]) => `<button type="button" data-ef="${k}" class="${st.ef === k ? 'on' : ''}">${r}</button>`).join('')}</div>
     <textarea id="t-nota" aria-label="Nota do treino: dor, tornozelo, algo que mudou" rows="2" placeholder="Dor, tornozelo, algo que mudou no treino" style="width:100%;margin-top:12px;font:inherit;padding:10px;border:2px solid var(--tinta);background:#fff">${esc(st.nota || '')}</textarea>
@@ -255,6 +271,26 @@ function ligarTreino(sessao, st, iso) {
     const ef = efetivo(e, st);
     st.s[e.id].forEach((s, i) => { if (e.tipo !== 'tempo') s.kg = kgInicial(e, ef, i, hist, st); });
     salvar(); renderTreino('treino/' + iso);
+  }));
+  const redesenhar = () => { salvar(); renderTreino('treino/' + iso); };
+  document.querySelectorAll('[data-mais]').forEach(b => b.addEventListener('click', () => {
+    const e = sessao.exercicios[+b.dataset.mais], l = st.s[e.id], u = l[l.length - 1] || {};
+    l.push(e.tipo === 'tempo' ? { seg: u.seg || e.alvo_s || 30, ok: false } : { kg: u.kg ?? '', reps: u.reps ?? topoReps(e.reps), ok: false }); redesenhar();
+  }));
+  document.querySelectorAll('[data-menos]').forEach(b => b.addEventListener('click', () => {
+    const l = st.s[sessao.exercicios[+b.dataset.menos].id]; if (l.length > 1 && !l[l.length - 1].ok) { l.pop(); redesenhar(); }
+  }));
+  document.querySelectorAll('[data-tira]').forEach(b => b.addEventListener('click', () => {
+    const e = sessao.exercicios[+b.dataset.tira]; st.extras = (st.extras || []).filter(x => x.id !== e.id); delete st.s[e.id]; redesenhar();
+  }));
+  const addB = document.getElementById('t-add');
+  if (addB) addB.addEventListener('click', () => { const box = document.getElementById('t-addbox'); box.hidden = !box.hidden; addB.setAttribute('aria-expanded', !box.hidden); });
+  document.querySelectorAll('[data-addop]').forEach(b => b.addEventListener('click', () => {
+    let op, g = b.dataset.addg || null;
+    if (b.dataset.addop === '__outro') { const nome = (prompt('Qual exercício você vai fazer?') || '').trim(); if (!nome) return; op = { id: 'x_' + slugT(nome), nome, halter: /halter/i.test(nome) }; }
+    else op = ((TREINOS.biblioteca.grupos[g] || {}).opcoes || []).find(x => x.id === b.dataset.addop);
+    if (!op) return;
+    st.extras = (st.extras || []).concat([novoExtra(op, g, sessao)]); redesenhar();
   }));
   document.querySelectorAll('[data-ef]').forEach(b => b.addEventListener('click', () => { st.ef = st.ef === b.dataset.ef ? null : b.dataset.ef; salvar(); document.querySelectorAll('[data-ef]').forEach(x => x.classList.toggle('on', x.dataset.ef === st.ef)); }));
   document.getElementById('t-nota').addEventListener('input', ev => { st.nota = ev.target.value; salvar(); });
