@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-27T09:33:17",
+ "gerado_em": "2026-10-27T22:40:17",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -338,9 +338,9 @@
    "reliquias": [],
    "maldicoes": [],
    "materiais": {
-    "pista": 4,
+    "pista": 5,
     "estilha": 3,
-    "desgaste": 2
+    "desgaste": 1
    }
   },
   "falta_para_avanco": 4

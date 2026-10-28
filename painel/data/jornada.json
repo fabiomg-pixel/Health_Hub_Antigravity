@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-27T09:33:18",
+ "gerado_em": "2026-10-27T22:40:17",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-09-24",
@@ -10,16 +10,16 @@
   "classe": "Pesquisador de Campo",
   "nivel": 5,
   "titulo": "Escudeiro do Conselho",
-  "xp_total": 7520,
-  "xp_no_nivel": 520,
+  "xp_total": 7560,
+  "xp_no_nivel": 560,
   "xp_para_proximo": 3000
  },
  "vitalidade": {
-  "indice": 63,
-  "banda": "y",
-  "confiavel": true,
-  "sono_h": 7.15,
-  "estado": "de pé"
+  "indice": null,
+  "banda": null,
+  "confiavel": null,
+  "sono_h": null,
+  "estado": "sem dado"
  },
  "atributos": [
   {
@@ -70,14 +70,14 @@
    {
     "id": "almocos",
     "nome": "Almoços registrados (seg a sex)",
-    "feito": 1,
+    "feito": 2,
     "meta": 4,
     "cumprida": false
    },
    {
     "id": "lanches",
     "nome": "Lanches das 17h registrados",
-    "feito": 0,
+    "feito": 1,
     "meta": 4,
     "cumprida": false
    }
@@ -101,7 +101,7 @@
  },
  "hoje": {
   "data": "2026-10-27",
-  "xp": 0,
+  "xp": 40,
   "missoes": [
    {
     "nome": "Sessão de força: Força: superior (costas, peito e braços)",
@@ -122,25 +122,18 @@
    {
     "nome": "Registrar o almoço",
     "xp": 20,
-    "feito": false
+    "feito": true
    },
    {
     "nome": "Registrar o lanche das 17h",
     "xp": 20,
-    "feito": false
+    "feito": true
    }
   ],
   "ferido": false
  },
- "arco": {
-  "num": "I",
-  "nome": "O Muro de Brasa",
-  "de": 95.0,
-  "ate": 92.5,
-  "chefe": "O Colosso do Platô Vermelho",
-  "hp": 0.972
- },
- "media_28d": 94.93,
+ "arco": null,
+ "media_28d": null,
  "paralela": {
   "nome": "VO₂ máx",
   "valor": 42.2,
@@ -483,14 +476,14 @@
     {
      "id": "almocos",
      "nome": "Almoços registrados (seg a sex)",
-     "feito": 2,
+     "feito": 1,
      "meta": 4,
      "cumprida": false
     },
     {
      "id": "lanches",
      "nome": "Lanches das 17h registrados",
-     "feito": 1,
+     "feito": 0,
      "meta": 4,
      "cumprida": false
     }
@@ -694,14 +687,14 @@
     {
      "id": "almocos",
      "nome": "Almoços registrados (seg a sex)",
-     "feito": 1,
+     "feito": 2,
      "meta": 4,
      "cumprida": false
     },
     {
      "id": "lanches",
      "nome": "Lanches das 17h registrados",
-     "feito": 0,
+     "feito": 1,
      "meta": 4,
      "cumprida": false
     }
@@ -815,7 +808,7 @@
   "2026-10-24": 50,
   "2026-10-25": 0,
   "2026-10-26": 130,
-  "2026-10-27": 0
+  "2026-10-27": 40
  },
  "dias": {
   "2026-10-07": {
@@ -1086,9 +1079,16 @@
    "ativo": true
   },
   "2026-10-27": {
-   "xp": 0,
-   "itens": [],
-   "marcas": [],
+   "xp": 40,
+   "itens": [
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "lanche",
+    "registro"
+   ],
    "ativo": false
   }
  },
