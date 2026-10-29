@@ -23,3 +23,6 @@ ultimo_envio.md
 
 # Pacote de exportação (gerado sob pedido)
 exportacao/
+despachos.log
+despachos.log.tmp
+ultimo_despacho.md

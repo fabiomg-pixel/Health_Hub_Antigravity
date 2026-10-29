@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Envia a mensagem do copiloto pelo bot NOVO (@Silvester_TheTrainer_bot) para o chat do Fabio.
 
-Uso:  printf '%s' "$MSG" | ./enviar_telegram_saude.py <brief|avaliacao|aviso>
+Uso:  printf '%s' "$MSG" | ./enviar_telegram_saude.py <brief|avaliacao|aviso|capitulo|campanha>
       ./enviar_telegram_saude.py --verificar     (só confere o bot e o chat; não envia nada)
 
 Por que existe: as tarefas agendadas rodam em sessões próprias, cujo plugin do Telegram usa o bot ANTIGO.
@@ -96,7 +96,10 @@ def main():
             sys.exit('ERRO: envio recusado: ' + str(r.get('description')))
         ids.append(r['result']['message_id']); usuario = (r['result'].get('from') or {}).get('username')
     agora = datetime.datetime.now().strftime('%d/%m %H:%M')
-    open(os.path.join(AQUI, 'ultimo_envio.md'), 'w', encoding='utf-8').write(
+    # Os despachos da Campanha (despachos.py) vão para outro arquivo: o disparar_rotina.sh --verificar confere o
+    # brief e a avaliação pelo cabeçalho de ultimo_envio.md, e um despacho depois deles faria a rotina ser repetida.
+    arq = 'ultimo_despacho.md' if tipo == 'campanha' else 'ultimo_envio.md'
+    open(os.path.join(AQUI, arq), 'w', encoding='utf-8').write(
         '# Último envio do bot (%s) em %s\n\n%s\n' % (tipo, agora, texto[:3500]))
     print(json.dumps({'ok': True, 'bot': usuario, 'tipo': tipo, 'mensagens': ids, 'em': agora}, ensure_ascii=False))
 

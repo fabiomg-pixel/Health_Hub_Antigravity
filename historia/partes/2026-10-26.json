@@ -1,5 +1,5 @@
 {
- "_nota": "Parte II. O baralho dos acontecimentos desta parte: cada dia tira cartas pela qualidade do dia (métricas), em ordem. Textos só de história. Efeitos aplicados no fechamento.",
+ "_nota": "Parte II. O baralho dos acontecimentos desta parte: cada dia tira cartas pela qualidade do dia (métricas), em ordem. Textos só de história. Efeitos aplicados no fechamento. Desde 29/10: 'despacho' é a versão do Telegram (cena curta com foco num personagem); 'missao' são as cartas das missões cumpridas, na ordem; 'rumo' é a linha de presságio quando a projeção do desfecho muda.",
  "parte": 2,
  "titulo": "O Coração de Ost",
  "clima": "seca",
@@ -11,31 +11,36 @@
     "texto": "O menino que trouxe o bilhete voltou à noite, sozinho, e deixou no degrau da torre um embrulho de pano: dentro, uma estilha roubada dos armazéns da Liga.",
     "efeito": {
      "estilha": 1
-    }
+    },
+    "despacho": "Bram acordou antes de todos e achou o embrulho no degrau. Desfez o nó devagar, viu a estilha e ficou muito tempo parado, com ela na palma. Depois olhou para a estrada de Salmoura, onde um vulto pequeno já ia longe. — Esse menino vai se meter em encrenca por minha causa — disse, para ninguém. Girou o martelo de Tomas uma vez na mão. Não contou aos outros o que tinha reconhecido no nó do pano: era um nó de arena."
    },
    {
     "texto": "Iara achou, no leito seco de um poço abandonado de Salmoura, um estilhaço do céu que a Liga não tinha visto.",
     "efeito": {
      "estilha": 1
-    }
+    },
+    "despacho": "Iara desceu sozinha pela corda, sem avisar ninguém, até o fundo de um poço seco do lado de fora dos muros. Voltou com sal até os cotovelos e uma estilha entre os dentes, rindo. Fabio não riu. — Da próxima vez, você me chama. — Da próxima vez você me proíbe, Capitão. — Ela guardou a estilha no pano de Bram e só então, de costas, puxou a manga sobre o braço esquerdo. As veias cinzentas tinham subido um dedo."
    },
    {
     "texto": "Na luz da brasa, a Marca de Fabio apontou para o chão da torre. Debaixo de uma laje solta, havia uma estilha que algum guardião antigo escondeu ali.",
     "efeito": {
      "estilha": 1
-    }
+    },
+    "despacho": "A Marca puxou a mão de Fabio para baixo com tanta força que ele caiu de joelhos na torre. Teodoro ergueu a laje e encontrou, enrolada num lenço apodrecido, uma estilha e um nome bordado: Davi. O velho segurou o lenço contra o peito e saiu da torre sem uma palavra. Voltou ao anoitecer, com os olhos secos, e disse apenas: — Ele sempre escondia as coisas boas para depois."
    },
    {
     "texto": "Uma moradora de Salmoura, que lembrava de Teodoro dos tempos em que Ost brilhava, passou pela muralha uma estilha costurada na barra da saia.",
     "efeito": {
      "estilha": 1
-    }
+    },
+    "despacho": "A mulher se chamava Rosa e tinha sido menina em Ost. Passou a estilha pela fresta da muralha e segurou a mão de Teodoro do outro lado, pela pedra. — O senhor tocava o sino nas noites de neblina. Eu dormia ouvindo. — Antes de soltar, disse mais baixo: — A Senhora dos Poços pergunta pelo senhor. Toda noite."
    },
    {
     "texto": "Bram fundiu a sucata de uma lanterna velha da Liga e encontrou, dentro do vidro, pó de estilhaço suficiente para uma lasca inteira.",
     "efeito": {
      "estilha": 1
-    }
+    },
+    "despacho": "Maren segurou a lanterna enquanto Bram fundia o vidro velho. Quando o pó de estilha brilhou no fundo do cadinho, ele assobiou pela primeira vez desde o bilhete de Corvino. Maren anotou no Códice o desenho que o pó fez ao esfriar. Era um nó dos Tecelões. Significa irmão."
    }
   ],
   "achado": [
@@ -43,39 +48,46 @@
     "texto": "Maren desenhou de memória a planta dos armazéns de Salmoura a partir do que os moradores contavam em voz baixa no poço.",
     "efeito": {
      "pista": 1
-    }
+    },
+    "despacho": "Maren passou três noites ouvindo as mulheres no poço sem dizer uma palavra, só anotando. Na quarta, desenhou os armazéns da Liga de memória, porta por porta, e mostrou a Fabio. — Aqui, no fundo, tem uma sala que ninguém sabe para que serve. As mulheres a chamam de quarto da Senhora. — Fabio perguntou como ela tinha conseguido tudo aquilo. — Ninguém repara em quem escuta — disse ela, e fechou o Códice antes que ele visse o resto da página."
    },
    {
     "texto": "Teodoro reconheceu, no estandarte de um dos guardas da Liga, um símbolo que estava costurado na mochila de Bento, quarenta anos atrás.",
     "efeito": {
      "pista": 1
-    }
+    },
+    "despacho": "Teodoro parou no meio da frase quando viu o estandarte. Era uma garça bordada em linha azul sobre o brasão do sal, o mesmo bordado que Bento levava na mochila quarenta anos atrás. — Bento nunca teria entregado isso a ninguém — disse, devagar. — Só a quem ele amava. — Passou a noite limpando o vidro da lanterna e parou no nome de Bento por muito tempo."
    },
    {
     "texto": "Quando Iara cantou perto do Códice, uma página queimada mostrou por um instante metade de um mapa das ruínas de Lis.",
     "efeito": {
      "pista": 1
-    }
+    },
+    "despacho": "Iara cantou baixinho perto do Códice, sem perceber que Maren olhava. A página queimada esquentou, e por um instante apareceu meio mapa das ruínas de Lis, com um moinho desenhado à margem do rio. Fabio, do outro lado do fogo, levantou a cabeça de repente, como se alguém o tivesse chamado pelo nome. Não soube dizer por quê."
    },
    {
     "texto": "O menino de Salmoura disse o nome da Senhora dos Poços, e Teodoro ficou branco.",
     "efeito": {
      "pista": 1
-    }
+    },
+    "despacho": "O menino disse o nome de passagem, comendo o pão que Bram lhe deu: — A Senhora dos Poços? Lúcia. Todo mundo sabe. — Teodoro deixou a caneca cair. Não a pegou. Ficou olhando para a parede de Ost, onde os sete nomes só aparecem com a luz verde, e disse a única coisa que ninguém esperava ouvir dele: — Eu menti para vocês."
    }
   ],
   "quieto": [
    {
     "texto": "Um dia de espera no alto de Ost, vigiando os muros de Salmoura pela luneta de Teodoro.",
-    "efeito": {}
+    "efeito": {},
+    "despacho": "Teodoro deixou Iara olhar pela luneta. Ela contou as torres de Salmoura em voz alta, depois as sentinelas, depois as janelas acesas. Quando chegou a quarenta, parou. — Vô, por que o senhor não desce lá e pronto? — Ele demorou para responder. — Porque tem gente lá embaixo que eu prometi não deixar esperando de novo."
    },
    {
     "texto": "Vento frio das montanhas. Bram afiou o martelo de Tomas a tarde inteira, sem usar.",
-    "efeito": {}
+    "efeito": {},
+    "despacho": "Bram afiou o martelo a tarde toda, embora um martelo não precise de fio. Quando Fabio sentou ao lado, ele disse, sem levantar os olhos: — Tomas teria ido sozinho. — E você? — Eu sou mais burro que ele. Vou com vocês."
    },
    {
     "texto": "Maren e Iara passaram a noite trocando palavras: a língua da canção tem uma palavra para luz que se parece com uma da Escrita dos Tecelões.",
-    "efeito": {}
+    "efeito": {},
+    "despacho": "Maren e Iara trocaram palavras até tarde. A palavra para luz na canção de Iara é quase igual a um nó dos Tecelões que Maren nunca tinha conseguido traduzir. — Quer dizer luz que volta — disse Maren. Iara riu, mas depois ficou quieta muito tempo, segurando o braço."
    }
   ],
   "percalco": [
@@ -83,31 +95,66 @@
     "texto": "Os Esquecidos chegaram tão perto da luz que um deles tocou a porta da torre. Ninguém dormiu.",
     "efeito": {
      "desgaste": 1
-    }
+    },
+    "despacho": "O Esquecido tocou a porta da torre com a palma aberta, do mesmo jeito que Teodoro toca a pedra dos faróis. Teodoro viu, e alguma coisa no rosto dele se partiu. Ninguém dormiu. Iara passou a noite cantando do lado de dentro da porta, e quando a manhã chegou estava tão cansada que não conseguia levantar o braço esquerdo."
    },
    {
     "texto": "Uma patrulha da Liga achou o caminho que a companhia usava para vigiar Salmoura. Tiveram de recuar pelo barranco, perdendo cordas e mantimentos.",
     "efeito": {
      "desgaste": 1
-    }
+    },
+    "despacho": "A patrulha da Liga quase pegou Iara no barranco. Bram a puxou pela gola para dentro de uma fenda e ficou na frente dela, enorme, de mãos vazias, enquanto os homens passavam a três passos. Perderam as cordas e metade da comida. Na volta, Iara não fez nenhuma piada, e isso assustou todo mundo mais do que a patrulha."
    },
    {
     "texto": "A brasa de Ost enfraqueceu durante a noite, e a Cinza avançou dez passos sobre a colina antes do amanhecer.",
     "efeito": {
      "desgaste": 1
-    }
+    },
+    "despacho": "A brasa de Ost baixou durante a noite, e a Cinza subiu dez passos pela colina. Teodoro passou a madrugada soprando o braseiro como se soprasse a vela de um doente. De manhã, Fabio o encontrou dormindo sentado, com a lanterna no colo e o dedo parado sobre o nome de Lúcia."
    }
   ],
   "maldicao": [
    {
-    "texto": "Naquela noite a brasa de Ost apagou sozinha por um instante, e quando voltou a acender todos sentiram que alguma coisa tinha se rompido."
+    "texto": "Naquela noite a brasa de Ost apagou sozinha por um instante, e quando voltou a acender todos sentiram que alguma coisa tinha se rompido.",
+    "despacho": "A brasa apagou por um instante, e no escuro todos ouviram a mesma coisa: uma voz de mulher, muito longe, dizendo um nome que ninguém conseguiu entender. Quando a luz voltou, a Mácula no braço de Iara estava quente. Ela disse que não era nada."
    },
    {
-    "texto": "Um corvo pousou no parapeito da torre e ficou olhando a companhia até o amanhecer. Teodoro não deixou ninguém espantá-lo."
+    "texto": "Um corvo pousou no parapeito da torre e ficou olhando a companhia até o amanhecer. Teodoro não deixou ninguém espantá-lo.",
+    "despacho": "O corvo ficou no parapeito a noite inteira. Teodoro não deixou ninguém espantá-lo. — É dele — disse. — Corvino manda os corvos para contar quantos nós somos. — De manhã, o corvo foi embora, e Bram passou o dia girando o martelo na mão."
    },
    {
-    "texto": "O vento trouxe de Salmoura o som de correntes sendo arrastadas, e depois um silêncio muito longo."
+    "texto": "O vento trouxe de Salmoura o som de correntes sendo arrastadas, e depois um silêncio muito longo.",
+    "despacho": "O vento trouxe de Salmoura o som de correntes sendo arrastadas, depois um silêncio longo, depois um choro de menino. Bram se levantou e foi até a beira da colina. Fabio o segurou pelo braço. Ficaram assim até o amanhecer, sem dizer nada, os dois olhando para o oeste."
+   }
+  ],
+  "missao": [
+   {
+    "texto": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
+    "despacho": "Teodoro subiu ao alto da torre e tocou o sino de Ost uma única vez, baixo. — Para quem estiver ouvindo — disse. Lá embaixo, em Salmoura, uma janela do armazém do fundo se acendeu e se apagou em resposta. Teodoro ficou muito tempo olhando para ela."
+   },
+   {
+    "texto": "Iara ensinou a Maren o primeiro verso da canção. Maren ensinou a Iara o nó que quer dizer luz que volta.",
+    "despacho": "Iara ensinou a Maren o primeiro verso da canção, devagar, sílaba por sílaba. Maren ensinou a Iara a escrever no ar o nó que quer dizer luz que volta. O nó acendeu fraco na ponta do dedo de Iara, e ela riu tão alto que acordou Bram. A Mácula, naquela noite, não doeu."
+   },
+   {
+    "texto": "Bram consertou as botas de todo mundo sem que ninguém pedisse, e gravou na sola de cada uma um nó pequeno.",
+    "despacho": "Bram passou a noite consertando as botas da companhia sem que ninguém pedisse. Na sola de cada uma gravou um nó pequeno que Maren lhe ensinou. Quando Fabio perguntou o que era, ele deu de ombros. — Ela disse que quer dizer volta para casa. Achei que não custava."
+   },
+   {
+    "texto": "Maren contou a Fabio um dos segredos que guardava, antes de ser obrigada.",
+    "despacho": "Maren sentou ao lado de Fabio quando os outros dormiam e abriu o Códice na página da garça. — Eu vi isto há três noites e não contei. Estou contando agora. — Fabio olhou a garça por muito tempo. — Por que agora? — Porque guardar sozinha está ficando pesado demais. — Foi a primeira vez que ela contou alguma coisa antes de ser obrigada."
+   },
+   {
+    "texto": "Fabio contou à companhia que sonha com o moinho.",
+    "despacho": "Fabio contou, enfim, que sonha com o moinho da Ponte de Lis toda noite desde Ost. Ninguém disse nada por um tempo. Depois Iara se sentou ao lado dele e cantarolou a canção de ninar, e ele, sem saber por quê, assobiou junto um pedaço que ela não conhecia. Iara parou de cantar e ficou olhando para ele."
    }
   ]
+ },
+ "rumo": {
+  "crise": "A Cinza sobe pela colina e Corvino conta os dias. Se a parte fechasse agora, Salmoura cobraria caro.",
+  "reves": "A companhia não está pronta para os muros da Liga. Se a parte fechasse agora, alguém sairia ferido de Salmoura.",
+  "sustenta": "A companhia segura o que tem. Se a parte fechasse agora, Ost continuaria de pé com a luz pequena, sem o coração.",
+  "avanco": "A porta de ferro de Salmoura já não parece tão fechada. Se a parte fechasse agora, o coração voltaria a Ost.",
+  "triunfo": "Tudo converge. Se a parte fechasse agora, a companhia sairia de Salmoura com o coração e sem entregar ninguém."
  }
 }

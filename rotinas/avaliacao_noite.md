@@ -53,8 +53,9 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
    - **Diário de bordo (todo dia):** é automático (o motor tira uma carta pela qualidade do dia). Você só registra,
      se houver, o juramento quebrado do dia: `./juramento_quebrado.py AAAA-MM-DD limite` (portão ou teto da
      fisiologista desrespeitado: treino fora do plano, acima do teto ou em manhã vermelha) ou `mesa` (fritura além de 2
-     na semana). Depois `python3 historia.py`. Na mensagem, cite numa linha a carta do dia (texto como está em
-     `painel/data/historia.json` → `diario`), sem explicar por que saiu. **A história nunca espelha o dia dele.**
+     na semana). Depois `./despachos.py` (recalcula a história e manda ao Telegram o despacho da maldição e qualquer
+     marco ainda não enviado). As cartas do dia já chegaram a ele como despachos ao longo do dia (`historia/despachos.json`):
+     na mensagem, diga numa linha quantos despachos saíram hoje, sem repetir as cenas. **A história nunca espelha o dia dele.**
    - **Segunda a sábado:** na mensagem, troque a linha "Regras da semana" por UMA linha: o XP do dia
      (`xp_por_dia` do dia avaliado) e quantas missões da semana estão cumpridas (`painel/data/historia.json`,
      `semana.ok` de `semana.total`). Nada de cena, nada de recitar o que ele fez.
@@ -63,7 +64,7 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
      fechamento: se a rotina das 23h05 falhar, o brief de segunda a roda.
    - **Proibido:** escrever ou editar arquivos em `historia/livro/` (o motor os regenera), inventar desfecho, ligar a
      história a qualquer fato do dia dele, ou prometer o que o motor não decidiu.
-   - Depois: `./publicar_jornada.sh` e commite `historia/` e `painel/data/historia.json`. Na mensagem de domingo,
+   - Depois: `./publicar_jornada.sh` e commite `historia/` (inclui `historia/despachos.json`) e `painel/data/historia.json`. Na mensagem de domingo,
      ofereça as missões da semana seguinte (as do motor) e pergunte se ele quer trocar alguma.
 
 8. **Enviar.** `printf '%s' "$MSG" | ./enviar_telegram_saude.py avaliacao`. Confira `"ok": true` e

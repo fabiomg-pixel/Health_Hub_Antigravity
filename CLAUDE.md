@@ -30,6 +30,10 @@ Memória de conversa não vale: o disco vale.
    `historia/juramentos.json`, nível da parte pelas missões). Canon: `historia/escritos/prologo.md`, `historia/biblia.md`,
    `historia/mundo.json`. Textos longos só pela rotina `rotinas/capitulo_semana.md` (domingo 23h05). Nunca escreva cena
    que espelhe treino, refeição, pesagem, doença, compromisso, tempo ou data reais.
+   **Despachos (29/10):** cada marco (carta do dia, missão cumprida, juramento quebrado, mudança do desfecho projetado)
+   vai na hora ao Telegram pelo `despachos.py` (laço no screen `despachos`), com uma cena curta e um rodapé fora da
+   história com o marco. No domingo, todos entram no encerramento e em `historia/escritos/<segunda>-marcos.json`.
+   Personagens densos: fichas em `historia/personagens.md` (só para quem escreve; tem segredos).
 9. **O que o Fabio conta no Telegram vale como registro do site** (pedido dele, 16/10). Refeição (foto ou
    texto), treino ou jogo que ele fez, sintoma ou dor: grave na hora com `./registrar_no_painel.py`
    (`refeicao --refeicao Café|Almoço|Lanche|Jantar|Outro`, `treino` ou `observacao`; `--data` do dia em que
@@ -38,6 +42,8 @@ Memória de conversa não vale: o disco vale.
    de 15/10"). O texto descreve só o que ele mandou ou o que a foto mostra, sem "Fabio" nem "copiloto" e sem
    começar com data (o `jornada.py` descarta esses como texto do copiloto). Não grave pergunta nem plano
    ("posso comer X?"). Saída 3 = já há registro igual no dia: mostre a ele e só use `--forcar` se for outro.
+   Depois de gravar, rode `./despachos.py` em segundo plano: se o registro fechou um marco da Campanha, o despacho
+   sai na hora (ele mesmo não manda nada se não houver marco novo).
 10. **O conselho de domingo é uma entrevista** (pedido do Fabio, 18/10): `rotinas/conselho_entrevista.md`. Um
    especialista de cada vez analisa, pergunta em bate e volta (até 2 rodadas) e avalia; depois o próximo; no fim,
    síntese, cético e publicação. Estado em `conselho/<domingo>/estado.json`; a passagem avisa quando há pergunta

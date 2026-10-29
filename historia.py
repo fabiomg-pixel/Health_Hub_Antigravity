@@ -11,6 +11,8 @@ Cada semana real é uma PARTE da campanha (a parte não corresponde a uma semana
   - todo dia fechado tira cartas do baralho pela QUALIDADE do dia (quantas missões do dia foram cumpridas):
       4 ou mais = bênção (estilha), 2-3 = achado (pista), 1 = dia quieto, 0 com dado = percalço (desgaste);
       juramento quebrado no dia (historia/juramentos.json) = carta de maldição. O texto da carta é só história.
+      Desde 29/10 as cartas são cumulativas (achado aos 2 itens, bênção aos 4) e cada uma vira um despacho no
+      Telegram (despachos.py); o encerramento mostra onde cada despacho entrou na história (<segunda>-marcos.json).
   - no fechamento: o nível da parte vem das missões da semana (triunfo, avanço, sustenta, revés, crise);
       juramentos: o 1º da parte parte uma runa (ou fere alguém), o 2º lança a Mácula de Cinza; juramento com a mácula
       já ativa entrega a pessoa marcada à Cinza (crise); "mesa" lança o Sussurro da Rainha (a próxima parte cai um nível);
@@ -96,14 +98,25 @@ def parte_de(segunda):
 
 
 # ──────────────── o diário de bordo: cartas tiradas pela qualidade de cada dia
-def valencia(d):
-    info = DIAS.get(d.isoformat())
-    if not info: return None
+# Desde 29/10 as cartas são cumulativas (pedido do Fabio: cada marco vira um despacho no Telegram na hora):
+# 2 itens tiram o achado; 4 itens tiram também a bênção. O dia em curso só tira as cartas já garantidas
+# (itens não somem); quieto e percalço só saem com o dia fechado. Antes de 29/10, uma carta por dia.
+CUMULATIVO_DESDE = dt.date(2026, 10, 29)
+
+
+def valencias(d):
+    info = DIAS.get(d.isoformat()) or {}
     n = len(set(info.get('itens', [])) & ITENS_DO_DIA)
-    if n >= 4: return 'bencao'
-    if n >= 2: return 'achado'
-    if n == 1: return 'quieto'
-    return 'percalco' if (resumo.get(d.isoformat()) or {}).get('vazio') is False else None
+    if d < CUMULATIVO_DESDE:
+        if not info: return []
+        if n >= 4: return ['bencao']
+        if n >= 2: return ['achado']
+        return ['quieto'] if n == 1 else (['percalco'] if (resumo.get(d.isoformat()) or {}).get('vazio') is False else [])
+    v = (['achado'] if n >= 2 else []) + (['bencao'] if n >= 4 else [])
+    if d > HOJE or (d == HOJE and not FECHAR_HOJE): return v
+    if n == 1: return ['quieto']
+    if n == 0 and (resumo.get(d.isoformat()) or {}).get('vazio') is False: return ['percalco']
+    return v
 
 
 def diario(segunda, incluir_hoje=False):
@@ -113,15 +126,15 @@ def diario(segunda, incluir_hoje=False):
         d = segunda + dt.timedelta(days=i)
         if d > HOJE or (d == HOJE and not incluir_hoje): break
         evs = []
-        v = valencia(d)
-        if v:
+        for v in valencias(d):
             k = usados.get(v, 0); pilha = bar.get(v) or []
             if pilha:
                 carta = pilha[k % len(pilha)]; usados[v] = k + 1
-                evs.append({'tipo': v, 'texto': carta['texto'], 'efeito': carta.get('efeito', {})})
+                evs.append({'tipo': v, 'texto': carta['texto'], 'despacho': carta.get('despacho', ''), 'efeito': carta.get('efeito', {})})
         for q in [q for q in JUR if q['data'] == d.isoformat()]:
             k = usados.get('maldicao', 0); pilha = bar.get('maldicao') or [{'texto': 'Alguma coisa se rompeu naquela noite.'}]
-            evs.append({'tipo': 'maldicao', 'texto': pilha[k % len(pilha)]['texto'], 'efeito': {}, 'juramento': q['tipo']}); usados['maldicao'] = k + 1
+            c = pilha[k % len(pilha)]
+            evs.append({'tipo': 'maldicao', 'texto': c['texto'], 'despacho': c.get('despacho', ''), 'efeito': {}, 'juramento': q['tipo']}); usados['maldicao'] = k + 1
         if evs: dias.append({'data': d.isoformat(), 'dia': DIAS_PT[i], 'eventos': evs})
     return dias
 
@@ -366,8 +379,9 @@ def encerramento(segunda_s, tier):
         corte = principal.rfind('\n## ')
         principal = (principal[:corte] if corte > 0 else principal) + '\n\n' + alts[tier]
     n = n_parte(D(segunda_s))
+    marcos = (ler(f'historia/escritos/{segunda_s}-marcos.json', {}) or {}).get('marcos', [])
     return {'parte': romano(n), 'n': n, 'titulo': meta.get('titulo', ''), 'subtitulo': meta.get('subtitulo', ''), 'simulacao': meta.get('simulacao') == 'sim',
-            'nota': meta.get('nota', ''), 'texto': principal, 'minutos': minutos(principal), 'tier': tier, 'semana': segunda_s}
+            'nota': meta.get('nota', ''), 'texto': principal, 'minutos': minutos(principal), 'tier': tier, 'semana': segunda_s, 'marcos': marcos}
 
 
 def premissa(segunda):
@@ -432,9 +446,17 @@ painel = {
     'semana': ({'n': n_parte(SEG_ATUAL), 'parte': romano(n_parte(SEG_ATUAL)), 'segunda': SEG_ATUAL.isoformat(), 'titulo': (parte_atual or {}).get('titulo', ''),
                 'periodo': periodo(SEG_ATUAL), 'ok': sum(m['cumprida'] for m in cap_j.get('missoes', [])), 'total': len(cap_j.get('missoes', [])), 'em_jogo': '', 'abertura': ''}
                if SEG_ATUAL >= INICIO else None),
-    'diario': [{**d, 'eventos': [{'tipo': ev['tipo'], 'texto': ev['texto'], 'marcas': marcas_de(ev)} for ev in d['eventos']]} for d in diario(SEG_ATUAL)] if SEG_ATUAL >= INICIO else [],
+    'diario': [{**d, 'eventos': [{'tipo': ev['tipo'], 'texto': ev['texto'], 'despacho': ev.get('despacho', ''), 'juramento': ev.get('juramento'), 'marcas': marcas_de(ev)} for ev in d['eventos']]} for d in diario(SEG_ATUAL, incluir_hoje=True)] if SEG_ATUAL >= INICIO else [],
     'premissa_atual': premissa(SEG_ATUAL), 'premissa_proxima': premissa(SEG_ATUAL + dt.timedelta(days=7)),
 }
+# as missões cumpridas viram cartas no diário, no dia em que o despachos.py as viu (historia/despachos.json)
+for dsp in (ler('historia/despachos.json', {}) or {}).get('despachos', []):
+    if dsp['tipo'] != 'missao' or not dsp['id'].startswith(f'missao:{SEG_ATUAL.isoformat()}:'): continue
+    dia = next((x for x in painel['diario'] if x['data'] == dsp['data']), None)
+    if not dia:
+        dd = D(dsp['data']); dia = {'data': dsp['data'], 'dia': DIAS_PT[dd.weekday()], 'eventos': []}
+        painel['diario'].append(dia); painel['diario'].sort(key=lambda x: x['data'])
+    dia['eventos'].append({'tipo': 'missao', 'texto': dsp['carta'], 'despacho': dsp['cena'], 'juramento': None, 'marcas': ['missão da semana cumprida']})
 if PROJ:
     painel['projecao'] = {'tier': PROJ['tier'], 'ok': PROJ['ok'], 'n': PROJ['n'], 'efeitos': PROJ['efeitos'], 'cena': PROJ['cena'], 'depois': PROJ['depois'],
                           'falta_para_avanco': max(0, (PROJ['n'] - 1) - PROJ['ok'])}

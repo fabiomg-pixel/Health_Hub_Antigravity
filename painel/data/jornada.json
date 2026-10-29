@@ -1,30 +1,30 @@
 {
- "gerado_em": "2026-10-27T22:41:09",
+ "gerado_em": "2026-10-29T16:39:49",
  "fontes": {
   "registros_ok": true,
-  "registros_desde": "2026-09-24",
-  "garmin_ate": "2026-10-27"
+  "registros_desde": "2026-09-28",
+  "garmin_ate": "2026-10-29"
  },
  "personagem": {
   "nome": "Fabio",
   "classe": "Pesquisador de Campo",
   "nivel": 5,
   "titulo": "Escudeiro do Conselho",
-  "xp_total": 7560,
-  "xp_no_nivel": 560,
+  "xp_total": 7790,
+  "xp_no_nivel": 790,
   "xp_para_proximo": 3000
  },
  "vitalidade": {
-  "indice": null,
-  "banda": null,
-  "confiavel": null,
-  "sono_h": null,
-  "estado": "sem dado"
+  "indice": 55,
+  "banda": "y",
+  "confiavel": true,
+  "sono_h": 7.72,
+  "estado": "de pé"
  },
  "atributos": [
   {
    "nome": "Fôlego",
-   "valor": 42.2,
+   "valor": 40.8,
    "unidade": "VO₂ máx",
    "nota": "meta 46 a 47, ao nível do mar"
   },
@@ -36,7 +36,7 @@
   },
   {
    "nome": "Constância",
-   "valor": 3,
+   "valor": 2,
    "unidade": "de 8 capítulos",
    "nota": "capítulos concluídos nas últimas 8 semanas"
   }
@@ -49,14 +49,14 @@
    {
     "id": "ativos",
     "nome": "Dias ativos",
-    "feito": 1,
+    "feito": 2,
     "meta": 5,
     "cumprida": false
    },
    {
     "id": "pesagens",
     "nome": "Pesagens em jejum",
-    "feito": 0,
+    "feito": 3,
     "meta": 4,
     "cumprida": false
    },
@@ -70,23 +70,23 @@
    {
     "id": "almocos",
     "nome": "Almoços registrados (seg a sex)",
-    "feito": 2,
+    "feito": 4,
     "meta": 4,
-    "cumprida": false
+    "cumprida": true
    },
    {
     "id": "lanches",
     "nome": "Lanches das 17h registrados",
-    "feito": 1,
+    "feito": 2,
     "meta": 4,
     "cumprida": false
    }
   ],
   "novo_arco": false,
-  "xp_semana": 0
+  "xp_semana": 50
  },
  "saga": {
-  "atual": 0,
+  "atual": 1,
   "maior": 5,
   "historico": [
    {
@@ -94,17 +94,17 @@
     "capitulos": 5
    },
    {
-    "ate": "2026-10-19",
-    "capitulos": 2
+    "ate": "2026-09-28",
+    "capitulos": 1
    }
   ]
  },
  "hoje": {
-  "data": "2026-10-27",
+  "data": "2026-10-29",
   "xp": 40,
   "missoes": [
    {
-    "nome": "Sessão de força: Força: superior (costas, peito e braços)",
+    "nome": "Sessão de força: Força: Lower A",
     "xp": 100,
     "feito": false
    },
@@ -117,7 +117,7 @@
    {
     "nome": "Pesagem em jejum",
     "xp": 20,
-    "feito": false
+    "feito": true
    },
    {
     "nome": "Registrar o almoço",
@@ -127,20 +127,27 @@
    {
     "nome": "Registrar o lanche das 17h",
     "xp": 20,
-    "feito": true
+    "feito": false
    }
   ],
   "ferido": false
  },
- "arco": null,
- "media_28d": null,
+ "arco": {
+  "num": "I",
+  "nome": "O Muro de Brasa",
+  "de": 95.0,
+  "ate": 92.5,
+  "chefe": "O Colosso do Platô Vermelho",
+  "hp": 0.956
+ },
+ "media_28d": 94.89,
  "paralela": {
   "nome": "VO₂ máx",
-  "valor": 42.2,
+  "valor": 40.8,
   "de": 42.2,
   "ate": 46.0,
   "progresso": 0.0,
-  "nota": "só leitura ao nível do mar conta; a última em altitude (Curitiba, 930 m) não entra"
+  "nota": "só leitura ao nível do mar conta; a última em altitude (—) não entra"
  },
  "reliquias": [
   {
@@ -453,16 +460,16 @@
   },
   {
    "segunda": "2026-09-21",
-   "status": "nao_concluido",
+   "status": "concluido",
    "cumpridas": 2,
-   "xp_semana": 100,
+   "xp_semana": 250,
    "novo_arco": true,
-   "n": 4,
+   "n": 2,
    "missoes": [
     {
      "id": "ativos",
      "nome": "Dias ativos",
-     "feito": 4,
+     "feito": 3,
      "meta": 3,
      "cumprida": true
     },
@@ -472,29 +479,15 @@
      "feito": 7,
      "meta": 4,
      "cumprida": true
-    },
-    {
-     "id": "almocos",
-     "nome": "Almoços registrados (seg a sex)",
-     "feito": 1,
-     "meta": 4,
-     "cumprida": false
-    },
-    {
-     "id": "lanches",
-     "nome": "Lanches das 17h registrados",
-     "feito": 0,
-     "meta": 4,
-     "cumprida": false
     }
    ]
   },
   {
    "segunda": "2026-09-28",
-   "status": "concluido",
-   "cumpridas": 3,
-   "xp_semana": 300,
-   "novo_arco": true,
+   "status": "nao_concluido",
+   "cumpridas": 2,
+   "xp_semana": 100,
+   "novo_arco": false,
    "n": 4,
    "missoes": [
     {
@@ -514,9 +507,9 @@
     {
      "id": "almocos",
      "nome": "Almoços registrados (seg a sex)",
-     "feito": 4,
+     "feito": 3,
      "meta": 4,
-     "cumprida": true
+     "cumprida": false
     },
     {
      "id": "lanches",
@@ -529,7 +522,7 @@
   },
   {
    "segunda": "2026-10-05",
-   "status": "resgatado",
+   "status": "nao_concluido",
    "cumpridas": 1,
    "xp_semana": 50,
    "novo_arco": false,
@@ -539,7 +532,7 @@
      "id": "ativos",
      "nome": "Dias ativos",
      "feito": 6,
-     "meta": 4,
+     "meta": 3,
      "cumprida": true
     },
     {
@@ -570,14 +563,14 @@
    "status": "concluido",
    "cumpridas": 4,
    "xp_semana": 350,
-   "novo_arco": false,
+   "novo_arco": true,
    "n": 5,
    "missoes": [
     {
      "id": "ativos",
      "nome": "Dias ativos",
      "feito": 7,
-     "meta": 5,
+     "meta": 3,
      "cumprida": true
     },
     {
@@ -612,7 +605,7 @@
   },
   {
    "segunda": "2026-10-19",
-   "status": "nao_concluido",
+   "status": "resgate_possivel",
    "cumpridas": 3,
    "xp_semana": 150,
    "novo_arco": false,
@@ -658,22 +651,22 @@
   {
    "segunda": "2026-10-26",
    "status": "em_andamento",
-   "cumpridas": 0,
-   "xp_semana": 0,
+   "cumpridas": 1,
+   "xp_semana": 50,
    "novo_arco": false,
    "n": 5,
    "missoes": [
     {
      "id": "ativos",
      "nome": "Dias ativos",
-     "feito": 1,
+     "feito": 2,
      "meta": 5,
      "cumprida": false
     },
     {
      "id": "pesagens",
      "nome": "Pesagens em jejum",
-     "feito": 0,
+     "feito": 3,
      "meta": 4,
      "cumprida": false
     },
@@ -687,14 +680,14 @@
     {
      "id": "almocos",
      "nome": "Almoços registrados (seg a sex)",
-     "feito": 2,
+     "feito": 4,
      "meta": 4,
-     "cumprida": false
+     "cumprida": true
     },
     {
      "id": "lanches",
      "nome": "Lanches das 17h registrados",
-     "feito": 1,
+     "feito": 2,
      "meta": 4,
      "cumprida": false
     }
@@ -808,25 +801,11 @@
   "2026-10-24": 50,
   "2026-10-25": 0,
   "2026-10-26": 130,
-  "2026-10-27": 40
+  "2026-10-27": 60,
+  "2026-10-28": 170,
+  "2026-10-29": 40
  },
  "dias": {
-  "2026-10-07": {
-   "xp": 30,
-   "itens": [
-    "Dia ativo"
-   ],
-   "marcas": [],
-   "ativo": true
-  },
-  "2026-10-08": {
-   "xp": 30,
-   "itens": [
-    "Dia ativo"
-   ],
-   "marcas": [],
-   "ativo": true
-  },
   "2026-10-09": {
    "xp": 30,
    "itens": [
@@ -1079,14 +1058,45 @@
    "ativo": true
   },
   "2026-10-27": {
-   "xp": 40,
+   "xp": 60,
    "itens": [
+    "Pesagem",
     "Almoço registrado",
     "Lanche registrado"
    ],
    "marcas": [
     "almoco",
     "lanche",
+    "registro"
+   ],
+   "ativo": false
+  },
+  "2026-10-28": {
+   "xp": 170,
+   "itens": [
+    "Corrida",
+    "Dia ativo",
+    "Pesagem",
+    "Almoço registrado",
+    "Lanche registrado"
+   ],
+   "marcas": [
+    "almoco",
+    "corrida",
+    "lanche",
+    "registro",
+    "treino"
+   ],
+   "ativo": true
+  },
+  "2026-10-29": {
+   "xp": 40,
+   "itens": [
+    "Pesagem",
+    "Almoço registrado"
+   ],
+   "marcas": [
+    "almoco",
     "registro"
    ],
    "ativo": false

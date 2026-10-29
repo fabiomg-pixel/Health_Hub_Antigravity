@@ -1155,3 +1155,22 @@ Regra nova, que vale para toda sessão e especialista:
   Ajustar: prontidão 30-44, noite <5,5 h ou índice vermelho). Amarelo no índice próprio não corta.
 - **Sem resposta, semana padrão.** Nada de pior caso nem de portões encadeados.
 - A fase 1 de §15 está encerrada; a porteira da fase 2 (qualidade semanal) foi aberta por decisão do Fabio em 27/10.
+
+## 31. Despachos da Campanha e personagens densos (pedido do Fabio, 29/10/2026)
+
+O Fabio: os personagens têm de ser densos, ele tem de se importar com eles; e cada marcação que dá bônus ou desfecho,
+ou que fica marcada negativamente, deve chegar como uma pequena atualização da história pelo Telegram. No fechamento
+da semana, ele vê como cada marco se contextualizou na história.
+
+- **Marcos** (decididos pelo motor, nunca pela sessão): carta do dia (cumulativas desde 29/10: achado aos 2 itens,
+  bênção aos 4; percalço no dia fechado sem nenhum item), missão da semana cumprida (pilha `missao` do baralho),
+  juramento quebrado (maldição) e mudança do desfecho projetado (`rumo`).
+- **Despacho** = cena curta (60 a 110 palavras) com foco num personagem, escrita no baralho da parte (`despacho`),
+  mais um rodapé fora da história: qual foi o marco e o que ele pesa (estilhas, desgaste, desfecho se fechasse agora).
+  A cena nunca conta o que ele fez; só o rodapé diz. `despachos.py`, laço de 15 min no screen `despachos`, envia das
+  7h às 23h; registro em `historia/despachos.json`.
+- **Domingo**: todo despacho entra no encerramento, reconhecível, com o que causou depois; `historia/escritos/<segunda>-marcos.json`
+  liga cada um à seção onde entrou, e o painel mostra em "Os marcos desta parte".
+- **Personagens**: fichas em `historia/personagens.md` (ferida, desejo, necessidade, mentira, voz, manias, segredos,
+  arco). Cada parte dá a cada companheiro uma cena própria com uma escolha que custa; no máximo um segredo grande por
+  parte, semeado antes duas vezes. O arquivo não vai ao painel.

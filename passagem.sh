@@ -30,6 +30,12 @@ if [ -f "$UE" ]; then
     head -16 "$UE" | cut -c1-220
   fi
 fi
+# Último despacho da Campanha (despachos.py): se ele responder a uma cena, é a isto.
+UD=ultimo_despacho.md
+if [ -f "$UD" ] && [ $(( ( $(date +%s) - $(stat -f %m "$UD") ) / 3600 )) -lt 12 ]; then
+  echo "--- Último despacho da Campanha que o bot enviou (pode ser a isto que ele responde):"
+  head -12 "$UD" | cut -c1-220
+fi
 # Entrevista do conselho de domingo em andamento (rotinas/conselho_entrevista.md): a resposta dele é para ela.
 EC=$(ls -d conselho/20*/ 2>/dev/null | sort | tail -1)
 if [ -n "$EC" ] && [ -f "${EC}estado.json" ]; then

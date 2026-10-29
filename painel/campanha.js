@@ -328,7 +328,7 @@ function cpLigarLeituras() {
     b.textContent = fechada ? b.textContent.replace(/^Recolher/, 'Ler') : 'Recolher'; if (fechada) el.scrollIntoView({ block: 'start' });
   }));
 }
-const CP_ICO = { bencao: '✦', achado: '+', quieto: '·', percalco: '−', maldicao: '!', conquista: '+', presente: '✦', neutro: '·', juramento_quebrado: '!' };
+const CP_ICO = { missao: '★', bencao: '✦', achado: '+', quieto: '·', percalco: '−', maldicao: '!', conquista: '+', presente: '✦', neutro: '·', juramento_quebrado: '!' };
 function cpPrologo() {
   const p = (HISTORIA || {}).prologo; if (!p) return '';
   return `<section class="bloco"><div class="cab"><h2>Prólogo</h2><small>o mundo e a companhia</small></div>
@@ -346,8 +346,16 @@ function cpEncerramento() {
     ${aberta && pj.falta_para_avanco > 0 ? `<div class="cp-conseq"><b>O desfecho ainda pode mudar.</b> Até agora, ${pj.ok} de ${pj.n} missões da semana: a parte termina em <b>${{ triunfo: 'triunfo', avanco: 'avanço', sustenta: 'impasse', reves: 'revés', crise: 'crise' }[pj.tier] || pj.tier}</b>. Mais ${pj.falta_para_avanco} ${pj.falta_para_avanco === 1 ? 'missão' : 'missões'} até o fechamento e ela vira <b>avanço</b>: o final do texto muda.</div>` : ''}
     ${ef.length ? `<div class="cp-conseq"><b>Consequências${aberta ? ' (se fechasse agora)' : ''}:</b><ul style="margin:6px 0 0;padding-left:18px">${ef.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : ''}
     <div style="margin-top:16px">${cpLeitura('cp-enc', e.texto, e.minutos, 'Ler o capítulo inteiro')}</div>
+    ${cpMarcos(e.marcos)}
     <div class="cp-tiers" id="cp-tiers" style="margin-top:18px">${CP_TIERS.map(t => `<button data-t="${t[0]}">${t[0] === 'atual' ? 'Esta cena' : t[1]}</button>`).join('')}</div>
     <div id="cp-cena-txt"></div></section>`;
+}
+// Os despachos que chegaram pelo Telegram durante a semana e onde cada um entrou na história (pedido do Fabio, 29/10).
+function cpMarcos(m) {
+  if (!m || !m.length) return '';
+  return `<details class="cp-marcos" style="margin-top:16px"><summary><b>Os marcos desta parte</b> · ${m.length} despachos e onde entraram na história</summary>` +
+    m.map(x => `<div class="cp-ev ${esc(x.tipo || '')}"><i>${CP_ICO[x.tipo] || '·'}</i><span><b>${esc(x.dia || '')}</b> ${esc(x.carta || '')}<small>${esc(x.marco || '')}</small>` +
+      `<span style="display:block;margin-top:4px;font-family:Georgia,serif">${x.secao ? `<b>${esc(x.secao)}.</b> ` : ''}${esc(x.como || '')}</span></span></div>`).join('') + `</details>`;
 }
 function cpPremissa() {
   const H = HISTORIA; if (!H) return '';
@@ -360,7 +368,7 @@ function cpPremissa() {
 function cpDiario() {
   const H = HISTORIA, d = H && H.diario; if (!d || !d.length) return '';
   return `<section class="bloco"><div class="cab"><h2>Diário de bordo</h2><small>o que acontece ao longo da parte; o preço e o prêmio chegam no fechamento</small></div>` +
-    d.map(x => `<div class="cp-dia"><b>${esc(x.dia)}</b>${x.eventos.map(ev => `<div class="cp-ev ${ev.tipo}"><i>${CP_ICO[ev.tipo] || '·'}</i><span>${esc(ev.texto)}${ev.marcas.length ? `<small>${ev.marcas.map(esc).join(' · ')}</small>` : ''}</span></div>`).join('')}</div>`).join('') + `</section>`;
+    d.map(x => `<div class="cp-dia"><b>${esc(x.dia)}</b>${x.eventos.map(ev => `<div class="cp-ev ${ev.tipo}"><i>${CP_ICO[ev.tipo] || '·'}</i><span>${esc(ev.despacho || ev.texto)}${ev.marcas.length ? `<small>${ev.marcas.map(esc).join(' · ')}</small>` : ''}</span></div>`).join('')}</div>`).join('') + `</section>`;
 }
 function cpTesouro() {
   const H = HISTORIA; if (!H) return '';
