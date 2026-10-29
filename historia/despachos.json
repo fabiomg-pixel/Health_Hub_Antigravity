@@ -48,9 +48,29 @@
    "enviado": null,
    "visto_em": "2026-10-29T16:39",
    "linha_de_base": true
+  },
+  {
+   "id": "2026-10-29:achado",
+   "data": "2026-10-29",
+   "tipo": "achado",
+   "carta": "Quando Iara cantou perto do Códice, uma página queimada mostrou por um instante metade de um mapa das ruínas de Lis.",
+   "cena": "Iara cantou baixinho perto do Códice, sem perceber que Maren olhava. A página queimada esquentou, e por um instante apareceu meio mapa das ruínas de Lis, com um moinho desenhado à margem do rio. Fabio, do outro lado do fogo, levantou a cabeça de repente, como se alguém o tivesse chamado pelo nome. Não soube dizer por quê.",
+   "marco": "2 itens no dia (Pesagem, Almoço registrado) → achado",
+   "peso": "+1 pista do Códice (6 na estrada)",
+   "enviado": "2026-10-29T16:42"
+  },
+  {
+   "id": "missao:2026-10-26:almocos",
+   "data": "2026-10-29",
+   "tipo": "missao",
+   "carta": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
+   "cena": "Teodoro subiu ao alto da torre e tocou o sino de Ost uma única vez, baixo. — Para quem estiver ouvindo — disse. Lá embaixo, em Salmoura, uma janela do armazém do fundo se acendeu e se apagou em resposta. Teodoro ficou muito tempo olhando para ela.",
+   "marco": "missão da semana cumprida: Almoços registrados (seg a sex) (4 de 4)",
+   "peso": "1 de 5 missões da parte",
+   "enviado": "2026-10-29T16:42"
   }
  ],
  "projecao": {
-  "2026-10-26": "crise"
+  "2026-10-26": "reves"
  }
 }
