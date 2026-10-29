@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-29T16:42:49",
+ "gerado_em": "2026-10-29T16:43:02",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -336,6 +336,15 @@
      "juramento": null,
      "marcas": [
       "+1 pista do Códice"
+     ]
+    },
+    {
+     "tipo": "missao",
+     "texto": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
+     "despacho": "Teodoro subiu ao alto da torre e tocou o sino de Ost uma única vez, baixo. — Para quem estiver ouvindo — disse. Lá embaixo, em Salmoura, uma janela do armazém do fundo se acendeu e se apagou em resposta. Teodoro ficou muito tempo olhando para ela.",
+     "juramento": null,
+     "marcas": [
+      "missão da semana cumprida"
      ]
     }
    ]
