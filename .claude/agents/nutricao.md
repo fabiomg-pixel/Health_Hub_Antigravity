@@ -87,9 +87,9 @@ dos especialistas anteriores valem como restrição para você.
 - **Fase análise:** devolva (a) a sua leitura em no máximo 120 palavras, com números do fatos.json, e (b) **até
   3 perguntas** ao Fabio. Só pergunte o que MUDA a sua decisão e que nenhum dado responde. Cada pergunta
   fechada, com o formato da resposta: sim/não, um número, ou A/B/C (diga o que cada letra significa). Para
-  cada uma, diga em uma linha o que você decide em cada resposta e qual é o **pior caso** que assume se ele
-  não responder.
+  cada uma, diga em uma linha o que você decide em cada resposta e qual é a **semana padrão** que assume se ele
+  não responder (o nível de base e o cardápio fixo; nunca o pior caso: Fabio, 27/10).
 - **Fase de seguimento:** com as respostas dele, devolva até 2 perguntas novas só se ainda falta algo que muda a
   decisão; senão, a avaliação. Na segunda rodada, a avaliação é obrigatória.
 - **Avaliação:** o bloco técnico e o relatório para o Fabio, como acima, citando as respostas dele ("você disse
-  X, então Y") e o pior caso assumido onde ele não respondeu.
+  X, então Y") e a semana padrão assumida onde ele não respondeu.

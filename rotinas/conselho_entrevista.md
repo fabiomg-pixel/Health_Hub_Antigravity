@@ -84,9 +84,9 @@ Mensagem final (`./enviar_telegram_saude.py conselho`, até 10 linhas): uma linh
 
 ### 5. Fechar (gatilho das 21h03, ou brief de segunda se a entrevista começou tarde)
 Se `fase` já é `publicado`, não faça nada. Se a entrevista começou há menos de 6 h, não feche: o brief de
-segunda fecha. Senão, para o especialista atual e os que faltam: chame o subagente pedindo a avaliação **com o
-pior caso** de cada pergunta sem resposta (diga qual foi assumido) e registre em `sem_resposta`. Siga para o
-passo 4. Sem cobrança: "Fechei a semana com o lado seguro onde não deu para conversar; se mudar algo, me diga
+segunda fecha. Senão, para o especialista atual e os que faltam: chame o subagente pedindo a avaliação **com a
+semana padrão** (nível de base, nunca o pior caso: Fabio, 27/10) em cada pergunta sem resposta (diga qual foi assumido) e registre em `sem_resposta`. Siga para o
+passo 4. Sem cobrança: "Fechei a semana com o padrão combinado onde não deu para conversar; se mudar algo, me diga
 e eu ajusto."
 
 ## Regras
@@ -94,6 +94,7 @@ e eu ajusto."
   relógio, a balança ou os registros já dizem.
 - Perguntas fechadas (sim/não, número, A/B/C). Ele pode completar com texto livre; o texto livre vale mais.
 - Clínico (remédio, dor articular, febre) não vira conduta: o especialista registra e encaminha (PROJETO_CHAT §10).
-- §18: sem informação, sem decisão. Pior caso declarado não é dado inventado.
-- "Pula" ou "depois": o especialista fecha com o pior caso daquela pergunta e segue. "Decide você": o
+- §18: sem informação, sem decisão. A semana padrão declarada não é dado inventado. O corte vem só dos sinais de
+  segurança e do semáforo (decisoes.md, nível de base).
+- "Pula" ou "depois": o especialista fecha com a semana padrão daquela pergunta e segue. "Decide você": o
   especialista decide pela própria recomendação (ele delegou) e diz qual foi.
