@@ -221,7 +221,7 @@ function renderTreino(id) {
         </div></details>
       ${lastTxt ? `<div class="ml" style="font-size:13px;color:var(--sec);padding:6px 0 2px">${esc(lastTxt)}</div>` : ''}
       ${st.s[e.id].map((s, i) => `<div class="serie" data-x="${xi}" data-i="${i}"><span class="sn">${i + 1}</span>
-        ${tempo ? `<label class="cp"><input class="n" inputmode="numeric" data-c="seg" value="${esc(s.seg)}" aria-label="segundos da série ${i + 1}"><small>s</small></label><span></span>`
+        ${tempo ? `<label class="cp"><input class="n" inputmode="numeric" data-c="seg" value="${esc(s.seg)}" aria-label="segundos da série ${i + 1}"><small>s</small></label><button type="button" class="crono" data-crono="${xi}:${i}" aria-label="Cronometrar a série ${i + 1}">${s.ok ? 'De novo' : 'Cronometrar'}</button>`
           : `<label class="cp"><input class="n" inputmode="decimal" data-c="kg" value="${esc(s.kg)}" aria-label="carga da série ${i + 1}"><small>${ef.halter ? 'kg/halter' : 'kg'}</small></label>
              <label class="cp"><input class="n" inputmode="numeric" data-c="reps" value="${esc(s.reps)}" aria-label="repetições da série ${i + 1}"><small>reps</small></label>`}
         <button type="button" class="okb ${s.ok ? 'on' : ''}" aria-pressed="${s.ok}" aria-label="série ${i + 1} feita">${s.ok ? 'Feita' : 'Fazer'}</button></div>${s.ok && e.tipo !== 'tempo' ? rirHtml(s) : ''}`).join('')}
@@ -324,9 +324,70 @@ function ligarTreino(sessao, st, iso) {
     if (!op) return;
     st.extras = (st.extras || []).concat([novoExtra(op, g, sessao)]); redesenhar();
   }));
+  document.querySelectorAll('[data-crono]').forEach(b => b.addEventListener('click', () => {
+    const [xi, i] = b.dataset.crono.split(':').map(Number), e = sessao.exercicios[xi], s = st.s[e.id][i];
+    const alvo = numT(s.seg) || e.alvo_s || 30, lados = /cada/i.test(String(e.reps || ''));
+    folego(efetivo(e, st).nome, alvo, lados, seg => {
+      s.seg = seg; s.ok = true; if (!st.inicio) st.inicio = Date.now(); salvar();
+      renderTreino(sessao.rota); T_FIM_DESCANSO = Date.now() + (e.descanso_s || 45) * 1000;   // depois: o redesenho zera o descanso
+    });
+  }));
   document.querySelectorAll('[data-ef]').forEach(b => b.addEventListener('click', () => { st.ef = st.ef === b.dataset.ef ? null : b.dataset.ef; salvar(); document.querySelectorAll('[data-ef]').forEach(x => x.classList.toggle('on', x.dataset.ef === st.ef)); }));
   document.getElementById('t-nota').addEventListener('input', ev => { st.nota = ev.target.value; salvar(); });
   document.getElementById('t-fim').addEventListener('click', ev => terminarTreino(sessao, st, iso, ev.currentTarget));
+}
+
+// ───────── cronômetro dos exercícios de tempo ─────────
+// Fabio (31/10): a prancha dependia de um cronômetro que não existia. Tela cheia, legível do chão e de lado:
+// número enorme e a água subindo (a visão periférica lê o nível sem focar), 3-2-1 antes, voz e bipe nos últimos 3 s.
+// "cada lado" vira duas fases com 5 s para trocar. "Terminei aqui" registra o tempo que aguentou (o menor dos lados).
+let T_AUDIO = null, T_FOLEGO = null;
+function tFalar(t) { try { const u = new SpeechSynthesisUtterance(t); u.lang = 'pt-BR'; u.rate = 1.05; speechSynthesis.cancel(); speechSynthesis.speak(u); } catch (e) {} }
+function tBip(f, ms) { try { T_AUDIO = T_AUDIO || new (window.AudioContext || window.webkitAudioContext)(); const o = T_AUDIO.createOscillator(), g = T_AUDIO.createGain(); o.frequency.value = f || 880; g.gain.value = 0.18; o.connect(g); g.connect(T_AUDIO.destination); o.start(); o.stop(T_AUDIO.currentTime + (ms || 140) / 1000); } catch (e) {} }
+function tVibrar(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
+function folego(nome, alvo, lados, aoFim) {
+  if (T_FOLEGO) clearInterval(T_FOLEGO);
+  tBip(1, 1);   // o primeiro som precisa nascer do toque (iOS); este é inaudível
+  const fases = [{ t: 'prep', s: 3, rot: lados ? 'Lado esquerdo' : 'Prepare-se' }, { t: 'segura', s: alvo, rot: lados ? 'Lado esquerdo' : 'Segure' }]
+    .concat(lados ? [{ t: 'troca', s: 5, rot: 'Troque de lado' }, { t: 'segura', s: alvo, rot: 'Lado direito' }] : []);
+  let ov = document.getElementById('t-folego');
+  if (!ov) { ov = document.createElement('div'); ov.id = 't-folego'; document.body.appendChild(ov); }
+  ov.innerHTML = `<div class="f-agua"><svg viewBox="0 0 880 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 12q55-16 110 0t110 0 110 0 110 0 110 0 110 0 110 0 110 0v12H0z"/></svg></div>
+    <div class="f-topo"><span>${esc(nome)}</span><span class="f-fase"></span></div>
+    <div class="f-num" role="timer" aria-live="off"></div><div class="f-sub"></div>
+    <div class="f-bts"><button type="button" class="f-fim">Terminei aqui</button><button type="button" class="f-cancela">Cancelar</button></div>`;
+  ov.hidden = false; manterTela();
+  const $f = c => ov.querySelector(c), agua = $f('.f-agua'), num = $f('.f-num'), fase = $f('.f-fase'), sub = $f('.f-sub');
+  const feitos = []; let k = -1, fimFase = 0, ultimo = null;
+  const fechar = () => { clearInterval(T_FOLEGO); T_FOLEGO = null; ov.hidden = true; ov.className = ''; };
+  const proxima = () => {
+    k++; if (k >= fases.length) { fechar(); tBip(1320, 260); tVibrar([120, 60, 220]); tFalar('Feito'); aoFim(Math.min(...feitos)); return; }
+    const f = fases[k]; fimFase = Date.now() + f.s * 1000; ultimo = null;
+    ov.className = 'f-' + f.t; fase.textContent = f.rot;
+    if (f.t === 'segura') { tFalar(lados && k > 1 ? 'Lado direito. Vai.' : 'Vai.'); tVibrar(80); }
+    if (f.t === 'troca') { tFalar('Troque de lado'); tVibrar([60, 60, 60]); }
+  };
+  const tique = () => {
+    const f = fases[k], resta = Math.max(0, fimFase - Date.now()), sR = Math.ceil(resta / 1000), feito = 1 - resta / (f.s * 1000);
+    num.textContent = f.t === 'segura' ? String(sR) : String(sR);
+    sub.textContent = f.t === 'segura' ? `de ${f.s} s` : (f.t === 'prep' ? 'começa em' : 'troque e posicione');
+    agua.style.height = (f.t === 'segura' ? feito * 100 : f.t === 'troca' ? (1 - feito) * 100 : 0) + '%';
+    ov.classList.toggle('f-final', f.t === 'segura' && sR <= 3);
+    if (sR !== ultimo) {
+      if (sR <= 3 && sR > 0) tBip(f.t === 'segura' ? 990 : 660, 120);
+      if (f.t === 'segura' && sR === 10 && f.s >= 20) tFalar('Dez segundos');
+      ultimo = sR;
+    }
+    if (resta <= 0) { if (f.t === 'segura') feitos.push(f.s); proxima(); }
+  };
+  $f('.f-fim').onclick = () => {
+    const f = fases[k];
+    if (f && f.t === 'segura') feitos.push(Math.max(1, Math.round(f.s - (fimFase - Date.now()) / 1000)));
+    if (!feitos.length) { fechar(); return; }
+    fechar(); tVibrar(120); aoFim(Math.min(...feitos));
+  };
+  $f('.f-cancela').onclick = () => { fechar(); speechSynthesis && speechSynthesis.cancel && speechSynthesis.cancel(); };
+  proxima(); tique(); T_FOLEGO = setInterval(tique, 100);
 }
 
 // ───────── gravar ─────────

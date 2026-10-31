@@ -229,6 +229,27 @@
   #t-desc { position: fixed; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 40; width: 100%; max-width: 520px; display: flex; justify-content: space-between; align-items: center; gap: 10px;
     padding: 14px 18px calc(14px + env(safe-area-inset-bottom)); background: var(--sol); color: var(--tinta); border-top: 2px solid var(--tinta); font-weight: 600; }
   #t-desc[hidden] { display: none; }
+  .serie .crono { min-height: 44px; border: 2px solid var(--tinta); background: var(--sol); font: 800 14px/1 'Figtree', sans-serif; cursor: pointer; }
+  /* cronômetro de tempo (prancha): tela cheia, legível do chão */
+  #t-folego { position: fixed; inset: 0; z-index: 60; background: var(--tinta); color: #fff; display: flex; flex-direction: column; overflow: hidden;
+    padding: calc(18px + env(safe-area-inset-top)) 22px calc(18px + env(safe-area-inset-bottom)); }
+  #t-folego[hidden] { display: none; }
+  #t-folego .f-agua { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: var(--campo); transition: height 0.12s linear, background 0.4s ease; }
+  #t-folego .f-agua svg { position: absolute; left: 0; top: -15px; width: 200%; height: 16px; fill: var(--campo); animation: onda-f 2.4s linear infinite; transition: fill 0.4s ease; }
+  #t-folego.f-final .f-agua, #t-folego.f-final .f-agua svg { background: var(--sol); fill: var(--sol); }
+  #t-folego.f-troca .f-agua { transition: height 0.12s linear; }
+  #t-folego .f-topo { position: relative; display: flex; justify-content: space-between; gap: 12px; font-weight: 700; font-size: 15px; }
+  #t-folego .f-fase { font-family: var(--display); font-weight: 800; font-size: 22px; text-align: right; }
+  #t-folego .f-num { position: relative; margin: auto 0 0; text-align: center; font-family: var(--display); font-weight: 800; font-size: min(48vh, 70vw); line-height: 0.85;
+    letter-spacing: -0.05em; mix-blend-mode: difference; font-variant-numeric: tabular-nums; }
+  #t-folego.f-final .f-num { animation: pulso-f 1s ease-in-out infinite; }
+  #t-folego .f-sub { position: relative; text-align: center; font-size: 18px; font-weight: 700; margin-bottom: auto; mix-blend-mode: difference; }
+  #t-folego .f-bts { position: relative; display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
+  #t-folego .f-bts button { min-height: 56px; border: 2px solid #fff; background: var(--tinta); color: #fff; font: 800 17px/1 'Figtree', sans-serif; cursor: pointer; }
+  #t-folego .f-bts .f-fim { background: #fff; color: var(--tinta); }
+  @keyframes onda-f { to { transform: translateX(-50%); } }
+  @keyframes pulso-f { 50% { transform: scale(1.06); } }
+  @media (prefers-reduced-motion: reduce) { #t-folego .f-agua svg, #t-folego.f-final .f-num { animation: none; } }
   #t-desc b { font-family: var(--display); font-size: 24px; margin-left: 6px; }
   #t-desc button { min-height: 40px; padding: 0 14px; border: 2px solid var(--tinta); background: var(--branco); font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
   .sem { flex: none; min-width: 92px; text-align: center; padding: 10px 12px; font: 800 15px/1 'Figtree', sans-serif; border: 2px solid var(--tinta); }
