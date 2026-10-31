@@ -128,4 +128,6 @@ if not ok: sys.exit('despachos: envio falhou; tento de novo no próximo ciclo: '
 for n in novos: n.update(enviado=AGORA.isoformat(timespec='minutes'))
 L['despachos'] += novos; L['projecao'][SEG] = t_novo
 json.dump(L, open(LEDGER, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+# o painel também precisa do marco novo: a bênção e a Cinza viram palco no app (palco.js) quando ele abre
+subprocess.Popen(['/bin/zsh', os.path.join(AQUI, 'publicar_jornada.sh')], cwd=AQUI, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
 print(f'despachos: {len(novos)} enviado(s)' + (f'; desfecho {t_velho} → {t_novo}' if mudou else ''))

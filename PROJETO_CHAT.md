@@ -1187,3 +1187,18 @@ da semana, ele vê como cada marco se contextualizou na história.
   item do dia ("Rodada bônus") para as cartas da Campanha; não conta para as missões de força nem de corrida; não é
   juramento quebrado.
 - **Fim de semana (31/10):** sábado e domingo complementam o que faltou na semana ou refinam; não ficam vazios por padrão.
+
+## 33. Animações: a intensidade acompanha o significado (pedido do Fabio, 31/10/2026)
+
+Desenho no canvas "Animações do Painel" (rodada 2); código em `painel/palco.js` e `painel/palco.css`.
+- **Três registros:** toque (todo botão afunda, 120-200 ms), virada (série feita: mola e clarão de água, 450-900 ms),
+  palco (tela cheia, um por vez em fila, o primeiro toque leva ao estado final e o segundo fecha).
+- **Palcos:** abertura do dia (farol: Pode gira, Ajustar balança, Segurar é brasa; uma vez por dia, no Início ou no
+  Hoje); recorde (primeira série de cada exercício que passa o melhor das sessões anteriores; sem histórico não há
+  recorde); bênção (estilha cai no mar e sobe ao contador; na quinta, forja da Lâmina); Cinza (maldição ou percalço:
+  o app perde a cor devagar, sem som, e a volta é quente); fim do treino e da corrida (maré cheia, números, XP, nível).
+  Bênção e Cinza aparecem só para o que é novo no aparelho; na primeira vez, o passado vira linha de base.
+- **Cronômetro da prancha:** água com física (canvas), 3-2-1, número enorme, voz e bipe, "cada lado" em duas fases.
+- **Regras:** o peso nunca ganha palco; perda é lenta e quieta; com movimento reduzido tudo vai ao estado final.
+  Vibração só no Android.
+- O laço de despachos republica o painel quando envia um marco, para o palco chegar ao app.

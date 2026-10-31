@@ -150,6 +150,8 @@ function cFim(parou) {
   clearInterval(C_TICK); C_TICK = null; cMetro(false); cSoltar();
   if (!parou) { cBip(1318, 400); cVibrar([400, 150, 400]); cFalar('Fim da corrida. Boa. Caminhe mais um pouco e beba água.'); }
   const min = Math.round(el / 60); C = null;
+  if (!parou && typeof palcoFim === 'function') palcoFim({ titulo: 'Corrida completa', xp: 80, xpRot: 'pela corrida',
+    stats: [{ n: min, rot: 'minutos' }].concat(dist ? [{ n: dist / 1000, dec: 2, rot: 'km (GPS)' }] : []) });
   const v = document.getElementById('view'); if (!v) return;
   const km = dist ? (dist / 1000).toFixed(2).replace('.', ',') + ' km (GPS do celular, aproximado)' : '';
   const texto = `Corrida guiada (${nome}): ${min} min${km ? ', ' + km : ''}${parou ? ', parei antes do fim' : ', completa'}.`;

@@ -280,6 +280,12 @@ function ligarTreino(sessao, st, iso) {
     }));
     row.querySelector('.okb').addEventListener('click', ev => {
       s.ok = !s.ok; if (s.ok && !st.inicio) st.inicio = Date.now(); if (s.ok) manterTela(); salvar();
+      if (s.ok) {   // virada: a boia afunda com mola e um clarão de água passa pela linha (palco.css)
+        const b = ev.currentTarget; b.classList.remove('mola'); void b.offsetWidth; b.classList.add('mola');
+        row.classList.add('agua-viva'); setTimeout(() => row.classList.remove('agua-viva'), 750);
+        if (typeof pVibrar === 'function') pVibrar(20);
+        if (e.tipo !== 'tempo') conferirRecorde(e, st, iso, numT(s.kg), numT(s.reps), null);
+      }
       ev.currentTarget.classList.toggle('on', s.ok); ev.currentTarget.textContent = s.ok ? 'Feita' : 'Fazer'; ev.currentTarget.setAttribute('aria-pressed', s.ok);
       const seguinte = row.nextElementSibling, ja = seguinte && seguinte.classList.contains('rir');
       if (s.ok && e.tipo !== 'tempo' && !ja) row.insertAdjacentHTML('afterend', rirHtml(s)); else if (!s.ok) { delete s.rir; if (ja) seguinte.remove(); salvar(); }
@@ -329,12 +335,23 @@ function ligarTreino(sessao, st, iso) {
     const alvo = numT(s.seg) || e.alvo_s || 30, lados = /cada/i.test(String(e.reps || ''));
     folego(efetivo(e, st).nome, alvo, lados, seg => {
       s.seg = seg; s.ok = true; if (!st.inicio) st.inicio = Date.now(); salvar();
+      conferirRecorde(e, st, iso, null, null, seg);
       renderTreino(sessao.rota); T_FIM_DESCANSO = Date.now() + (e.descanso_s || 45) * 1000;   // depois: o redesenho zera o descanso
     });
   }));
   document.querySelectorAll('[data-ef]').forEach(b => b.addEventListener('click', () => { st.ef = st.ef === b.dataset.ef ? null : b.dataset.ef; salvar(); document.querySelectorAll('[data-ef]').forEach(x => x.classList.toggle('on', x.dataset.ef === st.ef)); }));
   document.getElementById('t-nota').addEventListener('input', ev => { st.nota = ev.target.value; salvar(); });
   document.getElementById('t-fim').addEventListener('click', ev => terminarTreino(sessao, st, iso, ev.currentTarget));
+}
+
+// Recorde (palco.js): a primeira série de cada exercício que passa o melhor que você já fez antes de hoje vira palco.
+function conferirRecorde(e, st, iso, kg, reps, seg) {
+  if (typeof recordeDe !== 'function') return;
+  const ef = efetivo(e, st); st.recordes = st.recordes || [];
+  if (st.recordes.includes(ef.id)) return;
+  const rec = recordeDe(ef.id, kg, reps, seg, iso, +(String(e.reps || '').match(/\d+/) || [1])[0]);
+  if (!rec) return;
+  st.recordes.push(ef.id); gravarEstado(st); palcoRecorde(ef.nome, rec);
 }
 
 // ───────── cronômetro dos exercícios de tempo ─────────
@@ -352,29 +369,38 @@ function folego(nome, alvo, lados, aoFim) {
     .concat(lados ? [{ t: 'troca', s: 5, rot: 'Troque de lado' }, { t: 'segura', s: alvo, rot: 'Lado direito' }] : []);
   let ov = document.getElementById('t-folego');
   if (!ov) { ov = document.createElement('div'); ov.id = 't-folego'; document.body.appendChild(ov); }
-  ov.innerHTML = `<div class="f-agua"><svg viewBox="0 0 880 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 12q55-16 110 0t110 0 110 0 110 0 110 0 110 0 110 0 110 0v12H0z"/></svg></div>
+  ov.innerHTML = `<canvas class="f-mar" aria-hidden="true"></canvas>
     <div class="f-topo"><span>${esc(nome)}</span><span class="f-fase"></span></div>
     <div class="f-num" role="timer" aria-live="off"></div><div class="f-sub"></div>
     <div class="f-bts"><button type="button" class="f-fim">Terminei aqui</button><button type="button" class="f-cancela">Cancelar</button></div>`;
   ov.hidden = false; manterTela();
-  const $f = c => ov.querySelector(c), agua = $f('.f-agua'), num = $f('.f-num'), fase = $f('.f-fase'), sub = $f('.f-sub');
+  const $f = c => ov.querySelector(c), num = $f('.f-num'), fase = $f('.f-fase'), sub = $f('.f-sub');
+  const mar = typeof pMar === 'function' ? pMar($f('.f-mar'), { nivel: 0.04 }) : null;
   const feitos = []; let k = -1, fimFase = 0, ultimo = null;
-  const fechar = () => { clearInterval(T_FOLEGO); T_FOLEGO = null; ov.hidden = true; ov.className = ''; };
+  const fechar = () => { clearInterval(T_FOLEGO); T_FOLEGO = null; if (mar) mar.parar(); ov.hidden = true; ov.className = ''; };
   const proxima = () => {
-    k++; if (k >= fases.length) { fechar(); tBip(1320, 260); tVibrar([120, 60, 220]); tFalar('Feito'); aoFim(Math.min(...feitos)); return; }
+    k++;
+    if (k >= fases.length) {   // a água chega no alto e espirra; "Feito" fica 1 s na tela
+      clearInterval(T_FOLEGO); T_FOLEGO = null; tBip(1320, 260); tVibrar([120, 60, 220]); tFalar('Feito');
+      ov.className = 'f-fim'; num.textContent = 'Feito'; sub.textContent = ''; fase.textContent = '';
+      if (mar) { mar.alvo = 0.86; mar.alvoCor = [11, 94, 124]; for (let j = 0; j < 9; j++) mar.impulso(j / 8, -16); mar.respingo(0.5, 40, 11); }
+      setTimeout(() => { fechar(); aoFim(Math.min(...feitos)); }, 1100); return;
+    }
     const f = fases[k]; fimFase = Date.now() + f.s * 1000; ultimo = null;
     ov.className = 'f-' + f.t; fase.textContent = f.rot;
-    if (f.t === 'segura') { tFalar(lados && k > 1 ? 'Lado direito. Vai.' : 'Vai.'); tVibrar(80); }
+    if (f.t === 'segura') { tFalar(lados && k > 1 ? 'Lado direito. Vai.' : 'Vai.'); tVibrar(80); if (mar) [0.15, 0.5, 0.85].forEach(x => mar.impulso(x, -7)); }
     if (f.t === 'troca') { tFalar('Troque de lado'); tVibrar([60, 60, 60]); }
   };
   const tique = () => {
     const f = fases[k], resta = Math.max(0, fimFase - Date.now()), sR = Math.ceil(resta / 1000), feito = 1 - resta / (f.s * 1000);
     num.textContent = f.t === 'segura' ? String(sR) : String(sR);
     sub.textContent = f.t === 'segura' ? `de ${f.s} s` : (f.t === 'prep' ? 'começa em' : 'troque e posicione');
-    agua.style.height = (f.t === 'segura' ? feito * 100 : f.t === 'troca' ? (1 - feito) * 100 : 0) + '%';
-    ov.classList.toggle('f-final', f.t === 'segura' && sR <= 3);
+    const final3 = f.t === 'segura' && sR <= 3;
+    if (mar) { mar.alvo = 0.04 + 0.82 * (f.t === 'segura' ? feito : f.t === 'troca' ? 1 - feito : 0); mar.alvoCor = final3 ? [255, 180, 143] : [11, 94, 124]; }
+    ov.classList.toggle('f-final', final3);
     if (sR !== ultimo) {
-      if (sR <= 3 && sR > 0) tBip(f.t === 'segura' ? 990 : 660, 120);
+      if (sR <= 3 && sR > 0) { tBip(f.t === 'segura' ? 990 : 660, 120); if (mar && f.t === 'segura') mar.impulso(Math.random(), -10); }
+      if (mar && f.t === 'troca') mar.impulso(sR % 2 ? 0.03 : 0.97, -12);
       if (f.t === 'segura' && sR === 10 && f.s >= 20) tFalar('Dez segundos');
       ultimo = sR;
     }
@@ -424,8 +450,13 @@ async function terminarTreino(sessao, st, iso, btn) {
   guardarHistoricoLocal(p);
   try { await enviarRegistro(p); stat.className = 'status ok'; stat.textContent = 'Treino anotado no seu diário.'; }
   catch (e) { const f = lsGet(T_FILA, []); f.push({ ...p }); lsSet(T_FILA, f); stat.className = 'status ok'; stat.textContent = 'Sem sinal: o treino ficou guardado neste aparelho e vai quando a rede voltar.'; }
+  const series = sessao.exercicios.reduce((n, e) => n + (st.s[e.id] || []).filter(x => x.ok).length, 0), recs = (st.recordes || []).length;
   limparEstado(st.chave || iso); pararRelogios(); soltarTela();
   btn.textContent = 'Treino encerrado';
+  // palco do fim (palco.js); o XP é o da sessão pelas regras da Campanha (força 100, rodada bônus 50)
+  if (typeof palcoFim === 'function') palcoFim({ titulo: sessao.variante === 'bonus' ? 'Rodada bônus feita' : 'Treino feito',
+    stats: [{ n: series, rot: 'séries' }, { n: (p._j && p._j.dur) || 0, rot: 'minutos' }, { n: recs, rot: recs === 1 ? 'recorde' : 'recordes', cor: 'var(--sol)' }],
+    xp: sessao.variante === 'bonus' ? 50 : 100, xpRot: 'pela sessão' });
 }
 async function esvaziarFila() {
   let f = lsGet(T_FILA, []); if (!f.length || !navigator.onLine) return;
