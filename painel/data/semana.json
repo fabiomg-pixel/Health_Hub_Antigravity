@@ -432,23 +432,13 @@
    "id": "sab",
    "nome": "Sábado",
    "data": "31/10",
-   "tipo": "treino",
+   "tipo": "futebol",
    "flex": true,
    "treino": {
-    "foco": "Força: corpo inteiro B, em casa — força 3 de 3",
+    "foco": "Futebol recreativo (feito): conta como a sessão de qualidade da semana",
     "exercicios": [
      {
-      "nome": "Sessão no botão: 13 séries com halteres (goblet, remada unilateral, flexão, ponte, prancha lateral).",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Caminhada de 30 min à tarde, se quiser.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+      "nome": "Feito. A força de corpo inteiro B passou para domingo (complemento da semana).",
       "series": 1,
       "reps": "—"
      }
@@ -487,26 +477,36 @@
     "petisco": null
    },
    "janela": {
-    "quando": "Manhã, em casa.",
-    "plano_b": "Cansado do limiar de sexta: faça só 2 séries de cada."
+    "quando": "Feito.",
+    "plano_b": "—"
    }
   },
   {
    "id": "dom",
    "nome": "Domingo",
    "data": "01/11",
-   "tipo": "descanso",
+   "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "Descanso + pesagem",
+    "foco": "Complemento da semana: força de corpo inteiro B, em casa (35 a 40 min)",
     "exercicios": [
      {
-      "nome": "Pese em jejum.",
+      "nome": "Pese em jejum, antes de tudo.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Dia livre de treino: caminhada leve só se der vontade.",
+      "nome": "Sessão no botão: 13 séries com halteres (goblet, remada unilateral, flexão, ponte, prancha lateral), RIR 2. É a força que faltou na semana.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Pernas pesadas do futebol: goblet com a mesma carga, sem subir. Dor articular acima de 3/10 = para o exercício.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina. O resto é o semáforo do painel.",
       "series": 1,
       "reps": "—"
      }
@@ -545,8 +545,8 @@
     "petisco": null
    },
    "janela": {
-    "quando": "Livre.",
-    "plano_b": "—"
+    "quando": "Antes de começar o trabalho, ou num intervalo dele: são 35 a 40 min em casa.",
+    "plano_b": "Sem tempo para tudo: faça só goblet, remada e flexão, 2 séries de cada (15 min). Semáforo em Segurar: só a pesagem e uma caminhada."
    }
   }
  ],

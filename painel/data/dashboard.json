@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-27T09:20:19",
+ "gerado_em": "2026-10-31T11:38:53",
  "metas": {
   "_nota": "Ponto de destino de MEIO TERMO, definido pelo Fabio em 10/10/2026. A partir dele entra o 'modo avançado'.",
   "partida": {
@@ -26,13 +26,13 @@
   }
  },
  "peso": {
-  "atual_media_neutra": 94.96,
+  "atual_media_neutra": 94.62,
   "partida": 95.14,
   "alvo": 85.0,
-  "progresso": 0.018,
-  "ritmo_kg_semana_28d": 0.06,
-  "eta_no_ritmo_atual": null,
-  "eta_ritmo_saudavel": "2027-03-15",
+  "progresso": 0.051,
+  "ritmo_kg_semana_28d": -0.1,
+  "eta_no_ritmo_atual": "2028-09-03",
+  "eta_ritmo_saudavel": "2027-03-14",
   "ritmo_saudavel": 0.5,
   "serie": [
    {
@@ -508,15 +508,39 @@
     "peso": 94.55,
     "pos_esforco": true,
     "media": 94.96
+   },
+   {
+    "data": "2026-10-27",
+    "peso": 94.95,
+    "pos_esforco": true,
+    "media": 94.96
+   },
+   {
+    "data": "2026-10-28",
+    "peso": 94.7,
+    "pos_esforco": false,
+    "media": 94.91
+   },
+   {
+    "data": "2026-10-29",
+    "peso": 94.65,
+    "pos_esforco": true,
+    "media": 94.91
+   },
+   {
+    "data": "2026-10-30",
+    "peso": 94.35,
+    "pos_esforco": false,
+    "media": 94.62
    }
   ]
  },
  "vo2max": {
-  "referencia_nivel_do_mar": 42.2,
+  "referencia_nivel_do_mar": 40.8,
   "ultimo": {
-   "data": "2026-10-08",
-   "valor": 39.5,
-   "altitude": "Curitiba, 930 m"
+   "data": "2026-10-28",
+   "valor": 40.8,
+   "altitude": null
   },
   "partida": 42.2,
   "alvo": [
@@ -524,7 +548,7 @@
    47.0
   ],
   "progresso": 0.0,
-  "so_pelo_peso": 47.1,
+  "so_pelo_peso": 45.4,
   "serie": [
    {
     "data": "2026-08-12",
@@ -555,27 +579,16 @@
     "data": "2026-10-08",
     "valor": 39.5,
     "altitude": "Curitiba, 930 m"
+   },
+   {
+    "data": "2026-10-28",
+    "valor": 40.8,
+    "altitude": null
    }
   ]
  },
  "recuperacao": {
   "hrv": [
-   {
-    "data": "2026-07-30",
-    "valor": 32.0
-   },
-   {
-    "data": "2026-07-31",
-    "valor": 32.0
-   },
-   {
-    "data": "2026-08-01",
-    "valor": 36
-   },
-   {
-    "data": "2026-08-02",
-    "valor": 37.0
-   },
    {
     "data": "2026-08-03",
     "valor": 36
@@ -919,25 +932,25 @@
    {
     "data": "2026-10-27",
     "valor": 39.0
+   },
+   {
+    "data": "2026-10-28",
+    "valor": 38.0
+   },
+   {
+    "data": "2026-10-29",
+    "valor": 38
+   },
+   {
+    "data": "2026-10-30",
+    "valor": 40.0
+   },
+   {
+    "data": "2026-10-31",
+    "valor": 38.0
    }
   ],
   "fc_repouso": [
-   {
-    "data": "2026-07-30",
-    "valor": 57.0
-   },
-   {
-    "data": "2026-07-31",
-    "valor": 57.0
-   },
-   {
-    "data": "2026-08-01",
-    "valor": 55
-   },
-   {
-    "data": "2026-08-02",
-    "valor": 55.0
-   },
    {
     "data": "2026-08-03",
     "valor": 55.0
@@ -1280,26 +1293,26 @@
    },
    {
     "data": "2026-10-27",
+    "valor": 52
+   },
+   {
+    "data": "2026-10-28",
+    "valor": 52.0
+   },
+   {
+    "data": "2026-10-29",
+    "valor": 52.0
+   },
+   {
+    "data": "2026-10-30",
+    "valor": 52.0
+   },
+   {
+    "data": "2026-10-31",
     "valor": 53.0
    }
   ],
   "sono": [
-   {
-    "data": "2026-07-30",
-    "valor": 6.82
-   },
-   {
-    "data": "2026-07-31",
-    "valor": 6.77
-   },
-   {
-    "data": "2026-08-01",
-    "valor": 6.77
-   },
-   {
-    "data": "2026-08-02",
-    "valor": 6.86
-   },
    {
     "data": "2026-08-03",
     "valor": 6.92
@@ -1643,6 +1656,22 @@
    {
     "data": "2026-10-27",
     "valor": 6.57
+   },
+   {
+    "data": "2026-10-28",
+    "valor": 6.48
+   },
+   {
+    "data": "2026-10-29",
+    "valor": 6.68
+   },
+   {
+    "data": "2026-10-30",
+    "valor": 6.9
+   },
+   {
+    "data": "2026-10-31",
+    "valor": 6.79
    }
   ]
  },
@@ -1727,9 +1756,9 @@
   },
   {
    "semana": "2026-10-26",
-   "ativos": 1,
+   "ativos": 4,
    "pesados": 0,
-   "com_dado": 2
+   "com_dado": 6
   }
  ]
 }

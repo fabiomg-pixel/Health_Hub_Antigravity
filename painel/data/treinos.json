@@ -542,11 +542,11 @@
     }
    ]
   },
-  "2026-10-31": {
+  "2026-11-01": {
    "titulo": "Corpo inteiro B (casa ou academia)",
    "duracao_min": 40,
    "pesada": false,
-   "regra": "Sábado em casa: 13 séries, RIR 2, com halteres. Se estiver na academia, troque o goblet por leg press leve e a remada unilateral pela remada baixa. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+   "regra": "Domingo em casa (complemento da semana; passou de sábado por causa do futebol): 13 séries, RIR 2, com halteres. Se estiver na academia, troque o goblet por leg press leve e a remada unilateral pela remada baixa. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
    "exercicios": [
     {
      "id": "agachamento_goblet",

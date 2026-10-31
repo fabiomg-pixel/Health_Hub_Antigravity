@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-30T22:49:09",
+ "gerado_em": "2026-10-31T19:17:04",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -265,7 +265,7 @@
   "segunda": "2026-10-26",
   "titulo": "O Coração de Ost",
   "periodo": "26 de outubro a 1 de novembro",
-  "ok": 3,
+  "ok": 4,
   "total": 5,
   "em_jogo": "",
   "abertura": ""
@@ -381,6 +381,39 @@
      ]
     }
    ]
+  },
+  {
+   "data": "2026-10-31",
+   "dia": "sábado",
+   "eventos": [
+    {
+     "tipo": "missao",
+     "texto": "Iara ensinou a Maren o primeiro verso da canção. Maren ensinou a Iara o nó que quer dizer luz que volta.",
+     "despacho": "Iara ensinou a Maren o primeiro verso da canção, devagar, sílaba por sílaba. Maren ensinou a Iara a escrever no ar o nó que quer dizer luz que volta. O nó acendeu fraco na ponta do dedo de Iara, e ela riu tão alto que acordou Bram. A Mácula, naquela noite, não doeu.",
+     "juramento": null,
+     "marcas": [
+      "missão da semana cumprida"
+     ]
+    },
+    {
+     "tipo": "missao",
+     "texto": "Bram consertou as botas de todo mundo sem que ninguém pedisse, e gravou na sola de cada uma um nó pequeno.",
+     "despacho": "Bram passou a noite consertando as botas da companhia sem que ninguém pedisse. Na sola de cada uma gravou um nó pequeno que Maren lhe ensinou. Quando Fabio perguntou o que era, ele deu de ombros. — Ela disse que quer dizer volta para casa. Achei que não custava.",
+     "juramento": null,
+     "marcas": [
+      "missão da semana cumprida"
+     ]
+    },
+    {
+     "tipo": "missao",
+     "texto": "Maren contou a Fabio um dos segredos que guardava, antes de ser obrigada.",
+     "despacho": "Maren sentou ao lado de Fabio quando os outros dormiam e abriu o Códice na página da garça. — Eu vi isto há três noites e não contei. Estou contando agora. — Fabio olhou a garça por muito tempo. — Por que agora? — Porque guardar sozinha está ficando pesado demais. — Foi a primeira vez que ela contou alguma coisa antes de ser obrigada.",
+     "juramento": null,
+     "marcas": [
+      "missão da semana cumprida"
+     ]
+    }
+   ]
   }
  ],
  "premissa_atual": {
@@ -395,17 +428,19 @@
  },
  "premissa_proxima": null,
  "projecao": {
-  "tier": "sustenta",
-  "ok": 3,
+  "tier": "avanco",
+  "ok": 4,
   "n": 5,
   "efeitos": [
    "A Mácula de Cinza se abriu de vez, e a Cinza levou Iara. Resgate em até 3 partes.",
-   "Com cinco estilhas, Bram forjou a Lâmina Estelar."
+   "Com cinco estilhas, Bram forjou a Lâmina Estelar.",
+   "Bram gravou uma runa nova: Runa do Escudo.",
+   "A companhia avançou até o Farol de Ost."
   ],
   "cena": {
-   "tier": "sustenta",
+   "tier": "avanco",
    "etapa_antes": 0,
-   "etapa_depois": 0,
+   "etapa_depois": 1,
    "arco": "I",
    "clima": "seca",
    "lua": null,
@@ -416,17 +451,21 @@
    },
    "afetado": "brisa",
    "retorna": null,
-   "itens": [],
+   "itens": [
+    "escudo"
+   ],
    "talisma": false
   },
   "depois": {
-   "etapa": 0,
+   "etapa": 1,
    "companhia": {
     "brisa": "capturada",
     "dorn": "ativa",
     "ysa": "ativa"
    },
-   "mochila": [],
+   "mochila": [
+    "escudo"
+   ],
    "reliquias": [
     "lamina_estelar"
    ],
@@ -437,7 +476,7 @@
     "desgaste": 1
    }
   },
-  "falta_para_avanco": 1
+  "falta_para_avanco": 0
  },
  "encerramento": {
   "parte": "I",
