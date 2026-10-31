@@ -315,6 +315,26 @@
     "se houve fruta e iogurte às 15h",
     "onde ele estará no fim de semana"
    ]
+  },
+  {
+   "data": "30/10",
+   "planejado": "Corrida de qualidade, limiar 3 × 6 min (corrida 3 de 3), esteira por chuva; almoço de marmita ≥35 g, fruta + iogurte às 15h, janta rosbife, grão-de-bico e salada",
+   "feito": "Corrida de limiar como programada, 17:17: relato de 11 / 11 / 10,5 (4 min) e 11,5 (2 min) km/h, trotes a 5,5 km/h; começou a marcar atrasado no Garmin. Café 08:34 pão de queijo (5 pequenas) e suco de laranja, almoço 12:30 frango à parmegiana com purê de batata, lanche 16:04 iogurte natural com whey e banana. Sem registro da janta até 22h46.",
+   "adaptacao": "Nenhuma; o plano de hoje foi seguido. O Garmin pode ter perdido o início do primeiro bloco.",
+   "respostas": {
+    "q1": null,
+    "q2": null,
+    "q3": "Lanche das 16h registrado com fruta e iogurte; sem doce registrado à tarde",
+    "q4": null
+   },
+   "nao_sei": [
+    "hora da última dose de ibuprofeno",
+    "dias restantes do antibiótico",
+    "lombar e joelho depois da corrida",
+    "como se sentiu no limiar",
+    "a janta",
+    "onde estará no fim de semana"
+   ]
   }
  ]
 }

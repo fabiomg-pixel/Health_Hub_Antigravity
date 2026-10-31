@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-29T16:43:02",
+ "gerado_em": "2026-10-30T22:49:09",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -265,7 +265,7 @@
   "segunda": "2026-10-26",
   "titulo": "O Coração de Ost",
   "periodo": "26 de outubro a 1 de novembro",
-  "ok": 1,
+  "ok": 3,
   "total": 5,
   "em_jogo": "",
   "abertura": ""
@@ -339,12 +339,45 @@
      ]
     },
     {
+     "tipo": "bencao",
+     "texto": "Iara achou, no leito seco de um poço abandonado de Salmoura, um estilhaço do céu que a Liga não tinha visto.",
+     "despacho": "Iara desceu sozinha pela corda, sem avisar ninguém, até o fundo de um poço seco do lado de fora dos muros. Voltou com sal até os cotovelos e uma estilha entre os dentes, rindo. Fabio não riu. — Da próxima vez, você me chama. — Da próxima vez você me proíbe, Capitão. — Ela guardou a estilha no pano de Bram e só então, de costas, puxou a manga sobre o braço esquerdo. As veias cinzentas tinham subido um dedo.",
+     "juramento": null,
+     "marcas": [
+      "+1 estilha do céu"
+     ]
+    },
+    {
      "tipo": "missao",
      "texto": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
      "despacho": "Teodoro subiu ao alto da torre e tocou o sino de Ost uma única vez, baixo. — Para quem estiver ouvindo — disse. Lá embaixo, em Salmoura, uma janela do armazém do fundo se acendeu e se apagou em resposta. Teodoro ficou muito tempo olhando para ela.",
      "juramento": null,
      "marcas": [
       "missão da semana cumprida"
+     ]
+    }
+   ]
+  },
+  {
+   "data": "2026-10-30",
+   "dia": "sexta",
+   "eventos": [
+    {
+     "tipo": "achado",
+     "texto": "O menino de Salmoura disse o nome da Senhora dos Poços, e Teodoro ficou branco.",
+     "despacho": "O menino disse o nome de passagem, comendo o pão que Bram lhe deu: — A Senhora dos Poços? Lúcia. Todo mundo sabe. — Teodoro deixou a caneca cair. Não a pegou. Ficou olhando para a parede de Ost, onde os sete nomes só aparecem com a luz verde, e disse a única coisa que ninguém esperava ouvir dele: — Eu menti para vocês.",
+     "juramento": null,
+     "marcas": [
+      "+1 pista do Códice"
+     ]
+    },
+    {
+     "tipo": "bencao",
+     "texto": "Na luz da brasa, a Marca de Fabio apontou para o chão da torre. Debaixo de uma laje solta, havia uma estilha que algum guardião antigo escondeu ali.",
+     "despacho": "A Marca puxou a mão de Fabio para baixo com tanta força que ele caiu de joelhos na torre. Teodoro ergueu a laje e encontrou, enrolada num lenço apodrecido, uma estilha e um nome bordado: Davi. O velho segurou o lenço contra o peito e saiu da torre sem uma palavra. Voltou ao anoitecer, com os olhos secos, e disse apenas: — Ele sempre escondia as coisas boas para depois.",
+     "juramento": null,
+     "marcas": [
+      "+1 estilha do céu"
      ]
     }
    ]
@@ -362,15 +395,15 @@
  },
  "premissa_proxima": null,
  "projecao": {
-  "tier": "reves",
-  "ok": 1,
+  "tier": "sustenta",
+  "ok": 3,
   "n": 5,
   "efeitos": [
    "A Mácula de Cinza se abriu de vez, e a Cinza levou Iara. Resgate em até 3 partes.",
-   "Maren saiu ferida."
+   "Com cinco estilhas, Bram forjou a Lâmina Estelar."
   ],
   "cena": {
-   "tier": "reves",
+   "tier": "sustenta",
    "etapa_antes": 0,
    "etapa_depois": 0,
    "arco": "I",
@@ -381,7 +414,7 @@
     "dorn": "ativa",
     "ysa": "ativa"
    },
-   "afetado": "ysa",
+   "afetado": "brisa",
    "retorna": null,
    "itens": [],
    "talisma": false
@@ -391,18 +424,20 @@
    "companhia": {
     "brisa": "capturada",
     "dorn": "ativa",
-    "ysa": "ferida"
+    "ysa": "ativa"
    },
    "mochila": [],
-   "reliquias": [],
+   "reliquias": [
+    "lamina_estelar"
+   ],
    "maldicoes": [],
    "materiais": {
-    "pista": 6,
-    "estilha": 4,
+    "pista": 7,
+    "estilha": 1,
     "desgaste": 1
    }
   },
-  "falta_para_avanco": 3
+  "falta_para_avanco": 1
  },
  "encerramento": {
   "parte": "I",
