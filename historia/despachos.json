@@ -68,9 +68,79 @@
    "marco": "missão da semana cumprida: Almoços registrados (seg a sex) (4 de 4)",
    "peso": "1 de 5 missões da parte",
    "enviado": "2026-10-29T16:42"
+  },
+  {
+   "id": "2026-10-29:bencao",
+   "data": "2026-10-29",
+   "tipo": "bencao",
+   "carta": "Iara achou, no leito seco de um poço abandonado de Salmoura, um estilhaço do céu que a Liga não tinha visto.",
+   "cena": "Iara desceu sozinha pela corda, sem avisar ninguém, até o fundo de um poço seco do lado de fora dos muros. Voltou com sal até os cotovelos e uma estilha entre os dentes, rindo. Fabio não riu. — Da próxima vez, você me chama. — Da próxima vez você me proíbe, Capitão. — Ela guardou a estilha no pano de Bram e só então, de costas, puxou a manga sobre o braço esquerdo. As veias cinzentas tinham subido um dedo.",
+   "marco": "5 itens no dia (Sessão de força, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → bênção",
+   "peso": "+1 estilha do céu (1 de 5 para a Lâmina Estelar)",
+   "enviado": "2026-10-31T19:13"
+  },
+  {
+   "id": "2026-10-29:missao",
+   "data": "2026-10-29",
+   "tipo": "missao",
+   "carta": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
+   "cena": "Teodoro subiu ao alto da torre e tocou o sino de Ost uma única vez, baixo. — Para quem estiver ouvindo — disse. Lá embaixo, em Salmoura, uma janela do armazém do fundo se acendeu e se apagou em resposta. Teodoro ficou muito tempo olhando para ela.",
+   "marco": "5 itens no dia (Sessão de força, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → missão cumprida",
+   "peso": "",
+   "enviado": "2026-10-31T19:13"
+  },
+  {
+   "id": "2026-10-30:achado",
+   "data": "2026-10-30",
+   "tipo": "achado",
+   "carta": "O menino de Salmoura disse o nome da Senhora dos Poços, e Teodoro ficou branco.",
+   "cena": "O menino disse o nome de passagem, comendo o pão que Bram lhe deu: — A Senhora dos Poços? Lúcia. Todo mundo sabe. — Teodoro deixou a caneca cair. Não a pegou. Ficou olhando para a parede de Ost, onde os sete nomes só aparecem com a luz verde, e disse a única coisa que ninguém esperava ouvir dele: — Eu menti para vocês.",
+   "marco": "5 itens no dia (Corrida, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → achado",
+   "peso": "+1 pista do Códice (7 na estrada)",
+   "enviado": "2026-10-31T19:13"
+  },
+  {
+   "id": "2026-10-30:bencao",
+   "data": "2026-10-30",
+   "tipo": "bencao",
+   "carta": "Na luz da brasa, a Marca de Fabio apontou para o chão da torre. Debaixo de uma laje solta, havia uma estilha que algum guardião antigo escondeu ali.",
+   "cena": "A Marca puxou a mão de Fabio para baixo com tanta força que ele caiu de joelhos na torre. Teodoro ergueu a laje e encontrou, enrolada num lenço apodrecido, uma estilha e um nome bordado: Davi. O velho segurou o lenço contra o peito e saiu da torre sem uma palavra. Voltou ao anoitecer, com os olhos secos, e disse apenas: — Ele sempre escondia as coisas boas para depois.",
+   "marco": "5 itens no dia (Corrida, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → bênção",
+   "peso": "+1 estilha do céu (1 de 5 para a Lâmina Estelar)",
+   "enviado": "2026-10-31T19:13"
+  },
+  {
+   "id": "missao:2026-10-26:ativos",
+   "data": "2026-10-31",
+   "tipo": "missao",
+   "carta": "Iara ensinou a Maren o primeiro verso da canção. Maren ensinou a Iara o nó que quer dizer luz que volta.",
+   "cena": "Iara ensinou a Maren o primeiro verso da canção, devagar, sílaba por sílaba. Maren ensinou a Iara a escrever no ar o nó que quer dizer luz que volta. O nó acendeu fraco na ponta do dedo de Iara, e ela riu tão alto que acordou Bram. A Mácula, naquela noite, não doeu.",
+   "marco": "missão da semana cumprida: Dias ativos (5 de 5)",
+   "peso": "4 de 5 missões da parte",
+   "enviado": "2026-10-31T19:13"
+  },
+  {
+   "id": "missao:2026-10-26:pesagens",
+   "data": "2026-10-31",
+   "tipo": "missao",
+   "carta": "Bram consertou as botas de todo mundo sem que ninguém pedisse, e gravou na sola de cada uma um nó pequeno.",
+   "cena": "Bram passou a noite consertando as botas da companhia sem que ninguém pedisse. Na sola de cada uma gravou um nó pequeno que Maren lhe ensinou. Quando Fabio perguntou o que era, ele deu de ombros. — Ela disse que quer dizer volta para casa. Achei que não custava.",
+   "marco": "missão da semana cumprida: Pesagens em jejum (4 de 4)",
+   "peso": "4 de 5 missões da parte",
+   "enviado": "2026-10-31T19:13"
+  },
+  {
+   "id": "missao:2026-10-26:lanches",
+   "data": "2026-10-31",
+   "tipo": "missao",
+   "carta": "Maren contou a Fabio um dos segredos que guardava, antes de ser obrigada.",
+   "cena": "Maren sentou ao lado de Fabio quando os outros dormiam e abriu o Códice na página da garça. — Eu vi isto há três noites e não contei. Estou contando agora. — Fabio olhou a garça por muito tempo. — Por que agora? — Porque guardar sozinha está ficando pesado demais. — Foi a primeira vez que ela contou alguma coisa antes de ser obrigada.",
+   "marco": "missão da semana cumprida: Lanches das 17h registrados (4 de 4)",
+   "peso": "4 de 5 missões da parte",
+   "enviado": "2026-10-31T19:13"
   }
  ],
  "projecao": {
-  "2026-10-26": "reves"
+  "2026-10-26": "avanco"
  }
 }
