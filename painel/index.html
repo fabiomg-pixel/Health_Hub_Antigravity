@@ -513,7 +513,7 @@ function blocoParaHoje(d, iso) {
     atividade = linha(f.titulo, (f.sub ? f.sub + ' · ' : '') + (sessao ? sessao.exercicios.length + ' exercícios' : 'sessão no corpo da página'), feitos.length ? 'feito' : '') +
       (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +
       (outros.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado fora do plano: ${esc(resumoTreino(outros[0]))}</div>` : '') +
-      (sessao ? `<a class="botao${feitos.length ? ' claro' : ''}" href="#treino/${iso}">${feitos.length ? 'Abrir o treino de novo' : 'Iniciar o treino'}</a>` + (sessao.casa ? `<a class="botao claro" href="#treino/${iso}/casa">Treinar em casa (halteres + TRX)</a>` : '') : `<div class="par" style="padding-top:0">A sessão com exercícios ainda não foi montada para hoje. Siga o plano abaixo.</div>`);
+      (sessao ? `<a class="botao${feitos.length ? ' claro' : ''}" href="#treino/${iso}">${feitos.length ? 'Abrir o treino de novo' : 'Iniciar o treino'}</a>` + (sessao.casa ? `<a class="botao claro" href="#treino/${iso}/casa">Treinar em casa (TRX + peso do corpo)</a>` : '') : `<div class="par" style="padding-top:0">A sessão com exercícios ainda não foi montada para hoje. Siga o plano abaixo.</div>`);
   } else if (tipo === 'corrida') {
     atividade = linha(f.titulo, f.sub || 'etapas, tempo e voz na tela', feitos.length ? 'feito' : '') +
       (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +

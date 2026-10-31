@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-10-11",
- "nota": "Sessões escritas à mão pelo copiloto. Para os dias da semana publicada, o painel lê os exercícios do semana.json. Uma data aqui sobrepõe o semana.json. Toda sessão de força leva \"casa\": a versão em casa com halteres e TRX (Fabio, 31/10). \"bonus\" guarda a rodada bônus.",
+ "nota": "Sessões escritas à mão pelo copiloto. Para os dias da semana publicada, o painel lê os exercícios do semana.json. Uma data aqui sobrepõe o semana.json. Toda sessão de força leva \"casa\": a versão em casa com TRX e peso do corpo (ele não tem pesos em casa, 31/10) (Fabio, 31/10). \"bonus\" guarda a rodada bônus.",
  "sessoes": {
   "2026-10-11": {
    "titulo": "Upper leve e core",
@@ -599,19 +599,18 @@
     }
    ],
    "casa": {
-    "titulo": "Corpo inteiro B · em casa (halteres + TRX)",
-    "regra": "13 séries, RIR 2. Prenda o TRX numa porta firme. Na remada e no supino do TRX, a dificuldade é o ângulo do corpo: ajuste os pés até sobrarem 2 repetições. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício.",
+    "titulo": "Corpo inteiro B · em casa (TRX + peso do corpo)",
+    "regra": "13 séries, RIR 2, sem pesos: só TRX e o corpo. Prenda o TRX numa porta firme. A dificuldade é o ângulo do corpo (remada e supino) e a pausa (agachamento): ajuste até sobrarem 2 repetições e registre 0 kg. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício.",
     "exercicios": [
      {
-      "id": "agachamento_goblet",
-      "nome": "Agachamento goblet",
+      "id": "trx_agachamento",
+      "nome": "Agachamento no TRX com pausa",
       "series": 3,
-      "reps": "10",
-      "kg": 20,
+      "reps": "12",
+      "kg": 0,
       "descanso_s": 90,
       "grupo": "quadriceps_composto",
-      "halter": true,
-      "nota": "Pernas pesadas do futebol: mesma carga, sem subir."
+      "nota": "Pausa de 2 s embaixo. Pernas pesadas do futebol: sem pular, desça devagar."
      },
      {
       "id": "trx_remada",
@@ -1070,7 +1069,7 @@
      {
       "id": "trx_afundo_suspenso",
       "nome": "Afundo com o pé atrás no TRX",
-      "dica": "Pé de trás na alça, desça o joelho de trás devagar. Use halteres para pesar."
+      "dica": "Pé de trás na alça, desça o joelho de trás devagar e suba pelo calcanhar da frente."
      }
     ]
    },
@@ -1116,6 +1115,11 @@
       "id": "caminhada_lateral_mini_band",
       "nome": "Caminhada lateral com mini-band",
       "dica": "Mini-band acima dos joelhos, joelhos levemente flexionados. Passos laterais curtos, com o joelho sempre na direção do pé, sem cair para dentro."
+     },
+     {
+      "id": "abducao_deitado",
+      "nome": "Abdução de quadril deitado de lado",
+      "dica": "De lado, perna de baixo dobrada, suba a de cima um pouco para trás, pé virado levemente para baixo. Devagar."
      }
     ]
    },
@@ -1131,6 +1135,11 @@
       "id": "rotacao_externa_elastico",
       "nome": "Rotação externa de ombro com elástico",
       "dica": "Cotovelo colado no corpo a 90°, gire o antebraço para fora devagar."
+     },
+     {
+      "id": "rotacao_externa_deitado",
+      "nome": "Rotação externa de ombro deitado de lado",
+      "dica": "Cotovelo apoiado no quadril a 90°, gire o antebraço para cima devagar. Sem peso; com uma garrafa d'água se ficar fácil."
      }
     ]
    },
@@ -1205,12 +1214,13 @@
      },
      {
       "id": "pallof",
-      "nome": "Pallof press (elástico ou TRX)",
+      "nome": "Pallof press no TRX",
       "series": 2,
       "reps": "10 cada lado",
       "kg": 0,
       "descanso_s": 45,
-      "grupo": "anti_rotacao"
+      "grupo": "anti_rotacao",
+      "nota": "Alças na altura do peito, corpo de lado para a porta: empurre as mãos à frente sem girar o tronco."
      }
     ]
    },
@@ -1219,8 +1229,8 @@
     "regra": "4 exercícios, 2 séries, uns 12 min, depois da corrida. Grupos pouco usados: manguito, glúteo médio, sóleo e core. Rodada bônus (Fabio, 31/10): opcional, só com o semáforo em Pode, depois da sessão principal, nunca no dia de descanso. Conta pontuação extra; não conta para as missões de força nem de corrida.",
     "exercicios": [
      {
-      "id": "rotacao_externa_elastico",
-      "nome": "Rotação externa de ombro com elástico",
+      "id": "rotacao_externa_deitado",
+      "nome": "Rotação externa de ombro deitado de lado",
       "series": 2,
       "reps": "12 cada lado",
       "kg": 0,
@@ -1228,10 +1238,10 @@
       "grupo": "escapula"
      },
      {
-      "id": "caminhada_lateral_mini_band",
-      "nome": "Caminhada lateral com mini-band",
+      "id": "abducao_deitado",
+      "nome": "Abdução de quadril deitado de lado",
       "series": 2,
-      "reps": "12 passos cada lado",
+      "reps": "15 cada lado",
       "kg": 0,
       "descanso_s": 30,
       "grupo": "gluteo"

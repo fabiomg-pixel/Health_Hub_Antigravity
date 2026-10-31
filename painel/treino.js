@@ -32,7 +32,7 @@ function exerciciosDoPlano(d) {
   });
   return out;
 }
-// Variantes (Fabio, 31/10): "casa" = a versão em casa com halteres e TRX que toda sessão de força leva;
+// Variantes (Fabio, 31/10): "casa" = a versão em casa com TRX e peso do corpo (sem pesos: ele não tem em casa, 31/10) que toda sessão de força leva;
 // "bonus" = a rodada bônus de força curta dos dias de corrida (4 exercícios de grupos pouco usados, A e B alternados).
 function bonusForca(iso) { const l = (TREINOS && TREINOS.bonus && TREINOS.bonus.forca) || []; return l.length ? l[Math.floor(Date.parse(iso) / 864e5) % l.length] : null; }
 function sessaoDe(iso, v) {
@@ -48,7 +48,7 @@ function sessaoDe(iso, v) {
 }
 function linkTreino(iso) {
   const s = sessaoDe(iso); if (!s) return '';
-  return `<section class="bloco" style="padding-bottom:0"><a class="linha" href="#treino/${iso}"><span class="corpo">${iso === isoLocal() ? 'Treino de hoje' : 'Treino de ' + esc(iso.slice(8, 10) + '/' + iso.slice(5, 7))}<small>${esc(s.titulo)} · ${s.exercicios.length} exercícios · carga e repetições</small></span><span class="num">abrir</span></a>${s.casa ? `<a class="linha" href="#treino/${iso}/casa"><span class="corpo">Versão em casa<small>halteres + TRX · ${s.casa.exercicios.length} exercícios</small></span><span class="num">abrir</span></a>` : ''}</section>`;
+  return `<section class="bloco" style="padding-bottom:0"><a class="linha" href="#treino/${iso}"><span class="corpo">${iso === isoLocal() ? 'Treino de hoje' : 'Treino de ' + esc(iso.slice(8, 10) + '/' + iso.slice(5, 7))}<small>${esc(s.titulo)} · ${s.exercicios.length} exercícios · carga e repetições</small></span><span class="num">abrir</span></a>${s.casa ? `<a class="linha" href="#treino/${iso}/casa"><span class="corpo">Versão em casa<small>TRX + peso do corpo · ${s.casa.exercicios.length} exercícios</small></span><span class="num">abrir</span></a>` : ''}</section>`;
 }
 // Rodada bônus (Fabio, 31/10): no dia de corrida, força curta de grupos pouco usados; no dia de força, corrida leve de 20-30 min.
 // Opcional, só com o semáforo em Pode, depois da sessão principal. Pontuação extra (jornada.py), fora das missões.
@@ -192,7 +192,7 @@ function renderTreino(id) {
   const base = dataOk && TREINOS && TREINOS.sessoes && TREINOS.sessoes[iso];
   const outra = !base || !base.casa || v === 'bonus' ? '' : (v === 'casa'
     ? `<a class="linha" href="#treino/${iso}" style="margin-top:12px;border-color:#fff;color:#fff"><span class="corpo">Voltar para a versão da academia</span></a>`
-    : `<a class="linha" href="#treino/${iso}/casa" style="margin-top:12px;border-color:#fff;color:#fff"><span class="corpo">Treinar em casa (halteres + TRX)<small style="color:#fff;opacity:.8">${esc(base.casa.exercicios.length)} exercícios, mesmo objetivo</small></span></a>`);
+    : `<a class="linha" href="#treino/${iso}/casa" style="margin-top:12px;border-color:#fff;color:#fff"><span class="corpo">Treinar em casa (TRX + peso do corpo)<small style="color:#fff;opacity:.8">${esc(base.casa.exercicios.length)} exercícios, mesmo objetivo</small></span></a>`);
   const topo = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
     <div class="topo"><div class="rot">Treino${dataOk ? ' · ' + esc(iso.slice(8, 10) + '/' + iso.slice(5, 7)) : ''}</div><div class="selo" id="t-clock" role="timer" aria-label="tempo de treino">0:00</div></div>
     <h1 class="titulo longo">${sessao ? esc(sessao.titulo) : 'Sem treino com séries hoje'}</h1>

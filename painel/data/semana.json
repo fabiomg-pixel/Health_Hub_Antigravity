@@ -488,7 +488,7 @@
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "Complemento da semana: força de corpo inteiro B, em casa (35 a 40 min)",
+    "foco": "Complemento da semana: força de corpo inteiro B, em casa com TRX (35 a 40 min)",
     "exercicios": [
      {
       "nome": "Pese em jejum, antes de tudo.",
@@ -496,12 +496,12 @@
       "reps": "—"
      },
      {
-      "nome": "Sessão no botão: 13 séries com halteres (goblet, remada unilateral, flexão, ponte, prancha lateral), RIR 2. É a força que faltou na semana.",
+      "nome": "Sessão no botão \"Treinar em casa (TRX)\": 13 séries sem pesos (agachamento no TRX com pausa, remada e supino no TRX, flexão de joelhos no TRX, prancha lateral), RIR 2. É a força que faltou na semana.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Pernas pesadas do futebol: goblet com a mesma carga, sem subir. Dor articular acima de 3/10 = para o exercício.",
+      "nome": "Pernas pesadas do futebol: agachamento devagar, sem pular. Dor articular acima de 3/10 = para o exercício.",
       "series": 1,
       "reps": "—"
      },
@@ -546,7 +546,7 @@
    },
    "janela": {
     "quando": "Antes de começar o trabalho, ou num intervalo dele: são 35 a 40 min em casa.",
-    "plano_b": "Sem tempo para tudo: faça só goblet, remada e flexão, 2 séries de cada (15 min). Semáforo em Segurar: só a pesagem e uma caminhada."
+    "plano_b": "Sem tempo para tudo: só agachamento, remada e supino no TRX, 2 séries de cada (15 min). Semáforo em Segurar: só a pesagem e uma caminhada."
    }
   }
  ],

@@ -1177,11 +1177,11 @@ da semana, ele vê como cada marco se contextualizou na história.
 
 ## 32. Treino em casa e rodada bônus (pedido do Fabio, 31/10/2026)
 
-- **Versão em casa:** toda sessão de força leva `casa` em `painel/data/treinos.json`: a alternativa com halteres e TRX,
+- **Versão em casa:** toda sessão de força leva `casa` em `painel/data/treinos.json`: a alternativa com TRX e peso do corpo (sem pesos: ele não tem em casa, 31/10),
   mesmo objetivo, séries parecidas. O treino abre a versão em casa em `#treino/<data>/casa`; a aba Hoje mostra os dois botões.
 - **Rodada bônus:** opcional, pontuação extra. Dia de corrida: força curta de 4 exercícios de grupos pouco usados
-  (A: Y-T-W no TRX, Copenhagen, tibial na parede, Pallof; B: rotação externa com elástico, caminhada lateral com
-  mini-band, sóleo, dead bug), em `#treino/<data>/bonus`. Dia de força: corrida leve de 20 a 30 min em zona 2,
+  (A: Y-T-W no TRX, Copenhagen, tibial na parede, Pallof; B: rotação externa deitado de lado, abdução de quadril deitado,
+  sóleo, dead bug; tudo sem peso), em `#treino/<data>/bonus`. Dia de força: corrida leve de 20 a 30 min em zona 2,
   registrada pelo botão da aba Hoje. O registro começa com "Rodada bônus".
 - **Regras:** só com o semáforo em Pode, junto da sessão principal do dia, nunca no descanso. +50 XP (`xp.bonus`) e
   item do dia ("Rodada bônus") para as cartas da Campanha; não conta para as missões de força nem de corrida; não é

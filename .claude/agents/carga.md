@@ -40,7 +40,7 @@ prontidão 63, VFC 39, FC 54). **Parta sempre da semana padrão e só corte com 
 
 ## Versão em casa e rodada bônus (Fabio, 31/10/2026)
 
-- Toda sessão de força tem uma alternativa em casa com halteres e TRX (`casa` em `painel/data/treinos.json`), com o
+- Toda sessão de força tem uma alternativa em casa com TRX e peso do corpo (sem pesos: ele não tem em casa, 31/10) (`casa` em `painel/data/treinos.json`), com o
   mesmo objetivo e número de séries parecido. Ele escolhe na hora qual fazer.
 - Rodada bônus, opcional, com pontuação extra na Campanha: no dia de corrida, força curta de 4 exercícios de grupos
   pouco usados (escápulas e manguito, adutores, tibial e sóleo, glúteo médio, anti-rotação), 2 séries, uns 12 min,
