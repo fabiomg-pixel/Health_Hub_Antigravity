@@ -80,16 +80,6 @@
    "enviado": "2026-10-31T19:13"
   },
   {
-   "id": "2026-10-29:missao",
-   "data": "2026-10-29",
-   "tipo": "missao",
-   "carta": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
-   "cena": "Teodoro subiu ao alto da torre e tocou o sino de Ost uma única vez, baixo. — Para quem estiver ouvindo — disse. Lá embaixo, em Salmoura, uma janela do armazém do fundo se acendeu e se apagou em resposta. Teodoro ficou muito tempo olhando para ela.",
-   "marco": "5 itens no dia (Sessão de força, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → missão cumprida",
-   "peso": "",
-   "enviado": "2026-10-31T19:13"
-  },
-  {
    "id": "2026-10-30:achado",
    "data": "2026-10-30",
    "tipo": "achado",

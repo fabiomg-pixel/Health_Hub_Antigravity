@@ -74,7 +74,7 @@ for dia in H.get('diario', []):
     for ev in dia['eventos']:
         t = ev['tipo']; contagem[t] = contagem.get(t, 0) + 1
         did = f"{dia['data']}:{t}" + (f':{contagem[t]}' if contagem[t] > 1 else '')
-        if did in vistos or t == 'quieto': continue
+        if did in vistos or t in ('quieto', 'missao'): continue   # missão já vem do passo 2 (o diário só a espelha)
         if t == 'maldicao': motivo = 'juramento quebrado' + (f" ({ev.get('juramento')})" if ev.get('juramento') else '')
         elif t == 'percalco': motivo = 'dia fechado sem nenhum item, com o relógio registrando'
         else:
