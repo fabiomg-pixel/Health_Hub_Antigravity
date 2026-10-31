@@ -32,8 +32,14 @@ function exerciciosDoPlano(d) {
   });
   return out;
 }
-function sessaoDe(iso) {
-  if (TREINOS && TREINOS.sessoes && TREINOS.sessoes[iso]) return { iso, ...TREINOS.sessoes[iso] };
+// Variantes (Fabio, 31/10): "casa" = a versão em casa com halteres e TRX que toda sessão de força leva;
+// "bonus" = a rodada bônus de força curta dos dias de corrida (4 exercícios de grupos pouco usados, A e B alternados).
+function bonusForca(iso) { const l = (TREINOS && TREINOS.bonus && TREINOS.bonus.forca) || []; return l.length ? l[Math.floor(Date.parse(iso) / 864e5) % l.length] : null; }
+function sessaoDe(iso, v) {
+  const base = TREINOS && TREINOS.sessoes && TREINOS.sessoes[iso];
+  if (v === 'casa' && base && base.casa) return { iso, variante: 'casa', pesada: base.pesada, ...base.casa };
+  if (v === 'bonus') { const b = bonusForca(iso); return b ? { iso, variante: 'bonus', pesada: false, ...b } : null; }
+  if (base) return { iso, ...base };
   const dd = iso.slice(8, 10) + '/' + iso.slice(5, 7), d = DATA && DATA.dias.find(x => x.data === dd);
   if (!d) return null;
   const ex = exerciciosDoPlano(d); if (!ex.length) return null;
@@ -42,8 +48,29 @@ function sessaoDe(iso) {
 }
 function linkTreino(iso) {
   const s = sessaoDe(iso); if (!s) return '';
-  return `<section class="bloco" style="padding-bottom:0"><a class="linha" href="#treino/${iso}"><span class="corpo">${iso === isoLocal() ? 'Treino de hoje' : 'Treino de ' + esc(iso.slice(8, 10) + '/' + iso.slice(5, 7))}<small>${esc(s.titulo)} · ${s.exercicios.length} exercícios · carga e repetições</small></span><span class="num">abrir</span></a></section>`;
+  return `<section class="bloco" style="padding-bottom:0"><a class="linha" href="#treino/${iso}"><span class="corpo">${iso === isoLocal() ? 'Treino de hoje' : 'Treino de ' + esc(iso.slice(8, 10) + '/' + iso.slice(5, 7))}<small>${esc(s.titulo)} · ${s.exercicios.length} exercícios · carga e repetições</small></span><span class="num">abrir</span></a>${s.casa ? `<a class="linha" href="#treino/${iso}/casa"><span class="corpo">Versão em casa<small>halteres + TRX · ${s.casa.exercicios.length} exercícios</small></span><span class="num">abrir</span></a>` : ''}</section>`;
 }
+// Rodada bônus (Fabio, 31/10): no dia de corrida, força curta de grupos pouco usados; no dia de força, corrida leve de 20-30 min.
+// Opcional, só com o semáforo em Pode, depois da sessão principal. Pontuação extra (jornada.py), fora das missões.
+function blocoBonus(iso, tipo) {
+  const B = TREINOS && TREINOS.bonus; if (!B || !['forca', 'corrida'].includes(tipo)) return '';
+  const sem = typeof avaliarSemaforo === 'function' ? avaliarSemaforo().estado : 'pode';
+  const feito = (REGISTROS || []).some(x => x.tipo === 'Treino' && x.data === iso && /rodada b[ôo]nus/i.test(x.texto || ''));
+  let corpo;
+  if (feito) corpo = `<div class="par">Feita. A pontuação extra entra no próximo recálculo da Campanha.</div>`;
+  else if (sem !== 'pode') corpo = `<div class="par">O semáforo de hoje não está em Pode: a rodada bônus fica para outro dia.</div>`;
+  else if (tipo === 'forca') corpo = `<div class="par">${esc(B.corrida.texto)}</div><button type="button" class="botao claro" id="b-corrida">Registrar a corrida bônus</button><div id="b-status" class="status"></div>`;
+  else { const b = bonusForca(iso); corpo = `<div class="par">${esc(b.titulo.replace(/^Rodada bônus:\s*/, ''))}: ${b.exercicios.map(e => esc(e.nome)).join(', ')}. Uns 12 min, depois da corrida.</div><a class="botao claro" href="#treino/${iso}/bonus">Iniciar a rodada bônus</a>`; }
+  return `<section class="bloco"><div class="cab"><h2>Rodada bônus</h2><small>opcional · pontuação extra</small></div>${corpo}</section>`;
+}
+document.addEventListener('click', async ev => {   // delegado: o bloco é redesenhado junto com a aba Hoje
+    const b = ev.target.closest && ev.target.closest('#b-corrida'); if (!b) return;
+    const iso = isoLocal();
+    const min = parseInt(prompt('Quantos minutos de corrida leve? (20 a 30)', '25'), 10); if (!min) return;
+    const st = document.getElementById('b-status'); b.disabled = true; st.textContent = 'Enviando…';
+    try { await enviarRegistro({ tipo: 'treino', data: iso, texto: `Rodada bônus: corrida leve de manutenção, ${min} min em zona 2.` }); st.textContent = 'Registrado. Bom trabalho.'; }
+    catch (e) { st.textContent = 'Sem sinal: tente de novo daqui a pouco.'; b.disabled = false; }
+});
 
 // ───────── o que foi feito da última vez ─────────
 function historicoDeCargas() {
@@ -66,13 +93,14 @@ function mapaEstados() {
   if (m && m.data && m.s) return { [m.data]: m };   // formato antigo: um dia só
   return m && typeof m === 'object' ? m : {};
 }
-function gravarEstado(st) { const m = mapaEstados(); m[st.data] = st; const corte = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10); Object.keys(m).forEach(k => { if (k < corte) delete m[k]; }); lsSet(T_ESTADO, m); }
+function gravarEstado(st) { const m = mapaEstados(); m[st.chave || st.data] = st; const corte = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10); Object.keys(m).forEach(k => { if (k < corte) delete m[k]; }); lsSet(T_ESTADO, m); }
 function limparEstado(iso) { const m = mapaEstados(); delete m[iso]; lsSet(T_ESTADO, m); }
-function estadoDe(iso) {
-  let st = mapaEstados()[iso];
+function estadoDe(iso, chave) {
+  chave = chave || iso;
+  let st = mapaEstados()[chave];
   if (!st || typeof st.s !== 'object' || !st.s || Array.isArray(st.s)) st = { data: iso, inicio: null, ef: null, nota: '', s: {}, troca: {} };
   if (!st.troca || typeof st.troca !== 'object') st.troca = {};
-  st.data = iso; gravarEstado(st);
+  st.data = iso; st.chave = chave; gravarEstado(st);
   return st;
 }
 // Flexibilidade (Fabio, 27/10): séries a mais por exercício e exercícios extras entram no treino do dia e no registro.
@@ -159,19 +187,23 @@ function preencher(sessao, st, hist) {
 // ───────── a tela ─────────
 function renderTreino(id) {
   pararRelogios();
-  const pedida = id.split('/')[1], iso = pedida || isoLocal(), dataOk = /^\d{4}-\d{2}-\d{2}$/.test(iso);
-  let sessao = dataOk ? sessaoDe(iso) : null;
+  const partes = id.split('/'), pedida = partes[1], iso = pedida || isoLocal(), dataOk = /^\d{4}-\d{2}-\d{2}$/.test(iso), v = partes[2] || '';
+  let sessao = dataOk ? sessaoDe(iso, v) : null;
+  const base = dataOk && TREINOS && TREINOS.sessoes && TREINOS.sessoes[iso];
+  const outra = !base || !base.casa || v === 'bonus' ? '' : (v === 'casa'
+    ? `<a class="linha" href="#treino/${iso}" style="margin-top:12px;border-color:#fff;color:#fff"><span class="corpo">Voltar para a versão da academia</span></a>`
+    : `<a class="linha" href="#treino/${iso}/casa" style="margin-top:12px;border-color:#fff;color:#fff"><span class="corpo">Treinar em casa (halteres + TRX)<small style="color:#fff;opacity:.8">${esc(base.casa.exercicios.length)} exercícios, mesmo objetivo</small></span></a>`);
   const topo = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px">
     <div class="topo"><div class="rot">Treino${dataOk ? ' · ' + esc(iso.slice(8, 10) + '/' + iso.slice(5, 7)) : ''}</div><div class="selo" id="t-clock" role="timer" aria-label="tempo de treino">0:00</div></div>
     <h1 class="titulo longo">${sessao ? esc(sessao.titulo) : 'Sem treino com séries hoje'}</h1>
-    ${sessao && sessao.regra ? `<div class="sub">${esc(sessao.regra)}</div>` : ''}</div></div>`;
+    ${sessao && sessao.regra ? `<div class="sub">${esc(sessao.regra)}</div>` : ''}${outra}</div></div>`;
   if (!sessao) {
     const prox = DATA.dias.filter(d => exerciciosDoPlano(d).length).map(d => `<a class="linha" href="#treino/2026-${d.data.slice(3, 5)}-${d.data.slice(0, 2)}"><span class="corpo">${esc(d.nome)} · ${esc(d.data)}<small>${esc(partirFoco((d.treino && d.treino.foco) || '').titulo)}</small></span></a>`).join('');
     $("view").innerHTML = topo + `<section class="bloco"><div class="cab"><h2>Escolha um treino</h2></div>${prox || '<div class="par">Nenhum dia da semana publicada tem exercícios com séries.</div>'}</section>`;
     return;
   }
-  const st = estadoDe(iso), hist = historicoDeCargas();
-  sessao = comExtras(sessao, st);
+  const st = estadoDe(iso, v ? iso + ':' + v : iso), hist = historicoDeCargas();
+  sessao = comExtras(sessao, st); sessao.rota = 'treino/' + iso + (v ? '/' + v : '');
   preencher(sessao, st, hist);
   const fila = lsGet(T_FILA, []);
   const alerta = typeof avisoDaSessao === 'function' ? avisoDaSessao(sessao) : null;
@@ -270,9 +302,9 @@ function ligarTreino(sessao, st, iso) {
     if (op.id === e.id) delete st.troca[e.id]; else st.troca[e.id] = { id: op.id, nome: op.nome, halter: !!op.halter };
     const ef = efetivo(e, st);
     st.s[e.id].forEach((s, i) => { if (e.tipo !== 'tempo') s.kg = kgInicial(e, ef, i, hist, st); });
-    salvar(); renderTreino('treino/' + iso);
+    salvar(); renderTreino(sessao.rota);
   }));
-  const redesenhar = () => { salvar(); renderTreino('treino/' + iso); };
+  const redesenhar = () => { salvar(); renderTreino(sessao.rota); };
   document.querySelectorAll('[data-mais]').forEach(b => b.addEventListener('click', () => {
     const e = sessao.exercicios[+b.dataset.mais], l = st.s[e.id], u = l[l.length - 1] || {};
     l.push(e.tipo === 'tempo' ? { seg: u.seg || e.alvo_s || 30, ok: false } : { kg: u.kg ?? '', reps: u.reps ?? topoReps(e.reps), ok: false }); redesenhar();
@@ -331,7 +363,7 @@ async function terminarTreino(sessao, st, iso, btn) {
   guardarHistoricoLocal(p);
   try { await enviarRegistro(p); stat.className = 'status ok'; stat.textContent = 'Treino anotado no seu diário.'; }
   catch (e) { const f = lsGet(T_FILA, []); f.push({ ...p }); lsSet(T_FILA, f); stat.className = 'status ok'; stat.textContent = 'Sem sinal: o treino ficou guardado neste aparelho e vai quando a rede voltar.'; }
-  limparEstado(iso); pararRelogios(); soltarTela();
+  limparEstado(st.chave || iso); pararRelogios(); soltarTela();
   btn.textContent = 'Treino encerrado';
 }
 async function esvaziarFila() {

@@ -69,6 +69,10 @@ carga; a nutrição sabe o teto e a agenda.
 carga em `painel/data/treinos.json` (data AAAA-MM-DD, formato das sessões existentes, cargas tiradas dos últimos
 registros com `#sets`), e todo dia de corrida uma sessão em `painel/data/corridas.json`. Sem isso o botão "Iniciar o
 treino" abre vazio ("Nenhum dia da semana publicada tem exercícios com séries"). O cético confere.
+**Obrigatório (Fabio, 31/10):** toda sessão de força leva também `casa`: a versão em casa com halteres e TRX, com o
+mesmo objetivo e número de séries parecido (modelo: `2026-11-01` em `treinos.json`; opções de TRX na `biblioteca`).
+A rodada bônus (`bonus` em `treinos.json`) já vale para todos os dias de força e de corrida; não precisa de plano
+próprio. O cético confere as duas coisas.
 
 avaliações como a saída dos especialistas (não chame de novo). Os quatro relatórios (carga, logística,
 nutrição, cético) vão para `relatorios` do `semana.json`. O cético (`subagent_type` `cetico`) é bloqueante.

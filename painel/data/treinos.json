@@ -1,6 +1,6 @@
 {
  "gerado_em": "2026-10-11",
- "nota": "Sessões escritas à mão pelo copiloto. Para os dias da semana publicada, o painel lê os exercícios do semana.json. Uma data aqui sobrepõe o semana.json.",
+ "nota": "Sessões escritas à mão pelo copiloto. Para os dias da semana publicada, o painel lê os exercícios do semana.json. Uma data aqui sobrepõe o semana.json. Toda sessão de força leva \"casa\": a versão em casa com halteres e TRX (Fabio, 31/10). \"bonus\" guarda a rodada bônus.",
  "sessoes": {
   "2026-10-11": {
    "titulo": "Upper leve e core",
@@ -597,7 +597,63 @@
      "tipo": "tempo",
      "alvo_s": 40
     }
-   ]
+   ],
+   "casa": {
+    "titulo": "Corpo inteiro B · em casa (halteres + TRX)",
+    "regra": "13 séries, RIR 2. Prenda o TRX numa porta firme. Na remada e no supino do TRX, a dificuldade é o ângulo do corpo: ajuste os pés até sobrarem 2 repetições. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício.",
+    "exercicios": [
+     {
+      "id": "agachamento_goblet",
+      "nome": "Agachamento goblet",
+      "series": 3,
+      "reps": "10",
+      "kg": 20,
+      "descanso_s": 90,
+      "grupo": "quadriceps_composto",
+      "halter": true,
+      "nota": "Pernas pesadas do futebol: mesma carga, sem subir."
+     },
+     {
+      "id": "trx_remada",
+      "nome": "Remada no TRX",
+      "series": 3,
+      "reps": "10-12",
+      "kg": 0,
+      "descanso_s": 75,
+      "grupo": "costas",
+      "nota": "Carga = ângulo: registre 0 kg e anote os pés na nota, se quiser."
+     },
+     {
+      "id": "trx_supino",
+      "nome": "Supino no TRX (chest press)",
+      "series": 3,
+      "reps": "10-12",
+      "kg": 0,
+      "descanso_s": 75,
+      "grupo": "peito_empurrar"
+     },
+     {
+      "id": "trx_flexao_joelhos",
+      "nome": "Flexão de joelhos no TRX (posterior)",
+      "series": 2,
+      "reps": "10",
+      "kg": 0,
+      "descanso_s": 60,
+      "grupo": "posterior"
+     },
+     {
+      "id": "prancha_lateral",
+      "nome": "Prancha lateral",
+      "series": 2,
+      "reps": "40 s cada",
+      "kg": null,
+      "descanso_s": 45,
+      "grupo": "core_tempo",
+      "tipo": "tempo",
+      "alvo_s": 40
+     }
+    ]
+   }
   }
  },
  "biblioteca": {
@@ -647,6 +703,11 @@
       "id": "flexao_de_braco",
       "nome": "Flexão de braço",
       "dica": "Corpo em linha da cabeça aos calcanhares, cotovelos a uns 45°. Desça até o peito quase tocar o chão. Apoie os joelhos se não conseguir manter a linha."
+     },
+     {
+      "id": "trx_supino",
+      "nome": "Supino no TRX (chest press)",
+      "dica": "Inclinado para a frente, desça até as mãos ao lado do peito e empurre. Mais difícil: pés mais atrás."
      }
     ]
    },
@@ -676,6 +737,11 @@
       "nome": "Desenvolvimento Arnold",
       "halter": true,
       "dica": "Comece com as palmas viradas para você e gire para a frente enquanto sobe. Use carga menor que no desenvolvimento comum."
+     },
+     {
+      "id": "trx_y",
+      "nome": "Y no TRX",
+      "dica": "Braços estendidos em Y, puxe o corpo pela parte de cima das costas."
      }
     ]
    },
@@ -731,6 +797,11 @@
       "id": "rotacao_externa_no_cabo",
       "nome": "Rotação externa do ombro no cabo",
       "dica": "Cotovelo colado ao corpo, dobrado em 90°. Gire o antebraço para fora sem mexer o cotovelo e volte devagar. Carga leve: é o manguito rotador. Se o ombro doer, pare."
+     },
+     {
+      "id": "trx_remada",
+      "nome": "Remada no TRX",
+      "dica": "Corpo reto como prancha, puxe o peito até as mãos. Mais difícil: pés mais à frente."
      }
     ]
    },
@@ -904,6 +975,17 @@
       "id": "agachamento_no_smith",
       "nome": "Agachamento no Smith",
       "dica": "Pés um pouco à frente da barra e coluna neutra. Desça só até onde mantém o calcanhar no chão (atenção ao tornozelo)."
+     },
+     {
+      "id": "agachamento_goblet",
+      "nome": "Agachamento goblet",
+      "halter": true,
+      "dica": "Halter junto ao peito, desça entre as pernas com o tronco alto."
+     },
+     {
+      "id": "trx_agachamento",
+      "nome": "Agachamento no TRX com pausa",
+      "dica": "Segure as alças, desça fundo, pause 2 s embaixo e suba usando o mínimo dos braços."
      }
     ]
    },
@@ -948,6 +1030,11 @@
       "nome": "Terra romeno com halteres",
       "halter": true,
       "dica": "Mesma ideia do stiff: quadril para trás, coluna neutra e halteres rentes às pernas."
+     },
+     {
+      "id": "trx_flexao_joelhos",
+      "nome": "Flexão de joelhos no TRX (posterior)",
+      "dica": "Deitado, calcanhares nas alças, quadril alto, puxe os calcanhares para o glúteo."
      }
     ]
    },
@@ -979,6 +1066,11 @@
       "nome": "Subida no banco (step-up)",
       "halter": true,
       "dica": "Pé inteiro apoiado no banco. Suba empurrando com a perna da frente, sem impulso da perna de trás."
+     },
+     {
+      "id": "trx_afundo_suspenso",
+      "nome": "Afundo com o pé atrás no TRX",
+      "dica": "Pé de trás na alça, desça o joelho de trás devagar. Use halteres para pesar."
      }
     ]
    },
@@ -1001,6 +1093,11 @@
       "id": "panturrilha_unilateral",
       "nome": "Panturrilha unilateral",
       "dica": "Apoie uma mão para equilíbrio. Suba o máximo, segure 1 segundo e desça até alongar, sem quicar."
+     },
+     {
+      "id": "panturrilha_soleo",
+      "nome": "Panturrilha com joelho dobrado (sóleo)",
+      "dica": "Joelhos levemente flexionados o tempo todo; suba e desça devagar."
      }
     ]
    },
@@ -1021,8 +1118,150 @@
       "dica": "Mini-band acima dos joelhos, joelhos levemente flexionados. Passos laterais curtos, com o joelho sempre na direção do pé, sem cair para dentro."
      }
     ]
+   },
+   "escapula": {
+    "nome": "Escápulas e manguito",
+    "opcoes": [
+     {
+      "id": "trx_ytw",
+      "nome": "Y-T-W no TRX",
+      "dica": "Três posições seguidas (Y, T, W), devagar, puxando com as escápulas, não com os braços."
+     },
+     {
+      "id": "rotacao_externa_elastico",
+      "nome": "Rotação externa de ombro com elástico",
+      "dica": "Cotovelo colado no corpo a 90°, gire o antebraço para fora devagar."
+     }
+    ]
+   },
+   "adutor": {
+    "nome": "Adutores",
+    "opcoes": [
+     {
+      "id": "copenhagen",
+      "nome": "Prancha de Copenhagen (adutores)",
+      "dica": "De lado, perna de cima apoiada num banco ou sofá, quadril alto. Versão fácil: joelho apoiado."
+     }
+    ]
+   },
+   "tibial": {
+    "nome": "Canela (tibial)",
+    "opcoes": [
+     {
+      "id": "tibial_parede",
+      "nome": "Elevação de ponta de pé na parede (tibial)",
+      "dica": "Costas na parede, calcanhares um palmo à frente, suba as pontas dos pés."
+     }
+    ]
+   },
+   "anti_rotacao": {
+    "nome": "Anti-rotação",
+    "opcoes": [
+     {
+      "id": "pallof",
+      "nome": "Pallof press (elástico ou TRX)",
+      "dica": "De lado para a âncora, empurre as mãos à frente do peito sem deixar o tronco girar."
+     }
+    ]
    }
   },
   "aviso_dicas": "Dicas gerais de execução, escritas pelo copiloto. Não substituem a orientação de um profissional presente. Se sentir dor, pare."
+ },
+ "bonus": {
+  "_nota": "Rodada bônus (Fabio, 31/10): opcional, só com o semáforo em Pode, depois da sessão principal, nunca no dia de descanso. Conta pontuação extra; não conta para as missões de força nem de corrida.",
+  "forca": [
+   {
+    "titulo": "Rodada bônus: força complementar A",
+    "regra": "4 exercícios, 2 séries, uns 12 min, depois da corrida. Grupos pouco usados: escápulas, adutores, canela e anti-rotação. Rodada bônus (Fabio, 31/10): opcional, só com o semáforo em Pode, depois da sessão principal, nunca no dia de descanso. Conta pontuação extra; não conta para as missões de força nem de corrida.",
+    "exercicios": [
+     {
+      "id": "trx_ytw",
+      "nome": "Y-T-W no TRX",
+      "series": 2,
+      "reps": "6 de cada letra",
+      "kg": 0,
+      "descanso_s": 45,
+      "grupo": "escapula"
+     },
+     {
+      "id": "copenhagen",
+      "nome": "Prancha de Copenhagen (adutores)",
+      "series": 2,
+      "reps": "20 s cada lado",
+      "kg": null,
+      "descanso_s": 45,
+      "grupo": "adutor",
+      "tipo": "tempo",
+      "alvo_s": 20
+     },
+     {
+      "id": "tibial_parede",
+      "nome": "Elevação de ponta de pé na parede (tibial)",
+      "series": 2,
+      "reps": "15",
+      "kg": 0,
+      "descanso_s": 30,
+      "grupo": "tibial"
+     },
+     {
+      "id": "pallof",
+      "nome": "Pallof press (elástico ou TRX)",
+      "series": 2,
+      "reps": "10 cada lado",
+      "kg": 0,
+      "descanso_s": 45,
+      "grupo": "anti_rotacao"
+     }
+    ]
+   },
+   {
+    "titulo": "Rodada bônus: força complementar B",
+    "regra": "4 exercícios, 2 séries, uns 12 min, depois da corrida. Grupos pouco usados: manguito, glúteo médio, sóleo e core. Rodada bônus (Fabio, 31/10): opcional, só com o semáforo em Pode, depois da sessão principal, nunca no dia de descanso. Conta pontuação extra; não conta para as missões de força nem de corrida.",
+    "exercicios": [
+     {
+      "id": "rotacao_externa_elastico",
+      "nome": "Rotação externa de ombro com elástico",
+      "series": 2,
+      "reps": "12 cada lado",
+      "kg": 0,
+      "descanso_s": 30,
+      "grupo": "escapula"
+     },
+     {
+      "id": "caminhada_lateral_mini_band",
+      "nome": "Caminhada lateral com mini-band",
+      "series": 2,
+      "reps": "12 passos cada lado",
+      "kg": 0,
+      "descanso_s": 30,
+      "grupo": "gluteo"
+     },
+     {
+      "id": "panturrilha_soleo",
+      "nome": "Panturrilha com joelho dobrado (sóleo)",
+      "series": 2,
+      "reps": "15",
+      "kg": 0,
+      "descanso_s": 45,
+      "grupo": "panturrilha"
+     },
+     {
+      "id": "dead_bug",
+      "nome": "Dead bug",
+      "series": 2,
+      "reps": "8 cada lado",
+      "kg": 0,
+      "descanso_s": 45,
+      "grupo": "core_dinamico"
+     }
+    ]
+   }
+  ],
+  "corrida": {
+   "titulo": "Rodada bônus: corrida leve de manutenção",
+   "min": 20,
+   "max": 30,
+   "texto": "20 a 30 min em zona 2 (FC 130-145), depois da força ou em outro horário do dia. Conversa possível o tempo todo. Rodada bônus (Fabio, 31/10): opcional, só com o semáforo em Pode, depois da sessão principal, nunca no dia de descanso. Conta pontuação extra; não conta para as missões de força nem de corrida."
+  }
  }
 }

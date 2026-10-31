@@ -12,6 +12,7 @@
   "lanche": 20,
   "missao_semana": 50,
   "capitulo": 150,
+  "bonus": 50,
   "teto_diario": 250
  },
  "dia_ativo_kcal": 300,

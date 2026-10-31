@@ -52,7 +52,7 @@ REG, REG_OK = registros()
 if not REG_OK or not REG:
     raise SystemExit('jornada: a API de registros não respondeu; nada foi gravado (o XP não pode cair por falta de dado)')
 
-RX_FORCA = re.compile(r'lower|upper|for[çc]a|muscula|academia|leg press|supino|costas|peito|full body|core', re.I)
+RX_FORCA = re.compile(r'lower|upper|for[çc]a|muscula|academia|leg press|supino|costas|peito|full body|core|corpo inteiro|treino feito no painel', re.I)
 RX_CORRIDA = re.compile(r'corrida|esteira|correr', re.I)
 RX_JOGO = re.compile(r'futebol|campeonato|\bjogo\b', re.I)
 
@@ -66,6 +66,9 @@ RX_COPILOTO = re.compile(r'\bF[áa]bio\b|copiloto|conselho de domingo|linha de b
 def tipos_treino(texto):
     """Conjunto de tipos de um registro de treino (pode ser força e corrida juntas)."""
     t = (texto or '').split('#sets')[0]
+    # Rodada bônus (Fabio, 31/10): força curta no dia de corrida ou corrida leve no dia de força. Pontuação extra,
+    # fora das missões de força e de corrida (não conta como sessão nem como corrida).
+    if re.search(r'rodada b[ôo]nus', t, re.I): return {'bonus'}
     tipos = set()
     if re.search(r'futebol|campeonato', t, re.I) or (re.search(r'\bjogo\b', t, re.I) and not re.search(r'v[ée]spera', t, re.I)): tipos.add('jogo')
     if RX_FORCA.search(t): tipos.add('forca')
@@ -120,6 +123,7 @@ def xp_do_dia(d):
     if 'forca' in f: itens.append(('Sessão de força', XP['forca']))
     if 'corrida' in f: itens.append(('Corrida', XP['corrida']))
     if ativo(d): itens.append(('Dia ativo', XP['dia_ativo']))
+    if 'bonus' in f and f & {'forca', 'corrida'}: itens.append(('Rodada bônus', XP.get('bonus', 50)))   # só vale junto da sessão principal
     if 'estalagem' in f: itens.append(('Estalagem', XP['estalagem']))
     if s in PES: itens.append(('Pesagem', XP['pesagem']))
     if 'almoco' in f: itens.append(('Almoço registrado', XP['almoco']))

@@ -52,7 +52,8 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
    companhia (motor `historia.py`, canon em `historia/mundo.json`); você só anuncia.
    - **Diário de bordo (todo dia):** é automático (o motor tira uma carta pela qualidade do dia). Você só registra,
      se houver, o juramento quebrado do dia: `./juramento_quebrado.py AAAA-MM-DD limite` (portão ou teto da
-     fisiologista desrespeitado: treino fora do plano, acima do teto ou em manhã vermelha) ou `mesa` (fritura além de 2
+     fisiologista desrespeitado: treino fora do plano, acima do teto ou em manhã vermelha; a **rodada bônus** está no
+     plano e só vira juramento se feita com o semáforo fora de Pode ou no dia de descanso) ou `mesa` (fritura além de 2
      na semana). Depois `./despachos.py` (recalcula a história e manda ao Telegram o despacho da maldição e qualquer
      marco ainda não enviado). As cartas do dia já chegaram a ele como despachos ao longo do dia (`historia/despachos.json`):
      na mensagem, diga numa linha quantos despachos saíram hoje, sem repetir as cenas. **A história nunca espelha o dia dele.**

@@ -38,6 +38,16 @@ prontidão 63, VFC 39, FC 54). **Parta sempre da semana padrão e só corte com 
 - **Sem resposta do Fabio, assuma a semana padrão, nunca o pior caso.** Portões encadeados (passo A, passo B)
   estão proibidos: a regra é uma só, o semáforo.
 
+## Versão em casa e rodada bônus (Fabio, 31/10/2026)
+
+- Toda sessão de força tem uma alternativa em casa com halteres e TRX (`casa` em `painel/data/treinos.json`), com o
+  mesmo objetivo e número de séries parecido. Ele escolhe na hora qual fazer.
+- Rodada bônus, opcional, com pontuação extra na Campanha: no dia de corrida, força curta de 4 exercícios de grupos
+  pouco usados (escápulas e manguito, adutores, tibial e sóleo, glúteo médio, anti-rotação), 2 séries, uns 12 min,
+  depois da corrida; no dia de força, corrida leve de 20 a 30 min em zona 2. Só com o semáforo em Pode, nunca no dia de
+  descanso. Ela não conta como sessão de força nem como corrida no volume da semana, mas você a considera na carga
+  (se a semana estiver pesada, diga quando não fazer).
+
 ## Entregue exatamente isto
 
 1. **Teto da semana**: número de sessões de força, número de sessões de corrida, e

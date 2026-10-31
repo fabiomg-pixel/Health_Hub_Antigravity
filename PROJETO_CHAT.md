@@ -1174,3 +1174,16 @@ da semana, ele vê como cada marco se contextualizou na história.
 - **Personagens**: fichas em `historia/personagens.md` (ferida, desejo, necessidade, mentira, voz, manias, segredos,
   arco). Cada parte dá a cada companheiro uma cena própria com uma escolha que custa; no máximo um segredo grande por
   parte, semeado antes duas vezes. O arquivo não vai ao painel.
+
+## 32. Treino em casa e rodada bônus (pedido do Fabio, 31/10/2026)
+
+- **Versão em casa:** toda sessão de força leva `casa` em `painel/data/treinos.json`: a alternativa com halteres e TRX,
+  mesmo objetivo, séries parecidas. O treino abre a versão em casa em `#treino/<data>/casa`; a aba Hoje mostra os dois botões.
+- **Rodada bônus:** opcional, pontuação extra. Dia de corrida: força curta de 4 exercícios de grupos pouco usados
+  (A: Y-T-W no TRX, Copenhagen, tibial na parede, Pallof; B: rotação externa com elástico, caminhada lateral com
+  mini-band, sóleo, dead bug), em `#treino/<data>/bonus`. Dia de força: corrida leve de 20 a 30 min em zona 2,
+  registrada pelo botão da aba Hoje. O registro começa com "Rodada bônus".
+- **Regras:** só com o semáforo em Pode, junto da sessão principal do dia, nunca no descanso. +50 XP (`xp.bonus`) e
+  item do dia ("Rodada bônus") para as cartas da Campanha; não conta para as missões de força nem de corrida; não é
+  juramento quebrado.
+- **Fim de semana (31/10):** sábado e domingo complementam o que faltou na semana ou refinam; não ficam vazios por padrão.

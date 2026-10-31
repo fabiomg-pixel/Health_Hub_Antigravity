@@ -479,7 +479,7 @@ function isoDiaDoPlano(ddmm) {   // não depende do decisao.js (que carrega depo
 const RX_TREINO = { forca: /lower|upper|for[çc]a|muscula|academia|bra[çc]os|costas|ombro|peito|supino|remada|puxada|leg press|agachamento|full body|#sets/i,
   corrida: /corrida|correr|esteira|trote|\bkm\b|threshold|limiar/i, jogo: /futebol|jogo|campeonato|pelada|partida/i };
 function treinosRegistrados(iso, tipo) {
-  const rs = (REGISTROS || []).filter(x => x.tipo === 'Treino' && x.data === iso);
+  const rs = (REGISTROS || []).filter(x => x.tipo === 'Treino' && x.data === iso && !/rodada b[ôo]nus/i.test(x.texto || ''));   // a rodada bônus tem bloco próprio
   return RX_TREINO[tipo] ? rs.filter(x => RX_TREINO[tipo].test(x.texto || '')) : rs;
 }
 function diaDoPlano(iso) { return (DATA && DATA.dias || []).find(x => isoDiaDoPlano(x.data) === iso); }
@@ -513,7 +513,7 @@ function blocoParaHoje(d, iso) {
     atividade = linha(f.titulo, (f.sub ? f.sub + ' · ' : '') + (sessao ? sessao.exercicios.length + ' exercícios' : 'sessão no corpo da página'), feitos.length ? 'feito' : '') +
       (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +
       (outros.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado fora do plano: ${esc(resumoTreino(outros[0]))}</div>` : '') +
-      (sessao ? `<a class="botao${feitos.length ? ' claro' : ''}" href="#treino/${iso}">${feitos.length ? 'Abrir o treino de novo' : 'Iniciar o treino'}</a>` : `<div class="par" style="padding-top:0">A sessão com exercícios ainda não foi montada para hoje. Siga o plano abaixo.</div>`);
+      (sessao ? `<a class="botao${feitos.length ? ' claro' : ''}" href="#treino/${iso}">${feitos.length ? 'Abrir o treino de novo' : 'Iniciar o treino'}</a>` + (sessao.casa ? `<a class="botao claro" href="#treino/${iso}/casa">Treinar em casa (halteres + TRX)</a>` : '') : `<div class="par" style="padding-top:0">A sessão com exercícios ainda não foi montada para hoje. Siga o plano abaixo.</div>`);
   } else if (tipo === 'corrida') {
     atividade = linha(f.titulo, f.sub || 'etapas, tempo e voz na tela', feitos.length ? 'feito' : '') +
       (feitos.length ? `<div class="par" style="color:var(--sec);padding-top:0">Registrado: ${esc(resumoTreino(feitos[0]))}</div>` : '') +
@@ -531,7 +531,7 @@ function blocoParaHoje(d, iso) {
     ? `<div class="linha" style="align-items:flex-start;border-bottom:0;padding-top:18px"><span class="hora">${esc(pr.hora)}</span><span class="corpo">${esc(pr.nome)}<small>próxima refeição · ${pr.m.kcal != null ? pr.m.kcal + ' kcal' : (/a escolher/i.test(pr.nome) ? 'a escolher' : '')}${pr.m.prot != null ? ' · ' + pr.m.prot + ' g de proteína' : ''}</small></span></div>
        <a class="botao claro" href="#reg/refeicao/${encodeURIComponent(pr.ref)}/${iso}">Registrar ${esc(pr.ref.toLowerCase())}</a>`
     : `<div class="par" style="color:var(--sec);padding-top:18px">Todas as refeições do plano de hoje já têm registro.</div>`;
-  return `<section class="bloco"><div class="cab"><h2>Para fazer hoje</h2><small>${esc(d.nome)} · ${esc(d.data)}</small></div>${atividade}${refeicao}</section>`;
+  return `<section class="bloco"><div class="cab"><h2>Para fazer hoje</h2><small>${esc(d.nome)} · ${esc(d.data)}</small></div>${atividade}${refeicao}</section>` + (typeof blocoBonus === 'function' ? blocoBonus(iso, tipo) : '');
 }
 function renderDia(d, ehHoje) {
   const [dd, mm] = d.data.split('/');

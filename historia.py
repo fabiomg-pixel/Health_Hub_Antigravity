@@ -30,7 +30,7 @@ FECHAR_HOJE = '--fechar-hoje' in sys.argv
 MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
 DIAS_PT = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
 NIVEIS = ['crise', 'reves', 'sustenta', 'avanco', 'triunfo']
-ITENS_DO_DIA = {'Pesagem', 'Dia ativo', 'Corrida', 'Sessão de força', 'Almoço registrado', 'Lanche registrado', 'Descanso na estalagem'}
+ITENS_DO_DIA = {'Pesagem', 'Dia ativo', 'Corrida', 'Sessão de força', 'Almoço registrado', 'Lanche registrado', 'Descanso na estalagem', 'Rodada bônus'}
 
 
 def ler(nome, padrao=None):
