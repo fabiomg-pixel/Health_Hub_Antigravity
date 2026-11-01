@@ -1,26 +1,29 @@
 {
-  "hooks": {
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PROJECT_DIR:-.}/passagem.sh\"",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 \"${CLAUDE_PROJECT_DIR:-.}/garantir_resposta_telegram.py\"",
-            "timeout": 10
-          }
-        ]
-      }
+ "hooks": {
+  "UserPromptSubmit": [
+   {
+    "hooks": [
+     {
+      "type": "command",
+      "command": "\"${CLAUDE_PROJECT_DIR:-.}/passagem.sh\"",
+      "timeout": 10
+     }
     ]
-  }
+   }
+  ],
+  "Stop": [
+   {
+    "hooks": [
+     {
+      "type": "command",
+      "command": "python3 \"${CLAUDE_PROJECT_DIR:-.}/garantir_resposta_telegram.py\"",
+      "timeout": 10
+     }
+    ]
+   }
+  ]
+ },
+ "env": {
+  "TZ": "America/Sao_Paulo"
+ }
 }
