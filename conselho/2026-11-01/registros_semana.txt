@@ -1,0 +1,28 @@
+2026-10-26 12:00 | Refeição Almoço | Yopro
+2026-10-26 18:30 | Refeição Jantar | Frango com quiabo
+2026-10-26 21:13 | Treino  | Corrida mais forte que a média. Ver no Strava
+2026-10-27 09:00 | Refeição Café | YoPro 23g Proteína informada: 23 g.
+2026-10-27 12:00 | Refeição Almoço | 500g: Assado, batata doce, batata baroa, tomate, abacate, berinjela
+2026-10-27 15:29 | Refeição Lanche | Club Social 2x
+2026-10-27 19:05 | Refeição Jantar | Proteína informada: 43 g.
+2026-10-28 13:00 | Refeição Almoço | 350 g: Churrasco, salada de jiló com tomate.
+2026-10-28 17:12 | Refeição Lanche | YoPro 23g
+2026-10-28 19:25 | Treino  | Corrida em ritmo leve
+2026-10-28 20:30 | Refeição Jantar | 
+2026-10-28 20:30 | Refeição Jantar | 
+2026-10-29  | Treino  | Treino feito no painel: Lower A, 38 min, esforço leve. Leg Press 45 (no lugar de Leg press): 160 kg × 8, 160 kg × 8, 160 kg × 8, 130 kg × 8; Stiff: 45 kg × 8, 45 kg × 8, 45 kg × 8; Búlgaro (no lugar de Subida no banco (step-up), com halteres): 0 kg × 8, 0 kg × 8; Leg curl: 40 kg × 10, 45 kg × 10, 45 kg × 8; Prancha: 40 s, 40 s #sets {"v":1,"t":"lower_a","dur":38,"ef":"leve","ex":[{"i":"x_leg_press_45","s":[[160,8],[160,8,"d"],[160,8,"d"],[130,8,"d"]],"o":"leg_press"},{"i":"stiff","s":[[45,8,"d"],[45,8,"d"],[45,8,"d"]]},{"i":"bulgaro","s":[[0,8,"f"],[0,8,"f"]],"o":"step_up"},{"i":"leg_curl","s":[[40,10,"f"],[45,10,"l"],[45,8,"l"]]},{"i":"prancha","s":[[40],[40]]}]}
+2026-10-29 09:05 | Refeição Café | Pão de queijo com requeijão (5 unidades pequenos)
+2026-10-29 13:00 | Refeição Almoço | Frango com curry e batata doce
+2026-10-29 18:13 | Refeição Lanche | Yopro cafetina Proteína informada: 15 g.
+2026-10-29 18:14 | Refeição Outro | Barra ouro branco
+2026-10-29 23:12 | Refeição Jantar | Queijo quente e fatias de queijo
+2026-10-30 08:34 | Refeição Café | pão de queijo (5 un pequenas) e suco de laranja
+2026-10-30 12:30 | Refeição Almoço | Frango a parmegiana com purê de batata
+2026-10-30 16:04 | Refeição Lanche | Iogurte natural com whey e banana.
+2026-10-30 17:17 | Treino  | Treino de corrida como programado. Limiar de 11kmh/11kmh/10.5 (4min)-11.5 (2min). Intervalos a 5.5kmh. Comecei a marcar atrasado no Garmin
+2026-10-31 08:16 | Refeição Café | Pão de queijo e suco de laranja
+2026-10-31 09:01 | Treino  | Hoje foi dia de futebol recreativo
+2026-10-31 14:00 | Refeição Almoço | Risoto de mug ok com cogumelo
+Mate com limão
+2026-10-31 16:00 | Refeição Outro | Sorvete
+2026-10-31 21:00 | Refeição Jantar | Kebab: 1/2 falafel, 1/2 shawarma
