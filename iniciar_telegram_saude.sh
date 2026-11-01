@@ -20,7 +20,11 @@ CLAUDE=""
 [ -f "$CLAUDE" ] && [ -x "$CLAUDE" ] || CLAUDE=$(command -v claude)
 # Arquivo de apoio: o essencial da conversa anterior (gerado de madrugada por secretario/apoio.py).
 APOIO="$TELEGRAM_STATE_DIR/apoio.md"
+# Modo Nuvem (01/11): com o arquivo SEM_CANAL, quem conversa é a nuvem (webhook). A sessão do Mac sobe sem o canal do
+# Telegram e só executa as rotinas digitadas pelo launchd (brief, avaliação, conselho, capítulo), que enviam pela API.
+CANAL=(--channels plugin:telegram@claude-plugins-official)
+[ -f "$TELEGRAM_STATE_DIR/SEM_CANAL" ] && CANAL=()
 if [ -s "$APOIO" ]; then
-  exec "$CLAUDE" --model sonnet --append-system-prompt-file "$APOIO" --channels plugin:telegram@claude-plugins-official "$@"
+  exec "$CLAUDE" --model sonnet --append-system-prompt-file "$APOIO" "${CANAL[@]}" "$@"
 fi
-exec "$CLAUDE" --model sonnet --channels plugin:telegram@claude-plugins-official "$@"
+exec "$CLAUDE" --model sonnet "${CANAL[@]}" "$@"

@@ -90,3 +90,17 @@ Dois bots ao mesmo tempo brigam pelo mesmo token (erro 409). Ordem:
 2. A nuvem consegue enviar direto para a `main`, ou só para um ramo (aí cada rotina precisa abrir e fundir um ramo)?
 3. Qual a frequência mínima de uma rotina agendada na nuvem? Os despachos hoje rodam a cada 15 min.
 4. O ambiente da nuvem alcança `api.telegram.org`, `registry.npmjs.org` (Vercel) e `connect.garmin.com`?
+
+## 9. Como ficou montado (01/11, noite)
+
+- **Conversa:** Telegram → `painel/api/telegram.js` (Vercel; confere segredo e chat, mostra "digitando…") → issue nova
+  no repositório → rotina da nuvem `Saúde: bot do Telegram (nuvem)` (`trig_01NcD5cNY8sQQ6aH9oaHsDrp`, sessão
+  persistente, gatilho GitHub `issues.opened`) → segue `rotinas/telegram_nuvem.md` → responde pela API do Telegram e
+  envia o que mudou ao GitHub. Página da rotina: https://claude.ai/code/routines/trig_01NcD5cNY8sQQ6aH9oaHsDrp
+- **Rotinas do dia (fase 1):** continuam no Mac. Depois do corte, a sessão do Mac sobe **sem** o canal do Telegram
+  (arquivo `SEM_CANAL` na pasta do bot) e só executa brief, avaliação, conselho e capítulo, que enviam pela API. Com o
+  Mac desligado, elas não rodam (como hoje); a conversa roda. Fase 2: levá-las para rotinas agendadas na nuvem.
+- **Passos do Fabio:** (1) criar no GitHub um token fino só do `health-hub`, Issues leitura e escrita; (2)
+  `nuvem/configurar_vercel.sh`; (3) na rotina da nuvem, as variáveis `TELEGRAM_BOT_TOKEN` e `TELEGRAM_CHAT_ID`; (4)
+  conferir que o app do Claude no GitHub enxerga o `health-hub`; (5) teste (issue de teste, resposta chega no
+  Telegram com o Mac ainda no comando); (6) `nuvem/corte.sh`. Para voltar: `nuvem/voltar_ao_mac.sh`.
