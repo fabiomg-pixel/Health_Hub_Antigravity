@@ -128,6 +128,16 @@
    "marco": "missão da semana cumprida: Lanches das 17h registrados (4 de 4)",
    "peso": "4 de 5 missões da parte",
    "enviado": "2026-10-31T19:13"
+  },
+  {
+   "id": "2026-10-31:achado",
+   "data": "2026-10-31",
+   "tipo": "achado",
+   "carta": "Maren reconheceu, num papel do menino, a letra miúda e redonda do mapa da Senhora.",
+   "cena": "O menino deixou cair um papel dobrado quando fugiu, e Maren o guardou antes que alguém visse. Era uma lista de compras da Liga, com sal, lenha e três nomes de poço. A letra era miúda e redonda, inclinada para a esquerda, a mesma que ela copiou do mapa antigo que as mulheres do poço descreviam. Ela mediu a inclinação com o dedo, duas vezes. Depois, na parede branca de Ost, à luz verde da brasa, conferiu o sexto nome dos sete. A letra de um e de outra se parecia demais.",
+   "marco": "2 itens no dia (Dia ativo, Almoço registrado) → achado",
+   "peso": "+1 pista do Códice (8 na estrada)",
+   "enviado": "2026-10-31T22:36"
   }
  ],
  "projecao": {

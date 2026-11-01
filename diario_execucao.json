@@ -335,6 +335,25 @@
     "a janta",
     "onde estará no fim de semana"
    ]
+  },
+  {
+   "data": "31/10",
+   "planejado": "Futebol recreativo (sessão de qualidade da semana); almoço fora com grelhado + feijão ou salada; fruta + iogurte às 15h-16h; janta livre (a única da semana)",
+   "feito": "Futebol recreativo registrado 09:01 (Garmin 09:19, 64 min, FC média 140, máx 191). Café 08:16 pão de queijo e suco de laranja, almoço 14:00 risoto de mug com cogumelo e mate com limão, 16:00 sorvete, janta 21:00 kebab (meio falafel, meio shawarma).",
+   "adaptacao": "Nenhuma; a janta foi a refeição livre. Às 16h veio sorvete, sem fruta e iogurte registrados antes. Peixe nº 2 e leguminosa seguem abertos; força B passa para domingo 01/11.",
+   "respostas": {
+    "q1": null,
+    "q2": null,
+    "q3": "Sorvete às 16h sem fruta e iogurte registrados antes; um dia com lanche de fruta e iogurte (30/10) e um sem (31/10)",
+    "q4": null
+   },
+   "nao_sei": [
+    "hora da última dose de ibuprofeno",
+    "dias restantes do antibiótico",
+    "lombar e joelho depois do futebol",
+    "febre, falta de ar ou aperto no peito hoje",
+    "se o falafel conta como fritura da semana (preparo não informado)"
+   ]
   }
  ]
 }
