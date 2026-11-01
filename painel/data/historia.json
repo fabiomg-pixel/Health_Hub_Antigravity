@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T21:25:32",
+ "gerado_em": "2026-10-31T22:35:38",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -378,6 +378,15 @@
    "dia": "sábado",
    "eventos": [
     {
+     "tipo": "achado",
+     "texto": "Maren reconheceu, num papel do menino, a letra miúda e redonda do mapa da Senhora.",
+     "despacho": "O menino deixou cair um papel dobrado quando fugiu, e Maren o guardou antes que alguém visse. Era uma lista de compras da Liga, com sal, lenha e três nomes de poço. A letra era miúda e redonda, inclinada para a esquerda, a mesma que ela copiou do mapa antigo que as mulheres do poço descreviam. Ela mediu a inclinação com o dedo, duas vezes. Depois, na parede branca de Ost, à luz verde da brasa, conferiu o sexto nome dos sete. A letra de um e de outra se parecia demais.",
+     "juramento": null,
+     "marcas": [
+      "+1 pista do Códice"
+     ]
+    },
+    {
      "tipo": "missao",
      "texto": "Iara ensinou a Maren o primeiro verso da canção. Maren ensinou a Iara o nó que quer dizer luz que volta.",
      "despacho": "Iara ensinou a Maren o primeiro verso da canção, devagar, sílaba por sílaba. Maren ensinou a Iara a escrever no ar o nó que quer dizer luz que volta. O nó acendeu fraco na ponta do dedo de Iara, e ela riu tão alto que acordou Bram. A Mácula, naquela noite, não doeu.",
@@ -464,7 +473,7 @@
    ],
    "maldicoes": [],
    "materiais": {
-    "pista": 7,
+    "pista": 8,
     "estilha": 1,
     "desgaste": 1
    }

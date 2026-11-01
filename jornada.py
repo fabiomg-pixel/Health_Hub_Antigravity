@@ -15,6 +15,7 @@ import json
 import os
 import re
 import subprocess
+import time
 
 import painel_acesso
 import util_arq
@@ -31,11 +32,18 @@ def ler(nome, padrao):
 
 
 def registros():
-    try:
-        r = subprocess.run(['curl', '-s', '-m', '60'] + painel_acesso.curl_args() + [API], capture_output=True, text=True, timeout=75)
-        return json.loads(r.stdout).get('items', []), True
-    except Exception:
-        return [], False
+    # 3 tentativas (31/10: uma chamada de ?tudo=1 travou uma vez e a Campanha inteira deixou de atualizar). Se todas
+    # falharem, o jornada.py para sem gravar nada, de propósito: o XP não pode cair por falta de dado.
+    for tentativa in range(3):
+        try:
+            r = subprocess.run(['curl', '-s', '-m', '40'] + painel_acesso.curl_args() + [API], capture_output=True, text=True, timeout=50)
+            itens = json.loads(r.stdout).get('items')
+            if itens:
+                return itens, True
+        except Exception:
+            pass
+        time.sleep(3 * (tentativa + 1))
+    return [], False
 
 
 util_arq.trava('campanha')
@@ -295,7 +303,7 @@ def primeira(cond):
 
 
 rel = []
-saga_max = max([x['capitulos'] for x in sagas] + [saga])
+saga_max = max([x['capitulos'] for x in sagas] + [saga, (ANTERIOR.get('saga') or {}).get('maior') or 0])   # recorde já mostrado nunca encolhe (31/10: com o histórico completo, semanas antigas ganharam as 4 missões e a conta mudou)
 verao = None
 run = 0
 for s in resultado:

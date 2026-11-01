@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T21:16:12",
+ "gerado_em": "2026-10-31T22:35:36",
  "janela": {
   "hoje": "2026-10-31",
   "dia_semana": "Saturday",
@@ -311,7 +311,7 @@
    "2026-10-30",
    "2026-10-31"
   ],
-  "n_refeicoes_registradas": 20,
+  "n_refeicoes_registradas": 23,
   "por_dia": {
    "2026-10-24": 1,
    "2026-10-26": 2,
@@ -319,11 +319,17 @@
    "2026-10-28": 4,
    "2026-10-29": 5,
    "2026-10-30": 3,
-   "2026-10-31": 1
+   "2026-10-31": 4
   },
   "ocorrencias": {
    "fritura": [],
-   "doce": [],
+   "doce": [
+    {
+     "data": "2026-10-31",
+     "refeicao": "Outro",
+     "texto": "Sorvete"
+    }
+   ],
    "buffet": [],
    "alcool": [],
    "proteina_clara": [
