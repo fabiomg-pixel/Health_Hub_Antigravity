@@ -4,6 +4,9 @@
 (`disparar_rotina.sh conselho`) e às 21h03 (`disparar_rotina.sh conselho_fechar`). O gatilho não veio do Fabio.
 Desenho pedido por ele em 18/10/2026 (PROJETO_CHAT §28): **um especialista de cada vez analisa, pergunta em
 bate e volta, prepara a avaliação; depois vem o próximo.** No fim, a síntese vira a semana.
+**Modo Nuvem (01/11):** o Mac abre (passos 0 e 1) e fecha (passo 5); as respostas do Fabio chegam à nuvem, que faz os
+passos 2 a 4 (`rotinas/telegram_nuvem.md`). No Mac, antes de ler o estado: `git pull --rebase --autostash origin main`;
+depois de cada passo: commit e `git push origin HEAD:main` (o `enviar_telegram_saude.py` também sincroniza sozinho).
 
 ## Onde fica o estado (o disco vale, não a memória)
 

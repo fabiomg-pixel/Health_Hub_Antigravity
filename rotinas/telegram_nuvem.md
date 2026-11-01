@@ -26,6 +26,16 @@ Você é o copiloto de saúde do Fabio. Pensa, decide dentro da sua autonomia, g
      `./despachos.py` na nuvem (ele precisa do token do bot): o laço do Mac manda os despachos.
    - Decisão dele ou regra nova: `./registrar_decisao.sh bot "<decisão>" "<onde vive>"`.
    - Número só do `fatos.json`. Sem informação, sem decisão: diga o que falta.
+   - **Conselho de domingo aberto (falha de 01/11).** O Mac abre a entrevista às 10h03 e manda as perguntas; a
+     resposta dele chega aqui. Se `conselho/<domingo mais recente>/estado.json` tem `fase` diferente de `publicado`,
+     leia `ultimo_envio.md` e o `<atual>.md`: com `fase: "aguardando"`, a mensagem é quase sempre a resposta, mesmo
+     curta ("3. A" é a alternativa A da pergunta 3, não texto cortado). Siga `rotinas/conselho_entrevista.md` a
+     partir do passo 2. Os `agentId` do `estado.json` são do Mac e não existem aqui: chame um subagente novo do
+     especialista e passe o `<esp>.md` inteiro (o roteiro já prevê). Onde o roteiro diz
+     `./enviar_telegram_saude.py conselho`, a mensagem vai no seu comentário da issue (passo 4); copie o texto também
+     em `ultimo_envio.md` com o cabeçalho `# Último envio do bot (conselho) em DD/MM HH:MM`. Na publicação (passo 4
+     do roteiro), não rode `publicar_jornada.sh` nem deploy: grave, commite e envie; o Mac publica o painel em até
+     15 min (`nuvem/sincronizar.sh`). Atualize o `estado.json` a cada passo.
 4. **Responder (obrigatório).** Comente na issue com a primeira linha exatamente `[[telegram]]` e a resposta embaixo:
    `printf '[[telegram]]\n%s' "$MSG" | gh api repos/fabiomg-pixel/health-hub/issues/<n>/comments -F body=@-`
    A Vercel repassa ao Fabio só os comentários que começam com essa marca. O que você escreve aqui na sessão **não

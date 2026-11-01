@@ -18,6 +18,7 @@ while true; do
     avisar "Aviso do vigia: o bot estava fora do ar e eu o religuei às $(date +%H:%M). Se alguma rotina de hoje não chegou, ela roda de novo sozinha ou me chame."
   fi
   ./backup.sh >> despachos.log 2>&1
+  /bin/bash nuvem/sincronizar.sh laco --publicar   # modo Nuvem: traz o que a nuvem gravou e publica o painel se mudou
   tail -n 400 despachos.log > despachos.log.tmp && mv despachos.log.tmp despachos.log
   sleep 900
 done

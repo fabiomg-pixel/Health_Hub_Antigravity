@@ -110,6 +110,13 @@ def main():
         pass
     open(os.path.join(AQUI, arq), 'w', encoding='utf-8').write(
         '# Último envio do bot (%s) em %s\n\n%s\n' % (tipo, agora, texto[:3500]))
+    # Modo Nuvem (01/11): quem recebe a resposta dele é a nuvem; ela só vê este envio (e o estado que a rotina gravou)
+    # depois que o Mac manda ao GitHub. Em segundo plano, para não atrasar a rotina.
+    try:
+        subprocess.Popen(['/bin/bash', os.path.join(AQUI, 'nuvem', 'sincronizar.sh'), 'envio ' + tipo], cwd=AQUI,
+                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+    except OSError:
+        pass
     print(json.dumps({'ok': True, 'bot': usuario, 'tipo': tipo, 'mensagens': ids, 'em': agora}, ensure_ascii=False))
 
 

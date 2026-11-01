@@ -18,14 +18,14 @@ __pycache__/
 *.pyc
 logs/
 
-# Texto do último envio do bot (a passagem o mostra ao bot; é runtime)
-ultimo_envio.md
+# ultimo_envio.md e ultimo_despacho.md agora vão no git (01/11, modo Nuvem: a nuvem precisa saber a que o Fabio responde)
+nuvem/sincronizar.log
+nuvem/sincronizar.log.tmp
 
 # Pacote de exportação (gerado sob pedido)
 exportacao/
 despachos.log
 despachos.log.tmp
-ultimo_despacho.md
 .ultima_falha_dados
 .ultima_falha_deploy
 *.novo
