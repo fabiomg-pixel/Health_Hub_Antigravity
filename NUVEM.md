@@ -100,7 +100,10 @@ Dois bots ao mesmo tempo brigam pelo mesmo token (erro 409). Ordem:
 - **Rotinas do dia (fase 1):** continuam no Mac. Depois do corte, a sessão do Mac sobe **sem** o canal do Telegram
   (arquivo `SEM_CANAL` na pasta do bot) e só executa brief, avaliação, conselho e capítulo, que enviam pela API. Com o
   Mac desligado, elas não rodam (como hoje); a conversa roda. Fase 2: levá-las para rotinas agendadas na nuvem.
-- **Passos do Fabio:** (1) criar no GitHub um token fino só do `health-hub`, Issues leitura e escrita; (2)
-  `nuvem/configurar_vercel.sh`; (3) na rotina da nuvem, as variáveis `TELEGRAM_BOT_TOKEN` e `TELEGRAM_CHAT_ID`; (4)
-  conferir que o app do Claude no GitHub enxerga o `health-hub`; (5) teste (issue de teste, resposta chega no
-  Telegram com o Mac ainda no comando); (6) `nuvem/corte.sh`. Para voltar: `nuvem/voltar_ao_mac.sh`.
+- **Resposta:** a nuvem comenta na issue (`[[telegram]]` na primeira linha); o GitHub avisa `painel/api/github.js`
+  (assinatura HMAC), que manda ao Telegram. Fotos entram pelo Vercel Blob (`fotos_url`). **A nuvem não guarda segredo.**
+- **Fuso:** `.claude/settings.json` fixa `TZ=America/Sao_Paulo` (a nuvem roda em UTC).
+- **Testado (01/11):** issue de teste acordou a rotina, que copiou o repositório, leu a issue e rodou a passagem em ~26 s.
+- **Passos do Fabio:** (1) token fino do GitHub só do `health-hub`, Issues leitura e escrita; (2)
+  `nuvem/configurar_vercel.sh` (grava os segredos na Vercel, publica e cria o aviso do GitHub); (3) teste ponta a ponta;
+  (4) `nuvem/corte.sh`. Para voltar: `nuvem/voltar_ao_mac.sh`.
