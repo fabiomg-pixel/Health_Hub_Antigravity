@@ -19,6 +19,8 @@ TOKEN = None
 def token():
     global TOKEN
     if TOKEN is None:
+        TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '').strip().strip('"\'') or None   # nuvem: segredo do ambiente, sem arquivo
+    if TOKEN is None:
         try:
             for l in open(os.path.join(BASE, '.env'), encoding='utf-8'):
                 if l.startswith('TELEGRAM_BOT_TOKEN='):
@@ -26,17 +28,18 @@ def token():
         except OSError:
             pass
         if not TOKEN:
-            sys.exit('ERRO: token do bot novo não encontrado em ' + BASE + '/.env')
+            sys.exit('ERRO: token do bot novo não encontrado (TELEGRAM_BOT_TOKEN no ambiente ou ' + BASE + '/.env)')
     return TOKEN
 
 
 def chat():
+    if os.environ.get('TELEGRAM_CHAT_ID', '').strip(): return os.environ['TELEGRAM_CHAT_ID'].strip()   # nuvem
     try:
         ids = json.load(open(os.path.join(BASE, 'access.json'), encoding='utf-8')).get('allowFrom') or []
     except (OSError, ValueError):
         ids = []
     if not ids:
-        sys.exit('ERRO: nenhum chat autorizado em access.json (o Fabio o aprova com /telegram:access)')
+        sys.exit('ERRO: nenhum chat autorizado (TELEGRAM_CHAT_ID no ambiente ou access.json; o Fabio o aprova com /telegram:access)')
     return str(ids[0])
 
 

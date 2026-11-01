@@ -16,15 +16,17 @@ case "$IN" in *plugin:telegram*)
 esac
 # Alarme de análise automática parada: a avaliação de fim de dia escreve o diario_execucao.json todo dia.
 # Se ele não muda há 36 h ou mais, a análise diária (brief das 8h, avaliação da noite) provavelmente parou.
+# mtime em segundos: GNU (Linux, nuvem) primeiro, BSD (macOS) como reserva
+mtime() { stat -c %Y "$1" 2>/dev/null || stat -f %m "$1"; }
 DI=diario_execucao.json
 if [ -f "$DI" ]; then
-  H=$(( ( $(date +%s) - $(stat -f %m "$DI") ) / 3600 ))
+  H=$(( ( $(date +%s) - $(mtime "$DI") ) / 3600 ))
   [ "$H" -ge 36 ] && echo "!!! ALERTA: a análise automática diária parece parada: o diario_execucao.json não é atualizado há ${H} h (última vez: $(stat -f '%Sm' -t '%d/%m %H:%M' "$DI")). Registros feitos desde então podem não ter sido lidos por ninguém. Diga isso ao Fabio."
 fi
 # O que o bot enviou por último (brief das 8h, avaliação da noite): o Fabio responde A ISSO pelo Telegram.
 UE=ultimo_envio.md
 if [ -f "$UE" ]; then
-  HE=$(( ( $(date +%s) - $(stat -f %m "$UE") ) / 3600 ))
+  HE=$(( ( $(date +%s) - $(mtime "$UE") ) / 3600 ))
   if [ "$HE" -lt 48 ]; then
     echo "--- Última mensagem que o bot enviou ao Fabio (há ${HE} h). Se ele responder pelo Telegram, é sobre isto:"
     head -16 "$UE" | cut -c1-220
@@ -32,7 +34,7 @@ if [ -f "$UE" ]; then
 fi
 # Último despacho da Campanha (despachos.py): se ele responder a uma cena, é a isto.
 UD=ultimo_despacho.md
-if [ -f "$UD" ] && [ $(( ( $(date +%s) - $(stat -f %m "$UD") ) / 3600 )) -lt 12 ]; then
+if [ -f "$UD" ] && [ $(( ( $(date +%s) - $(mtime "$UD") ) / 3600 )) -lt 12 ]; then
   echo "--- Último despacho da Campanha que o bot enviou (pode ser a isto que ele responde):"
   head -12 "$UD" | cut -c1-220
 fi

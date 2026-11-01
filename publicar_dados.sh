@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 # Atualiza os DADOS do painel (fatos + evolução) e publica. Não toca no plano da semana.
 #
 #   ./publicar_dados.sh

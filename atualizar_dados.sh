@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 # Puxa Garmin e Renpho, consolida e confere (31/10/2026). Existe porque o publicar_dados.sh jogava os erros no lixo e
 # truncava o fatos.json antes de refazê-lo, e porque o fechamento de domingo usava os dados da manhã.
 #   ./atualizar_dados.sh [dias]      saída 0 = tudo certo; 1 = alguma fonte falhou (diz qual); o fatos.json antigo é preservado

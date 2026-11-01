@@ -7,7 +7,7 @@ verdadeira. Entrega: **uma mensagem curta** com `./enviar_telegram_saude.py aval
 O plano é hipótese; mude pouca coisa.
 
 **Qual dia avaliar (importante):** esta rotina é das 22h33. Se o Mac dormia e ela disparou de madrugada ou de
-manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o carryover com carimbo de HOJE
+manhã, **antes das 12h, avalie ONTEM** (`python3 -c "import datetime as d;print(d.date.today()-d.timedelta(days=1))"`), não hoje, e grave o carryover com carimbo de HOJE
 (`para: ` a data de hoje). Depois das 12h, avalie HOJE e carimbe AMANHÃ.
 
 ## Passos
@@ -15,7 +15,7 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
 0. **Passagem.** O gancho já injetou regras vigentes e decisões; se não, `./passagem.sh`. Respeite as
    regras vigentes (vegetal visível, metas da nutricionista, fritura) ao avaliar. Se houver `!!! ALERTA`,
    diga em uma linha.
-1. Datas: defina o DIA AVALIADO pela regra acima e use-o em todos os passos (`date -v-1d +%d/%m` ou `date +%d/%m`).
+1. Datas: defina o DIA AVALIADO pela regra acima e use-o em todos os passos (ontem: `python3 -c "import datetime as d;print((d.date.today()-d.timedelta(days=1)).strftime('%d/%m'))"`; hoje: `date +%d/%m`).
 2. **O que ele registrou hoje.** `./painel_get.sh "/api/registros?paginas=2"` → `items[]`.
    Filtre `data` == hoje. Inclua os de tipo Treino (o painel grava série a série) e Observação.
 3. **O plano de hoje** em `painel/data/semana.json` (dia por `data` DD/MM): atividade programada e as
@@ -36,7 +36,7 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
      vegetal visível, peixe, fruta. Diga o que falta para fechar a semana, sem cobrança.
 5. **UM ajuste para amanhã**, em uma linha, dentro do cardápio fixo (ênfase, porção, ordem do treino).
    Grave em `carryover.txt` (sobrescreva), EXATAMENTE duas linhas: `para: AAAA-MM-DD` (amanhã:
-   `date -v+1d +%F`) e o ajuste. Sem o carimbo o brief da manhã descarta o arquivo, de propósito.
+   `python3 -c "import datetime as d;print(d.date.today()+d.timedelta(days=1))"`) e o ajuste. Sem o carimbo o brief da manhã descarta o arquivo, de propósito.
 6. **Diário de volta ao conselho.** Rode `python3 fatos.py > fatos.json`, leia `perguntas_semana.json` se
    existir e acrescente uma linha ao array de `diario_execucao.json` (crie `{"dias": []}` se faltar), sem
    apagar o que existe: `{"data","planejado","feito","adaptacao","respostas":{"q1":...},"nao_sei":[...]}`.

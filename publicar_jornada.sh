@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 # Recalcula só a Campanha (jornada.py) e publica o painel. Use depois de confirmar uma estalagem ou de
 # escrever uma crônica no livro (historia/livro/). Não faz os pulls do relógio e da balança.
 set -u
