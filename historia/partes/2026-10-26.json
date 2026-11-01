@@ -41,6 +41,27 @@
      "estilha": 1
     },
     "despacho": "Maren segurou a lanterna enquanto Bram fundia o vidro velho. Quando o pó de estilha brilhou no fundo do cadinho, ele assobiou pela primeira vez desde o bilhete de Corvino. Maren anotou no Códice o desenho que o pó fez ao esfriar. Era um nó dos Tecelões. Significa irmão."
+   },
+   {
+    "texto": "Bram achou uma estilha escondida no casco de um mulo abandonado pela Liga.",
+    "despacho": "O mulo da Liga estava morto havia dias, caído junto à estrada do sal, e Bram parou diante dele mais tempo do que era preciso. Depois levantou o casco dianteiro com cuidado, como quem pede licença, e raspou a ferradura com a ponta da faca. Debaixo do ferro velho, enfiada numa fenda, brilhava uma estilha do tamanho de uma lasca de unha. — Ele carregou isso a vida inteira e ninguém soube — disse. Guardou-a no pano, ao lado das outras, e sepultou o animal com as próprias mãos, sem dizer a ninguém por quê.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Iara cantou a canção até onde lembrava, e um pinheiro seco respondeu com luz.",
+    "despacho": "Iara cantou a canção de ninar encostada num pinheiro seco, só para não ouvir o silêncio da colina. Cantou até onde lembrava, e parou onde sempre parava, no verso que não vinha. O tronco estalou. No oco da madeira, alguma coisa acendeu em verde e dourado, uma estilha antiga que guardava a luz esperando exatamente aquela melodia. Iara ficou com a mão estendida, sem coragem de pegar. — Ela sabia o caminho — murmurou, e não soube dizer de quem falava. Fabio, a dez passos, apertou a mão direita até a Marca vazar luz entre os dedos.",
+    "efeito": {
+     "estilha": 1
+    }
+   },
+   {
+    "texto": "Rosa mandou pelo balde de Ost uma estilha amarrada com fio azul.",
+    "despacho": "O balde subiu do poço de Ost mais pesado do que devia. Teodoro puxou a corda sozinho, devagar, e dentro, presa a um laço de fio azul, havia uma estilha pequena e quente. Nenhum bilhete. Só o fio, o mesmo azul do estandarte da garça. Ele ficou segurando a corda por muito tempo depois de o balde chegar. — Quem lhe ensinou a mandar mensagem pelo poço? — perguntou Maren. — Eu — disse o velho, sem olhar para ela. — Faz quarenta anos. Era o nosso jeito.",
+    "efeito": {
+     "estilha": 1
+    }
    }
   ],
   "achado": [
@@ -71,6 +92,34 @@
      "pista": 1
     },
     "despacho": "O menino disse o nome de passagem, comendo o pão que Bram lhe deu: — A Senhora dos Poços? Lúcia. Todo mundo sabe. — Teodoro deixou a caneca cair. Não a pegou. Ficou olhando para a parede de Ost, onde os sete nomes só aparecem com a luz verde, e disse a única coisa que ninguém esperava ouvir dele: — Eu menti para vocês."
+   },
+   {
+    "texto": "Maren reconheceu, num papel do menino, a letra miúda e redonda do mapa da Senhora.",
+    "despacho": "O menino deixou cair um papel dobrado quando fugiu, e Maren o guardou antes que alguém visse. Era uma lista de compras da Liga, com sal, lenha e três nomes de poço. A letra era miúda e redonda, inclinada para a esquerda, a mesma que ela copiou do mapa antigo que as mulheres do poço descreviam. Ela mediu a inclinação com o dedo, duas vezes. Depois, na parede branca de Ost, à luz verde da brasa, conferiu o sexto nome dos sete. A letra de um e de outra se parecia demais.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "Iara ouviu o menino de Salmoura cantarolar um verso da canção de travessia.",
+    "despacho": "O menino voltou ao pé da colina para devolver a corda de Bram e, esperando ser pago com pão, cantarolou enquanto roía a casca. Iara parou no meio de um passo. Era o primeiro verso da canção de ninar dela, a mesma melodia, com palavras que ela nunca soube de quem eram. — Quem lhe ensinou isso? — perguntou, e a voz saiu mais fina do que pretendia. — A Senhora dos Poços — respondeu o menino. — Ela canta de noite, quando acha que não tem ninguém. Iara apertou o braço esquerdo até a mácula esquentar.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "Fabio contou oito ganchos de rede na torre, e sete nomes na parede.",
+    "despacho": "Subindo a escada da torre pela quinta vez, Fabio contou os ganchos de ferro no andar de cima, cravados na pedra para pendurar redes de dormir. Eram oito. Os nomes gravados por dentro da parede, os que Maren leu, eram sete. Ele passou o polegar nos ganchos um a um. O oitavo era o único gasto, liso de tanto uso, como se alguém tivesse voltado a pendurar a rede ali todas as noites, durante anos. Desceu sem falar. No braseiro, Teodoro mexia as cinzas e não levantou os olhos.",
+    "efeito": {
+     "pista": 1
+    }
+   },
+   {
+    "texto": "Bram reconheceu, no apito do menino, o selo das arenas da Liga.",
+    "despacho": "Foi por acaso que Bram viu o apito pendurado no pescoço do menino: um pedaço de osso esculpido, gasto de tanto manuseio. No fundo do osso, quase apagado, estava o selo redondo das arenas da Liga do Sal, o mesmo que Bram carregou marcado a ferro dez anos no antebraço. Ele devolveu o apito sem dizer palavra. O menino sorriu, orgulhoso. Bram girou o martelo de Tomas uma vez na mão, depois outra, e saiu andando para o fundo da colina, onde ninguém o chamasse.",
+    "efeito": {
+     "pista": 1
+    }
    }
   ],
   "quieto": [
@@ -88,6 +137,21 @@
     "texto": "Maren e Iara passaram a noite trocando palavras: a língua da canção tem uma palavra para luz que se parece com uma da Escrita dos Tecelões.",
     "efeito": {},
     "despacho": "Maren e Iara trocaram palavras até tarde. A palavra para luz na canção de Iara é quase igual a um nó dos Tecelões que Maren nunca tinha conseguido traduzir. — Quer dizer luz que volta — disse Maren. Iara riu, mas depois ficou quieta muito tempo, segurando o braço."
+   },
+   {
+    "texto": "Fabio consertou uma correia da mochila e contou os companheiros duas vezes.",
+    "despacho": "Fabio passou a tarde consertando uma correia da mochila, sentado no degrau da torre, com a linha grossa que Bram lhe emprestou. A cada pontada levantava os olhos e conferia: Bram afiando, Iara na luneta, Maren no Códice, Teodoro no braseiro. Cinco, contando a si mesmo. Conferiu de novo. Cinco. Só então voltou à correia, e a linha saiu mais firme do que o necessário. Ninguém comentou. Bram, sem levantar os olhos da pedra de afiar, deixou a pedra de afiar num ritmo mais lento, como quem faz companhia.",
+    "efeito": {}
+   },
+   {
+    "texto": "Maren ensinou a Iara o nó da paciência.",
+    "despacho": "Maren desenhou no ar, com a ponta do dedo, um nó dos Tecelões que ainda não tinha ensinado a ninguém. Iara tentou três vezes e errou as três, rindo cada vez mais alto, até Teodoro mandar as duas calarem a boca por causa dos Esquecidos. Na quarta tentativa, o nó acendeu fraco na ponta do dedo de Iara. As duas ficaram em silêncio. — Quer dizer paciência — disse Maren. — Que ironia — disse Iara, e guardou a luz na palma da mão fechada até ela se apagar.",
+    "efeito": {}
+   },
+   {
+    "texto": "Teodoro limpou o vidro da lanterna nome por nome.",
+    "despacho": "Teodoro limpou o vidro da lanterna com a manga, devagar, nome por nome, como fazia todas as noites. Lúcia, Bento, Ícaro, Joana, Rui, Mira, Davi. Hoje, depois de Lúcia, parou. O dedo ficou sobre a letra L por um tempo comprido, e ele disse baixinho, para o vidro, uma frase que ninguém ouviu inteira. Só a palavra final chegou até Fabio, que fingia dormir: — …voltar. Depois seguiu para o nome de Bento, e a manga recomeçou o movimento de sempre.",
+    "efeito": {}
    }
   ],
   "percalco": [
@@ -111,6 +175,27 @@
      "desgaste": 1
     },
     "despacho": "A brasa de Ost baixou durante a noite, e a Cinza subiu dez passos pela colina. Teodoro passou a madrugada soprando o braseiro como se soprasse a vela de um doente. De manhã, Fabio o encontrou dormindo sentado, com a lanterna no colo e o dedo parado sobre o nome de Lúcia."
+   },
+   {
+    "texto": "Uma gota de cera estragou duas páginas do Códice de Maren.",
+    "despacho": "Maren dormiu sobre o Códice, e a vela que deixou acesa à beira da página caiu na madrugada. Quando acordou, duas folhas estavam coladas pela cera, e uma terceira, a da garça, tinha uma mancha escura exatamente sobre o desenho. Passou a manhã inteira descolando com a lâmina fina de Bram, em silêncio, sem aceitar ajuda de ninguém. Perdeu o desenho de duas linhas de nós. Não chorou. À noite, copiou de memória o que lembrava, e a letra saiu tremida, mas saiu.",
+    "efeito": {
+     "desgaste": 1
+    }
+   },
+   {
+    "texto": "Bram queimou a mão num cadinho e passou o dia sem forjar.",
+    "despacho": "O cadinho rachou no meio da fundição e o metal derramou na mão de Bram. Ele não gritou: apertou os dentes, enfiou a mão na neve suja da colina e ficou assim, ajoelhado, até Iara arrancar-lhe o braço do chão e passar o unguento. Não forjou o resto do dia. À noite, com a mão enfaixada, tentou girar o martelo de Tomas e não conseguiu segurar. Ficou olhando a mão ferida como se fosse de outro. — Ele teria rido de mim — disse, e ninguém soube se falava do irmão ou de si.",
+    "efeito": {
+     "desgaste": 1
+    }
+   },
+   {
+    "texto": "Fabio não conseguiu dormir e passou a noite vigiando a Cinza subir.",
+    "despacho": "Fabio ofereceu-se para a vigia e depois da meia-noite ainda estava lá, sem sono, olhando a Cinza avançar pela encosta oeste, um dedo de cada vez, apagando a cor do mato. Contou os passos que ela dava. Ao amanhecer, estava exausto, com a mão direita doendo e a Marca acesa sem que ele tivesse feito nada. Iara o encontrou encostado na parede. — Capitão, você não é o único que tem medo — disse, e lhe estendeu o cantil. Ele bebeu, e não respondeu.",
+    "efeito": {
+     "desgaste": 1
+    }
    }
   ],
   "maldicao": [
@@ -125,6 +210,14 @@
    {
     "texto": "O vento trouxe de Salmoura o som de correntes sendo arrastadas, e depois um silêncio muito longo.",
     "despacho": "O vento trouxe de Salmoura o som de correntes sendo arrastadas, depois um silêncio longo, depois um choro de menino. Bram se levantou e foi até a beira da colina. Fabio o segurou pelo braço. Ficaram assim até o amanhecer, sem dizer nada, os dois olhando para o oeste."
+   },
+   {
+    "texto": "Uma luva de couro fino apareceu no degrau da torre.",
+    "despacho": "De manhã, no primeiro degrau da torre, alguém deixou uma luva de couro fino, perfeitamente dobrada, com um grão de sal costurado no punho. Ninguém tinha visto ninguém passar. Teodoro a ergueu com dois dedos, como quem levanta uma cobra morta, e a jogou no braseiro. A luva queimou sem fumaça e sem cheiro. — Ele sabe onde estamos — disse. — Sabe há dias. Isso é só educação. Bram foi até a porta, ficou ali um tempo longo, e voltou sem dizer o que viu."
+   },
+   {
+    "texto": "Sal começou a cair do céu, em vez de Cinza.",
+    "despacho": "À tarde, em vez da Cinza morna, caiu sal. Granulado, fino, branco, como neve do litoral. Os Esquecidos que rondavam a colina se ajoelharam e começaram a lamber o chão. Maren segurou um punhado na palma e tentou ler alguma coisa nos cristais. — É da Liga — disse. — Jogaram do alto da muralha de Salmoura. Querem saber se eles vêm. E eles vêm. Teodoro fechou a porta da torre e passou a tranca, pela primeira vez em quarenta anos."
    }
   ],
   "missao": [

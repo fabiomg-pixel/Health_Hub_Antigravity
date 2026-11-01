@@ -249,7 +249,7 @@
   @keyframes pulso-f { 50% { transform: scale(1.06); } }
   @media (prefers-reduced-motion: reduce) { #t-folego.f-final .f-num { animation: none; } }
   #t-desc b { font-family: var(--display); font-size: 24px; margin-left: 6px; }
-  #t-desc button { min-height: 40px; padding: 0 14px; border: 2px solid var(--tinta); background: var(--branco); font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
+  #t-desc button { min-height: 44px; padding: 0 14px; border: 2px solid var(--tinta); background: var(--branco); font: 700 14px/1 'Figtree', sans-serif; cursor: pointer; }
   .sem { flex: none; min-width: 92px; text-align: center; padding: 10px 12px; font: 800 15px/1 'Figtree', sans-serif; border: 2px solid var(--tinta); }
   .sem-pode { background: #5FD3C4; color: var(--tinta); } .sem-ajustar { background: #FFD166; color: var(--tinta); }
   .sem-segurar { background: #FF6B5E; color: var(--tinta); } .sem-sem_dado { background: transparent; color: var(--tinta); border-style: dashed; }
@@ -270,11 +270,14 @@
   .rg-fotos:empty { display: none; }
   .rg-foto { position: relative; width: 96px; height: 96px; border: 2px solid var(--tinta); }
   .rg-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .rg-foto button { position: absolute; top: -10px; right: -10px; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--tinta);
+  .rg-foto button { position: absolute; top: -14px; right: -14px; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--tinta);
     background: var(--papel, #fff); color: var(--tinta); font-weight: 700; line-height: 1; cursor: pointer; padding: 0; }
   .rg-dh { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .status { font-size: 14px; font-weight: 600; min-height: 20px; }
-  .status.ok { color: #0A5A3C; } .status.err { color: #8C1D12; }
+  .imersivo #status { display: none; }
+  #t-bar { position: sticky; top: 0; z-index: 35; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 18px; background: var(--tinta); color: #fff; border-bottom: 2px solid var(--sol); font: 700 14px/1.2 'Figtree', sans-serif; }
+  #t-bar b { font-family: var(--display); font-weight: 800; font-size: 17px; font-variant-numeric: tabular-nums; }
+  .msg { font-size: 14px; font-weight: 600; min-height: 20px; }   /* mensagens de salvar e erro (antes reaproveitavam .status, o cabeçalho escuro fixo: contraste de 2:1) */
+  .msg.ok { color: #0A5A3C; } .msg.err { color: #8C1D12; }
   .aviso { margin-top: 16px; padding: 12px 0; border-top: 1px solid var(--fraca); font-size: 13.5px; color: var(--sec); line-height: 1.45; }
   .rdays { display: flex; gap: 8px; margin-top: 16px; }
   .rdays button { min-height: 44px; padding: 0 14px; border: 2px solid var(--tinta); background: transparent; font-size: 13.5px; font-weight: 600; cursor: pointer; }
@@ -600,7 +603,7 @@ function renderDia(d, ehHoje) {
   const isoDia = new Date().getFullYear() + '-' + mm + '-' + dd;
   if (ehHoje) {
     const tp = tipoProgramado(d);
-    h += (['forca', 'corrida', 'jogo'].includes(tp) && typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + blocoParaHoje(d, isoDia) + (typeof blocoMissoesHoje === 'function' ? blocoMissoesHoje() : '');
+    h += blocoParaHoje(d, isoDia) + (['forca', 'corrida', 'jogo'].includes(tp) && typeof blocoSemaforo === 'function' ? blocoSemaforo() : '') + (typeof blocoMissoesHoje === 'function' ? blocoMissoesHoje() : '');
   } else h += (typeof linkTreino === 'function' ? linkTreino(isoDia) : '');
   h += (typeof blocoJanela === 'function' ? blocoJanela(d) : '');
 
@@ -839,7 +842,7 @@ function blocoCardapio() {
 }
 // Cada bloco do Início (menos o 'Agora') vira uma linha que abre ao toque. O resumo fica à vista
 // com o bloco fechado, e o que foi aberto fica lembrado neste aparelho.
-const ABERTOS_PADRAO = ['Capítulo'];   // o capítulo da semana (Campanha) abre sozinho; o resto, ao toque
+const ABERTOS_PADRAO = ['Capítulo', 'Parte'];   // o capítulo da semana (Campanha) abre sozinho; o resto, ao toque
 function dobrarSecoes(abertos = ABERTOS_PADRAO, chave = 'secoes') {
   let guardado = {}; try { guardado = JSON.parse(localStorage.getItem(chave) || '{}'); } catch (e) {}
   [...document.querySelectorAll('#view > section.bloco')].slice(1).forEach(sec => {
@@ -896,8 +899,7 @@ function renderInicio() {
     DATA.lista_compra.map((c, ci) => `<div class="cat">${T(c.cat)}</div>` + c.itens.map((it, ii) => { const k = ci + ':' + ii + ':' + semEmoji(it).slice(0, 24);
       return `<label><input type="checkbox" data-k="${esc(k)}" ${marcados[k] ? 'checked' : ''}><span>${T(it)}</span></label>`; }).join('')).join('') + `</section>`;
 
-  const fontes = Object.entries(DATA.fontes_status || {}).map(([k, v]) => `${k}: ${semEmoji(v)}`).join(' · ');
-  h += `<div class="rodape">Gerado em ${esc(isoDDMM(DATA.gerado_em))}. ${esc(fontes)}</div>`;
+  h += `<div class="rodape">Plano atualizado em ${esc(isoDDMM(DATA.gerado_em))}.</div>`;   // 31/10: as fontes ("dias de antibiótico: não sei") saíram da tela
   $("view").innerHTML = h;
   dobrarSecoes();
   document.querySelectorAll('.compra input').forEach(c => c.addEventListener('change', () => {
@@ -940,7 +942,7 @@ function renderAlim() {
   const pct = total ? Math.round(feito / total * 100) : 0;
   let h = topo + abasInicio('alim');
 
-  h += `<section class="bloco"><div class="cab"><h2>Metas de ${esc(W.rotulo)}</h2><small>definidas pelo copiloto de nutrição</small></div>
+  h += `<section class="bloco"><div class="cab"><h2>Metas de ${esc(W.rotulo)}</h2><small>definidas pela nutrição</small></div>
     <div class="meta"><div class="mh"><span>Registros desta semana</span><small>${W.registros.refeicoes} refeições em ${W.registros.dias} dias</small></div></div>
     <div class="meta"><div class="mh"><span>Progresso das metas de alcançar</span><small>${feito} de ${total} · ${pct}%${nota}</small></div>
       <div class="barra" role="img" aria-label="${feito} de ${total}, ${pct} por cento"><i class="${pouco ? 'cinza' : ''}" style="width:${pct}%"></i></div>
@@ -1185,20 +1187,20 @@ async function submitLog() {
   };
   const protEl = document.getElementById('rg-prot'), prot = protEl && parseFloat(protEl.value);
   if (prot > 0) payload.texto = (payload.texto ? payload.texto + ' ' : '') + 'Proteína informada: ' + prot + ' g.';
-  if (!payload.texto && !payload.photos) { st.className = 'status err'; st.textContent = treino ? 'Anexe a screenshot do treino (ou escreva as notas).' : 'Escreva algo ou anexe uma foto.'; return; }
-  btn.disabled = true; st.className = 'status'; st.textContent = 'Enviando…';
+  if (!payload.texto && !payload.photos) { st.className = 'msg err'; st.textContent = treino ? 'Anexe a screenshot do treino (ou escreva as notas).' : 'Escreva algo ou anexe uma foto.'; return; }
+  btn.disabled = true; st.className = 'msg'; st.textContent = 'Enviando…';
   try {
     const r = await fetch('/api/log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     const j = await r.json().catch(() => ({}));
     if (r.ok && j.ok) {
-      st.className = 'status ok'; st.textContent = `Anotado: ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} em ${j.dia}${j.hora ? ' às ' + j.hora : ''}${j.fotos > 1 ? ', com ' + j.fotos + ' fotos' : j.foto ? ', com foto' : ''}.`;
+      st.className = 'msg ok'; st.textContent = `Anotado: ${j.tipo === 'treino' ? 'Treino' : j.tipo === 'observacao' ? 'Observação' : j.refeicao} em ${j.dia}${j.hora ? ' às ' + j.hora : ''}${j.fotos > 1 ? ', com ' + j.fotos + ' fotos' : j.foto ? ', com foto' : ''}.`;
       document.getElementById('rg-txt').value = ''; PHOTOS = []; mostrarFotos(); if (document.getElementById('rg-prot')) document.getElementById('rg-prot').value = '';
       if (document.getElementById('rg-hora')) document.getElementById('rg-hora').value = horaAgora();
       // mantém a aba Corrigir em dia — se a data saiu errada, o conserto está a um toque
       fetch('/api/registros').then((x) => x.ok ? x.json() : { items: [] })
         .then((jj) => { REGISTROS = jj.items || []; }).catch(() => {});
-    } else { st.className = 'status err'; st.textContent = 'Erro: ' + (j.error || r.status) + (j.detail ? ' — ' + String(j.detail).slice(0, 140) : ''); }
-  } catch (e) { st.className = 'status err'; st.textContent = 'Falha de rede: ' + e; }
+    } else { st.className = 'msg err'; st.textContent = 'Erro: ' + (j.error || r.status) + (j.detail ? ' — ' + String(j.detail).slice(0, 140) : ''); }
+  } catch (e) { st.className = 'msg err'; st.textContent = 'Falha de rede: ' + e; }
   btn.disabled = false;
 }
 // ---- correção de registros já gravados (o erro comum é a data errada) ----
@@ -1213,12 +1215,12 @@ function rotuloData(iso) {
   return `${dd}/${m}`;
 }
 async function acaoRegistro(id, metodo, corpo, st) {
-  st.className = 'status'; st.textContent = metodo === 'DELETE' ? 'Excluindo…' : 'Salvando…';
+  st.className = 'msg'; st.textContent = metodo === 'DELETE' ? 'Excluindo…' : 'Salvando…';
   try {
     const r = await fetch('/api/registro', { method: metodo, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id, ...(corpo || {}) }) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok || !j.ok) {
-      st.className = 'status err';
+      st.className = 'msg err';
       st.textContent = 'Erro: ' + (j.error || r.status) + (j.detail ? ' — ' + String(j.detail).slice(0, 120) : '');
       return false;
     }
@@ -1229,10 +1231,10 @@ async function acaoRegistro(id, metodo, corpo, st) {
     EDIT_ID = null;
     renderReg();
     const st2 = document.getElementById('rg-status');
-    if (st2) { st2.className = 'status ok'; st2.textContent = j.acao === 'excluido' ? 'Registro excluído. Foi para a lixeira do Notion e dá para recuperar.' : `Corrigido: ${j.refeicao || j.tipo} em ${j.dia}.`; }
+    if (st2) { st2.className = 'msg ok'; st2.textContent = j.acao === 'excluido' ? 'Registro excluído. Ele pode ser recuperado por 30 dias.' : `Corrigido: ${j.refeicao || j.tipo} em ${j.dia}.`; }
     return true;
   } catch (e) {
-    st.className = 'status err'; st.textContent = 'Falha de rede: ' + e;
+    st.className = 'msg err'; st.textContent = 'Falha de rede: ' + e;
     return false;
   }
 }
@@ -1273,18 +1275,18 @@ function ligarListaRegistros() {
     const id = el.dataset.id;
     el.querySelector('.r-edit')?.addEventListener('click', () => { EDIT_ID = id; renderReg(); });
     el.querySelector('.r-del')?.addEventListener('click', () => {
-      if (!confirm('Excluir este registro?\n\nEle vai pra lixeira do Notion — dá pra recuperar por 30 dias.')) return;
+      if (!confirm('Excluir este registro?\n\nDá para recuperar por 30 dias.')) return;
       el.querySelectorAll('button').forEach((b) => b.disabled = true);
-      acaoRegistro(id, 'DELETE', null, st);
+      acaoRegistro(id, 'DELETE', null, st).then((ok) => { if (!ok) el.querySelectorAll('button').forEach((b) => b.disabled = false); });
     });
     el.querySelector('.e-cancel')?.addEventListener('click', () => { EDIT_ID = null; renderReg(); });
     el.querySelector('.e-save')?.addEventListener('click', () => {
       const corpo = { data: el.querySelector('.e-data').value, hora: el.querySelector('.e-hora').value, texto: el.querySelector('.e-txt').value.trim() };
       const ref = el.querySelector('.e-ref');
       if (ref) corpo.refeicao = ref.value;
-      if (!corpo.data) { st.className = 'status err'; st.textContent = 'Escolha uma data.'; return; }
+      if (!corpo.data) { st.className = 'msg err'; st.textContent = 'Escolha uma data.'; return; }
       el.querySelectorAll('button').forEach((b) => b.disabled = true);
-      acaoRegistro(id, 'PATCH', corpo, st);
+      acaoRegistro(id, 'PATCH', corpo, st).then((ok) => { if (!ok) el.querySelectorAll('button').forEach((b) => b.disabled = false); });
     });
   });
 }
@@ -1307,8 +1309,8 @@ function renderReg() {
   };
   if (corrigir) {
     $("view").innerHTML = topo + `<section class="bloco" style="padding-top:8px">${abas}${renderListaRegistros()}
-      <div id="rg-status" class="status" style="margin-top:12px"></div>
-      <div class="aviso">Mudar a data devolve o registro para a fila: eu releio na próxima análise, porque a leitura anterior estava no dia errado. Excluir manda para a lixeira do Notion, recuperável por 30 dias.</div></section>`;
+      <div id="rg-status" class="msg" role="status" aria-live="polite" style="margin-top:12px"></div>
+      <div class="aviso">Mudar a data devolve o registro para a fila: eu releio na próxima análise, porque a leitura anterior estava no dia errado. Excluir guarda o registro por 30 dias, recuperável por 30 dias.</div></section>`;
     ligarAbas(); ligarListaRegistros();
     return;
   }
@@ -1326,8 +1328,8 @@ function renderReg() {
         <label class="filebtn">${treino ? 'Anexar screenshot' : 'Escolher da galeria'}<input type="file" id="rg-foto" accept="image/*" multiple></label>
         <div class="rg-fotos" id="rg-fotos"></div></div></div>
       <button class="botao" id="rg-send">Registrar ${label} ${ico('mais')}</button>
-      <div id="rg-status" class="status"></div>
-      <div class="aviso">${treino ? 'Sem análise agora: a screenshot vai crua. No fechamento da semana eu extraio exercícios, séries e carga.' : obs ? 'Sem análise agora: fica na caixa bruta para eu considerar no próximo resumo.' : 'Sem análise agora: vai cru para a caixa. No fechamento da semana eu leio tudo.'}</div>
+      <div id="rg-status" class="msg" role="status" aria-live="polite"></div>
+      <div class="aviso">${treino ? 'Sem análise agora: a screenshot vai crua. No fechamento da semana eu extraio exercícios, séries e carga.' : obs ? 'Sem análise agora: fica guardado para entrar no próximo resumo.' : 'Sem análise agora: fica guardado. No fechamento da semana eu leio tudo.'}</div>
     </div></section>`;
   document.getElementById('rg-data').value = (REG_PRESET && REG_PRESET.data) || isoLocal();
   document.getElementById('rg-hora').value = (REG_PRESET && REG_PRESET.hora) || horaAgora();
@@ -1359,6 +1361,7 @@ function renderHojeSemPlano() {
 function route() {
   renderStatus();
   const id = (location.hash || '#home').slice(1);
+  document.body.classList.toggle('imersivo', /^(treino|corrida)(\/|$)/.test(id));   // treino e corrida: sem o cabeçalho de 250 px
   if (id === 'reg' || id.startsWith('reg/')) { const pr = id.split('/'); if (pr[1] === 'refeicao') { REG_TIPO = 'refeicao'; REG_PRESET = { refeicao: decodeURIComponent(pr[2] || ''), data: pr[3] || '' }; } renderNav('reg'); renderReg(); window.scrollTo(0, 0); return; }
   if (id === 'evo') { renderNav('evo'); renderEvo(); window.scrollTo(0, 0); return; }
   if (id === 'jornada') { location.replace('#campanha'); return; }
@@ -1378,7 +1381,10 @@ function route() {
 let SAIU_EM = 0;
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) { SAIU_EM = Date.now(); return; }
-  if (SAIU_EM && Date.now() - SAIU_EM > 10 * 60 * 1000 && !document.querySelector('#rg-txt')?.value) location.reload();
+  // Nunca recarrega com coisa em andamento (31/10: perdia a corrida guiada, as fotos anexadas e o que estava digitado)
+  const emAndamento = /^#(corrida|treino|reg)/.test(location.hash) || (typeof C !== 'undefined' && C) || (typeof PHOTOS !== 'undefined' && PHOTOS.length)
+    || document.querySelector('#rg-txt')?.value || document.getElementById('t-folego')?.hidden === false;
+  if (SAIU_EM && Date.now() - SAIU_EM > 10 * 60 * 1000 && !emAndamento) location.reload();
 });
 
 fetch("data/semana.json").then(r => r.json()).then(d => {

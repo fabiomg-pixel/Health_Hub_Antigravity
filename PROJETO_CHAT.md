@@ -1202,3 +1202,23 @@ Desenho no canvas "Animações do Painel" (rodada 2); código em `painel/palco.j
 - **Regras:** o peso nunca ganha palco; perda é lenta e quieta; com movimento reduzido tudo vai ao estado final.
   Vibração só no Android.
 - O laço de despachos republica o painel quando envia um marco, para o palco chegar ao app.
+
+## 34. Avaliação profunda e correções (31/10/2026)
+
+Cinco revisores (Haiku, só leitura) avaliaram funcionalidade, acompanhamento, pipeline, Campanha e interface; 41 achados em
+`propostas/avaliacao_2026-10-31.md`. O Fabio pediu "resolva tudo" e decidiu: progressão simples, juramento de 26/10 anulado,
+meta de força fixa em 3, bônus só XP.
+- **Segurança:** `painel/middleware.js` + `api/_auth.js` exigem o cabeçalho `x-painel-key` em `/api` e `/data`; o app guarda o
+  código no aparelho (`#acesso=CODIGO` ou digitando); scripts usam `painel_acesso.py` e `painel_get.sh`. **A barreira só liga
+  depois de `./ativar_acesso.sh`** (gera o código, grava `.env`, `acesso_painel.txt` e a Vercel). Sem `PAINEL_KEY` fica aberta.
+- **Confiabilidade:** carimbo de envio fora de Documents (`envio_<tipo>.stamp`; o verificador deixa de reenviar rotinas),
+  `atualizar_dados.sh` (falha visível, não trunca), Garmin só faz login completo com token morto, gravação atômica + trava +
+  JSON ilegível falha alto (`util_arq.py`), histerese/timeout nos despachos, laço com sinal de vida, `caffeinate` das 7h às 23h,
+  reanimação do bot e `backup.sh` diário (`~/Backups/health-hub`), vigia pronto (`extras/bot/vigia.sh`, falta carregar no launchd).
+- **Fechamento de domingo:** só na rotina das 23h05, depois de `./atualizar_dados.sh`.
+- **Registros:** `/api/registros` pagina (padrão 300; `?tudo=1` até 3.000); `/api/log` não duplica Treino igual no mesmo dia.
+- **Campanha:** estalagem conta como item; "cancelei/adiei/descansei" não pagam XP; força fixa em 3; bônus só XP;
+  juramento só por sinais de segurança (relato dele) ou fritura; baralho da Parte II com 8, 8, 6, 6 e 5 cartas.
+- **App:** corrida guiada vira Treino; treino terminado aparece no Hoje na hora; prancha só vale cronometrada; trocar exercício
+  não apaga carga feita; barra fixa de situação no treino; cabeçalho some no treino e na corrida; mensagens legíveis; sem
+  recarregamento automático com sessão em andamento; um palco de Campanha por dia, só no Início ou no Hoje.

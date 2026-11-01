@@ -160,7 +160,7 @@ function cFim(parou) {
     <button class="botao" id="c-reg" type="button">Registrar a corrida</button></section>
     <section class="bloco"><a class="botao claro" href="#corrida">Voltar</a></section>`;
   document.getElementById('c-reg').onclick = () => {
-    REG_TIPO = 'observacao'; location.hash = '#reg';
+    REG_TIPO = 'treino'; location.hash = '#reg';   // 31/10: antes era Observação e o Hoje não marcava a corrida como feita
     setTimeout(() => { const t = document.getElementById('rg-txt'); if (t && !t.value) t.value = texto + ' '; }, 80);
   };
 }

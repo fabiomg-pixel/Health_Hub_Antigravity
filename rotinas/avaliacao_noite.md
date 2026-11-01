@@ -23,7 +23,13 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
 4. **Avalie, sem cobrar.**
    - Refeições: quais ocasiões do plano apareceram no registro. Proteína: some só o que tem número (rótulo
      ou plano); registro esparso NÃO é ausência de refeição; não estime o que não tem dado.
-   - Treino: o plano de hoje tinha atividade? Há registro de Treino? Corrida só conta se estava no plano.
+   - Treino: o plano de hoje tinha atividade? Há registro de Treino? (A rodada bônus é opcional e não conta como sessão.)
+   - **Corrida: confira a intensidade com o plano** (31/10, avaliação profunda): corrida fácil = zona 2, FC 130 a 145. Se a FC média
+     do Garmin (`fatos.json` → `atividades_garmin`) passou de 145, ou o dia estava em Ajustar e a corrida foi de qualidade, diga em
+     UMA linha, sem cobrança, e leve o ajuste de amanhã para isso (ritmo menor, mais caminhada nos primeiros minutos).
+   - **Segurança (uma linha, só enquanto houver sintoma ou remédio em curso):** pergunte UMA vez por dia por febre, falta de ar ou aperto no
+     peito, e pelas perguntas de remédio ainda abertas (hora da última dose de ibuprofeno, dias que faltam de antibiótico). Sem resposta em
+     3 dias, registre "não sei" no diário e PARE de perguntar; nunca use dado que não veio. Conduta clínica não é com você.
    - Observações (dor, resfriado, sono, remédio): considere; dor articular ou no tornozelo, sinalize o fisio.
      Nunca prescreva conduta clínica nem opine sobre remédio.
    - Regras vigentes: fritura (conte as refeições fritas registradas e o que sobra do teto da semana),

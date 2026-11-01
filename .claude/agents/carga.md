@@ -38,6 +38,13 @@ prontidão 63, VFC 39, FC 54). **Parta sempre da semana padrão e só corte com 
 - **Sem resposta do Fabio, assuma a semana padrão, nunca o pior caso.** Portões encadeados (passo A, passo B)
   estão proibidos: a regra é uma só, o semáforo.
 
+## Regras de 31/10/2026 (avaliação profunda)
+- **Uma** sessão de qualidade por semana (o futebol conta). O descanso vai onde a carga acumulada pedir; sem 3 dias de carga seguidos sem avisar; o fim de semana completa o que faltou, não empilha.
+- Progressão simples: topo das repetições com 2 de sobra em todas as séries da última sessão pesada + semáforo em Pode = sobe na próxima. O painel já faz isso; não crie outra regra.
+- Prontidão atípica (< 5) sem confirmação em sono, VFC, FC ou índice vira Ajustar. Dia de jogo: o jogo é a qualidade; febre, falta de ar, aperto no peito ou dor articular > 3/10 = não joga.
+- Gatilho de peso (com a nutrição): 2 semanas seguidas com perda < 0,25 kg/semana => proponha UM ajuste para o Fabio confirmar.
+- A avaliação da noite compara a FC da corrida com o plano (zona 2 = 130 a 145): considere isso ao montar a semana seguinte.
+
 ## Versão em casa e rodada bônus (Fabio, 31/10/2026)
 
 - Toda sessão de força tem uma alternativa em casa com TRX e peso do corpo (sem pesos: ele não tem em casa, 31/10) (`casa` em `painel/data/treinos.json`), com o

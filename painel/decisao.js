@@ -23,7 +23,12 @@ function avaliarSemaforo() {
   const s7 = rc.sono_medio_7d, h7 = rc.hrv_medio_7d, f7 = rc.fc_repouso_7d;
   const segurar = [], ajustar = [];
   if ((rc.dias_vermelhos_seguidos || 0) >= 3) segurar.push(rc.dias_vermelhos_seguidos + ' dias seguidos em banda vermelha');
-  if (pront != null && pront < 30) segurar.push('prontidão do Garmin em ' + pront + ' (abaixo de 30)');
+  // Leitura atípica (abaixo de 5) sem confirmação em nenhum número seu vira Ajustar, não Segurar (31/10: o 1 de hoje podia ser erro do relógio).
+  const corrobora = (confiavel && rc.banda_hoje === 'r') || (sono != null && sono < 6) || (hrv != null && hrv < 30) || (fc != null && fc >= 58);
+  if (pront != null && pront < 30) {
+    if (pront < 5 && !corrobora) ajustar.push('prontidão do Garmin em ' + pront + ' (valor atípico, sem confirmação no seu sono, VFC e FC: tratei como Ajustar)');
+    else segurar.push('prontidão do Garmin em ' + pront + ' (abaixo de 30)');
+  }
   if (sono != null && sono < 5.5 && ((hrv != null && hrv < 30) || (fc != null && fc >= 58)))
     segurar.push('noite de ' + fNum(sono, 1) + ' h com ' + (hrv != null && hrv < 30 ? 'VFC ' + hrv + ' ms' : 'FC de repouso ' + fc + ' bpm'));
   if (pront != null && pront >= 30 && pront < 45) ajustar.push('prontidão do Garmin em ' + pront + ' (30 a 44)');
@@ -39,7 +44,7 @@ function avaliarSemaforo() {
   else motivos = ['Dia normal de treino' + (pront != null ? ' (prontidão do Garmin ' + pront + ')' : '') + '.'];
   const moderar = estado === 'pode' && medios >= 2;
   if (moderar) motivos.push('duas ou mais médias de 7 dias baixas: sem recorde de carga esta semana');
-  const liberaCarga = estado === 'pode' && !moderar && (pront == null || pront >= 60) && !(f7 != null && f7 >= 57);
+  const liberaCarga = estado === 'pode' && !moderar;   // regra simples (31/10): só o semáforo; sem leitura de hoje, a carga não sobe
   return { estado, moderar, liberaCarga, motivos, medios, resumo7, dadosEm: f.gerado_em || '' };
 }
 const SEM_TXT = {
@@ -51,12 +56,15 @@ const SEM_TXT = {
 };
 function blocoSemaforo() {
   const s = avaliarSemaforo(), t = SEM_TXT[s.estado === 'pode' && s.moderar ? 'moderar' : s.estado];
+  const dj = typeof DATA !== 'undefined' && DATA && DATA.dias.find(d => d.data === hojeDDMM());
+  const jogo = dj && typeof tipoProgramado === 'function' && tipoProgramado(dj) === 'jogo'
+    ? `<div class="par" style="color:var(--sec)">Dia de jogo: o jogo é a sua sessão de qualidade da semana. O semáforo vale como leitura do corpo; febre, falta de ar, aperto no peito ou dor articular acima de 3/10 = não joga.</div>` : '';
   const atencao = s.estado === 'pode' && s.medios >= 2 ? `<div class="par" style="color:var(--sec)">A semana está em faixa média (${esc(s.resumo7)}): por isso a carga não sobe sozinha.</div>` : '';
   return `<section class="bloco"><div class="cab"><h2>Pode treinar hoje?</h2><small>${s.dadosEm ? 'dados de ' + esc(isoDDMM(s.dadosEm.slice(0, 10)) + ' às ' + s.dadosEm.slice(11, 16)) : ''}</small></div>
     <div class="linha" style="align-items:flex-start;border-bottom:0"><span class="sem sem-${s.estado}" role="img" aria-label="${esc(t[0])}">${esc(t[0])}</span>
-      <span class="corpo" style="font-weight:500">${esc(t[1])}<small>${s.motivos.map(esc).join(' · ')}</small></span></div>${atencao}
+      <span class="corpo" style="font-weight:500">${esc(t[1])}<small>${s.motivos.map(esc).join(' · ')}</small></span></div>${atencao}${jogo}
     <details><summary>Como eu decido</summary><div class="miolo">
-      <div class="par"><b>Segurar:</b> 3 ou mais dias seguidos em banda vermelha, prontidão do Garmin abaixo de 30, ou noite abaixo de 5,5 h com VFC abaixo de 30 ou FC de repouso a partir de 58.</div>
+      <div class="par"><b>Segurar:</b> 3 ou mais dias seguidos em banda vermelha, prontidão do Garmin abaixo de 30 (um valor abaixo de 5 sem nada que o confirme vira Ajustar), ou noite abaixo de 5,5 h com VFC abaixo de 30 ou FC de repouso a partir de 58.</div>
       <div class="par"><b>Ajustar:</b> prontidão do Garmin de 30 a 44, noite abaixo de 5,5 h, ou índice próprio vermelho.</div>
       <div class="par"><b>Pode, sem recorde:</b> duas ou mais médias de 7 dias baixas (VFC abaixo de 35, FC de repouso a partir de 57, sono abaixo de 6 h).</div>
       <div class="par"><b>Pode:</b> o resto. Índice amarelo e prontidão de 45 para cima são dias normais de treino. Nível de base subido por você em 27/10: os cortes antigos eram da fase do resfriado.</div></details></section>`;
@@ -149,7 +157,7 @@ function blocoComer() {
     <div class="linha" style="align-items:flex-start"><span class="corpo"><b>Marmita</b><small>só com 35 g de proteína ou mais no rótulo e vegetal visível no prato.</small></span></div>
     <div class="linha" style="align-items:flex-start"><span class="corpo"><b>Delivery ou restaurante</b><small>proteína grelhada, sem fritura, um vegetal. Arroz depois, em meia porção.</small></span></div>
     <div class="linha" style="align-items:flex-start"><span class="corpo"><b>Cozinhando</b><small>proteína (uma janta de peixe na semana), 2 legumes de famílias diferentes e meia porção de arroz integral.</small></span></div>
-    <div class="linha" style="align-items:flex-start"><span class="corpo"><b>Fome entre as refeições</b><small>17h: iogurte, whey, granola e fruta, antes de qualquer doce.</small></span></div>
+    <div class="linha" style="align-items:flex-start"><span class="corpo"><b>Fome entre as refeições</b><small>15h às 16h: iogurte, whey, granola e fruta, antes de qualquer doce.</small></span></div>
     ${p.registradas ? `<div class="aviso">Hoje: ${fNum(p.g, 0)} g registrados com número${p.g < piso ? ', faltam pelo menos ' + fNum(piso - p.g, 0) + ' g para o piso de ' + piso + ' g' : ', piso atingido'}.</div>` : ''}</section>`;
 }
 
@@ -161,11 +169,11 @@ function blocoPorteira() {
   const sem = (DASH.frequencia || []).slice(-3, -1);   // as duas semanas fechadas mais recentes
   const corridas = null;   // contagem de corridas por semana ainda não vem do relógio: só os 7 dias recentes
   const linha = (ok, nome, det) => `<div class="linha" style="align-items:flex-start"><span class="corpo">${esc(nome)}<small>${esc(det)}</small></span><span class="st ${ok === true ? 'ok' : ok === false ? 'nao' : 'par'}">${ok === true ? '● ok' : ok === false ? '○ ainda não' : '◐ sem dado'}</span></div>`;
-  return `<section class="bloco"><div class="cab"><h2>Porteira da fase 2</h2><small>corrida com qualidade</small></div>
+  return `<section class="bloco"><div class="cab"><h2>Corrida de qualidade</h2><small>corrida com qualidade</small></div>
     ${linha(fcOk, 'FC de repouso até 52 bpm por 3 dias seguidos', fc.length ? 'últimos 3 dias: ' + fc.map(x => fNum(x.valor, 0)).join(', ') + ' bpm' : 'sem dado')}
     ${linha(hvOk, 'VFC de 38 ms ou mais', hv ? 'última leitura: ' + fNum(hv.valor, 0) + ' ms' : 'sem dado')}
     ${linha(corridas, 'Duas semanas com 5 corridas ou mais', 'o relógio ainda não conta corridas por semana; hoje só vemos os últimos 7 dias')}
-    <div class="aviso">Só abre a fase 2 (um dia de qualidade por semana) com os três (PROJETO_CHAT §15). Sem os três, ficar na fase 1 não é atraso: é o que faz a fase seguinte render.</div></section>`;
+    <div class="aviso">A corrida de qualidade (uma por semana) entra com os três critérios em dia. Sem eles, seguir com as corridas fáceis não é atraso: é o que faz a de qualidade render.</div></section>`;
 }
 function blocoVolume() {
   const regs = (typeof REGISTROS !== 'undefined' ? REGISTROS : []).filter(r => r.tipo === 'Treino'); if (!regs.length) return '';

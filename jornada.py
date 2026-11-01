@@ -257,7 +257,7 @@ if dia_plano:
     missoes_hoje.append({'nome': 'Dia ativo', 'xp': XP['dia_ativo'], 'feito': a, 'sem_dado': a is None})
     missoes_hoje.append({'nome': 'Pesagem em jejum', 'xp': XP['pesagem'], 'feito': hoje_s in PES})
     if (dia_plano.get('refeicoes') or {}).get('almoco'): missoes_hoje.append({'nome': 'Registrar o almoço', 'xp': XP['almoco'], 'feito': 'almoco' in f_hoje})
-    missoes_hoje.append({'nome': 'Registrar o lanche das 17h', 'xp': XP['lanche'], 'feito': 'lanche' in f_hoje})
+    missoes_hoje.append({'nome': 'Registrar o lanche da tarde', 'xp': XP['lanche'], 'feito': 'lanche' in f_hoje})
     if ferido or 'estalagem' in f_hoje:
         missoes_hoje.append({'nome': 'Estalagem: descansar conta como cumprido (o Silvester confirma com você)', 'xp': XP['estalagem'], 'feito': 'estalagem' in f_hoje, 'estalagem': True})
 

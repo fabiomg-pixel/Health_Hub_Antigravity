@@ -50,7 +50,7 @@ quarenta anos como quem guarda um túmulo.
 **Voz.** Frases curtas, muitas pausas. Chama todos de "rapaz" e "menina", até Bram. Conta histórias dos guardiões
 mortos como se ainda estivessem vivos. Nunca diz "eu tenho medo", diz "vamos devagar".
 **Manias.** Toca a pedra de cada farol. Limpa o vidro da lanterna com a manga à noite, nome por nome.
-**Segredo (para quem escreve).** A Senhora dos Poços de Salmoura é **Lúcia**, viva, que não esqueceu porque passou
+**Segredo (para quem escreve). ATUALIZAÇÃO 31/10: o NOME já saiu na história (o menino disse "Lúcia" e Teodoro confessou "eu menti"). O que ainda se guarda: a natureza da mentira (ele disse que ela morreu no Platô e a deixou viva; ela o acha traidor), o recado dos sete nomes na pedra e o plano dela de voltar ao norte. A Senhora dos Poços de Salmoura é **Lúcia**, viva, que não esqueceu porque passou
 quarenta anos ao lado de estilhas guardadas pela Liga. A letra miúda e redonda do mapa é dela. Ela acredita que
 Teodoro a abandonou. Os sete nomes gravados por dentro da pedra de Ost foram escritos por ela na noite em que roubou o
 coração do farol: um recado que só ele entenderia. Ela não trabalha para a Liga; usa a Liga para juntar luz e voltar
@@ -141,6 +141,8 @@ que Bram poupou. Corajoso de um jeito que assusta os adultos.
 - **Maren**: viu a garça no Códice e os sete nomes na parede; não contou nenhum dos dois.
 
 ## Mudou (registro por parte)
+
+- **Parte II (até 31/10)**: Teodoro confessou que mentiu e o nome de Lúcia saiu; Bram reconhece o selo das arenas no apito do menino (semente: o menino é irmão do rapaz poupado); Iara descobriu que o menino canta o 1º verso da canção que ela conhece (semente: Lúcia ensinou, ligação com o Clã das Garças); Maren confrontou a letra miúda com o sexto nome da parede; Fabio contou 8 ganchos e 7 nomes.
 
 - **Parte I**: Bram perdeu a Runa do Escudo protegendo Fabio; Iara ganhou a Mácula na tempestade; Maren ouviu Aelis
   falar no sonho.

@@ -12,6 +12,8 @@ import { autorizado } from './_auth.js';
 
 export const config = { api: { bodyParser: { sizeLimit: '6mb' } } };
 
+const fotoPropExiste = (photos, one) => (Array.isArray(photos) && photos.length > 0) || !!one;
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
   if (!autorizado(req)) return res.status(401).json({ erro: 'acesso' });
@@ -32,6 +34,20 @@ export default async function handler(req, res) {
     const isTreino = tipo === 'treino';
     const isObs = tipo === 'observacao';
     const tipoLabel = isTreino ? 'Treino' : isObs ? 'Observação' : 'Refeição';
+
+    // Treino repetido (31/10): o painel pode reenviar o mesmo treino (fila offline, resposta perdida, toque duplo). Se já
+    // existe um registro de Treino igual no mesmo dia, não cria outro e diz que já estava lá.
+    if (isTreino && texto && !fotoPropExiste(photos, photoBase64)) {
+      const q = await fetch(`https://api.notion.com/v1/databases/${DB}/query`, {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${NOTION_TOKEN}`, 'Content-Type': 'application/json', 'Notion-Version': '2022-06-28' },
+        body: JSON.stringify({ page_size: 1, filter: { and: [
+          { property: 'Tipo', select: { equals: 'Treino' } },
+          { property: 'Data', date: { on_or_after: dia } }, { property: 'Data', date: { on_or_before: dia } },
+          { property: 'Texto', rich_text: { equals: String(texto).slice(0, 1900) } } ] } }),
+      }).catch(() => null);
+      if (q && q.ok && ((await q.json()).results || []).length) return res.status(200).json({ ok: true, duplicado: true, dia, tipo: 'treino' });
+    }
 
     // Até 3 fotos por registro (pedido do Fabio, 19/10). `photoBase64` sozinho continua valendo.
     const lista = (Array.isArray(photos) ? photos : []).concat(photoBase64 ? [photoBase64] : []).filter(Boolean).slice(0, 3);

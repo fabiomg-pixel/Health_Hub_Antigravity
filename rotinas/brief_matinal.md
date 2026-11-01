@@ -50,6 +50,9 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
    o ajuste como "De ontem". Carimbo de outra data, ausente ou ilegível: **não use o conteúdo**. Nos dois
    casos apague o arquivo. Fora o carryover de hoje, o `semana.json` manda (um carryover vencido já
    remarcou um treino por engano em 20/09/2026).
+5b. **Segurança (uma linha, só enquanto houver sintoma ou remédio em curso):** febre, falta de ar ou aperto no peito hoje? E as perguntas de
+   remédio ainda abertas (hora da última dose de ibuprofeno; dias que faltam de antibiótico): pergunte UMA vez por dia; sem resposta em
+   3 dias, registre "não sei" e pare. O gatilho de peso vem do conselho (decisoes.md): você só informa o ritmo se perguntarem.
 6. **Semáforo.** O "Pode treinar hoje?" é calculado pelo painel (aba Hoje), com cortes definidos pela
    fisiologista. Você NÃO recalcula: cite a faixa do índice e a prontidão e mande abrir o painel.
 7. **Mensagem 1** (curta, no máximo ~14 linhas, PT-BR):
@@ -59,7 +62,7 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
    Corpo: sono [Y] h · VFC [V] · FC de repouso [F] · índice [I] ([faixa]) · prontidão [P][ (de DD/MM)]
    Peso: média [M] kg[; sem pesagem hoje]
    Hoje: [atividade programada, ou "sem treino programado"]
-   Refeições: almoço [nome], lanche das 17h [nome], janta [nome]
+   Refeições: almoço [nome], lanche da tarde (15h às 16h) [nome], janta [nome]
    Ontem: [devolutiva de uma linha, se houver]
    [Observação e a pergunta "como você acordou?", se houver]
    [De ontem: ajuste do carryover, se for de hoje]

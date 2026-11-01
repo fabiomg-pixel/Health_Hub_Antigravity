@@ -187,7 +187,7 @@ let P_CAMP_FEITO = false;
 function palcosDaCampanha() {
   const H = typeof HISTORIA !== 'undefined' && HISTORIA;
   if (P_CAMP_FEITO || !H || !H.diario || typeof DATA === 'undefined' || !DATA) return;
-  if (/^(treino|corrida|reg)/.test((location.hash || '#home').slice(1))) return;
+  if (!['', 'home', 'hoje'].includes((location.hash || '#home').slice(1))) return;   // só no Início ou no Hoje: nunca no meio do treino, da corrida ou do registro
   P_CAMP_FEITO = true;
   const evs = [];
   H.diario.forEach(d => { const c = {}; (d.eventos || []).forEach(ev => { c[ev.tipo] = (c[ev.tipo] || 0) + 1; evs.push({ id: d.data + ':' + ev.tipo + ':' + c[ev.tipo], d, ev }); }); });
@@ -200,8 +200,14 @@ function palcosDaCampanha() {
   const forja = !!(pj && (pj.reliquias || []).includes('lamina_estelar') && !(H.reliquias || []).some(r => r.id === 'lamina_estelar'));
   const total = forja ? 5 : Math.min(5, pj && pj.materiais ? (pj.materiais.estilha || 0) : ((H.materiais || {}).estilha || {}).qtd || 0);
   const bencaos = novos.filter(x => x.ev.tipo === 'bencao');
-  bencaos.forEach((x, k) => palcoEstilha(x.ev, Math.max(1, total - (bencaos.length - 1 - k)), forja && k === bencaos.length - 1));
-  novos.filter(x => x.ev.tipo === 'maldicao' || x.ev.tipo === 'percalco').forEach(x => palcoCinza(x.ev));
+  // No máximo UM palco de Campanha por dia (31/10): se vários eventos chegaram juntos, sobe o mais pesado; os outros já estão no diário de bordo e no Telegram.
+  const hoje = isoLocal(); if (pLer('p_camp_dia', '') === hoje) return;
+  const peso = { maldicao: 3, percalco: 2, bencao: 1 };
+  const alvo = novos.filter(x => peso[x.ev.tipo]).sort((a, b) => (forja && b.ev.tipo === 'bencao' ? 9 : peso[b.ev.tipo]) - (forja && a.ev.tipo === 'bencao' ? 9 : peso[a.ev.tipo]))[0];
+  if (!alvo) return;
+  pGravar('p_camp_dia', hoje);
+  if (alvo.ev.tipo === 'bencao') palcoEstilha(alvo.ev, Math.max(1, total - (bencaos.length - 1 - bencaos.indexOf(alvo))), forja && alvo === bencaos[bencaos.length - 1]);
+  else palcoCinza(alvo.ev);
 }
 // dispara quando o plano e a história já chegaram (a ordem dos fetches varia); depois da abertura do dia
 (function esperar(n) {
@@ -326,7 +332,7 @@ function palcoFim(o) {
       <span class="carta"><span class="miolo"><span class="face costas">${P_ESTRELA}</span>
         <span class="face frente"><span style="font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--campo)">Diário de bordo</span>
         <span style="font-family:var(--display);font-weight:800;font-size:19px;line-height:1.1">O dia entra na Campanha</span>
-        <span style="font-size:13px;line-height:1.4">Se ele fechar uma carta, o despacho chega pelo Telegram em até 15 min.</span></span></span></span>
+        <span style="font-size:13px;line-height:1.4">Se o dia fechar uma carta, o despacho chega pelo Telegram em até 15 min.</span></span></span></span>
       <button type="button" class="p-bt escuro" data-p="ok">Fechar</button></div>`;
     ctl.el.querySelector('.cheia svg').style.cssText = 'display:block';
     pContar(ctl, 850);

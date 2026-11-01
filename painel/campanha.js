@@ -106,7 +106,7 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-cena .tx { font-family: Georgia, 'Times New Roman', serif; font-size: 15.5px; line-height: 1.62; margin: 8px 0 0; opacity: 0.95; }
   .cp-cena .ef { font-size: 13px; line-height: 1.55; margin-top: 8px; color: var(--sol); font-weight: 600; }
   .cp-tiers { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-  .cp-tiers button { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 7px 10px; font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; min-height: 36px; }
+  .cp-tiers button { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 7px 10px; min-height: 44px; font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer; min-height: 36px; }
   .cp-tiers button.on { background: var(--sol); color: var(--tinta); border-color: var(--sol); }
   .cp-mini { width: 32px; height: 36px; image-rendering: pixelated; display: block; margin-bottom: 6px; }
   .cp-leitura { position: relative; }
@@ -207,7 +207,7 @@ function blocoMissoesHoje() {
   const xp = Math.min(250, ms.reduce((a, m) => a + (m.ok ? m.xp : 0), 0));
   return `<section class="bloco"><div class="cab"><h2>Missões de hoje</h2><small>+${xp} XP até agora</small></div>` +
     ms.map(m => `<div class="cp-mh ${m.ok ? 'ok' : (m.sem_dado ? 'nd' : '')}"><span class="bx">${m.ok ? ico('visto', 13, 3.5).replace('currentColor', '#fff') : ''}</span>
-      <span class="tx">${esc(m.nome)}${m.sem_dado ? '<small>o relógio ainda não mandou o dado de hoje</small>' : (m.estalagem ? '<small>o Silvester propõe pelo Telegram; só conta depois do seu sim</small>' : '')}</span>
+      <span class="tx">${esc(m.nome)}${m.sem_dado ? '<small>o relógio ainda não mandou o dado de hoje</small>' : (m.estalagem ? '<small>o treinador propõe pelo Telegram; só conta depois do seu sim</small>' : '')}</span>
       <span class="xp">${m.xp ? '+' + m.xp : ''}</span></div>`).join('') +
     `<div class="par" style="color:var(--sec);padding-top:10px">XP só por comportamento: o peso nunca dá nem tira XP.</div></section>`;
 }
@@ -268,7 +268,7 @@ const CP_TIER_TXT = {
   sustenta: 'Impasse: metade das missões ou mais. A companhia segura o terreno e se recupera, sem avançar.',
   reves: 'Revés: semana fraca. Um companheiro sai ferido do trecho.',
   crise: 'Crise: semana vazia, ou duas fracas seguidas. A companhia recua uma etapa e um companheiro é capturado; há 3 semanas para o resgate.',
-  sem_dado: 'Sem dado: a névoa cobriu o mapa e nada foi decidido.',
+  sem_dado: 'Sem leitura do relógio: nada foi decidido nesse dia.',
 };
 function cpUltimoDesfecho() { const cs = ((HISTORIA || {}).capitulos || []).filter(c => c.concluido && c.cena); return cs[cs.length - 1] || null; }
 function cpParamsPreview(tier) {
@@ -389,9 +389,19 @@ function cpLivroMundo() {
   return `<section class="bloco cp-mundo"><div class="cab"><h2>O Livro do Mundo</h2><small>lugares, gente e forças das Marcas do Sal</small></div>` +
     b.map(x => `<details><summary>${esc(x.titulo)}</summary><div class="cp-leitura">${cpMd(x.texto)}</div></details>`).join('') + `</section>`;
 }
+// "Como estou indo?" logo no topo (31/10): as missões da semana e o desfecho se a parte fechasse agora.
+function cpResumoSemana() {
+  const j = JORNADA, H = HISTORIA; if (!j || !j.capitulo || !(j.capitulo.missoes || []).length) return '';
+  const ms = j.capitulo.missoes, ok = ms.filter(m => m.cumprida).length;
+  const nome = { triunfo: 'triunfo', avanco: 'avanço', sustenta: 'impasse', reves: 'revés', crise: 'crise' };
+  const pj = H && H.projecao;
+  return `<section class="bloco"><div class="cab"><h2>Esta semana</h2><small>${ok} de ${ms.length} missões</small></div>
+    <div class="cp-lista">${ms.map(m => `<div class="${m.cumprida ? '' : 'tr'}"><b>${m.cumprida ? 'Feita' : 'Falta'} · ${esc(m.nome)}</b>${m.feito} de ${m.meta}</div>`).join('')}</div>
+    ${pj ? `<div class="par" style="padding-top:12px">Se a parte fechasse agora: <b>${esc(nome[pj.tier] || pj.tier)}</b>.${(pj.efeitos || []).length ? ' ' + esc(pj.efeitos[0]) : ''}</div>` : ''}</section>`;
+}
 function cpAventura() {
   const H = HISTORIA; if (!H) return '';
-  let h = '<div class="cp-aventura">' + cpPrologo() + (H.encerramento ? cpEncerramento() : cpDesfecho()) + cpPremissa() + cpDiario();
+  let h = '<div class="cp-aventura">' + cpResumoSemana() + cpPrologo() + (H.encerramento ? cpEncerramento() : cpDesfecho()) + cpPremissa() + cpDiario();
   if (H.crise) {
     const g = H.crise.g, ela = g === 'o' ? 'ele' : 'ela', a = g === 'o' ? 'o' : 'a';
     h += `<div class="cp-crise"><b class="t">Crise aberta: ${esc(H.crise.companheiro)}</b><div class="par" style="margin-top:6px">${esc(H.crise.companheiro)} está pres${g} em ${esc(H.crise.onde)}. Uma semana boa (capítulo concluído) ${a} traz de volta. Prazo: <b>${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}</b>; se acabar, ${ela} se perde, e só uma grande vitória ${a} resgata depois.</div></div>`;
@@ -415,7 +425,11 @@ function cpAventura() {
   return h;
 }
 function renderCampanha() {
-  if (!JORNADA) { $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">A Semente de Aurora</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div>`; return; }
+  if (!JORNADA) {
+    $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">A Semente de Aurora</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div><section class="bloco"><div class="par" id="cp-espera">Carregando os dados da Campanha…</div></section>`;
+    setTimeout(() => { const el = document.getElementById('cp-espera'); if (el && !JORNADA) el.innerHTML = 'Não consegui abrir a Campanha agora (sem sinal ou o arquivo não chegou). <a href="#campanha" onclick="location.reload()">Tentar de novo</a>.'; }, 6000);
+    return;
+  }
   const j = JORNADA, p = j.personagem, v = j.vitalidade, a = j.arco || {}, pr = j.paralela;
   const vit = v.indice == null ? ['—', 'Vitalidade: sem dado'] : [fNum(v.indice, 0), v.estado === 'ferido' ? 'Vitalidade: ferido' : 'Vitalidade: de pé'];
   let h = `<div class="cp-escuro"><div class="campo tinta"><div class="dentro" style="padding-bottom:26px">
@@ -456,12 +470,12 @@ function renderCampanha() {
     (j.livro || []).map((c, i) => `<details ${i === (j.livro.length - 1) ? 'open' : ''}><summary>${esc(c.titulo)}</summary>${c.texto.split(/\n\s*\n/).map(par => `<p>${esc(par)}</p>`).join('')}</details>`).join('') + `</section>`;
 
   h += `<section class="bloco cp-regras"><details><summary style="padding:14px 0;font-weight:700;cursor:pointer">Como a Campanha funciona</summary>
-    <div class="par">XP só por comportamento, uma vez por dia por tipo, com teto de 250 por dia: sessão de força 100, corrida 80, dia ativo 30, descanso confirmado na estalagem 50, pesagem 20, almoço registrado 20, lanche das 17h registrado 20. Cada missão da semana cumprida vale 50, e o capítulo concluído, 150.</div>
-    <div class="par">O XP nunca diminui. O peso não dá nem tira XP: ele só move o mapa, pela média de 28 dias. O futebol conta como dia ativo, sem bônus.</div>
+    <div class="par">XP só por comportamento, uma vez por dia por tipo, com teto de 250 por dia: sessão de força 100, corrida 80, dia ativo 30, descanso confirmado na estalagem 50, pesagem 20, almoço registrado 20, lanche da tarde registrado 20; a rodada bônus (força curta no dia de corrida, corrida leve no dia de força) vale 50 e não conta como item do dia. Cada missão da semana cumprida vale 50, e o capítulo concluído, 150.</div>
+    <div class="par">O XP nunca diminui. O peso não dá nem tira XP: ele só mexe na vida do chefe do arco, pela média de 28 dias. O futebol conta como dia ativo, sem bônus.</div>
     <div class="par">Capítulo é a semana, de segunda a domingo. Concluído = todas as missões, ou todas menos uma. A meta de dias ativos segue a sua fase: média das últimas 4 semanas mais 1, entre 3 e 5; depois de 2 capítulos sem conclusão, cai para 3 e começa um arco de retorno.</div>
     <div class="par">Saga é a sequência de capítulos concluídos. Um capítulo perdido pode ser resgatado na semana seguinte (3 dias ativos em 4 dias corridos e o capítulo seguinte concluído), uma vez a cada 4 semanas. Dia de descanso confirmado conta como cumprido.</div>
-    <div class="par">A história é autônoma: nada nela corresponde aos seus dias. A única ligação são as métricas. Cada dia fechado tira uma carta do baralho da parte, pela quantidade de missões do dia: dia forte, bênção (estilha do céu); dia bom, achado (pista do Códice); dia fraco, dia quieto; dia vazio, percalço. Juramento quebrado (limites da fisiologista, fritura além de 2) tira uma carta de maldição: a 1ª da parte parte uma runa, a 2ª lança a Mácula de Cinza; com a mácula ativa, um novo juramento quebrado entrega a pessoa marcada à Cinza. Parte sem juramento quebrado tira a mácula e dá uma relíquia. No fechamento, as missões da semana decidem o nível: triunfo, avanço, impasse, revés ou crise. Manhãs vermelhas protegem de revés e crise. As perdas são da história, nunca do XP.</div>
-    <div class="par">Sem dado, sem XP e sem punição. Tudo é recalculado do zero a partir dos registros, do relógio e da balança (jornada.py).</div></details></section></div>`;
+    <div class="par">A história é autônoma: nada nela corresponde aos seus dias. A única ligação são as métricas. As cartas saem na hora e chegam como despacho no Telegram: 2 itens no dia tiram um achado (pista do Códice); 4 itens, também uma bênção (estilha do céu); cada missão da semana cumprida tira uma cena; dia fechado com 1 item é dia quieto; dia fechado sem nenhum item, com o relógio registrando, é percalço. Descanso confirmado na estalagem conta como item. Juramento quebrado (treinar com febre, falta de ar, aperto no peito ou dor articular acima de 3/10, só pelo seu relato; ou fritura além do teto da semana) tira uma carta de maldição: a 1ª da parte parte uma runa, a 2ª lança a Mácula de Cinza; com a mácula ativa, um novo juramento quebrado entrega a pessoa marcada à Cinza. Parte sem juramento quebrado tira a mácula e dá uma relíquia. No fechamento, as missões da semana decidem o nível: triunfo, avanço, impasse, revés ou crise. Semana de abrigo (descanso confirmado ou 3 manhãs vermelhas) protege de revés e crise. As perdas são da história, nunca do XP.</div>
+    <div class="par">Sem dado, sem XP e sem punição. Tudo é recalculado do zero a partir dos seus registros, do relógio e da balança.</div></details></section></div>`;
   $('view').innerHTML = h;
   cpPosicionarMarca();
   cpLigarPixel();
