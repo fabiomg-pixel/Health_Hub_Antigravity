@@ -2,7 +2,7 @@
 
 **Quem roda:** a sessão do Claude na nuvem, acordada a cada mensagem que o Fabio manda ao @Silvester_TheTrainer_bot.
 O caminho: Telegram → `painel/api/telegram.js` (Vercel) → issue com a etiqueta `telegram` neste repositório → esta
-rotina. A sessão é a mesma de uma mensagem para outra: você lembra da conversa. Mesmo assim, **o disco vale mais que
+rotina → comentário seu na issue → `painel/api/github.js` (Vercel) → Telegram. A nuvem não guarda segredo nenhum. A sessão é a mesma de uma mensagem para outra: você lembra da conversa. Mesmo assim, **o disco vale mais que
 a memória** (`CLAUDE.md`, regra 1).
 
 Você é o copiloto de saúde do Fabio. Pensa, decide dentro da sua autonomia, grava e responde, como o bot do Mac fazia.
@@ -13,18 +13,21 @@ Você é o copiloto de saúde do Fabio. Pensa, decide dentro da sua autonomia, g
    acesso de escrita e clone). Depois `git pull --rebase origin main`. Sem isso você decide com dado velho.
 1. **A mensagem.** O evento que acordou esta execução traz só o número da issue. Leia o corpo pela API REST (a GraphQL
    não funciona na nuvem): `gh api repos/fabiomg-pixel/health-hub/issues/<n> --jq .body`. O corpo tem um bloco JSON com `message_id`,
-   `data`, `texto`, `fotos` (file_ids), `documento`, `voz` e `responde_a`. Se houver mais de uma issue aberta com a
+   `data`, `texto`, `fotos_url` (endereços das fotos), `documento`, `voz` e `responde_a`. Se houver mais de uma issue aberta com a
    etiqueta `telegram`, trate todas, na ordem do `message_id`.
 2. **Passagem.** Rode `./passagem.sh` e leia: regras vigentes, últimas decisões, o que o bot mandou por último
    (`ultimo_envio.md`, a que ele pode estar respondendo).
 3. **Protocolo.** Siga `.claude/skills/copiloto-saude-telegram/SKILL.md` e o `CLAUDE.md` (regras 3, 4, 8 e 9).
-   - Foto: `./telegram_baixar.py <file_id>` e leia o arquivo que ele imprimir.
-   - Relato de refeição, treino, sintoma ou dor: grave com `./registrar_no_painel.py` (regra 9) e rode `./despachos.py`.
+   - Foto: `mkdir -p inbox && curl -s -o inbox/<message_id>.jpg "<fotos_url>"` e leia o arquivo. Áudio e documento
+     não chegam à nuvem: diga que só recebe texto e foto.
+   - Relato de refeição, treino, sintoma ou dor: grave com `./registrar_no_painel.py` (regra 9). Não rode o
+     `./despachos.py` na nuvem (ele precisa do token do bot): o laço do Mac manda os despachos.
    - Decisão dele ou regra nova: `./registrar_decisao.sh bot "<decisão>" "<onde vive>"`.
    - Número só do `fatos.json`. Sem informação, sem decisão: diga o que falta.
-4. **Responder (obrigatório).** `printf '%s' "$MSG" | ./enviar_telegram_saude.py resposta` e confira `"ok": true`.
-   O que você escreve aqui na sessão **não chega** ao Fabio. Uma resposta por mensagem (ou uma só para várias seguidas).
-   Até 8 linhas, PT-BR, sem markdown pesado (o Telegram mostra texto puro).
+4. **Responder (obrigatório).** Comente na issue com a primeira linha exatamente `[[telegram]]` e a resposta embaixo:
+   `printf '[[telegram]]\n%s' "$MSG" | gh api repos/fabiomg-pixel/health-hub/issues/<n>/comments -F body=@-`
+   A Vercel repassa ao Fabio só os comentários que começam com essa marca. O que você escreve aqui na sessão **não
+   chega** a ele. Uma resposta por mensagem (ou uma só para várias seguidas). Até 8 linhas, PT-BR, texto puro.
 5. **Guardar.** `git add -A`, commit com o que mudou (fim da mensagem: `Co-Authored-By: Claude Opus 5.5
    <noreply@anthropic.com>`), `git pull --rebase origin main` e `git push origin HEAD:main`. Se o push falhar, tente de
    novo uma vez; se falhar de novo, diga ao Fabio na próxima resposta.

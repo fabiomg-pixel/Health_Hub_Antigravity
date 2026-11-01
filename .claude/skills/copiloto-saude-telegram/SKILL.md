@@ -9,8 +9,9 @@ Repo: `/Users/fabiogomes/Documents/Claude/health-hub` no Mac; `/home/user/health
 
 > **Modo Nuvem (01/11/2026).** Se a mensagem chegou como issue `telegram` (rotina da nuvem, roteiro em
 > `rotinas/telegram_nuvem.md`) e não como `<channel source="plugin:telegram…">`: não existe a ferramenta `reply` nem
-> `download_attachment`. Responda com `printf '%s' "$MSG" | ./enviar_telegram_saude.py resposta` (confira `"ok": true`)
-> e baixe fotos com `./telegram_baixar.py <file_id>`. Onde este arquivo diz `/Users/fabiogomes/...`, use a pasta do
+> `download_attachment`. Responda comentando na issue com a primeira linha `[[telegram]]` (a Vercel repassa ao
+> Telegram) e baixe fotos pelos endereços `fotos_url` da issue: detalhes em `rotinas/telegram_nuvem.md`. Onde este
+> arquivo diz `/Users/fabiogomes/...`, use a pasta do
 > repositório da nuvem. O resto do protocolo vale igual.
 
 A doutrina inteira está em `PROJETO_CHAT.md` — leia antes de responder qualquer coisa que não
