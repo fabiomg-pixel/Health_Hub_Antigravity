@@ -15,9 +15,11 @@ Memória de conversa não vale: o disco vale.
    e commite junto com a mudança. Regra nova que vale daqui para frente entra também em
    `## Regras vigentes` de `decisoes.md` e na seção certa do `PROJETO_CHAT.md`.
 4. **Sem informação, sem decisão** (`PROJETO_CHAT.md` §18). Número só do `fatos.json`.
-5. Sempre commite o que mudar. Nunca dê push (o ambiente bloqueia o GitHub).
+5. Sempre commite o que mudar. **Repositório privado `fabiomg-pixel/health-hub` (01/11):** `git pull --rebase` antes de
+   mexer e `git push origin HEAD:main` depois de commitar. É o elo entre o Mac e a nuvem (`NUVEM.md`). Push só para ele.
 6. Deploy do painel: `cd painel && npx vercel deploy --prod --yes` (rode duas vezes e confira o `Aliased`).
-7. **Sessão do bot: a resposta só chega ao Fabio pela ferramenta `mcp__plugin_telegram_telegram__reply`.**
+7. **Sessão do bot no Mac: a resposta só chega ao Fabio pela ferramenta `mcp__plugin_telegram_telegram__reply`.** Na
+   nuvem (mensagem como issue `telegram`), siga `rotinas/telegram_nuvem.md`: resposta por `./enviar_telegram_saude.py resposta`.
    Texto escrito no terminal NUNCA chega. Se a ferramenta não estiver na sua lista, carregue-a com
    `ToolSearch select:mcp__plugin_telegram_telegram__reply` antes de responder. O gancho `Stop`
    (`garantir_resposta_telegram.py`) bloqueia o fim do turno se não houver `reply` depois da mensagem.

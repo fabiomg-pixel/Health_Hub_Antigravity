@@ -113,4 +113,5 @@ def main():
     print(json.dumps({'ok': True, 'bot': usuario, 'tipo': tipo, 'mensagens': ids, 'em': agora}, ensure_ascii=False))
 
 
-main()
+if __name__ == '__main__':
+    main()

@@ -13,7 +13,9 @@ function igual(a, b) {
 
 export default function middleware(request) {
   const chave = process.env.PAINEL_KEY;
-  if (!chave) return;   // barreira desligada: segue para a página ou a função
+  if (!chave) return;
+  // o webhook do Telegram não manda o código do painel: a função confere o próprio segredo (api/telegram.js)
+  if (new URL(request.url).pathname === '/api/telegram') return;   // barreira desligada: segue para a página ou a função
   const dado = request.headers.get('x-painel-key') || '';
   if (igual(dado, chave)) return;
   return new Response(JSON.stringify({ erro: 'acesso' }), {
