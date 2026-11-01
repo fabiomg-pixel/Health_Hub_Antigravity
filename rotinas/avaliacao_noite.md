@@ -16,7 +16,7 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
    regras vigentes (vegetal visível, metas da nutricionista, fritura) ao avaliar. Se houver `!!! ALERTA`,
    diga em uma linha.
 1. Datas: defina o DIA AVALIADO pela regra acima e use-o em todos os passos (`date -v-1d +%d/%m` ou `date +%d/%m`).
-2. **O que ele registrou hoje.** `curl -s https://painel-xi-three.vercel.app/api/registros` → `items[]`.
+2. **O que ele registrou hoje.** `./painel_get.sh "/api/registros?paginas=2"` → `items[]`.
    Filtre `data` == hoje. Inclua os de tipo Treino (o painel grava série a série) e Observação.
 3. **O plano de hoje** em `painel/data/semana.json` (dia por `data` DD/MM): atividade programada e as
    refeições. A meta de proteína vem de `dieta` do próprio arquivo (alvo e piso); não decore.
@@ -46,15 +46,17 @@ manhã, **antes das 12h, avalie ONTEM** (`date -v-1d +%F`), não hoje, e grave o
    [Uma linha: o que funcionou, OU o alerta de uma observação relevante]
    Pode me responder aqui: eu anoto e ajusto.
    ```
-7b. **A Campanha dos 85 (a aventura).** Rode `python3 jornada.py` e depois `python3 historia.py` (no **domingo**, use
-   `python3 historia.py --fechar-hoje`: ele fecha a semana que está acabando e resolve o desfecho). **A história não
+7b. **A Campanha dos 85 (a aventura).** Rode `python3 jornada.py` e depois `python3 historia.py` (no **domingo** NÃO feche a semana aqui: o fechamento é da rotina das 23h05, que antes puxa os dados do dia com
+   `./atualizar_dados.sh`; fechar às 22h33 congelava a parte com os números da manhã). **A história não
    é retrospectiva do dia** (Fabio, 24/10): o dia nunca vira cena. O desempenho da SEMANA decide o que acontece com a
    companhia (motor `historia.py`, canon em `historia/mundo.json`); você só anuncia.
    - **Diário de bordo (todo dia):** é automático (o motor tira uma carta pela qualidade do dia). Você só registra,
-     se houver, o juramento quebrado do dia: `./juramento_quebrado.py AAAA-MM-DD limite` (portão ou teto da
-     fisiologista desrespeitado: treino fora do plano, acima do teto ou em manhã vermelha; a **rodada bônus** está no
-     plano e só vira juramento se feita com o semáforo fora de Pode ou no dia de descanso) ou `mesa` (fritura além de 2
-     na semana). Depois `./despachos.py` (recalcula a história e manda ao Telegram o despacho da maldição e qualquer
+     se houver, o juramento quebrado do dia: `./juramento_quebrado.py AAAA-MM-DD limite` (Fabio, 31/10: critério
+     objetivo e só pelo relato dele: **treinou apesar de febre, falta de ar, aperto ou tosse no peito, ou seguiu com dor
+     articular acima de 3/10**. Não existem mais portões, tetos nem "manhã vermelha" como juramento; treinar fora do
+     plano, jogar ou fazer a rodada bônus **não** quebram nada) ou `mesa` (fritura além do teto da semana: leia o teto em
+     `painel/data/semana.json`, regras da semana; não decore o número). Na dúvida, não registre.
+     Depois `./despachos.py` (recalcula a história e manda ao Telegram o despacho da maldição e qualquer
      marco ainda não enviado). As cartas do dia já chegaram a ele como despachos ao longo do dia (`historia/despachos.json`):
      na mensagem, diga numa linha quantos despachos saíram hoje, sem repetir as cenas. **A história nunca espelha o dia dele.**
    - **Segunda a sábado:** na mensagem, troque a linha "Regras da semana" por UMA linha: o XP do dia

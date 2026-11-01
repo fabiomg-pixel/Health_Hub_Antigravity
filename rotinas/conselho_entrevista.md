@@ -24,7 +24,7 @@ lembre, numa linha, que a pergunta do conselho segue aberta.
 ### 0. Abrir (gatilho das 10h03)
 Se `conselho/<domingo>/estado.json` já existe, não recomece: continue de onde está.
 1. Rode `./publicar_dados.sh` (dados frescos) e grave `registros_semana.txt` a partir de
-   `curl -s https://painel-xi-three.vercel.app/api/registros` (segunda a domingo da semana que fecha).
+   `./painel_get.sh "/api/registros?paginas=3"` (segunda a domingo da semana que fecha).
 2. Se houver calendário disponível na sessão, anote a agenda da semana seguinte em `agenda.md`; se não houver,
    a logística pergunta.
 3. Crie `estado.json` com `atual: "carga"`, `fase: "analise"`, `rodada: 0`.

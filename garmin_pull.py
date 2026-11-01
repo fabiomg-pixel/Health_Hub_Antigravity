@@ -44,6 +44,12 @@ def conectar():
         return cliente, "token"
     except Exception as e:
         log(f"token indisponível ou expirado ({type(e).__name__}: {e})")
+        # Login completo gasta o limite do Garmin (429 já custou uma semana de dados). Só quando o token morreu de
+        # verdade: com falha de rede, tempo esgotado ou erro do servidor, desiste hoje e tenta de novo no próximo pull.
+        nome = type(e).__name__.lower() + " " + str(e).lower()
+        transitoria = any(t in nome for t in ("connection", "timeout", "timed out", "network", "resolve", "ssl", "503", "502", "504", "reset", "unreachable"))
+        if transitoria and os.path.isdir(TOKENSTORE) and os.listdir(TOKENSTORE):
+            raise SystemExit("rede ou servidor do Garmin fora do ar; o token está guardado e vale. Sem login completo hoje; tento de novo no próximo pull")
 
     email = os.environ.get("GARMIN_EMAIL")
     senha = os.environ.get("GARMIN_PASSWORD")

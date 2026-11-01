@@ -14,6 +14,8 @@ Saída: 0 gravado; 3 já existe registro parecido no dia (mostra qual; pergunte 
 1 erro de rede ou da API (nada gravado).
 """
 import argparse, base64, datetime, json, os, re, subprocess, sys, tempfile, time
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import painel_acesso
 
 BASE = 'https://painel-xi-three.vercel.app'
 REFEICOES = ['Café', 'Almoço', 'Lanche', 'Jantar', 'Outro']
@@ -22,7 +24,7 @@ ROTULO = {'refeicao': 'Refeição', 'treino': 'Treino', 'observacao': 'Observaç
 
 def pedir(url, corpo=None, tentativas=3):
     # curl, e não urllib: o Python deste Mac não acha os certificados (mesma escolha do enviar_telegram_saude.py)
-    cmd = ['curl', '-sS', '--max-time', '60', '-w', '\n%{http_code}', url]
+    cmd = ['curl', '-sS', '--max-time', '60', '-w', '\n%{http_code}'] + painel_acesso.curl_args() + [url]
     if corpo is not None:
         cmd += ['-H', 'Content-Type: application/json', '--data-binary', '@-']
     for i in range(tentativas):
@@ -60,7 +62,7 @@ def main():
         ap.error('sem texto e sem foto não há o que registrar')
 
     if not a.forcar:
-        itens = pedir(f'{BASE}/api/registros').get('items', [])
+        itens = pedir(f'{BASE}/api/registros?paginas=2').get('items', [])
         iguais = [x for x in itens if x.get('data') == a.data and x.get('tipo') == ROTULO[a.tipo]
                   and (a.tipo != 'refeicao' or x.get('refeicao') == a.refeicao)]
         if iguais:

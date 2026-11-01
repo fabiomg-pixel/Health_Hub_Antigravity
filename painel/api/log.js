@@ -8,11 +8,13 @@
 //   LOG_KEY (opcional) — chave simples anti-spam; se setada, o request precisa mandá-la
 
 import { put } from '@vercel/blob';
+import { autorizado } from './_auth.js';
 
 export const config = { api: { bodyParser: { sizeLimit: '6mb' } } };
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
+  if (!autorizado(req)) return res.status(401).json({ erro: 'acesso' });
 
   const NOTION_TOKEN = process.env.NOTION_TOKEN;
   const DB = process.env.DIARIO_DB_ID;

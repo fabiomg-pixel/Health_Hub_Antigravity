@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T19:26:50",
+ "gerado_em": "2026-10-31T21:19:00",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-10-01",
@@ -15,7 +15,7 @@
   "xp_para_proximo": 3000
  },
  "vitalidade": {
-  "indice": 46,
+  "indice": 47,
   "banda": "r",
   "confiavel": true,
   "sono_h": 6.87,
@@ -64,7 +64,7 @@
     "id": "forcas",
     "nome": "Sessões de força do plano",
     "feito": 1,
-    "meta": 4,
+    "meta": 3,
     "cumprida": false
    },
    {
@@ -76,7 +76,7 @@
    },
    {
     "id": "lanches",
-    "nome": "Lanches das 17h registrados",
+    "nome": "Lanches da tarde registrados",
     "feito": 4,
     "meta": 4,
     "cumprida": true
@@ -519,7 +519,7 @@
     },
     {
      "id": "lanches",
-     "nome": "Lanches das 17h registrados",
+     "nome": "Lanches da tarde registrados",
      "feito": 0,
      "meta": 4,
      "cumprida": false
@@ -557,7 +557,7 @@
     },
     {
      "id": "lanches",
-     "nome": "Lanches das 17h registrados",
+     "nome": "Lanches da tarde registrados",
      "feito": 2,
      "meta": 4,
      "cumprida": false
@@ -602,7 +602,7 @@
     },
     {
      "id": "lanches",
-     "nome": "Lanches das 17h registrados",
+     "nome": "Lanches da tarde registrados",
      "feito": 2,
      "meta": 4,
      "cumprida": false
@@ -647,7 +647,7 @@
     },
     {
      "id": "lanches",
-     "nome": "Lanches das 17h registrados",
+     "nome": "Lanches da tarde registrados",
      "feito": 3,
      "meta": 4,
      "cumprida": false
@@ -680,7 +680,7 @@
      "id": "forcas",
      "nome": "Sessões de força do plano",
      "feito": 1,
-     "meta": 4,
+     "meta": 3,
      "cumprida": false
     },
     {
@@ -692,7 +692,7 @@
     },
     {
      "id": "lanches",
-     "nome": "Lanches das 17h registrados",
+     "nome": "Lanches da tarde registrados",
      "feito": 4,
      "meta": 4,
      "cumprida": true
@@ -879,7 +879,7 @@
   "2026-10-15": {
    "xp": 90,
    "itens": [
-    "Estalagem",
+    "Descanso na estalagem",
     "Pesagem",
     "Lanche registrado"
    ],

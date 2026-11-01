@@ -26,3 +26,10 @@ exportacao/
 despachos.log
 despachos.log.tmp
 ultimo_despacho.md
+.ultima_falha_dados
+.ultima_falha_deploy
+*.novo
+*.falhou
+despachos_deploy.log
+.trava_*
+.tmp_*

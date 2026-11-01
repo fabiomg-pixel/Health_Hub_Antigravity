@@ -99,6 +99,12 @@ def main():
     # Os despachos da Campanha (despachos.py) vão para outro arquivo: o disparar_rotina.sh --verificar confere o
     # brief e a avaliação pelo cabeçalho de ultimo_envio.md, e um despacho depois deles faria a rotina ser repetida.
     arq = 'ultimo_despacho.md' if tipo == 'campanha' else 'ultimo_envio.md'
+    # Carimbo FORA de Documents (31/10): o launchd não lê ~/Documents, então o disparar_rotina.sh --verificar nunca via o
+    # envio e repetia toda rotina (26 reenvios e 0 confirmações). O carimbo mora ao lado do bot; a data de modificação é a prova.
+    try:
+        open(os.path.join(BASE, 'envio_' + tipo + '.stamp'), 'w').write(agora + '\n')
+    except OSError:
+        pass
     open(os.path.join(AQUI, arq), 'w', encoding='utf-8').write(
         '# Último envio do bot (%s) em %s\n\n%s\n' % (tipo, agora, texto[:3500]))
     print(json.dumps({'ok': True, 'bot': usuario, 'tipo': tipo, 'mensagens': ids, 'em': agora}, ensure_ascii=False))

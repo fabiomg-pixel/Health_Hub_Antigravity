@@ -416,6 +416,42 @@
 <div class="app"><div id="view"></div></div>
 
 <script>
+// Código de acesso (31/10/2026): /api e /data só respondem com o cabeçalho x-painel-key. O código fica neste aparelho.
+// Entra por #acesso=CODIGO (o endereço de acesso_painel.txt) ou digitado quando o servidor responde 401.
+(function () {
+  const K = 'painel_chave';
+  const ler = () => { try { return localStorage.getItem(K) || ''; } catch (e) { return ''; } };
+  const gravar = v => { try { localStorage.setItem(K, v); } catch (e) {} };
+  const m = /^#acesso=([A-Za-z0-9-]{8,64})$/.exec(location.hash || '');
+  if (m) { gravar(m[1].toUpperCase()); history.replaceState(null, '', location.pathname + '#home'); }
+  const nativo = window.fetch.bind(window);
+  let pedindo = false;
+  function pedir() {
+    if (pedindo) return; pedindo = true;
+    const d = document.createElement('div');
+    d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', 'Código de acesso');
+    d.style.cssText = 'position:fixed;inset:0;z-index:200;background:#071C26;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:28px;font-family:Figtree,system-ui,sans-serif';
+    d.innerHTML = '<div style="font:800 34px/1 \'Bricolage Grotesque\',sans-serif;letter-spacing:-.02em">Código de acesso</div>' +
+      '<div style="font-size:15px;line-height:1.45;opacity:.85">Este painel guarda seus dados de saúde. Digite o código que está em acesso_painel.txt (só precisa uma vez neste aparelho).</div>' +
+      '<input id="ac-in" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Código de acesso" style="min-height:56px;padding:0 14px;font:700 20px Figtree,sans-serif;letter-spacing:.06em;border:2px solid #fff;background:#fff;color:#071C26">' +
+      '<button id="ac-bt" type="button" style="min-height:56px;border:0;background:#FFB48F;color:#071C26;font:800 17px Figtree,sans-serif;cursor:pointer">Entrar</button>' +
+      '<div id="ac-er" role="status" style="min-height:20px;font-size:14px;color:#FFB48F"></div>';
+    document.body.appendChild(d);
+    const ok = () => { const v = document.getElementById('ac-in').value.trim().toUpperCase(); if (v.length < 8) { document.getElementById('ac-er').textContent = 'Código curto demais.'; return; } gravar(v); location.reload(); };
+    document.getElementById('ac-bt').onclick = ok;
+    document.getElementById('ac-in').addEventListener('keydown', e => { if (e.key === 'Enter') ok(); });
+    setTimeout(() => document.getElementById('ac-in').focus(), 50);
+    if (ler()) document.getElementById('ac-er').textContent = 'O código guardado não foi aceito. Digite o atual.';
+  }
+  window.fetch = function (u, o) {
+    const url = String((u && u.url) || u || '');
+    const interno = !/^https?:\/\//i.test(url) || url.indexOf(location.origin) === 0;
+    const protegido = interno && /(^|\/)(api|data)\//.test(url);
+    if (!protegido) return nativo(u, o);
+    o = Object.assign({}, o || {}); const h = new Headers(o.headers || {}); const k = ler(); if (k) h.set('x-painel-key', k); o.headers = h;
+    return nativo(u, o).then(r => { if (r.status === 401) { pedir(); return new Promise(() => {}); } return r; });
+  };
+})();
 let DATA = null, REGISTROS = [], DASH = null, FATOS = null;
 const $ = id => document.getElementById(id);
 const MES = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];

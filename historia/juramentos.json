@@ -1,5 +1,5 @@
 {
- "_nota": "Juramentos quebrados: dias em que uma regra foi quebrada (limite = portões e tetos da fisiologista; mesa = fritura além de 2 na semana). Só a data e o tipo entram na história, nunca o que foi feito. Registrado pela avaliação da noite com ./juramento_quebrado.py.",
+ "_nota": "Juramentos quebrados: dias em que uma regra foi quebrada (limite = treinou apesar de febre, falta de ar, aperto ou tosse no peito, ou seguiu com dor articular acima de 3/10 (só pelo relato do Fabio; não existem mais portões nem tetos automáticos desde 27/10); mesa = fritura além de 2 na semana). Só a data e o tipo entram na história, nunca o que foi feito. Registrado pela avaliação da noite com ./juramento_quebrado.py.",
  "quebras": [
   {
    "data": "2026-10-21",
@@ -8,10 +8,13 @@
   {
    "data": "2026-10-23",
    "tipo": "limite"
-  },
+  }
+ ],
+ "_anuladas": [
   {
    "data": "2026-10-26",
-   "tipo": "limite"
+   "tipo": "limite",
+   "motivo": "Julgado pelos tetos e portões da fisiologista, que o Fabio aboliu em 27/10 (nível de base). Anulado por decisão dele em 31/10."
   }
  ]
 }

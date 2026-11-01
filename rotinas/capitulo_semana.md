@@ -28,7 +28,9 @@ dias ou meses no mundo, o que a trama pedir.
 
 ## Passos
 
-1. **Fechar.** `python3 jornada.py && python3 historia.py --fechar-hoje && python3 jornada.py`. Depois leia
+1. **Fechar.** Primeiro os dados do dia: `./atualizar_dados.sh 3` (puxa Garmin e Renpho; se avisar falha de uma fonte, siga
+   com o que há e diga isso na mensagem; o fechamento é definitivo, então não adie por isso). Depois
+   `python3 jornada.py && python3 historia.py --fechar-hoje && python3 jornada.py`. Depois leia
    `painel/data/historia.json`: em `capitulos`, o último item é a parte que fechou (`tier`, `efeitos`, `cena`); em
    `historia/estado.json`, `semanas.<segunda>.cartas` diz quantas bênçãos, achados, percalços e maldições a parte teve.
    Para a ordem das cartas, rode `python3 -c` sobre `historia.py` ou leia o diário que o painel mostrou durante a semana.

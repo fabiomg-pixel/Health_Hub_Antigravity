@@ -15,6 +15,8 @@ disso, guarda para a próxima janela. Na primeira vez, só marca o que já exist
 Uso: ./despachos.py [--dry] [--sem-recalculo] [--agora]
 """
 import datetime as dt, json, os, subprocess, sys
+import util_arq
+util_arq.trava('despachos')
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 DRY = '--dry' in sys.argv
@@ -46,7 +48,7 @@ sem = H.get('semana') or {}
 SEG = sem.get('segunda')
 if not SEG: sys.exit(0)
 P = ler(f'historia/partes/{SEG}.json', {}) or {}
-L = ler('historia/despachos.json') or {'_nota': 'Despachos da Campanha enviados ao Telegram (despachos.py). Cada um é um marco; '
+L = util_arq.ler_estrito(LEDGER, None) or {'_nota': 'Despachos da Campanha enviados ao Telegram (despachos.py). Cada um é um marco; '
                                      'o encerramento de domingo conta onde cada um entrou na história.', 'despachos': [], 'projecao': {}}
 vistos = {d['id'] for d in L['despachos']}
 primeira = not L['despachos'] and not L['projecao']
@@ -57,9 +59,15 @@ mat = (proj.get('depois') or {}).get('materiais') or {}
 def itens(data): return (J.get('dias', {}).get(data) or {}).get('itens', [])
 
 
+BASE_MAT = {k: (v or {}).get('qtd', 0) for k, v in (H.get('materiais') or {}).items()}   # o que a história já guarda, de partes fechadas
+CONTA = {'bencao': 0, 'achado': 0}   # cartas desta parte, em ordem: o rodapé mostra a conta NAQUELE momento, não a de hoje
+
+
 def peso(tipo, ev=None):
-    if tipo == 'bencao': return f"+1 estilha do céu ({mat.get('estilha', 0)} de 5 para a Lâmina Estelar)"
-    if tipo == 'achado': return f"+1 pista do Códice ({mat.get('pista', 0)} na estrada)"
+    if tipo == 'bencao':
+        tot = BASE_MAT.get('estilha', 0) + CONTA['bencao']
+        return '+1 estilha do céu (' + (f'{tot} de 5: a Lâmina Estelar é forjada no fechamento da parte' if tot >= 5 else f'{tot} de 5 para a Lâmina Estelar') + ')'
+    if tipo == 'achado': return f"+1 pista do Códice ({BASE_MAT.get('pista', 0) + CONTA['achado']} na estrada)"
     if tipo == 'percalco':
         n = mat.get('desgaste', 0)
         return f'desgaste ({n} nesta parte; com 2, alguém sai ferido no fechamento)'
@@ -73,6 +81,7 @@ for dia in H.get('diario', []):
     contagem = {}
     for ev in dia['eventos']:
         t = ev['tipo']; contagem[t] = contagem.get(t, 0) + 1
+        if t in CONTA: CONTA[t] += 1
         did = f"{dia['data']}:{t}" + (f':{contagem[t]}' if contagem[t] > 1 else '')
         if did in vistos or t in ('quieto', 'missao'): continue   # missão já vem do passo 2 (o diário só a espelha)
         if t == 'maldicao': motivo = 'juramento quebrado' + (f" ({ev.get('juramento')})" if ev.get('juramento') else '')
@@ -92,18 +101,23 @@ for m in (J.get('capitulo') or {}).get('missoes', []):
                   'marco': f"missão da semana cumprida: {m['nome']} ({m['feito']} de {m['meta']})", 'peso': f"{sem.get('ok', 0)} de {sem.get('total', 0)} missões da parte"})
 # 3. o desfecho projetado mudou?
 t_novo, t_velho = proj.get('tier'), L['projecao'].get(SEG)
-mudou = bool(t_novo and t_velho and t_novo != t_velho)
+# Histerese: o desfecho só é anunciado se a mesma projeção aparecer em duas execuções seguidas (15 min), para que um
+# valor que oscila no meio de um pull do relógio não mande "desfecho mudou" a cada troca.
+visto = L.setdefault('visto', {}); visto_antes = visto.get(SEG)
+mudou = bool(t_novo and t_velho and t_novo != t_velho and visto_antes == t_novo)
+visto[SEG] = t_novo
 
 if primeira:
     for n in novos: n.update(enviado=None, visto_em=AGORA.isoformat(timespec='minutes'), linha_de_base=True)
     L['despachos'] += novos; L['projecao'][SEG] = t_novo
-    if not DRY: json.dump(L, open(LEDGER, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    if not DRY: util_arq.gravar_json(LEDGER, L)
     print(f'despachos: linha de base gravada ({len(novos)} marcos já existentes, nada enviado)'); sys.exit(0)
 
 if not novos and not mudou:
-    if t_novo and not t_velho and not DRY:
-        L['projecao'][SEG] = t_novo; json.dump(L, open(LEDGER, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    print('despachos: nada novo'); sys.exit(0)
+    if not DRY and ((t_novo and not t_velho) or visto_antes != t_novo):
+        if t_novo and not t_velho: L['projecao'][SEG] = t_novo
+        util_arq.gravar_json(LEDGER, L)
+    print('despachos: nada novo' + (f' (desfecho {t_novo} aguarda confirmação na próxima execução)' if t_novo and t_velho and t_novo != t_velho else '')); sys.exit(0)
 if not (7 <= AGORA.hour < 23) and '--agora' not in sys.argv:
     print(f'despachos: {len(novos)} marco(s) esperando a janela das 7h às 23h'); sys.exit(0)
 
@@ -121,13 +135,16 @@ if mudou or t_novo:
 msg = cab + '\n\n' + '\n\n'.join(blocos) + '\n\n—\n' + '\n'.join(rod) + '\nTudo isto entra na história do domingo. Painel: https://painel-xi-three.vercel.app/#campanha'
 if DRY: print(msg); sys.exit(0)
 
-r = subprocess.run([os.path.join(AQUI, 'enviar_telegram_saude.py'), 'campanha'], input=msg, cwd=AQUI, capture_output=True, text=True, timeout=120)
+try:
+    r = subprocess.run([os.path.join(AQUI, 'enviar_telegram_saude.py'), 'campanha'], input=msg, cwd=AQUI, capture_output=True, text=True, timeout=150)
+except subprocess.TimeoutExpired:
+    sys.exit('despachos: o envio demorou demais; nada foi marcado como enviado, tento de novo no próximo ciclo')
 try: ok = json.loads(r.stdout.strip().splitlines()[-1]).get('ok')
 except (ValueError, IndexError): ok = False
 if not ok: sys.exit('despachos: envio falhou; tento de novo no próximo ciclo: ' + (r.stderr or r.stdout)[-200:])
 for n in novos: n.update(enviado=AGORA.isoformat(timespec='minutes'))
 L['despachos'] += novos; L['projecao'][SEG] = t_novo
-json.dump(L, open(LEDGER, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+util_arq.gravar_json(LEDGER, L)
 # o painel também precisa do marco novo: a bênção e a Cinza viram palco no app (palco.js) quando ele abre
-subprocess.Popen(['/bin/zsh', os.path.join(AQUI, 'publicar_jornada.sh')], cwd=AQUI, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+subprocess.Popen(['/bin/zsh', os.path.join(AQUI, 'publicar_jornada.sh')], cwd=AQUI, stdout=open(os.path.join(AQUI, 'despachos_deploy.log'), 'a'), stderr=subprocess.STDOUT, start_new_session=True)
 print(f'despachos: {len(novos)} enviado(s)' + (f'; desfecho {t_velho} → {t_novo}' if mudou else ''))

@@ -14,6 +14,7 @@ Entradas: garmin_out.json, renpho_out.json, resumo_diario.json (synthesize.py) e
 os registros do Notion via /api/registros do painel.
 """
 
+import painel_acesso
 import datetime as dt
 import json
 import os
@@ -23,7 +24,7 @@ import sys
 import subprocess
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
-API_REGISTROS = "https://painel-xi-three.vercel.app/api/registros"
+API_REGISTROS = "https://painel-xi-three.vercel.app/api/registros?tudo=1"
 # Véspera com este gasto ativo ou mais deprime a pesagem da manhã seguinte em
 # ~0,26 kg (n=46, jun–set/2026). Ver PROJETO_CHAT §5.
 LIMIAR_DIA_INTENSO = 450
@@ -94,7 +95,7 @@ def carregar(nome):
 def registros():
     # curl em vez de urllib: o ambiente do Fabio bloqueia urllib para hosts externos.
     try:
-        bruto = subprocess.run(["curl", "-sS", "--max-time", "30", API_REGISTROS],
+        bruto = subprocess.run(["curl", "-sS", "--max-time", "60"] + painel_acesso.curl_args() + [API_REGISTROS],
                                capture_output=True, text=True, check=True).stdout
         d = json.loads(bruto)
         return d if isinstance(d, list) else list(d.values())[0]

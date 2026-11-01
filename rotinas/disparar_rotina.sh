@@ -20,13 +20,13 @@ HOJE=$(date +%F); AGORA=$(date '+%F %T')
 # --verificar: roda ~45 min depois do disparo. Se a rotina não enviou nada (ex.: o Mac sem rede, como em
 # 15 e 16/10), digita de novo, UMA vez, e só até 4 h depois do disparo (para não mandar brief de manhã à noite).
 if [ "$OPC" = "--verificar" ]; then
-  UE="$HOME/Documents/Claude/health-hub/ultimo_envio.md"
+  UE="$BASE/envio_${R%_fechar}.stamp"   # carimbo escrito pelo enviar_telegram_saude.py, fora de ~/Documents (o launchd não lê Documents)
   DISP=$(grep "^$HOJE $R .* disparado" "$LOG" 2>/dev/null | tail -1 | awk '{print $3}')
   if [ -z "$DISP" ]; then OPC=""   # nada disparado hoje (Mac acordou agora): faz o disparo normal
   else
     T_DISP=$(date -j -f "%Y-%m-%d %H:%M:%S" "$HOJE $DISP" +%s)
     T_ENV=$(stat -f %m "$UE" 2>/dev/null || echo 0)
-    if [ "$T_ENV" -gt "$T_DISP" ] && head -1 "$UE" | grep -q "($R)"; then echo "$AGORA $R confirmado: enviado" >> "$LOG"; exit 0; fi
+    if [ "$T_ENV" -gt "$T_DISP" ]; then echo "$AGORA $R confirmado: enviado" >> "$LOG"; exit 0; fi
     if grep -q "^$HOJE $R .* reenviado" "$LOG"; then echo "$AGORA $R sem envio mesmo depois de reenviar" >> "$LOG"; exit 0; fi
     if [ $(( $(date +%s) - T_DISP )) -gt 14400 ]; then echo "$AGORA $R perdido: passou da janela de 4 h" >> "$LOG"; exit 0; fi
     OPC="--reenvio"

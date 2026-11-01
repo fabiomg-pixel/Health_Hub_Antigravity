@@ -8,6 +8,8 @@
 //
 // Env vars: NOTION_TOKEN, LOG_KEY (opcional, mesma do /api/log)
 
+import { autorizado } from './_auth.js';
+
 const NOTION = 'https://api.notion.com/v1';
 const TIPOS = new Set(['Refeição', 'Treino', 'Observação']);
 const REFEICOES = new Set(['Café', 'Almoço', 'Jantar', 'Lanche', 'Outro']);
@@ -29,6 +31,7 @@ function titulo(tipo, refeicao, dia) {
 }
 
 export default async function handler(req, res) {
+  if (!autorizado(req)) return res.status(401).json({ erro: 'acesso' });
   const NOTION_TOKEN = process.env.NOTION_TOKEN;
   if (!NOTION_TOKEN) return res.status(500).json({ error: 'Config faltando (NOTION_TOKEN).' });
 

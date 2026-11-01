@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T19:26:50",
+ "gerado_em": "2026-10-31T21:19:00",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -283,15 +283,6 @@
      "marcas": [
       "+1 pista do Códice"
      ]
-    },
-    {
-     "tipo": "maldicao",
-     "texto": "Naquela noite a brasa de Ost apagou sozinha por um instante, e quando voltou a acender todos sentiram que alguma coisa tinha se rompido.",
-     "despacho": "A brasa apagou por um instante, e no escuro todos ouviram a mesma coisa: uma voz de mulher, muito longe, dizendo um nome que ninguém conseguiu entender. Quando a luz voltou, a Mácula no braço de Iara estava quente. Ela disse que não era nada.",
-     "juramento": "limite",
-     "marcas": [
-      "juramento quebrado: o preço vem no fim da parte"
-     ]
     }
    ]
   },
@@ -432,7 +423,8 @@
   "ok": 4,
   "n": 5,
   "efeitos": [
-   "A Mácula de Cinza se abriu de vez, e a Cinza levou Iara. Resgate em até 3 partes.",
+   "A Mácula de Cinza recuou: Iara está livre dela.",
+   "Parte sem juramento quebrado. Relíquia ganha: Sal dos Faróis.",
    "Com cinco estilhas, Bram forjou a Lâmina Estelar.",
    "Bram gravou uma runa nova: Runa do Escudo.",
    "A companhia avançou até o Farol de Ost."
@@ -449,7 +441,7 @@
     "dorn": "ativa",
     "ysa": "ativa"
    },
-   "afetado": "brisa",
+   "afetado": null,
    "retorna": null,
    "itens": [
     "escudo"
@@ -459,7 +451,7 @@
   "depois": {
    "etapa": 1,
    "companhia": {
-    "brisa": "capturada",
+    "brisa": "ativa",
     "dorn": "ativa",
     "ysa": "ativa"
    },
@@ -467,6 +459,7 @@
     "escudo"
    ],
    "reliquias": [
+    "sal_dos_farois",
     "lamina_estelar"
    ],
    "maldicoes": [],

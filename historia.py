@@ -22,6 +22,8 @@ Cada semana real é uma PARTE da campanha (a parte não corresponde a uma semana
 O peso nunca dá nem tira nada aqui; o chefe do arco cai pela média de 28 dias (jornada.py).
 Uso: python3 historia.py [--fechar-hoje] [--dry]"""
 import datetime as dt, json, os, re, sys, unicodedata
+import util_arq
+util_arq.trava('campanha')
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 HOJE = dt.date.today()
@@ -30,7 +32,7 @@ FECHAR_HOJE = '--fechar-hoje' in sys.argv
 MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
 DIAS_PT = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo']
 NIVEIS = ['crise', 'reves', 'sustenta', 'avanco', 'triunfo']
-ITENS_DO_DIA = {'Pesagem', 'Dia ativo', 'Corrida', 'Sessão de força', 'Almoço registrado', 'Lanche registrado', 'Descanso na estalagem', 'Rodada bônus'}
+ITENS_DO_DIA = {'Pesagem', 'Dia ativo', 'Corrida', 'Sessão de força', 'Almoço registrado', 'Lanche registrado', 'Descanso na estalagem'}   # Rodada bônus: só XP (Fabio, 31/10), não conta como item do dia
 
 
 def ler(nome, padrao=None):
@@ -42,8 +44,7 @@ def ler(nome, padrao=None):
 
 def gravar(nome, obj):
     if DRY: return
-    p = os.path.join(AQUI, nome); os.makedirs(os.path.dirname(p), exist_ok=True)
-    json.dump(obj, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    util_arq.gravar_json(os.path.join(AQUI, nome), obj)
 
 
 def D(s): return dt.date.fromisoformat(s[:10])
@@ -87,7 +88,7 @@ def estado_novo():
             'semanas': {}, 'materiais': {}, 'reliquias': [], 'maldicoes': [], 'aflicoes': 0, 'marcos': []}
 
 
-E = ler('historia/estado.json') or {}
+E = util_arq.ler_estrito(os.path.join(AQUI, 'historia', 'estado.json'), {}) or {}   # ilegível = para (antes reiniciava a campanha)
 if E.get('versao') != 2: E = estado_novo()
 arco_de = lambda: next(a for a in ARCOS if a['id'] == E['arco'])
 CAP = lambda arco: len(arco['etapas']) - 2   # a última etapa (o chefe) só cai pela balança

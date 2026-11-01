@@ -16,8 +16,11 @@ import os
 import re
 import subprocess
 
+import painel_acesso
+import util_arq
+
 AQUI = os.path.dirname(os.path.abspath(__file__))
-API = 'https://painel-xi-three.vercel.app/api/registros'
+API = 'https://painel-xi-three.vercel.app/api/registros?tudo=1'
 
 
 def ler(nome, padrao):
@@ -29,12 +32,13 @@ def ler(nome, padrao):
 
 def registros():
     try:
-        r = subprocess.run(['curl', '-s', '-m', '25', API], capture_output=True, text=True, timeout=35)
+        r = subprocess.run(['curl', '-s', '-m', '60'] + painel_acesso.curl_args() + [API], capture_output=True, text=True, timeout=75)
         return json.loads(r.stdout).get('items', []), True
     except Exception:
         return [], False
 
 
+util_arq.trava('campanha')
 R = ler('jornada_regras.json', {})
 XP = R['xp']
 HOJE = dt.date.today()
@@ -43,7 +47,7 @@ seg = lambda d: d - dt.timedelta(days=d.weekday())
 
 G = {d['data']: d for d in ler('historico_garmin.json', {}).get('dias', [])}
 PES = {p['data'][:10] for p in ler('historico_peso.json', {}).get('dias', [])}
-SEMANA = ler('painel/data/semana.json', {})
+SEMANA = util_arq.ler_estrito(os.path.join(AQUI, 'painel', 'data', 'semana.json'), {})   # JSON quebrado para tudo: antes sumia com o plano em silêncio
 FATOS = ler('fatos.json', {})
 DASH = ler('painel/data/dashboard.json', {})
 EVENTOS = ler('jornada_eventos.json', {}).get('eventos', [])
@@ -57,7 +61,7 @@ RX_CORRIDA = re.compile(r'corrida|esteira|correr', re.I)
 RX_JOGO = re.compile(r'futebol|campeonato|\bjogo\b', re.I)
 
 
-RX_NEG = re.compile(r'n[ãa]o (treinou|treinei|fiz|fez|feito|rolou|deu|foi poss[íi]vel|completei|completou)|pulei|pulou|n[ãa]o feit', re.I)
+RX_NEG = re.compile(r'n[ãa]o (treinou|treinei|fiz|fez|feito|rolou|deu|foi poss[íi]vel|completei|completou|consegui|completa|vou|fui)|pulei|pulou|n[ãa]o feit|cancel(ei|ou|ada|ado)|adiei|adiou|desisti|descans(ei|o hoje|ar hoje)|sem treino|fiquei em casa', re.I)
 # anotações escritas pelo copiloto (não pelo Fabio): falam dele em 3ª pessoa, abrem com data, citam screenshot ou RPE.
 # O marcador "[Processado em…]" é posto pelo copiloto em registros DO Fabio, então não marca autoria.
 RX_COPILOTO = re.compile(r'\bF[áa]bio\b|copiloto|conselho de domingo|linha de base|^\s*\d{2}/\d{2}\b|screenshot|\bRPE\b', re.I)
@@ -124,7 +128,7 @@ def xp_do_dia(d):
     if 'corrida' in f: itens.append(('Corrida', XP['corrida']))
     if ativo(d): itens.append(('Dia ativo', XP['dia_ativo']))
     if 'bonus' in f and f & {'forca', 'corrida'}: itens.append(('Rodada bônus', XP.get('bonus', 50)))   # só vale junto da sessão principal
-    if 'estalagem' in f: itens.append(('Estalagem', XP['estalagem']))
+    if 'estalagem' in f: itens.append(('Descanso na estalagem', XP['estalagem']))   # o mesmo nome que o historia.py lê
     if s in PES: itens.append(('Pesagem', XP['pesagem']))
     if 'almoco' in f: itens.append(('Almoço registrado', XP['almoco']))
     if 'lanche' in f: itens.append(('Lanche registrado', XP['lanche']))
@@ -183,10 +187,10 @@ for w in semanas:
                {'id': 'pesagens', 'nome': 'Pesagens em jejum', 'feito': sum(1 for d in passados if d.isoformat() in PES), 'meta': M['pesagens']}]
     forcas_plano = [d for d in dias if PLANO.get(d.isoformat()) and tipo_plano(PLANO[d.isoformat()]) == 'forca']
     if forcas_plano:
-        missoes.append({'id': 'forcas', 'nome': 'Sessões de força do plano', 'feito': sum(1 for d in passados if 'forca' in por_dia[d.isoformat()]), 'meta': len(forcas_plano)})
+        missoes.append({'id': 'forcas', 'nome': 'Sessões de força do plano', 'feito': sum(1 for d in passados if 'forca' in por_dia[d.isoformat()]), 'meta': min(3, len(forcas_plano))})   # Fabio, 31/10: meta fixa em 3 (nível de base); fim de semana complementa, não aumenta a meta
     if REG_DESDE and w >= seg(D(REG_DESDE)):
         missoes.append({'id': 'almocos', 'nome': 'Almoços registrados (seg a sex)', 'feito': sum(1 for d in passados if d.weekday() < 5 and 'almoco' in por_dia[d.isoformat()]), 'meta': M['almocos_uteis']})
-        missoes.append({'id': 'lanches', 'nome': 'Lanches das 17h registrados', 'feito': sum(1 for d in passados if 'lanche' in por_dia[d.isoformat()]), 'meta': M['lanches']})
+        missoes.append({'id': 'lanches', 'nome': 'Lanches da tarde registrados', 'feito': sum(1 for d in passados if 'lanche' in por_dia[d.isoformat()]), 'meta': M['lanches']})
     for m in missoes: m['cumprida'] = m['feito'] >= m['meta']
     n, ok = len(missoes), sum(m['cumprida'] for m in missoes)
     concluido = ok >= (n - 1 if n >= 3 else n)
@@ -347,7 +351,7 @@ out = {
     'livro': livro,
 }
 os.makedirs(os.path.join(AQUI, 'painel', 'data'), exist_ok=True)
-json.dump(out, open(os.path.join(AQUI, 'painel', 'data', 'jornada.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+util_arq.gravar_json(os.path.join(AQUI, 'painel', 'data', 'jornada.json'), out)
 print('jornada: nível %d (%s), %d XP; capítulo %d %s; saga %d (maior %d); arco %s, chefe %s HP %s' % (
     nv, out['personagem']['titulo'], xp_total, n_cap, out['capitulo']['status'], saga, saga_max,
     arco and arco.get('num'), arco and arco.get('chefe'), arco and arco.get('hp')))

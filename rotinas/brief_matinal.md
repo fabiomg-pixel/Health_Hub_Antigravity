@@ -38,7 +38,7 @@ diga "o brief de hoje saiu atrasado" só se passar de 11h.
    programada, refeições (`nome`, `kcal`, `prot`), `janela`. Se o dia não existir, o plano venceu: diga só
    prontidão e peso e que o plano novo entra depois do conselho de domingo. **Cite só o que está programado
    hoje** (corrida só se o dia é de corrida; jogo só se há jogo).
-4. **Registros do site.** `curl -s https://painel-xi-three.vercel.app/api/registros` → `items[]` (`data`,
+4. **Registros do site.** `./painel_get.sh "/api/registros?paginas=2"` → `items[]` (`data`,
    `tipo`, `refeicao`, `texto`). Filtre ONTEM e HOJE.
    - **Devolutiva de ontem** em UMA linha: o que estava certo antes do que estava errado; rótulo de
      embalagem manda (diga o número real); faltou registro? mencione de leve UMA vez; nada de ontem? omita.
