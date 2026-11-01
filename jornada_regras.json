@@ -82,5 +82,9 @@
   "de": 42.2,
   "ate": 46.0,
   "nota": "VO2 máx; só leitura ao nível do mar conta"
+ },
+ "saga_maior_registrada": {
+  "valor": 5,
+  "nota": "Recorde que o painel mostrava até 31/10, calculado com a janela de 100 registros. Com o histórico completo a conta mudou (semanas antigas ganharam as 4 missões), mas um recorde já mostrado não encolhe."
  }
 }

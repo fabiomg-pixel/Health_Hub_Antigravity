@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T22:35:38",
+ "gerado_em": "2026-10-31T22:35:52",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-06-29",
@@ -87,7 +87,7 @@
  },
  "saga": {
   "atual": 1,
-  "maior": 3,
+  "maior": 5,
   "historico": [
    {
     "ate": "2026-07-20",

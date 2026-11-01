@@ -303,7 +303,7 @@ def primeira(cond):
 
 
 rel = []
-saga_max = max([x['capitulos'] for x in sagas] + [saga, (ANTERIOR.get('saga') or {}).get('maior') or 0])   # recorde já mostrado nunca encolhe (31/10: com o histórico completo, semanas antigas ganharam as 4 missões e a conta mudou)
+saga_max = max([x['capitulos'] for x in sagas] + [saga, (ANTERIOR.get('saga') or {}).get('maior') or 0, (R.get('saga_maior_registrada') or {}).get('valor', 0)])   # recorde já mostrado nunca encolhe (31/10: com o histórico completo, semanas antigas ganharam as 4 missões e a conta mudou)
 verao = None
 run = 0
 for s in resultado:
