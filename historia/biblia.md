@@ -55,3 +55,7 @@ A Liga do Sal controla estradas, salinas e arenas, e compra estilhaços em segre
 ## Estilhas, runas e relíquias
 
 **Estilhas**: pedaços do céu caído, acesos por dentro. Alimentam faróis, temperam runas e, cinco delas, forjam a Lâmina Estelar. **Runas** (Escudo, Vento, Raiz, Brasa, Maré): gravadas por Bram; cada uma se parte no lugar de quem a carrega, uma vez. **Relíquias**: a Pena da Garça Branca, que poupa alguém de uma ferida; o Sal dos Faróis, que desfaz uma maldição; a Lâmina Estelar. **Maldições**: a Mácula de Cinza e o Sussurro da Rainha.
+
+## Depois de Ost (Parte II)
+
+O coração de Ost voltou ao braseiro e o farol arde inteiro: a Cinza recuou duas léguas e o caminho para o Vau das Garças está limpo. O coração foi devolvido por Lúcia, a cartógrafa da expedição de quarenta anos atrás, que não morreu no Platô Vermelho e hoje é a Senhora dos Poços de Salmoura. Bram forjou a Lâmina Estelar com cinco estilhas. A Mácula de Cinza deixou o braço de Iara. O Sal dos Faróis, o sal grosso que os Faroleiros jogavam aos pés do braseiro, está com ela. Nas paredes de Ost, à luz forte, lê-se: *quem acende o farol não o acende sozinho.*

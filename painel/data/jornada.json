@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-02T08:53:52",
+ "gerado_em": "2026-11-02T08:57:28",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-06-29",
@@ -61,6 +61,13 @@
     "cumprida": false
    },
    {
+    "id": "forcas",
+    "nome": "Sessões de força do plano",
+    "feito": 0,
+    "meta": 2,
+    "cumprida": false
+   },
+   {
     "id": "almocos",
     "nome": "Almoços registrados (seg a sex)",
     "feito": 0,
@@ -99,7 +106,29 @@
  "hoje": {
   "data": "2026-11-02",
   "xp": 0,
-  "missoes": [],
+  "missoes": [
+   {
+    "nome": "Dia ativo",
+    "xp": 30,
+    "feito": false,
+    "sem_dado": false
+   },
+   {
+    "nome": "Pesagem em jejum",
+    "xp": 20,
+    "feito": false
+   },
+   {
+    "nome": "Registrar o almoço",
+    "xp": 20,
+    "feito": false
+   },
+   {
+    "nome": "Registrar o lanche da tarde",
+    "xp": 20,
+    "feito": false
+   }
+  ],
   "ferido": false
  },
  "arco": {
@@ -823,7 +852,7 @@
    "cumpridas": 0,
    "xp_semana": 0,
    "novo_arco": false,
-   "n": 4,
+   "n": 5,
    "missoes": [
     {
      "id": "ativos",
@@ -837,6 +866,13 @@
      "nome": "Pesagens em jejum",
      "feito": 0,
      "meta": 4,
+     "cumprida": false
+    },
+    {
+     "id": "forcas",
+     "nome": "Sessões de força do plano",
+     "feito": 0,
+     "meta": 2,
      "cumprida": false
     },
     {

@@ -1,0 +1,130 @@
+{
+ "marcos": [
+  {
+   "id": "2026-10-26:achado",
+   "dia": "segunda, 26/10",
+   "tipo": "achado",
+   "carta": "Maren desenhou de memória a planta dos armazéns de Salmoura a partir do que os moradores contavam em voz baixa no poço.",
+   "marco": "3 itens no dia (Corrida, Dia ativo, Almoço registrado) → achado",
+   "secao": "I. A planta das mulheres",
+   "como": "Maren desenhou os armazéns da Liga ouvindo as mulheres do poço. Na margem do desenho ficou a janela do quarto da Senhora, voltada para Ost: foi dela que veio a resposta ao sino de Teodoro."
+  },
+  {
+   "id": "2026-10-26:maldicao",
+   "dia": "segunda, 26/10",
+   "tipo": "maldicao",
+   "carta": "Naquela noite a brasa de Ost apagou sozinha por um instante, e quando voltou a acender todos sentiram que alguma coisa tinha se rompido.",
+   "marco": "juramento quebrado (limite) → maldição",
+   "secao": "I. A planta das mulheres",
+   "como": "A brasa apagou e a voz de mulher disse um nome; a Mácula de Iara esquentou. Foi o primeiro aviso de que alguém em Salmoura sabia que eles estavam ouvindo."
+  },
+  {
+   "id": "2026-10-27:achado",
+   "dia": "terça, 27/10",
+   "tipo": "achado",
+   "carta": "Teodoro reconheceu, no estandarte de um dos guardas da Liga, um símbolo que estava costurado na mochila de Bento, quarenta anos atrás.",
+   "marco": "3 itens no dia (Pesagem, Almoço registrado, Lanche registrado) → achado",
+   "secao": "II. O estandarte",
+   "como": "A garça azul no pendão da patrulha tirou Teodoro do prumo. Foi o primeiro fio que ligou Salmoura a Bento e, depois, a Lúcia."
+  },
+  {
+   "id": "2026-10-28:bencao",
+   "dia": "quarta, 28/10",
+   "tipo": "bencao",
+   "carta": "O menino que trouxe o bilhete voltou à noite, sozinho, e deixou no degrau da torre um embrulho de pano: dentro, uma estilha roubada dos armazéns da Liga.",
+   "marco": "5 itens no dia (Corrida, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → bênção",
+   "secao": "III. O nó de arena",
+   "como": "A quarta estilha da Lâmina. O nó do pano era de arena: Bram soube de quem era o embrulho e passou a proteger o menino sem dizer."
+  },
+  {
+   "id": "2026-10-29:achado",
+   "dia": "quinta, 29/10",
+   "tipo": "achado",
+   "carta": "Quando Iara cantou perto do Códice, uma página queimada mostrou por um instante metade de um mapa das ruínas de Lis.",
+   "marco": "2 itens no dia (Pesagem, Almoço registrado) → achado",
+   "secao": "IV. O sino e o poço",
+   "como": "O meio mapa de Lis com o moinho fez Fabio erguer a cabeça. É a primeira vez que o moinho chega a ele pelo canto de Iara."
+  },
+  {
+   "id": "missao:2026-10-26:almocos",
+   "dia": "quinta, 29/10",
+   "tipo": "missao",
+   "carta": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
+   "marco": "missão da semana cumprida: Almoços registrados (seg a sex) (4 de 4)",
+   "secao": "IV. O sino e o poço",
+   "como": "O sino tocou uma vez e a janela do armazém do fundo piscou em resposta. Foi o primeiro contato entre Teodoro e Lúcia em quarenta anos."
+  },
+  {
+   "id": "2026-10-29:bencao",
+   "dia": "quinta, 29/10",
+   "tipo": "bencao",
+   "carta": "Iara achou, no leito seco de um poço abandonado de Salmoura, um estilhaço do céu que a Liga não tinha visto.",
+   "marco": "5 itens no dia (Sessão de força, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → bênção",
+   "secao": "IV. O sino e o poço",
+   "como": "A quinta estilha, tirada do poço seco por Iara. Completou a Lâmina Estelar; o preço foi a Mácula, que subiu um dedo no braço dela."
+  },
+  {
+   "id": "2026-10-30:achado",
+   "dia": "sexta, 30/10",
+   "tipo": "achado",
+   "carta": "O menino de Salmoura disse o nome da Senhora dos Poços, e Teodoro ficou branco.",
+   "marco": "5 itens no dia (Corrida, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → achado",
+   "secao": "V. O que Teodoro mentiu",
+   "como": "O menino disse o nome de Lúcia e Teodoro confessou que mentira. Foi o começo da confissão que ele completou no domingo."
+  },
+  {
+   "id": "2026-10-30:bencao",
+   "dia": "sexta, 30/10",
+   "tipo": "bencao",
+   "carta": "Na luz da brasa, a Marca de Fabio apontou para o chão da torre. Debaixo de uma laje solta, havia uma estilha que algum guardião antigo escondeu ali.",
+   "marco": "5 itens no dia (Corrida, Dia ativo, Pesagem, Almoço registrado, Lanche registrado) → bênção",
+   "secao": "V. O que Teodoro mentiu",
+   "como": "A estilha de Davi sob a laje virou a Runa do Escudo nova, que Bram pendurou no pescoço de Iara, não no de Fabio."
+  },
+  {
+   "id": "missao:2026-10-26:ativos",
+   "dia": "sábado, 31/10",
+   "tipo": "missao",
+   "carta": "Iara ensinou a Maren o primeiro verso da canção. Maren ensinou a Iara o nó que quer dizer luz que volta.",
+   "marco": "missão da semana cumprida: Dias ativos (5 de 5)",
+   "secao": "VI. Os nós que voltam",
+   "como": "Iara ensinou o verso a Maren e Maren ensinou o nó da luz que volta. A Mácula não doeu naquela noite, e o verso passou a ser de duas."
+  },
+  {
+   "id": "missao:2026-10-26:pesagens",
+   "dia": "sábado, 31/10",
+   "tipo": "missao",
+   "carta": "Bram consertou as botas de todo mundo sem que ninguém pedisse, e gravou na sola de cada uma um nó pequeno.",
+   "marco": "missão da semana cumprida: Pesagens em jejum (4 de 4)",
+   "secao": "VI. Os nós que voltam",
+   "como": "Os nós gravados nas botas (volta para casa) estavam nos pés de todos quando desceram a escada na manhã do coração."
+  },
+  {
+   "id": "missao:2026-10-26:lanches",
+   "dia": "sábado, 31/10",
+   "tipo": "missao",
+   "carta": "Maren contou a Fabio um dos segredos que guardava, antes de ser obrigada.",
+   "marco": "missão da semana cumprida: Lanches das 17h registrados (4 de 4)",
+   "secao": "VI. Os nós que voltam",
+   "como": "Maren contou a garça a Fabio sem ser obrigada. No domingo ela foi além e contou tudo a Teodoro antes que ele descesse a Salmoura."
+  },
+  {
+   "id": "2026-10-31:achado",
+   "dia": "sábado, 31/10",
+   "tipo": "achado",
+   "carta": "Maren reconheceu, num papel do menino, a letra miúda e redonda do mapa da Senhora.",
+   "marco": "2 itens no dia (Dia ativo, Almoço registrado) → achado",
+   "secao": "VI. Os nós que voltam",
+   "como": "A letra miúda e redonda do papel do menino casava com a do sexto nome da parede. Maren a guardou até o domingo e a entregou a Teodoro."
+  },
+  {
+   "id": "2026-11-01:achado",
+   "dia": "domingo, 01/11",
+   "tipo": "achado",
+   "carta": "Iara ouviu o menino de Salmoura cantarolar um verso da canção de travessia.",
+   "marco": "2 itens no dia (Pesagem, Almoço registrado) → achado",
+   "secao": "VII. A porta de ferro",
+   "como": "O verso cantarolado pelo menino levou Iara a pedir para entrar sozinha em Salmoura. Fabio a deteve pedindo, e Teodoro desceu no lugar dela."
+  }
+ ]
+}

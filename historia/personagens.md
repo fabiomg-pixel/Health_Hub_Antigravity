@@ -133,15 +133,15 @@ que Bram poupou. Corajoso de um jeito que assusta os adultos.
 
 ## Agora (atualize a cada parte)
 
-- **Fabio**: recusou a troca de Bram por Ost. Sente a Marca puxar para o oeste. Ainda não contou a ninguém que sonha
-  com o moinho.
-- **Teodoro**: sabe (ou desconfia) de quem é a letra do mapa. Prometeu "voltar com todo mundo desta vez".
-- **Iara**: Mácula no braço esquerdo, escondida. Quer entrar sozinha em Salmoura.
-- **Bram**: disse que vai, se for para salvar o farol. Fabio disse que ninguém troca ninguém.
-- **Maren**: viu a garça no Códice e os sete nomes na parede; não contou nenhum dos dois.
+- **Fabio** (fim da Parte II): deixou Teodoro descer sozinho e Iara pedir em vez de ser proibida; contou os companheiros a noite inteira. Assobia sem saber a melodia que não resolve; Iara ouviu. Ainda esconde que sonha com o moinho. A Marca puxa para o oeste e esquenta estilhas acesas.
+- **Teodoro**: confessou que a mentira foi dizer que Lúcia morreu; a deixou viva no Platô. Falou com ela uma hora atrás do postigo e não conta o que ouviu. Ela não o perdoa. Prometeu (a ele mesmo, ao menos) não segui-la.
+- **Iara**: Mácula curada. Palmas esfoladas e ombro dolorido da corda. Carrega a Runa do Escudo nova, que não queria. Sabe só o 1º verso; perguntou a Fabio pedindo, não exigindo. Ouviu o assobio dele e calou.
+- **Bram**: forjou a Lâmina Estelar e não quer olhá-la. Reconheceu o nó de arena do menino e não contou. Diante de Corvino não ergueu o martelo; ouviu que alguém o ensina a viver. Dá o escudo a Iara.
+- **Maren**: contou a garça a Fabio e a letra a Teodoro antes de ser obrigada. Guarda agora só a linha riscada "oitavo gancho" na parede, porque não sabe o que dizer.
 
 ## Mudou (registro por parte)
 
+- **Parte II (fechada em 01/11, avanço)**: o coração de Ost voltou ao braseiro pelo balde, mandado por Lúcia (a Senhora dos Poços). Teodoro confessou a natureza da mentira (deixou Lúcia viva no Platô e disse que morrera). Iara foi curada da Mácula, e entregou-se a um pedido em vez de uma fuga. Bram forjou a Lâmina e deu o escudo a Iara. Maren passou a contar antes de ser obrigada. Fabio deixou o velho ir sozinho. Sementes novas: o assobio sem fim; o "oitavo gancho" riscado por Lúcia; o menino ainda sem nome.
 - **Parte II (até 31/10)**: Teodoro confessou que mentiu e o nome de Lúcia saiu; Bram reconhece o selo das arenas no apito do menino (semente: o menino é irmão do rapaz poupado); Iara descobriu que o menino canta o 1º verso da canção que ela conhece (semente: Lúcia ensinou, ligação com o Clã das Garças); Maren confrontou a letra miúda com o sexto nome da parede; Fabio contou 8 ganchos e 7 nomes.
 
 - **Parte I**: Bram perdeu a Runa do Escudo protegendo Fabio; Iara ganhou a Mácula na tempestade; Maren ouviu Aelis

@@ -658,7 +658,7 @@
    "titulo": "Superior: costas, peito e braços (academia)",
    "duracao_min": 50,
    "pesada": true,
-   "regra": "Quinta, 16h45 em diante, na academia (sem corrida no mesmo dia, sem perna pesada). 13 séries, RIR 2, mesmas cargas de 27/10 (nenhuma subida automática: não há leitura de séries fechadas com 2 de sobra). Iogurte com fruta antes de sair. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+   "regra": "Quinta, 16h45 em diante, na academia (sem corrida no mesmo dia, sem perna pesada). 15 séries, RIR 2, mesmas cargas de 27/10 (nenhuma subida automática: não há leitura de séries fechadas com 2 de sobra). Iogurte com fruta antes de sair. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
    "exercicios": [
     {
      "id": "supino_com_halteres",

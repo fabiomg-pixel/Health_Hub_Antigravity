@@ -1,11 +1,11 @@
 {
  "gerado_em": "2026-11-02",
- "semana": "02/11 a 08/11 · uma semana de recuperação ativa: 2 forças, 2 corridas fáceis e o jogo",
- "objetivo": "Depois de uma semana com 3 estímulos fortes e 3 manhãs vermelhas seguidas (FC de repouso 58 hoje), o plano é: 2 forças (RIR 2), 2 corridas fáceis em zona 2 e o jogo de sábado como única qualidade. A 3ª força e a 3ª corrida do teto não cabem sem empilhar 3 dias de carga; ficam para a semana seguinte, sem reposição cobrada.",
+ "semana": "02/11 a 08/11 · semana de recuperação ativa: 2 forças, 2 corridas fáceis e o jogo",
+ "objetivo": "Depois de uma semana com 3 estímulos de qualidade (limiar em 26/10, limiar em 30/10 e futebol em 31/10), com FC de repouso 58 hoje (média de 28 dias: 54) e a leitura de hoje ainda incompleta, o plano é: 2 forças (RIR 2), 2 corridas fáceis em zona 2 e o jogo de sábado como única qualidade. Terça, quarta e quinta são três dias de carga seguidos, avisados: a quinta é o primeiro corte. A 3ª força e a 3ª corrida do teto ficam de fora, sem reposição; o corte vem do estado do corpo e não do teto.",
  "peso_atual": 94.62,
  "peso_rotulo": "média das leituras neutras dos últimos 7 dias (28 dias: 94,84 kg); a pesagem de 01/11 (94,7 kg) é pós-esforço e não entra",
  "fontes_status": {
-  "garmin": "parcial: hoje (02/11) o índice é 14 (vermelho, 3 manhãs vermelhas seguidas) e a FC de repouso 58; sono e VFC de hoje ainda não sincronizaram, então o índice de hoje não é confiável. Prontidão e sono de 01/11 vêm da análise de domingo (índice 21, prontidão 1, VFC 30, sono 6,03 h).",
+  "garmin": "parcial: hoje (02/11) a FC de repouso é 58 e o índice 14, mas sono e VFC de hoje ainda não sincronizaram, então o índice de hoje não é confiável. Leitura de domingo, fora do fatos.json: índice 21, prontidão 1, VFC 30, sono 6,03 h. Média de 7 dias: índice 43, VFC 36, sono 6,84 h.",
   "peso": "média de 7 leituras neutras; pesagem de 01/11 pós-esforço",
   "logistica": "previsão Open-Meteo de 01/11; respostas do Fabio de 01/11 (sem reunião no fim da tarde, academia com plano em casa, sem viagem, jogo no sábado)",
   "clinico": "sem sintoma relatado nas respostas de 01/11; ibuprofeno e antibiótico: não sei"
@@ -24,7 +24,7 @@
   "linhas": [
    "Lanche das 15h vira pré-treino: iogurte natural desnatado 160 g + fruta (ou Yopro), ANTES de qualquer doce. Obrigatório nos dias de corrida e de academia.",
    "Almoço de segunda a sexta: marmita com 35 g ou mais de proteína NO RÓTULO e vegetal em pedaço.",
-   "Janta caseira simples: 1 proteína + salada fresca. Peixe em 1 janta (quarta), feijão ou lentilha em 2 refeições.",
+   "Janta caseira simples: 1 proteína + salada fresca. Peixe e feijão já estão no cardápio dos dias.",
    "Refeição livre só no sábado à noite; fritura no máximo 1 na semana, a livre incluída.",
    "Antes do jogo de sábado: banana + iogurte ou Yopro. Nunca em jejum."
   ]
@@ -46,9 +46,9 @@
   "dias_feitos": []
  },
  "relatorio": [
-  "Semana 02/11 a 08/11: 2 forças, 2 corridas fáceis e o jogo de sábado. A semana passada teve 3 estímulos fortes (limiar, Lower A, limiar de novo e o futebol); hoje o índice é 14 e a FC de repouso 58, contra 54 de média de 28 dias. Por isso segunda é descanso e nada passa de zona 2 além do jogo.",
+  "Semana 02/11 a 08/11: 2 forças, 2 corridas fáceis e o jogo de sábado. A semana passada teve 3 estímulos de qualidade (limiar em 26/10, limiar em 30/10 e futebol em 31/10). Hoje a FC de repouso é 58, contra 54 de média de 28 dias; o índice de hoje (14) não é confiável porque sono e VFC ainda não sincronizaram. Por isso segunda é descanso e nada passa de zona 2 além do jogo.",
   "Você disse que não espera reunião no fim da tarde, então as corridas ficam entre 16h45 e 17h45; quarta é o único dia seco. Você disse academia, com o plano em casa de reserva. Você disse almoço de marmita e janta simples, força no fim da tarde e refeição livre no sábado.",
-  "A 3ª força e a 3ª corrida do teto não cabem sem 3 dias de carga seguidos; ficam para depois, sem reposição. Corte só por febre, falta de ar, aperto ou tosse no peito, dor articular acima de 3/10 ou pelo semáforo do painel."
+  "Terça, quarta e quinta são 3 dias de carga seguidos, e aviso: a quinta é o primeiro corte (vira versão em casa leve ou cai) se a terça ou a quarta pesarem. A 3ª força e a 3ª corrida do teto ficam de fora, sem reposição; o corte vem da FC de repouso e não do teto, e a manhã de terça confirma. Corte só por febre, falta de ar, aperto ou tosse no peito, dor articular acima de 3/10 ou pelo semáforo do painel."
  ],
  "lista_compra": [
   {
@@ -101,7 +101,7 @@
       "reps": "—"
      },
      {
-      "nome": "Nenhuma sessão marcada. Vem de 3 dias de carga alta e de 3 manhãs vermelhas seguidas: o descanso cai aqui.",
+      "nome": "Nenhuma sessão marcada. Vem de 4 dias seguidos de gasto ativo alto (28 a 31/10) e de uma FC de repouso de 58 hoje: o descanso cai aqui.",
       "series": 1,
       "reps": "—"
      },
@@ -156,10 +156,10 @@
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "Corrida fácil de 30 min, zona 2 — corrida 1 de 2",
+    "foco": "Corrida fácil de 30 min no total, zona 2 — corrida 1 de 2",
     "exercicios": [
      {
-      "nome": "Rua das 16h45 às 17h45, só se estiver seco (59% de chuva prevista). Sessão guiada no botão: 30 min em zona 2 (FC 130 a 145), sem teto de velocidade.",
+      "nome": "Rua das 16h45 às 17h45, só se estiver seco (59% de chuva prevista). Sessão guiada no botão: 30 min no total (aquecimento, 20 min em zona 2 e desaceleração) (FC 130 a 145), sem teto de velocidade.",
       "series": 1,
       "reps": "—"
      },
@@ -214,10 +214,10 @@
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "Corrida fácil de 40 min, zona 2 — corrida 2 de 2",
+    "foco": "Corrida fácil de 40 min no total, zona 2 — corrida 2 de 2",
     "exercicios": [
      {
-      "nome": "Rua das 16h45 às 17h45: o único dia seco da semana (12% de chuva). Sessão guiada no botão: 40 min em zona 2 (FC 130 a 145), sem teto de velocidade.",
+      "nome": "Rua das 16h45 às 17h45: o único dia seco da semana (12% de chuva). Sessão guiada no botão: 40 min no total (aquecimento, 30 min em zona 2 e desaceleração) (FC 130 a 145), sem teto de velocidade.",
       "series": 1,
       "reps": "—"
      },
@@ -277,10 +277,10 @@
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "Superior: costas, peito e braços — força 1 de 2 (academia, sem perna pesada)",
+    "foco": "Superior: costas, peito e braços — força 1 de 2 (academia, sem perna pesada). Terça, quarta e quinta são 3 dias de carga seguidos: se terça ou quarta pesarem, a quinta vira versão em casa leve ou cai",
     "exercicios": [
      {
-      "nome": "Academia a partir das 16h45, 13 séries, RIR 2, cargas de 27/10 mantidas. O painel mostra o semáforo; você só clica em iniciar.",
+      "nome": "Academia a partir das 16h45, 15 séries, RIR 2, cargas de 27/10 mantidas. O painel mostra o semáforo; você só clica em iniciar.",
       "series": 1,
       "reps": "—"
      },
@@ -523,12 +523,13 @@
    "id": "carga",
    "especialista": "Carga e recuperação",
    "assina": "seu fisiologista",
-   "como_esta": "Você disse que se sente bem e não relatou sintoma. O relógio pede cuidado: hoje o índice é 14, a FC de repouso 58 (média de 28 dias: 54), e a prontidão de domingo foi 1, VFC 30 e sono 6,03 h, depois de 3 estímulos fortes na semana.",
-   "para_onde": "Até 3 forças e 3 corridas fáceis em zona 2 no teto; o jogo de sábado é a única qualidade. Segunda é leve ou descanso, quinta sem perna pesada, sexta sem corrida e domingo sem corrida. 3 manhãs vermelhas seguidas, prontidão abaixo de 30 ou noite abaixo de 5,5 h com VFC abaixo de 30 ou FC a partir de 58 derrubam a próxima corrida.",
+   "como_esta": "Você disse que se sente bem e não relatou sintoma. O relógio pede cuidado: FC de repouso 58 hoje (média de 28 dias: 54), média de 7 dias do índice 43 e VFC 36 (28 dias: 37), depois de 3 estímulos de qualidade na semana (futebol de 31/10: 64 min, FC máxima 191). Leitura de domingo, fora do fatos.json: prontidão 1, VFC 30, sono 6,03 h. A manhã de hoje ainda está incompleta.",
+   "para_onde": "Até 3 forças e 3 corridas fáceis em zona 2 no teto; o jogo de sábado é a única qualidade. Segunda é descanso, quinta sem perna pesada, sexta sem corrida e domingo sem corrida. 3 manhãs vermelhas seguidas (se a leitura de hoje se confirmar), prontidão abaixo de 30 ou noite abaixo de 5,5 h com VFC abaixo de 30 ou FC a partir de 58 derrubam a próxima corrida.",
    "nao_sei": [
-    "A manhã de segunda completa (sono e VFC de hoje não sincronizaram).",
-    "A carga real do jogo de 31/10 e do de 07/11.",
-    "Por que a prontidão caiu tanto."
+    "A manhã de hoje completa (sono e VFC não sincronizaram) e a de terça.",
+    "A carga do jogo de 07/11 (sem relógio no campeonato).",
+    "Por que a prontidão caiu tanto.",
+    "Se ainda há antibiótico ou ibuprofeno em curso."
    ]
   },
   {
@@ -547,7 +548,7 @@
    "id": "nutricao",
    "especialista": "Nutrição e adesão",
    "assina": "sua nutricionista",
-   "como_esta": "Nos 7 dias até 31/10 houve 23 refeições registradas, fritura 0 e álcool 0; o doce da tarde apareceu uma vez (sorvete, 31/10). Peso: média de 7 leituras neutras 94,62 kg, contra 94,86 na de 28 dias; uma semana só, o gatilho de peso não dispara.",
+   "como_esta": "Nos 7 dias até 01/11 houve 24 refeições registradas, fritura 0 e álcool 0; o doce da tarde apareceu uma vez (sorvete, 31/10). Peso: média de 7 leituras neutras 94,62 kg, contra 94,84 na de 28 dias; uma semana só, o gatilho de peso não dispara.",
    "para_onde": "Você disse almoço de marmita e janta simples, então fica marmita com 35 g no rótulo e janta de uma proteína com salada. Você disse força no fim da tarde, então o lanche das 15h vira pré-treino. Você disse sábado, e assumi refeição livre à noite; se for no almoço depois do jogo, me corrija.",
    "nao_sei": [
     "Os rótulos das marmitas.",
