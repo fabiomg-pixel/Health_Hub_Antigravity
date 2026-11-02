@@ -1,26 +1,26 @@
 {
- "_nota": "Baralho genérico, usado só se a parte da semana não tiver baralho próprio (o escritor esqueceu). Textos neutros.",
+ "_nota": "Baralho genérico de reserva para a campanha 'Os Faróis de Nácar'. Usado apenas se a parte da semana não tiver baralho específico.",
  "parte": 0,
  "titulo": "",
- "clima": "seca",
- "antagonista": "cinza",
- "recompensa_limpa": "pena_da_garca",
+ "clima": "tempestade",
+ "antagonista": "nevoa",
+ "recompensa_limpa": "lagrima_de_nacar",
  "baralho": {
   "bencao": [
    {
-    "texto": "Um brilho verde no fundo de uma vala: uma estilha do céu.",
+    "texto": "Um Fragmento de Nácar foi encontrado brilhando no leito de uma fenda de basalto.",
     "efeito": {
      "estilha": 1
     }
    },
    {
-    "texto": "Um brilho verde no fundo de uma vala: uma estilha do céu.",
+    "texto": "A Marca do pulso de Fabio revelou um veio celeste oculto na rocha.",
     "efeito": {
      "estilha": 1
     }
    },
    {
-    "texto": "Um brilho verde no fundo de uma vala: uma estilha do céu.",
+    "texto": "Valen forjou uma estilha pura a partir dos sedimentos da fornalha.",
     "efeito": {
      "estilha": 1
     }
@@ -28,19 +28,19 @@
   ],
   "achado": [
    {
-    "texto": "Maren decifrou mais um nó do Códice de Vhar.",
+    "texto": "Miriam decifrou mais uma rota de maré no Códice de Pele de Baleia.",
     "efeito": {
      "pista": 1
     }
    },
    {
-    "texto": "Maren decifrou mais um nó do Códice de Vhar.",
+    "texto": "Sora localizou um marco ancestral indicando correntes de ar limpo.",
     "efeito": {
      "pista": 1
     }
    },
    {
-    "texto": "Maren decifrou mais um nó do Códice de Vhar.",
+    "texto": "Orfeu identificou a passagem segura entre as agulhas de pedra.",
     "efeito": {
      "pista": 1
     }
@@ -48,33 +48,33 @@
   ],
   "quieto": [
    {
-    "texto": "Um dia de estrada sem acontecimentos.",
+    "texto": "Um dia de ventos calmos e navegação constante pelas correntes do desfiladeiro.",
     "efeito": {}
    },
    {
-    "texto": "Um dia de estrada sem acontecimentos.",
+    "texto": "A névoa permaneceu contida no fundo do abismo, permitindo o descanso da tripulação.",
     "efeito": {}
    },
    {
-    "texto": "Um dia de estrada sem acontecimentos.",
+    "texto": "A chalupa cortou o ar estável enquanto Valen realizava reparos preventivos nas pás.",
     "efeito": {}
    }
   ],
   "percalco": [
    {
-    "texto": "Uma noite ruim: os Esquecidos rondaram o acampamento.",
+    "texto": "Uma lufada de vento térmico desceu pelas fendas, avariando as pás de bronze da chalupa.",
     "efeito": {
      "desgaste": 1
     }
    },
    {
-    "texto": "Uma noite ruim: os Esquecidos rondaram o acampamento.",
+    "texto": "Um bolsão de névoa corrosiva subiu do abismo, danificando a calafetação da quilha.",
     "efeito": {
      "desgaste": 1
     }
    },
    {
-    "texto": "Uma noite ruim: os Esquecidos rondaram o acampamento.",
+    "texto": "Uma tempestade súbita de granizo de salitre quebrou suportes de amarração do convés.",
     "efeito": {
      "desgaste": 1
     }
@@ -82,13 +82,13 @@
   ],
   "maldicao": [
    {
-    "texto": "Alguma coisa se rompeu naquela noite, e ninguém soube dizer o quê."
+    "texto": "Um juramento quebrado atraiu a Névoa Silenciosa para o interior do navio."
    },
    {
-    "texto": "Alguma coisa se rompeu naquela noite, e ninguém soube dizer o quê."
+    "texto": "O Chamado do Abismo ecoou no casco, enfraquecendo a determinação da tripulação."
    },
    {
-    "texto": "Alguma coisa se rompeu naquela noite, e ninguém soube dizer o quê."
+    "texto": "A Mácula do Esquecimento avançou sobre o convés na calada da noite."
    }
   ]
  }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.fabiogomes.telegram-saude</string>
+  <!-- No login, pede ao Terminal (que tem acesso a ~/Documents) para ligar o copiloto de saúde. -->
+  <key>ProgramArguments</key>
+  <array><string>/usr/bin/open</string><string>-g</string><string>-a</string><string>Terminal</string><string>/Users/fabiogomes/.claude/channels/telegram-saude/iniciar_saude.command</string></array>
+  <key>RunAtLoad</key><true/>
+</dict>
+</plist>

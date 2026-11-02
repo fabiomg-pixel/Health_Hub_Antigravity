@@ -1,161 +1,150 @@
 {
- "_nota": "Parte III. O baralho dos acontecimentos desta parte: cada dia tira cartas pela qualidade do dia (métricas), em ordem. Textos só de história. Efeitos aplicados no fechamento. 'despacho' é a versão do Telegram (cena curta com foco num personagem); 'missao' são as cartas das missões cumpridas, na ordem; 'rumo' é a linha de presságio quando a projeção do desfecho muda.",
- "parte": 3,
- "titulo": "O Vau das Garças",
- "clima": "chuvosa",
- "antagonista": "esquecidos",
- "recompensa_limpa": "pena_da_garca",
+ "_nota": "Parte I (02/11/2026). O Estreito dos Dentes de Pedra. Cada dia tira cartas pela qualidade do dia (métricas). Textos da nova lore 'Os Faróis de Nácar'.",
+ "parte": 1,
+ "titulo": "O Estreito dos Dentes de Pedra",
+ "clima": "tempestade",
+ "antagonista": "nevoa",
+ "recompensa_limpa": "lagrima_de_nacar",
  "baralho": {
   "bencao": [
    {
-    "texto": "Rosa mandou de Ost, por um mensageiro a pé, uma estilha costurada na bainha de um casaco velho de Faroleiro.",
-    "efeito": {"estilha": 1},
-    "despacho": "O mensageiro alcançou a companhia ao entardecer, sem fôlego, com um casaco dobrado no braço. Teodoro desfez a bainha com a unha e achou a estilha, ainda morna da corrida. Dentro do forro, em letra de criança que aprendeu tarde, Rosa escrevera: o sino toca todo dia ao meio-dia. Ele leu duas vezes. Depois vestiu o casaco por cima do seu, mesmo sendo curto nos braços, e ninguém teve coragem de rir."
+    "texto": "Sora avistou um nicho brilhante numa fenda de basalto: um Fragmento Puro de Nácar incrustado no coral negro.",
+    "efeito": {
+     "estilha": 1
+    },
+    "despacho": "Sora desceu amarrada a um cabo de cânhamo pelas escarpas verticais da fenda, com as botas resvalando no lodo úmido da névoa. Voltou puxada por Valen com um estilhaço leitoso preso entre os dentes, os olhos faiscando de triunfo. Fabio a ajudou a passar a perna sobre a amurada sem dizer uma palavra de repreensão, apenas examinando o nácar ainda morno. — Desta vez você me avisa antes de pular no vácuo, Sora. — Ela cuspiu o nácar na palma do capitão, rindo com a boca salgada: — Se eu avisasse, o senhor mandaria o Valen amarrar três cabos de segurança e a maré levava a pedra embora."
    },
    {
-    "texto": "Uma garça de pedra à beira do rio guardava uma estilha no bico.",
-    "efeito": {"estilha": 1},
-    "despacho": "A garça de pedra estava de pé na margem, com a água lambendo-lhe os pés, e segurava no bico uma estilha do tamanho de uma semente. Iara olhou para a estátua por muito tempo antes de estender a mão. Não tocou a pedra: pediu licença em voz baixa, numa língua que não sabia que sabia. O bico se abriu um dedo, e a estilha caiu na palma dela. Ela fechou a mão e não conseguiu falar até a noite."
+    "texto": "A Marca no pulso de Fabio aqueceu subitamente diante de uma caverna suspensa, revelando uma arca dos antigos faroleiros com nácar estelar.",
+    "efeito": {
+     "estilha": 1
+    },
+    "despacho": "A dor no pulso de Fabio foi tão aguda que ele precisou largar o timão por um instante. A Marca pulsava em azul elétrico, apontando para uma abertura na rocha calcária oculta por cortinas de líquen fóssil. Quando Orfeu manobrou a chalupa para junto da reentrância, Valen usou o pé-de-cabra para arrombar uma caixa de mogno centenária. No interior, envolto em panos de seda graxa, brilhava um fragmento de nácar de primeira grandeza. Orfeu tirou o chapéu de feltro e tocou a madeira da arca: — Era o cofre do velho mestre Tomás. Ele sabia que alguém viria buscar."
    },
    {
-    "texto": "Bram tirou, do lodo de uma palafita desabada, uma lasca de estilha que a Cinza tinha poupado.",
-    "efeito": {"estilha": 1},
-    "despacho": "Bram revirou o lodo de uma palafita desabada com as mãos, devagar, como quem procura um objeto perdido no escuro de casa. Quando achou a lasca, ficou segurando-a entre dois dedos sem dizer nada. Atrás dele, o menino do apito observava com o pão pela metade. — Isso é seu? — perguntou. Bram demorou. — Foi de alguém. — Pôs a lasca no pano ao lado da Lâmina e, pela primeira vez em dias, assobiou três notas antes de parar."
+    "texto": "Valen recolheu escórias de nácar resfriadas nos respiradouros termais e apurou uma estilha límpida na fornalha.",
+    "efeito": {
+     "estilha": 1
+    },
+    "despacho": "Valen passou duas horas alimentando a fornalha auxiliar com carvão de pinho e pó de pedra-sabão, suando em bicas enquanto o vento de fora sacudia as placas do convés. Quando abriu o cadinho de barro com a tenaz, uma lasca pura de nácar cintilou em cobalto. O gigante sorriu para Miriam, que estava sentada no banco da cozinha sentindo o calor irradiado: — O metal ainda tem memória boa, senhorita. Esta lasca aguenta o peso de um temporal inteiro."
    },
    {
-    "texto": "Maren leu num poste de madeira uma frase dos Garças e, ao dizê-la em voz alta, uma estilha se soltou da fenda.",
-    "efeito": {"estilha": 1},
-    "despacho": "Maren leu a frase gravada no poste com o dedo, uma letra por vez, e a leu em voz alta sem ter certeza de que era assim que se dizia. A madeira estalou. Da fenda caiu uma estilha, e Maren a apanhou no ar antes que tocasse a água. — Era uma porta — disse, espantada, e riu do próprio espanto. Depois anotou a frase no Códice, na margem queimada, e escreveu embaixo: eu li isto sozinha, e deu certo."
+    "texto": "Miriam tocou a parede úmida da Garganta e sentiu o calor de um veio celeste, desenterrado por Valen com a picareta.",
+    "efeito": {
+     "estilha": 1
+    },
+    "despacho": "Miriam pediu que a chalupa emparelhasse com o paredão leste. De olhos fechados e com a palma da mão esquerda espalmada contra a rocha fria, ela moveu os dedos como quem toca uma harpa invisível: — Aqui, Valen. Três palmos abaixo da marca da maré alta. A pedra canta em tom menor. — Dois golpes certeiros do martelo de Valen abriram uma fenda na crosta de basalto, revelando um nódulo de nácar que acendeu a penumbra do cânion em violeta e ouro."
    },
    {
-    "texto": "Fabio achou, entre as raízes de um salgueiro, uma estilha que o rio tinha escondido do clã por vinte anos.",
-    "efeito": {"estilha": 1},
-    "despacho": "A Marca puxou Fabio até as raízes de um salgueiro dobrado sobre a água. Ele se ajoelhou na lama sem pensar, enfiou a mão entre os nós da madeira e tirou uma estilha pequena, coberta de limo. Iara o observava de longe. Ele esfregou o limo com o polegar, e a pedra acendeu sozinha, verde e dourada. — Capitão — disse ela, sem rir —, o senhor está assobiando. Fabio parou. Não soube há quanto tempo."
-   },
-   {
-    "texto": "O menino do apito mostrou a Bram um esconderijo de estilhas que o clã deixara nos pilares de uma ponte de corda.",
-    "efeito": {"estilha": 1},
-    "despacho": "O menino puxou Bram pela manga até um pilar da ponte de corda e apontou, sem dizer nada, uma fenda no madeirame. Bram enfiou os dedos e tirou uma estilha. Depois outra lasca, menor. — Como você sabia? — O menino deu de ombros. — A Senhora me ensinou onde os Garças escondiam. — Bram olhou a mão rachada de sal do menino e perguntou, devagar, o que mais ela ensinara. O menino pensou. — A não perguntar."
+    "texto": "Os mastins farejaram um ninho abandonado de gaivotas de ferro nas alturas do desfiladeiro, onde brilhava um pedaço do céu antigo.",
+    "efeito": {
+     "estilha": 1
+    },
+    "despacho": "Baluarte e Estrela começaram a latir em uníssono na proa, os pelos das costas eriçados e as caudas tesas. Não era o latido de perigo das sombras; era o uivo curto de caça de topo. Fabio acompanhou o olhar dos cães e viu, a quarenta braças de altura num nicho forrado de gravetos secos, o brilho azulado de um fragmento lunar trazido por aves de rapina há gerações. Sora subiu pela linha de içamento e desceu com a presa nos braços, acariciando as orelhas dos mastins em agradecimento."
    }
   ],
   "achado": [
    {
-    "texto": "No terceiro dia, Iara reconheceu uma marca na porta de uma palafita: três linhas, como asas de garça abertas.",
-    "efeito": {"pista": 1},
-    "despacho": "Iara parou diante de uma porta cinzenta de palafita, com a mão suspensa no ar. Na madeira, gasta pela Cinza, havia três linhas riscadas a faca, como asas de garça abertas. Ela passou o dedo sobre cada uma. — Eu sei fazer isto — disse. — Sei desenhar de olhos fechados. — Desenhou a marca no ar, sem errar uma curva, e olhou para a própria mão como se fosse de outra. Fabio não perguntou como. Ficou ao lado dela até ela querer andar."
+    "texto": "Miriam decifrou uma dobra esquecida do Códice de Baleia, revelando a passagem secreta do Estreito dos Dentes de Pedra.",
+    "efeito": {
+     "pista": 1
+    },
+    "despacho": "Aquecendo a borda do pergaminho sobre a lanterna de nácar, Miriam correu as pontas dos dedos pelas ranhuras em relevo do Códice. Um suspiro de espanto escapou-lhe dos lábios: — Não é um cânion cego, Fabio. Os Arquitetos Celestes cavaram um canal de respiro por trás da Cascata de Basalto. Se entrarmos pela fenda oeste, evitaremos as correntes de tesoura do meio do canal. — Fabio anotou as coordenadas na carta náutica com tinta de chumbo, sentindo o alívio desanuviar o peito."
    },
    {
-    "texto": "Teodoro achou, num poste do vau, um fio azul amarrado em três nós de Lúcia.",
-    "efeito": {"pista": 1},
-    "despacho": "No poste do vau, a um palmo da água, havia um fio azul amarrado em três nós. Teodoro os reconheceu de longe, antes de se aproximar, pelo jeito de apertar o último: duas voltas e um puxão. Ficou parado com a mão aberta, sem tocar. — Ela passou aqui — disse, e a voz saiu rouca. — Tem uns dez dias. — Maren perguntou se ele ia desatar. Ele cobriu o fio com a manga do casaco, como quem cobre um rosto, e andou."
+    "texto": "Sora localizou um antigo marco de pedra dos faroleiros indicando as profundezas navegáveis do abismo.",
+    "efeito": {
+     "pista": 1
+    },
+    "despacho": "Pendurada na verga maior, Sora limpou o musgo cinzento de um obelisco cravado na ponta de um esporão de rocha. Gritou para o convés: — O marco sete ainda tem o entalhe dos três triângulos! O calado da fenda tem pelo menos quinze braças de ar limpo antes da zona de névoa corrosiva! — Orfeu assentiu no leme, ajustando a inclinação das pás para aproveitar o colchão de ar estável."
    },
    {
-    "texto": "Maren encontrou, atrás do altar das Garças, uma página do Códice de Vhar que não estava queimada.",
-    "efeito": {"pista": 1},
-    "despacho": "Maren puxou o pano do altar das Garças e achou, enfiada entre duas pedras, uma folha solta. Não estava queimada. A Escrita corria limpa de ponta a ponta, em tinta que ainda brilhava fraco. Ela leu a primeira linha e parou. — Isto é do Códice. É a página que falta entre a sétima e a oitava. — Fechou a folha contra o peito. — Quem a trouxe até aqui conhecia a ordem dos nós. Quem sabe tanto assim, Fabio?"
+    "texto": "Orfeu reconheceu a marcação de maré deixada pela expedição de quarenta anos atrás nas muralhas da garganta.",
+    "efeito": {
+     "pista": 1
+    },
+    "despacho": "Orfeu parou ao lado de Fabio, apontando com a ponta do cachimbo apagado para uma linha de cravos de bronze cravados no granito escuro: — O capitão Vane passou por aqui em 1986. Ele cravou esses rebites para medir onde a maré tóxica descansava no solstício. Veja lá: a linha dele está cinco braças abaixo da nossa linha atual. O mar de baixo subiu, capitão, mas as correntes de desvio ainda obedecem ao mesmo ritmo."
    },
    {
-    "texto": "Os Esquecidos do rio viraram o rosto todos de uma vez quando Fabio passou assobiando.",
-    "efeito": {"pista": 1},
-    "despacho": "Fabio passou pela margem com a mochila ao ombro, assobiando sem perceber. Os Esquecidos na água, que não tinham mexido um dedo em dias, viraram o rosto todos ao mesmo tempo, devagar, como uma plantação de espigas ao vento. Ele parou. O assobio morreu. Os rostos continuaram voltados para ele. Iara, atrás, não disse uma palavra, mas tocou a manga dele com dois dedos, de leve, e ele sentiu a Marca esquentar sob a pele."
+    "texto": "Valen encontrou nas ferragens de um antigo guindaste portuário um diagrama com o mecanismo do Colosso de Basalto.",
+    "efeito": {
+     "pista": 1
+    },
+    "despacho": "Entre as ruínas de uma estação de transbordo suspensa no paredão, Valen encontrou uma placa de latão gravada sob duas camadas de ferrugem. Levou-a para a mesa de cartas e esfregou carvão com o polegar: — Olhe aqui, Fabio. O Colosso do desfiladeiro tem três contrapesos de chumbo na nuca. Se a névoa ativar os braços mecânicos, a válvula de alívio fica do lado esquerdo da escadaria. Não precisamos derrubá-lo; basta soltar a trava de vapor."
    },
    {
-    "texto": "O menino do apito cantarolou o segundo verso da canção das Garças, e parou assustado quando Iara o encarou.",
-    "efeito": {"pista": 1},
-    "despacho": "O menino cantarolou o segundo verso enquanto lavava a casca de pão no rio, sem notar que Iara estava ali. Ela se agachou ao lado dele devagar, como se o menino fosse um pássaro. — Repete. — Ele ficou branco. — A Senhora disse que eu não devia cantar isto perto de ninguém. — Iara repetiu o verso, nota por nota, e a voz quebrou no fim. — Eu sei — disse. — Eu sei esse. Eu só tinha esquecido que sabia."
-   },
-   {
-    "texto": "Bram reconheceu, num dos Esquecidos da margem, o jeito de segurar o remo dos remadores da Liga.",
-    "efeito": {"pista": 1},
-    "despacho": "Bram parou à beira da água diante de um Esquecido que segurava, sem saber, um pedaço de remo, com a mão esquerda embaixo e a direita em cima. Era o jeito dos remadores das galés da Liga. Ele conhecia aquela empunhadura de dez anos de arena, vendo os escravos puxarem. Olhou os ombros do homem, as cicatrizes antigas de corrente, e não se mexeu. — Este é de lá — disse, tão baixo que só o menino ouviu. — Alguém o jogou aqui para sumir."
+    "texto": "Miriam ouviu o eco de um sino submerso nas nuvens, calculando com precisão a distância até o Farol de Ost-Nadir.",
+    "efeito": {
+     "pista": 1
+    },
+    "despacho": "Miriam ergueu o queixo e pediu silêncio total a bordo. As pás da chalupa foram postas em marcha lenta. Durante três minutos tensos, a tripulação ouviu apenas o silvo do vento nos cabos. Então, vindo do fundo da garganta, soou uma vibração rouca e metálica, como o bronze de um sino imenso vibrando sob a pressão das nuvens. — São cinco léguas e meia, navegador — disse Miriam, os olhos leitosos cintilando na penumbra. — O sino do Farol de Ost ainda está pendurado na torre, esperando que alguém toque o badalo."
    }
   ],
   "quieto": [
    {
-    "texto": "Um dia de espera na margem, com a chuva fina e a água subindo devagar.",
+    "texto": "Um dia de vento constante e céu límpido sobre os desfiladeiros: a chalupa avança sem incidentes.",
     "efeito": {},
-    "despacho": "A chuva fina caiu o dia inteiro, e a companhia ficou debaixo do telhado de uma palafita sem parede. Teodoro contou ao menino a história do primeiro Faroleiro, a pastora Ilda e o braseiro no alto do morro. O menino ouviu de boca aberta e, quando o velho terminou, perguntou se a pastora tinha medo. — Todo dia — disse Teodoro. — Foi por isso que acendeu."
+    "despacho": "A tarde caiu mansa sobre o Estreito dos Dentes de Pedra. As pás gravitacionais mantiveram um zumbido regular, e a névoa permaneceu contida duzentas braças abaixo do casco, parecendo um lençol de lã fosca estendido entre os rochedos. Valen aproveitou para remendar as botas de Sora na popa; Fabio e Orfeu dividiram uma caneca de infusão de folhas de chá-da-montanha, conversando em voz baixa sobre os ventos do outono passado."
    },
    {
-    "texto": "Iara e Maren passaram a tarde ensinando o menino a ler os nós da luz.",
+    "texto": "A névoa permaneceu calma sob a linha da quilha, permitindo uma noite de descanso sem alarmes.",
     "efeito": {},
-    "despacho": "Maren desenhou no ar o nó que quer dizer luz que volta, e Iara o repetiu, e o menino tentou três vezes. Na quarta, o nó acendeu na ponta do dedo dele com uma luz tão fraca que parecia uma lembrança de luz. Ele ficou olhando, e Iara teve de segurar o riso. — Eu sou bom nisso? — perguntou. — Você é perigoso — disse Maren, e anotou o nome do nó pela terceira vez."
+    "despacho": "Na vigília da meia-noite, Fabio encontrou Miriam sentada na amurada com Baluarte deitado sobre seus pés descalços. Não havia lua no céu, mas as estrelas de nácar brilhavam no firmamento alto como agulhas de gelo. — Como está o seu pulso hoje, capitão? — perguntou a sábia. — Tranquilo, Miriam. Como água que dorme na panela. — Ela sorriu e respirou fundo o ar limpo da altitude: — Então durma duas horas, Fabio. Os cães e eu guardamos o leme."
    },
    {
-    "texto": "Bram afiou o fio da Lâmina uma só vez, sem usar, e a embrulhou de novo.",
+    "texto": "Sora afiou suas pontas de flecha na proa enquanto as pás de bronze cortavam as correntes térmicas da fenda.",
     "efeito": {},
-    "despacho": "Bram desembrulhou a Lâmina Estelar à luz do fim da tarde, passou a pedra de afiar uma única vez ao longo do fio e a embrulhou de novo, com mais pano do que antes. Fabio, que olhava, perguntou por quê. — Porque se eu a deixar cega, ninguém pede que eu a use — disse ele. Depois ficou com as mãos vazias e fez, sem notar, o gesto de girar um martelo que não estava ali."
+    "despacho": "O som rítmico do sílex roçando na pedra de amolar acompanhou toda a navegação matinal. Sora trabalhava concentrada, enfileirando vinte flechas perfeitas na caixa de cedro. Quando Valen passou levando um balde de graxa para as engrenagens, a arqueira atirou-lhe uma maçã desidratada: — Coma isso antes que fique com cara de estátua de sal, grandalhão. — Valen apanhou a fruta no ar e agradeceu com um aceno lento de cabeça."
    },
    {
-    "texto": "Fabio ensinou o menino a contar os companheiros antes de dormir.",
+    "texto": "A tripulação dividiu a ração quente de grãos e peixe seco sob o abrigo da lona encerada do tombadilho.",
     "efeito": {},
-    "despacho": "O menino não dormia. Fabio sentou ao lado dele e ensinou, em voz baixa, a contar: um, dois, três, quatro, cinco, e ele mesmo, seis. O menino repetiu, errou, riu, repetiu. Quando por fim adormeceu, a mão dele estava fechada na manga do capitão. Fabio ficou muito tempo sem se mexer, contando de novo, com medo de que a conta, agora, fosse grande demais para uma pessoa só."
+    "despacho": "Com a chalupa ancorada num recesso protegido do vento, os quatro se reuniram em torno do braseiro de ferro. A sopa de feijão-fradinho com lascas de bacalhau salgado fumegava nas tigelas de barro. Orfeu contou a história do capitão que tentou navegar uma chalupa usando gaivotas amarradas ao leme, arrancando gargalhadas até mesmo de Sora. Pela primeira vez desde a partida de Porto Esperança, o peso do mundo pareceu um pouco mais leve nos ombros de todos."
    }
   ],
   "percalco": [
    {
-    "texto": "A chuva na cabeceira fez o rio subir uma palma em uma noite, e a trilha de pedras do vau desapareceu.",
-    "efeito": {"desgaste": 1},
-    "despacho": "O rio subiu durante a noite, sem barulho, e de manhã a trilha de pedras do vau tinha sumido debaixo de água cor de barro. Iara ficou na margem contando as pedras que ainda apareciam, e a conta saía diferente a cada vez. Estava com o ombro dolorido da corda e não deixou ninguém ver. — Eu atravesso na frente — disse, e Bram a segurou pelo cinto até ela desistir de discutir."
+    "texto": "Uma lufada de vento térmico desceu pelas fendas do basalto, arrancando uma das vergas de manobra da gávea.",
+    "efeito": {
+     "desgaste": 1
+    },
+    "despacho": "A rajada veio sem aviso, uivando como um bicho ferido por uma chaminé de pedra. O estalo da madeira quebrando na gávea ecoou por todo o desfiladeiro. Sora quase foi atirada no vazio, segurando-se por uma mão ao cabo de aço da adriça enquanto a verga de pinho descia girando em direção à névoa. Fabio e Valen correram pelo convés inclinado a trinta graus, lutando contra o velame rebelde até conseguirem prender a ponta partida com cordas e cunhas de ferro."
    },
    {
-    "texto": "O fio de uma corda de ponte cedeu e a carroça da companhia perdeu uma roda na lama.",
-    "efeito": {"desgaste": 1},
-    "despacho": "A corda estalou e a carroça tombou de lado na lama, com um som de madeira que cede. Bram e Fabio carregaram o eixo nas costas até a margem, enquanto o menino segurava a cabeça do mulo. Perderam metade do sal, o último óleo da lanterna e dois pares de meias. Teodoro tirou o casaco novo, agora ensopado, e o torceu devagar. — Rosa vai achar que eu não o mereço — disse, quase rindo."
+    "texto": "Um bolsão de névoa corrosiva subiu do abismo, corroendo a calafetação da quilha e desgastando as pás do motor.",
+    "efeito": {
+     "desgaste": 1
+    },
+    "despacho": "O cheiro sulfuroso subiu antes da fumaça: um vapor leitoso e acre que fez Baluarte ganir de dor no focinho. A névoa lambeu a quilha de madeira-ferro, soltando bolhas na resina negra e fazendo chiar o bronze das pás rotativas. Valen desceu às pressas com baldes de água com cal para neutralizar a acidez, mas quando a chalupa emergiu do bolsão, uma das pás estava marcada por sulcos escuros e vibrava com um rangido doentio."
    },
    {
-    "texto": "Maren escorregou numa palafita e o Códice caiu na água; duas páginas ficaram lavadas.",
-    "efeito": {"desgaste": 1},
-    "despacho": "O pé de Maren escorregou na tábua molhada e o Códice caiu na água. Ela mergulhou o braço até o ombro para pegá-lo, sem pensar. Quando o tirou, escorrendo, duas páginas haviam perdido a tinta: a dos sete nomes e a da frase de Aelis. Ela as segurou contra o peito, em silêncio. Bram trouxe uma manta seca. Ela aceitou a manta, mas não largou o livro, e passou a noite tentando lembrar o que estivera escrito."
+    "texto": "As âncoras de rocha prenderam-se numa greta submersa durante a manobra, exigindo força extrema para desvencilhar o navio.",
+    "efeito": {
+     "desgaste": 1
+    },
+    "despacho": "Quando a correnteza começou a arrastar a chalupa para as agulhas de pedra, Fabio ordenou o lançamento imediato das garras de retenção. O gancho mordeu fundo demais num veio de ferro magnético. O cabo esticou como uma corda de violino sob tensão fatal, ameaçando partir a amurada inteira. Valen precisou usar a marreta em golpes desesperados contra o elo de segurança, cortando a corrente de reserva para que a *Baluarte* não se partisse ao meio."
    },
    {
-    "texto": "Os Esquecidos do rio chegaram à margem da companhia durante a noite, e ninguém dormiu.",
-    "efeito": {"desgaste": 1},
-    "despacho": "Acordaram com o som da água sendo empurrada para a margem. Eram dezenas, parados na beira da luz da fogueira, de rostos virados para Fabio e para ninguém mais. Não deram um passo. Cantavam a nota única. Iara cantou baixinho de volta, e sua voz quebrava no fim de cada verso. Ninguém dormiu. De manhã, os pés dela estavam enlameados até o tornozelo, e ela não se lembrava de ter saído da manta."
+    "texto": "Uma tempestade de granizo miúdo de nácar cego atingiu o convés na travessia do Vau das Gaivotas.",
+    "efeito": {
+     "desgaste": 1
+    },
+    "despacho": "Pedras de gelo pontiagudas, opacas e pesadas como chumbo, despencaram da cobertura de nuvens altas por vinte minutos ininterruptos. A tripulação teve de abrigar-se sob pranchas de compensado enquanto o granizo crivava o velame e estilhaçava duas das quatro janelas da cabine de comando. Quando a tormenta passou, o convés parecia coberto por estilhaços de sal grosso e o mastro principal apresentava duas longas rachaduras superficiais."
    }
   ],
   "maldicao": [
    {
-    "texto": "Na hora mais escura, a nota dos Esquecidos mudou, e todos sentiram que alguma coisa tinha respondido do outro lado do rio.",
-    "despacho": "A nota mudou de repente, no escuro, e subiu um tom. Dos dois lados do rio alguma coisa respondeu, uma única voz de mulher, tão longe quanto uma estrela. Iara se sentou na manta, de olhos abertos, e a mão dela foi sozinha ao pulso, onde a garça desbotada começou a esquentar. Ela não disse nada. Cantou o primeiro verso, e a voz distante respondeu com o segundo."
+    "texto": "Um juramento de disciplina quebrou-se no silêncio da noite: a Mácula da Névoa estendeu suas veias leitosas sobre o convés.",
+    "despacho": "A névoa não esperou o amanhecer. Entrou pelas frestas abertas da amurada como leite derramado no chão frio. Quando Fabio acordou para a troca de turno, encontrou veias esbranquiçadas pulsando sob a casca da madeira do timão. Ao lado, Sora esfregava o antebraço com aflição: a pele ao redor da cicatriz do seu pulso estava pálida e sem sensibilidade ao toque. — Esqueci o nome da canção do meu pai, capitão — sussurrou ela, com a voz embargada pelo desespero. — Tentei cantarolar agora há pouco e só saiu ar vazio."
    },
    {
-    "texto": "Um corvo de Corvino apareceu nos postes do vau, e Teodoro não deixou ninguém espantá-lo.",
-    "despacho": "O corvo estava pousado num poste da margem, indiferente à chuva, olhando a companhia com um olho de cada vez. Teodoro mandou que ninguém o espantasse. — Corvino quer contar quantos somos agora — disse. — Sete, se contar o menino e eu. Seis, se não. — Bram virou o rosto para o menino e viu que ele, pela primeira vez, tinha escondido o apito dentro da camisa."
+    "texto": "O Chamado do Abismo ecoou no oco do casco: os Desgarrados rondaram o ancoradouro sussurrando promessas de descanso eterno.",
+    "despacho": "O uivo baixo começou por volta das três da madrugada. Não vinha do vento; vinha de debaixo do chão flutuante. Centenas de vozes sem corpo chamavam Miriam pelo nome de batismo, repetindo frases que a sábia ouvira de sua mãe na infância. Miriam precisou ser amarrada por Valen ao mastro central para não caminhar sonâmbula em direção à prancha de lançamento. Seus olhos leitosos choravam lágrimas sem brilho: — Elas dizem que lá embaixo não há frio nem labuta, Fabio... dizem que a escuridão é mansa."
    },
    {
-    "texto": "A água do rio ficou clara como vidro por um instante, e dentro dela cada um viu um rosto que não conhecia.",
-    "despacho": "A chuva parou por um instante, e a água do vau ficou clara como vidro. Fabio viu, no fundo, o rosto de um homem jovem, de capa de tenente, a boca aberta num grito sem som. Bram viu uma mina. Maren viu uma torre. Teodoro não olhou. Iara olhou por mais tempo, e quando voltou a si disse que não vira nada, mas apertou o braço direito contra o peito e não o largou pelo resto do dia."
-   }
-  ],
-  "missao": [
-   {
-    "texto": "Teodoro contou ao menino do apito a primeira vez que atravessou o vau, e o menino pediu para ouvir de novo.",
-    "despacho": "Teodoro sentou o menino ao seu lado, num barranco seco, e contou como atravessara o vau quarenta anos atrás, de mãos dadas com uma moça que cantava mal. Contou a cheia, a corda, a risada dela quando escorregou. O menino pediu para ouvir de novo. Teodoro contou outra vez, e dessa vez não pulou a parte em que tinha medo. Quando acabou, o menino lhe deu o último pedaço de pão."
-   },
-   {
-    "texto": "Iara ensinou Bram a assobiar a canção das Garças, e ele a assobiou até o fim sem errar.",
-    "despacho": "Iara ensinou Bram a assobiar a canção, nota por nota, com a paciência que nunca tinha com ninguém. Ele errou o quinto compasso seis vezes, e na sétima acertou. Assobiou a melodia inteira, grave e lenta, até o fim. Quando terminou, Iara estava com os olhos úmidos, e ele fingiu não ver. — Você assobia pior que a minha mãe — disse ela, e parou, surpresa, com a mão na boca."
-   },
-   {
-    "texto": "Maren leu em voz alta, para a companhia, a página inteira do altar das Garças.",
-    "despacho": "Maren juntou todos em volta do fogo e leu em voz alta a página do altar das Garças, sem pular uma linha. Falava de uma travessia, e de um preço, e de uma casa que se mantém aberta para quem volta. Quando acabou, ninguém disse nada por um tempo. — Você podia ter guardado — disse Bram, por fim. — Podia — respondeu Maren —, e ia pesar menos. Mas agora pesa em seis."
-   },
-   {
-    "texto": "Fabio deixou o menino escolher o caminho da manhã, e o caminho dele era o mais curto.",
-    "despacho": "Na hora de partir, Fabio abriu o mapa e, em vez de apontar o caminho, entregou-o ao menino do apito. — Escolha. — O menino olhou o mapa de cabeça para baixo, por educação, e depois apontou um atalho pela margem leste. Fabio pensou em dizer não. Olhou para Iara, que ergueu uma sobrancelha. — Vamos — disse. Foi o caminho mais curto, e ele passou o dia inteiro sem acreditar que tinha dado certo."
-   },
-   {
-    "texto": "Bram pôs a Lâmina Estelar no chão diante do menino e disse que ela só servia para guardiões.",
-    "despacho": "Bram desembrulhou a Lâmina e a pôs no chão, na frente do menino, sem a segurar. — Isto fere os guardiões, não gente — disse. — Mas eu não gosto de olhar para ela. Alguém tem que me lembrar por quê. — O menino ficou olhando o fio claro. Depois estendeu o apito de osso. — Então fique com isto também — disse. — Lembra de quem eu sou. Bram segurou o apito por muito tempo e não o devolveu."
+    "texto": "A quebra da cadência diária atraiu a sombra do Colosso de Basalto, que virou sua face mecânica contra a chalupa.",
+    "despacho": "Um tremor profundo sacudiu as paredes do desfiladeiro. No alto da escarpa, os dois olhos de safira fria do titã ancestral acenderam na névoa, girando suas lentes de quartzo com um ruído de engrenagens colossais desprovidas de óleo. Uma rajada de ar congelante desceu pelo cânion, apagando três dos archotes do convés. A companhia sentiu o peso do olhar de ferro da montanha: o portão mecânico de Ost-Nadir estava se fechando antes da hora."
    }
   ]
- },
- "rumo": {
-  "crise": "O rio sobe e a nota dos Esquecidos fica mais grave. Se a parte fechasse agora, alguém entraria na água e não voltaria.",
-  "reves": "A trilha de pedras sumiu e a margem está longe. Se a parte fechasse agora, alguém sairia do rio com a Cinza nos dedos e um nome a escorrer.",
-  "sustenta": "A companhia segura a margem. Se a parte fechasse agora, o rio continuaria entre eles e o norte, sem ganhar nem perder.",
-  "avanco": "As pedras do vau voltam a aparecer, uma a uma. Se a parte fechasse agora, a companhia chegaria à outra margem.",
-  "triunfo": "A nota do rio parece resolver. Se a parte fechasse agora, a companhia cruzaria o vau inteira, e a canção terminaria."
  }
 }

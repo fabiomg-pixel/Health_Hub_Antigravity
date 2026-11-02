@@ -1,59 +1,182 @@
 {
- "_nota": "Canon fixo da campanha (v2, 25/10/2026). A história é autônoma: nenhum elemento corresponde a um hábito, um dia ou um fato da vida do Fabio. A ÚNICA ligação com a vida real é mecânica: as métricas da semana decidem se os desfechos são favoráveis ou não (historia.py). Estado que muda vive em estado.json.",
- "titulo": "A Semente de Aurora",
- "regiao": "Ardena",
- "inicio": "2026-10-19",
- "premissa": "Trezentos anos depois da Noite em que o Véu Caiu, a Cinza avança sobre Ardena e os faróis do Muro de Brasa se apagam um a um. Fabio, o Andarilho, ex-capitão da Guarda de Vesperal e portador de uma marca de prata que ninguém sabe explicar, parte para o norte com uma companhia pequena atrás da Semente de Aurora, a única coisa capaz de tecer o céu de novo.",
+ "_nota": "Canon da campanha 'Os Faróis de Nácar' (v3, 02/11/2026). A história é autônoma: nenhum acontecimento espelha um hábito, um dia ou um fato da vida do Fabio. A ÚNICA ligação com a vida real é mecânica: as métricas da semana decidem se os desfechos são favoráveis ou não (historia.py). Estado que muda vive em estado.json.",
+ "titulo": "Os Faróis de Nácar",
+ "regiao": "Thalassa-Aethel (O Arquipélago da Névoa Silenciosa)",
+ "inicio": "2026-11-02",
+ "premissa": "Cento e vinte anos após a Grande Ruptura do Firmamento de Vidro, o mar de brumas vivas — a Maré Silenciosa — devora as últimas falésias de basalto e apaga as memórias daqueles que toca. Fabio, o Navegador das Brumas e ex-cartógrafo da Ordem dos Faróis, parte com a tripulação da chalupa Baluarte do Vento em direção ao Cume de Aethel-Nadir para reacender o Grande Pêndulo Celeste antes que os últimos refúgios da humanidade desmoronem no abismo.",
  "companhia": {
-  "brisa": {"nome": "Iara", "papel": "a Rastreadora", "g": "a", "texto": "Arqueira do Clã das Garças, sem memória da própria infância. Lembra só de uma canção."},
-  "dorn": {"nome": "Bram", "papel": "o Ferreiro", "g": "o", "texto": "Ex-gladiador da Liga do Sal. Forja runas com estilhas do céu e jurou nunca mais matar."},
-  "ysa": {"nome": "Maren", "papel": "a Arquivista", "g": "a", "texto": "Leitora da Escrita dos Tecelões, vinda da Biblioteca Afogada. Carrega o Códice de Vhar, meio queimado."}
+  "brisa": {
+   "nome": "Sora",
+   "papel": "a Rastreadora dos Ventos",
+   "g": "a",
+   "texto": "Arqueira das pontes aéreas, veloz e de língua afiada. Sobreviveu à queda de sua aldeia na infância e carrega uma bússola de bronze quebrada que gira perto do vazio."
+  },
+  "dorn": {
+   "nome": "Valen",
+   "papel": "o Mestre-Artífice",
+   "g": "o",
+   "texto": "Ex-engenheiro militar das forjas de Kael-Dorr. Jurou nunca mais forjar armas de ataque após uma tragédia no passado; forja os Sigilos de Nácar com ferro meteórico para defender a caravana."
+  },
+  "ysa": {
+   "nome": "Miriam",
+   "papel": "a Paleocartógrafa",
+   "g": "a",
+   "texto": "Sábia cega das Torres do Eco. Escuta a pulsação mineral das pedras e decifra o Códice de Pele de Baleia sob a luz das estrelas."
+  }
  },
- "guia": {"nome": "Teodoro", "papel": "o Último Faroleiro do Norte", "texto": "Guardou o Farol de Ost até ele se apagar. Leva na lanterna a última brasa da torre e sete nomes gravados no vidro."},
- "ordem_aflicao": ["brisa", "ysa", "dorn"],
+ "guia": {
+  "nome": "Mestre Orfeu",
+  "papel": "o Velho Timoneiro das Brumas",
+  "texto": "Perdeu o olho esquerdo para a geada da névoa viva; navega por estrelas apagadas com seu mastim lanudo, Baluarte."
+ },
+ "ordem_aflicao": [
+  "brisa",
+  "ysa",
+  "dorn"
+ ],
  "runas": {
-  "escudo": {"nome": "Runa do Escudo", "texto": "Gravada por Bram em ferro-de-estrela. Quebra no lugar de quem a carrega."},
-  "vento": {"nome": "Runa do Vento", "texto": "Desvia flechas e golpes de lado."},
-  "raiz": {"nome": "Runa da Raiz", "texto": "Prende os pés ao chão quando o mundo tenta derrubar."},
-  "brasa": {"nome": "Runa da Brasa", "texto": "Arde quando a Cinza chega perto."},
-  "mare": {"nome": "Runa da Maré", "texto": "Devolve um golpe com a força que ele veio."}
+  "escudo": {
+   "nome": "Sigilo do Bastião",
+   "texto": "Forjado por Valen com ferro-frio e pó de nácar. Rompe-se para absorver o impacto de um revés que feriria alguém."
+  },
+  "vento": {
+   "nome": "Sigilo do Zéfiro",
+   "texto": "Cria uma bolha de ar quente que desvia vendavais súbitos e quedas."
+  },
+  "raiz": {
+   "nome": "Sigilo da Raiz de Pedra",
+   "texto": "Prende os ganchos da chalupa às fendas de basalto quando a névoa tenta arrastar o navio."
+  },
+  "brasa": {
+   "nome": "Sigilo da Brasa Fria",
+   "texto": "Pulsa em azul-cobalto quando os Desgarrados se aproximam."
+  },
+  "mare": {
+   "nome": "Sigilo da Maré Reversa",
+   "texto": "Dissipa a pressão da névoa viva devolvendo-lhe o vácuo."
+  }
  },
- "regra_runa": "Cada runa absorve uma derrota: quando uma semana ruim chegaria, a runa se parte e a derrota cai um nível. A bolsa de Bram leva até 3.",
+ "regra_runa": "Cada sigilo absorve uma derrota: quando uma semana ruim chegaria, o sigilo quebra e a derrota cai um nível. A caixa de Valen comporta até 3.",
  "reliquias": {
-  "pena_da_garca": {"nome": "Pena da Garça Branca", "texto": "Impede, uma vez, que um companheiro saia ferido."},
-  "sal_dos_farois": {"nome": "Sal dos Faróis", "texto": "Desfaz uma maldição, uma vez."},
-  "lamina_estelar": {"nome": "Lâmina Estelar", "texto": "Forjada com cinco estilhas. Fere os guardiões: a luta contra o chefe do arco termina sem perdas."}
+  "bussola_orfeu": {
+   "nome": "Bússola Estelar de Orfeu",
+   "texto": "Impede, uma vez, que um companheiro saia ferido ou desorientado."
+  },
+  "lagrima_de_nacar": {
+   "nome": "Lágrima de Nácar",
+   "texto": "Dissipa a Mácula da Névoa, purificando as veias de quem foi tocado pelo esquecimento."
+  },
+  "lamina_celeste": {
+   "nome": "Lâmina de Nácar Forjada",
+   "texto": "Forjada com cinco fragmentos lunares (estilhas). Fere os autômatos ancestrais: a travessia contra o chefe do arco termina sem perdas."
+  }
  },
  "maldicoes": {
-  "macula_de_cinza": {"nome": "Mácula de Cinza", "texto": "Veias cinzentas sob a pele. Quem carrega a mácula fica ferido até uma semana inteira sem juramento quebrado; um juramento quebrado com a mácula ativa entrega a pessoa à Cinza."},
-  "sussurro_da_rainha": {"nome": "Sussurro da Rainha", "texto": "Uma voz que puxa para trás. A semana seguinte termina um nível abaixo, a não ser que algo a desfaça."}
+  "macula_do_esquecimento": {
+   "nome": "A Mácula da Névoa",
+   "texto": "Veias leitosas sob a pele. Quem carrega a mácula começa a perder as lembranças e fica ferido até uma semana inteira sem juramento quebrado."
+  },
+  "canto_do_abismo": {
+   "nome": "O Chamado do Abismo",
+   "texto": "Um sussurro gélido que ecoa no casco da chalupa. A semana seguinte termina um nível abaixo, a não ser que uma relíquia o desfaça."
+  }
  },
  "materiais": {
-  "estilha": {"nome": "estilhas do céu", "forja": 5, "texto": "Cinco estilhas permitem forjar a Lâmina Estelar."},
-  "pista": {"nome": "pistas do Códice", "texto": "Fragmentos da verdade sobre Aelis e a Semente."},
-  "desgaste": {"nome": "desgaste", "texto": "Dois desgastes na mesma semana ferem alguém da companhia."}
+  "estilha": {
+   "nome": "fragmentos de nácar",
+   "forja": 5,
+   "texto": "Cinco fragmentos lunares permitem forjar a Lâmina de Nácar Forjada."
+  },
+  "pista": {
+   "nome": "cartas topográficas de Miriam",
+   "texto": "Fragmentos decifrados do Códice que revelam passagens seguras entre as tempestades."
+  },
+  "desgaste": {
+   "nome": "avarias na chalupa",
+   "texto": "Dois desgastes acumulados na mesma semana ferem alguém da tripulação."
+  }
  },
  "antagonistas": {
-  "cinza": {"nome": "a Cinza", "lugar": "o Ermo Cinzento", "crise": "A Cinza desceu como neve suja e apagou as tochas uma a uma. Quando a última voltou a acender, {c} não estava mais no círculo: tinha sido levad{g} para dentro do Ermo."},
-  "corvino": {"nome": "Mestre Corvino", "lugar": "as arenas da Liga do Sal", "crise": "Os homens de Mestre Corvino vieram à meia-noite, com redes e porretes. Quando a luta acabou, {c} tinha sido levad{g} acorrentad{g} para as arenas da Liga do Sal."},
-  "esquecidos": {"nome": "os Esquecidos", "lugar": "a Procissão Cinzenta", "crise": "Os Esquecidos cercaram o acampamento em silêncio, centenas deles, e quando recuaram para a escuridão levaram {c} junto, caminhando entre eles de olhos vazios."}
+  "nevoa": {
+   "nome": "a Névoa Silenciosa",
+   "lugar": "o Vazio das Brumas",
+   "crise": "A Névoa Silenciosa subiu como água fria e afogou as lanternas de proa. Quando a tempestade acalmou, {c} havia sido arrastad{g} para o fundo do Vazio."
+  },
+  "corsarios": {
+   "nome": "os Corsários do Salitre",
+   "lugar": "o Covil do Rochedo Cortado",
+   "crise": "As chalupas dos Corsários do Salitre caíram sobre a tripulação na calada da noite. Em meio aos ganchos e correntes, {c} foi levad{g} acorrentad{g} para as prisões de salmoura."
+  },
+  "desgarrados": {
+   "nome": "os Desgarrados",
+   "lugar": "o Vale das Sombras Brancas",
+   "crise": "Centenas de Desgarrados sem rosto emergiram do abismo em silêncio absoluto. Quando recuaram, levaram {c} pelo braço, caminhando sem resistência rumo à névoa."
+  }
  },
  "resgate": {
-  "abertura": "{c} está em {lugar}. Esta parte da campanha é para ir buscá-l{g}. Se o prazo se esgotar, {c} se perde.",
-  "libertado": "A companhia foi buscar {c} em {lugar}, e {c} voltou libertad{g}.",
-  "adiado": "A companhia ainda não chegou a {lugar}. O prazo encolheu.",
-  "perdido": "O prazo se esgotou, e {c} ficou em {lugar}. Só um triunfo pode reabrir esse caminho.",
-  "reencontro": "No auge do triunfo, {c} voltou, como se nunca tivesse partido."
+  "abertura": "{c} está pres{g} em {lugar}. Esta parte da jornada é para o resgate. Se o prazo se esgotar, {c} será esquecid{g} no abismo.",
+  "libertado": "A tripulação alcançou {lugar} e trouxe {c} de volta com vida.",
+  "adiado": "As correntes de vento impediram a aproximação de {lugar}. O prazo encolheu.",
+  "perdido": "O prazo se esgotou, e {c} perdeu suas memórias em {lugar}. Só um triunfo pode reabrir esse caminho.",
+  "reencontro": "No auge do triunfo, {c} voltou através da bruma, segurando firme a mão dos companheiros."
  },
  "arcos": [
-  {"id": "I", "nome": "O Muro de Brasa", "chefe": "O Colosso do Platô Vermelho",
-   "etapas": ["A Estrada dos Faróis Apagados", "O Farol de Ost", "O Vau das Garças", "A Floresta Cinzenta", "As Ruínas de Lis", "A Escadaria do Colosso", "O Platô Vermelho"],
-   "chefe_texto": "Um titã de pedra vermelha erguido pelos Tecelões para guardar a passagem. Não se vence com bravura: cede quando a companhia chega até ele inteira."},
-  {"id": "II", "nome": "A Planície de Sal", "chefe": "A Muralha Viva",
-   "etapas": ["O Acampamento do Platô", "As Salinas Brancas", "Forte Salgema", "O Cânion dos Ecos", "A Ponte de Cordas", "O Pé da Muralha", "A Muralha Viva"]},
-  {"id": "III", "nome": "As Terras Altas", "chefe": "O Vigia das Terras Altas",
-   "etapas": ["O Posto Avançado", "O Campo de Urzes", "A Geleira Mansa", "O Passo do Corvo", "A Cidade Suspensa", "A Torre do Vigia", "O Vigia das Terras Altas"]},
-  {"id": "IV", "nome": "O Monte Vhar", "chefe": "Vharunax, o Dragão Adormecido",
-   "etapas": ["O Sopé do Monte", "A Trilha dos Tecelões", "O Lago de Vidro", "As Seis Torres Caídas", "A Porta de Aelis", "A Sétima Torre", "Vharunax"]}
+  {
+   "id": "I",
+   "nome": "O Estreito dos Dentes de Pedra",
+   "chefe": "O Colosso da Fenda de Basalto",
+   "etapas": [
+    "A Garganta das Gaivotas",
+    "O Farol Quebrado de Ost-Nadir",
+    "As Falésias de Calcário Negro",
+    "O Bosque dos Corais de Ferro",
+    "As Galerias Afundadas de Kael",
+    "A Escadaria dos Suspiros",
+    "O Cume do Colosso"
+   ],
+   "chefe_texto": "Um titã autômata de pedra e ferro estelar erguido pelos Arquitetos Celestes. Desperta com as correntes de éter e só cede passagem quando a tripulação chega inteira."
+  },
+  {
+   "id": "II",
+   "nome": "O Mar das Marés Brancas",
+   "chefe": "A Serpente das Nuvens Boreal",
+   "etapas": [
+    "As Salinas Aéreas",
+    "O Cemitério de Chalupas",
+    "O Arquipélago de Giz",
+    "A Fenda dos Ecos",
+    "A Ponte dos Cabos Partidos",
+    "O Recife de Nácar",
+    "A Toca da Serpente"
+   ]
+  },
+  {
+   "id": "III",
+   "nome": "O Platô das Cidades Suspensas",
+   "chefe": "O Arquonte Esquecido",
+   "etapas": [
+    "Os Pilares de Sustentação",
+    "A Praça dos Relógios de Sol",
+    "A Grande Galeria de Vidro",
+    "O Aqueduto Vazio",
+    "O Observatório Estelar",
+    "As Portas de Éter",
+    "O Trono do Arquonte"
+   ]
+  },
+  {
+   "id": "IV",
+   "nome": "A Cratera de Aethel-Nadir",
+   "chefe": "Vharun-Aethel, o Dragão das Marés Primordiais",
+   "etapas": [
+    "O Abismo de Luz",
+    "A Trilha dos Cristais Azuis",
+    "O Mar de Espelhos",
+    "As Sete Torres Caídas",
+    "A Câmara do Pêndulo",
+    "A Forja do Céu",
+    "O Despertar de Aethel"
+   ]
+  }
  ]
 }

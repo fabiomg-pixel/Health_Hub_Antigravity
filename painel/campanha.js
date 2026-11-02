@@ -421,11 +421,15 @@ function cpLivroInteiro(pend) {
           : cpLeitura(id + '-de', p.desfecho.texto, p.desfecho.minutos, 'Ler o desfecho')) : ''}</details>`;
     }).join('') + `</section>`;
 }
+function cpTituloMundo() {
+  const H = typeof HISTORIA !== 'undefined' ? HISTORIA : null;
+  return (H && H.titulo) || 'Os Faróis de Nácar';
+}
 // Página sem spoiler: enquanto o desfecho mais recente não foi aberto neste aparelho, a Campanha mostra só o resumo de onde
 // a história parou e o livro; estrada, companhia, runas e relíquias já refletem o desfecho e ficam para depois.
 function cpPaginaAntesDoDesfecho(p) {
   $('view').innerHTML = `<div class="cp-escuro"><div class="campo tinta"><div class="dentro" style="padding-bottom:26px">
-      <div class="topo"><div class="rot">A Semente de Aurora</div></div>
+      <div class="topo"><div class="rot">${esc(cpTituloMundo())}</div></div>
       <h1 class="titulo longo">A Parte ${esc(p.parte)} fechou</h1>
       <div class="sub">${esc(p.titulo)}. Antes do desfecho, relembre onde a história parou.</div></div></div>
     <div class="cp-aventura">
@@ -472,14 +476,14 @@ function cpAventura() {
     H.etapas.map((e, i) => `<div class="cp-et ${e.estado} ${i === H.etapas.length - 1 ? 'chefe' : ''}"><i></i><span>${esc(e.nome)}${i === H.etapas.length - 1 ? ' · só cai pela balança (média de 28 dias)' : ''}</span></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>A companhia</h2><small>${esc(H.guia.nome)}, ${esc(H.guia.papel)}, guia o grupo</small></div><div class="cp-comp">` +
     H.companhia.map(c => `<div class="cp-pers ${c.estado}"><canvas class="cp-mini" data-id="${c.id}" data-estado="${c.estado}"></canvas><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
-  h += `<section class="bloco"><div class="cab"><h2>As runas de Bram</h2><small>${H.mochila.length} de 3</small></div><div class="cp-bag">` +
+  h += `<section class="bloco"><div class="cab"><h2>Os Sigilos de Nácar</h2><small>${H.mochila.length} de 3</small></div><div class="cp-bag">` +
     [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
-    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende runa nova.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
+    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende sigilo novo.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
   return h;
 }
 function renderCampanha() {
   if (!JORNADA) {
-    $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">A Semente de Aurora</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div><section class="bloco"><div class="par" id="cp-espera">Carregando os dados da Campanha…</div></section>`;
+    $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">${esc(cpTituloMundo())}</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div><section class="bloco"><div class="par" id="cp-espera">Carregando os dados da Campanha…</div></section>`;
     setTimeout(() => { const el = document.getElementById('cp-espera'); if (el && !JORNADA) el.innerHTML = 'Não consegui abrir a Campanha agora (sem sinal ou o arquivo não chegou). <a href="#campanha" onclick="location.reload()">Tentar de novo</a>.'; }, 6000);
     return;
   }
@@ -488,7 +492,7 @@ function renderCampanha() {
   const j = JORNADA, p = j.personagem, v = j.vitalidade, a = j.arco || {}, pr = j.paralela;
   const vit = v.indice == null ? ['—', 'Vitalidade: sem dado'] : [fNum(v.indice, 0), v.estado === 'ferido' ? 'Vitalidade: ferido' : 'Vitalidade: de pé'];
   let h = `<div class="cp-escuro"><div class="campo tinta"><div class="dentro" style="padding-bottom:26px">
-    <div class="topo"><div class="rot">A Semente de Aurora</div><div class="selo">${esc(cpTituloCapitulo())}</div></div>
+    <div class="topo"><div class="rot">${esc(cpTituloMundo())}</div><div class="selo">${esc(cpTituloCapitulo())}</div></div>
     <div class="cp-ficha"><svg viewBox="0 0 74 86" role="img" aria-label="Nível ${p.nivel}">
       <path d="M37 3l32 11v24c0 21-14 37-32 45C19 75 5 59 5 38V14z" fill="none" stroke="var(--sol)" stroke-width="3"/>
       <path d="M37 11l24 8v19c0 16-10 29-24 36-14-7-24-20-24-36V19z" fill="var(--sol)" opacity="0.14"/>

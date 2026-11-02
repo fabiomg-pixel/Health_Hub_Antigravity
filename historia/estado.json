@@ -1,8 +1,8 @@
 {
  "versao": 2,
- "inicio": "2026-10-19",
+ "inicio": "2026-11-02",
  "arco": "I",
- "etapa": 1,
+ "etapa": 0,
  "companhia": {
   "brisa": {
    "estado": "ativa"
@@ -22,101 +22,10 @@
  ],
  "crise": null,
  "falhas_seguidas": 0,
- "semanas": {
-  "2026-10-19": {
-   "segunda": "2026-10-19",
-   "parte": 1,
-   "titulo": "A Estrada dos Faróis Apagados",
-   "tier": "sustenta",
-   "tier_base": "sustenta",
-   "ok": 3,
-   "n": 5,
-   "efeitos": [
-    "A Runa do Escudo se partiu.",
-    "Maldição: a Mácula de Cinza marcou Iara."
-   ],
-   "cena": {
-    "tier": "sustenta",
-    "etapa_antes": 0,
-    "etapa_depois": 0,
-    "arco": "I",
-    "clima": "chuvosa",
-    "lua": null,
-    "companhia": {
-     "brisa": "ativa",
-     "dorn": "ativa",
-     "ysa": "ativa"
-    },
-    "afetado": null,
-    "retorna": null,
-    "itens": [],
-    "talisma": true
-   },
-   "cartas": {
-    "bencao": 3,
-    "achado": 3,
-    "percalco": 1,
-    "maldicao": 2
-   }
-  },
-  "2026-10-26": {
-   "segunda": "2026-10-26",
-   "parte": 2,
-   "titulo": "O Coração de Ost",
-   "tier": "avanco",
-   "tier_base": "avanco",
-   "ok": 4,
-   "n": 5,
-   "efeitos": [
-    "A Mácula de Cinza recuou: Iara está livre dela.",
-    "Parte sem juramento quebrado. Relíquia ganha: Sal dos Faróis.",
-    "Com cinco estilhas, Bram forjou a Lâmina Estelar.",
-    "Bram gravou uma runa nova: Runa do Escudo.",
-    "A companhia avançou até o Farol de Ost."
-   ],
-   "cena": {
-    "tier": "avanco",
-    "etapa_antes": 0,
-    "etapa_depois": 1,
-    "arco": "I",
-    "clima": "seca",
-    "lua": null,
-    "companhia": {
-     "brisa": "ferida",
-     "dorn": "ativa",
-     "ysa": "ativa"
-    },
-    "afetado": null,
-    "retorna": null,
-    "itens": [
-     "escudo"
-    ],
-    "talisma": false
-   },
-   "cartas": {
-    "bencao": 3,
-    "achado": 6,
-    "percalco": 0,
-    "maldicao": 0
-   }
-  }
- },
- "materiais": {
-  "pista": 9,
-  "estilha": 1,
-  "desgaste": 1
- },
- "reliquias": [
-  {
-   "id": "sal_dos_farois",
-   "desde": "2026-10-26"
-  },
-  {
-   "id": "lamina_estelar",
-   "desde": "2026-10-26"
-  }
- ],
+ "semanas": {},
+ "materiais": {},
+ "reliquias": [],
  "maldicoes": [],
- "aflicoes": 1,
+ "aflicoes": 0,
  "marcos": []
 }

@@ -1,0 +1,11 @@
+{
+  "passagem-entre-sessoes": {
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "python3 ./passagem_hook.py",
+        "timeout": 10
+      }
+    ]
+  }
+}

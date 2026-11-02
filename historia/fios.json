@@ -1,85 +1,40 @@
 {
- "_nota": "Fios em aberto da campanha (v2). Atualizados por quem escreve o encerramento de cada parte. Só história: nenhum fio corresponde a algo da vida real.",
+ "_nota": "Fios narrativos em aberto na campanha 'Os Faróis de Nácar'. Cada fio é uma semente que deve germinar nos capítulos e despachos.",
  "fios": [
   {
-   "id": "marca_da_aurora",
-   "titulo": "A Marca da Aurora",
-   "personagem": "fabio",
-   "semente": "prólogo",
-   "estado": "A Marca acende estilhas, esquenta as que já ardem e puxa para o oeste. Em Ost, Fabio assobiou sem saber uma melodia que não resolve, e Iara ouviu. Ele ainda não contou que sonha com o moinho.",
-   "proximo": "O moinho da Ponte de Lis, e de onde vem o assobio."
+   "id": "marca_do_pulso",
+   "titulo": "A Origem da Marca da Maré",
+   "resumo": "A cicatriz de ferro-frio no pulso de Fabio ressoa com as máquinas dos Arquitetos Celestes. Por que ela despertou quando ele sobreviveu ao Estreito da Lágrima?",
+   "status": "ativo",
+   "revelacoes": []
   },
   {
-   "id": "sete_nomes",
-   "titulo": "Os sete nomes",
-   "personagem": "teodoro",
-   "semente": "prólogo",
-   "estado": "Teodoro confessou: disse que Lúcia morreu no Platô Vermelho, mas a deixou viva, sem conseguir carregá-la, e voltou nove dias depois ao lugar vazio. Ela vive em Salmoura como a Senhora dos Poços. Na parede de Ost, uma linha riscada em letra miúda e redonda diz: oitavo gancho.",
-   "proximo": "O que Lúcia ouviu dele pelo postigo, e o que ela prometeu fazer sozinha."
+   "id": "bussola_de_sora",
+   "titulo": "A Bússola Quebrada de Sora",
+   "resumo": "A bússola do pai de Sora não aponta para o norte, mas gira em direção à névoa profunda. Quem forjou a agulha de bronze?",
+   "status": "ativo",
+   "revelacoes": []
   },
   {
-   "id": "rainha_de_cinza",
-   "titulo": "Aelis e a porta",
-   "personagem": "maren",
-   "semente": "prólogo",
-   "estado": "Maren contou a Fabio a garça do Códice, e a Teodoro a letra da Senhora. A frase de Aelis continua sem dono: quem ela queria trazer de volta.",
-   "proximo": "A parede mil vezes escrita, nas Ruínas de Lis."
+   "id": "o_chamado_de_miriam",
+   "titulo": "O Canto da Irmã Perdida",
+   "resumo": "Miriam escuta uma voz feminina que a chama para as nuvens, prometendo-lhe visão e paz. É um eco da névoa viva ou uma sobrevivente real?",
+   "status": "ativo",
+   "revelacoes": []
   },
   {
-   "id": "macula_iara",
-   "titulo": "O verso que falta",
-   "personagem": "iara",
-   "semente": "Parte I",
-   "estado": "A Mácula recuou com o coração de Ost aceso; o braço de Iara está limpo. Ela sabe só o primeiro verso da canção, que o menino também sabe por Lúcia; o último verso continua perdido. O Sal dos Faróis, de Lúcia, está no bolso dela, sem uso.",
-   "proximo": "De onde vem o verso que falta, e por que Fabio o assobia."
+   "id": "a_divida_de_valen",
+   "titulo": "Os Sobreviventes de Kael-Dorr",
+   "resumo": "Valen acredita que todos os trezentos mineradores morreram na galeria, mas rumores dizem que um grupo escapou em uma chalupa clandestina.",
+   "status": "ativo",
+   "revelacoes": []
   },
   {
-   "id": "divida_bram",
-   "titulo": "A dívida de Bram",
-   "personagem": "bram",
-   "semente": "prólogo",
-   "estado": "Corvino perdeu Ost e disse que tem tempo. Bram não ergueu o martelo diante dele. O nó de arena do embrulho do menino é a ponta de outra dívida.",
-   "proximo": "Quem é o menino para Bram, e o que Corvino fará com ele."
-  },
-  {
-   "id": "lamina_estelar",
-   "titulo": "A Lâmina Estelar",
-   "personagem": "bram",
-   "semente": "Parte I",
-   "estado": "Forjada em Ost com cinco estilhas. Embrulhada, sem uso: Bram não quer olhá-la. Fere os guardiões, não os homens.",
-   "proximo": "O Colosso do Platô Vermelho."
-  },
-  {
-   "id": "liga_do_sal",
-   "titulo": "A luz guardada",
-   "personagem": "fabio",
-   "semente": "prólogo",
-   "estado": "A Senhora dos Poços é Lúcia, que devolveu o coração de Ost pelo balde e jogou contra a Liga que ela serve. O mapa de letra miúda e redonda é dela. Corvino a vai cobrar.",
-   "proximo": "Quem na Liga descobre o que a Senhora fez."
-  },
-  {
-   "id": "oitavo_gancho",
-   "titulo": "O oitavo gancho",
-   "personagem": "teodoro",
-   "semente": "Parte II",
-   "estado": "Ost tem oito ganchos de rede e sete nomes. Uma linha de carvão na parede, em letra miúda e redonda, diz: oitavo gancho. O oitavo é o de Teodoro, gasto de uso, e Lúcia o deixou escrito.",
-   "proximo": "O que ela quer que ele faça com o oitavo lugar: voltar, ou ceder."
-  },
-  {
-   "id": "promessa_do_postigo",
-   "titulo": "A promessa do postigo",
-   "personagem": "teodoro",
-   "semente": "Parte II",
-   "estado": "Teodoro falou uma hora com Lúcia atrás da grade e voltou sem contar o conteúdo. Disse só que ela não o perdoa. Lúcia mandou o coração, o sal e o recado: dessa vez era ela quem ia.",
-   "proximo": "Aonde Lúcia vai, e a que preço Teodoro prometeu não segui-la."
-  },
-  {
-   "id": "menino_de_salmoura",
-   "titulo": "O menino do apito",
-   "personagem": "bram",
-   "semente": "Parte II",
-   "estado": "O menino leva bilhetes e estilhas, usa um apito de osso com o selo das arenas, ata nós de arena e canta o primeiro verso da canção das Garças. Lúcia o ensinou. Ele vive no limite entre Corvino e a Senhora.",
-   "proximo": "O nome dele, e o que ele fará quando Corvino o encontrar."
+   "id": "corsarios_malcor",
+   "titulo": "A Perseguição do Capitão Malcor",
+   "resumo": "Malcor quer a Baluarte do Vento a qualquer custo para tentar cruzar o Mar de Salitre e roubar a forja de nácar.",
+   "status": "ativo",
+   "revelacoes": []
   }
  ]
 }

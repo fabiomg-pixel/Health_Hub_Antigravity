@@ -52,31 +52,31 @@
  "arcos": [
   {
    "num": "I",
-   "nome": "O Muro de Brasa",
+   "nome": "O Estreito dos Dentes de Pedra",
    "de": 95.0,
    "ate": 92.5,
-   "chefe": "O Colosso do Platô Vermelho"
+   "chefe": "O Colosso da Fenda de Basalto"
   },
   {
    "num": "II",
-   "nome": "A Planície de Sal",
+   "nome": "O Mar das Marés Brancas",
    "de": 92.5,
    "ate": 90.0,
-   "chefe": "A Muralha Viva"
+   "chefe": "A Serpente das Nuvens Boreal"
   },
   {
    "num": "III",
-   "nome": "As Terras Altas",
+   "nome": "O Platô das Cidades Suspensas",
    "de": 90.0,
    "ate": 87.5,
-   "chefe": "O Vigia das Terras Altas"
+   "chefe": "O Arquonte Esquecido"
   },
   {
    "num": "IV",
-   "nome": "O Monte Vhar",
+   "nome": "A Cratera de Aethel-Nadir",
    "de": 87.5,
    "ate": 85.0,
-   "chefe": "Vharunax, o Dragão Adormecido"
+   "chefe": "Vharun-Aethel, o Dragão das Marés Primordiais"
   }
  ],
  "paralela": {

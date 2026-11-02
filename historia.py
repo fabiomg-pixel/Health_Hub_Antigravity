@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""O motor da campanha "A Semente de Aurora" (v2, 25/10/2026).
+"""O motor da campanha "Os Faróis de Nácar" (v3, 02/11/2026).
 
 A história é autônoma: nenhum acontecimento corresponde a um hábito, a um dia ou a um fato da vida do Fabio
 (decisão dele, 25/10). A ÚNICA ligação com a vida real é mecânica: as métricas decidem se os desfechos são
@@ -490,7 +490,7 @@ def livro_inteiro():
 
 painel['livro_inteiro'] = livro_inteiro()
 if not DRY:   # a mesma coisa num arquivo só, para ler fora do painel (o desfecho mais recente fica por último, separado)
-    pr0 = prologo(); L = ['# A Semente de Aurora: a história inteira', '']
+    pr0 = prologo(); L = [f"# {mundo.get('titulo', 'Os Faróis de Nácar')}: a história inteira", '']
     if pr0: L += ['## Prólogo: ' + pr0['subtitulo'], '', pr0['texto'], '']
     for p_ in painel['livro_inteiro']:
         L += [f"# Parte {p_['parte']}: {p_['titulo']}", f"*{p_['periodo']}*", '']
