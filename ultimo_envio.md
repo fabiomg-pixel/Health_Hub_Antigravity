@@ -1,10 +1,8 @@
-# Último envio do bot (avaliacao) em 02/11 00:05
+# Último envio do bot (capitulo) em 02/11 09:00
 
-Fechamento do dia, 01/11
-Registrado: pesagem, poke no almoço e chilli com torrada e queijo na janta (sem fritura registrada).
-Treino: a força B de domingo não saiu; segue pendente, sem cobrança.  ·  Proteína: sem número, não estimo
-Campanha: 40 XP hoje · 4 de 5 missões da semana cumpridas · 1 despacho saiu hoje. O fechamento da parte é às 23h05.
-Amanhã: segunda começa leve, com pesagem em jejum e olho no semáforo; a força pendente só entra se estiver em Pode.
-Funcionou: almoço e janta registrados com legume na janta.
-A semana nova: o conselho já ouviu você; a síntese e o plano saem assim que eu publicar.
-Pode me responder aqui: eu anoto e ajusto.
+Parte II fechada: O Coração de Ost (avanço).
+Lúcia mandou o coração pelo balde; Ost acendeu inteiro e a Cinza recuou duas léguas.
+Pesa: Teodoro confessou que deixou Lúcia viva no Platô. Bram forjou a Lâmina Estelar; a Mácula de Iara sumiu; Sal dos Faróis ganho.
+O capítulo mostra onde cada marco da semana entrou na história.
+Próxima, Parte III: O Vau das Garças. Um rio de Esquecidos canta uma nota que não resolve, e Corvino vem atrás.
+https://painel-xi-three.vercel.app/#campanha
