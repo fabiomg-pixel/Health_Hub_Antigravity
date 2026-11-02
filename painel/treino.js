@@ -39,6 +39,7 @@ function sessaoDe(iso, v) {
   const base = TREINOS && TREINOS.sessoes && TREINOS.sessoes[iso];
   if (v === 'casa' && base && base.casa) return { iso, variante: 'casa', pesada: base.pesada, ...base.casa };
   if (v === 'bonus') { const b = bonusForca(iso); return b ? { iso, variante: 'bonus', pesada: false, ...b } : null; }
+  if (v === 'rotina') { const r = TREINOS && TREINOS.rotina_casa; return r ? { iso, variante: 'rotina', pesada: false, ...r } : null; }   // missão paralela (02/11)
   if (base) return { iso, ...base };
   const dd = iso.slice(8, 10) + '/' + iso.slice(5, 7), d = DATA && DATA.dias.find(x => x.data === dd);
   if (!d) return null;
@@ -63,6 +64,29 @@ function blocoBonus(iso, tipo) {
   else { const b = bonusForca(iso); corpo = `<div class="par">${esc(b.titulo.replace(/^Rodada bônus:\s*/, ''))}: ${b.exercicios.map(e => esc(e.nome)).join(', ')}. Uns 12 min, depois da corrida.</div><a class="botao claro" href="#treino/${iso}/bonus">Iniciar a rodada bônus</a>`; }
   return `<section class="bloco"><div class="cab"><h2>Rodada bônus</h2><small>opcional · pontuação extra</small></div>${corpo}</section>`;
 }
+// Missões paralelas (Fabio, 02/11): todo dia, opcionais. Passeio com os cachorros (um toque registra) e rotina de casa
+// (alongamento, flexão e prancha no player). Não são exercício nem item do dia: só XP; 5 dias na semana = +30 XP cada.
+function blocoParalelas(iso) {
+  const J = typeof JORNADA !== 'undefined' && JORNADA, ps = (J && J.capitulo && J.capitulo.paralelas) || [], hoje = iso === isoLocal();
+  const reg = re => (REGISTROS || []).some(x => x.tipo === 'Treino' && x.data === iso && /miss[ãa]o paralela/i.test(x.texto || '') && re.test(x.texto || ''));
+  const feitoC = reg(/cachorr/i), feitoR = reg(/rotina de casa/i);
+  const sem = id => { const p = ps.find(x => x.id === id); return p ? `${p.feito} de ${p.meta} dias na semana` : ''; };
+  const linha = (nome, sub, feito, acao) => `<div class="linha" style="align-items:center"><span class="corpo">${esc(nome)}<small>${esc(sub)}</small></span>${feito ? '<span class="num" style="font-size:15px">feito</span>' : acao}</div>`;
+  return `<section class="bloco"><div class="cab"><h2>Missões paralelas</h2><small>opcionais · só pontos, não contam como treino</small></div>
+    ${linha('Passeio com os cachorros', 'jogging curto · ' + sem('caes'), feitoC, hoje ? '<button type="button" class="botao claro" id="p-caes" style="width:auto;min-width:96px;margin:0">Feito</button>' : '')}
+    ${linha('Rotina de casa', 'alongamento, flexão e prancha, ~10 min · ' + sem('rotina'), feitoR, hoje ? `<a class="botao claro" href="#treino/${iso}/rotina" style="width:auto;min-width:96px;margin:0">Iniciar</a>` : '')}
+    <div id="p-status" class="msg" role="status" aria-live="polite"></div></section>`;
+}
+document.addEventListener('click', async ev => {
+  const b = ev.target.closest && ev.target.closest('#p-caes'); if (!b) return;
+  const st = document.getElementById('p-status'); b.disabled = true; st.textContent = 'Enviando…';
+  const texto = 'Missão paralela: passeio com os cachorros (jogging curto).';
+  try {
+    await enviarRegistro({ tipo: 'treino', data: isoLocal(), texto });
+    try { REGISTROS.unshift({ id: 'local-' + Date.now(), data: isoLocal(), tipo: 'Treino', texto, foto: false, fotos: 0 }); } catch (e) {}
+    st.className = 'msg ok'; st.textContent = 'Registrado. Os cachorros agradecem.'; b.replaceWith(Object.assign(document.createElement('span'), { className: 'num', textContent: 'feito' }));
+  } catch (e) { st.className = 'msg err'; st.textContent = 'Sem sinal: tente de novo daqui a pouco.'; b.disabled = false; }
+});
 document.addEventListener('click', async ev => {   // delegado: o bloco é redesenhado junto com a aba Hoje
     const b = ev.target.closest && ev.target.closest('#b-corrida'); if (!b) return;
     const iso = isoLocal();
@@ -475,9 +499,9 @@ async function terminarTreino(sessao, st, iso, btn) {
   limparEstado(st.chave || iso); pararRelogios(); soltarTela();
   btn.textContent = 'Treino encerrado';
   // palco do fim (palco.js); o XP é o da sessão pelas regras da Campanha (força 100, rodada bônus 50)
-  if (typeof palcoFim === 'function') palcoFim({ titulo: sessao.variante === 'bonus' ? 'Rodada bônus feita' : 'Treino feito',
+  if (typeof palcoFim === 'function') palcoFim({ titulo: sessao.variante === 'bonus' ? 'Rodada bônus feita' : sessao.variante === 'rotina' ? 'Rotina de casa feita' : 'Treino feito',
     stats: [{ n: series, rot: 'séries' }, { n: (p._j && p._j.dur) || 0, rot: 'minutos' }, { n: recs, rot: recs === 1 ? 'recorde' : 'recordes', cor: 'var(--sol)' }],
-    xp: sessao.variante === 'bonus' ? 50 : 100, xpRot: 'pela sessão' });
+    xp: sessao.variante === 'bonus' ? 50 : sessao.variante === 'rotina' ? 15 : 100, xpRot: sessao.variante === 'rotina' ? 'da missão paralela' : 'pela sessão' });
 }
 let T_ESVAZIANDO = false;
 async function esvaziarFila() {

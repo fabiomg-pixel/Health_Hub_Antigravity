@@ -1222,3 +1222,12 @@ meta de força fixa em 3, bônus só XP.
 - **App:** corrida guiada vira Treino; treino terminado aparece no Hoje na hora; prancha só vale cronometrada; trocar exercício
   não apaga carga feita; barra fixa de situação no treino; cabeçalho some no treino e na corrida; mensagens legíveis; sem
   recarregamento automático com sessão em andamento; um palco de Campanha por dia, só no Início ou no Hoje.
+
+## 35. Missões paralelas (pedido do Fabio, 02/11/2026)
+
+Duas rotinas diárias e opcionais, como side quests: **passeio com os cachorros** (jogging curto; os cachorros é que precisam,
+não conta como exercício dele) e **rotina de casa** (alongamentos de posterior, quadril e peito no cronômetro, 2 séries de
+flexão e 2 de prancha, ~10 min; em Segurar só o alongamento). Na aba Hoje, bloco "Missões paralelas": um toque registra o
+passeio; "Iniciar" abre a rotina no player (`#treino/<data>/rotina`, modelo `rotina_casa` em `treinos.json`). Registro com o
+texto "Missão paralela: ..."; `jornada.py` dá 15 XP por dia a cada uma e +30 XP por semana com 5 dias, fora das missões do
+capítulo, do dia ativo e das cartas (`jornada_regras.json`, `paralelas`).

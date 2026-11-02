@@ -81,6 +81,8 @@ def tipos_treino(texto):
     # Rodada bônus (Fabio, 31/10): força curta no dia de corrida ou corrida leve no dia de força. Pontuação extra,
     # fora das missões de força e de corrida (não conta como sessão nem como corrida).
     if re.search(r'rodada b[ôo]nus', t, re.I): return {'bonus'}
+    # Missões paralelas (Fabio, 02/11): passeio com os cachorros e rotina de casa. Opcionais, só XP; não são exercício.
+    if re.search(r'miss[ãa]o paralela', t, re.I): return {'paralela_caes'} if re.search(r'cachorr|c[ãa]es|cães', t, re.I) else {'paralela_rotina'}
     tipos = set()
     if re.search(r'futebol|campeonato', t, re.I) or (re.search(r'\bjogo\b', t, re.I) and not re.search(r'v[ée]spera', t, re.I)): tipos.add('jogo')
     if RX_FORCA.search(t): tipos.add('forca')
@@ -99,7 +101,9 @@ for x in REG:
     do_copiloto = bool(RX_COPILOTO.search(txt))
     negado = bool(RX_NEG.search(txt.split('#sets')[0]))
     if tipo == 'Treino' and not vazio and not negado:
-        por_dia[d].add('treino'); por_dia[d].update(tipos_treino(txt))
+        tt = tipos_treino(txt)
+        if not tt <= {'paralela_caes', 'paralela_rotina'}: por_dia[d].add('treino')   # missão paralela não faz o dia virar ativo
+        por_dia[d].update(tt)
         m = re.search(r'#sets (\{.*\})\s*$', txt)
         if m:
             try:
@@ -136,6 +140,8 @@ def xp_do_dia(d):
     if 'corrida' in f: itens.append(('Corrida', XP['corrida']))
     if ativo(d): itens.append(('Dia ativo', XP['dia_ativo']))
     if 'bonus' in f and f & {'forca', 'corrida'}: itens.append(('Rodada bônus', XP.get('bonus', 50)))   # só vale junto da sessão principal
+    if 'paralela_caes' in f: itens.append(('Passeio com os cachorros', XP.get('paralela', 15)))
+    if 'paralela_rotina' in f: itens.append(('Rotina de casa', XP.get('paralela', 15)))
     if 'estalagem' in f: itens.append(('Descanso na estalagem', XP['estalagem']))   # o mesmo nome que o historia.py lê
     if s in PES: itens.append(('Pesagem', XP['pesagem']))
     if 'almoco' in f: itens.append(('Almoço registrado', XP['almoco']))
@@ -203,9 +209,13 @@ for w in semanas:
     n, ok = len(missoes), sum(m['cumprida'] for m in missoes)
     concluido = ok >= (n - 1 if n >= 3 else n)
     status = 'concluido' if concluido else ('em_andamento' if atual else 'nao_concluido')
-    xp_sem = XP['missao_semana'] * ok + (XP['capitulo'] if concluido else 0)
+    # missões paralelas: contadas à parte, nunca entram no capítulo; 5 dias na semana = +30 XP cada
+    PAR = R.get('paralelas', {}); meta_par = PAR.get('meta_semana', 5)
+    paralelas = [{'id': k, 'nome': (PAR.get(k) or {}).get('nome', k), 'feito': sum(1 for d in passados if 'paralela_' + k in por_dia[d.isoformat()]), 'meta': meta_par} for k in ('caes', 'rotina')]
+    for pm in paralelas: pm['cumprida'] = pm['feito'] >= pm['meta']
+    xp_sem = XP['missao_semana'] * ok + (XP['capitulo'] if concluido else 0) + XP.get('paralela_semana', 30) * sum(pm['cumprida'] for pm in paralelas)
     resultado.append({'segunda': w.isoformat(), 'janela_ativos': list(janela), 'missoes': missoes, 'cumpridas': ok, 'status': status,
-                      'novo_arco': novo_arco, 'xp_semana': xp_sem, 'ativos_por_dia': {d.isoformat(): ativo(d) for d in passados}})
+                      'novo_arco': novo_arco, 'xp_semana': xp_sem, 'paralelas': paralelas, 'ativos_por_dia': {d.isoformat(): ativo(d) for d in passados}})
     if not atual:
         hist_ativos.append(n_ativos)
         sem_cap_seguidas = 0 if concluido else sem_cap_seguidas + 1
@@ -347,9 +357,10 @@ out = {
                    'xp_total': xp_total, 'xp_no_nivel': xp_total - base, 'xp_para_proximo': falta},
     'vitalidade': vitalidade, 'atributos': atributos,
     'capitulo': {'numero': n_cap, 'segunda': atual['segunda'] if atual else None, 'status': atual['status'] if atual else None,
-                 'missoes': atual['missoes'] if atual else [], 'novo_arco': atual['novo_arco'] if atual else False, 'xp_semana': atual['xp_semana'] if atual else 0},
+                 'missoes': atual['missoes'] if atual else [], 'paralelas': atual['paralelas'] if atual else [], 'novo_arco': atual['novo_arco'] if atual else False, 'xp_semana': atual['xp_semana'] if atual else 0},
     'saga': {'atual': saga, 'maior': saga_max, 'historico': sagas},
-    'hoje': {'data': hoje_s, 'xp': xp_por_dia.get(hoje_s, {}).get('xp', 0), 'missoes': missoes_hoje, 'ferido': ferido},
+    'hoje': {'data': hoje_s, 'xp': xp_por_dia.get(hoje_s, {}).get('xp', 0), 'missoes': missoes_hoje, 'ferido': ferido,
+             'paralelas': {'caes': 'paralela_caes' in f_hoje, 'rotina': 'paralela_rotina' in f_hoje}},
     'arco': arco, 'media_28d': m28, 'paralela': paralela,
     'reliquias': rel, 'semanas': [{k: s[k] for k in ('segunda', 'status', 'cumpridas', 'xp_semana', 'novo_arco')} | {'n': len(s['missoes']), 'missoes': s['missoes']} for s in resultado],
     'xp_por_dia': {k: v['xp'] for k, v in xp_por_dia.items()},

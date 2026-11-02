@@ -13,6 +13,8 @@
   "missao_semana": 50,
   "capitulo": 150,
   "bonus": 50,
+  "paralela": 15,
+  "paralela_semana": 30,
   "teto_diario": 250
  },
  "dia_ativo_kcal": 300,
@@ -86,5 +88,17 @@
  "saga_maior_registrada": {
   "valor": 5,
   "nota": "Recorde que o painel mostrava até 31/10, calculado com a janela de 100 registros. Com o histórico completo a conta mudou (semanas antigas ganharam as 4 missões), mas um recorde já mostrado não encolhe."
+ },
+ "paralelas": {
+  "_nota": "Missões paralelas (Fabio, 02/11): opcionais e diárias, não contam como exercício, nem como dia ativo, nem como item do dia para as cartas. Só XP.",
+  "caes": {
+   "nome": "Passeio com os cachorros",
+   "texto": "Jogging curto com os cachorros (eles é que precisam)."
+  },
+  "rotina": {
+   "nome": "Rotina de casa",
+   "texto": "Alongamento, flexão e prancha, uns 10 min."
+  },
+  "meta_semana": 5
  }
 }

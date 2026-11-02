@@ -449,6 +449,7 @@ function cpResumoSemana() {
   const pj = H && H.projecao;
   return `<section class="bloco"><div class="cab"><h2>Esta semana</h2><small>${ok} de ${ms.length} missões</small></div>
     <div class="cp-lista">${ms.map(m => `<div class="${m.cumprida ? '' : 'tr'}"><b>${m.cumprida ? 'Feita' : 'Falta'} · ${esc(m.nome)}</b>${m.feito} de ${m.meta}</div>`).join('')}</div>
+    ${(j.capitulo.paralelas || []).length ? `<div class="par" style="padding-top:12px"><b>Missões paralelas</b> (opcionais, só pontos): ${j.capitulo.paralelas.map(p => `${esc(p.nome)} ${p.feito} de ${p.meta}${p.cumprida ? ' (cumprida)' : ''}`).join(' · ')}</div>` : ''}
     ${pj ? `<div class="par" style="padding-top:12px">Se a parte fechasse agora: <b>${esc(nome[pj.tier] || pj.tier)}</b>.${(pj.efeitos || []).length ? ' ' + esc(pj.efeitos[0]) : ''}</div>` : ''}</section>`;
 }
 function cpAventura() {
@@ -523,7 +524,7 @@ function renderCampanha() {
   // "O livro" (só os desfechos) saiu em 02/11: "A história inteira", no topo da aventura, tem tudo em ordem
 
   h += `<section class="bloco cp-regras"><details><summary style="padding:14px 0;font-weight:700;cursor:pointer">Como a Campanha funciona</summary>
-    <div class="par">XP só por comportamento, uma vez por dia por tipo, com teto de 250 por dia: sessão de força 100, corrida 80, dia ativo 30, descanso confirmado na estalagem 50, pesagem 20, almoço registrado 20, lanche da tarde registrado 20; a rodada bônus (força curta no dia de corrida, corrida leve no dia de força) vale 50 e não conta como item do dia. Cada missão da semana cumprida vale 50, e o capítulo concluído, 150.</div>
+    <div class="par">XP só por comportamento, uma vez por dia por tipo, com teto de 250 por dia: sessão de força 100, corrida 80, dia ativo 30, descanso confirmado na estalagem 50, pesagem 20, almoço registrado 20, lanche da tarde registrado 20; a rodada bônus (força curta no dia de corrida, corrida leve no dia de força) vale 50 e não conta como item do dia. Missões paralelas, todo dia e opcionais: passeio com os cachorros e rotina de casa (alongamento, flexão e prancha), 15 cada; 5 dias na semana rendem mais 30 cada. Não contam como treino, dia ativo nem item do dia. Cada missão da semana cumprida vale 50, e o capítulo concluído, 150.</div>
     <div class="par">O XP nunca diminui. O peso não dá nem tira XP: ele só mexe na vida do chefe do arco, pela média de 28 dias. O futebol conta como dia ativo, sem bônus.</div>
     <div class="par">Capítulo é a semana, de segunda a domingo. Concluído = todas as missões, ou todas menos uma. A meta de dias ativos segue a sua fase: média das últimas 4 semanas mais 1, entre 3 e 5; depois de 2 capítulos sem conclusão, cai para 3 e começa um arco de retorno.</div>
     <div class="par">Saga é a sequência de capítulos concluídos. Um capítulo perdido pode ser resgatado na semana seguinte (3 dias ativos em 4 dias corridos e o capítulo seguinte concluído), uma vez a cada 4 semanas. Dia de descanso confirmado conta como cumprido.</div>

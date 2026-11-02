@@ -44,6 +44,9 @@ Memória de conversa não vale: o disco vale.
    de 15/10"). O texto descreve só o que ele mandou ou o que a foto mostra, sem "Fabio" nem "copiloto" e sem
    começar com data (o `jornada.py` descarta esses como texto do copiloto). Não grave pergunta nem plano
    ("posso comer X?"). Saída 3 = já há registro igual no dia: mostre a ele e só use `--forcar` se for outro.
+   **Missões paralelas (02/11):** passeio com os cachorros ou a rotina de casa (alongamento, flexão, prancha) contados no
+   Telegram gravam como `treino` com o texto começando por "Missão paralela: passeio com os cachorros" ou "Missão paralela:
+   rotina de casa" (assim viram só pontos, nunca sessão, corrida ou dia ativo).
    Depois de gravar, rode `./despachos.py` em segundo plano: se o registro fechou um marco da Campanha, o despacho
    sai na hora (ele mesmo não manda nada se não houver marco novo).
 10. **O conselho de domingo é uma entrevista** (pedido do Fabio, 18/10): `rotinas/conselho_entrevista.md`. Um

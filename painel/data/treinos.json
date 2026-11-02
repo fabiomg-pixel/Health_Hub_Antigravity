@@ -1415,6 +1415,26 @@
       "dica": "De lado para a âncora, empurre as mãos à frente do peito sem deixar o tronco girar."
      }
     ]
+   },
+   "alongamento": {
+    "nome": "Alongamento",
+    "opcoes": [
+     {
+      "id": "along_posterior",
+      "nome": "Alongamento de posterior de coxa",
+      "dica": "Em pé ou sentado, perna estendida, incline o tronco a partir do quadril, costas longas. Sem balançar."
+     },
+     {
+      "id": "along_quadril",
+      "nome": "Alongamento de quadril (afundo baixo)",
+      "dica": "Joelho de trás no chão, empurre o quadril para a frente até sentir a frente da coxa de trás."
+     },
+     {
+      "id": "along_peito",
+      "nome": "Alongamento de peito na porta",
+      "dica": "Antebraço no batente, cotovelo na altura do ombro, gire o tronco para o lado oposto devagar."
+     }
+    ]
    }
   },
   "aviso_dicas": "Dicas gerais de execução, escritas pelo copiloto. Não substituem a orientação de um profissional presente. Se sentir dor, pare."
@@ -1516,5 +1536,64 @@
    "max": 30,
    "texto": "20 a 30 min em zona 2 (FC 130-145), depois da força ou em outro horário do dia. Conversa possível o tempo todo. Rodada bônus (Fabio, 31/10): opcional, só com o semáforo em Pode, depois da sessão principal, nunca no dia de descanso. Conta pontuação extra; não conta para as missões de força nem de corrida."
   }
+ },
+ "rotina_casa": {
+  "titulo": "Missão paralela: rotina de casa",
+  "regra": "Uns 10 minutos, todo dia, opcional. Alongamento sem dor, flexão com 2 repetições de sobra, prancha no cronômetro. Não conta como sessão de força nem como item do dia: só XP. Semáforo em Segurar: faça só o alongamento.",
+  "exercicios": [
+   {
+    "id": "along_posterior",
+    "nome": "Alongamento de posterior de coxa",
+    "series": 1,
+    "reps": "45 s cada lado",
+    "kg": null,
+    "descanso_s": 10,
+    "grupo": "alongamento",
+    "tipo": "tempo",
+    "alvo_s": 45
+   },
+   {
+    "id": "along_quadril",
+    "nome": "Alongamento de quadril (afundo baixo)",
+    "series": 1,
+    "reps": "45 s cada lado",
+    "kg": null,
+    "descanso_s": 10,
+    "grupo": "alongamento",
+    "tipo": "tempo",
+    "alvo_s": 45
+   },
+   {
+    "id": "along_peito",
+    "nome": "Alongamento de peito na porta",
+    "series": 1,
+    "reps": "30 s cada lado",
+    "kg": null,
+    "descanso_s": 10,
+    "grupo": "alongamento",
+    "tipo": "tempo",
+    "alvo_s": 30
+   },
+   {
+    "id": "flexao_de_braco",
+    "nome": "Flexão de braço",
+    "series": 2,
+    "reps": "até 2 antes da falha",
+    "kg": 0,
+    "descanso_s": 60,
+    "grupo": "peito_empurrar"
+   },
+   {
+    "id": "prancha",
+    "nome": "Prancha",
+    "series": 2,
+    "reps": "40 s",
+    "kg": null,
+    "descanso_s": 45,
+    "grupo": "core_tempo",
+    "tipo": "tempo",
+    "alvo_s": 40
+   }
+  ]
  }
 }
