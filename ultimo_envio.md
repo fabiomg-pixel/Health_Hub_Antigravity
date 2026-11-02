@@ -1,8 +1,10 @@
-# Último envio do bot (capitulo) em 02/11 09:00
+# Último envio do bot (conselho) em 02/11 09:00
 
-Parte II fechada: O Coração de Ost (avanço).
-Lúcia mandou o coração pelo balde; Ost acendeu inteiro e a Cinza recuou duas léguas.
-Pesa: Teodoro confessou que deixou Lúcia viva no Platô. Bram forjou a Lâmina Estelar; a Mácula de Iara sumiu; Sal dos Faróis ganho.
-O capítulo mostra onde cada marco da semana entrou na história.
-Próxima, Parte III: O Vau das Garças. Um rio de Esquecidos canta uma nota que não resolve, e Corvino vem atrás.
-https://painel-xi-three.vercel.app/#campanha
+Conselho fechado. Seu retorno → o plano:
+Você disse que não tem sintoma e que o jogo é sábado → o jogo é a única qualidade; o resto fica fácil.
+Você disse academia, com o plano em casa de reserva → forças na quinta (superior) e no domingo (corpo inteiro); em casa se chover.
+Você disse força no fim da tarde → o lanche das 15h vira pré-treino.
+Você disse almoço de marmita e janta simples → mantido. Você disse "sábado" → refeição livre sábado à noite; se for no almoço, me corrija.
+Foco: segunda descanso; corridas fáceis terça e quarta (16h45); terça, quarta e quinta são 3 dias seguidos, então a quinta é o primeiro corte. Hoje a FC de repouso é 58 e sono/VFC ainda não sincronizaram: a manhã de terça decide se a 3ª força e a 3ª corrida entram.
+Nada ficou sem resposta.
+https://painel-xi-three.vercel.app/#inicio
