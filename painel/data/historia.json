@@ -1,184 +1,161 @@
 {
- "gerado_em": "2026-11-02T14:13:55",
+ "gerado_em": "2026-11-02T15:00:58",
  "versao": 2,
- "titulo": "Os Faróis de Nácar",
+ "titulo": "Cindra: A Margem do Sol Poente",
  "arco": {
   "id": "I",
-  "nome": "O Estreito dos Dentes de Pedra",
-  "chefe": "O Colosso da Fenda de Basalto",
-  "chefe_texto": "Um titã autômata de pedra e ferro estelar erguido pelos Arquitetos Celestes. Desperta com as correntes de éter e só cede passagem quando a tripulação chega inteira."
+  "nome": "A Garganta dos Ventos Cortantes",
+  "chefe": "A Barreira de Gelo Azul",
+  "chefe_texto": ""
  },
  "etapa": 0,
  "etapas": [
   {
-   "nome": "A Garganta das Gaivotas",
+   "nome": "A Entrada da Falha",
    "estado": "atual"
   },
   {
-   "nome": "O Farol Quebrado de Ost-Nadir",
+   "nome": "O Leito dos Seixos Pretos",
    "estado": "futura"
   },
   {
-   "nome": "As Falésias de Calcário Negro",
+   "nome": "A Fenda do Vapor",
    "estado": "futura"
   },
   {
-   "nome": "O Bosque dos Corais de Ferro",
-   "estado": "futura"
-  },
-  {
-   "nome": "As Galerias Afundadas de Kael",
-   "estado": "futura"
-  },
-  {
-   "nome": "A Escadaria dos Suspiros",
-   "estado": "futura"
-  },
-  {
-   "nome": "O Cume do Colosso",
+   "nome": "A Barreira de Gelo Azul",
    "estado": "futura"
   }
  ],
  "companhia": [
   {
    "id": "brisa",
-   "nome": "Sora",
-   "papel": "a Rastreadora dos Ventos",
-   "texto": "Arqueira das pontes aéreas, veloz e de língua afiada. Sobreviveu à queda de sua aldeia na infância e carrega uma bússola de bronze quebrada que gira perto do vazio.",
+   "nome": "Dra. Elisa Vane",
+   "papel": "Médica e Paleobotânica",
+   "texto": "42 anos, casaco de lã remendado. Não dorme se houver alguém tossindo e protege as mudas da estufa como se fossem filhos com a própria vida.",
    "g": "a",
    "estado": "ativa"
   },
   {
    "id": "dorn",
-   "nome": "Valen",
-   "papel": "o Mestre-Artífice",
-   "texto": "Ex-engenheiro militar das forjas de Kael-Dorr. Jurou nunca mais forjar armas de ataque após uma tragédia no passado; forja os Sigilos de Nácar com ferro meteórico para defender a caravana.",
+   "nome": "Mikael",
+   "papel": "Menino das Válvulas",
+   "texto": "14 anos, órfão do gelo. Escala as chaminés a -30°C para bater o gelo das válvulas de pressão com um martelo de bronze.",
    "g": "o",
    "estado": "ativa"
   },
   {
    "id": "ysa",
-   "nome": "Miriam",
-   "papel": "a Paleocartógrafa",
-   "texto": "Sábia cega das Torres do Eco. Escuta a pulsação mineral das pedras e decifra o Códice de Pele de Baleia sob a luz das estrelas.",
-   "g": "a",
+   "nome": "Vardan",
+   "papel": "Velho Navegador do Gelo",
+   "texto": "64 anos, perna mecânica forjada em bronze. Conhece o estalar das geleiras antes que elas rachem.",
+   "g": "o",
    "estado": "ativa"
   }
  ],
  "guia": {
-  "nome": "Mestre Orfeu",
-  "papel": "o Velho Timoneiro das Brumas",
-  "texto": "Perdeu o olho esquerdo para a geada da névoa viva; navega por estrelas apagadas com seu mastim lanudo, Baluarte."
+  "nome": "Fábio",
+  "papel": "Condutor de Fornalha & Batedor",
+  "texto": "O pulmão do comboio. Anda na frente marcando fendas com Canela e Gero ou mantém a cadência de queima nos pistões do Andarilho-07."
  },
  "mochila": [
   {
-   "id": "escudo",
-   "nome": "Sigilo do Bastião",
-   "texto": "Forjado por Valen com ferro-frio e pó de nácar. Rompe-se para absorver o impacto de um revés que feriria alguém."
+   "id": "lampada_carbeto",
+   "nome": "Lâmpada de Carbeto",
+   "texto": "Chama química protegida contra rajadas de 100 km/h. Ilumina fendas ocultas no gelo."
   }
  ],
- "regra_item": "Cada sigilo absorve uma derrota: quando uma semana ruim chegaria, o sigilo quebra e a derrota cai um nível. A caixa de Valen comporta até 3.",
+ "regra_item": "Cada ferramenta absorve uma quebra ou derrota: quando uma semana difícil chega, a ferramenta se esgota no lugar de ferir um membro da equipe. A caixa de ferramentas leva até 3.",
  "crise": null,
  "reliquias": [],
  "maldicoes": [],
  "materiais": {
   "estilha": {
    "qtd": 0,
-   "nome": "fragmentos de nácar",
+   "nome": "minério térmico",
    "forja": 5,
-   "texto": "Cinco fragmentos lunares permitem forjar a Lâmina de Nácar Forjada."
+   "texto": "Fragmentos de minério térmico colhidos no gelo. Cinco deles permitem forjar o Aríete Térmico de Tungstênio."
   },
   "pista": {
    "qtd": 0,
-   "nome": "cartas topográficas de Miriam",
-   "texto": "Fragmentos decifrados do Códice que revelam passagens seguras entre as tempestades."
+   "nome": "cartas de rota",
+   "texto": "Anotações e sondagens de antigas expedições."
   },
   "desgaste": {
    "qtd": 0,
-   "nome": "avarias na chalupa",
-   "texto": "Dois desgastes acumulados na mesma semana ferem alguém da tripulação."
+   "nome": "desgaste da esteira",
+   "texto": "Dois desgastes na mesma semana ferem alguém da companhia no conserto externo."
   }
  },
  "fios": [
   {
-   "id": "marca_do_pulso",
-   "titulo": "A Origem da Marca da Maré",
-   "resumo": "A cicatriz de ferro-frio no pulso de Fabio ressoa com as máquinas dos Arquitetos Celestes. Por que ela despertou quando ele sobreviveu ao Estreito da Lágrima?",
+   "id": "estufa",
+   "nome": "O Berçário Verde de Elisa",
    "status": "ativo",
-   "revelacoes": []
+   "resumo": "As primeiras mudas de centeio-da-montanha brotaram sob a lâmpada de carbono. Qualquer queda abrupta de temperatura na estufa pode congelar as raízes definitivas do assentamento.",
+   "capitulo_inicio": 4,
+   "evolucao": [
+    "02/11: As mudas estão saudáveis, mas o aríete térmico consome parte do vapor que aquece as serpentinas da estufa."
+   ]
   },
   {
-   "id": "bussola_de_sora",
-   "titulo": "A Bússola Quebrada de Sora",
-   "resumo": "A bússola do pai de Sora não aponta para o norte, mas gira em direção à névoa profunda. Quem forjou a agulha de bronze?",
+   "id": "esteira",
+   "nome": "A Integridade do Andarilho-07",
    "status": "ativo",
-   "revelacoes": []
+   "resumo": "Os pinos-guia da esteira direita sofreram desgaste na travessia do leito de pedra. Precisam de graxa de foca e alinhamento a cada parada de descanso.",
+   "capitulo_inicio": 4,
+   "evolucao": [
+    "02/11: Fábio e Vardan ajustaram a tensão das correntes. O trator está pronto para o empuxo da Garganta."
+   ]
   },
   {
-   "id": "o_chamado_de_miriam",
-   "titulo": "O Canto da Irmã Perdida",
-   "resumo": "Miriam escuta uma voz feminina que a chama para as nuvens, prometendo-lhe visão e paz. É um eco da névoa viva ou uma sobrevivente real?",
+   "id": "canela_gero",
+   "nome": "A Sentinela dos Mastins",
    "status": "ativo",
-   "revelacoes": []
+   "resumo": "Canela e Gero farejam o gelo falso antes que o peso de quarenta toneladas do trator rache o chão. O faro dos cães é a única bússola confiável sob a nevasca de sílica.",
+   "capitulo_inicio": 4,
+   "evolucao": [
+    "02/11: Canela encontrou uma fenda oculta a duzentos metros da entrada da garganta, poupando a esteira dianteira."
+   ]
   },
   {
-   "id": "a_divida_de_valen",
-   "titulo": "Os Sobreviventes de Kael-Dorr",
-   "resumo": "Valen acredita que todos os trezentos mineradores morreram na galeria, mas rumores dizem que um grupo escapou em uma chalupa clandestina.",
+   "id": "barreira",
+   "nome": "O Cerco do Gelo Azul",
    "status": "ativo",
-   "revelacoes": []
-  },
-  {
-   "id": "corsarios_malcor",
-   "titulo": "A Perseguição do Capitão Malcor",
-   "resumo": "Malcor quer a Baluarte do Vento a qualquer custo para tentar cruzar o Mar de Salitre e roubar a forja de nácar.",
-   "status": "ativo",
-   "revelacoes": []
+   "resumo": "A muralha de gelo de 80 metros bloqueia o desfiladeiro. As brocas térmicas avançam na proporção direta da cadência física e do vapor gerado na fornalha.",
+   "capitulo_inicio": 4,
+   "evolucao": [
+    "02/11: As brocas entraram em contato com a primeira camada de gelo cristalino."
+   ]
   }
  ],
  "biblia": [
   {
-   "titulo": "Thalassa-Aethel e o Mar das Névoas Vivas",
-   "texto": "O mundo conhecido é um arquipélago colossal de cumes de basalto negro, falésias ciclópicas e ilhas suspensas que flutuam sobre um oceano infinito de nuvens densas, fosforescentes e vivas chamado **A Maré Silenciosa** (ou simplesmente **O Vazio**). Abaixo de mil braças de névoa jazem as ruínas do Velho Continente, submerso quando o céu desmoronou. Ninguém que desceu até o fundo do Vazio jamais retornou com voz ou razão para contar o que existe sob as nuvens. A vida humana se concentra nos platôs mais altos, conectados por chalupas a vapor com cascos reforçados, pontes pênseis de cabos de aço e torres faroleiras que queimam nácar estelar."
+   "titulo": "1. O Mundo Físico",
+   "texto": "*Cindra* não gira. Há mais de doze séculos, o planeta foi travado por maré gravitacional ao redor de sua estrela anã vermelha, *Aethel-Sol*.\n\n- **O Meio-Dia Branco (The Scald):** O hemisfério voltado perpetuamente para a estrela. Um oceano de areia de quartzo calcinada, onde o mercúrio ferve e radiação pura desintegra qualquer tecido orgânico em minutos.\n- **A Meia-Noite Eterna (The Void):** O hemisfério dorsal. Escuridão absoluta onde o dióxido de carbono precipita em neve sólida e a temperatura desce a -120°C. Criaturas cegas, com exoesqueletos de queratina e quimiorreceptores térmicos, caçam qualquer fonte de calor.\n- **O Limiar do Crepúsculo (The Twilight Ribbon):** Uma estreita faixa circular de oitenta quilômetros de largura que divide a cinza e o gelo. Aqui, o ar circula em correntes térmicas constantes. O sol não nasce nem se põe: é um disco escarlate, colossal e mudo, cravado no horizonte para todo o sempre, banhando os campos de gelo em um eterno crepúsculo violeta e âmbar."
   },
   {
-   "titulo": "A Grande Ruptura e os Arquitetos Celestes",
-   "texto": "Há cento e vinte invernos, ocorreu o cataclismo que os antigos chamam de **A Grande Ruptura**. Dizem as lendas gravadas nos monólitos de basalto que os Arquitetos Celestes — uma raça de sábios navegadores que construiu o mundo sobre engrenagens gravitacionais — mantinham o firmamento preso a uma máquina colossal no centro do horizonte: o **Grande Pêndulo de Aethel-Nadir**. Por razões que os séculos sepultaram, o Pêndulo desacelerou. O céu de vidro que protegia as terras rachou em milhões de lascas luminescentes, e a Névoa Silenciosa subiu dos abismos da terra para engolir tudo o que havia sido construído."
+   "titulo": "2. A Catástrofe: A Precessão do Gelo",
+   "texto": "O planeta possui uma oscilação axial lenta e inexorável. A Faixa do Crepúsculo está se deslocando doze quilômetros por ano. O Vale de Karkov, onde quinhentas pessoas viveram por três gerações cultivando trigo de raiz negra em terraços geotérmicos, foi engolido pela geada em apenas noventa dias.\nNão existe ficar parado. Ficar parado é adormecer sob a lona e acordar com os pulmões congelados por dentro."
   },
   {
-   "titulo": "A Névoa Silenciosa e a Mácula do Esquecimento",
-   "texto": "A Maré Silenciosa não é apenas vapor d'água; é uma entidade semi-consciente, gélida e faminta que se alimenta de calor, ressonância e memória. Quem passa horas respirando a névoa sem um filtro de cinza de nácar começa a perder os pensamentos: primeiro os nomes dos companheiros, depois as feições da infância, e por fim o próprio nome. \nQuando a névoa marca alguém de forma permanente, nascem sob a pele finas veias de um branco leitoso — **A Mácula da Névoa**. A pessoa marcada ouve sussurros constantes nas vigílias noturnas e, se quebrar seus juramentos ou fraquejar na disciplina, é consumida e transforma-se em um **Desgarrado**: uma casca vazia e translúcida que vagueia pelos rochedos repetindo as últimas palavras que pronunciou em vida."
+   "titulo": "3. O Comboio: O Andarilho-07 (Vanguard-Sete)",
+   "texto": "Não é um navio de fantasia. É uma máquina de ferro forjado, rebitada com chapas de aço naval de 40 milímetros, movida por esteiras duplas dentadas e caldeiras de tripla expansão.\n- **A Cabine de Fornalha:** Onde Fábio passa suas horas de vigília. Não há automatismos: a pressão é mantida na pá de carvão e na cadência dos pistões de bombeamento.\n- **O Vagão de Convivência:** O coração térmico do trator. Aquecido por uma salamandra de ferro fundido alimentada por briquetes de turfa. Cheira a café de cevada torrada, sebo de impermeabilização, sopa de feijão gordo e cães molhados secando perto da chaminé.\n- **A Estufa-Bercário:** Um vagão longo com cúpulas de policarbonato duplo reforçado por malha de arame. Lá dentro, sob a luz dourada de filamentos de carbono, a Dra. Elisa protege as últimas bandejas de terra fértil: mudas de centeio, sementes de maçã-de-inverno e tubérculos ricos em amido. Se a temperatura na estufa cair abaixo de zero por quatro horas, a esperança de assentamento da espécie humana morre com as raízes."
   },
   {
-   "titulo": "O Nácar e a Forja dos Sigilos",
-   "texto": "Os únicos materiais que repelem a névoa viva são os **Fragmentos de Nácar** (ou *Estilhas Lunares*): pedaços do antigo Firmamento de Vidro que caíram nas falésias e guardam um calor estelar pulsante em tons de madrepérola e cobalto. Quando moídos e fundidos com ferro meteórico por um artífice que conheça a cadência certa do martelo, dão origem aos **Sigilos de Nácar**: medalhões pesados gravados com padrões geométricos que absorvem a pressão da névoa. Quando uma tempestade violenta ou um revés catastrófico atingiria a tripulação, o sigilo trinca e estilhaça no lugar da carne e do espírito de quem o carrega."
+   "titulo": "4. O Destino: A Bacia das Águas Termais",
+   "texto": "Vardan insiste que os velhos mapas hidrotermais não mentem. Na longitude 41-Oeste, onde as placas tectônicas do Limiar colidem com o manto magmático do Meio-Dia Branco, existe uma caldeira protegida por montanhas basálticas com nascentes de água quente a 28°C e solo vulcânico negro. Um lugar onde as esteiras do *Andarilho-07* poderão finalmente ser desligadas."
   },
   {
-   "titulo": "A Expedição da *Baluarte do Vento*",
-   "texto": "O último grande farol do sul, o Farol do Rochedo Cortado, entrou em colapso há dois meses. Os três povoados restantes estão a menos de um ano de serem engolidos pela maré ascendente. A única esperança reside na travessia mais perigosa já concebida: cruzar os quatro mares inexplorados até a cratera vulcânica de Aethel-Nadir e reacender o Grande Pêndulo. A chalupa *Baluarte do Vento*, uma embarcação de madeira-ferro calafetada com resina de coral negro e impulsionada por pás gravitacionais, parte para a escuridão levando uma tripulação de quatro pessoas, um velho timoneiro e dois mastins de montanha.\n\n---"
-  },
-  {
-   "titulo": "Personagens Principais",
-   "texto": "### Fabio, o Navegador das Brumas\nEx-cartógrafo-chefe da Ordem dos Faróis do Sul. Há cinco anos, liderou a malfadada expedição do Estreito da Lágrima: dos onze marinheiros que o acompanhavam, dez foram tragados por um turbilhão de névoa viva. Fabio retornou sozinho à cidadela, puxando a chalupa por cabos nos rochedos com as mãos em carne viva. Trazia no pulso direito uma cicatriz luminescente de ferro-frio — a **Marca da Maré** —, que queima e vibra sempre que uma corrente navegável ou um bolsão de perigo se aproxima.\nEle é um homem de poucas palavras, olhar paciente e precisão absoluta. Não tolera fanfarronice nem desespero: sabe que a sobrevivência no Vazio é conquistada quilômetro por quilômetro, repetição por repetição, sem pressa e sem trégua. Carrega no peito o peso dos dez que se foram, e fez a si mesmo a promessa sagrada de que desta vez **ninguém ficará para trás**.\n\n### Sora, a Rastreadora dos Ventos\nArqueira e patrulheira das pontes suspensas. Cabelos curtos negros como carvão, passos tão silenciosos que parece levitar sobre as tábuas do convés. Foi encontrada aos oito anos à deriva num caiaque de lona, agarrada a uma bússola de bronze quebrada que pertencia ao seu pai e que gira de modo caótico perto do abismo. Não se lembra do nome da mãe nem da canção que cantavam em sua aldeia natal antes de ser devorada pelo Vazio.\nSora disfarça o medo com um sarcasmo cortante e uma agilidade felina com seu arco composto de chifre de leviatã. É a primeira a subir na gávea nas noites de ventania e tem pavor visceral de silêncio absoluto: quando o acampamento cala, ela começa a afiar pontas de flecha de sílex apenas para escutar o atrito da pedra.\n\n### Valen, o Mestre-Artífice\nUm gigante de quase dois metros de altura, ombros largos e mãos marcadas por cicatrizes de forja e metal líquido. Foi o artífice-chefe das forjas imperiais de Kael-Dorr até a noite em que uma ordem do comando mandou lacrar os portões das galerias inferiores durante um vazamento de névoa ácida, condenando duzentos operários civis para salvar o palácio do governador. Valen abandonou as condecorações, o ouro e a patente e jurou diante das cinzas que nunca mais forjaria uma arma de abate.\nNa chalupa, suas mãos colossais trabalham com delicadeza cirúrgica, esculpindo os Sigilos de Nácar que mantêm o casco inteiro. É gentil com os animais, paciente com as perguntas de Miriam e fala em um tom tão calmo e grave que acalma qualquer pânico. O martelo pesado que carrega nas costas pertencia a seu avô: ele só o usa para construir, reparar e proteger.\n\n### Miriam, a Paleocartógrafa\nSábia e decifradora de pergaminhos antigos, cega desde o nascimento após uma febre da névoa. Seus olhos são de um cinza leitoso e sem íris, mas seus outros sentidos são assustadoramente refinados: ela escuta a ressonância das correntes de vento no casco e \"lê\" a topografia das rochas encostando as palmas das mãos no basalto. Carrega o lendário *Códice de Pele de Baleia*, cujas páginas espessas revelam mapas táteis em relevo que brilham suavemente quando aquecidos perto de fragmentos de nácar.\nMiriam é serena, poética e dona de uma coragem silenciosa que desconcerta até os piratas mais endurecidos. No entanto, guarda um tormento íntimo: em seus sonhos, a névoa tem a voz da irmã mais velha que ela nunca conheceu, pedindo-lhe que solte os cabos e se entregue à bruma.\n\n### Mestre Orfeu e os Mastins da Névoa (Baluarte e Estrela)\nOrfeu é o timoneiro mais velho do arquipélago, com a barba branca manchada de sal e uma gargalhada rouca que espanta o mau agouro. Perdeu o olho esquerdo há trinta anos para um golpe de vento ácido, substituindo-o por uma esfera de quartzo marinho polido. Ele conhece cada corrente térmica, cada recife falso e cada capricho do leme.\nA seus pés deitam-se **Baluarte** e **Estrela**, dois mastins da montanha de pelagem densa e cinzenta. Os cães têm o olfato calibrado para identificar vapores venenosos e acordam a tripulação rosnando baixinho minutos antes de qualquer anomalia se aproximar do perímetro do acampamento.\n\n---"
-  },
-  {
-   "titulo": "Os Quatro Arcos da Travessia",
-   "texto": "### Arco I: O Estreito dos Dentes de Pedra (Meta: 95.0 a 92.5 kg)\nUma garganta estreita de escarpas pontiagudas de basalto onde os ventos sopram como lâminas. As chalupas normais se despedaçam nas rochas. O guardião desta passagem é **O Colosso da Fenda de Basalto**: um autômato colossal esculpido na própria montanha há milênios pelos Arquitetos Celestes, cujos olhos de éter despertam quando a névoa sobe. Não é um monstro para ser abatido: é um portão mecânico vivo que só se desliga quando os exploradores escalam até o núcleo de engrenagens no topo do cume.\n\n### Arco II: O Mar das Marés Brancas (Meta: 92.5 a 90.0 kg)\nUm deserto flutuante de nuvens brancas e salinas aéreas onde o sol queima de dia e o ar gela de noite. O leito está repleto de destroços de navios que se perderam nos últimos cem anos. O guardião é **A Serpente das Nuvens Boreal**, um leviatã celeste de escamas translúcidas que dorme no fundo das nuvens e se alimenta do magnetismo das bússolas.\n\n### Arco III: O Platô das Cidades Suspensas (Meta: 90.0 a 87.5 kg)\nAs ruínas das antigas capitais flutuantes, outrora sustentadas por pilares de éter que hoje rangem perigosamente. As ruas de mármore estão vazias, mas as sombras dos antigos ainda projetam ecos nas paredes. O senhor deste lugar é **O Arquonte Esquecido**, uma entidade de silício e luz que esqueceu sua própria humanidade e exige o sacrifício de memórias para permitir a passagem.\n\n### Arco IV: A Cratera de Aethel-Nadir (Meta: 87.5 a 85.0 kg)\nO epicentro do mundo: a cratera colossal do vulcão primordial onde repousa o Grande Pêndulo Celeste. Ao redor dele voa **Vharun-Aethel, o Dragão das Marés Primordiais**, uma tempestade viva de vento e luz que desafia qualquer um que ouse tocar nas cordas do firmamento. Acalmar a fera e ajustar as engrenagens restabelece o ciclo do mundo.\n\n---"
-  },
-  {
-   "titulo": "Antagonistas e Facções",
-   "texto": "- **Os Corsários do Salitre (Capitão Malcor):** Bandos de náufragos e desertores amargurados que sobrevivem à base de pilhagens de nácar e óleo de chalupa nas bordas do arquipélago. Malcor é um homem sem um braço, que usa uma prótese de gancho de ferro e vê na expedição de Fabio um suprimento de esperança que ele deseja roubar ou destruir por inveja.\n- **Os Desgarrados:** As sombras daqueles que foram engolidos pelo esquecimento. Não têm armas nem malícia deliberada; apenas buscam calor e identidade, agarrando-se aos vivos com dedos frios que drenam as lembranças.\n\n---"
-  },
-  {
-   "titulo": "As Leis Narrativas da Campanha",
-   "texto": "1. **Autonomia:** A história nunca narra de forma literal os acontecimentos da rotina de Fabio (não há \"Fabio fez flexões na chuva\" ou \"Fabio comeu ovos na chalupa\"). A história é uma epopeia clássica, com lógica própria e fôlego de romance.\n2. **Conexão Mecânica:** O rigor e a disciplina diária de Fabio decidem a maré do mundo: semanas firmes trazem cartas de bênção, pistas cartográficas e avanços heróicos; dias de fraqueza trazem percalços, avarias e a aproximação das sombras.\n3. **Cuidado com a Tripulação:** Quando alguém se fere ou corre perigo, o coração do leitor tem de doer. Eles cuidam uns dos outros, partilham rações, contam piadas sem graça para quebrar o terror e seguram as mãos uns dos outros na tempestade."
+   "titulo": "5. A Lei do Limiar",
+   "texto": "No gelo, o corpo é o primeiro medidor de combustível:\n- O músculo que se move produz calor e empurra a esteira um quilômetro a mais.\n- A refeição não é gula nem ritual estético: é caloria queimada para não perder os dedos dos pés.\n- O descanso não é fraqueza: é o óleo que impede as bronzinas biológicas de fundirem.\n- O peso corporal é a física impiedosa da esteira sobre a crosta de gelo: o equilíbrio entre tração, lastro e resistência."
   }
  ],
  "prologo": {
   "titulo": "Prólogo",
-  "subtitulo": "A Queda das Luas e o Primeiro Farol",
-  "texto": "## I. O mar que não era de água\n\nHouve um tempo em que o mundo tinha chão contínuo e o céu não precisava de âncoras.\n\nOs velhos dos arquipélagos contam que, antes do Desabamento, era possível caminhar por três luas sem ver o fim das planícies verdes. As cidades erguiam-se em pedra polida e vidro azul, e nos rios navegavam peixes e não tempestades. Mas por cima de tudo isso, guardando os homens das tempestades cósmicas do vazio, orbitavam as Três Luas de Nácar: esferas imensas de matéria estelar luminosa, suspensas por cordas magnéticas que os Arquitetos Celestes teciam a partir do cume mais alto do mundo, em Aethel-Nadir.\n\nEnquanto as três luas brilhassem em harmonia, as correntes de ar eram mansas, as estações chegavam no dia exato e a memória dos antepassados não se desfazia no vento.\n\nE então, numa madrugada que nenhum códice conseguiu explicar, as luas caíram.\n\n## II. A Grande Ruptura\n\nNão foi uma explosão com fogo e enxofre; foi um estalo surdo, como o de um imenso espelho que se quebra sob o peso de um martelo invisível.\n\nAs três luas desabaram sobre o continente em milhões de fragmentos incandescentes. A terra, incapaz de suportar o impacto das massas celestes e a quebra dos campos gravitacionais, ruiu para dentro de si mesma. Vales inteiros afundaram milhares de braças em poucos minutos; florestas, palácios e catedrais foram engolidos por um abismo sem fundo. Apenas os picos mais altos de basalto, as falésias escarpadas e as ilhas que possuíam veios profundos de minério de nácar permaneceram suspensos no ar.\n\nE do fundo das crateras abertas pela queda subiu a Névoa Silenciosa.\n\n## III. A Fome do Esquecimento\n\nA névoa não se parece com a neblina que desce das montanhas nas manhãs de inverno. Ela é densa, pesada, fosforescente em tons de prata fosca e viva. Ela rasteja contra o vento, escala penhascos de basalto como hera e entra pelas frestas das janelas de madeira.\n\nSeu veneno mais cruel não é físico. A névoa devora a mente.\n\nQuem passa noites inteiras respirando a bruma do abismo sem um braseiro de nácar aceso começa a notar que as bordas do mundo se apagam. Primeiro, somem os nomes miúdos: o nome do pássaro na cerca, o nome da colina ao longe. Depois, o nome das pessoas amadas: o marido olha para a esposa e vê apenas um rosto desconhecido com quem partilha a cama; a mãe olha para o filho e não lembra o som da primeira risada. Por fim, o próprio nome se apaga.\n\nA pessoa não morre. Continua caminhando, de olhar vítreo e passos lentos, sem dor e sem fome. O povo do arquipélago os chama de **Desgarrados**. Eles vagueiam pelas bordas dos penhascos, sussurrando para as nuvens as últimas palavras que pronunciaram antes que a névoa levasse o resto. E quando o vento sopra forte do sul, ouve-se o coro dos milhares que esqueceram quem eram.\n\n## IV. O Primeiro Farol e os Sigilos\n\nO que salvou a humanidade da extinção total foi a descoberta do velho mestre-ferreiro Alistair e sua neta Elza.\n\nQuando as luas caíram, os maiores pedaços do Firmamento — o nácar celeste — ficaram cravados nas escarpas como estilhaços luminescentes. Alistair percebeu que a névoa viva recuava diante do calor emitido por esses fragmentos; onde um bloco de nácar brilhava, a bruma abria um círculo perfeito de ar limpo e as pessoas recuperavam a clareza dos pensamentos.\n\nNo cume da Falésia das Gaivotas, Alistair construiu a primeira torre redonda de basalto, com uma fornalha espelhada no topo onde queimavam lascas de nácar comprimidas com resina de pinho-ferro. Em três décadas, uma cadeia de sete faróis foi erguida de leste a oeste, coroando as montanhas e permitindo que as vilas resistissem: a chamada **Linha dos Faróis de Nácar**.\n\nMas o nácar não é infinito. Cada fragmento que queima nas fornalhas perde um pouco de sua luz com o passar dos invernos. Nos últimos doze anos, quatro dos grandes faróis morreram, transformando-se em agulhas de pedra escura engolidas pela névoa ascendente. A cada farol que se apaga, a névoa sobe dez braças e engole mais três aldeias de pescadores e lavradores.\n\nO último grande posto avançado do norte a tombar foi o Farol Quebrado de Ost-Nadir, cuja luz se extinguiu no outono passado.\n\n## V. A Bússola e o Pêndulo\n\nNos velhos pergaminhos de pele de baleia resgatados das bibliotecas que afundaram, repousa uma única profecia náutica: o Firmamento só voltará a se fechar quando alguém levar a **Chama Primordial de Nácar** até a caldeira de Aethel-Nadir, o cume proibido no extremo noroeste do mundo, onde as engrenagens dos Arquitetos Celestes ainda giram por inércia.\n\nQuatro abismos separam o último porto habitado de Aethel-Nadir, e em cada um deles ergue-se um obstáculo que derrotou todas as expedições dos últimos cinquenta anos:\nNo Estreito dos Dentes de Pedra, o **Colosso da Fenda de Basalto**, um titã mecânico de cem metros de altura construído para guardar o canal contra invasores celestes;\nNo Mar das Marés Brancas, a **Serpente das Nuvens Boreal**, cujas espiras de escamas translúcidas devoram as bússolas e viram as chalupas de cabeça para baixo no vácuo;\nNo Platô das Cidades Suspensas, o **Arquonte Esquecido**, a mente de silício que exige tributo em memórias;\nE no interior da Cratera de Aethel, o turbilhão primordial de **Vharun-Aethel**, a tempestade viva do fim do céu.\n\nNenhum marinheiro comum aceitaria olhar para esse horizonte.\n\n## VI. O Navegador das Brumas\n\nHá cinco anos, Fabio era o timoneiro mais respeitado da Frota dos Faróis. Não tinha medo de noites sem lua e sabia ler o peso da neblina com as pontas dos dedos. Mas numa travessia de patrulha pelo Estreito da Lágrima, sua esquadra foi cercada por uma maré de névoa viva de densidade inédita. Dos onze homens sob o seu comando, dez foram levados para o abismo enquanto as amarras se desfaziam na tormenta. Fabio foi o único que sobreviveu, arrastando a carcaça da chalupa até os rochedos com as palmas das mãos dilaceradas.\n\nQuando acordou na enfermaria de Farol Alto, trazia no pulso direito uma cicatriz que nunca mais sumiu: veias prateadas que ressoavam em sintonia com os minérios das luas caídas.\n\nEle deixou a farda e o soldo. Passou cinco anos vivendo na beira dos penhascos, trabalhando nas oficinas de conserto de lemes e estudando o comportamento da névoa em cada estação. Não corre por honras nem medalhas: corre pela memória dos dez rapazes que viu desaparecerem na escuridão. E prometeu a si mesmo que, enquanto puder caminhar, erguer peso e manter a respiração cadenciada, **nenhum dos companheiros que estiverem com ele na chalupa será deixado para trás**.\n\nQuando o Farol de Ost-Nadir apagou-se de vez, a Ordem bateu à porta de sua cabana.\nEle não precisou arrumar muita bagagem: pegou seu sextante de bronze, suas cartas de navegação e as botas de couro de foca engraxadas.\n\nNo ancoradouro das escarpas, a *Baluarte do Vento* já o aguardava com as velas pandas e o mastro estalando no vento frio da alvorada.\nA grande travessia de Thalassa-Aethel estava prestes a começar.",
-  "minutos": 6
+  "subtitulo": "",
+  "texto": "# Prólogo: O Sol que Nunca Dorme\n\nO ferro chia quando a água atinge a caldeira. É um som vivo, impaciente, como o respirar de uma besta de quarenta toneladas que sabe que o sono é uma sentença de morte.\n\nFábio bateu as solas pesadas das botas contra o estribo do *Andarilho-07*, sacudindo a crosta de geada azul antes de entrar no vagão de convivência. A porta de aço espesso fechou com o baque seco de uma tranca naval. O mundo lá fora ficou reduzido a um murmúrio abafado de vento de sílica raspando as placas de blindagem.\n\n— Dezoito abaixo de zero no manômetro externo — disse ele, desabotoando o casaco de lona encerada. O vapor do suor subiu de seu pescoço como fumaça de chaminé.\n\nNo canto do vagão, a salamandra de ferro estalava com briquetes de turfa. Canela ergueu o focinho dourado da almofada de estopa, bateu o rabo duas vezes contra o tabuado do chão e veio enfiar a cabeça macia e quente contra o joelho de Fábio. Atrás dela, Gero soltou um suspiro pesado pelo focinho cinzento e continuou estendido, mantendo o lombo colado às botas sobressalentes para que o couro não endurecesse até virar pedra.\n\n— Não devia ter corrido até a ponta do desfiladeiro sem o sinalizador de magnésio — a voz veio de trás da bancada de trabalho, afiada como lâmina de bisturi.\n\nA Dra. Elisa Vane nem ergueu os olhos da pequena campânula de vidro. Com uma pinça de latão, ela ajustava delicadamente a haste de uma muda de centeio-da-montanha, cujas raízes brancas e frágeis se agarravam a um punhado de terra preta aquecida por resistência elétrica.\n\n— A esteira direita estava com folga no pino guia, Elisa — Fábio respondeu, despejando água fervente sobre a caneca de estanho com pó de cevada torrada. O cheiro amargo e tostado inundou o vagão, afugentando o cheiro de graxa. — Se a gente engrenasse na subida sem verificar o fundo da fenda, o pino partia. E se o pino partir com essa nevasca entrando pela esquerda, a gente não conserta em menos de quatro dias.\n\n— Quatro dias na mesma coordenada — resmungou Vardan do fundo do beliche, a voz parecendo duas pedras rolando na correnteza. O velho navegador tinha a perna mecânica de bronze desmontada sobre os joelhos, passando óleo de foca nas engrenagens com um trapo sujo. — Quatro dias parados neste vale e a Meia-Noite nos alcança. O gelo não negocia com quem fica com pena dos próprios tendões.\n\nNa soleira entre o vagão de dormir e a estufa, Mikael apareceu com o rosto manchado de fuligem negra e um sorriso largo que parecia desaforar a desolação inteira daquele planeta estéril. Trazia um pão pesado de centeio assado na chapa da caldeira e uma travessa de caldo grosso de peixe defumado.\n\n— O vapor do cilindro quatro estabilizou em doze atmosferas, chefe Fábio — o garoto anunciou, colocando a comida sobre a mesa de carvalho riscada de mapas. — Dá para puxar a carga inteira até o topo da Falha antes do meio-dia solar começar a queimar a calha norte.\n\nFábio pegou a caneca quente entre as duas mãos calejadas, sentindo o calor passar pelo estanho e acordar as articulações dos dedos que o frio tentava entorpecer. Olhou pela escotilha de vidro duplo.\n\nLá fora, cravado no horizonte sem nunca se mover, o sol de Cindra queimava em vermelho-sangue. Um olho cósmico imóvel, testemunha de cada passo, de cada quilo carregado na fornalha, de cada quilômetro arrancado da geada.\n\n— A esteira aguenta — disse Fábio, cortando um pedaço do pão escuro e dividindo um pedaço de gordura com Canela, que esperava com os olhos amendoados brilhando na luz do filamento. — E se a esteira aguenta, a gente chega na Bacia. Nem que seja arrastando este monstro de ferro palmo a palmo.\n\nElisa finalmente tirou os óculos de arame, limpando a lente na manga do jaleco remendado. Olhou para as bandejas de mudas vivas, depois para o homem cansado diante da caneca fumegante.\n\n— Coma o caldo todo — ela disse, e pela primeira vez a voz perdeu a aspereza, revelando a ternura austera de quem enterrou meio mundo e decidiu que não enterraria o resto. — Você vai precisar de cada caloria para quando o gelo azul começar a estalar lá na frente.",
+  "minutos": 4
  },
  "capitulos": [],
  "marcos": [],
@@ -186,7 +163,7 @@
   "n": 1,
   "parte": "I",
   "segunda": "2026-11-02",
-  "titulo": "O Estreito dos Dentes de Pedra",
+  "titulo": "A Garganta dos Ventos Cortantes",
   "periodo": "2 a 8 de novembro",
   "ok": 0,
   "total": 5,
@@ -197,12 +174,12 @@
  "premissa_atual": {
   "parte": "I",
   "n": 1,
-  "titulo": "O Estreito dos Dentes de Pedra",
+  "titulo": "",
   "semana": "2026-11-02",
   "simulacao": false,
   "nota": "",
-  "texto": "## I. As amarras de Porto Esperança\n\nO vento no cais norte de Porto Esperança tem gosto de salitre e ferrugem.\n\nA cidade, construída em degraus sobre uma escarpa de basalto que mergulha seiscentas braças no Vazio, despertou nesta segunda-feira sob um silêncio pesado. Não houve fanfarras, nem discursos do Grão-Magistrado, nem pétalas atiradas das varandas. Nas docas suspensas, apenas um punhado de pescadores de coral e faroleiros aposentados acompanhava os últimos preparativos da *Baluarte do Vento*. Todos eles sabiam o que significava partir para além do perímetro seguro: nos últimos cinquenta anos, catorze chalupas soltaram amarras rumo ao norte; nenhuma delas voltou com sobreviventes inteiros.\n\nA *Baluarte* é uma chalupa de casco duplo, com dezoito braças de proa a popa, forrada com placas de madeira-ferro calafetadas com resina vegetal negra. Não é uma embarcação veloz de combate, mas foi desenhada para resistir às correntes cruzadas que sobem do abismo. No convés central, quatro pás gravitacionais de bronze giram lentamente, emitindo um zumbido grave que faz vibrar as solas das botas.\n\nFabio estava de pé junto ao cabrestante de proa, conferindo a tensão dos cabos de amarração com um canivete de ponta cega. Suas mãos, grossas e calejadas pelos anos de ofício nos lemes, trabalhavam com uma calma quase mecânica. Ele vestia seu casaco habitual de lona encerada cor de chumbo, com a gola alta erguida contra a maresia gelada. No pulso direito, oculta pela manga e por uma faixa de couro cru, a Marca da Maré pulsava em intervalos compassados — um calor suave, como o pulsar de um coração adormecido sob a pele.\n\nA seu lado, Mestre Orfeu dava pancadas secas com a perna de pau nas tábuas de cedro, testando a ressonância da madeira. Seu olho de vidro azul captava a primeira claridade cinzenta do amanhecer.\n\n— O barômetro do mastro caiu dois traços desde as quatro da manhã, capitão — disse o velho, cuspindo um pedaço de fumo na fresta do cais. — A maré de baixo está subindo mais cedo hoje. Se não cruzarmos a Garganta das Gaivotas antes do meio-dia, o vento térmico vai virar contra a nossa cara como uma porta batendo com o pé.\n\nFabio ergueu os olhos para a fenda no horizonte. A duas léguas ao norte, os paredões negros do Estreito dos Dentes de Pedra se erguiam como duas mandíbulas abertas contra a névoa fosforescente.\n\n— As amarras estão prontas, Orfeu. Chame os outros ao convés.\n\n## II. A Companhia na Proa\n\nEles se reuniram em torno da escotilha principal, onde a primeira fogueira da fornalha de bordo começava a crepitar.\n\nSora foi a primeira a saltar da amurada, pousando sem ruído no convés de carvalho. Trazia o arco de chifre de leviatã atravessado nas costas e duas aljavas de flechas de sílex presas às coxas por tiras de couro curtido. O rosto jovem e anguloso estava tenso, com uma mecha de cabelo escuro colada à testa pelo suor da subida do mastro. Ela segurava na mão esquerda a pequena bússola quebrada do pai; a agulha de bronze tremia apontando para o fundo da fenda rochosa.\n\n— Há movimentação nas escarpas inferiores, Fabio — disse ela, sem preâmbulos, a voz áspera como pedra britada. — Não são gaivotas. São sombras brancas, rastejando pelas saliências de calcário. Os Desgarrados estão sentindo o zumbido das nossas pás gravitacionais.\n\n— Eles não sobem enquanto o sol estiver alto — respondeu Fabio, mantendo o tom baixo e firme. — Seu posto é na gávea, Sora. Olhos no leque de boreste. Ao menor sinal de turbilhão térmico, avise com dois toques no sino. Nada de arriscar tiros desnecessários: cada ponta de flecha custa um dia de trabalho.\n\nA garota deu um meio sorriso cínico, disfarçando o tremor sutil nos dedos.\n— Não vou desperdiçar flecha em fantasma, capitão. Só não me peça para ficar calada se o bicho ficar feio.\n\nDo porão de carga emergiu Valen, curvando a cabeça de quase dois metros para não bater a testa nas vigas de sustentação. O gigante trazia nos braços uma caixa pesada de ferro forjado, cujas alças rangiam sob o peso de cinquenta quilos de ferramentas e lâminas de metal estelar. No peito, sobre o avental de couro queimado, brilhava o primeiro trabalho da semana: o **Sigilo do Bastião**, um medalhão maciço com ranhuras em relevo que emitia um zumbido baixo e acolhedor.\n\n— O casco inferior está selado, Fabio — murmurou Valen, com sua voz grave e calma de fole de forja. — O ferro de meteoro que fundimos ontem assentou bem nas costelas da quilha. Mas este mar não perdoa distração: se batermos numa quilha de recife submerso, o primeiro sigilo vai ter de aguentar o tranco.\n\nAtrás dele, com passos cautelosos guiados pela ponta de sua bengala de osso de baleia, subiu Miriam. A paleocartógrafa vestia um manto espesso de lã tingida de azul-marinho. Seus olhos leitosos e cegos estavam virados para o céu cinzento, as narinas farejando a densidade do ar. Sob o braço esquerdo, apertava com zelo religioso o imenso volume do *Códice de Pele de Baleia*. A seus pés, os dois mastins cinzentos, Baluarte e Estrela, caminhavam colados às suas saias, soltando baforadas de vapor quente pelo focinho.\n\nMiriam estendeu a mão pálida e tocou o ombro de Fabio com a precisão de quem enxerga a alma através do calor da pele.\n\n— As pedras estão gemendo na garganta, navegador — sussurrou ela, com aquela serenidade desconcertante que calava até o vento. — Fazia quarenta invernos que uma quilha viva não cruzava os Dentes de Pedra. O mar de baixo sabe que estamos vindo. E no fundo da fenda, o Colosso de Basalto virou a cabeça para o sul.\n\n## III. O Objetivo da Semana\n\nA Parte I da campanha tem um objetivo geográfico e existencial claro: **cruzar a Garganta das Gaivotas e estabelecer o primeiro acampamento seguro nas ruínas do Farol Quebrado de Ost-Nadir**.\n\nA distância parece curta nas cartas náuticas — menos de doze léguas de navegação em linha reta —, mas o Estreito dos Dentes de Pedra é um labirinto de cânions verticais onde o vento sopra a quarenta nós e a névoa viva sobe do fundo como geyser. Para que a chalupa avance sem que o casco se desmantele nas pedras, a tripulação precisa de precisão cirúrgica:\n\n1. **Reconhecimento e Batedoria (Sora):** Identificar as frestas navegáveis entre as pontas de basalto antes que as rajadas cegas joguem a chalupa contra os penhascos.\n2. **Manutenção do Casco e Forja de Sigilos (Valen):** Monitorar as juntas das pás gravitacionais e calibrar a têmpera do Sigilo do Bastião para absorver os impactos das marés de vento.\n3. **Decifração das Cartas de Maré (Miriam):** Aquecer as lâminas do Códice sob fragmentos de nácar para revelar as antigas rotas dos Arquitetos Celestes que contornam as tocas dos monstros do abismo.\n4. **Comando e Firmeza de Rumo (Fabio):** Manter a disciplina inabalável no timão, racionar a água doce e os grãos de bordo e garantir que o medo não se instale no coração de ninguém.\n\n## IV. O que está em jogo (Os Desfechos da Parte I)\n\nNo domingo à noite, quando o fechamento da semana for consolidado pelas métricas reais de disciplina, esforço e constância, a história revelará o destino da *Baluarte do Vento*:\n\n- **Triunfo (5 missões cumpridas, semana exemplar):**\n  A chalupa atravessa a Garganta das Gaivotas com maestria heroica. Aproveitando uma corrente ascendente descoberta por Miriam e sinalizada por Sora, o navio corta as brumas sem um único arranhão no casco. Eles chegam aos contrafortes do Farol Quebrado de Ost-Nadir ao entardecer, resgatam uma arca ancestral deixada pelos primeiros faroleiros contendo três Fragmentos Puros de Nácar e montam uma fornalha estável que empurra a névoa três mil braças para trás. A companhia respira com alívio e celebra em torno da fogueira com risos e canções.\n\n- **Avanço (4 missões cumpridas, semana sólida):**\n  A travessia é dura e cheia de tensão, mas a disciplina da tripulação sustenta o rumo. Duas rajadas violentas arrancam uma das velas de gávea e exigem que Valen e Fabio trabalhem no convés molhado por horas para reparar as amarras, mas o objetivo é alcançado. A *Baluarte* alcança o cais arruinado de Ost-Nadir, ancorando firme nas lajes de basalto. O primeiro refúgio seguro está conquistado, e o primeiro estágio da trilha é concluído com louvor.\n\n- **Sustenta / Impasse (3 missões cumpridas, semana no limite):**\n  A névoa viva sobe mais rápido do que o previsto, encurralando a chalupa numa enseada cega cercada por rochedos pontiagudos. Fabio é obrigado a lançar as quatro âncoras de rocha e recolher todas as velas. A companhia passa três dias e noites trancada no porão sob o cerco gélido das sombras do abismo, racionando carne seca e carvão. Ninguém avança, mas ninguém tomba: as tábuas seguram a pressão e a expedição permanece viva, esperando uma nova brecha de vento.\n\n- **Revés (1 a 2 missões cumpridas, quebra de rotina):**\n  Um golpe de vento térmico descontrolado arremessa a chalupa contra a escarpa calcária. O casco range horrivelmente e uma das pás gravitacionais se estilhaça. Se houver um Sigilo do Bastião na bolsa de Valen, o sigilo quebra em mil pedaços para absorver o impacto; se não houver proteção ativa, um dos companheiros sofre ferimentos graves nas escoras (Sora torce o punho ou Valen queima os braços tentando conter o vazamento da caldeira). A tripulação é forçada a recuar para um abrigo precário na boca da fenda, com as avarias pesando sobre a alma.\n\n- **Crise (zero missões, semana de colapso total):**\n  A Névoa Silenciosa transborda o canal e afoga o convés da chalupa em um mar de esquecimento e pânico. Em meio ao breu absoluto e aos gritos dos mastins, uma mão pálida emerge do vazio e arrasta um dos tripulantes para além da amurada. A chalupa fica à deriva com o motor engasgado, e a próxima semana terá de ser uma desesperada corrida contra o tempo para resgatar o companheiro capturado no ninho dos Desgarrados antes que suas memórias sejam devoradas para sempre.\n\n---\n\n## V. O Primeiro Golpe de Vento\n\nÀs seis horas e doze minutos da manhã, Fabio ergueu a mão direita.\n— Largar as amarras de proa e popa! Soltar as pás do bronze!\n\nAs cordas grossas de cânhamo caíram na água cinzenta do porto com um estalo úmido. As pás gravitacionais aceleraram, soltando um assobio agudo que fez as gaivotas levantarem voo em espirais desordenadas. A *Baluarte do Vento* deslizou para fora do cais, deixando para trás os últimos telhados de ardósia de Porto Esperança.\n\nÀ frente, a garganta de rocha negra parecia engolir a luz.\nSora subiu no mastro com a agilidade de uma pantera, gritando as primeiras coordenadas de vento. Valen permaneceu junto à escotilha da caldeira, o martelo em repouso ao lado da perna, os olhos atentos a cada vibração dos parafusos. Miriam sentou-se na proa entre Baluarte e Estrela, com as pontas dos dedos descalços tocando a madeira vibrante do navio.\n\nFabio segurou o timão com as duas mãos.\nSob a manga encerada, a Marca da Maré brilhou em azul-celeste, firme e quente.\nA jornada dos 85 havia começado.",
-  "minutos": 9
+  "texto": "# Parte I: A Garganta dos Ventos Cortantes\n\nO *Andarilho-07* está parado na entrada da Garganta dos Ventos Cortantes. À frente, uma fenda natural talhada entre paredões de granito preto conduz ao platô seguinte. Mas o inverno não esperou: a Barreira de Gelo Azul desceu pela calha superior e bloqueou a passagem com oitenta metros de gelo compacto.\n\nPara quebrar o gelo com o aríete térmico e abrir passagem para a estufa, o comboio precisa de vapor contínuo em alta pressão. Isso significa que Fábio e a tripulação não podem hesitar na rotina de ferro:\n- **Alimentação da Caldeira (Força & Treinos):** Carga mecânica pesada para manter os pistões do aríete empurrando as brocas térmicas.\n- **Patrulha Externa (Passos & Dias Ativos):** Fábio, Canela e Gero precisam percorrer a fenda a pé todos os dias, marcando as rachaduras dinâmicas no permafrost para que as esteiras do trator não afundem em bolsões de gelo falso.\n- **Ração de Sustento (Dieta & Proteína):** A Dra. Elisa controla rigorosamente a queima de combustível metabólico: carboidratos complexos e proteína suficiente para reconstruir as fibras musculares sob o vento de -20°C.\n- **Vigília do Termômetro (Pesagem Neutra):** O controle de lastro é o que mede se o aríete vai triturar a Barreira de Gelo Azul ou se o comboio ficará preso na garganta quando a Meia-Noite Eterna engolir a entrada.",
+  "minutos": 1
  },
  "premissa_proxima": null,
  "projecao": {
@@ -210,16 +187,15 @@
   "ok": 0,
   "n": 5,
   "efeitos": [
-   "Parte sem juramento quebrado. Relíquia ganha: Lágrima de Nácar.",
-   "A Sigilo do Bastião se partiu e levou o golpe no lugar da companhia.",
-   "Sora saiu ferida."
+   "A Lâmpada de Carbeto se partiu e levou o golpe no lugar da companhia.",
+   "Dra. Elisa Vane saiu ferida."
   ],
   "cena": {
    "tier": "reves",
    "etapa_antes": 0,
    "etapa_depois": 0,
    "arco": "I",
-   "clima": "tempestade",
+   "clima": null,
    "lua": null,
    "companhia": {
     "brisa": "ativa",
@@ -239,9 +215,7 @@
     "ysa": "ativa"
    },
    "mochila": [],
-   "reliquias": [
-    "lagrima_de_nacar"
-   ],
+   "reliquias": [],
    "maldicoes": [],
    "materiais": {}
   },
@@ -253,13 +227,13 @@
    "semana": "2026-11-02",
    "n": 1,
    "parte": "I",
-   "titulo": "O Estreito dos Dentes de Pedra",
+   "titulo": "A Garganta dos Ventos Cortantes",
    "periodo": "2 a 8 de novembro",
    "fechada": false,
    "tier": null,
    "premissa": {
-    "texto": "## I. As amarras de Porto Esperança\n\nO vento no cais norte de Porto Esperança tem gosto de salitre e ferrugem.\n\nA cidade, construída em degraus sobre uma escarpa de basalto que mergulha seiscentas braças no Vazio, despertou nesta segunda-feira sob um silêncio pesado. Não houve fanfarras, nem discursos do Grão-Magistrado, nem pétalas atiradas das varandas. Nas docas suspensas, apenas um punhado de pescadores de coral e faroleiros aposentados acompanhava os últimos preparativos da *Baluarte do Vento*. Todos eles sabiam o que significava partir para além do perímetro seguro: nos últimos cinquenta anos, catorze chalupas soltaram amarras rumo ao norte; nenhuma delas voltou com sobreviventes inteiros.\n\nA *Baluarte* é uma chalupa de casco duplo, com dezoito braças de proa a popa, forrada com placas de madeira-ferro calafetadas com resina vegetal negra. Não é uma embarcação veloz de combate, mas foi desenhada para resistir às correntes cruzadas que sobem do abismo. No convés central, quatro pás gravitacionais de bronze giram lentamente, emitindo um zumbido grave que faz vibrar as solas das botas.\n\nFabio estava de pé junto ao cabrestante de proa, conferindo a tensão dos cabos de amarração com um canivete de ponta cega. Suas mãos, grossas e calejadas pelos anos de ofício nos lemes, trabalhavam com uma calma quase mecânica. Ele vestia seu casaco habitual de lona encerada cor de chumbo, com a gola alta erguida contra a maresia gelada. No pulso direito, oculta pela manga e por uma faixa de couro cru, a Marca da Maré pulsava em intervalos compassados — um calor suave, como o pulsar de um coração adormecido sob a pele.\n\nA seu lado, Mestre Orfeu dava pancadas secas com a perna de pau nas tábuas de cedro, testando a ressonância da madeira. Seu olho de vidro azul captava a primeira claridade cinzenta do amanhecer.\n\n— O barômetro do mastro caiu dois traços desde as quatro da manhã, capitão — disse o velho, cuspindo um pedaço de fumo na fresta do cais. — A maré de baixo está subindo mais cedo hoje. Se não cruzarmos a Garganta das Gaivotas antes do meio-dia, o vento térmico vai virar contra a nossa cara como uma porta batendo com o pé.\n\nFabio ergueu os olhos para a fenda no horizonte. A duas léguas ao norte, os paredões negros do Estreito dos Dentes de Pedra se erguiam como duas mandíbulas abertas contra a névoa fosforescente.\n\n— As amarras estão prontas, Orfeu. Chame os outros ao convés.\n\n## II. A Companhia na Proa\n\nEles se reuniram em torno da escotilha principal, onde a primeira fogueira da fornalha de bordo começava a crepitar.\n\nSora foi a primeira a saltar da amurada, pousando sem ruído no convés de carvalho. Trazia o arco de chifre de leviatã atravessado nas costas e duas aljavas de flechas de sílex presas às coxas por tiras de couro curtido. O rosto jovem e anguloso estava tenso, com uma mecha de cabelo escuro colada à testa pelo suor da subida do mastro. Ela segurava na mão esquerda a pequena bússola quebrada do pai; a agulha de bronze tremia apontando para o fundo da fenda rochosa.\n\n— Há movimentação nas escarpas inferiores, Fabio — disse ela, sem preâmbulos, a voz áspera como pedra britada. — Não são gaivotas. São sombras brancas, rastejando pelas saliências de calcário. Os Desgarrados estão sentindo o zumbido das nossas pás gravitacionais.\n\n— Eles não sobem enquanto o sol estiver alto — respondeu Fabio, mantendo o tom baixo e firme. — Seu posto é na gávea, Sora. Olhos no leque de boreste. Ao menor sinal de turbilhão térmico, avise com dois toques no sino. Nada de arriscar tiros desnecessários: cada ponta de flecha custa um dia de trabalho.\n\nA garota deu um meio sorriso cínico, disfarçando o tremor sutil nos dedos.\n— Não vou desperdiçar flecha em fantasma, capitão. Só não me peça para ficar calada se o bicho ficar feio.\n\nDo porão de carga emergiu Valen, curvando a cabeça de quase dois metros para não bater a testa nas vigas de sustentação. O gigante trazia nos braços uma caixa pesada de ferro forjado, cujas alças rangiam sob o peso de cinquenta quilos de ferramentas e lâminas de metal estelar. No peito, sobre o avental de couro queimado, brilhava o primeiro trabalho da semana: o **Sigilo do Bastião**, um medalhão maciço com ranhuras em relevo que emitia um zumbido baixo e acolhedor.\n\n— O casco inferior está selado, Fabio — murmurou Valen, com sua voz grave e calma de fole de forja. — O ferro de meteoro que fundimos ontem assentou bem nas costelas da quilha. Mas este mar não perdoa distração: se batermos numa quilha de recife submerso, o primeiro sigilo vai ter de aguentar o tranco.\n\nAtrás dele, com passos cautelosos guiados pela ponta de sua bengala de osso de baleia, subiu Miriam. A paleocartógrafa vestia um manto espesso de lã tingida de azul-marinho. Seus olhos leitosos e cegos estavam virados para o céu cinzento, as narinas farejando a densidade do ar. Sob o braço esquerdo, apertava com zelo religioso o imenso volume do *Códice de Pele de Baleia*. A seus pés, os dois mastins cinzentos, Baluarte e Estrela, caminhavam colados às suas saias, soltando baforadas de vapor quente pelo focinho.\n\nMiriam estendeu a mão pálida e tocou o ombro de Fabio com a precisão de quem enxerga a alma através do calor da pele.\n\n— As pedras estão gemendo na garganta, navegador — sussurrou ela, com aquela serenidade desconcertante que calava até o vento. — Fazia quarenta invernos que uma quilha viva não cruzava os Dentes de Pedra. O mar de baixo sabe que estamos vindo. E no fundo da fenda, o Colosso de Basalto virou a cabeça para o sul.\n\n## III. O Objetivo da Semana\n\nA Parte I da campanha tem um objetivo geográfico e existencial claro: **cruzar a Garganta das Gaivotas e estabelecer o primeiro acampamento seguro nas ruínas do Farol Quebrado de Ost-Nadir**.\n\nA distância parece curta nas cartas náuticas — menos de doze léguas de navegação em linha reta —, mas o Estreito dos Dentes de Pedra é um labirinto de cânions verticais onde o vento sopra a quarenta nós e a névoa viva sobe do fundo como geyser. Para que a chalupa avance sem que o casco se desmantele nas pedras, a tripulação precisa de precisão cirúrgica:\n\n1. **Reconhecimento e Batedoria (Sora):** Identificar as frestas navegáveis entre as pontas de basalto antes que as rajadas cegas joguem a chalupa contra os penhascos.\n2. **Manutenção do Casco e Forja de Sigilos (Valen):** Monitorar as juntas das pás gravitacionais e calibrar a têmpera do Sigilo do Bastião para absorver os impactos das marés de vento.\n3. **Decifração das Cartas de Maré (Miriam):** Aquecer as lâminas do Códice sob fragmentos de nácar para revelar as antigas rotas dos Arquitetos Celestes que contornam as tocas dos monstros do abismo.\n4. **Comando e Firmeza de Rumo (Fabio):** Manter a disciplina inabalável no timão, racionar a água doce e os grãos de bordo e garantir que o medo não se instale no coração de ninguém.\n\n## IV. O que está em jogo (Os Desfechos da Parte I)\n\nNo domingo à noite, quando o fechamento da semana for consolidado pelas métricas reais de disciplina, esforço e constância, a história revelará o destino da *Baluarte do Vento*:\n\n- **Triunfo (5 missões cumpridas, semana exemplar):**\n  A chalupa atravessa a Garganta das Gaivotas com maestria heroica. Aproveitando uma corrente ascendente descoberta por Miriam e sinalizada por Sora, o navio corta as brumas sem um único arranhão no casco. Eles chegam aos contrafortes do Farol Quebrado de Ost-Nadir ao entardecer, resgatam uma arca ancestral deixada pelos primeiros faroleiros contendo três Fragmentos Puros de Nácar e montam uma fornalha estável que empurra a névoa três mil braças para trás. A companhia respira com alívio e celebra em torno da fogueira com risos e canções.\n\n- **Avanço (4 missões cumpridas, semana sólida):**\n  A travessia é dura e cheia de tensão, mas a disciplina da tripulação sustenta o rumo. Duas rajadas violentas arrancam uma das velas de gávea e exigem que Valen e Fabio trabalhem no convés molhado por horas para reparar as amarras, mas o objetivo é alcançado. A *Baluarte* alcança o cais arruinado de Ost-Nadir, ancorando firme nas lajes de basalto. O primeiro refúgio seguro está conquistado, e o primeiro estágio da trilha é concluído com louvor.\n\n- **Sustenta / Impasse (3 missões cumpridas, semana no limite):**\n  A névoa viva sobe mais rápido do que o previsto, encurralando a chalupa numa enseada cega cercada por rochedos pontiagudos. Fabio é obrigado a lançar as quatro âncoras de rocha e recolher todas as velas. A companhia passa três dias e noites trancada no porão sob o cerco gélido das sombras do abismo, racionando carne seca e carvão. Ninguém avança, mas ninguém tomba: as tábuas seguram a pressão e a expedição permanece viva, esperando uma nova brecha de vento.\n\n- **Revés (1 a 2 missões cumpridas, quebra de rotina):**\n  Um golpe de vento térmico descontrolado arremessa a chalupa contra a escarpa calcária. O casco range horrivelmente e uma das pás gravitacionais se estilhaça. Se houver um Sigilo do Bastião na bolsa de Valen, o sigilo quebra em mil pedaços para absorver o impacto; se não houver proteção ativa, um dos companheiros sofre ferimentos graves nas escoras (Sora torce o punho ou Valen queima os braços tentando conter o vazamento da caldeira). A tripulação é forçada a recuar para um abrigo precário na boca da fenda, com as avarias pesando sobre a alma.\n\n- **Crise (zero missões, semana de colapso total):**\n  A Névoa Silenciosa transborda o canal e afoga o convés da chalupa em um mar de esquecimento e pânico. Em meio ao breu absoluto e aos gritos dos mastins, uma mão pálida emerge do vazio e arrasta um dos tripulantes para além da amurada. A chalupa fica à deriva com o motor engasgado, e a próxima semana terá de ser uma desesperada corrida contra o tempo para resgatar o companheiro capturado no ninho dos Desgarrados antes que suas memórias sejam devoradas para sempre.\n\n---\n\n## V. O Primeiro Golpe de Vento\n\nÀs seis horas e doze minutos da manhã, Fabio ergueu a mão direita.\n— Largar as amarras de proa e popa! Soltar as pás do bronze!\n\nAs cordas grossas de cânhamo caíram na água cinzenta do porto com um estalo úmido. As pás gravitacionais aceleraram, soltando um assobio agudo que fez as gaivotas levantarem voo em espirais desordenadas. A *Baluarte do Vento* deslizou para fora do cais, deixando para trás os últimos telhados de ardósia de Porto Esperança.\n\nÀ frente, a garganta de rocha negra parecia engolir a luz.\nSora subiu no mastro com a agilidade de uma pantera, gritando as primeiras coordenadas de vento. Valen permaneceu junto à escotilha da caldeira, o martelo em repouso ao lado da perna, os olhos atentos a cada vibração dos parafusos. Miriam sentou-se na proa entre Baluarte e Estrela, com as pontas dos dedos descalços tocando a madeira vibrante do navio.\n\nFabio segurou o timão com as duas mãos.\nSob a manga encerada, a Marca da Maré brilhou em azul-celeste, firme e quente.\nA jornada dos 85 havia começado.",
-    "minutos": 9
+    "texto": "# Parte I: A Garganta dos Ventos Cortantes\n\nO *Andarilho-07* está parado na entrada da Garganta dos Ventos Cortantes. À frente, uma fenda natural talhada entre paredões de granito preto conduz ao platô seguinte. Mas o inverno não esperou: a Barreira de Gelo Azul desceu pela calha superior e bloqueou a passagem com oitenta metros de gelo compacto.\n\nPara quebrar o gelo com o aríete térmico e abrir passagem para a estufa, o comboio precisa de vapor contínuo em alta pressão. Isso significa que Fábio e a tripulação não podem hesitar na rotina de ferro:\n- **Alimentação da Caldeira (Força & Treinos):** Carga mecânica pesada para manter os pistões do aríete empurrando as brocas térmicas.\n- **Patrulha Externa (Passos & Dias Ativos):** Fábio, Canela e Gero precisam percorrer a fenda a pé todos os dias, marcando as rachaduras dinâmicas no permafrost para que as esteiras do trator não afundem em bolsões de gelo falso.\n- **Ração de Sustento (Dieta & Proteína):** A Dra. Elisa controla rigorosamente a queima de combustível metabólico: carboidratos complexos e proteína suficiente para reconstruir as fibras musculares sob o vento de -20°C.\n- **Vigília do Termômetro (Pesagem Neutra):** O controle de lastro é o que mede se o aríete vai triturar a Barreira de Gelo Azul ou se o comboio ficará preso na garganta quando a Meia-Noite Eterna engolir a entrada.",
+    "minutos": 1
    },
    "cenas": [],
    "onde_paramos": null,

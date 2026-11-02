@@ -348,7 +348,7 @@ function cpPrologo() {
   const p = (HISTORIA || {}).prologo; if (!p) return '';
   return `<section class="bloco"><div class="cab"><h2>Prólogo</h2><small>o mundo e a companhia</small></div>
     <div style="border-radius:6px;overflow:hidden;margin:10px 0 14px;border:1px solid rgba(255,255,255,0.2)">
-      <img src="art/baluarte_do_vento.jpg" alt="O Baluarte do Vento" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
+      <img src="art/andarilho_sete.jpg" alt="O Andarilho-07" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
     </div>
     <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(p.subtitulo || p.titulo)}</h3>
     <div style="margin-top:14px">${cpLeitura('cp-prol', p.texto, p.minutos, 'Ler o prólogo inteiro')}</div></section>`;
@@ -436,7 +436,7 @@ function cpLivroInteiro(pend) {
 }
 function cpTituloMundo() {
   const H = typeof HISTORIA !== 'undefined' ? HISTORIA : null;
-  return (H && H.titulo) || 'Os Faróis de Nácar';
+  return (H && H.titulo) || 'Cindra: A Margem do Sol Poente';
 }
 // Página sem spoiler: enquanto o desfecho mais recente não foi aberto neste aparelho, a Campanha mostra só o resumo de onde
 // a história parou e o livro; estrada, companhia, runas e relíquias já refletem o desfecho e ficam para depois.
@@ -489,43 +489,43 @@ function cpAventura() {
     H.etapas.map((e, i) => `<div class="cp-et ${e.estado} ${i === H.etapas.length - 1 ? 'chefe' : ''}"><i></i><span>${esc(e.nome)}${i === H.etapas.length - 1 ? ' · só cai pela balança (média de 28 dias)' : ''}</span></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>A companhia</h2><small>${esc(H.guia.nome)}, ${esc(H.guia.papel)}, guia o grupo</small></div>
     <div style="border-radius:6px;overflow:hidden;margin:10px 0 14px;border:1px solid rgba(255,255,255,0.2)">
-      <img src="art/tripulacao.jpg" alt="A Tripulação do Baluarte do Vento" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
+      <img src="art/vagao_refugio.jpg" alt="A Tripulação no Vagão de Refúgio do Andarilho-07" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
     </div>
     <div class="cp-comp">` +
     H.companhia.map(c => `<div class="cp-pers ${c.estado}"><canvas class="cp-mini" data-id="${c.id}" data-estado="${c.estado}"></canvas><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
-  h += `<section class="bloco"><div class="cab"><h2>Os Sigilos de Nácar</h2><small>${H.mochila.length} de 3</small></div><div class="cp-bag">` +
+  h += `<section class="bloco"><div class="cab"><h2>Ferramentas de Sobrevivência</h2><small>${H.mochila.length} de 3</small></div><div class="cp-bag">` +
     [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
     `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende sigilo novo.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
   return h;
 }
 const CP_VISUAIS = [
   {
-    id: 'nau',
-    titulo: 'A Nau das Brumas',
-    video: 'art/baluarte_cinematico.mp4',
-    poster: 'art/baluarte_do_vento.jpg',
-    desc: 'O <b>Baluarte do Vento</b> singrando as Brumas Silenciosas sob os anéis astrais de <em>Thalassa-Aethel</em>.'
+    id: 'andarilho',
+    titulo: 'O Andarilho-07',
+    video: 'art/andarilho_cinematico.mp4',
+    poster: 'art/andarilho_sete.jpg',
+    desc: 'O colossal trator a vapor <b>Andarilho-07</b> quebrando o gelo no Limiar do Crepúsculo sob o sol vermelho de <em>Cindra</em>.'
   },
   {
-    id: 'tripulacao',
-    titulo: 'A Tripulação',
-    video: 'art/tripulacao_cinematico.mp4',
-    poster: 'art/tripulacao.jpg',
-    desc: '<b>Fábio, Sora, Valen, Miriam, Mestre Orfeu</b> e os mastins sentinelas vigiando a amurada da expedição.'
+    id: 'refugio',
+    titulo: 'Vagão de Refúgio',
+    video: 'art/vagao_cinematico.mp4',
+    poster: 'art/vagao_refugio.jpg',
+    desc: '<b>Fábio, Dra. Elisa Vane, Mikael, Vardan</b> e os mastins <b>Canela & Gero</b> aquecidos junto à fornalha após a vigília no gelo.'
   },
   {
-    id: 'farol',
-    titulo: 'O Primeiro Farol',
-    video: 'art/farol_cinematico.mp4',
-    poster: 'art/farol_de_nacar.jpg',
-    desc: 'A <b>Torre de Aethel-Prime</b> em nácar esculpido e glifos rúnicos, projetando a chama dourada contra o esquecimento.'
+    id: 'patrulha',
+    titulo: 'Patrulha do Limiar',
+    video: 'art/patrulha_cinematico.mp4',
+    poster: 'art/patrulha_crepusculo.jpg',
+    desc: '<b>Fábio</b> e os cães em patrulha na vanguarda do permafrost, marcando fendas com sinalizadores antes da nevasca.'
   },
   {
-    id: 'chefe',
-    titulo: 'O Guardião do Arco I',
-    video: 'art/colosso_cinematico.mp4',
-    poster: 'art/colosso_basalto.jpg',
-    desc: '<b>O Colosso da Fenda de Basalto</b> erguendo-se nas marés profundas do Estreito dos Dentes de Pedra.'
+    id: 'barreira',
+    titulo: 'Barreira de Gelo Azul',
+    video: 'art/barreira_cinematico.mp4',
+    poster: 'art/barreira_gelo_azul.jpg',
+    desc: '<b>A Barreira de Gelo Azul (Chefe do Arco I)</b> — muralha de oitenta metros bloqueando o desfiladeiro da montanha.'
   }
 ];
 
@@ -596,9 +596,9 @@ function renderCampanha() {
   h += `<section class="bloco"><div class="cab"><h2>O mapa</h2><small>de 95 a 85 kg, pela média de 28 dias</small></div>${cpMapa()}
     ${a.chefe ? `<div class="cp-hp"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><b style="font-family:var(--display);font-size:19px">${esc(a.chefe)}</b><span style="font-weight:700">${Math.round((a.hp || 0) * 100)}%</span></div>
       <div class="cp-boss-art">
-        <video class="cp-cinematica-video" autoplay loop muted playsinline poster="art/colosso_basalto.jpg">
-          <source src="art/colosso_cinematico.mp4" type="video/mp4">
-          <img src="art/colosso_basalto.jpg" alt="${esc(a.chefe)}" style="width:100%;display:block">
+        <video class="cp-cinematica-video" autoplay loop muted playsinline poster="art/barreira_gelo_azul.jpg">
+          <source src="art/barreira_cinematico.mp4" type="video/mp4">
+          <img src="art/barreira_gelo_azul.jpg" alt="${esc(a.chefe)}" style="width:100%;display:block">
         </video>
       </div>
       <div class="tr" role="img" aria-label="Vida do chefe: ${Math.round((a.hp || 0) * 100)} por cento" style="margin-top:10px"><i style="width:${((a.hp || 0) * 100).toFixed(1)}%"></i></div>

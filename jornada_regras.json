@@ -52,31 +52,31 @@
  "arcos": [
   {
    "num": "I",
-   "nome": "O Estreito dos Dentes de Pedra",
+   "nome": "A Garganta dos Ventos Cortantes",
    "de": 95.0,
    "ate": 92.5,
-   "chefe": "O Colosso da Fenda de Basalto"
+   "chefe": "A Barreira de Gelo Azul"
   },
   {
    "num": "II",
-   "nome": "O Mar das Marés Brancas",
+   "nome": "A Floresta de Agulhas Negras",
    "de": 92.5,
    "ate": 90.0,
-   "chefe": "A Serpente das Nuvens Boreal"
+   "chefe": "O Urso de Carapaça de Basalto"
   },
   {
    "num": "III",
-   "nome": "O Platô das Cidades Suspensas",
+   "nome": "O Deserto de Sal-Frio",
    "de": 90.0,
    "ate": 87.5,
-   "chefe": "O Arquonte Esquecido"
+   "chefe": "A Tempestade de Sílica do Meio-Dia"
   },
   {
    "num": "IV",
-   "nome": "A Cratera de Aethel-Nadir",
+   "nome": "A Bacia das Águas Termais",
    "de": 87.5,
    "ate": 85.0,
-   "chefe": "Vharun-Aethel, o Dragão das Marés Primordiais"
+   "chefe": "A Falha Térmica Terminal"
   }
  ],
  "paralela": {

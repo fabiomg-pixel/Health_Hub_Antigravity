@@ -1,95 +1,34 @@
 {
- "_nota": "Baralho genérico de reserva para a campanha 'Os Faróis de Nácar'. Usado apenas se a parte da semana não tiver baralho específico.",
- "parte": 0,
- "titulo": "",
- "clima": "tempestade",
- "antagonista": "nevoa",
- "recompensa_limpa": "lagrima_de_nacar",
- "baralho": {
-  "bencao": [
-   {
-    "texto": "Um Fragmento de Nácar foi encontrado brilhando no leito de uma fenda de basalto.",
-    "efeito": {
-     "estilha": 1
+  "cenas": [
+    {
+      "tier": "triunfo",
+      "titulo": "Avanço Pleno na Neve",
+      "desfecho": "Todas as missões da semana foram cumpridas. O comboio do Andarilho-07 rasgou duas etapas pelo gelo e a fornalha operou com pressão impecável.",
+      "efeitos": ["Avanço de 2 etapas", "Ganha 1 ferramenta de sobrevivência"]
+    },
+    {
+      "tier": "avanco",
+      "titulo": "Trilha Aberta",
+      "desfecho": "A companhia superou o trecho planejado, avançando uma etapa segura na rota do sol poente.",
+      "efeitos": ["Avanço de 1 etapa"]
+    },
+    {
+      "tier": "sustenta",
+      "titulo": "Acampamento nas Máquinas",
+      "desfecho": "A tempestade impediu o avanço, mas a integridade das esteiras e da estufa foi mantida com disciplina.",
+      "efeitos": ["Posição mantida"]
+    },
+    {
+      "tier": "reves",
+      "titulo": "Frio nas Juntas",
+      "desfecho": "A semana cobrou seu preço. O congelamento rápido forçou paradas de emergência e um companheiro se machucou no conserto.",
+      "efeitos": ["Um companheiro ferido"]
+    },
+    {
+      "tier": "crise",
+      "titulo": "Perigo Branco",
+      "desfecho": "O comboio perdeu tração na geleira e teve que recuar uma etapa para não tombar.",
+      "efeitos": ["Recuo de 1 etapa", "Companheiro isolado no gelo"]
     }
-   },
-   {
-    "texto": "A Marca do pulso de Fabio revelou um veio celeste oculto na rocha.",
-    "efeito": {
-     "estilha": 1
-    }
-   },
-   {
-    "texto": "Valen forjou uma estilha pura a partir dos sedimentos da fornalha.",
-    "efeito": {
-     "estilha": 1
-    }
-   }
-  ],
-  "achado": [
-   {
-    "texto": "Miriam decifrou mais uma rota de maré no Códice de Pele de Baleia.",
-    "efeito": {
-     "pista": 1
-    }
-   },
-   {
-    "texto": "Sora localizou um marco ancestral indicando correntes de ar limpo.",
-    "efeito": {
-     "pista": 1
-    }
-   },
-   {
-    "texto": "Orfeu identificou a passagem segura entre as agulhas de pedra.",
-    "efeito": {
-     "pista": 1
-    }
-   }
-  ],
-  "quieto": [
-   {
-    "texto": "Um dia de ventos calmos e navegação constante pelas correntes do desfiladeiro.",
-    "efeito": {}
-   },
-   {
-    "texto": "A névoa permaneceu contida no fundo do abismo, permitindo o descanso da tripulação.",
-    "efeito": {}
-   },
-   {
-    "texto": "A chalupa cortou o ar estável enquanto Valen realizava reparos preventivos nas pás.",
-    "efeito": {}
-   }
-  ],
-  "percalco": [
-   {
-    "texto": "Uma lufada de vento térmico desceu pelas fendas, avariando as pás de bronze da chalupa.",
-    "efeito": {
-     "desgaste": 1
-    }
-   },
-   {
-    "texto": "Um bolsão de névoa corrosiva subiu do abismo, danificando a calafetação da quilha.",
-    "efeito": {
-     "desgaste": 1
-    }
-   },
-   {
-    "texto": "Uma tempestade súbita de granizo de salitre quebrou suportes de amarração do convés.",
-    "efeito": {
-     "desgaste": 1
-    }
-   }
-  ],
-  "maldicao": [
-   {
-    "texto": "Um juramento quebrado atraiu a Névoa Silenciosa para o interior do navio."
-   },
-   {
-    "texto": "O Chamado do Abismo ecoou no casco, enfraquecendo a determinação da tripulação."
-   },
-   {
-    "texto": "A Mácula do Esquecimento avançou sobre o convés na calada da noite."
-   }
   ]
- }
 }

@@ -180,7 +180,7 @@ def reliquia_livre(rid): return next((r for r in E['reliquias'] if r['id'] == ri
 def dar_runa(qtd, efeitos):
     tem = {r['id'] for r in E['mochila']}
     for rid in [r for r in mundo['runas'] if r not in tem][:qtd]:
-        E['mochila'].append({'id': rid, 'desde': HOJE.isoformat()}); efeitos.append(f'Bram gravou uma runa nova: {mundo["runas"][rid]["nome"]}.')
+        E['mochila'].append({'id': rid, 'desde': HOJE.isoformat()}); efeitos.append(f'{mundo["companhia"]["dorn"]["nome"]} preparou uma ferramenta nova: {mundo["runas"][rid]["nome"]}.')
     del E['mochila'][:-3]
 
 
@@ -258,7 +258,7 @@ def resolver(segunda, missoes):
     if desgaste >= 2: afetado = ferir(proximo_aflito(evitar=alvos_amaldicoados()), efeitos, ' do desgaste') or afetado
     if E['materiais'].get('estilha', 0) >= mundo['materiais']['estilha']['forja'] and not any(r['id'] == 'lamina_estelar' for r in E['reliquias']):
         E['materiais']['estilha'] -= mundo['materiais']['estilha']['forja']; E['reliquias'].append({'id': 'lamina_estelar', 'desde': seg_s})
-        efeitos.append('Com cinco estilhas, Bram forjou a Lâmina Estelar.')
+        efeitos.append(f'Com cinco fragmentos térmicos, {mundo["companhia"]["dorn"]["nome"]} forjou {mundo["reliquias"]["lamina_estelar"]["nome"]}.')
 
     # 5. o nível da parte
     abrigo = est >= 1 or vermelhos >= 3

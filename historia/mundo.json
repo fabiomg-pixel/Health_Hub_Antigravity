@@ -1,182 +1,140 @@
 {
- "_nota": "Canon da campanha 'Os Faróis de Nácar' (v3, 02/11/2026). A história é autônoma: nenhum acontecimento espelha um hábito, um dia ou um fato da vida do Fabio. A ÚNICA ligação com a vida real é mecânica: as métricas da semana decidem se os desfechos são favoráveis ou não (historia.py). Estado que muda vive em estado.json.",
- "titulo": "Os Faróis de Nácar",
- "regiao": "Thalassa-Aethel (O Arquipélago da Névoa Silenciosa)",
+ "_nota": "Canon de Cindra: A Margem do Sol Poente (2026-11-02). Planeta travado por maré gravitacional; sobrevivência na Faixa do Crepúsculo sob o Andarilho-07.",
+ "titulo": "Cindra: A Margem do Sol Poente",
+ "regiao": "O Limiar do Crepúsculo",
  "inicio": "2026-11-02",
- "premissa": "Cento e vinte anos após a Grande Ruptura do Firmamento de Vidro, o mar de brumas vivas — a Maré Silenciosa — devora as últimas falésias de basalto e apaga as memórias daqueles que toca. Fabio, o Navegador das Brumas e ex-cartógrafo da Ordem dos Faróis, parte com a tripulação da chalupa Baluarte do Vento em direção ao Cume de Aethel-Nadir para reacender o Grande Pêndulo Celeste antes que os últimos refúgios da humanidade desmoronem no abismo.",
+ "premissa": "Em um planeta de rotação travada, onde um hemisfério queima no Meio-Dia Branco e o outro congela na Meia-Noite Eterna, a vida resiste apenas no Limiar do Crepúsculo — uma estreita faixa circular onde um sol vermelho colossal repousa eternamente sobre o horizonte. Pela oscilação do eixo planetário, a faixa está deslizando rumo ao gelo. Para não morrerem congelados, os sobreviventes migram no 'Andarilho-07', um colossal trator de ferro e esteiras pesadas, puxando as últimas estufas com as sementes do Vale de Karkov rumo à mítica Bacia das Águas Termais.",
  "companhia": {
   "brisa": {
-   "nome": "Sora",
-   "papel": "a Rastreadora dos Ventos",
+   "nome": "Dra. Elisa Vane",
+   "papel": "Médica e Paleobotânica",
    "g": "a",
-   "texto": "Arqueira das pontes aéreas, veloz e de língua afiada. Sobreviveu à queda de sua aldeia na infância e carrega uma bússola de bronze quebrada que gira perto do vazio."
+   "texto": "42 anos, casaco de lã remendado. Não dorme se houver alguém tossindo e protege as mudas da estufa como se fossem filhos com a própria vida."
   },
   "dorn": {
-   "nome": "Valen",
-   "papel": "o Mestre-Artífice",
+   "nome": "Mikael",
+   "papel": "Menino das Válvulas",
    "g": "o",
-   "texto": "Ex-engenheiro militar das forjas de Kael-Dorr. Jurou nunca mais forjar armas de ataque após uma tragédia no passado; forja os Sigilos de Nácar com ferro meteórico para defender a caravana."
+   "texto": "14 anos, órfão do gelo. Escala as chaminés a -30°C para bater o gelo das válvulas de pressão com um martelo de bronze."
   },
   "ysa": {
-   "nome": "Miriam",
-   "papel": "a Paleocartógrafa",
-   "g": "a",
-   "texto": "Sábia cega das Torres do Eco. Escuta a pulsação mineral das pedras e decifra o Códice de Pele de Baleia sob a luz das estrelas."
+   "nome": "Vardan",
+   "papel": "Velho Navegador do Gelo",
+   "g": "o",
+   "texto": "64 anos, perna mecânica forjada em bronze. Conhece o estalar das geleiras antes que elas rachem."
   }
  },
  "guia": {
-  "nome": "Mestre Orfeu",
-  "papel": "o Velho Timoneiro das Brumas",
-  "texto": "Perdeu o olho esquerdo para a geada da névoa viva; navega por estrelas apagadas com seu mastim lanudo, Baluarte."
+  "nome": "Fábio",
+  "papel": "Condutor de Fornalha & Batedor",
+  "texto": "O pulmão do comboio. Anda na frente marcando fendas com Canela e Gero ou mantém a cadência de queima nos pistões do Andarilho-07."
  },
- "ordem_aflicao": [
-  "brisa",
-  "ysa",
-  "dorn"
- ],
- "runas": {
-  "escudo": {
-   "nome": "Sigilo do Bastião",
-   "texto": "Forjado por Valen com ferro-frio e pó de nácar. Rompe-se para absorver o impacto de um revés que feriria alguém."
-  },
-  "vento": {
-   "nome": "Sigilo do Zéfiro",
-   "texto": "Cria uma bolha de ar quente que desvia vendavais súbitos e quedas."
-  },
-  "raiz": {
-   "nome": "Sigilo da Raiz de Pedra",
-   "texto": "Prende os ganchos da chalupa às fendas de basalto quando a névoa tenta arrastar o navio."
-  },
-  "brasa": {
-   "nome": "Sigilo da Brasa Fria",
-   "texto": "Pulsa em azul-cobalto quando os Desgarrados se aproximam."
-  },
-  "mare": {
-   "nome": "Sigilo da Maré Reversa",
-   "texto": "Dissipa a pressão da névoa viva devolvendo-lhe o vácuo."
-  }
- },
- "regra_runa": "Cada sigilo absorve uma derrota: quando uma semana ruim chegaria, o sigilo quebra e a derrota cai um nível. A caixa de Valen comporta até 3.",
- "reliquias": {
-  "bussola_orfeu": {
-   "nome": "Bússola Estelar de Orfeu",
-   "texto": "Impede, uma vez, que um companheiro saia ferido ou desorientado."
-  },
-  "lagrima_de_nacar": {
-   "nome": "Lágrima de Nácar",
-   "texto": "Dissipa a Mácula da Névoa, purificando as veias de quem foi tocado pelo esquecimento."
-  },
-  "lamina_celeste": {
-   "nome": "Lâmina de Nácar Forjada",
-   "texto": "Forjada com cinco fragmentos lunares (estilhas). Fere os autômatos ancestrais: a travessia contra o chefe do arco termina sem perdas."
-  }
- },
- "maldicoes": {
-  "macula_do_esquecimento": {
-   "nome": "A Mácula da Névoa",
-   "texto": "Veias leitosas sob a pele. Quem carrega a mácula começa a perder as lembranças e fica ferido até uma semana inteira sem juramento quebrado."
-  },
-  "canto_do_abismo": {
-   "nome": "O Chamado do Abismo",
-   "texto": "Um sussurro gélido que ecoa no casco da chalupa. A semana seguinte termina um nível abaixo, a não ser que uma relíquia o desfaça."
-  }
- },
- "materiais": {
-  "estilha": {
-   "nome": "fragmentos de nácar",
-   "forja": 5,
-   "texto": "Cinco fragmentos lunares permitem forjar a Lâmina de Nácar Forjada."
-  },
-  "pista": {
-   "nome": "cartas topográficas de Miriam",
-   "texto": "Fragmentos decifrados do Códice que revelam passagens seguras entre as tempestades."
-  },
-  "desgaste": {
-   "nome": "avarias na chalupa",
-   "texto": "Dois desgastes acumulados na mesma semana ferem alguém da tripulação."
-  }
- },
- "antagonistas": {
-  "nevoa": {
-   "nome": "a Névoa Silenciosa",
-   "lugar": "o Vazio das Brumas",
-   "crise": "A Névoa Silenciosa subiu como água fria e afogou as lanternas de proa. Quando a tempestade acalmou, {c} havia sido arrastad{g} para o fundo do Vazio."
-  },
-  "corsarios": {
-   "nome": "os Corsários do Salitre",
-   "lugar": "o Covil do Rochedo Cortado",
-   "crise": "As chalupas dos Corsários do Salitre caíram sobre a tripulação na calada da noite. Em meio aos ganchos e correntes, {c} foi levad{g} acorrentad{g} para as prisões de salmoura."
-  },
-  "desgarrados": {
-   "nome": "os Desgarrados",
-   "lugar": "o Vale das Sombras Brancas",
-   "crise": "Centenas de Desgarrados sem rosto emergiram do abismo em silêncio absoluto. Quando recuaram, levaram {c} pelo braço, caminhando sem resistência rumo à névoa."
-  }
- },
- "resgate": {
-  "abertura": "{c} está pres{g} em {lugar}. Esta parte da jornada é para o resgate. Se o prazo se esgotar, {c} será esquecid{g} no abismo.",
-  "libertado": "A tripulação alcançou {lugar} e trouxe {c} de volta com vida.",
-  "adiado": "As correntes de vento impediram a aproximação de {lugar}. O prazo encolheu.",
-  "perdido": "O prazo se esgotou, e {c} perdeu suas memórias em {lugar}. Só um triunfo pode reabrir esse caminho.",
-  "reencontro": "No auge do triunfo, {c} voltou através da bruma, segurando firme a mão dos companheiros."
- },
+ "ordem_aflicao": ["brisa", "ysa", "dorn"],
  "arcos": [
   {
    "id": "I",
-   "nome": "O Estreito dos Dentes de Pedra",
-   "chefe": "O Colosso da Fenda de Basalto",
+   "num": "I",
+   "nome": "A Garganta dos Ventos Cortantes",
+   "chefe": "A Barreira de Gelo Azul",
    "etapas": [
-    "A Garganta das Gaivotas",
-    "O Farol Quebrado de Ost-Nadir",
-    "As Falésias de Calcário Negro",
-    "O Bosque dos Corais de Ferro",
-    "As Galerias Afundadas de Kael",
-    "A Escadaria dos Suspiros",
-    "O Cume do Colosso"
-   ],
-   "chefe_texto": "Um titã autômata de pedra e ferro estelar erguido pelos Arquitetos Celestes. Desperta com as correntes de éter e só cede passagem quando a tripulação chega inteira."
+    "A Entrada da Falha",
+    "O Leito dos Seixos Pretos",
+    "A Fenda do Vapor",
+    "A Barreira de Gelo Azul"
+   ]
   },
   {
    "id": "II",
-   "nome": "O Mar das Marés Brancas",
-   "chefe": "A Serpente das Nuvens Boreal",
+   "num": "II",
+   "nome": "A Floresta de Agulhas Negras",
+   "chefe": "O Urso de Carapaça de Basalto",
    "etapas": [
-    "As Salinas Aéreas",
-    "O Cemitério de Chalupas",
-    "O Arquipélago de Giz",
-    "A Fenda dos Ecos",
-    "A Ponte dos Cabos Partidos",
-    "O Recife de Nácar",
-    "A Toca da Serpente"
+    "As Árvores de Sílica",
+    "O Desfiladeiro dos Ecos",
+    "O Refúgio do Musgo",
+    "A Toca do Urso Ancestral"
    ]
   },
   {
    "id": "III",
-   "nome": "O Platô das Cidades Suspensas",
-   "chefe": "O Arquonte Esquecido",
+   "num": "III",
+   "nome": "O Deserto de Sal-Frio",
+   "chefe": "A Tempestade de Sílica do Meio-Dia",
    "etapas": [
-    "Os Pilares de Sustentação",
-    "A Praça dos Relógios de Sol",
-    "A Grande Galeria de Vidro",
-    "O Aqueduto Vazio",
-    "O Observatório Estelar",
-    "As Portas de Éter",
-    "O Trono do Arquonte"
+    "As Dunas Brancas",
+    "O Vento de Cal",
+    "O Oásis Sulfuroso",
+    "A Fronteira do Sol de Sangue"
    ]
   },
   {
    "id": "IV",
-   "nome": "A Cratera de Aethel-Nadir",
-   "chefe": "Vharun-Aethel, o Dragão das Marés Primordiais",
+   "num": "IV",
+   "nome": "A Bacia das Águas Termais",
+   "chefe": "A Falha Térmica Terminal",
    "etapas": [
-    "O Abismo de Luz",
-    "A Trilha dos Cristais Azuis",
-    "O Mar de Espelhos",
-    "As Sete Torres Caídas",
-    "A Câmara do Pêndulo",
-    "A Forja do Céu",
-    "O Despertar de Aethel"
+    "As Fendas Magmáticas",
+    "Os Terraços de Basalto",
+    "A Porta de Vapor",
+    "O Solo Sem Gelo"
    ]
   }
- ]
+ ],
+ "runas": {
+  "lampada_carbeto": {
+   "nome": "Lâmpada de Carbeto",
+   "texto": "Chama química protegida contra rajadas de 100 km/h. Ilumina fendas ocultas no gelo."
+  },
+  "oleo_foca": {
+   "nome": "Óleo de Foca Refinado",
+   "texto": "Protege as juntas mecânicas da esteira e a pele das mãos contra queimaduras de geada."
+  },
+  "giroscopio": {
+   "nome": "Giroscópio de Latão",
+   "texto": "Guia a rota quando as tempestades de sílica cobrem a visão do sol vermelho."
+  }
+ },
+ "regra_runa": "Cada ferramenta absorve uma quebra ou derrota: quando uma semana difícil chega, a ferramenta se esgota no lugar de ferir um membro da equipe. A caixa de ferramentas leva até 3.",
+ "materiais": {
+  "estilha": {
+   "nome": "minério térmico",
+   "forja": 5,
+   "texto": "Fragmentos de minério térmico colhidos no gelo. Cinco deles permitem forjar o Aríete Térmico de Tungstênio."
+  },
+  "pista": {
+   "nome": "cartas de rota",
+   "texto": "Anotações e sondagens de antigas expedições."
+  },
+  "desgaste": {
+   "nome": "desgaste da esteira",
+   "texto": "Dois desgastes na mesma semana ferem alguém da companhia no conserto externo."
+  }
+ },
+ "reliquias": {
+  "lamina_estelar": {
+   "nome": "Aríete Térmico de Tungstênio",
+   "texto": "Forjado com cinco fragmentos térmicos. Fere as barreiras de gelo e abre caminho sem perdas."
+  },
+  "pena_da_garca": {
+   "nome": "Manto Térmico de Foca",
+   "texto": "Impede, uma vez, que um companheiro saia ferido da tempestade."
+  },
+  "sal_dos_farois": {
+   "nome": "Salitre do Vale",
+   "texto": "Desfaz uma aflição climática, uma vez."
+  }
+ },
+ "antagonistas": {
+  "meia_noite": {
+   "nome": "o Gelo da Meia-Noite",
+   "lugar": "a Fenda Escura",
+   "crise": "A tempestade desceu a -35°C e cobriu as esteiras de gelo negro. Quando o vento abrandou, {c} havia ficado isolad{g} na cabine avançada de observação."
+  }
+ },
+ "resgate": {
+  "abertura": "{c} está pres{g} em {lugar}. Esta parte da jornada é para resgatá-l{g}. Se o prazo se esgotar, {c} se perde no permafrost.",
+  "libertado": "O comboio alcançou {lugar} e trouxe {c} de volta em segurança.",
+  "adiado": "A tempestade impediu o resgate de {c} nesta semana. O prazo diminuiu.",
+  "perdido": "O frio engoliu {lugar} e {c} se perdeu no gelo. Apenas uma grande vitória pode reabrir a trilha."
+ }
 }

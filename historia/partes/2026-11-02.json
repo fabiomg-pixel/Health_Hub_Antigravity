@@ -1,150 +1,45 @@
 {
- "_nota": "Parte I (02/11/2026). O Estreito dos Dentes de Pedra. Cada dia tira cartas pela qualidade do dia (métricas). Textos da nova lore 'Os Faróis de Nácar'.",
- "parte": 1,
- "titulo": "O Estreito dos Dentes de Pedra",
- "clima": "tempestade",
- "antagonista": "nevoa",
- "recompensa_limpa": "lagrima_de_nacar",
- "baralho": {
-  "bencao": [
-   {
-    "texto": "Sora avistou um nicho brilhante numa fenda de basalto: um Fragmento Puro de Nácar incrustado no coral negro.",
-    "efeito": {
-     "estilha": 1
+  "n": 1,
+  "data_inicio": "2026-11-02",
+  "data_fim": "2026-11-08",
+  "titulo": "A Garganta dos Ventos Cortantes",
+  "subtitulo": "O aríete térmico contra a Barreira de Gelo Azul",
+  "ambiente": {
+    "clima": "frio cortante a -18°C, rajadas de sílica e nevoeiro de cristais de gelo",
+    "luz": "crepúsculo eterno com o sol vermelho de Cindra imóvel na linha do horizonte",
+    "terreno": "desfiladeiro de basalto negro e placas de gelo sob tensão sísmica"
+  },
+  "em_jogo": "Manter a pressão do aríete térmico para furar os primeiros vinte metros da Barreira de Gelo Azul e garantir o calor das serpentinas da estufa da Dra. Elisa.",
+  "cenas": [
+    {
+      "tier": "triunfo",
+      "titulo": "A Fratura da Parede Azul",
+      "desfecho": "O vapor em alta pressão rugiu nas brocas térmicas. Com um estrondo que ecoou por quilômetros na garganta de basalto, a primeira muralha de gelo rachou de alto a baixo, abrindo uma fresta segura por onde as esteiras do Andarilho-07 avançaram duas etapas. Na estufa, as mudas de centeio receberam calor pleno e a equipe ganhou duas caixas de ferramentas pesadas de sobrevivência.",
+      "efeitos": ["Avanço de 2 etapas", "Conquista de 1 Lâmpada de Carbeto adicional", "Tripulação em prontidão máxima"]
     },
-    "despacho": "Sora desceu amarrada a um cabo de cânhamo pelas escarpas verticais da fenda, com as botas resvalando no lodo úmido da névoa. Voltou puxada por Valen com um estilhaço leitoso preso entre os dentes, os olhos faiscando de triunfo. Fabio a ajudou a passar a perna sobre a amurada sem dizer uma palavra de repreensão, apenas examinando o nácar ainda morno. — Desta vez você me avisa antes de pular no vácuo, Sora. — Ela cuspiu o nácar na palma do capitão, rindo com a boca salgada: — Se eu avisasse, o senhor mandaria o Valen amarrar três cabos de segurança e a maré levava a pedra embora."
-   },
-   {
-    "texto": "A Marca no pulso de Fabio aqueceu subitamente diante de uma caverna suspensa, revelando uma arca dos antigos faroleiros com nácar estelar.",
-    "efeito": {
-     "estilha": 1
+    {
+      "tier": "avanco",
+      "titulo": "Fenda Aberta a Ferro e Fogo",
+      "desfecho": "As brocas penetraram a crosta externa do gelo azul. O Andarilho-07 avançou uma etapa completa, vencendo a inclinação mais íngreme da fenda. Mikael limpou o gelo das válvulas a tempo e a estufa permaneceu aquecida.",
+      "efeitos": ["Avanço de 1 etapa", "Manutenção da integridade da estufa"]
     },
-    "despacho": "A dor no pulso de Fabio foi tão aguda que ele precisou largar o timão por um instante. A Marca pulsava em azul elétrico, apontando para uma abertura na rocha calcária oculta por cortinas de líquen fóssil. Quando Orfeu manobrou a chalupa para junto da reentrância, Valen usou o pé-de-cabra para arrombar uma caixa de mogno centenária. No interior, envolto em panos de seda graxa, brilhava um fragmento de nácar de primeira grandeza. Orfeu tirou o chapéu de feltro e tocou a madeira da arca: — Era o cofre do velho mestre Tomás. Ele sabia que alguém viria buscar."
-   },
-   {
-    "texto": "Valen recolheu escórias de nácar resfriadas nos respiradouros termais e apurou uma estilha límpida na fornalha.",
-    "efeito": {
-     "estilha": 1
+    {
+      "tier": "sustenta",
+      "titulo": "Vigília no Estreito",
+      "desfecho": "O comboio manteve a posição contra a nevasca. Não houve avanço no gelo, mas as correntes das esteiras foram ancoradas e a fornalha operou em regime econômico, protegendo a estufa do congelamento.",
+      "efeitos": ["Posição mantida sem recuo", "Consumo estável de turfa"]
     },
-    "despacho": "Valen passou duas horas alimentando a fornalha auxiliar com carvão de pinho e pó de pedra-sabão, suando em bicas enquanto o vento de fora sacudia as placas do convés. Quando abriu o cadinho de barro com a tenaz, uma lasca pura de nácar cintilou em cobalto. O gigante sorriu para Miriam, que estava sentada no banco da cozinha sentindo o calor irradiado: — O metal ainda tem memória boa, senhorita. Esta lasca aguenta o peso de um temporal inteiro."
-   },
-   {
-    "texto": "Miriam tocou a parede úmida da Garganta e sentiu o calor de um veio celeste, desenterrado por Valen com a picareta.",
-    "efeito": {
-     "estilha": 1
+    {
+      "tier": "reves",
+      "titulo": "A Quebra do Pino de Guia",
+      "desfecho": "O frio intenso fragilizou o aço da esteira dianteira, que travou em uma pedra solta sob a neve. Um membro da equipe precisou trabalhar horas a céu aberto no vento de -25°C e sofreu queimaduras de geada nos dedos.",
+      "efeitos": ["Um companheiro ferido", "Avanço travado no trecho"]
     },
-    "despacho": "Miriam pediu que a chalupa emparelhasse com o paredão leste. De olhos fechados e com a palma da mão esquerda espalmada contra a rocha fria, ela moveu os dedos como quem toca uma harpa invisível: — Aqui, Valen. Três palmos abaixo da marca da maré alta. A pedra canta em tom menor. — Dois golpes certeiros do martelo de Valen abriram uma fenda na crosta de basalto, revelando um nódulo de nácar que acendeu a penumbra do cânion em violeta e ouro."
-   },
-   {
-    "texto": "Os mastins farejaram um ninho abandonado de gaivotas de ferro nas alturas do desfiladeiro, onde brilhava um pedaço do céu antigo.",
-    "efeito": {
-     "estilha": 1
-    },
-    "despacho": "Baluarte e Estrela começaram a latir em uníssono na proa, os pelos das costas eriçados e as caudas tesas. Não era o latido de perigo das sombras; era o uivo curto de caça de topo. Fabio acompanhou o olhar dos cães e viu, a quarenta braças de altura num nicho forrado de gravetos secos, o brilho azulado de um fragmento lunar trazido por aves de rapina há gerações. Sora subiu pela linha de içamento e desceu com a presa nos braços, acariciando as orelhas dos mastins em agradecimento."
-   }
-  ],
-  "achado": [
-   {
-    "texto": "Miriam decifrou uma dobra esquecida do Códice de Baleia, revelando a passagem secreta do Estreito dos Dentes de Pedra.",
-    "efeito": {
-     "pista": 1
-    },
-    "despacho": "Aquecendo a borda do pergaminho sobre a lanterna de nácar, Miriam correu as pontas dos dedos pelas ranhuras em relevo do Códice. Um suspiro de espanto escapou-lhe dos lábios: — Não é um cânion cego, Fabio. Os Arquitetos Celestes cavaram um canal de respiro por trás da Cascata de Basalto. Se entrarmos pela fenda oeste, evitaremos as correntes de tesoura do meio do canal. — Fabio anotou as coordenadas na carta náutica com tinta de chumbo, sentindo o alívio desanuviar o peito."
-   },
-   {
-    "texto": "Sora localizou um antigo marco de pedra dos faroleiros indicando as profundezas navegáveis do abismo.",
-    "efeito": {
-     "pista": 1
-    },
-    "despacho": "Pendurada na verga maior, Sora limpou o musgo cinzento de um obelisco cravado na ponta de um esporão de rocha. Gritou para o convés: — O marco sete ainda tem o entalhe dos três triângulos! O calado da fenda tem pelo menos quinze braças de ar limpo antes da zona de névoa corrosiva! — Orfeu assentiu no leme, ajustando a inclinação das pás para aproveitar o colchão de ar estável."
-   },
-   {
-    "texto": "Orfeu reconheceu a marcação de maré deixada pela expedição de quarenta anos atrás nas muralhas da garganta.",
-    "efeito": {
-     "pista": 1
-    },
-    "despacho": "Orfeu parou ao lado de Fabio, apontando com a ponta do cachimbo apagado para uma linha de cravos de bronze cravados no granito escuro: — O capitão Vane passou por aqui em 1986. Ele cravou esses rebites para medir onde a maré tóxica descansava no solstício. Veja lá: a linha dele está cinco braças abaixo da nossa linha atual. O mar de baixo subiu, capitão, mas as correntes de desvio ainda obedecem ao mesmo ritmo."
-   },
-   {
-    "texto": "Valen encontrou nas ferragens de um antigo guindaste portuário um diagrama com o mecanismo do Colosso de Basalto.",
-    "efeito": {
-     "pista": 1
-    },
-    "despacho": "Entre as ruínas de uma estação de transbordo suspensa no paredão, Valen encontrou uma placa de latão gravada sob duas camadas de ferrugem. Levou-a para a mesa de cartas e esfregou carvão com o polegar: — Olhe aqui, Fabio. O Colosso do desfiladeiro tem três contrapesos de chumbo na nuca. Se a névoa ativar os braços mecânicos, a válvula de alívio fica do lado esquerdo da escadaria. Não precisamos derrubá-lo; basta soltar a trava de vapor."
-   },
-   {
-    "texto": "Miriam ouviu o eco de um sino submerso nas nuvens, calculando com precisão a distância até o Farol de Ost-Nadir.",
-    "efeito": {
-     "pista": 1
-    },
-    "despacho": "Miriam ergueu o queixo e pediu silêncio total a bordo. As pás da chalupa foram postas em marcha lenta. Durante três minutos tensos, a tripulação ouviu apenas o silvo do vento nos cabos. Então, vindo do fundo da garganta, soou uma vibração rouca e metálica, como o bronze de um sino imenso vibrando sob a pressão das nuvens. — São cinco léguas e meia, navegador — disse Miriam, os olhos leitosos cintilando na penumbra. — O sino do Farol de Ost ainda está pendurado na torre, esperando que alguém toque o badalo."
-   }
-  ],
-  "quieto": [
-   {
-    "texto": "Um dia de vento constante e céu límpido sobre os desfiladeiros: a chalupa avança sem incidentes.",
-    "efeito": {},
-    "despacho": "A tarde caiu mansa sobre o Estreito dos Dentes de Pedra. As pás gravitacionais mantiveram um zumbido regular, e a névoa permaneceu contida duzentas braças abaixo do casco, parecendo um lençol de lã fosca estendido entre os rochedos. Valen aproveitou para remendar as botas de Sora na popa; Fabio e Orfeu dividiram uma caneca de infusão de folhas de chá-da-montanha, conversando em voz baixa sobre os ventos do outono passado."
-   },
-   {
-    "texto": "A névoa permaneceu calma sob a linha da quilha, permitindo uma noite de descanso sem alarmes.",
-    "efeito": {},
-    "despacho": "Na vigília da meia-noite, Fabio encontrou Miriam sentada na amurada com Baluarte deitado sobre seus pés descalços. Não havia lua no céu, mas as estrelas de nácar brilhavam no firmamento alto como agulhas de gelo. — Como está o seu pulso hoje, capitão? — perguntou a sábia. — Tranquilo, Miriam. Como água que dorme na panela. — Ela sorriu e respirou fundo o ar limpo da altitude: — Então durma duas horas, Fabio. Os cães e eu guardamos o leme."
-   },
-   {
-    "texto": "Sora afiou suas pontas de flecha na proa enquanto as pás de bronze cortavam as correntes térmicas da fenda.",
-    "efeito": {},
-    "despacho": "O som rítmico do sílex roçando na pedra de amolar acompanhou toda a navegação matinal. Sora trabalhava concentrada, enfileirando vinte flechas perfeitas na caixa de cedro. Quando Valen passou levando um balde de graxa para as engrenagens, a arqueira atirou-lhe uma maçã desidratada: — Coma isso antes que fique com cara de estátua de sal, grandalhão. — Valen apanhou a fruta no ar e agradeceu com um aceno lento de cabeça."
-   },
-   {
-    "texto": "A tripulação dividiu a ração quente de grãos e peixe seco sob o abrigo da lona encerada do tombadilho.",
-    "efeito": {},
-    "despacho": "Com a chalupa ancorada num recesso protegido do vento, os quatro se reuniram em torno do braseiro de ferro. A sopa de feijão-fradinho com lascas de bacalhau salgado fumegava nas tigelas de barro. Orfeu contou a história do capitão que tentou navegar uma chalupa usando gaivotas amarradas ao leme, arrancando gargalhadas até mesmo de Sora. Pela primeira vez desde a partida de Porto Esperança, o peso do mundo pareceu um pouco mais leve nos ombros de todos."
-   }
-  ],
-  "percalco": [
-   {
-    "texto": "Uma lufada de vento térmico desceu pelas fendas do basalto, arrancando uma das vergas de manobra da gávea.",
-    "efeito": {
-     "desgaste": 1
-    },
-    "despacho": "A rajada veio sem aviso, uivando como um bicho ferido por uma chaminé de pedra. O estalo da madeira quebrando na gávea ecoou por todo o desfiladeiro. Sora quase foi atirada no vazio, segurando-se por uma mão ao cabo de aço da adriça enquanto a verga de pinho descia girando em direção à névoa. Fabio e Valen correram pelo convés inclinado a trinta graus, lutando contra o velame rebelde até conseguirem prender a ponta partida com cordas e cunhas de ferro."
-   },
-   {
-    "texto": "Um bolsão de névoa corrosiva subiu do abismo, corroendo a calafetação da quilha e desgastando as pás do motor.",
-    "efeito": {
-     "desgaste": 1
-    },
-    "despacho": "O cheiro sulfuroso subiu antes da fumaça: um vapor leitoso e acre que fez Baluarte ganir de dor no focinho. A névoa lambeu a quilha de madeira-ferro, soltando bolhas na resina negra e fazendo chiar o bronze das pás rotativas. Valen desceu às pressas com baldes de água com cal para neutralizar a acidez, mas quando a chalupa emergiu do bolsão, uma das pás estava marcada por sulcos escuros e vibrava com um rangido doentio."
-   },
-   {
-    "texto": "As âncoras de rocha prenderam-se numa greta submersa durante a manobra, exigindo força extrema para desvencilhar o navio.",
-    "efeito": {
-     "desgaste": 1
-    },
-    "despacho": "Quando a correnteza começou a arrastar a chalupa para as agulhas de pedra, Fabio ordenou o lançamento imediato das garras de retenção. O gancho mordeu fundo demais num veio de ferro magnético. O cabo esticou como uma corda de violino sob tensão fatal, ameaçando partir a amurada inteira. Valen precisou usar a marreta em golpes desesperados contra o elo de segurança, cortando a corrente de reserva para que a *Baluarte* não se partisse ao meio."
-   },
-   {
-    "texto": "Uma tempestade de granizo miúdo de nácar cego atingiu o convés na travessia do Vau das Gaivotas.",
-    "efeito": {
-     "desgaste": 1
-    },
-    "despacho": "Pedras de gelo pontiagudas, opacas e pesadas como chumbo, despencaram da cobertura de nuvens altas por vinte minutos ininterruptos. A tripulação teve de abrigar-se sob pranchas de compensado enquanto o granizo crivava o velame e estilhaçava duas das quatro janelas da cabine de comando. Quando a tormenta passou, o convés parecia coberto por estilhaços de sal grosso e o mastro principal apresentava duas longas rachaduras superficiais."
-   }
-  ],
-  "maldicao": [
-   {
-    "texto": "Um juramento de disciplina quebrou-se no silêncio da noite: a Mácula da Névoa estendeu suas veias leitosas sobre o convés.",
-    "despacho": "A névoa não esperou o amanhecer. Entrou pelas frestas abertas da amurada como leite derramado no chão frio. Quando Fabio acordou para a troca de turno, encontrou veias esbranquiçadas pulsando sob a casca da madeira do timão. Ao lado, Sora esfregava o antebraço com aflição: a pele ao redor da cicatriz do seu pulso estava pálida e sem sensibilidade ao toque. — Esqueci o nome da canção do meu pai, capitão — sussurrou ela, com a voz embargada pelo desespero. — Tentei cantarolar agora há pouco e só saiu ar vazio."
-   },
-   {
-    "texto": "O Chamado do Abismo ecoou no oco do casco: os Desgarrados rondaram o ancoradouro sussurrando promessas de descanso eterno.",
-    "despacho": "O uivo baixo começou por volta das três da madrugada. Não vinha do vento; vinha de debaixo do chão flutuante. Centenas de vozes sem corpo chamavam Miriam pelo nome de batismo, repetindo frases que a sábia ouvira de sua mãe na infância. Miriam precisou ser amarrada por Valen ao mastro central para não caminhar sonâmbula em direção à prancha de lançamento. Seus olhos leitosos choravam lágrimas sem brilho: — Elas dizem que lá embaixo não há frio nem labuta, Fabio... dizem que a escuridão é mansa."
-   },
-   {
-    "texto": "A quebra da cadência diária atraiu a sombra do Colosso de Basalto, que virou sua face mecânica contra a chalupa.",
-    "despacho": "Um tremor profundo sacudiu as paredes do desfiladeiro. No alto da escarpa, os dois olhos de safira fria do titã ancestral acenderam na névoa, girando suas lentes de quartzo com um ruído de engrenagens colossais desprovidas de óleo. Uma rajada de ar congelante desceu pelo cânion, apagando três dos archotes do convés. A companhia sentiu o peso do olhar de ferro da montanha: o portão mecânico de Ost-Nadir estava se fechando antes da hora."
-   }
+    {
+      "tier": "crise",
+      "titulo": "O Gelo Engole a Entrada",
+      "desfecho": "Uma avalanche de blocos de gelo desabou atrás do comboio, bloqueando o recuo e cortando a linha de ar quente. A esteira esquerda emperrou e um companheiro ficou isolado na cabine externa de observação.",
+      "efeitos": ["Recuo de 1 etapa", "Companheiro capturado pelo gelo", "Prazo de 3 semanas para resgate"]
+    }
   ]
- }
 }

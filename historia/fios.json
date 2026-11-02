@@ -1,40 +1,44 @@
 {
- "_nota": "Fios narrativos em aberto na campanha 'Os Faróis de Nácar'. Cada fio é uma semente que deve germinar nos capítulos e despachos.",
- "fios": [
-  {
-   "id": "marca_do_pulso",
-   "titulo": "A Origem da Marca da Maré",
-   "resumo": "A cicatriz de ferro-frio no pulso de Fabio ressoa com as máquinas dos Arquitetos Celestes. Por que ela despertou quando ele sobreviveu ao Estreito da Lágrima?",
-   "status": "ativo",
-   "revelacoes": []
-  },
-  {
-   "id": "bussola_de_sora",
-   "titulo": "A Bússola Quebrada de Sora",
-   "resumo": "A bússola do pai de Sora não aponta para o norte, mas gira em direção à névoa profunda. Quem forjou a agulha de bronze?",
-   "status": "ativo",
-   "revelacoes": []
-  },
-  {
-   "id": "o_chamado_de_miriam",
-   "titulo": "O Canto da Irmã Perdida",
-   "resumo": "Miriam escuta uma voz feminina que a chama para as nuvens, prometendo-lhe visão e paz. É um eco da névoa viva ou uma sobrevivente real?",
-   "status": "ativo",
-   "revelacoes": []
-  },
-  {
-   "id": "a_divida_de_valen",
-   "titulo": "Os Sobreviventes de Kael-Dorr",
-   "resumo": "Valen acredita que todos os trezentos mineradores morreram na galeria, mas rumores dizem que um grupo escapou em uma chalupa clandestina.",
-   "status": "ativo",
-   "revelacoes": []
-  },
-  {
-   "id": "corsarios_malcor",
-   "titulo": "A Perseguição do Capitão Malcor",
-   "resumo": "Malcor quer a Baluarte do Vento a qualquer custo para tentar cruzar o Mar de Salitre e roubar a forja de nácar.",
-   "status": "ativo",
-   "revelacoes": []
-  }
- ]
+  "fios": [
+    {
+      "id": "estufa",
+      "nome": "O Berçário Verde de Elisa",
+      "status": "ativo",
+      "resumo": "As primeiras mudas de centeio-da-montanha brotaram sob a lâmpada de carbono. Qualquer queda abrupta de temperatura na estufa pode congelar as raízes definitivas do assentamento.",
+      "capitulo_inicio": 4,
+      "evolucao": [
+        "02/11: As mudas estão saudáveis, mas o aríete térmico consome parte do vapor que aquece as serpentinas da estufa."
+      ]
+    },
+    {
+      "id": "esteira",
+      "nome": "A Integridade do Andarilho-07",
+      "status": "ativo",
+      "resumo": "Os pinos-guia da esteira direita sofreram desgaste na travessia do leito de pedra. Precisam de graxa de foca e alinhamento a cada parada de descanso.",
+      "capitulo_inicio": 4,
+      "evolucao": [
+        "02/11: Fábio e Vardan ajustaram a tensão das correntes. O trator está pronto para o empuxo da Garganta."
+      ]
+    },
+    {
+      "id": "canela_gero",
+      "nome": "A Sentinela dos Mastins",
+      "status": "ativo",
+      "resumo": "Canela e Gero farejam o gelo falso antes que o peso de quarenta toneladas do trator rache o chão. O faro dos cães é a única bússola confiável sob a nevasca de sílica.",
+      "capitulo_inicio": 4,
+      "evolucao": [
+        "02/11: Canela encontrou uma fenda oculta a duzentos metros da entrada da garganta, poupando a esteira dianteira."
+      ]
+    },
+    {
+      "id": "barreira",
+      "nome": "O Cerco do Gelo Azul",
+      "status": "ativo",
+      "resumo": "A muralha de gelo de 80 metros bloqueia o desfiladeiro. As brocas térmicas avançam na proporção direta da cadência física e do vapor gerado na fornalha.",
+      "capitulo_inicio": 4,
+      "evolucao": [
+        "02/11: As brocas entraram em contato com a primeira camada de gelo cristalino."
+      ]
+    }
+  ]
 }
