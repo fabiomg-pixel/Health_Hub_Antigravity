@@ -128,6 +128,16 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-dia { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
   .cp-dia > b { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
   .cp-ev { display: grid; grid-template-columns: 20px 1fr; gap: 8px; margin-top: 7px; font-size: 14px; line-height: 1.5; }
+  .cp-cinematica { position: relative; margin: 16px 0 12px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.22); background: #070a12; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+  .cp-cinematica-video { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; background: #080b12; }
+  .cp-cinematica-tabs { display: flex; overflow-x: auto; gap: 6px; padding: 8px 10px; background: rgba(10,14,24,0.95); border-top: 1px solid rgba(255,255,255,0.12); scrollbar-width: none; }
+  .cp-cinematica-tabs::-webkit-scrollbar { display: none; }
+  .cp-cinematica-btn { flex: 1; min-width: 90px; padding: 7px 10px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); background: transparent; border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
+  .cp-cinematica-btn.on, .cp-cinematica-btn:hover { color: #fff; background: rgba(255,255,255,0.14); border-color: var(--sol); }
+  .cp-cinematica-caption { padding: 10px 14px 12px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.9); background: rgba(10,14,24,0.95); }
+  .cp-cinematica-caption b { color: var(--sol); font-weight: 700; }
+  .cp-boss-art { position: relative; margin-top: 10px; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,107,94,0.35); }
+  .cp-boss-art video, .cp-boss-art img { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; }
   .cp-ev i { font-style: normal; text-align: center; font-weight: 800; }
   .cp-ev small { display: block; font-size: 12px; color: var(--sol); opacity: 0.9; margin-top: 2px; }
   .cp-ev.maldicao, .cp-ev.percalco, .cp-ev.juramento_quebrado { color: #FFC9C3; }
@@ -337,6 +347,9 @@ const CP_ICO = { missao: '★', bencao: '✦', achado: '+', quieto: '·', percal
 function cpPrologo() {
   const p = (HISTORIA || {}).prologo; if (!p) return '';
   return `<section class="bloco"><div class="cab"><h2>Prólogo</h2><small>o mundo e a companhia</small></div>
+    <div style="border-radius:6px;overflow:hidden;margin:10px 0 14px;border:1px solid rgba(255,255,255,0.2)">
+      <img src="art/baluarte_do_vento.jpg" alt="O Baluarte do Vento" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
+    </div>
     <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(p.subtitulo || p.titulo)}</h3>
     <div style="margin-top:14px">${cpLeitura('cp-prol', p.texto, p.minutos, 'Ler o prólogo inteiro')}</div></section>`;
 }
@@ -474,13 +487,85 @@ function cpAventura() {
   }
   h += `<section class="bloco"><div class="cab"><h2>A estrada</h2><small>Arco ${esc(H.arco.id)}: ${esc(H.arco.nome)}</small></div><div class="cp-trilha">` +
     H.etapas.map((e, i) => `<div class="cp-et ${e.estado} ${i === H.etapas.length - 1 ? 'chefe' : ''}"><i></i><span>${esc(e.nome)}${i === H.etapas.length - 1 ? ' · só cai pela balança (média de 28 dias)' : ''}</span></div>`).join('') + `</div></section>`;
-  h += `<section class="bloco"><div class="cab"><h2>A companhia</h2><small>${esc(H.guia.nome)}, ${esc(H.guia.papel)}, guia o grupo</small></div><div class="cp-comp">` +
+  h += `<section class="bloco"><div class="cab"><h2>A companhia</h2><small>${esc(H.guia.nome)}, ${esc(H.guia.papel)}, guia o grupo</small></div>
+    <div style="border-radius:6px;overflow:hidden;margin:10px 0 14px;border:1px solid rgba(255,255,255,0.2)">
+      <img src="art/tripulacao.jpg" alt="A Tripulação do Baluarte do Vento" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
+    </div>
+    <div class="cp-comp">` +
     H.companhia.map(c => `<div class="cp-pers ${c.estado}"><canvas class="cp-mini" data-id="${c.id}" data-estado="${c.estado}"></canvas><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>Os Sigilos de Nácar</h2><small>${H.mochila.length} de 3</small></div><div class="cp-bag">` +
     [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
     `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende sigilo novo.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
   return h;
 }
+const CP_VISUAIS = [
+  {
+    id: 'nau',
+    titulo: 'A Nau das Brumas',
+    video: 'art/baluarte_cinematico.mp4',
+    poster: 'art/baluarte_do_vento.jpg',
+    desc: 'O <b>Baluarte do Vento</b> singrando as Brumas Silenciosas sob os anéis astrais de <em>Thalassa-Aethel</em>.'
+  },
+  {
+    id: 'tripulacao',
+    titulo: 'A Tripulação',
+    video: 'art/tripulacao_cinematico.mp4',
+    poster: 'art/tripulacao.jpg',
+    desc: '<b>Fábio, Sora, Valen, Miriam, Mestre Orfeu</b> e os mastins sentinelas vigiando a amurada da expedição.'
+  },
+  {
+    id: 'farol',
+    titulo: 'O Primeiro Farol',
+    video: 'art/farol_cinematico.mp4',
+    poster: 'art/farol_de_nacar.jpg',
+    desc: 'A <b>Torre de Aethel-Prime</b> em nácar esculpido e glifos rúnicos, projetando a chama dourada contra o esquecimento.'
+  },
+  {
+    id: 'chefe',
+    titulo: 'O Guardião do Arco I',
+    video: 'art/colosso_cinematico.mp4',
+    poster: 'art/colosso_basalto.jpg',
+    desc: '<b>O Colosso da Fenda de Basalto</b> erguendo-se nas marés profundas do Estreito dos Dentes de Pedra.'
+  }
+];
+
+function cpVisualStage() {
+  const v = CP_VISUAIS[0];
+  return `<section class="bloco" style="padding-bottom:12px">
+    <div class="cab"><h2>Crônicas Visuais</h2><small>ilustrações & cinematografia do Gemini</small></div>
+    <div class="cp-cinematica">
+      <video id="cp-video-stage" class="cp-cinematica-video" autoplay loop muted playsinline poster="${v.poster}">
+        <source src="${v.video}" type="video/mp4">
+        <img src="${v.poster}" alt="${esc(v.titulo)}" style="width:100%;display:block">
+      </video>
+      <div class="cp-cinematica-tabs" id="cp-vis-tabs">
+        ${CP_VISUAIS.map((item, idx) => `<button class="cp-cinematica-btn ${idx === 0 ? 'on' : ''}" data-idx="${idx}">${esc(item.titulo)}</button>`).join('')}
+      </div>
+      <div class="cp-cinematica-caption" id="cp-vis-desc">${v.desc}</div>
+    </div>
+  </section>`;
+}
+
+function cpLigarVisualStage() {
+  const tabs = document.querySelectorAll('#cp-vis-tabs button');
+  const vid = document.getElementById('cp-video-stage');
+  const desc = document.getElementById('cp-vis-desc');
+  if (!tabs.length || !vid || !desc) return;
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const item = CP_VISUAIS[parseInt(btn.dataset.idx, 10)];
+      if (item) {
+        vid.poster = item.poster;
+        vid.src = item.video;
+        vid.play().catch(() => {});
+        desc.innerHTML = item.desc;
+      }
+    });
+  });
+}
+
 function renderCampanha() {
   if (!JORNADA) {
     $('view').innerHTML = `<div class="campo tinta"><div class="dentro" style="padding-bottom:22px"><div class="rot">${esc(cpTituloMundo())}</div><h1 class="titulo longo">Abrindo o livro.</h1></div></div><section class="bloco"><div class="par" id="cp-espera">Carregando os dados da Campanha…</div></section>`;
@@ -506,10 +591,17 @@ function renderCampanha() {
       <div class="cp-chip"><b>+${fNum(j.hoje.xp || 0, 0)}</b><span>XP de hoje até a última leitura</span></div></div>
   </div></div>`;
 
+  h += cpVisualStage();
   h += cpAventura();
   h += `<section class="bloco"><div class="cab"><h2>O mapa</h2><small>de 95 a 85 kg, pela média de 28 dias</small></div>${cpMapa()}
     ${a.chefe ? `<div class="cp-hp"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><b style="font-family:var(--display);font-size:19px">${esc(a.chefe)}</b><span style="font-weight:700">${Math.round((a.hp || 0) * 100)}%</span></div>
-      <div class="tr" role="img" aria-label="Vida do chefe: ${Math.round((a.hp || 0) * 100)} por cento"><i style="width:${((a.hp || 0) * 100).toFixed(1)}%"></i></div>
+      <div class="cp-boss-art">
+        <video class="cp-cinematica-video" autoplay loop muted playsinline poster="art/colosso_basalto.jpg">
+          <source src="art/colosso_cinematico.mp4" type="video/mp4">
+          <img src="art/colosso_basalto.jpg" alt="${esc(a.chefe)}" style="width:100%;display:block">
+        </video>
+      </div>
+      <div class="tr" role="img" aria-label="Vida do chefe: ${Math.round((a.hp || 0) * 100)} por cento" style="margin-top:10px"><i style="width:${((a.hp || 0) * 100).toFixed(1)}%"></i></div>
       <div class="lg">Arco ${esc(a.num)}: ${esc(a.nome)}. A vida do chefe é o que falta no degrau de ${fNum(a.de, 1)} a ${fNum(a.ate, 1)} kg, pela média de 28 dias das leituras neutras (hoje ${fNum(j.media_28d, 2)} kg). Atualiza uma vez por semana; pesagem isolada, e a de depois de jogo, não fere chefe nenhum. O chefe não dá XP.</div></div>` : ''}
     <div class="cp-hp" style="margin-top:18px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><b style="font-family:var(--display);font-size:16px">Missão paralela: ${esc(pr.nome)}</b><span style="font-weight:700">${pr.valor != null ? fNum(pr.valor, 1) : '—'} de ${fNum(pr.ate, 0)}</span></div>
       <div class="tr" style="border-color:rgba(255,255,255,0.6)"><i style="width:${(pr.progresso * 100).toFixed(1)}%;background:var(--sol)"></i></div><div class="lg">VO₂ máx: ${esc(pr.nota)}.</div></div></section>`;
@@ -537,4 +629,5 @@ function renderCampanha() {
   $('view').innerHTML = h;
   cpPosicionarMarca();
   cpLigarPixel();
+  cpLigarVisualStage();
 }
