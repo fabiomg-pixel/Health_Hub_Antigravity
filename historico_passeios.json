@@ -1,0 +1,15 @@
+{
+ "_nota": "Passeios com os cachorros (missão paralela), do Garmin (hiking). Gerado por jornada.py.",
+ "passeios": [
+  {
+   "id": 24939066903,
+   "data": "2026-11-02",
+   "hora": "09:37",
+   "min": 14.1,
+   "km": 1.23,
+   "ritmo_min_km": 11.5,
+   "fc_media": 130.0,
+   "fc_max": 154.0
+  }
+ ]
+}

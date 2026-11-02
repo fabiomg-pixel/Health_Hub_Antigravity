@@ -66,6 +66,17 @@ function blocoBonus(iso, tipo) {
 }
 // Missões paralelas (Fabio, 02/11): todo dia, opcionais. Passeio com os cachorros (um toque registra) e rotina de casa
 // (alongamento, flexão e prancha no player). Não são exercício nem item do dia: só XP; 5 dias na semana = +30 XP cada.
+// Progressão dos cachorros (02/11): etapa atual, ponto de partida e último passeio (Garmin, "hiking").
+function blocoPasseio() {
+  const P = typeof JORNADA !== 'undefined' && JORNADA && JORNADA.passeios; if (!P || !P.etapa) return '';
+  const fmt = x => x ? `${fNum(x.min, 0)} min, ${fNum(x.km, 2)} km${x.ritmo_min_km ? ', ' + fNum(x.ritmo_min_km, 1) + ' min/km' : ''}${x.fc_media ? ', FC média ' + fNum(x.fc_media, 0) : ''}` : '';
+  const ult = P.ultimos && P.ultimos[P.ultimos.length - 1];
+  return `<div class="par" style="font-size:14px">Etapa ${P.etapa.n}: <b>${esc(P.etapa.nome)}</b> (${esc(P.etapa.como)}).
+    ${P.base ? `<br>Ponto de partida (${esc(isoDDMM(P.base.data))}): ${esc(fmt(P.base))}.` : ''}
+    ${ult && P.base && ult.id !== P.base.id ? `<br>Último (${esc(isoDDMM(ult.data))}): ${esc(fmt(ult))}.` : ''}
+    ${P.sugere_subir ? `<br><b>Semana passada teve 4 passeios ou mais: dá para tentar a etapa ${P.proxima.n}, ${esc(P.proxima.nome.toLowerCase())} (${esc(P.proxima.como)}), se eles terminaram bem.</b>` : ''}
+    <details style="margin-top:6px"><summary>Cuidados</summary><div class="par" style="font-size:13px">${esc(P.cuidados)}</div></details></div>`;
+}
 function blocoParalelas(iso) {
   const J = typeof JORNADA !== 'undefined' && JORNADA, ps = (J && J.capitulo && J.capitulo.paralelas) || [], hoje = iso === isoLocal();
   const reg = re => (REGISTROS || []).some(x => x.tipo === 'Treino' && x.data === iso && /miss[ãa]o paralela/i.test(x.texto || '') && re.test(x.texto || ''));
@@ -74,6 +85,7 @@ function blocoParalelas(iso) {
   const linha = (nome, sub, feito, acao) => `<div class="linha" style="align-items:center"><span class="corpo">${esc(nome)}<small>${esc(sub)}</small></span>${feito ? '<span class="num" style="font-size:15px">feito</span>' : acao}</div>`;
   return `<section class="bloco"><div class="cab"><h2>Missões paralelas</h2><small>opcionais · só pontos, não contam como treino</small></div>
     ${linha('Passeio com os cachorros', 'jogging curto · ' + sem('caes'), feitoC, hoje ? '<button type="button" class="botao claro" id="p-caes" style="width:auto;min-width:96px;margin:0">Feito</button>' : '')}
+    ${blocoPasseio()}
     ${linha('Rotina de casa', 'alongamento, flexão e prancha, ~10 min · ' + sem('rotina'), feitoR, hoje ? `<a class="botao claro" href="#treino/${iso}/rotina" style="width:auto;min-width:96px;margin:0">Iniciar</a>` : '')}
     <div id="p-status" class="msg" role="status" aria-live="polite"></div></section>`;
 }

@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-02T10:04:41",
+ "gerado_em": "2026-11-02T10:08:30",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-06-29",
@@ -118,6 +118,43 @@
     "capitulos": 3
    }
   ]
+ },
+ "passeios": {
+  "base": {
+   "id": 24939066903,
+   "data": "2026-11-02",
+   "hora": "09:37",
+   "min": 14.1,
+   "km": 1.23,
+   "ritmo_min_km": 11.5,
+   "fc_media": 130.0,
+   "fc_max": 154.0
+  },
+  "ultimos": [
+   {
+    "id": 24939066903,
+    "data": "2026-11-02",
+    "hora": "09:37",
+    "min": 14.1,
+    "km": 1.23,
+    "ritmo_min_km": 11.5,
+    "fc_media": 130.0,
+    "fc_max": 154.0
+   }
+  ],
+  "na_semana": 1,
+  "etapa": {
+   "n": 1,
+   "nome": "Repetir o trajeto",
+   "como": "2 subidas e descidas, passo lento, uns 15 min"
+  },
+  "proxima": {
+   "n": 2,
+   "nome": "Mais uma volta",
+   "como": "3 subidas e descidas, mesmo passo, uns 18 a 20 min"
+  },
+  "sugere_subir": false,
+  "cuidados": "Cachorros fora de forma (Fabio, 02/11): aumentar tempo e velocidade aos poucos. Uma etapa por vez; o painel sugere a próxima só depois de uma semana com 4 ou mais passeios na etapa atual, e o Fabio decide. Cansaço (ficar para trás, deitar, mancar, ofegação que não baixa em 5 min) = voltar uma etapa. Calor: só cedo ou depois das 17h30; asfalto quente demais para a mão por 7 s é quente demais para as patas. Água antes e depois."
  },
  "hoje": {
   "data": "2026-11-02",

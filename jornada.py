@@ -130,6 +130,28 @@ PASSEIO_TIPOS = {'hiking', 'walking', 'casual_walking', 'speed_walking', 'trail_
 ATIV_GARMIN = (ler('garmin_out.json', {}) or {}).get('atividades', []) + (FATOS.get('treino_7d') or {}).get('atividades_garmin', [])
 
 
+# Histórico dos passeios (02/11): as atividades "hiking" do Garmin a partir do início da missão, guardadas para sempre
+# (o pull do Garmin só traz 7 dias). Ponto de partida, últimos passeios e a etapa da progressão vão para o painel.
+def passeios():
+    PC = (R.get('paralelas') or {}).get('caes') or {}; ini = PC.get('inicio', '9999')
+    caminho = os.path.join(AQUI, 'historico_passeios.json')
+    hist = {x['id']: x for x in (ler('historico_passeios.json', {}) or {}).get('passeios', [])}
+    for a in ATIV_GARMIN:
+        dia = (a.get('inicio_local') or '')[:10]
+        if a.get('tipo') in PASSEIO_TIPOS and dia >= ini and a.get('id') and a['id'] not in hist:
+            km, mn = a.get('distancia_km'), a.get('duracao_min')
+            hist[a['id']] = {'id': a['id'], 'data': dia, 'hora': (a.get('inicio_local') or '')[11:16], 'min': mn, 'km': km,
+                             'ritmo_min_km': round(mn / km, 1) if km and mn else None, 'fc_media': a.get('fc_media'), 'fc_max': a.get('fc_max')}
+    lista = sorted(hist.values(), key=lambda x: (x['data'], x['hora']))
+    if lista: util_arq.gravar_json(caminho, {'_nota': 'Passeios com os cachorros (missão paralela), do Garmin (hiking). Gerado por jornada.py.', 'passeios': lista})
+    prog = PC.get('progressao') or {}; et = prog.get('etapa_atual', 1); etapas = prog.get('etapas', [])
+    na_semana = sum(1 for x in lista if D(x['data']) >= seg(HOJE))
+    atual = next((e for e in etapas if e['n'] == et), None); prox = next((e for e in etapas if e['n'] == et + 1), None)
+    sem_ant = [x for x in lista if seg(HOJE) - dt.timedelta(days=7) <= D(x['data']) < seg(HOJE)]
+    return {'base': lista[0] if lista else None, 'ultimos': lista[-5:], 'na_semana': na_semana, 'etapa': atual,
+            'proxima': prox, 'sugere_subir': bool(prox and len(sem_ant) >= 4), 'cuidados': prog.get('_nota', '')}
+
+
 def kcal_passeio(s):
     vistos, tot = set(), 0
     for a in ATIV_GARMIN:
@@ -374,6 +396,7 @@ out = {
     'capitulo': {'numero': n_cap, 'segunda': atual['segunda'] if atual else None, 'status': atual['status'] if atual else None,
                  'missoes': atual['missoes'] if atual else [], 'paralelas': atual['paralelas'] if atual else [], 'novo_arco': atual['novo_arco'] if atual else False, 'xp_semana': atual['xp_semana'] if atual else 0},
     'saga': {'atual': saga, 'maior': saga_max, 'historico': sagas},
+    'passeios': passeios(),
     'hoje': {'data': hoje_s, 'xp': xp_por_dia.get(hoje_s, {}).get('xp', 0), 'missoes': missoes_hoje, 'ferido': ferido,
              'paralelas': {'caes': 'paralela_caes' in f_hoje, 'rotina': 'paralela_rotina' in f_hoje}},
     'arco': arco, 'media_28d': m28, 'paralela': paralela,

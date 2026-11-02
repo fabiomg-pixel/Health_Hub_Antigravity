@@ -93,7 +93,39 @@
   "_nota": "Missões paralelas (Fabio, 02/11): opcionais e diárias, não contam como exercício, nem como dia ativo, nem como item do dia para as cartas. Só XP.",
   "caes": {
    "nome": "Passeio com os cachorros",
-   "texto": "Jogging curto com os cachorros (eles é que precisam)."
+   "texto": "Jogging curto com os cachorros (eles é que precisam).",
+   "inicio": "2026-11-02",
+   "progressao": {
+    "_nota": "Cachorros fora de forma (Fabio, 02/11): aumentar tempo e velocidade aos poucos. Uma etapa por vez; o painel sugere a próxima só depois de uma semana com 4 ou mais passeios na etapa atual, e o Fabio decide. Cansaço (ficar para trás, deitar, mancar, ofegação que não baixa em 5 min) = voltar uma etapa. Calor: só cedo ou depois das 17h30; asfalto quente demais para a mão por 7 s é quente demais para as patas. Água antes e depois.",
+    "etapas": [
+     {
+      "n": 1,
+      "nome": "Repetir o trajeto",
+      "como": "2 subidas e descidas, passo lento, uns 15 min"
+     },
+     {
+      "n": 2,
+      "nome": "Mais uma volta",
+      "como": "3 subidas e descidas, mesmo passo, uns 18 a 20 min"
+     },
+     {
+      "n": 3,
+      "nome": "Mais tempo",
+      "como": "3 a 4 subidas e descidas, uns 22 min, mesmo passo"
+     },
+     {
+      "n": 4,
+      "nome": "Primeiro trote",
+      "como": "mesmo tempo; nos trechos planos, 1 min trotando e 2 andando"
+     },
+     {
+      "n": 5,
+      "nome": "Mais trote",
+      "como": "uns 25 min; nos planos, 2 min trotando e 1 andando"
+     }
+    ],
+    "etapa_atual": 1
+   }
   },
   "rotina": {
    "nome": "Rotina de casa",
