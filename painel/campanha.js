@@ -128,16 +128,76 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-dia { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
   .cp-dia > b { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
   .cp-ev { display: grid; grid-template-columns: 20px 1fr; gap: 8px; margin-top: 7px; font-size: 14px; line-height: 1.5; }
-  .cp-cinematica { position: relative; margin: 16px 0 12px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.22); background: #070a12; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-  .cp-cinematica-video { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; background: #080b12; }
-  .cp-cinematica-tabs { display: flex; overflow-x: auto; gap: 6px; padding: 8px 10px; background: rgba(10,14,24,0.95); border-top: 1px solid rgba(255,255,255,0.12); scrollbar-width: none; }
-  .cp-cinematica-tabs::-webkit-scrollbar { display: none; }
-  .cp-cinematica-btn { flex: 1; min-width: 90px; padding: 7px 10px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); background: transparent; border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; }
-  .cp-cinematica-btn.on, .cp-cinematica-btn:hover { color: #fff; background: rgba(255,255,255,0.14); border-color: var(--sol); }
-  .cp-cinematica-caption { padding: 10px 14px 12px; font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.9); background: rgba(10,14,24,0.95); }
-  .cp-cinematica-caption b { color: var(--sol); font-weight: 700; }
+  /* Diorama Atmosférico Vivo */
+  .cp-diorama-wrap { position: relative; margin: 16px 0 14px; border-radius: 8px; overflow: hidden; border: 1.5px solid rgba(255,255,255,0.22); background: #060911; box-shadow: 0 10px 32px rgba(0,0,0,0.6); }
+  .cp-diorama-stage { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; cursor: crosshair; perspective: 900px; }
+  .cp-diorama-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.02); will-change: transform; transition: opacity 0.35s ease; }
+  .cp-diorama-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+  .cp-diorama-topbar { position: absolute; top: 8px; left: 8px; right: 8px; display: flex; justify-content: space-between; align-items: center; pointer-events: none; }
+  .cp-diorama-tag { background: rgba(6, 9, 17, 0.78); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(255, 180, 143, 0.5); color: var(--sol); padding: 3px 8px; border-radius: 4px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .cp-diorama-inspect { pointer-events: auto; background: rgba(6, 9, 17, 0.82); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; padding: 4px 9px; border-radius: 4px; font-size: 11px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease; }
+  .cp-diorama-inspect:hover { background: var(--sol); color: var(--tinta); border-color: var(--sol); }
+  .cp-diorama-fxbar { display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; background: rgba(8, 12, 22, 0.96); border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 11px; }
+  .cp-diorama-fxbtns { display: flex; gap: 5px; }
+  .cp-fx-btn { background: transparent; border: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.75); padding: 3px 7px; border-radius: 3px; font-size: 10.5px; cursor: pointer; transition: all 0.15s ease; }
+  .cp-fx-btn.on, .cp-fx-btn:hover { background: rgba(255, 180, 143, 0.22); border-color: var(--sol); color: #fff; }
+  .cp-diorama-tabs { display: flex; overflow-x: auto; gap: 6px; padding: 8px 10px; background: rgba(5, 9, 18, 0.98); border-top: 1px solid rgba(255, 255, 255, 0.12); scrollbar-width: none; }
+  .cp-diorama-tabs::-webkit-scrollbar { display: none; }
+  .cp-diorama-tab { flex: 1; min-width: 90px; padding: 7px 10px; font-size: 11.5px; font-weight: 700; color: rgba(255, 255, 255, 0.72); background: transparent; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 4px; cursor: pointer; transition: all 0.2s ease; white-space: nowrap; text-align: center; }
+  .cp-diorama-tab.on, .cp-diorama-tab:hover { color: #fff; background: rgba(255, 255, 255, 0.15); border-color: var(--sol); }
+  .cp-diorama-caption { padding: 10px 14px 12px; font-size: 13px; line-height: 1.48; color: rgba(255, 255, 255, 0.92); background: rgba(5, 9, 18, 0.98); }
+  .cp-diorama-caption b { color: var(--sol); font-weight: 700; }
+
+  /* Player de Áudio Narrativo */
+  .cp-audio-card { background: linear-gradient(135deg, rgba(18, 26, 46, 0.95), rgba(9, 14, 26, 0.98)); border: 1.5px solid rgba(255, 180, 143, 0.45); border-radius: 10px; padding: 15px 16px 14px; margin: 14px 0 18px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45); position: relative; overflow: hidden; }
+  .cp-audio-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--sol), transparent); }
+  .cp-audio-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; }
+  .cp-audio-tag { color: var(--sol); display: flex; align-items: center; gap: 6px; }
+  .cp-audio-tag svg { width: 14px; height: 14px; fill: currentColor; }
+  .cp-audio-badge { background: rgba(255, 180, 143, 0.15); border: 1px solid rgba(255, 180, 143, 0.35); color: var(--sol); padding: 2px 7px; border-radius: 4px; font-size: 10.5px; }
+  .cp-audio-body { display: flex; align-items: center; gap: 14px; }
+  .cp-audio-playbtn { flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--sol); color: var(--tinta); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(255, 180, 143, 0.4); transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease; }
+  .cp-audio-playbtn:hover { transform: scale(1.06); box-shadow: 0 6px 18px rgba(255, 180, 143, 0.6); }
+  .cp-audio-playbtn svg { width: 22px; height: 22px; fill: var(--tinta); }
+  .cp-audio-info { flex: 1; min-width: 0; }
+  .cp-audio-title { font-family: var(--display); font-weight: 800; font-size: 16px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cp-audio-status { font-size: 12px; color: rgba(255, 255, 255, 0.72); margin-top: 2px; display: flex; align-items: center; gap: 8px; }
+  .cp-audio-eq { display: inline-flex; align-items: flex-end; gap: 2.5px; height: 12px; }
+  .cp-audio-eq span { width: 2.5px; background: var(--sol); border-radius: 1px; height: 3px; transition: height 0.2s ease; }
+  .cp-audio-card.tocando .cp-audio-eq span:nth-child(1) { animation: eqJump 0.8s ease-in-out infinite alternate; }
+  .cp-audio-card.tocando .cp-audio-eq span:nth-child(2) { animation: eqJump 0.6s 0.2s ease-in-out infinite alternate; }
+  .cp-audio-card.tocando .cp-audio-eq span:nth-child(3) { animation: eqJump 0.9s 0.1s ease-in-out infinite alternate; }
+  .cp-audio-card.tocando .cp-audio-eq span:nth-child(4) { animation: eqJump 0.7s 0.3s ease-in-out infinite alternate; }
+  .cp-audio-card.tocando .cp-audio-eq span:nth-child(5) { animation: eqJump 0.85s 0.15s ease-in-out infinite alternate; }
+  @keyframes eqJump { 0% { height: 3px; } 100% { height: 12px; } }
+  .cp-audio-timeline { margin-top: 12px; display: flex; align-items: center; gap: 10px; }
+  .cp-audio-time { font-family: var(--display); font-weight: 700; font-size: 12px; color: rgba(255, 255, 255, 0.75); min-width: 32px; }
+  .cp-audio-scrub { flex: 1; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.18); outline: none; cursor: pointer; }
+  .cp-audio-scrub::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--sol); cursor: pointer; border: 2px solid #0B1530; box-shadow: 0 0 6px rgba(0,0,0,0.5); }
+  .cp-audio-scrub::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: var(--sol); cursor: pointer; border: 2px solid #0B1530; }
+  .cp-audio-tools { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 11.5px; }
+  .cp-audio-subtools { display: flex; align-items: center; gap: 8px; }
+  .cp-audio-btn { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.18); color: rgba(255, 255, 255, 0.85); padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.15s ease; }
+  .cp-audio-btn:hover { background: rgba(255, 255, 255, 0.16); color: #fff; border-color: var(--sol); }
+  .cp-audio-btn.ativo { background: rgba(255, 180, 143, 0.22); border-color: var(--sol); color: var(--sol); }
+
+  /* Floating mini-bar */
+  .cp-audio-float { position: fixed; bottom: calc(64px + env(safe-area-inset-bottom)); left: 12px; right: 12px; max-width: 496px; margin: 0 auto; background: rgba(11, 21, 48, 0.96); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--sol); border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; gap: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.6); z-index: 1000; animation: sobe 0.25s ease-out; }
+  .cp-audio-float-btn { width: 34px; height: 34px; border-radius: 50%; background: var(--sol); color: var(--tinta); border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: none; }
+  .cp-audio-float-btn svg { width: 16px; height: 16px; fill: var(--tinta); }
+  .cp-audio-float-info { flex: 1; min-width: 0; font-size: 12px; }
+  .cp-audio-float-title { font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; }
+  .cp-audio-float-sub { font-size: 10.5px; opacity: 0.75; color: var(--sol); }
+
+  /* Lightbox */
+  .cp-lightbox { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(3, 6, 12, 0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 2000; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 18px; }
+  .cp-lightbox-close { position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; font-size: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; }
+  .cp-lightbox-img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; box-shadow: 0 12px 40px rgba(0,0,0,0.8); border: 1px solid rgba(255, 255, 255, 0.2); }
+  .cp-lightbox-info { margin-top: 12px; color: #fff; text-align: center; max-width: 600px; font-size: 13.5px; line-height: 1.45; }
+  .cp-lightbox-info b { color: var(--sol); }
+
   .cp-boss-art { position: relative; margin-top: 10px; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,107,94,0.35); }
-  .cp-boss-art video, .cp-boss-art img { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; }
+  .cp-boss-art img { width: 100%; aspect-ratio: 16/9; display: block; object-fit: cover; }
   .cp-ev i { font-style: normal; text-align: center; font-weight: 800; }
   .cp-ev small { display: block; font-size: 12px; color: var(--sol); opacity: 0.9; margin-top: 2px; }
   .cp-ev.maldicao, .cp-ev.percalco, .cp-ev.juramento_quebrado { color: #FFC9C3; }
@@ -344,13 +404,227 @@ function cpLigarLeituras() {
   }));
 }
 const CP_ICO = { missao: '★', bencao: '✦', achado: '+', quieto: '·', percalco: '−', maldicao: '!', conquista: '+', presente: '✦', neutro: '·', juramento_quebrado: '!' };
+const CP_AUDIO_ICONS = {
+  play: '<svg viewBox="0 0 24 24"><polygon points="7,4 20,12 7,20"/></svg>',
+  pause: '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>'
+};
+
+let cpAudioFollow = false;
+let cpAudioRates = [1.0, 1.2, 1.5];
+let cpAudioRateIdx = 0;
+
+function cpFormatTime(s) {
+  if (isNaN(s) || s < 0) return '0:00';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec < 10 ? '0' : ''}${sec}`;
+}
+
+function cpPlayerNarracao() {
+  return `<div class="cp-audio-card" id="cp-audio-card">
+    <div class="cp-audio-header">
+      <div class="cp-audio-tag">
+        <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        <span>Crônicas de Cindra · Narração</span>
+      </div>
+      <div class="cp-audio-badge">Voz Neural pt-BR</div>
+    </div>
+    <div class="cp-audio-body">
+      <button class="cp-audio-playbtn" id="cp-audio-playbtn" aria-label="Reproduzir áudio da história">
+        ${CP_AUDIO_ICONS.play}
+      </button>
+      <div class="cp-audio-info">
+        <div class="cp-audio-title">Prólogo: A Margem do Sol Poente</div>
+        <div class="cp-audio-status">
+          <span id="cp-audio-status-txt">Toque para ouvir a narração (4:31)</span>
+          <div class="cp-audio-eq"><span></span><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="cp-audio-timeline">
+      <span class="cp-audio-time" id="cp-audio-curtime">0:00</span>
+      <input type="range" class="cp-audio-scrub" id="cp-audio-scrub" min="0" max="100" value="0" step="0.1" aria-label="Progresso do áudio">
+      <span class="cp-audio-time" id="cp-audio-tottime">4:31</span>
+    </div>
+    <div class="cp-audio-tools">
+      <div class="cp-audio-subtools">
+        <button class="cp-audio-btn" id="cp-audio-bwd" title="Voltar 10 segundos">-10s</button>
+        <button class="cp-audio-btn" id="cp-audio-fwd" title="Avançar 10 segundos">+10s</button>
+        <button class="cp-audio-btn" id="cp-audio-speed" title="Velocidade de reprodução">1.0x</button>
+      </div>
+      <button class="cp-audio-btn" id="cp-audio-follow" title="Acompanhar texto enquanto ouve">Acompanhar texto</button>
+    </div>
+    <audio id="cp-audio-el" preload="metadata" src="art/prologo_narracao.mp3"></audio>
+  </div>
+  <div class="cp-audio-float" id="cp-audio-floating" style="display:none">
+    <button class="cp-audio-float-btn" id="cp-audio-float-play">
+      ${CP_AUDIO_ICONS.play}
+    </button>
+    <div class="cp-audio-float-info">
+      <div class="cp-audio-float-title">Prólogo: A Margem do Sol Poente</div>
+      <div class="cp-audio-float-sub"><span id="cp-audio-float-time">0:00 / 4:31</span> · Ouvindo narração</div>
+    </div>
+    <button class="cp-audio-btn" id="cp-audio-float-scroll" style="flex:none">Ver texto</button>
+  </div>`;
+}
+
+function cpLigarAudioPlayer() {
+  const audio = document.getElementById('cp-audio-el');
+  const card = document.getElementById('cp-audio-card');
+  const playBtn = document.getElementById('cp-audio-playbtn');
+  const scrub = document.getElementById('cp-audio-scrub');
+  const curTime = document.getElementById('cp-audio-curtime');
+  const totTime = document.getElementById('cp-audio-tottime');
+  const statusTxt = document.getElementById('cp-audio-status-txt');
+  const bwdBtn = document.getElementById('cp-audio-bwd');
+  const fwdBtn = document.getElementById('cp-audio-fwd');
+  const speedBtn = document.getElementById('cp-audio-speed');
+  const followBtn = document.getElementById('cp-audio-follow');
+  const floatBar = document.getElementById('cp-audio-floating');
+  const floatPlay = document.getElementById('cp-audio-float-play');
+  const floatTime = document.getElementById('cp-audio-float-time');
+  const floatScroll = document.getElementById('cp-audio-float-scroll');
+
+  if (!audio || !playBtn || !card) return;
+
+  function setPlayingState(playing) {
+    if (playing) {
+      card.classList.add('tocando');
+      playBtn.innerHTML = CP_AUDIO_ICONS.pause;
+      if (floatPlay) floatPlay.innerHTML = CP_AUDIO_ICONS.pause;
+      statusTxt.textContent = 'Reproduzindo narração...';
+    } else {
+      card.classList.remove('tocando');
+      playBtn.innerHTML = CP_AUDIO_ICONS.play;
+      if (floatPlay) floatPlay.innerHTML = CP_AUDIO_ICONS.play;
+      statusTxt.textContent = audio.currentTime > 0 ? 'Pausado · Toque para continuar' : 'Toque para ouvir a narração (4:31)';
+      if (floatBar) floatBar.style.display = 'none';
+    }
+  }
+
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play().then(() => {
+        setPlayingState(true);
+      }).catch(err => {
+        console.warn('Erro ao reproduzir áudio:', err);
+      });
+    } else {
+      audio.pause();
+      setPlayingState(false);
+    }
+  }
+
+  playBtn.addEventListener('click', togglePlay);
+  if (floatPlay) floatPlay.addEventListener('click', togglePlay);
+
+  if (floatScroll) {
+    floatScroll.addEventListener('click', () => {
+      const el = document.getElementById('cp-bloco-prologo') || card;
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+
+  audio.addEventListener('loadedmetadata', () => {
+    if (audio.duration && !isNaN(audio.duration)) {
+      totTime.textContent = cpFormatTime(audio.duration);
+    }
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    const cur = audio.currentTime;
+    const dur = audio.duration || 271.9;
+    curTime.textContent = cpFormatTime(cur);
+    if (floatTime) floatTime.textContent = `${cpFormatTime(cur)} / ${cpFormatTime(dur)}`;
+    const pct = Math.min(100, Math.max(0, (cur / dur) * 100));
+    scrub.value = pct;
+    scrub.style.background = `linear-gradient(to right, var(--sol) 0%, var(--sol) ${pct}%, rgba(255,255,255,0.18) ${pct}%, rgba(255,255,255,0.18) 100%)`;
+
+    // Acompanhar texto se ativado
+    if (cpAudioFollow) {
+      const prol = document.getElementById('cp-prol');
+      if (prol) {
+        if (prol.classList.contains('fechada')) {
+          prol.classList.remove('fechada');
+          const btnLer = document.querySelector('.cp-ler[data-alvo="cp-prol"]');
+          if (btnLer) btnLer.textContent = 'Recolher';
+        }
+        const textH = prol.scrollHeight;
+        const targetScroll = prol.offsetTop + (textH * (pct / 100)) - 140;
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      }
+    }
+  });
+
+  audio.addEventListener('ended', () => {
+    setPlayingState(false);
+    statusTxt.textContent = 'Narração concluída';
+  });
+
+  scrub.addEventListener('input', () => {
+    const dur = audio.duration || 271.9;
+    audio.currentTime = (parseFloat(scrub.value) / 100) * dur;
+  });
+
+  if (bwdBtn) {
+    bwdBtn.addEventListener('click', () => {
+      audio.currentTime = Math.max(0, audio.currentTime - 10);
+    });
+  }
+  if (fwdBtn) {
+    fwdBtn.addEventListener('click', () => {
+      const dur = audio.duration || 271.9;
+      audio.currentTime = Math.min(dur, audio.currentTime + 10);
+    });
+  }
+
+  if (speedBtn) {
+    speedBtn.addEventListener('click', () => {
+      cpAudioRateIdx = (cpAudioRateIdx + 1) % cpAudioRates.length;
+      const rate = cpAudioRates[cpAudioRateIdx];
+      audio.playbackRate = rate;
+      speedBtn.textContent = rate.toFixed(1) + 'x';
+    });
+  }
+
+  if (followBtn) {
+    followBtn.addEventListener('click', () => {
+      cpAudioFollow = !cpAudioFollow;
+      followBtn.classList.toggle('ativo', cpAudioFollow);
+      followBtn.textContent = cpAudioFollow ? '✓ Acompanhando' : 'Acompanhar texto';
+      if (cpAudioFollow) {
+        const prol = document.getElementById('cp-prol');
+        if (prol && prol.classList.contains('fechada')) {
+          prol.classList.remove('fechada');
+          const btnLer = document.querySelector('.cp-ler[data-alvo="cp-prol"]');
+          if (btnLer) btnLer.textContent = 'Recolher';
+        }
+      }
+    });
+  }
+
+  if (typeof IntersectionObserver !== 'undefined' && floatBar) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting && !audio.paused) {
+          floatBar.style.display = 'flex';
+        } else {
+          floatBar.style.display = 'none';
+        }
+      });
+    }, { threshold: 0.1 });
+    obs.observe(card);
+  }
+}
+
 function cpPrologo() {
   const p = (HISTORIA || {}).prologo; if (!p) return '';
-  return `<section class="bloco"><div class="cab"><h2>Prólogo</h2><small>o mundo e a companhia</small></div>
+  return `<section class="bloco" id="cp-bloco-prologo"><div class="cab"><h2>Prólogo</h2><small>o mundo e a companhia</small></div>
     <div style="border-radius:6px;overflow:hidden;margin:10px 0 14px;border:1px solid rgba(255,255,255,0.2)">
       <img src="art/andarilho_sete.jpg" alt="O Andarilho-07" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
     </div>
     <h3 style="font-family:var(--display);font-size:24px;margin:2px 0 0">${esc(p.subtitulo || p.titulo)}</h3>
+    ${cpPlayerNarracao()}
     <div style="margin-top:14px">${cpLeitura('cp-prol', p.texto, p.minutos, 'Ler o prólogo inteiro')}</div></section>`;
 }
 function cpEncerramento() {
@@ -498,72 +772,338 @@ function cpAventura() {
     `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende sigilo novo.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
   return h;
 }
-const CP_VISUAIS = [
+const CP_DIORAMA_ITEMS = [
   {
     id: 'andarilho',
     titulo: 'O Andarilho-07',
-    video: 'art/andarilho_cinematico.mp4',
-    poster: 'art/andarilho_sete.jpg',
-    desc: 'O colossal trator a vapor <b>Andarilho-07</b> quebrando o gelo no Limiar do Crepúsculo sob o sol vermelho de <em>Cindra</em>.'
+    tag: 'Vanguarda do Limiar',
+    img: 'art/andarilho_sete.jpg',
+    fx: 'nevasca',
+    desc: '<b>O Andarilho-07 (Vanguard-Sete)</b> — trator colossal a vapor e diesel de 40 toneladas quebrando as placas de permafrost no Limiar do Crepúsculo sob o sol carmesim de <em>Cindra</em>.'
   },
   {
     id: 'refugio',
     titulo: 'Vagão de Refúgio',
-    video: 'art/vagao_cinematico.mp4',
-    poster: 'art/vagao_refugio.jpg',
-    desc: '<b>Fábio, Dra. Elisa Vane, Mikael, Vardan</b> e os mastins <b>Canela & Gero</b> aquecidos junto à fornalha após a vigília no gelo.'
+    tag: 'Interior da Tripulação',
+    img: 'art/vagao_refugio.jpg',
+    fx: 'fornalha',
+    desc: '<b>Fábio, Dra. Elisa Vane, Mikael, Vardan</b> e os mastins <b>Canela & Gero</b> aquecidos pelo calor do fogão de ferro fundido com brotos em estufas geodésicas protegidos do gelo.'
   },
   {
     id: 'patrulha',
     titulo: 'Patrulha do Limiar',
-    video: 'art/patrulha_cinematico.mp4',
-    poster: 'art/patrulha_crepusculo.jpg',
-    desc: '<b>Fábio</b> e os cães em patrulha na vanguarda do permafrost, marcando fendas com sinalizadores antes da nevasca.'
+    tag: 'Batedores no Gelo',
+    img: 'art/patrulha_crepusculo.jpg',
+    fx: 'nevasca',
+    desc: '<b>Fábio</b> e os cães batedores na vanguarda a pé pelo permafrost, cravando sinalizadores de magnésio âmbar antes da tempestade de sílica.'
   },
   {
     id: 'barreira',
     titulo: 'Barreira de Gelo Azul',
-    video: 'art/barreira_cinematico.mp4',
-    poster: 'art/barreira_gelo_azul.jpg',
-    desc: '<b>A Barreira de Gelo Azul (Chefe do Arco I)</b> — muralha de oitenta metros bloqueando o desfiladeiro da montanha.'
+    tag: 'Chefe do Arco I',
+    img: 'art/barreira_gelo_azul.jpg',
+    fx: 'crepusculo',
+    desc: '<b>A Barreira de Gelo Azul</b> — colossal falha glacial de 80 metros de safira maciça bloqueando o desfiladeiro. Só cederá quando a fornalha atingir pressão máxima.'
   }
 ];
 
-function cpVisualStage() {
-  const v = CP_VISUAIS[0];
+function cpDioramaStage() {
+  const item = CP_DIORAMA_ITEMS[0];
   return `<section class="bloco" style="padding-bottom:12px">
-    <div class="cab"><h2>Crônicas Visuais</h2><small>ilustrações & cinematografia do Gemini</small></div>
-    <div class="cp-cinematica">
-      <video id="cp-video-stage" class="cp-cinematica-video" autoplay loop muted playsinline poster="${v.poster}">
-        <source src="${v.video}" type="video/mp4">
-        <img src="${v.poster}" alt="${esc(v.titulo)}" style="width:100%;display:block">
-      </video>
-      <div class="cp-cinematica-tabs" id="cp-vis-tabs">
-        ${CP_VISUAIS.map((item, idx) => `<button class="cp-cinematica-btn ${idx === 0 ? 'on' : ''}" data-idx="${idx}">${esc(item.titulo)}</button>`).join('')}
+    <div class="cab"><h2>Crônicas Visuais de Cindra</h2><small>ilustrações & atmosfera viva</small></div>
+    <div class="cp-diorama-wrap">
+      <div class="cp-diorama-stage" id="cp-diorama-stage">
+        <img id="cp-diorama-img" class="cp-diorama-img" src="${item.img}" alt="${esc(item.titulo)}">
+        <canvas id="cp-diorama-canvas" class="cp-diorama-canvas"></canvas>
+        <div class="cp-diorama-topbar">
+          <span class="cp-diorama-tag" id="cp-diorama-tag">${item.tag}</span>
+          <button class="cp-diorama-inspect" id="cp-diorama-inspect-btn" title="Ver detalhes em alta resolução">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Inspecionar Arte</span>
+          </button>
+        </div>
       </div>
-      <div class="cp-cinematica-caption" id="cp-vis-desc">${v.desc}</div>
+      <div class="cp-diorama-fxbar">
+        <span style="opacity:0.75;font-weight:700">Atmosfera:</span>
+        <div class="cp-diorama-fxbtns" id="cp-diorama-fxbtns">
+          <button class="cp-fx-btn on" data-fx="nevasca">❄️ Nevasca</button>
+          <button class="cp-fx-btn" data-fx="fornalha">🔥 Fornalha</button>
+          <button class="cp-fx-btn" data-fx="crepusculo">🌅 Crepúsculo</button>
+          <button class="cp-fx-btn" data-fx="off">⏹ Estático</button>
+        </div>
+      </div>
+      <div class="cp-diorama-tabs" id="cp-diorama-tabs">
+        ${CP_DIORAMA_ITEMS.map((it, idx) => `<button class="cp-diorama-tab ${idx === 0 ? 'on' : ''}" data-idx="${idx}">${esc(it.titulo)}</button>`).join('')}
+      </div>
+      <div class="cp-diorama-caption" id="cp-diorama-desc">${item.desc}</div>
     </div>
   </section>`;
 }
 
-function cpLigarVisualStage() {
-  const tabs = document.querySelectorAll('#cp-vis-tabs button');
-  const vid = document.getElementById('cp-video-stage');
-  const desc = document.getElementById('cp-vis-desc');
-  if (!tabs.length || !vid || !desc) return;
+let cpDioramaAnimId = null;
+let cpDioramaCurrentIdx = 0;
+let cpDioramaCurrentFx = 'nevasca';
+
+function cpLigarDiorama() {
+  const stage = document.getElementById('cp-diorama-stage');
+  const canvas = document.getElementById('cp-diorama-canvas');
+  const img = document.getElementById('cp-diorama-img');
+  const tag = document.getElementById('cp-diorama-tag');
+  const desc = document.getElementById('cp-diorama-desc');
+  const tabs = document.querySelectorAll('#cp-diorama-tabs button');
+  const fxBtns = document.querySelectorAll('#cp-diorama-fxbtns button');
+  const inspectBtn = document.getElementById('cp-diorama-inspect-btn');
+  if (!stage || !canvas || !img) return;
+
+  if (cpDioramaAnimId) {
+    cancelAnimationFrame(cpDioramaAnimId);
+    cpDioramaAnimId = null;
+  }
+
+  const ctx = canvas.getContext('2d');
+  let width = 0, height = 0;
+  let isVisible = true;
+  let mouseX = -1000, mouseY = -1000;
+
+  function resize() {
+    const rect = stage.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  stage.addEventListener('pointermove', e => {
+    const rect = stage.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+    const nx = (mouseX / rect.width) - 0.5;
+    const ny = (mouseY / rect.height) - 0.5;
+    img.style.transform = `scale(1.04) translate(${nx * -12}px, ${ny * -8}px) rotateY(${nx * 4}deg) rotateX(${ny * -3}deg)`;
+  });
+  stage.addEventListener('pointerleave', () => {
+    mouseX = -1000;
+    mouseY = -1000;
+    img.style.transform = 'scale(1.02) translate(0px, 0px) rotate(0deg)';
+  });
+
+  const SNOW_COUNT = 70;
+  const snowflakes = [];
+  for (let i = 0; i < SNOW_COUNT; i++) {
+    snowflakes.push({
+      x: Math.random() * (width || 500),
+      y: Math.random() * (height || 300),
+      r: 0.8 + Math.random() * 2.2,
+      vy: 0.6 + Math.random() * 1.6,
+      vx: -0.4 + Math.random() * 0.4,
+      alpha: 0.25 + Math.random() * 0.6,
+      swirl: Math.random() * Math.PI * 2
+    });
+  }
+
+  const EMBER_COUNT = 30;
+  const embers = [];
+  for (let i = 0; i < EMBER_COUNT; i++) {
+    embers.push({
+      x: Math.random() * (width || 500),
+      y: (height || 300) + Math.random() * 50,
+      r: 1 + Math.random() * 2,
+      speed: 0.8 + Math.random() * 1.4,
+      alpha: 0.4 + Math.random() * 0.6,
+      jitter: Math.random() * Math.PI * 2
+    });
+  }
+
+  const STEAM_COUNT = 15;
+  const steams = [];
+  for (let i = 0; i < STEAM_COUNT; i++) {
+    steams.push({
+      x: (width || 500) * 0.3 + (Math.random() - 0.5) * 80,
+      y: (height || 300) * 0.7 + Math.random() * 60,
+      r: 15 + Math.random() * 25,
+      vy: 0.4 + Math.random() * 0.5,
+      alpha: 0.08 + Math.random() * 0.12
+    });
+  }
+
+  let startTime = performance.now();
+
+  function loop(now) {
+    if (!isVisible) {
+      cpDioramaAnimId = requestAnimationFrame(loop);
+      return;
+    }
+    const t = now - startTime;
+    ctx.clearRect(0, 0, width, height);
+
+    if (cpDioramaCurrentFx === 'nevasca') {
+      const wind = Math.sin(t * 0.001) * 0.9 - 0.8;
+      for (let i = 0; i < snowflakes.length; i++) {
+        const p = snowflakes[i];
+        p.swirl += 0.02;
+        p.x += p.vx + wind + Math.sin(p.swirl) * 0.3;
+        p.y += p.vy;
+
+        if (mouseX > -500) {
+          const dx = p.x - mouseX;
+          const dy = p.y - mouseY;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 75 && dist > 1) {
+            p.x += (dx / dist) * 2;
+            p.y += (dy / dist) * 2;
+          }
+        }
+
+        if (p.y > height + 5) { p.y = -5; p.x = Math.random() * width; }
+        if (p.x < -10) { p.x = width + 10; }
+        if (p.x > width + 10) { p.x = -10; }
+
+        ctx.fillStyle = `rgba(235, 245, 255, ${p.alpha})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    } else if (cpDioramaCurrentFx === 'fornalha') {
+      const warmGlow = ctx.createRadialGradient(width * 0.5, height * 0.75, 10, width * 0.5, height * 0.75, width * 0.5);
+      warmGlow.addColorStop(0, 'rgba(255, 150, 60, 0.12)');
+      warmGlow.addColorStop(1, 'rgba(255, 150, 60, 0)');
+      ctx.fillStyle = warmGlow;
+      ctx.fillRect(0, 0, width, height);
+
+      for (let i = 0; i < steams.length; i++) {
+        const s = steams[i];
+        s.y -= s.vy;
+        s.r += 0.15;
+        s.alpha *= 0.995;
+        if (s.y < height * 0.1 || s.alpha < 0.01) {
+          s.x = width * 0.3 + (Math.random() - 0.5) * 80;
+          s.y = height * 0.75 + Math.random() * 20;
+          s.r = 15 + Math.random() * 20;
+          s.alpha = 0.08 + Math.random() * 0.12;
+        }
+        const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r);
+        grad.addColorStop(0, `rgba(240, 230, 220, ${s.alpha})`);
+        grad.addColorStop(1, 'rgba(240, 230, 220, 0)');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      for (let i = 0; i < embers.length; i++) {
+        const e = embers[i];
+        e.jitter += 0.06;
+        e.y -= e.speed;
+        e.x += Math.sin(e.jitter) * 0.7;
+        if (e.y < -10) {
+          e.y = height + 10;
+          e.x = Math.random() * width;
+        }
+        ctx.fillStyle = `rgba(255, 185, 80, ${e.alpha})`;
+        ctx.beginPath();
+        ctx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    } else if (cpDioramaCurrentFx === 'crepusculo') {
+      const sunPulse = 0.08 + 0.04 * Math.sin(t * 0.0018);
+      const sunGrad = ctx.createRadialGradient(width * 0.5, height * 0.85, 15, width * 0.5, height * 0.85, width * 0.7);
+      sunGrad.addColorStop(0, `rgba(255, 80, 50, ${sunPulse * 1.5})`);
+      sunGrad.addColorStop(0.5, `rgba(220, 50, 40, ${sunPulse})`);
+      sunGrad.addColorStop(1, 'rgba(180, 30, 30, 0)');
+      ctx.fillStyle = sunGrad;
+      ctx.fillRect(0, 0, width, height);
+
+      for (let i = 0; i < 30; i++) {
+        const p = snowflakes[i];
+        p.x += -0.3 + Math.sin(t * 0.001 + i) * 0.2;
+        p.y += 0.4;
+        if (p.y > height) p.y = 0;
+        if (p.x < 0) p.x = width;
+        ctx.fillStyle = `rgba(255, 220, 210, ${p.alpha * 0.7})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r * 0.8, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    cpDioramaAnimId = requestAnimationFrame(loop);
+  }
+
+  cpDioramaAnimId = requestAnimationFrame(loop);
+
+  if (typeof IntersectionObserver !== 'undefined') {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+      });
+    }, { threshold: 0.1 });
+    obs.observe(stage);
+  }
+
   tabs.forEach(btn => {
     btn.addEventListener('click', () => {
       tabs.forEach(b => b.classList.remove('on'));
       btn.classList.add('on');
-      const item = CP_VISUAIS[parseInt(btn.dataset.idx, 10)];
+      const idx = parseInt(btn.dataset.idx, 10);
+      cpDioramaCurrentIdx = idx;
+      const item = CP_DIORAMA_ITEMS[idx];
       if (item) {
-        vid.poster = item.poster;
-        vid.src = item.video;
-        vid.play().catch(() => {});
+        img.style.opacity = '0';
+        setTimeout(() => {
+          img.src = item.img;
+          img.alt = item.titulo;
+          img.style.opacity = '1';
+        }, 120);
+        tag.textContent = item.tag;
         desc.innerHTML = item.desc;
+        cpDioramaCurrentFx = item.fx || 'nevasca';
+        fxBtns.forEach(fb => fb.classList.toggle('on', fb.dataset.fx === cpDioramaCurrentFx));
       }
     });
   });
+
+  fxBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      fxBtns.forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      cpDioramaCurrentFx = btn.dataset.fx;
+    });
+  });
+
+  if (inspectBtn) {
+    inspectBtn.addEventListener('click', () => {
+      const item = CP_DIORAMA_ITEMS[cpDioramaCurrentIdx] || CP_DIORAMA_ITEMS[0];
+      const modal = document.createElement('div');
+      modal.className = 'cp-lightbox';
+      modal.innerHTML = `
+        <button class="cp-lightbox-close" id="cp-lb-close" aria-label="Fechar">✕</button>
+        <img class="cp-lightbox-img" src="${item.img}" alt="${esc(item.titulo)}">
+        <div class="cp-lightbox-info">
+          <b style="display:block;font-size:16px;margin-bottom:4px">${esc(item.titulo)} · ${esc(item.tag)}</b>
+          ${item.desc}
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      function fechar() {
+        if (modal.parentNode) modal.parentNode.removeChild(modal);
+        window.removeEventListener('keydown', onKey);
+      }
+      function onKey(e) {
+        if (e.key === 'Escape') fechar();
+      }
+      modal.querySelector('#cp-lb-close').addEventListener('click', fechar);
+      modal.addEventListener('click', e => {
+        if (e.target === modal) fechar();
+      });
+      window.addEventListener('keydown', onKey);
+    });
+  }
 }
 
 function renderCampanha() {
@@ -591,15 +1131,12 @@ function renderCampanha() {
       <div class="cp-chip"><b>+${fNum(j.hoje.xp || 0, 0)}</b><span>XP de hoje até a última leitura</span></div></div>
   </div></div>`;
 
-  h += cpVisualStage();
+  h += cpDioramaStage();
   h += cpAventura();
   h += `<section class="bloco"><div class="cab"><h2>O mapa</h2><small>de 95 a 85 kg, pela média de 28 dias</small></div>${cpMapa()}
     ${a.chefe ? `<div class="cp-hp"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><b style="font-family:var(--display);font-size:19px">${esc(a.chefe)}</b><span style="font-weight:700">${Math.round((a.hp || 0) * 100)}%</span></div>
       <div class="cp-boss-art">
-        <video class="cp-cinematica-video" autoplay loop muted playsinline poster="art/barreira_gelo_azul.jpg">
-          <source src="art/barreira_cinematico.mp4" type="video/mp4">
-          <img src="art/barreira_gelo_azul.jpg" alt="${esc(a.chefe)}" style="width:100%;display:block">
-        </video>
+        <img src="art/barreira_gelo_azul.jpg" alt="${esc(a.chefe)}" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;">
       </div>
       <div class="tr" role="img" aria-label="Vida do chefe: ${Math.round((a.hp || 0) * 100)} por cento" style="margin-top:10px"><i style="width:${((a.hp || 0) * 100).toFixed(1)}%"></i></div>
       <div class="lg">Arco ${esc(a.num)}: ${esc(a.nome)}. A vida do chefe é o que falta no degrau de ${fNum(a.de, 1)} a ${fNum(a.ate, 1)} kg, pela média de 28 dias das leituras neutras (hoje ${fNum(j.media_28d, 2)} kg). Atualiza uma vez por semana; pesagem isolada, e a de depois de jogo, não fere chefe nenhum. O chefe não dá XP.</div></div>` : ''}
@@ -629,5 +1166,7 @@ function renderCampanha() {
   $('view').innerHTML = h;
   cpPosicionarMarca();
   cpLigarPixel();
-  cpLigarVisualStage();
+  cpLigarDiorama();
+  cpLigarAudioPlayer();
+  cpLigarLeituras();
 }
