@@ -250,6 +250,10 @@ def bloco_treino(resumo, garmin_hist, regs, desde, atividades=None):
     ativ = [{k: a.get(k) for k in ("id", "tipo", "nome", "inicio_local", "duracao_min", "distancia_km",
                                    "fc_media", "fc_max", "kcal", "tempo_em_zona_s")}
             for a in (atividades or []) if (a.get("inicio_local") or "")[:10] >= desde]
+    # Passeio com os cachorros (missão paralela, 02/11): marcado no Garmin como caminhada. Não é sessão de treino.
+    for a in ativ:
+        if a.get("tipo") in ("hiking", "walking", "casual_walking", "speed_walking"):
+            a["nao_e_treino"] = "passeio com os cachorros (missão paralela) ou caminhada: não conta como sessão"
     sessoes = [x for x in (_sessao_do_painel(r) for r in treinos_reg) if x]
     # Casa a sessão do painel com a atividade de força do Garmin do MESMO dia (se o Fabio marcou o relógio).
     for x in sessoes:

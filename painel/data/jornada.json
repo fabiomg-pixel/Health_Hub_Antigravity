@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-02T09:23:35",
+ "gerado_em": "2026-11-02T10:04:41",
  "fontes": {
   "registros_ok": true,
   "registros_desde": "2026-06-29",
@@ -10,8 +10,8 @@
   "classe": "Pesquisador de Campo",
   "nivel": 5,
   "titulo": "Escudeiro do Conselho",
-  "xp_total": 9960,
-  "xp_no_nivel": 2960,
+  "xp_total": 9975,
+  "xp_no_nivel": 2975,
   "xp_para_proximo": 3000
  },
  "vitalidade": {
@@ -86,7 +86,7 @@
    {
     "id": "caes",
     "nome": "Passeio com os cachorros",
-    "feito": 0,
+    "feito": 1,
     "meta": 5,
     "cumprida": false
    },
@@ -121,7 +121,7 @@
  },
  "hoje": {
   "data": "2026-11-02",
-  "xp": 0,
+  "xp": 15,
   "missoes": [
    {
     "nome": "Dia ativo",
@@ -147,7 +147,7 @@
   ],
   "ferido": false,
   "paralelas": {
-   "caes": false,
+   "caes": true,
    "rotina": false
   }
  },
@@ -1025,7 +1025,7 @@
   "2026-10-30": 170,
   "2026-10-31": 50,
   "2026-11-01": 40,
-  "2026-11-02": 0
+  "2026-11-02": 15
  },
  "dias": {
   "2026-10-13": {
@@ -1326,9 +1326,14 @@
    "ativo": false
   },
   "2026-11-02": {
-   "xp": 0,
-   "itens": [],
-   "marcas": [],
+   "xp": 15,
+   "itens": [
+    "Passeio com os cachorros"
+   ],
+   "marcas": [
+    "paralela_caes",
+    "registro"
+   ],
    "ativo": false
   }
  },

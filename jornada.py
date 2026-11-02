@@ -124,13 +124,28 @@ for e in EVENTOS:
 REG_DESDE = min((x['data'] for x in REG if x.get('data')), default=None)
 
 
+# Passeio com os cachorros (missão paralela, 02/11): ele marca no Garmin como caminhada (hiking). "Não conta como
+# exercício real": nos dias com a missão, as calorias dessas atividades saem da conta do dia ativo.
+PASSEIO_TIPOS = {'hiking', 'walking', 'casual_walking', 'speed_walking', 'trail_running'}
+ATIV_GARMIN = (ler('garmin_out.json', {}) or {}).get('atividades', []) + (FATOS.get('treino_7d') or {}).get('atividades_garmin', [])
+
+
+def kcal_passeio(s):
+    vistos, tot = set(), 0
+    for a in ATIV_GARMIN:
+        if (a.get('inicio_local') or '')[:10] == s and a.get('tipo') in PASSEIO_TIPOS and a.get('id') not in vistos:
+            vistos.add(a.get('id')); tot += a.get('kcal') or 0
+    return tot
+
+
 def ativo(d):
     """True / False / None (sem dado do relógio e sem treino registrado)."""
     s = d.isoformat()
     if 'treino' in por_dia[s]: return True
     g = G.get(s)
     if g is None or g.get('kcal_ativas') is None: return None
-    return g['kcal_ativas'] >= R['dia_ativo_kcal']
+    kcal = g['kcal_ativas'] - (kcal_passeio(s) if 'paralela_caes' in por_dia[s] else 0)
+    return kcal >= R['dia_ativo_kcal']
 
 
 def xp_do_dia(d):
