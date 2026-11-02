@@ -1,14 +1,14 @@
 {
- "gerado_em": "2026-10-25",
- "semana": "26/10 a 01/11 · nível de base subido: 3 forças, 3 corridas, 1 de qualidade",
- "objetivo": "Nível de base subido em 27/10: 3 forças com RIR 2 e progressão de carga, 3 corridas (2 em zona 2 sem teto de velocidade, 1 de qualidade), 1 dia de descanso. Os cortes da fase do resfriado saíram; ficam os sinais de segurança (febre, peito, dor articular) e o semáforo novo.",
- "peso_atual": 94.96,
- "peso_rotulo": "média das 7 leituras neutras (28 dias: 94,91 kg); última pesagem 23/10 (94,55 kg) foi pós-esforço e não entra",
+ "gerado_em": "2026-11-02",
+ "semana": "02/11 a 08/11 · uma semana de recuperação ativa: 2 forças, 2 corridas fáceis e o jogo",
+ "objetivo": "Depois de uma semana com 3 estímulos fortes e 3 manhãs vermelhas seguidas (FC de repouso 58 hoje), o plano é: 2 forças (RIR 2), 2 corridas fáceis em zona 2 e o jogo de sábado como única qualidade. A 3ª força e a 3ª corrida do teto não cabem sem empilhar 3 dias de carga; ficam para a semana seguinte, sem reposição cobrada.",
+ "peso_atual": 94.62,
+ "peso_rotulo": "média das leituras neutras dos últimos 7 dias (28 dias: 94,84 kg); a pesagem de 01/11 (94,7 kg) é pós-esforço e não entra",
  "fontes_status": {
-  "garmin": "ok, fatos.json de 25/10 (manhã verde: índice 82, FC de repouso 48, VFC 43, sono 6,46 h; prontidão 81; 0 manhãs vermelhas seguidas). Respostas do Fabio de 25/10 17h02 incorporadas (médico liberou exercício; amoxicilina com clavulanato; sem falta de ar nem aperto no peito)",
-  "peso": "última pesagem 23/10 (94,55 kg, pós-esforço, não conta); sem pesagem em 24 e 25/10",
-  "logistica": "previsão Open-Meteo; respostas do Fabio de 26/10 (quarta livre na rua, fim de semana em casa, sem jogo); nível de base subido em 27/10",
-  "clinico": "dias restantes do antibiótico: não sei"
+  "garmin": "parcial: hoje (02/11) o índice é 14 (vermelho, 3 manhãs vermelhas seguidas) e a FC de repouso 58; sono e VFC de hoje ainda não sincronizaram, então o índice de hoje não é confiável. Prontidão e sono de 01/11 vêm da análise de domingo (índice 21, prontidão 1, VFC 30, sono 6,03 h).",
+  "peso": "média de 7 leituras neutras; pesagem de 01/11 pós-esforço",
+  "logistica": "previsão Open-Meteo de 01/11; respostas do Fabio de 01/11 (sem reunião no fim da tarde, academia com plano em casa, sem viagem, jogo no sábado)",
+  "clinico": "sem sintoma relatado nas respostas de 01/11; ibuprofeno e antibiótico: não sei"
  },
  "dieta": {
   "calorias": 1900,
@@ -22,57 +22,50 @@
  "regra_prato": {
   "titulo": "Cinco coisas nesta semana. O resto é o de sempre.",
   "linhas": [
-   "Segunda, braços e costas com 2 repetições de sobra. O painel mostra o semáforo; você só clica em iniciar.",
-   "Quarta, corrida fácil de 40 min em zona 2 (FC 130 a 145), sem teto de velocidade.",
-   "Lanche das 15h às 16h, todo dia: fruta inteira + iogurte ou Yopro, antes de qualquer doce.",
-   "Peixe em 2 jantas (sardinha ou atum em lata serve).",
-   "Feijão, lentilha ou grão-de-bico em 3 refeições. O de sempre continua: almoço antes das 13h (marmita com 35 g no rótulo e vegetal em pedaço, de terça a sexta), salada fresca no jantar, fritura no máximo 1, uma refeição livre no sábado à noite."
+   "Lanche das 15h vira pré-treino: iogurte natural desnatado 160 g + fruta (ou Yopro), ANTES de qualquer doce. Obrigatório nos dias de corrida e de academia.",
+   "Almoço de segunda a sexta: marmita com 35 g ou mais de proteína NO RÓTULO e vegetal em pedaço.",
+   "Janta caseira simples: 1 proteína + salada fresca. Peixe em 1 janta (quarta), feijão ou lentilha em 2 refeições.",
+   "Refeição livre só no sábado à noite; fritura no máximo 1 na semana, a livre incluída.",
+   "Antes do jogo de sábado: banana + iogurte ou Yopro. Nunca em jejum."
   ]
  },
  "tendencias": {
-  "prontidao_garmin_hoje": 81,
-  "indice_agudo_hoje": 82,
-  "indice_medio_7d": 60.0,
-  "sono_media_7d": 6.68,
-  "sono_score_hoje": 79,
+  "prontidao_garmin_hoje": null,
+  "indice_agudo_hoje": 14,
+  "indice_medio_7d": 43.0,
+  "sono_media_7d": 6.84,
+  "sono_score_hoje": null,
   "rem_hoje": null,
   "training_status": null,
   "prontidao": [],
-  "prontidao_media_7d": 62
+  "prontidao_media_7d": null
  },
  "status_treino": {
-  "planejado": 4,
+  "planejado": 5,
   "feito": 0,
   "dias_feitos": []
  },
  "relatorio": [
-  "Semana 26/10 a 01/11, no nível de base (27/10): 3 forças com 2 repetições de sobra, 3 corridas (zona 2 e uma de qualidade) e 1 descanso. Sábado e domingo completam o que faltou na semana: o futebol de sábado foi a sessão de qualidade, e a força de corpo inteiro B passou para domingo (em casa, com TRX e o peso do corpo, se preferir). Corte só por febre, falta de ar, aperto ou tosse no peito, dor articular acima de 3/10 ou pelo semáforo do painel.",
-  "Atualizado em 26/10 à noite com as suas respostas: quarta livre para a corrida na rua; fim de semana em casa, sem jogo; nenhuma marmita no freezer. A corrida de segunda (Threshold do Garmin) foi fora do plano e usa a 1ª das 2 corridas da semana: no fim de semana fica só caminhada.",
-  "Semana 26/10 a 01/11. A manhã de 25/10 veio verde: índice 82, FC de repouso 48, VFC 43. A média de 7 dias do índice é 60: a recuperação está começando e ainda é uma manhã verde só.",
-  "Você disse que o médico liberou o exercício com a amoxicilina com clavulanato e que não há falta de ar nem aperto no peito. Não sei quantos dias de antibiótico faltam: assumi a semana toda.",
-  "A demanda sobe dois níveis pelo volume, não pela intensidade: até 2 forças e 2 corridas fáceis, sem tiros nem teste. A avaliação de força de segunda só vale se a manhã de segunda também vier verde.",
-  "Quarta 28/10 é a única janela seca de rua (Open-Meteo). Quinta e sexta têm chuva forte.",
-  "Você não respondeu à logística: planejei pelo pior caso (fim de semana fora e sem equipamento, jogo possível nos dois dias, quarta possivelmente ocupada). Fim de semana sem sessão marcada.",
-  "Alimentação: lanche das 15h com fruta e iogurte antes do doce; peixe em 2 jantas, leguminosa em 3 refeições, fritura no máximo 1; sábado à noite é a refeição livre.",
-  "Corte: duas manhãs vermelhas seguidas, febre ou tosse piorando derrubam a próxima corrida; falta de ar ou aperto no peito derrubam tudo e avisam o médico.",
-  "Peso: média das neutras 94,96 kg, estável. A pesagem de segunda vale (domingo sem sessão); a de terça, depois da força, é pós-esforço e não conta como progresso."
+  "Semana 02/11 a 08/11: 2 forças, 2 corridas fáceis e o jogo de sábado. A semana passada teve 3 estímulos fortes (limiar, Lower A, limiar de novo e o futebol); hoje o índice é 14 e a FC de repouso 58, contra 54 de média de 28 dias. Por isso segunda é descanso e nada passa de zona 2 além do jogo.",
+  "Você disse que não espera reunião no fim da tarde, então as corridas ficam entre 16h45 e 17h45; quarta é o único dia seco. Você disse academia, com o plano em casa de reserva. Você disse almoço de marmita e janta simples, força no fim da tarde e refeição livre no sábado.",
+  "A 3ª força e a 3ª corrida do teto não cabem sem 3 dias de carga seguidos; ficam para depois, sem reposição. Corte só por febre, falta de ar, aperto ou tosse no peito, dor articular acima de 3/10 ou pelo semáforo do painel."
  ],
  "lista_compra": [
   {
    "cat": "Proteína e peixe",
    "itens": [
-    "Marmitas: 5 pratos × 2 (casal), SÓ depois que você mostrar as opções (me mande foto ou lista na segunda à noite) (rótulo com 35 g ou mais, sem sobretaxa de R$ 3,99, vegetal em pedaço). Não sei quantas restam no freezer: contei como zero",
-    "Sardinha ou atum em lata: 4 (as 2 jantas de peixe)",
+    "Marmitas: 5 pratos × 2 (casal), rótulo com 35 g ou mais de proteína, vegetal em pedaço. Não sei quantas restam no freezer",
+    "Sardinha ou atum em lata: 2 (a janta de peixe de quarta)",
     "Rosbife fatiado: 1 pacote",
     "Ovos: 1 dúzia",
-    "Yopro: 7",
-    "Danone natural desnatado 160 g: 7 potes"
+    "Yopro: 3 (reserva na mochila)",
+    "Iogurte natural desnatado 160 g: 7 potes"
    ]
   },
   {
    "cat": "Leguminosa",
    "itens": [
-    "Grão-de-bico ou lentilha pronta: 3 potes ou latas"
+    "Feijão ou lentilha: 1 pacote (2 refeições na semana)"
    ]
   },
   {
@@ -80,8 +73,8 @@
    "itens": [
     "Folhas: 3 pacotes",
     "Tomate: 6, pepino: 3, cenoura: 1 saco",
-    "Banana: 1 penca",
-    "Mexerica ou laranja: 6"
+    "Banana: 1 penca (jogo de sábado)",
+    "Fruta inteira para o lanche das 15h: 6"
    ]
   },
   {
@@ -96,39 +89,24 @@
   {
    "id": "seg",
    "nome": "Segunda",
-   "data": "26/10",
-   "tipo": "treino",
+   "data": "02/11",
+   "tipo": "descanso",
    "flex": false,
    "treino": {
-    "foco": "Braços e costas, RIR 3, sem subir carga — força 1 de 2",
+    "foco": "Descanso da semana: pesagem em jejum e mobilidade leve",
     "exercicios": [
      {
-      "nome": "O que aconteceu em 26/10: a manhã veio amarela (FC de repouso 55, acima do corte de 53), então o plano era caminhada. O painel não tinha a sessão montada, e você fez o treino Threshold do Garmin (30 min na esteira, FC média 145, máxima 167). Conta como a 1ª corrida da semana e como treino fora do plano.",
+      "nome": "Pese em jejum, antes de tudo.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Primeiro passo: diga a dor da lombar de 0 a 10 (último dado: 1/10 em 18/10). Acima de 3, não treina. Joelho esquerdo acima de 3: para.",
+      "nome": "Nenhuma sessão marcada. Vem de 3 dias de carga alta e de 3 manhãs vermelhas seguidas: o descanso cai aqui.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Portão (o painel confere): banda não vermelha, sem febre, sem tosse piorando, sem falta de ar nem aperto no peito, e sem ibuprofeno ou anti-inflamatório nas últimas 48 h (diga a hora da última dose; sem resposta, vira caminhada). Amoxicilina com clavulanato: não sei quantos dias faltam, assumi a semana toda.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "SÓ se a manhã de segunda vier verde (FC de repouso até 53, VFC 37 ou mais, sem antitérmico nas 24 h, sem sintoma): é a 2ª manhã verde seguida do passo B. Se não for verde: só caminhada de 20 a 30 min, sem reposição.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Braços e costas: até 11 séries, RIR 3, sem subir a carga que você já fazia. Local: academia de manhã se couber, senão em casa; hora e equipamento: não sei.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Chuva forte prevista (90%, 8,7 mm, Open-Meteo): sem rua.",
+      "nome": "Se o semáforo estiver em Pode e você quiser, 20 min de mobilidade ou TRX leve em casa (opcional, não conta como sessão). Chuva forte prevista: nada na rua.",
       "series": 1,
       "reps": "—"
      }
@@ -136,57 +114,52 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Antes de sair: 1 Yopro ou iogurte",
+     "nome": "Café · proteína (ovo, iogurte ou Yopro) + fruta",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Em dia de treino de manhã, nunca em jejum."
+     "nota": null
     },
     "almoco": {
-     "nome": "Almoço em casa antes das 13h · proteína grelhada, arroz e vegetal",
+     "nome": "Marmita com 35 g ou mais de proteína NO RÓTULO + vegetal em pedaço",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Segunda é almoço em casa; marmita só de terça a sexta."
+     "nota": null
     },
     "pre_lanche": {
-     "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
+     "nome": "15h–16h · Iogurte natural desnatado 160 g + fruta inteira (ou 1 Yopro), ANTES de qualquer doce",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Já na mão, ANTES de qualquer doce. Se virar o almoço atrasado, o almoço do dia acontece mesmo assim."
+     "nota": null
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Ovos + salada fresca",
+     "nome": "Janta caseira simples: 1 proteína (frango ou ovo) + salada fresca",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Salada fresca no jantar, sempre."
+     "nota": "Leguminosa 1 de 2: feijão ou lentilha no prato."
     },
     "petisco": null
    },
    "janela": {
-    "quando": "Manhã, em casa ou academia (academia só de manhã). Compromisso no fim do dia: não sei.",
-    "plano_b": "Manhã não verde: caminhada de 20 a 30 min e a avaliação não é reposta na semana."
+    "quando": "Sem janela: dia de descanso.",
+    "plano_b": "Semáforo em Segurar: só a pesagem."
    }
   },
   {
    "id": "ter",
    "nome": "Terça",
-   "data": "27/10",
+   "data": "03/11",
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "Força: superior (costas, peito e braços) — força 1 de 3",
+    "foco": "Corrida fácil de 30 min, zona 2 — corrida 1 de 2",
     "exercicios": [
      {
-      "nome": "Sessão no botão Iniciar o treino: 15 séries, RIR 2, cargas dos seus últimos registros.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Fim da tarde, academia ou casa. O treino Threshold de ontem não impede: é outro grupo muscular.",
+      "nome": "Rua das 16h45 às 17h45, só se estiver seco (59% de chuva prevista). Sessão guiada no botão: 30 min em zona 2 (FC 130 a 145), sem teto de velocidade.",
       "series": 1,
       "reps": "—"
      },
@@ -199,52 +172,57 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Antes de sair: 1 Yopro ou iogurte",
+     "nome": "Café · proteína (ovo, iogurte ou Yopro) + fruta",
      "kcal": null,
      "prot": null,
      "peso_g": null,
      "nota": null
     },
     "almoco": {
-     "nome": "Antes das 13h · Marmita com ≥35 g de proteína NO RÓTULO e vegetal em pedaço",
+     "nome": "Marmita com 35 g ou mais de proteína NO RÓTULO + vegetal em pedaço",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99.  Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
+     "nota": null
     },
     "pre_lanche": {
-     "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
+     "nome": "15h–16h · Pré-corrida: iogurte natural desnatado 160 g + fruta (ou Yopro)",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Já na mão, ANTES de qualquer doce. Se virar o almoço atrasado, o almoço do dia acontece mesmo assim."
+     "nota": "Obrigatório nos dias de corrida das 16h45, antes de qualquer doce."
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Peixe em lata (sardinha ou atum) + salada fresca",
+     "nome": "Janta caseira simples: 1 proteína (frango ou ovo) + salada fresca",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Peixe nº 1 de 2 da semana."
+     "nota": null
     },
     "petisco": null
    },
    "janela": {
-    "quando": "Fim da tarde.",
-    "plano_b": "Sem academia: versão em casa com halteres (supino, remada unilateral, desenvolvimento, rosca), mesmas séries."
+    "quando": "16h45 a 17h45, na rua (pôr do sol 18h05).",
+    "plano_b": "Chuva: esteira. Sem esteira, a corrida cai, sem reposição."
    }
   },
   {
    "id": "qua",
    "nome": "Quarta",
-   "data": "28/10",
+   "data": "04/11",
    "tipo": "treino",
    "flex": false,
    "treino": {
-    "foco": "Corrida fácil de 40 min, zona 2 — corrida 2 de 3",
+    "foco": "Corrida fácil de 40 min, zona 2 — corrida 2 de 2",
     "exercicios": [
      {
-      "nome": "Rua das 16h45 às 17h45 (você confirmou a tarde livre). Sessão guiada no botão: 30 min em zona 2 (FC 130 a 145), sem teto de velocidade.",
+      "nome": "Rua das 16h45 às 17h45: o único dia seco da semana (12% de chuva). Sessão guiada no botão: 40 min em zona 2 (FC 130 a 145), sem teto de velocidade.",
+      "series": 1,
+      "reps": "—"
+     },
+     {
+      "nome": "Sensação de ~40 °C e UV alto no meio do dia: só no fim da tarde. A FC sobe no calor; vale o esforço, não o ritmo.",
       "series": 1,
       "reps": "—"
      },
@@ -257,33 +235,33 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Antes de sair: 1 Yopro ou iogurte",
+     "nome": "Café · proteína (ovo, iogurte ou Yopro) + fruta",
      "kcal": null,
      "prot": null,
      "peso_g": null,
      "nota": null
     },
     "almoco": {
-     "nome": "Antes das 13h · Marmita com ≥35 g de proteína NO RÓTULO e vegetal em pedaço",
+     "nome": "Marmita com 35 g ou mais de proteína NO RÓTULO + vegetal em pedaço",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99. Corrida às 16h45: almoço feito antes das 13h. Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
+     "nota": null
     },
     "pre_lanche": {
-     "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
+     "nome": "15h–16h · Pré-corrida: iogurte natural desnatado 160 g + fruta (ou Yopro)",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Já na mão, ANTES de qualquer doce. Se virar o almoço atrasado, o almoço do dia acontece mesmo assim."
+     "nota": "Obrigatório nos dias de corrida das 16h45, antes de qualquer doce."
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Rosbife ou sobra + salada fresca + leguminosa",
+     "nome": "Janta de peixe: sardinha ou atum em lata + salada fresca + legume",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Leguminosa nº 1 do dia."
+     "nota": "Peixe 1 de 1 da semana."
     },
     "petisco": null
    },
@@ -295,24 +273,19 @@
   {
    "id": "qui",
    "nome": "Quinta",
-   "data": "29/10",
+   "data": "05/11",
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "Força: Lower A — força 2 de 3",
+    "foco": "Superior: costas, peito e braços — força 1 de 2 (academia, sem perna pesada)",
     "exercicios": [
      {
-      "nome": "Sessão no botão: 17 séries, RIR 2. Leg press 150 kg, stiff 50 kg, step-up, leg curl, panturrilha, prancha.",
+      "nome": "Academia a partir das 16h45, 13 séries, RIR 2, cargas de 27/10 mantidas. O painel mostra o semáforo; você só clica em iniciar.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Chuva forte prevista: academia ou casa.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Se houver jogo à noite: faça só o leg press e o stiff de manhã, ou troque o Lower A para sábado.",
+      "nome": "Sem corrida no mesmo dia. Chuva ou sem tempo: versão em casa com TRX, no botão \"Treinar em casa\".",
       "series": 1,
       "reps": "—"
      },
@@ -325,62 +298,115 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Antes de sair: 1 Yopro ou iogurte",
+     "nome": "Café · proteína (ovo, iogurte ou Yopro) + fruta",
      "kcal": null,
      "prot": null,
      "peso_g": null,
      "nota": null
     },
     "almoco": {
-     "nome": "Antes das 13h · Marmita com ≥35 g de proteína NO RÓTULO e vegetal em pedaço",
+     "nome": "Marmita com 35 g ou mais de proteína NO RÓTULO + vegetal em pedaço",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99.  Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
+     "nota": null
     },
     "pre_lanche": {
-     "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
+     "nome": "15h–16h · Pré-treino: iogurte natural desnatado 160 g + fruta (ou Yopro na mochila)",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Já na mão, ANTES de qualquer doce. Se virar o almoço atrasado, o almoço do dia acontece mesmo assim."
+     "nota": "O lanche vira pré-treino: antes do doce e antes de sair."
     },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Peixe + salada fresca",
+     "nome": "Janta caseira simples: 1 proteína (frango ou ovo) + salada fresca",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Peixe nº 2 de 2 da semana (lata serve)."
+     "nota": "Leguminosa 2 de 2: feijão, lentilha ou grão-de-bico."
     },
     "petisco": null
    },
    "janela": {
-    "quando": "Manhã ou fim da tarde, academia.",
-    "plano_b": "Sem academia: goblet, stiff com halteres, step-up e panturrilha em casa."
+    "quando": "Academia, fim da tarde (16h45 em diante).",
+    "plano_b": "Casa: TRX e peso do corpo."
    }
   },
   {
    "id": "sex",
    "nome": "Sexta",
-   "data": "30/10",
+   "data": "06/11",
    "tipo": "treino",
-   "flex": false,
+   "flex": true,
    "treino": {
-    "foco": "Corrida de qualidade: limiar 3 × 6 min — corrida 3 de 3",
+    "foco": "Caminhada ou mobilidade de 30 min (véspera do jogo)",
     "exercicios": [
      {
-      "nome": "Sessão guiada no botão: aquecimento de 10 min, 3 × 6 min em FC 155 a 165 com 2 min de trote, desaceleração.",
+      "nome": "Sem corrida e sem perna pesada: chegar inteiro ao jogo.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Chuva forte prevista: esteira.",
+      "nome": "Caminhada leve de 30 min ou mobilidade, no horário que couber.",
+      "series": 1,
+      "reps": "—"
+     }
+    ]
+   },
+   "refeicoes": {
+    "cafe": {
+     "nome": "Café · proteína (ovo, iogurte ou Yopro) + fruta",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": null
+    },
+    "almoco": {
+     "nome": "Marmita com 35 g ou mais de proteína NO RÓTULO + vegetal em pedaço",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": null
+    },
+    "pre_lanche": {
+     "nome": "15h–16h · Iogurte natural desnatado 160 g + fruta inteira (ou 1 Yopro), ANTES de qualquer doce",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": null
+    },
+    "lanche_pre_treino": null,
+    "janta": {
+     "nome": "Janta caseira simples: 1 proteína (frango ou ovo) + salada fresca",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": null
+    },
+    "petisco": null
+   },
+   "janela": {
+    "quando": "Qualquer horário, 30 min.",
+    "plano_b": "Sem tempo: pular. Não vira reposição."
+   }
+  },
+  {
+   "id": "sab",
+   "nome": "Sábado",
+   "data": "07/11",
+   "tipo": "futebol",
+   "flex": true,
+   "treino": {
+    "foco": "Futebol (a sessão de qualidade da semana)",
+    "exercicios": [
+     {
+      "nome": "Jogo de manhã (horário que você confirmar; assumi 9h). Chuva forte prevista (24 mm): pode cancelar, e aí o dia fica livre, sem outra sessão.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Semáforo em Ajustar ou Segurar: vira corrida fácil de 30 min.",
+      "nome": "Antes do jogo: banana + iogurte ou Yopro. Sem jogo em jejum.",
       "series": 1,
       "reps": "—"
      },
@@ -393,78 +419,25 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Antes de sair: 1 Yopro ou iogurte",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Em dia de treino de manhã, nunca em jejum."
-    },
-    "almoco": {
-     "nome": "Antes das 13h · Marmita com ≥35 g de proteína NO RÓTULO e vegetal em pedaço",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Só entra no cardápio depois que você mostrar as opções (foto ou lista). Sem sobretaxa de R$ 3,99.  Sem marmitas no freezer (você, 26/10): pedido novo em preparação; até chegar, almoço em casa com proteína grelhada, arroz, feijão e vegetal."
-    },
-    "pre_lanche": {
-     "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Já na mão, ANTES de qualquer doce. Se virar o almoço atrasado, o almoço do dia acontece mesmo assim."
-    },
-    "lanche_pre_treino": null,
-    "janta": {
-     "nome": "Rosbife + grão-de-bico + salada fresca",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Sem cozinhar. Leguminosa e vegetal visível."
-    },
-    "petisco": null
-   },
-   "janela": {
-    "quando": "Qualquer hora, esteira.",
-    "plano_b": "Sem esteira: rua num intervalo da chuva, ou troque com sábado."
-   }
-  },
-  {
-   "id": "sab",
-   "nome": "Sábado",
-   "data": "31/10",
-   "tipo": "futebol",
-   "flex": true,
-   "treino": {
-    "foco": "Futebol recreativo (feito): conta como a sessão de qualidade da semana",
-    "exercicios": [
-     {
-      "nome": "Feito. A força de corpo inteiro B passou para domingo (complemento da semana).",
-      "series": 1,
-      "reps": "—"
-     }
-    ]
-   },
-   "refeicoes": {
-    "cafe": {
-     "nome": "Antes de sair: 1 Yopro ou iogurte",
+     "nome": "Antes do jogo: banana + iogurte ou Yopro",
      "kcal": null,
      "prot": null,
      "peso_g": null,
      "nota": null
     },
     "almoco": {
-     "nome": "Almoço fora · grelhado + feijão ou salada, sem frito",
+     "nome": "Almoço depois do jogo · grelhado + salada, sem frito",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Feijão conta como leguminosa."
+     "nota": null
     },
     "pre_lanche": {
-     "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
+     "nome": "15h–16h · Iogurte natural desnatado 160 g + fruta inteira (ou 1 Yopro), ANTES de qualquer doce",
      "kcal": null,
      "prot": null,
      "peso_g": null,
-     "nota": "Já na mão, ANTES de qualquer doce. Se virar o almoço atrasado, o almoço do dia acontece mesmo assim."
+     "nota": "Já na mão, ANTES de qualquer doce."
     },
     "lanche_pre_treino": null,
     "janta": {
@@ -477,36 +450,31 @@
     "petisco": null
    },
    "janela": {
-    "quando": "Feito.",
-    "plano_b": "—"
+    "quando": "Manhã, no campo.",
+    "plano_b": "Jogo cancelado: descanso."
    }
   },
   {
    "id": "dom",
    "nome": "Domingo",
-   "data": "01/11",
+   "data": "08/11",
    "tipo": "treino",
    "flex": true,
    "treino": {
-    "foco": "Complemento da semana: força de corpo inteiro B, em casa com TRX (35 a 40 min)",
+    "foco": "Corpo inteiro B — força 2 de 2 (academia de manhã ou casa, sem corrida)",
     "exercicios": [
      {
-      "nome": "Pese em jejum, antes de tudo.",
+      "nome": "13 séries, RIR 2. Pernas ainda sentindo o jogo: agachamento devagar, sem pular.",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Sessão no botão \"Treinar em casa (TRX)\": 13 séries sem pesos (agachamento no TRX com pausa, remada e supino no TRX, flexão de joelhos no TRX, prancha lateral), RIR 2. É a força que faltou na semana.",
+      "nome": "Academia de manhã (fresco, 22 °C) ou em casa com TRX, no botão \"Treinar em casa\".",
       "series": 1,
       "reps": "—"
      },
      {
-      "nome": "Pernas pesadas do futebol: agachamento devagar, sem pular. Dor articular acima de 3/10 = para o exercício.",
-      "series": 1,
-      "reps": "—"
-     },
-     {
-      "nome": "Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina. O resto é o semáforo do painel.",
+      "nome": "Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
       "series": 1,
       "reps": "—"
      }
@@ -514,29 +482,29 @@
    },
    "refeicoes": {
     "cafe": {
-     "nome": "Antes de sair: 1 Yopro ou iogurte",
+     "nome": "Café · proteína (ovo, iogurte ou Yopro) + fruta",
      "kcal": null,
      "prot": null,
      "peso_g": null,
      "nota": null
     },
     "almoco": {
-     "nome": "Almoço · grelhado + salada, sem frito",
+     "nome": "Almoço · grelhado + salada ou lentilha, sem frito",
+     "kcal": null,
+     "prot": null,
+     "peso_g": null,
+     "nota": "Leguminosa conta se for lentilha ou feijão."
+    },
+    "pre_lanche": {
+     "nome": "15h–16h · Iogurte natural desnatado 160 g + fruta inteira (ou 1 Yopro), ANTES de qualquer doce",
      "kcal": null,
      "prot": null,
      "peso_g": null,
      "nota": null
     },
-    "pre_lanche": {
-     "nome": "15h–16h · Fruta inteira + iogurte ou Yopro",
-     "kcal": null,
-     "prot": null,
-     "peso_g": null,
-     "nota": "Já na mão, ANTES de qualquer doce. Se virar o almoço atrasado, o almoço do dia acontece mesmo assim."
-    },
     "lanche_pre_treino": null,
     "janta": {
-     "nome": "Salada fresca + proteína + legumes",
+     "nome": "Janta caseira simples: 1 proteína (frango ou ovo) + salada fresca",
      "kcal": null,
      "prot": null,
      "peso_g": null,
@@ -545,8 +513,8 @@
     "petisco": null
    },
    "janela": {
-    "quando": "Antes de começar o trabalho, ou num intervalo dele: são 35 a 40 min em casa.",
-    "plano_b": "Sem tempo para tudo: só agachamento, remada e supino no TRX, 2 séries de cada (15 min). Semáforo em Segurar: só a pesagem e uma caminhada."
+    "quando": "De manhã, 35 a 45 min.",
+    "plano_b": "Casa: TRX e peso do corpo."
    }
   }
  ],
@@ -555,30 +523,35 @@
    "id": "carga",
    "especialista": "Carga e recuperação",
    "assina": "seu fisiologista",
-   "como_esta": "Índice 82, FC de repouso 48, VFC 43 hoje: a primeira manhã boa depois de uma semana pesada. Média de 7 dias: índice 60, FC de repouso 53, sono 6,68 h. Você disse que o médico liberou e que não há falta de ar nem aperto no peito.",
-   "para_onde": "Até 2 forças e 2 corridas fáceis, sem tiros nem teste; a subida de demanda entra pelo volume. A avaliação de força de segunda só vale com a manhã de segunda também verde. Terça leve ou vazia. Duas manhãs vermelhas seguidas, febre ou tosse piorando derrubam a próxima corrida; FC de repouso 53 ou mais por duas manhãs derruba a próxima força.",
+   "como_esta": "Você disse que se sente bem e não relatou sintoma. O relógio pede cuidado: hoje o índice é 14, a FC de repouso 58 (média de 28 dias: 54), e a prontidão de domingo foi 1, VFC 30 e sono 6,03 h, depois de 3 estímulos fortes na semana.",
+   "para_onde": "Até 3 forças e 3 corridas fáceis em zona 2 no teto; o jogo de sábado é a única qualidade. Segunda é leve ou descanso, quinta sem perna pesada, sexta sem corrida e domingo sem corrida. 3 manhãs vermelhas seguidas, prontidão abaixo de 30 ou noite abaixo de 5,5 h com VFC abaixo de 30 ou FC a partir de 58 derrubam a próxima corrida.",
    "nao_sei": [
-    "Quantos dias de antibiótico faltam (assumi a semana toda), como o corpo responde ao primeiro treino e como será o sono."
+    "A manhã de segunda completa (sono e VFC de hoje não sincronizaram).",
+    "A carga real do jogo de 31/10 e do de 07/11.",
+    "Por que a prontidão caiu tanto."
    ]
   },
   {
    "id": "logistica",
    "especialista": "Logística e contexto",
    "assina": "seu logístico",
-   "como_esta": "Pôr do sol às 18h01, rua até cerca de 17h45. Chuva forte prevista em 26, 29 e 30/10; quarta 28 é seca (sensação de 27 °C); sexta tem sensação de 31 °C. Você não respondeu às 3 perguntas.",
-   "para_onde": "Pelo pior caso: força em casa de manhã, corrida só na quarta se a tarde estiver livre, fim de semana sem sessão marcada até haver horário de jogo e lugar. Vetos: academia à tarde ou à noite, rua depois das 17h45, rua na sexta e em dia de chuva.",
+   "como_esta": "Você disse que não espera ficar preso em reunião, que prefere academia (com o plano em casa de reserva) e que não viaja. O tempo é o problema: sensação de 37 a 41 °C até quinta, só quarta seca, 24 mm de chuva no sábado.",
+   "para_onde": "Corridas na rua entre 16h45 e 17h45 (terça e quarta); academia só em dia sem corrida; nada na rua depois de 17h45 nem entre 10h e 16h. Se chover, o plano em casa entra sem culpa.",
    "nao_sei": [
-    "Reuniões da semana, horário de jogos, onde você estará no fim de semana e se há esteira ao alcance."
+    "O horário do jogo e se a chuva o cancela.",
+    "Se há futebol na quinta à noite.",
+    "Se existe esteira perto de você."
    ]
   },
   {
    "id": "nutricao",
    "especialista": "Nutrição e adesão",
    "assina": "sua nutricionista",
-   "como_esta": "Nos registros de 19 a 24/10 o peixe e o feijão apareceram e fritura não apareceu. O que escapou foi a tarde: brownie às 15h54 e bolo às 16h. Peso médio estável em 94,96 kg.",
-   "para_onde": "Lanche das 15h com fruta inteira e iogurte na mão antes do doce. Peixe sobe para 2 jantas, leguminosa para 3 refeições, fritura cai para no máximo 1; vegetal 4 e fruta 2 dias ficam. Uma refeição livre, no sábado à noite. Veto: força em jejum, e corrida de quarta só com almoço antes das 13h e lanche das 15h feito.",
+   "como_esta": "Nos 7 dias até 31/10 houve 23 refeições registradas, fritura 0 e álcool 0; o doce da tarde apareceu uma vez (sorvete, 31/10). Peso: média de 7 leituras neutras 94,62 kg, contra 94,86 na de 28 dias; uma semana só, o gatilho de peso não dispara.",
+   "para_onde": "Você disse almoço de marmita e janta simples, então fica marmita com 35 g no rótulo e janta de uma proteína com salada. Você disse força no fim da tarde, então o lanche das 15h vira pré-treino. Você disse sábado, e assumi refeição livre à noite; se for no almoço depois do jogo, me corrija.",
    "nao_sei": [
-    "Quantas marmitas você ainda tem, onde estará no fim de semana, o que comeu em 25/10 e o que há no rótulo das refeições de 21, 23 e 24/10."
+    "Os rótulos das marmitas.",
+    "Se a livre é à noite ou no almoço."
    ]
   }
  ]

@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T11:38:53",
+ "gerado_em": "2026-11-02T08:52:25",
  "metas": {
   "_nota": "Ponto de destino de MEIO TERMO, definido pelo Fabio em 10/10/2026. A partir dele entra o 'modo avançado'.",
   "partida": {
@@ -30,9 +30,9 @@
   "partida": 95.14,
   "alvo": 85.0,
   "progresso": 0.051,
-  "ritmo_kg_semana_28d": -0.1,
-  "eta_no_ritmo_atual": "2028-09-03",
-  "eta_ritmo_saudavel": "2027-03-14",
+  "ritmo_kg_semana_28d": -0.12,
+  "eta_no_ritmo_atual": "2028-05-16",
+  "eta_ritmo_saudavel": "2027-03-16",
   "ritmo_saudavel": 0.5,
   "serie": [
    {
@@ -206,116 +206,116 @@
    {
     "data": "2026-08-04",
     "peso": 95.05,
-    "pos_esforco": false,
-    "media": 95.31
+    "pos_esforco": true,
+    "media": 95.41
    },
    {
     "data": "2026-08-05",
     "peso": 95.1,
     "pos_esforco": false,
-    "media": 95.24
+    "media": 95.31
    },
    {
     "data": "2026-08-06",
     "peso": 94.7,
     "pos_esforco": true,
-    "media": 95.24
+    "media": 95.31
    },
    {
     "data": "2026-08-07",
     "peso": 94.0,
     "pos_esforco": true,
-    "media": 95.24
+    "media": 95.31
    },
    {
     "data": "2026-08-09",
     "peso": 93.85,
     "pos_esforco": true,
-    "media": 95.24
+    "media": 95.31
    },
    {
     "data": "2026-08-10",
     "peso": 94.45,
     "pos_esforco": true,
-    "media": 95.24
+    "media": 95.31
    },
    {
     "data": "2026-08-11",
     "peso": 94.4,
     "pos_esforco": true,
-    "media": 95.24
+    "media": 95.31
    },
    {
     "data": "2026-08-12",
     "peso": 94.35,
     "pos_esforco": true,
-    "media": 95.24
+    "media": 95.31
    },
    {
     "data": "2026-08-13",
     "peso": 94.75,
     "pos_esforco": false,
-    "media": 95.18
+    "media": 95.2
    },
    {
     "data": "2026-08-14",
     "peso": 94.25,
     "pos_esforco": true,
-    "media": 95.18
+    "media": 95.2
    },
    {
     "data": "2026-08-16",
     "peso": 94.3,
-    "pos_esforco": false,
-    "media": 95.06
+    "pos_esforco": true,
+    "media": 95.2
    },
    {
     "data": "2026-08-17",
     "peso": 94.55,
-    "pos_esforco": false,
-    "media": 94.89
+    "pos_esforco": true,
+    "media": 95.2
    },
    {
     "data": "2026-08-23",
     "peso": 94.7,
     "pos_esforco": false,
-    "media": 94.74
+    "media": 95.13
    },
    {
     "data": "2026-08-26",
     "peso": 94.1,
     "pos_esforco": false,
-    "media": 94.65
+    "media": 94.99
    },
    {
     "data": "2026-08-27",
     "peso": 94.6,
     "pos_esforco": false,
-    "media": 94.59
+    "media": 94.81
    },
    {
     "data": "2026-08-28",
     "peso": 94.3,
     "pos_esforco": true,
-    "media": 94.59
+    "media": 94.81
    },
    {
     "data": "2026-08-30",
     "peso": 94.05,
     "pos_esforco": false,
-    "media": 94.44
+    "media": 94.57
    },
    {
     "data": "2026-08-31",
     "peso": 94.5,
     "pos_esforco": false,
-    "media": 94.4
+    "media": 94.54
    },
    {
     "data": "2026-09-01",
     "peso": 94.15,
     "pos_esforco": false,
-    "media": 94.38
+    "media": 94.41
    },
    {
     "data": "2026-09-02",
@@ -380,44 +380,44 @@
    {
     "data": "2026-09-22",
     "peso": 94.5,
-    "pos_esforco": false,
-    "media": 94.44
+    "pos_esforco": true,
+    "media": 94.57
    },
    {
     "data": "2026-09-23",
     "peso": 94.2,
     "pos_esforco": false,
-    "media": 94.42
+    "media": 94.39
    },
    {
     "data": "2026-09-24",
     "peso": 94.1,
     "pos_esforco": false,
-    "media": 94.38
+    "media": 94.36
    },
    {
     "data": "2026-09-25",
     "peso": 94.95,
     "pos_esforco": false,
-    "media": 94.49
+    "media": 94.44
    },
    {
     "data": "2026-09-26",
     "peso": 95.25,
     "pos_esforco": false,
-    "media": 94.54
+    "media": 94.6
    },
    {
     "data": "2026-09-27",
     "peso": 94.35,
     "pos_esforco": false,
-    "media": 94.49
+    "media": 94.51
    },
    {
     "data": "2026-09-28",
     "peso": 94.9,
     "pos_esforco": false,
-    "media": 94.61
+    "media": 94.54
    },
    {
     "data": "2026-09-29",
@@ -532,6 +532,12 @@
     "peso": 94.35,
     "pos_esforco": false,
     "media": 94.62
+   },
+   {
+    "data": "2026-11-01",
+    "peso": 94.7,
+    "pos_esforco": true,
+    "media": 94.62
    }
   ]
  },
@@ -589,14 +595,6 @@
  },
  "recuperacao": {
   "hrv": [
-   {
-    "data": "2026-08-03",
-    "valor": 36
-   },
-   {
-    "data": "2026-08-04",
-    "valor": 38.0
-   },
    {
     "data": "2026-08-05",
     "valor": 38.0
@@ -948,17 +946,17 @@
    {
     "data": "2026-10-31",
     "valor": 38.0
+   },
+   {
+    "data": "2026-11-01",
+    "valor": 36.0
+   },
+   {
+    "data": "2026-11-02",
+    "valor": 36.0
    }
   ],
   "fc_repouso": [
-   {
-    "data": "2026-08-03",
-    "valor": 55.0
-   },
-   {
-    "data": "2026-08-04",
-    "valor": 54.0
-   },
    {
     "data": "2026-08-05",
     "valor": 52.0
@@ -1310,17 +1308,17 @@
    {
     "data": "2026-10-31",
     "valor": 53.0
+   },
+   {
+    "data": "2026-11-01",
+    "valor": 54.0
+   },
+   {
+    "data": "2026-11-02",
+    "valor": 55.0
    }
   ],
   "sono": [
-   {
-    "data": "2026-08-03",
-    "valor": 6.92
-   },
-   {
-    "data": "2026-08-04",
-    "valor": 6.99
-   },
    {
     "data": "2026-08-05",
     "valor": 6.9
@@ -1672,16 +1670,18 @@
    {
     "data": "2026-10-31",
     "valor": 6.79
+   },
+   {
+    "data": "2026-11-01",
+    "valor": 6.72
+   },
+   {
+    "data": "2026-11-02",
+    "valor": 6.84
    }
   ]
  },
  "frequencia": [
-  {
-   "semana": "2026-07-27",
-   "ativos": 5,
-   "pesados": 3,
-   "com_dado": 7
-  },
   {
    "semana": "2026-08-03",
    "ativos": 5,
@@ -1756,9 +1756,15 @@
   },
   {
    "semana": "2026-10-26",
-   "ativos": 4,
+   "ativos": 5,
+   "pesados": 1,
+   "com_dado": 7
+  },
+  {
+   "semana": "2026-11-02",
+   "ativos": 0,
    "pesados": 0,
-   "com_dado": 6
+   "com_dado": 1
   }
  ]
 }

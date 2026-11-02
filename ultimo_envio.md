@@ -1,3 +1,10 @@
-# Último envio do bot (conselho) em 01/11 (resposta à mensagem 272)
+# Último envio do bot (avaliacao) em 02/11 00:05
 
-Avaliação da nutricionista (3/3): almoço de marmita (>=35 g de proteína no rótulo) e janta caseira simples; lanche das 15h vira pré-treino (iogurte + fruta, antes do doce); peixe em 1 janta, leguminosa em 2 refeições; uma refeição livre, sábado à noite (assumi a noite: se for no almoço depois do jogo, me avise); antes do jogo, banana e iogurte.
+Fechamento do dia, 01/11
+Registrado: pesagem, poke no almoço e chilli com torrada e queijo na janta (sem fritura registrada).
+Treino: a força B de domingo não saiu; segue pendente, sem cobrança.  ·  Proteína: sem número, não estimo
+Campanha: 40 XP hoje · 4 de 5 missões da semana cumpridas · 1 despacho saiu hoje. O fechamento da parte é às 23h05.
+Amanhã: segunda começa leve, com pesagem em jejum e olho no semáforo; a força pendente só entra se estiver em Pode.
+Funcionou: almoço e janta registrados com legume na janta.
+A semana nova: o conselho já ouviu você; a síntese e o plano saem assim que eu publicar.
+Pode me responder aqui: eu anoto e ajusto.

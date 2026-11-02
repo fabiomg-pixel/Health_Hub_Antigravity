@@ -2,10 +2,10 @@
  "versao": 2,
  "inicio": "2026-10-19",
  "arco": "I",
- "etapa": 0,
+ "etapa": 1,
  "companhia": {
   "brisa": {
-   "estado": "ferida"
+   "estado": "ativa"
   },
   "dorn": {
    "estado": "ativa"
@@ -14,7 +14,12 @@
    "estado": "ativa"
   }
  },
- "mochila": [],
+ "mochila": [
+  {
+   "id": "escudo",
+   "desde": "2026-11-02"
+  }
+ ],
  "crise": null,
  "falhas_seguidas": 0,
  "semanas": {
@@ -53,21 +58,65 @@
     "percalco": 1,
     "maldicao": 2
    }
+  },
+  "2026-10-26": {
+   "segunda": "2026-10-26",
+   "parte": 2,
+   "titulo": "O Coração de Ost",
+   "tier": "avanco",
+   "tier_base": "avanco",
+   "ok": 4,
+   "n": 5,
+   "efeitos": [
+    "A Mácula de Cinza recuou: Iara está livre dela.",
+    "Parte sem juramento quebrado. Relíquia ganha: Sal dos Faróis.",
+    "Com cinco estilhas, Bram forjou a Lâmina Estelar.",
+    "Bram gravou uma runa nova: Runa do Escudo.",
+    "A companhia avançou até o Farol de Ost."
+   ],
+   "cena": {
+    "tier": "avanco",
+    "etapa_antes": 0,
+    "etapa_depois": 1,
+    "arco": "I",
+    "clima": "seca",
+    "lua": null,
+    "companhia": {
+     "brisa": "ferida",
+     "dorn": "ativa",
+     "ysa": "ativa"
+    },
+    "afetado": null,
+    "retorna": null,
+    "itens": [
+     "escudo"
+    ],
+    "talisma": false
+   },
+   "cartas": {
+    "bencao": 3,
+    "achado": 6,
+    "percalco": 0,
+    "maldicao": 0
+   }
   }
  },
  "materiais": {
-  "pista": 3,
-  "estilha": 3,
+  "pista": 9,
+  "estilha": 1,
   "desgaste": 1
  },
- "reliquias": [],
- "maldicoes": [
+ "reliquias": [
   {
-   "id": "macula_de_cinza",
-   "alvo": "brisa",
-   "desde": "2026-10-19"
+   "id": "sal_dos_farois",
+   "desde": "2026-10-26"
+  },
+  {
+   "id": "lamina_estelar",
+   "desde": "2026-10-26"
   }
  ],
+ "maldicoes": [],
  "aflicoes": 1,
  "marcos": []
 }

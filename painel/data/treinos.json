@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-11",
+ "gerado_em": "2026-11-02",
  "nota": "Sessões escritas à mão pelo copiloto. Para os dias da semana publicada, o painel lê os exercícios do semana.json. Uma data aqui sobrepõe o semana.json. Toda sessão de força leva \"casa\": a versão em casa com TRX e peso do corpo (ele não tem pesos em casa, 31/10) (Fabio, 31/10). \"bonus\" guarda a rodada bônus.",
  "sessoes": {
   "2026-10-11": {
@@ -547,6 +547,249 @@
    "duracao_min": 40,
    "pesada": false,
    "regra": "Domingo em casa (complemento da semana; passou de sábado por causa do futebol): 13 séries, RIR 2, com halteres. Se estiver na academia, troque o goblet por leg press leve e a remada unilateral pela remada baixa. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+   "exercicios": [
+    {
+     "id": "agachamento_goblet",
+     "nome": "Agachamento goblet",
+     "series": 3,
+     "reps": "10",
+     "kg": 20,
+     "descanso_s": 90,
+     "grupo": "quadriceps_composto",
+     "halter": true
+    },
+    {
+     "id": "remada_unilateral_com_halter",
+     "nome": "Remada unilateral com halter",
+     "series": 3,
+     "reps": "10 cada",
+     "kg": 24,
+     "descanso_s": 75,
+     "grupo": "costas",
+     "halter": true
+    },
+    {
+     "id": "flexao",
+     "nome": "Flexão de braço",
+     "series": 3,
+     "reps": "até 2 antes da falha",
+     "kg": 0,
+     "descanso_s": 75,
+     "grupo": "peito_empurrar"
+    },
+    {
+     "id": "ponte_gluteo_unilateral",
+     "nome": "Ponte de glúteo unilateral",
+     "series": 2,
+     "reps": "10 cada",
+     "kg": 0,
+     "descanso_s": 60,
+     "grupo": "gluteo"
+    },
+    {
+     "id": "prancha_lateral",
+     "nome": "Prancha lateral",
+     "series": 2,
+     "reps": "40 s cada",
+     "kg": null,
+     "descanso_s": 45,
+     "grupo": "core_tempo",
+     "tipo": "tempo",
+     "alvo_s": 40
+    }
+   ],
+   "casa": {
+    "titulo": "Corpo inteiro B · em casa (TRX + peso do corpo)",
+    "regra": "13 séries, RIR 2, sem pesos: só TRX e o corpo. Prenda o TRX numa porta firme. A dificuldade é o ângulo do corpo (remada e supino) e a pausa (agachamento): ajuste até sobrarem 2 repetições e registre 0 kg. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício.",
+    "exercicios": [
+     {
+      "id": "trx_agachamento",
+      "nome": "Agachamento no TRX com pausa",
+      "series": 3,
+      "reps": "12",
+      "kg": 0,
+      "descanso_s": 90,
+      "grupo": "quadriceps_composto",
+      "nota": "Pausa de 2 s embaixo. Pernas pesadas do futebol: sem pular, desça devagar."
+     },
+     {
+      "id": "trx_remada",
+      "nome": "Remada no TRX",
+      "series": 3,
+      "reps": "10-12",
+      "kg": 0,
+      "descanso_s": 75,
+      "grupo": "costas",
+      "nota": "Carga = ângulo: registre 0 kg e anote os pés na nota, se quiser."
+     },
+     {
+      "id": "trx_supino",
+      "nome": "Supino no TRX (chest press)",
+      "series": 3,
+      "reps": "10-12",
+      "kg": 0,
+      "descanso_s": 75,
+      "grupo": "peito_empurrar"
+     },
+     {
+      "id": "trx_flexao_joelhos",
+      "nome": "Flexão de joelhos no TRX (posterior)",
+      "series": 2,
+      "reps": "10",
+      "kg": 0,
+      "descanso_s": 60,
+      "grupo": "posterior"
+     },
+     {
+      "id": "prancha_lateral",
+      "nome": "Prancha lateral",
+      "series": 2,
+      "reps": "40 s cada",
+      "kg": null,
+      "descanso_s": 45,
+      "grupo": "core_tempo",
+      "tipo": "tempo",
+      "alvo_s": 40
+     }
+    ]
+   }
+  },
+  "2026-11-05": {
+   "titulo": "Superior: costas, peito e braços (academia)",
+   "duracao_min": 50,
+   "pesada": true,
+   "regra": "Quinta, 16h45 em diante, na academia (sem corrida no mesmo dia, sem perna pesada). 13 séries, RIR 2, mesmas cargas de 27/10 (nenhuma subida automática: não há leitura de séries fechadas com 2 de sobra). Iogurte com fruta antes de sair. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+   "exercicios": [
+    {
+     "id": "supino_com_halteres",
+     "nome": "Supino com halteres",
+     "series": 3,
+     "reps": "8",
+     "kg": 26,
+     "descanso_s": 120,
+     "grupo": "peito_empurrar",
+     "nota": "Em 11/10: 26 kg × 8 a 10.",
+     "halter": true
+    },
+    {
+     "id": "puxada_pegada_neutra",
+     "nome": "Puxada com pegada neutra (triângulo)",
+     "series": 3,
+     "reps": "8",
+     "kg": 55,
+     "descanso_s": 120,
+     "grupo": "costas",
+     "nota": "Em 21/10: 50 × 6 e 60 × 6."
+    },
+    {
+     "id": "remada_baixa_no_cabo",
+     "nome": "Remada baixa no cabo",
+     "series": 3,
+     "reps": "8",
+     "kg": 50,
+     "descanso_s": 90,
+     "grupo": "costas",
+     "nota": "Em 21/10: 50 kg × 6, fácil."
+    },
+    {
+     "id": "desenvolvimento_com_halteres",
+     "nome": "Desenvolvimento com halteres, sentado",
+     "series": 2,
+     "reps": "10",
+     "kg": 16,
+     "descanso_s": 90,
+     "grupo": "ombro_empurrar",
+     "nota": "Em 11/10: 16 kg × 12.",
+     "halter": true
+    },
+    {
+     "id": "elevacao_lateral_com_halteres",
+     "nome": "Elevação lateral",
+     "series": 2,
+     "reps": "12",
+     "kg": 8,
+     "descanso_s": 60,
+     "grupo": "ombro_lateral",
+     "halter": true
+    },
+    {
+     "id": "rosca_com_barra",
+     "nome": "Rosca com barra",
+     "series": 1,
+     "reps": "10",
+     "kg": 25,
+     "descanso_s": 60,
+     "grupo": "biceps"
+    },
+    {
+     "id": "triceps_no_cabo",
+     "nome": "Tríceps no cabo",
+     "series": 1,
+     "reps": "10",
+     "kg": 27.5,
+     "descanso_s": 60,
+     "grupo": "triceps"
+    }
+   ],
+   "casa": {
+    "titulo": "Superior · em casa (TRX + peso do corpo)",
+    "regra": "13 séries, RIR 2, sem pesos: só TRX e o corpo. A dificuldade é o ângulo do corpo; ajuste até sobrarem 2 repetições e registre 0 kg. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
+    "exercicios": [
+     {
+      "id": "trx_supino",
+      "nome": "Supino no TRX (chest press)",
+      "series": 3,
+      "reps": "10-12",
+      "kg": 0,
+      "descanso_s": 75,
+      "grupo": "peito_empurrar"
+     },
+     {
+      "id": "trx_remada",
+      "nome": "Remada no TRX",
+      "series": 3,
+      "reps": "10-12",
+      "kg": 0,
+      "descanso_s": 75,
+      "grupo": "costas"
+     },
+     {
+      "id": "flexao",
+      "nome": "Flexão de braço",
+      "series": 3,
+      "reps": "até 2 antes da falha",
+      "kg": 0,
+      "descanso_s": 75,
+      "grupo": "peito_empurrar"
+     },
+     {
+      "id": "trx_ytw",
+      "nome": "Y-T-W no TRX",
+      "series": 2,
+      "reps": "10",
+      "kg": 0,
+      "descanso_s": 60,
+      "grupo": "escapula"
+     },
+     {
+      "id": "prancha_lateral",
+      "nome": "Prancha lateral",
+      "series": 2,
+      "reps": "40 s cada",
+      "kg": null,
+      "descanso_s": 45,
+      "grupo": "core_tempo",
+      "tipo": "tempo",
+      "alvo_s": 40
+     }
+    ]
+   }
+  },
+  "2026-11-08": {
+   "titulo": "Corpo inteiro B (casa ou academia)",
+   "duracao_min": 40,
+   "pesada": false,
+   "regra": "Domingo de manhã, na academia ou em casa (o dia depois do jogo: sem pular, sem corrida). 13 séries, RIR 2. Se estiver na academia, troque o goblet por leg press leve e a remada unilateral pela remada baixa. Segurança que fica: febre, falta de ar, aperto ou tosse no peito = não treina; dor articular acima de 3/10 = para o exercício. O resto é o semáforo do painel.",
    "exercicios": [
     {
      "id": "agachamento_goblet",

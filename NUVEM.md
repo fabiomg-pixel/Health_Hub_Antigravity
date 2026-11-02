@@ -26,6 +26,7 @@ nenhum token, senha ou chave (Telegram, Notion, Anthropic, Vercel, Garmin, Renph
 | `GARMIN_EMAIL`, `GARMIN_PASSWORD` | `garmin_pull.py` (já lê do ambiente) |
 | `RENPHO_EMAIL`, `RENPHO_PASSWORD` | `renpho_pull.py` (já lê do ambiente) |
 | `VERCEL_TOKEN` | publicar o painel (`npx vercel deploy --prod --yes`) |
+| `PAINEL_KEY` | código de acesso do painel (`/api` e `/data` respondem 401 sem ele; 01/11). `painel_get.sh`, `painel_acesso.py`, `jornada.py`, `fatos.py` e `registrar_no_painel.py` já leem daqui. O valor está em `acesso_painel.txt` no Mac. Os avisos do Telegram e do GitHub (`/api/telegram`, `/api/github`) não usam este código: têm segredo próprio |
 
 Os valores nunca entram no repositório, em log ou em mensagem. `NOTION_TOKEN`, `DIARIO_DB_ID` e `LOG_KEY` já estão
 guardados na própria Vercel; a nuvem não precisa deles.

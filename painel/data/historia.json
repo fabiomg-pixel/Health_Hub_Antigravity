@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-01T23:49:37",
+ "gerado_em": "2026-11-02T08:52:27",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -8,15 +8,15 @@
   "chefe": "O Colosso do Platô Vermelho",
   "chefe_texto": "Um titã de pedra vermelha erguido pelos Tecelões para guardar a passagem. Não se vence com bravura: cede quando a companhia chega até ele inteira."
  },
- "etapa": 0,
+ "etapa": 1,
  "etapas": [
   {
    "nome": "A Estrada dos Faróis Apagados",
-   "estado": "atual"
+   "estado": "feita"
   },
   {
    "nome": "O Farol de Ost",
-   "estado": "futura"
+   "estado": "atual"
   },
   {
    "nome": "O Vau das Garças",
@@ -46,7 +46,7 @@
    "papel": "a Rastreadora",
    "texto": "Arqueira do Clã das Garças, sem memória da própria infância. Lembra só de uma canção.",
    "g": "a",
-   "estado": "ferida"
+   "estado": "ativa"
   },
   {
    "id": "dorn",
@@ -70,27 +70,39 @@
   "papel": "o Último Faroleiro do Norte",
   "texto": "Guardou o Farol de Ost até ele se apagar. Leva na lanterna a última brasa da torre e sete nomes gravados no vidro."
  },
- "mochila": [],
- "regra_item": "Cada runa absorve uma derrota: quando uma semana ruim chegaria, a runa se parte e a derrota cai um nível. A bolsa de Bram leva até 3.",
- "crise": null,
- "reliquias": [],
- "maldicoes": [
+ "mochila": [
   {
-   "id": "macula_de_cinza",
-   "nome": "Mácula de Cinza",
-   "texto": "Veias cinzentas sob a pele. Quem carrega a mácula fica ferido até uma semana inteira sem juramento quebrado; um juramento quebrado com a mácula ativa entrega a pessoa à Cinza.",
-   "alvo": "Iara"
+   "id": "escudo",
+   "nome": "Runa do Escudo",
+   "texto": "Gravada por Bram em ferro-de-estrela. Quebra no lugar de quem a carrega."
   }
  ],
+ "regra_item": "Cada runa absorve uma derrota: quando uma semana ruim chegaria, a runa se parte e a derrota cai um nível. A bolsa de Bram leva até 3.",
+ "crise": null,
+ "reliquias": [
+  {
+   "id": "sal_dos_farois",
+   "nome": "Sal dos Faróis",
+   "texto": "Desfaz uma maldição, uma vez.",
+   "usada": false
+  },
+  {
+   "id": "lamina_estelar",
+   "nome": "Lâmina Estelar",
+   "texto": "Forjada com cinco estilhas. Fere os guardiões: a luta contra o chefe do arco termina sem perdas.",
+   "usada": false
+  }
+ ],
+ "maldicoes": [],
  "materiais": {
   "estilha": {
-   "qtd": 3,
+   "qtd": 1,
    "nome": "estilhas do céu",
    "forja": 5,
    "texto": "Cinco estilhas permitem forjar a Lâmina Estelar."
   },
   "pista": {
-   "qtd": 3,
+   "qtd": 9,
    "nome": "pistas do Códice",
    "texto": "Fragmentos da verdade sobre Aelis e a Semente."
   },
@@ -256,221 +268,87 @@
    "concluido": true,
    "desfecho": "",
    "tem_texto": true
+  },
+  {
+   "parte": "II",
+   "n": 2,
+   "titulo": "O Coração de Ost",
+   "periodo": "26 de outubro a 1 de novembro",
+   "fim": "2026-11-01",
+   "tier": "avanco",
+   "ok": 4,
+   "total": 5,
+   "efeitos": [
+    "A Mácula de Cinza recuou: Iara está livre dela.",
+    "Parte sem juramento quebrado. Relíquia ganha: Sal dos Faróis.",
+    "Com cinco estilhas, Bram forjou a Lâmina Estelar.",
+    "Bram gravou uma runa nova: Runa do Escudo.",
+    "A companhia avançou até o Farol de Ost."
+   ],
+   "cena": {
+    "tier": "avanco",
+    "etapa_antes": 0,
+    "etapa_depois": 1,
+    "arco": "I",
+    "clima": "seca",
+    "lua": null,
+    "companhia": {
+     "brisa": "ferida",
+     "dorn": "ativa",
+     "ysa": "ativa"
+    },
+    "afetado": null,
+    "retorna": null,
+    "itens": [
+     "escudo"
+    ],
+    "talisma": false
+   },
+   "concluido": true,
+   "desfecho": "",
+   "tem_texto": false
   }
  ],
  "marcos": [],
  "semana": {
-  "n": 2,
-  "parte": "II",
-  "segunda": "2026-10-26",
-  "titulo": "O Coração de Ost",
-  "periodo": "26 de outubro a 1 de novembro",
-  "ok": 4,
-  "total": 5,
+  "n": 3,
+  "parte": "III",
+  "segunda": "2026-11-02",
+  "titulo": "",
+  "periodo": "2 a 8 de novembro",
+  "ok": 0,
+  "total": 4,
   "em_jogo": "",
   "abertura": ""
  },
- "diario": [
-  {
-   "data": "2026-10-26",
-   "dia": "segunda",
-   "eventos": [
-    {
-     "tipo": "achado",
-     "texto": "Maren desenhou de memória a planta dos armazéns de Salmoura a partir do que os moradores contavam em voz baixa no poço.",
-     "despacho": "Maren passou três noites ouvindo as mulheres no poço sem dizer uma palavra, só anotando. Na quarta, desenhou os armazéns da Liga de memória, porta por porta, e mostrou a Fabio. — Aqui, no fundo, tem uma sala que ninguém sabe para que serve. As mulheres a chamam de quarto da Senhora. — Fabio perguntou como ela tinha conseguido tudo aquilo. — Ninguém repara em quem escuta — disse ela, e fechou o Códice antes que ele visse o resto da página.",
-     "juramento": null,
-     "marcas": [
-      "+1 pista do Códice"
-     ]
-    }
-   ]
-  },
-  {
-   "data": "2026-10-27",
-   "dia": "terça",
-   "eventos": [
-    {
-     "tipo": "achado",
-     "texto": "Teodoro reconheceu, no estandarte de um dos guardas da Liga, um símbolo que estava costurado na mochila de Bento, quarenta anos atrás.",
-     "despacho": "Teodoro parou no meio da frase quando viu o estandarte. Era uma garça bordada em linha azul sobre o brasão do sal, o mesmo bordado que Bento levava na mochila quarenta anos atrás. — Bento nunca teria entregado isso a ninguém — disse, devagar. — Só a quem ele amava. — Passou a noite limpando o vidro da lanterna e parou no nome de Bento por muito tempo.",
-     "juramento": null,
-     "marcas": [
-      "+1 pista do Códice"
-     ]
-    }
-   ]
-  },
-  {
-   "data": "2026-10-28",
-   "dia": "quarta",
-   "eventos": [
-    {
-     "tipo": "bencao",
-     "texto": "O menino que trouxe o bilhete voltou à noite, sozinho, e deixou no degrau da torre um embrulho de pano: dentro, uma estilha roubada dos armazéns da Liga.",
-     "despacho": "Bram acordou antes de todos e achou o embrulho no degrau. Desfez o nó devagar, viu a estilha e ficou muito tempo parado, com ela na palma. Depois olhou para a estrada de Salmoura, onde um vulto pequeno já ia longe. — Esse menino vai se meter em encrenca por minha causa — disse, para ninguém. Girou o martelo de Tomas uma vez na mão. Não contou aos outros o que tinha reconhecido no nó do pano: era um nó de arena.",
-     "juramento": null,
-     "marcas": [
-      "+1 estilha do céu"
-     ]
-    }
-   ]
-  },
-  {
-   "data": "2026-10-29",
-   "dia": "quinta",
-   "eventos": [
-    {
-     "tipo": "achado",
-     "texto": "Quando Iara cantou perto do Códice, uma página queimada mostrou por um instante metade de um mapa das ruínas de Lis.",
-     "despacho": "Iara cantou baixinho perto do Códice, sem perceber que Maren olhava. A página queimada esquentou, e por um instante apareceu meio mapa das ruínas de Lis, com um moinho desenhado à margem do rio. Fabio, do outro lado do fogo, levantou a cabeça de repente, como se alguém o tivesse chamado pelo nome. Não soube dizer por quê.",
-     "juramento": null,
-     "marcas": [
-      "+1 pista do Códice"
-     ]
-    },
-    {
-     "tipo": "bencao",
-     "texto": "Iara achou, no leito seco de um poço abandonado de Salmoura, um estilhaço do céu que a Liga não tinha visto.",
-     "despacho": "Iara desceu sozinha pela corda, sem avisar ninguém, até o fundo de um poço seco do lado de fora dos muros. Voltou com sal até os cotovelos e uma estilha entre os dentes, rindo. Fabio não riu. — Da próxima vez, você me chama. — Da próxima vez você me proíbe, Capitão. — Ela guardou a estilha no pano de Bram e só então, de costas, puxou a manga sobre o braço esquerdo. As veias cinzentas tinham subido um dedo.",
-     "juramento": null,
-     "marcas": [
-      "+1 estilha do céu"
-     ]
-    },
-    {
-     "tipo": "missao",
-     "texto": "Teodoro acendeu o sino de Ost pela primeira vez em um ano. Tocou uma vez só, baixo, para quem estivesse ouvindo em Salmoura.",
-     "despacho": "Teodoro subiu ao alto da torre e tocou o sino de Ost uma única vez, baixo. — Para quem estiver ouvindo — disse. Lá embaixo, em Salmoura, uma janela do armazém do fundo se acendeu e se apagou em resposta. Teodoro ficou muito tempo olhando para ela.",
-     "juramento": null,
-     "marcas": [
-      "missão da semana cumprida"
-     ]
-    }
-   ]
-  },
-  {
-   "data": "2026-10-30",
-   "dia": "sexta",
-   "eventos": [
-    {
-     "tipo": "achado",
-     "texto": "O menino de Salmoura disse o nome da Senhora dos Poços, e Teodoro ficou branco.",
-     "despacho": "O menino disse o nome de passagem, comendo o pão que Bram lhe deu: — A Senhora dos Poços? Lúcia. Todo mundo sabe. — Teodoro deixou a caneca cair. Não a pegou. Ficou olhando para a parede de Ost, onde os sete nomes só aparecem com a luz verde, e disse a única coisa que ninguém esperava ouvir dele: — Eu menti para vocês.",
-     "juramento": null,
-     "marcas": [
-      "+1 pista do Códice"
-     ]
-    },
-    {
-     "tipo": "bencao",
-     "texto": "Na luz da brasa, a Marca de Fabio apontou para o chão da torre. Debaixo de uma laje solta, havia uma estilha que algum guardião antigo escondeu ali.",
-     "despacho": "A Marca puxou a mão de Fabio para baixo com tanta força que ele caiu de joelhos na torre. Teodoro ergueu a laje e encontrou, enrolada num lenço apodrecido, uma estilha e um nome bordado: Davi. O velho segurou o lenço contra o peito e saiu da torre sem uma palavra. Voltou ao anoitecer, com os olhos secos, e disse apenas: — Ele sempre escondia as coisas boas para depois.",
-     "juramento": null,
-     "marcas": [
-      "+1 estilha do céu"
-     ]
-    }
-   ]
-  },
-  {
-   "data": "2026-10-31",
-   "dia": "sábado",
-   "eventos": [
-    {
-     "tipo": "achado",
-     "texto": "Maren reconheceu, num papel do menino, a letra miúda e redonda do mapa da Senhora.",
-     "despacho": "O menino deixou cair um papel dobrado quando fugiu, e Maren o guardou antes que alguém visse. Era uma lista de compras da Liga, com sal, lenha e três nomes de poço. A letra era miúda e redonda, inclinada para a esquerda, a mesma que ela copiou do mapa antigo que as mulheres do poço descreviam. Ela mediu a inclinação com o dedo, duas vezes. Depois, na parede branca de Ost, à luz verde da brasa, conferiu o sexto nome dos sete. A letra de um e de outra se parecia demais.",
-     "juramento": null,
-     "marcas": [
-      "+1 pista do Códice"
-     ]
-    },
-    {
-     "tipo": "missao",
-     "texto": "Iara ensinou a Maren o primeiro verso da canção. Maren ensinou a Iara o nó que quer dizer luz que volta.",
-     "despacho": "Iara ensinou a Maren o primeiro verso da canção, devagar, sílaba por sílaba. Maren ensinou a Iara a escrever no ar o nó que quer dizer luz que volta. O nó acendeu fraco na ponta do dedo de Iara, e ela riu tão alto que acordou Bram. A Mácula, naquela noite, não doeu.",
-     "juramento": null,
-     "marcas": [
-      "missão da semana cumprida"
-     ]
-    },
-    {
-     "tipo": "missao",
-     "texto": "Bram consertou as botas de todo mundo sem que ninguém pedisse, e gravou na sola de cada uma um nó pequeno.",
-     "despacho": "Bram passou a noite consertando as botas da companhia sem que ninguém pedisse. Na sola de cada uma gravou um nó pequeno que Maren lhe ensinou. Quando Fabio perguntou o que era, ele deu de ombros. — Ela disse que quer dizer volta para casa. Achei que não custava.",
-     "juramento": null,
-     "marcas": [
-      "missão da semana cumprida"
-     ]
-    },
-    {
-     "tipo": "missao",
-     "texto": "Maren contou a Fabio um dos segredos que guardava, antes de ser obrigada.",
-     "despacho": "Maren sentou ao lado de Fabio quando os outros dormiam e abriu o Códice na página da garça. — Eu vi isto há três noites e não contei. Estou contando agora. — Fabio olhou a garça por muito tempo. — Por que agora? — Porque guardar sozinha está ficando pesado demais. — Foi a primeira vez que ela contou alguma coisa antes de ser obrigada.",
-     "juramento": null,
-     "marcas": [
-      "missão da semana cumprida"
-     ]
-    }
-   ]
-  },
-  {
-   "data": "2026-11-01",
-   "dia": "domingo",
-   "eventos": [
-    {
-     "tipo": "achado",
-     "texto": "Iara ouviu o menino de Salmoura cantarolar um verso da canção de travessia.",
-     "despacho": "O menino voltou ao pé da colina para devolver a corda de Bram e, esperando ser pago com pão, cantarolou enquanto roía a casca. Iara parou no meio de um passo. Era o primeiro verso da canção de ninar dela, a mesma melodia, com palavras que ela nunca soube de quem eram. — Quem lhe ensinou isso? — perguntou, e a voz saiu mais fina do que pretendia. — A Senhora dos Poços — respondeu o menino. — Ela canta de noite, quando acha que não tem ninguém. Iara apertou o braço esquerdo até a mácula esquentar.",
-     "juramento": null,
-     "marcas": [
-      "+1 pista do Códice"
-     ]
-    }
-   ]
-  }
- ],
- "premissa_atual": {
-  "parte": "II",
-  "n": 2,
-  "titulo": "O Coração de Ost",
-  "semana": "2026-10-26",
-  "simulacao": false,
-  "nota": "Escrita a partir do desfecho oficial da Parte I (impasse: Ost de pé, com luz pequena).",
-  "texto": "## O que a mão aponta\n\nFabio acordou antes de todos, na madrugada fria do alto de Ost, com a mão direita doendo.\n\nNão era a dor de um ferimento. Era uma pressão, como se alguém segurasse o pulso dele e puxasse devagar. A Marca da Aurora brilhava sob a pele num fio de prata, e o brilho não era igual em toda a cicatriz: era mais forte na borda que dava para o oeste. Ele girou o corpo para o norte, para o sul, para o leste. A luz enfraquecia. Voltou para o oeste. A luz crescia.\n\nTeodoro, que dormia pouco desde que chegaram, estava sentado junto ao braseiro, olhando a brasa pequena tremer. Quando Fabio lhe mostrou a mão, o velho não se surpreendeu.\n\n— A Marca procura o que foi tirado daqui — disse. — O coração de Ost. Ela sabe onde está. — Apontou para o oeste com a cabeça, para além das colinas, onde a fumaça de alguma coisa subia fina contra o céu da manhã. — E eu acho que eu também sei.\n\n## Salmoura\n\nA meio dia de caminhada a oeste de Ost, num vale estreito entre as colinas, fica Salmoura.\n\nHá cinquenta anos era só uma salina pobre, um punhado de casas em volta de poços de água salgada que os moradores ferviam para tirar sal. Depois a Liga do Sal comprou os poços, a vila, a estrada e as pessoas. Hoje Salmoura é um posto murado com torres de vigia, armazéns de pedra e um pátio onde se fervem caldeirões dia e noite. Os moradores trabalham nos poços em troca de comida e de um lugar dentro dos muros. Do lado de fora, a Cinza já cobriu os campos.\n\nO que poucos sabem, e Teodoro sabe porque passou quarenta anos guardando a fronteira, é que a Liga não tira só sal de Salmoura. Nos armazéns do fundo, atrás de portas de ferro, ela guarda estilhaços do céu. Compra de contrabandistas, de garimpeiros, de Faroleiros desesperados. Compra, dizem os boatos, de quem os rouba dos faróis. Numa Ardena em que os faróis se apagam, quem tem luz guardada vai poder vendê-la pelo preço que quiser.\n\n— A Liga não quer que o Muro seja aceso — disse Teodoro. — Quer que ele se apague. Devagar. Para vender a escuridão aos poucos.\n\nO coração de Ost é um cristal do tamanho da cabeça de uma criança, cor de mel escuro, que arde por dentro como um fogo visto através de água. Se estiver em Salmoura, está atrás das portas de ferro. E diante das portas de ferro, Teodoro tem quase certeza, está o homem que Bram mais teme em Ardena.\n\n## Mestre Corvino espera\n\nNo segundo dia em Ost, chega um bilhete.\n\nQuem traz é um menino de Salmoura, magro, de pés descalços e mãos rachadas de sal, que sobe a colina sozinho, deixa o papel dobrado no primeiro degrau da torre e foge correndo antes que alguém consiga falar com ele. A letra é caprichada, quase bonita.\n\n*Ao ferreiro Bram e aos seus amigos. Sei o que vocês procuram e sei onde está. Proponho uma troca honesta, como convém a gente civilizada: o coração do farol por uma dívida. Venham a Salmoura quando quiserem. Ninguém será ferido sem necessidade. Com respeito, C.*\n\nBram lê três vezes e passa o bilhete a Fabio sem uma palavra. Depois desce a escada e vai sentar sozinho do lado de fora, de costas para a torre, com o martelo de Tomas no colo. Fica ali até escurecer.\n\nTodos entendem a troca. A Liga quer Bram de volta nas arenas, onde ele pertence pelo contrato que quebrou. Em troca, devolve o coração de Ost, porque um farol aceso na fronteira vale pouco para quem já tem cem estilhaços guardados. É uma troca que salvaria o farol e perderia o ferreiro.\n\nFabio não aceita. Iara diz que vai entrar em Salmoura sozinha, à noite, e trazer o cristal nas costas. Maren lembra que a Liga não escreveria um bilhete daqueles se não tivesse certeza de que eles viriam. Teodoro não diz nada. Na noite do segundo dia, Bram volta para dentro da torre, senta-se junto ao braseiro e fala pela primeira vez desde a manhã.\n\n— Se for para salvar o farol, eu vou. Já perdi um irmão para uma mina de estilhaços. Não quero que mais ninguém morra no escuro por causa de luz guardada num armazém.\n\nFabio olha para ele por muito tempo.\n\n— Ninguém vai trocar ninguém — diz por fim. — Nem você, nem o farol.\n\n## A mácula de Iara\n\nAs veias cinzentas no braço de Iara não cresceram desde a tempestade, mas também não recuaram. Ela as esconde debaixo da manga e diz que não doem. Não é verdade. À noite, quando acha que ninguém está olhando, segura o braço junto ao peito e cantarola baixinho a canção de ninar da língua que ninguém fala, e a canção parece acalmar a mácula como se fosse remédio.\n\nTeodoro observa. Conhece a Mácula de Cinza: viu-a em dois dos sete, há quarenta anos. Sabe que ela recua quando a pessoa é bem guardada, quando a companhia anda junta e não vacila. E sabe que, se for alimentada, a mácula cresce até virar Esquecimento, e então não há volta.\n\nHá outra coisa que só Maren percebeu. Quando Iara canta a canção de ninar perto do Códice de Vhar, as páginas queimadas se aquecem. Numa delas, onde antes só havia cinza e borda preta, aparece por alguns segundos um desenho de pássaro com as asas abertas. É uma garça, igual à tatuagem desbotada no pulso de Iara.\n\nMaren ainda não contou a ninguém.\n\n## O que Maren viu na parede\n\nNa terceira noite, Maren encontra outra vez a linha de nós que aparece na parede branca de Ost só à luz verde da brasa. Dessa vez está preparada. Desenha os nós no Códice um a um, rapidamente, antes que sumam.\n\nNão é uma frase. É uma lista. Sete nomes, na Escrita dos Tecelões, gravados por dentro da pedra de uma torre que é mais velha que o próprio farol: Lúcia. Bento. Ícaro. Joana. Rui. Mira. Davi.\n\nSão os nomes do vidro da lanterna de Teodoro. Mas a torre foi construída trezentos anos antes de qualquer um deles nascer.\n\nMaren fecha o Códice com as mãos frias. Não sabe se conta a Teodoro. Não sabe se ele já sabe.\n\n## O que espreita\n\n**Mestre Corvino** está em Salmoura com uma dúzia de homens, os muros do posto e todo o tempo do mundo. Não tem pressa. Quer Bram vivo, e é paciente como só são os homens que nunca perderam uma caçada.\n\n**A Liga do Sal** tem um rosto que a companhia ainda não conhece: a feitora de Salmoura, que os moradores chamam apenas de a Senhora dos Poços, e que nunca sai do armazém do fundo. Dizem que tem na parede do escritório um mapa antigo do norte, desenhado à mão, com uma letra miúda e redonda nas margens.\n\n**Os Esquecidos** começaram a se juntar na beira da luz de Ost. Na primeira noite eram cinco. Na terceira, eram trinta. Ficam parados no limite do brilho, olhando para o braseiro, como os do quinto farol. Teodoro diz que eles vêm porque se lembram da luz. Maren acha que vêm porque alguém os chama.\n\n**A Cinza**, ao redor de Ost, espera que a brasa pequena enfraqueça. Se o coração não voltar ao braseiro, a luz vai durar algumas semanas, talvez um mês. Depois Ost se apaga de vez, e com ele a estrada que a companhia andou.\n\n## Como a Parte II pode terminar\n\nNinguém sabe ainda como a companhia vai sair de Salmoura. O que se sabe é o que cada caminho custa.\n\nSe tudo der certo, a companhia entra em Salmoura e sai com o coração de Ost sem entregar ninguém. O farol acende inteiro, e na luz forte a estrada para o norte se abre até o Vau das Garças. Talvez descubram de quem é a letra miúda e redonda no mapa da Senhora dos Poços. Talvez Bram enfrente Corvino e a dívida termine ali, de um jeito ou de outro.\n\nSe a parte se concluir, o coração volta ao braseiro, Ost acende e a companhia segue para o norte. Corvino fica para trás, mas não esquece.\n\nSe a parte ficar pela metade, a companhia não consegue o coração. Ost continua de pé com a luz pequena, e o prazo do farol encurta. Os Esquecidos chegam mais perto.\n\nSe a parte for fraca, alguma coisa dá errado em Salmoura, e alguém da companhia sai ferido dos muros da Liga.\n\nE se a parte for vazia, ou se a companhia vacilar com a mácula de Iara ainda aberta, Salmoura cobra caro. Ou Mestre Corvino leva o que veio buscar e Bram acorda acorrentado a caminho das arenas, ou a Cinza encontra a porta aberta no braço de Iara, e ela sai andando para o norte no meio dos Esquecidos, de olhos vazios, cantando uma canção que ninguém entende.\n\nNa última noite antes de descerem para Salmoura, Teodoro abre a lanterna vazia e passa o dedo devagar pelos sete nomes gravados no vidro.\n\n— Quarenta anos atrás eu desci para um lugar como esse — diz, sem olhar para ninguém. — Éramos oito. Eu prometi que dessa vez ia voltar com todo mundo.",
-  "minutos": 8
- },
+ "diario": [],
+ "premissa_atual": null,
  "premissa_proxima": null,
  "projecao": {
-  "tier": "avanco",
-  "ok": 4,
-  "n": 5,
+  "tier": "reves",
+  "ok": 0,
+  "n": 4,
   "efeitos": [
-   "A Mácula de Cinza recuou: Iara está livre dela.",
-   "Parte sem juramento quebrado. Relíquia ganha: Sal dos Faróis.",
-   "Com cinco estilhas, Bram forjou a Lâmina Estelar.",
-   "Bram gravou uma runa nova: Runa do Escudo.",
-   "A companhia avançou até o Farol de Ost."
+   "Parte sem juramento quebrado. Relíquia ganha: Pena da Garça Branca.",
+   "A Runa do Escudo se partiu e levou o golpe no lugar da companhia.",
+   "A Pena da Garça Branca poupou Maren de uma ferida."
   ],
   "cena": {
-   "tier": "avanco",
-   "etapa_antes": 0,
+   "tier": "reves",
+   "etapa_antes": 1,
    "etapa_depois": 1,
    "arco": "I",
    "clima": "seca",
    "lua": null,
    "companhia": {
-    "brisa": "ferida",
+    "brisa": "ativa",
     "dorn": "ativa",
     "ysa": "ativa"
    },
    "afetado": null,
    "retorna": null,
-   "itens": [
-    "escudo"
-   ],
-   "talisma": false
+   "itens": [],
+   "talisma": true
   },
   "depois": {
    "etapa": 1,
@@ -479,12 +357,11 @@
     "dorn": "ativa",
     "ysa": "ativa"
    },
-   "mochila": [
-    "escudo"
-   ],
+   "mochila": [],
    "reliquias": [
     "sal_dos_farois",
-    "lamina_estelar"
+    "lamina_estelar",
+    "pena_da_garca"
    ],
    "maldicoes": [],
    "materiais": {
@@ -493,7 +370,7 @@
     "desgaste": 1
    }
   },
-  "falta_para_avanco": 0
+  "falta_para_avanco": 3
  },
  "encerramento": {
   "parte": "I",

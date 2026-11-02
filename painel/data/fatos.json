@@ -1,22 +1,17 @@
 {
- "gerado_em": "2026-10-31T22:35:36",
+ "gerado_em": "2026-11-02T08:53:54",
  "janela": {
-  "hoje": "2026-10-31",
-  "dia_semana": "Saturday",
-  "semana_desde": "2026-10-24"
+  "hoje": "2026-11-02",
+  "dia_semana": "Monday",
+  "semana_desde": "2026-10-26"
  },
  "peso": {
   "ultima": {
-   "data": "2026-10-30",
-   "peso_kg": 94.35,
-   "pos_esforco": false
+   "data": "2026-11-01",
+   "peso_kg": 94.7,
+   "pos_esforco": true
   },
   "serie_14d": [
-   {
-    "data": "2026-10-06",
-    "peso_kg": 95.05,
-    "pos_esforco": false
-   },
    {
     "data": "2026-10-12",
     "peso_kg": 95.3,
@@ -81,40 +76,44 @@
     "data": "2026-10-30",
     "peso_kg": 94.35,
     "pos_esforco": false
+   },
+   {
+    "data": "2026-11-01",
+    "peso_kg": 94.7,
+    "pos_esforco": true
    }
   ],
-  "media_ultimas_7_leituras": 94.59,
-  "media_neutras_nas_ultimas_7": 94.47,
-  "n_neutras_nas_ultimas_7": 3,
+  "media_ultimas_7_leituras": 94.64,
+  "media_neutras_nas_ultimas_7": 94.53,
+  "n_neutras_nas_ultimas_7": 2,
   "media_7_neutras_de_verdade": 94.62,
-  "media_28d_neutras": 94.86,
-  "n_leituras_pos_esforco_14d": 7,
+  "media_28d_neutras": 94.84,
+  "n_leituras_pos_esforco_14d": 8,
   "aviso": "Leitura pós-esforço vem ~0,26 kg abaixo do nível real; compare dias equivalentes ou use apenas as neutras."
  },
  "recuperacao": {
-  "indice_hoje": 47,
+  "indice_hoje": 14,
   "banda_hoje": "r",
-  "prontidao_garmin_hoje": 1,
-  "dias_vermelhos_seguidos": 1,
-  "sono_ultima_noite_h": 6.87,
-  "sono_ultima_noite_score": 58,
-  "hrv_ultima_noite": 36,
-  "fc_repouso_hoje": 56,
-  "indice_medio_7d": 57.0,
-  "sono_medio_7d": 6.79,
-  "hrv_medio_7d": 38.0,
+  "prontidao_garmin_hoje": null,
+  "dias_vermelhos_seguidos": 3,
+  "sono_ultima_noite_h": null,
+  "sono_ultima_noite_score": null,
+  "hrv_ultima_noite": null,
+  "fc_repouso_hoje": 58,
+  "indice_medio_7d": 43.0,
+  "sono_medio_7d": 6.84,
+  "hrv_medio_7d": 36.0,
   "hrv_medio_28d": 37.0,
-  "fc_repouso_7d": 53.0,
+  "fc_repouso_7d": 55.0,
   "fc_repouso_28d": 54.0,
-  "indice_hoje_confiavel": true
+  "indice_hoje_confiavel": false,
+  "componentes_faltando_hoje": [
+   "hrv_ms",
+   "sono_h"
+  ]
  },
  "treino_7d": {
   "dias_com_gasto_ativo_300+": [
-   {
-    "data": "2026-10-24",
-    "kcal_ativas": 396.0,
-    "passos": 14621
-   },
    {
     "data": "2026-10-26",
     "kcal_ativas": 480.0,
@@ -137,8 +136,8 @@
    },
    {
     "data": "2026-10-31",
-    "kcal_ativas": 756.0,
-    "passos": 8606
+    "kcal_ativas": 895.0,
+    "passos": 11124
    }
   ],
   "atividades_garmin": [
@@ -194,24 +193,6 @@
      728,
      1017,
      58
-    ]
-   },
-   {
-    "id": 24863558015,
-    "tipo": "treadmill_running",
-    "nome": "Threshold",
-    "inicio_local": "2026-10-26 20:38:55",
-    "duracao_min": 29.9,
-    "distancia_km": 4.5,
-    "fc_media": 145.0,
-    "fc_max": 167.0,
-    "kcal": 337.0,
-    "tempo_em_zona_s": [
-     69,
-     500,
-     814,
-     362,
-     0
     ]
    }
   ],
@@ -303,23 +284,23 @@
  },
  "alimentacao_7d": {
   "dias_com_registro": [
-   "2026-10-24",
    "2026-10-26",
    "2026-10-27",
    "2026-10-28",
    "2026-10-29",
    "2026-10-30",
-   "2026-10-31"
+   "2026-10-31",
+   "2026-11-01"
   ],
-  "n_refeicoes_registradas": 23,
+  "n_refeicoes_registradas": 24,
   "por_dia": {
-   "2026-10-24": 1,
    "2026-10-26": 2,
    "2026-10-27": 4,
    "2026-10-28": 4,
    "2026-10-29": 5,
    "2026-10-30": 3,
-   "2026-10-31": 4
+   "2026-10-31": 4,
+   "2026-11-01": 2
   },
   "ocorrencias": {
    "fritura": [],
@@ -352,31 +333,14 @@
      "data": "2026-10-26",
      "refeicao": "Jantar",
      "texto": "Frango com quiabo"
-    },
-    {
-     "data": "2026-10-24",
-     "refeicao": "Almoço",
-     "texto": "Kafta frango, tabule, arroz de lentilha e cebola"
     }
    ]
   },
-  "observacoes": [
-   {
-    "data": "2026-10-25",
-    "texto": "Médico liberou exercício com o antibiótico (amoxicilina com clavulanato). Sem falta de ar nem aperto no peito."
-   },
-   {
-    "data": "2026-10-24",
-    "texto": "Tosse só na garganta e no nariz. Ibuprofeno interrompido; só era usado se houvesse dor."
-   },
-   {
-    "data": "2026-10-24",
-    "texto": "Acordou com tosse, sem febre e sem dor. Urinou bastante durante a noite."
-   }
-  ],
+  "observacoes": [],
   "aviso": "Registro é esparso e qualitativo: ausência de registro NÃO é ausência de refeição. Não estime caloria da semana a partir daqui."
  },
  "lacunas": [
-  "sem pesagem hoje (última: 2026-10-30)"
+  "índice de hoje calculado sem hrv_ms, sono_h — use a média de 7 dias, não o número de hoje",
+  "sem pesagem hoje (última: 2026-11-01)"
  ]
 }
