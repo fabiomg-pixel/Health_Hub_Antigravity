@@ -10,7 +10,9 @@ avisar() { printf '%s' "$1" | ./enviar_telegram_saude.py aviso > /dev/null 2>&1;
 while true; do
   date +%s > "$BASE/heartbeat_despachos" 2>/dev/null
   H=$(date +%H)
-  if [ "$H" -ge 7 ] && [ "$H" -lt 23 ]; then /usr/bin/caffeinate -i -t 960 > /dev/null 2>&1 & fi
+  # Acordado das 7h à 1h (02/11: no domingo o Mac dormiu às 23h32, no meio do capítulo das 23h05, e o conselho e a Parte II
+  # só fecharam na segunda às 9h). A avaliação (22h33) e o capítulo (23h05) passam de meia-noite. Tampa fechada ainda dorme.
+  if [ "$H" -ge 7 ] || [ "$H" -lt 1 ]; then /usr/bin/caffeinate -i -t 960 > /dev/null 2>&1 & fi
   { date '+%F %T'; python3 despachos.py 2>&1; } >> despachos.log
   if ! /usr/bin/screen -ls 2>/dev/null | grep -q '\.saude[[:space:]]'; then
     /usr/bin/screen -dmS saude zsh -c "cd '$PWD' && while true; do ./iniciar_telegram_saude.sh; sleep 30; done"

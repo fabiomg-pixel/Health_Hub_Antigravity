@@ -4,6 +4,11 @@
 # Mantida ligada pelo launchd (~/Library/LaunchAgents/com.fabiogomes.telegram-saude.plist),
 # dentro de um screen: ver com `screen -r saude`; sair sem fechar com Ctrl-A depois D.
 cd "$(dirname "$0")"
+# 02/11: quando o bot é religado por um script que nasceu dentro de outra sessão do Claude Code, ele herdava as variáveis
+# dela (CLAUDE_CODE_CHILD_SESSION etc.) e rodava como sessão-filha: sem salvar a transcrição, sem como investigar uma falha
+# (foi o caso do fechamento de 01/11). O bot é sempre uma sessão própria.
+for v in $(env | grep -o '^CLAUDE_CODE_[A-Z_]*' | grep -v '^CLAUDE_CODE_OAUTH_TOKEN$'); do unset "$v"; done
+unset CLAUDECODE
 export TELEGRAM_STATE_DIR="$HOME/.claude/channels/telegram-saude"
 # Token de longa duração (1 ano), gerado pelo Fabio com `claude setup-token` em 26/10/2026 e salvo por ele em
 # oauth_token (chmod 600). Se existir, a sessão do bot não depende do login que expira. Nunca imprimir o conteúdo.
