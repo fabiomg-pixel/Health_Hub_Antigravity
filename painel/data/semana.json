@@ -1,7 +1,7 @@
 {
  "gerado_em": "2026-11-02",
  "semana": "02/11 a 08/11 · semana de recuperação ativa: 2 forças, 2 corridas fáceis e o jogo",
- "objetivo": "Depois de uma semana com 3 estímulos de qualidade (limiar em 26/10, limiar em 30/10 e futebol em 31/10), com FC de repouso 58 hoje (média de 28 dias: 54) e a leitura de hoje ainda incompleta, o plano é: 2 forças (RIR 2), 2 corridas fáceis em zona 2 e o jogo de sábado como única qualidade. Terça, quarta e quinta são três dias de carga seguidos, avisados: a quinta é o primeiro corte. A 3ª força e a 3ª corrida do teto ficam de fora, sem reposição; o corte vem do estado do corpo e não do teto.",
+ "objetivo": "Depois de uma semana com 3 estímulos fortes (corrida mais forte que a média em 26/10, limiar em 30/10 e futebol em 31/10), com FC de repouso 58 hoje (média de 28 dias: 54) e a leitura de hoje ainda incompleta, o plano é: 2 forças (RIR 2), 2 corridas fáceis em zona 2 e o jogo de sábado como única qualidade. Terça, quarta e quinta são três dias de carga seguidos, avisados: a quinta é o primeiro corte. A 3ª força e a 3ª corrida do teto ficam de fora, sem reposição; o corte vem do estado do corpo e não do teto. Nenhum gatilho do semáforo está confirmado ainda (sono e VFC de hoje não sincronizaram): a manhã de terça decide se a 3ª força e a 3ª corrida entram.",
  "peso_atual": 94.62,
  "peso_rotulo": "média das leituras neutras dos últimos 7 dias (28 dias: 94,84 kg); a pesagem de 01/11 (94,7 kg) é pós-esforço e não entra",
  "fontes_status": {
@@ -46,9 +46,9 @@
   "dias_feitos": []
  },
  "relatorio": [
-  "Semana 02/11 a 08/11: 2 forças, 2 corridas fáceis e o jogo de sábado. A semana passada teve 3 estímulos de qualidade (limiar em 26/10, limiar em 30/10 e futebol em 31/10). Hoje a FC de repouso é 58, contra 54 de média de 28 dias; o índice de hoje (14) não é confiável porque sono e VFC ainda não sincronizaram. Por isso segunda é descanso e nada passa de zona 2 além do jogo.",
+  "Semana 02/11 a 08/11: 2 forças, 2 corridas fáceis e o jogo de sábado. A semana passada teve 3 estímulos fortes (corrida mais forte que a média em 26/10, limiar em 30/10 e futebol em 31/10). Hoje a FC de repouso é 58, contra 54 de média de 28 dias; o índice de hoje (14) não é confiável porque sono e VFC ainda não sincronizaram. Por isso segunda é descanso e nada passa de zona 2 além do jogo.",
   "Você disse que não espera reunião no fim da tarde, então as corridas ficam entre 16h45 e 17h45; quarta é o único dia seco. Você disse academia, com o plano em casa de reserva. Você disse almoço de marmita e janta simples, força no fim da tarde e refeição livre no sábado.",
-  "Terça, quarta e quinta são 3 dias de carga seguidos, e aviso: a quinta é o primeiro corte (vira versão em casa leve ou cai) se a terça ou a quarta pesarem. A 3ª força e a 3ª corrida do teto ficam de fora, sem reposição; o corte vem da FC de repouso e não do teto, e a manhã de terça confirma. Corte só por febre, falta de ar, aperto ou tosse no peito, dor articular acima de 3/10 ou pelo semáforo do painel."
+  "Terça, quarta e quinta são 3 dias de carga seguidos, e aviso: a quinta é o primeiro corte (vira versão em casa leve ou cai) se a terça ou a quarta pesarem. A 3ª força e a 3ª corrida do teto ficam de fora por ora; o corte vem da FC de repouso 58 e não do teto, nenhum gatilho do semáforo está confirmado e a manhã de terça decide se elas entram. Corte só por febre, falta de ar, aperto ou tosse no peito, dor articular acima de 3/10 ou pelo semáforo do painel."
  ],
  "lista_compra": [
   {
@@ -523,7 +523,7 @@
    "id": "carga",
    "especialista": "Carga e recuperação",
    "assina": "seu fisiologista",
-   "como_esta": "Você disse que se sente bem e não relatou sintoma. O relógio pede cuidado: FC de repouso 58 hoje (média de 28 dias: 54), média de 7 dias do índice 43 e VFC 36 (28 dias: 37), depois de 3 estímulos de qualidade na semana (futebol de 31/10: 64 min, FC máxima 191). Leitura de domingo, fora do fatos.json: prontidão 1, VFC 30, sono 6,03 h. A manhã de hoje ainda está incompleta.",
+   "como_esta": "Você disse que se sente bem e não relatou sintoma. O relógio pede cuidado: FC de repouso 58 hoje (média de 28 dias: 54), média de 7 dias do índice 43 e VFC 36 (28 dias: 37), depois de 3 estímulos fortes na semana (futebol de 31/10: 64 min, FC máxima 191). Leitura de domingo, fora do fatos.json: prontidão 1, VFC 30, sono 6,03 h. A manhã de hoje ainda está incompleta.",
    "para_onde": "Até 3 forças e 3 corridas fáceis em zona 2 no teto; o jogo de sábado é a única qualidade. Segunda é descanso, quinta sem perna pesada, sexta sem corrida e domingo sem corrida. 3 manhãs vermelhas seguidas (se a leitura de hoje se confirmar), prontidão abaixo de 30 ou noite abaixo de 5,5 h com VFC abaixo de 30 ou FC a partir de 58 derrubam a próxima corrida.",
    "nao_sei": [
     "A manhã de hoje completa (sono e VFC não sincronizaram) e a de terça.",
@@ -553,6 +553,17 @@
    "nao_sei": [
     "Os rótulos das marmitas.",
     "Se a livre é à noite ou no almoço."
+   ]
+  },
+  {
+   "id": "cetico",
+   "especialista": "Cético",
+   "assina": "o revisor do plano",
+   "como_esta": "Duas rodadas. A primeira achou 3 dias de carga seguidos (terça, quarta e quinta) com justificativa falsa, o índice de hoje tratado como certo e números fora do fatos.json; foram corrigidos. A segunda não achou nada grave.",
+   "para_onde": "Terça, quarta e quinta aparecem como 3 dias de carga seguidos, com a quinta como primeiro corte. A semana mais leve (2 forças, 2 corridas) é uma escolha pela FC de repouso 58; nenhum gatilho do semáforo está confirmado e a manhã de terça decide se a 3ª força e a 3ª corrida entram.",
+   "nao_sei": [
+    "Sono e VFC de hoje (não sincronizaram).",
+    "Se o corte de quinta será necessário."
    ]
   }
  ]
