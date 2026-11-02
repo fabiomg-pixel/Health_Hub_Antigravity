@@ -20,8 +20,12 @@ avisa() {   # $1 = chave do problema, $2 = texto
 religa() { [ -n "$VIGIA_SECO" ] && return; /usr/bin/open -g -a Terminal "$BASE/iniciar_saude.command" > /dev/null 2>&1; }
 SCR=$(/usr/bin/screen -ls 2>/dev/null)
 if ! echo "$SCR" | grep -q '\.saude[[:space:]]'; then avisa saude "o bot (screen saude) está fora do ar; tentei religar. Brief e avaliação não rodam sem ele."; religa; fi
+# Se o Mac dormiu (a última execução do vigia foi há mais de 25 min), o laço também dormiu: não é falha, é noite. Só alerta de sinal de vida parado
+# quando o próprio vigia rodou direto até agora (a máquina estava acordada).
+ULT=$(cat "$BASE/vigia_ultima" 2>/dev/null || echo 0); echo "$AGORA" > "$BASE/vigia_ultima"
+DORMIU=0; [ $((AGORA - ULT)) -gt 1500 ] && DORMIU=1
 HB=$(cat "$BASE/heartbeat_despachos" 2>/dev/null || echo 0)
-if ! echo "$SCR" | grep -q '\.despachos[[:space:]]' || [ $((AGORA - HB)) -gt 2400 ]; then
+if ! echo "$SCR" | grep -q '\.despachos[[:space:]]' || { [ $((AGORA - HB)) -gt 2400 ] && [ "$DORMIU" = 0 ]; }; then
   [ "$HORA" -ge 7 ] && [ "$HORA" -lt 23 ] && { avisa despachos "o laço dos despachos da Campanha parou (sem sinal há mais de 40 min); tentei religar. Cartas e marcos esperam."; religa; }
 fi
 if [ "$HORA" -ge 10 ] && [ "$HORA" -lt 22 ]; then
