@@ -115,6 +115,11 @@ fetch('data/historia.json').then(r => r.ok ? r.json() : null).then(j => {
   .cp-leitura ul { margin: 0 0 15px; padding-left: 20px; } .cp-leitura li { font-family: Georgia, serif; font-size: 16px; line-height: 1.6; margin-bottom: 8px; }
   .cp-leitura.fechada { max-height: 340px; overflow: hidden; }
   .cp-leitura.fechada::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(rgba(11,27,38,0), var(--tinta)); }
+  .cp-parte { border-top: 2px solid rgba(127,127,127,0.35); padding: 4px 0 12px; }
+  .cp-parte > summary { cursor: pointer; min-height: 52px; display: flex; flex-direction: column; justify-content: center; gap: 2px; list-style: none; }
+  .cp-parte > summary b { font-family: var(--display); font-size: 19px; }
+  .cp-parte > summary small { font-size: 13px; opacity: 0.75; }
+  .cp-parte h4 { font-family: var(--display); font-size: 16px; margin: 16px 0 6px; }
   .cp-ler { margin-top: 12px; background: transparent; color: #fff; border: 2px solid var(--sol); padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; min-height: 44px; }
   .cp-selo { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; border: 1.5px solid var(--sol); color: var(--sol); margin-right: 8px; }
   .cp-nota { font-size: 12.5px; opacity: 0.72; line-height: 1.5; margin-top: 8px; }
@@ -323,8 +328,8 @@ function cpLeitura(id, txt, minutos, rotulo) {
     <button class="cp-ler" data-alvo="${id}">${rotulo} (≈ ${minutos} min de leitura)</button>`;
 }
 function cpLigarLeituras() {
-  document.querySelectorAll('.cp-ler').forEach(b => b.addEventListener('click', () => {
-    const el = document.getElementById(b.dataset.alvo); const fechada = el.classList.toggle('fechada');
+  document.querySelectorAll('.cp-ler[data-alvo]').forEach(b => b.addEventListener('click', () => {
+    const el = document.getElementById(b.dataset.alvo); if (!el) return; const fechada = el.classList.toggle('fechada');
     b.textContent = fechada ? b.textContent.replace(/^Recolher/, 'Ler') : 'Recolher'; if (fechada) el.scrollIntoView({ block: 'start' });
   }));
 }
@@ -389,6 +394,53 @@ function cpLivroMundo() {
   return `<section class="bloco cp-mundo"><div class="cab"><h2>O Livro do Mundo</h2><small>lugares, gente e forças das Marcas do Sal</small></div>` +
     b.map(x => `<details><summary>${esc(x.titulo)}</summary><div class="cp-leitura">${cpMd(x.texto)}</div></details>`).join('') + `</section>`;
 }
+// ───────── a história inteira (Fabio, 02/11) ─────────
+// Desfechos lidos neste aparelho. Na primeira vez, só o desfecho mais recente fica por ler: os anteriores ele já viu.
+function cpLidos() {
+  const L = (HISTORIA && HISTORIA.livro_inteiro) || [], fechadas = L.filter(p => p.fechada && p.desfecho).map(p => p.semana);
+  try { const v = localStorage.getItem('cp_desfechos_lidos'); if (v) return JSON.parse(v); } catch (e) {}
+  const base = fechadas.slice(0, -1); try { localStorage.setItem('cp_desfechos_lidos', JSON.stringify(base)); } catch (e) {}
+  return base;
+}
+function cpMarcarLido(sem) { const l = cpLidos(); if (!l.includes(sem)) l.push(sem); try { localStorage.setItem('cp_desfechos_lidos', JSON.stringify(l)); } catch (e) {} }
+function cpDesfechoPendente() {
+  const L = (HISTORIA && HISTORIA.livro_inteiro) || [], fechadas = L.filter(p => p.fechada && p.desfecho), ult = fechadas[fechadas.length - 1];
+  return ult && !cpLidos().includes(ult.semana) ? ult : null;
+}
+function cpLivroInteiro(pend) {
+  const L = (HISTORIA && HISTORIA.livro_inteiro) || [], pr = HISTORIA && HISTORIA.prologo; if (!L.length) return '';
+  return `<section class="bloco" id="cp-livro-inteiro"><div class="cab"><h2>A história inteira</h2><small>do prólogo até hoje, em ordem</small></div>` +
+    (pr ? `<details class="cp-parte"><summary><b>Prólogo</b><small>${esc(pr.subtitulo || '')}</small></summary>${cpLeitura('li-prol', pr.texto, pr.minutos, 'Ler o prólogo')}</details>` : '') +
+    L.filter(p => !pend || p.semana <= pend.semana).map(p => {   // a parte seguinte continua o desfecho: só aparece depois dele
+      const id = 'li-' + p.semana, trava = pend && pend.semana === p.semana;
+      return `<details class="cp-parte" ${trava ? 'open' : ''}><summary><b>Parte ${esc(p.parte)}: ${esc(p.titulo)}</b><small>${esc(p.periodo)}${p.fechada ? '' : ' · em andamento'}</small></summary>
+        ${p.premissa ? `<h4>Como a parte começou</h4>${cpLeitura(id + '-pr', p.premissa.texto, p.premissa.minutos, 'Ler a abertura')}` : ''}
+        ${p.cenas.length ? `<h4>As cenas da semana</h4>` + p.cenas.map(c => `<div class="cp-ev ${esc(c.tipo)}"><i>${CP_ICO[c.tipo] || '·'}</i><span><b>${esc(c.dia)}.</b> ${esc(c.texto)}</span></div>`).join('') : ''}
+        ${p.onde_paramos ? `<h4>Onde paramos</h4>${cpLeitura(id + '-op', p.onde_paramos.texto, p.onde_paramos.minutos, 'Ler o resumo')}` : ''}
+        ${p.desfecho ? `<h4>Desfecho</h4>` + (trava ? `<button type="button" class="cp-ler" data-desfecho="${esc(p.semana)}">Ler o desfecho da Parte ${esc(p.parte)} (≈ ${p.desfecho.minutos} min)</button>`
+          : cpLeitura(id + '-de', p.desfecho.texto, p.desfecho.minutos, 'Ler o desfecho')) : ''}</details>`;
+    }).join('') + `</section>`;
+}
+// Página sem spoiler: enquanto o desfecho mais recente não foi aberto neste aparelho, a Campanha mostra só o resumo de onde
+// a história parou e o livro; estrada, companhia, runas e relíquias já refletem o desfecho e ficam para depois.
+function cpPaginaAntesDoDesfecho(p) {
+  $('view').innerHTML = `<div class="cp-escuro"><div class="campo tinta"><div class="dentro" style="padding-bottom:26px">
+      <div class="topo"><div class="rot">A Semente de Aurora</div></div>
+      <h1 class="titulo longo">A Parte ${esc(p.parte)} fechou</h1>
+      <div class="sub">${esc(p.titulo)}. Antes do desfecho, relembre onde a história parou.</div></div></div>
+    <div class="cp-aventura">
+    ${p.onde_paramos ? `<section class="bloco"><div class="cab"><h2>Onde paramos</h2><small>≈ ${p.onde_paramos.minutos} min, sem o desfecho</small></div><div class="cp-leitura">${cpMd(p.onde_paramos.texto)}</div></section>` : ''}
+    <section class="bloco"><div class="cab"><h2>O desfecho</h2><small>Parte ${esc(p.parte)}</small></div>
+      <button type="button" class="cp-ler" data-desfecho="${esc(p.semana)}">Ler o desfecho da Parte ${esc(p.parte)} (≈ ${p.desfecho.minutos} min)</button></section>
+    ${cpLivroInteiro(p)}</div></div>`;
+  cpLigarLeituras();
+}
+document.addEventListener('click', ev => {
+  const b = ev.target.closest && ev.target.closest('[data-desfecho]'); if (!b) return;
+  cpMarcarLido(b.dataset.desfecho); location.hash = '#campanha'; route(); window.scrollTo(0, 0);
+  setTimeout(() => { const el = document.getElementById('cp-enc'); if (el && el.classList.contains('fechada')) { el.classList.remove('fechada'); const bt = document.querySelector('[data-alvo="cp-enc"]'); if (bt) bt.textContent = 'Recolher'; } }, 60);
+});
+
 // "Como estou indo?" logo no topo (31/10): as missões da semana e o desfecho se a parte fechasse agora.
 function cpResumoSemana() {
   const j = JORNADA, H = HISTORIA; if (!j || !j.capitulo || !(j.capitulo.missoes || []).length) return '';
@@ -401,7 +453,7 @@ function cpResumoSemana() {
 }
 function cpAventura() {
   const H = HISTORIA; if (!H) return '';
-  let h = '<div class="cp-aventura">' + cpResumoSemana() + cpPrologo() + (H.encerramento ? cpEncerramento() : cpDesfecho()) + cpPremissa() + cpDiario();
+  let h = '<div class="cp-aventura">' + cpResumoSemana() + cpLivroInteiro(null) + cpPrologo() + (H.encerramento ? cpEncerramento() : cpDesfecho()) + cpPremissa() + cpDiario();
   if (H.crise) {
     const g = H.crise.g, ela = g === 'o' ? 'ele' : 'ela', a = g === 'o' ? 'o' : 'a';
     h += `<div class="cp-crise"><b class="t">Crise aberta: ${esc(H.crise.companheiro)}</b><div class="par" style="margin-top:6px">${esc(H.crise.companheiro)} está pres${g} em ${esc(H.crise.onde)}. Uma semana boa (capítulo concluído) ${a} traz de volta. Prazo: <b>${H.crise.prazo} ${H.crise.prazo === 1 ? 'semana' : 'semanas'}</b>; se acabar, ${ela} se perde, e só uma grande vitória ${a} resgata depois.</div></div>`;
@@ -430,6 +482,8 @@ function renderCampanha() {
     setTimeout(() => { const el = document.getElementById('cp-espera'); if (el && !JORNADA) el.innerHTML = 'Não consegui abrir a Campanha agora (sem sinal ou o arquivo não chegou). <a href="#campanha" onclick="location.reload()">Tentar de novo</a>.'; }, 6000);
     return;
   }
+  const pend = typeof HISTORIA !== 'undefined' && HISTORIA ? cpDesfechoPendente() : null;
+  if (pend) { cpPaginaAntesDoDesfecho(pend); return; }
   const j = JORNADA, p = j.personagem, v = j.vitalidade, a = j.arco || {}, pr = j.paralela;
   const vit = v.indice == null ? ['—', 'Vitalidade: sem dado'] : [fNum(v.indice, 0), v.estado === 'ferido' ? 'Vitalidade: ferido' : 'Vitalidade: de pé'];
   let h = `<div class="cp-escuro"><div class="campo tinta"><div class="dentro" style="padding-bottom:26px">
@@ -466,8 +520,7 @@ function renderCampanha() {
     j.reliquias.map(r => `<div class="${r.em ? '' : 'tr'}"><svg viewBox="0 0 24 24" fill="${r.em ? 'var(--sol)' : 'none'}" stroke="${r.em ? 'var(--sol)' : '#fff'}" stroke-width="1.8" stroke-linejoin="round">${r.em ? CP_REL : CP_TRANCA}</svg>
       <span><b>${esc(r.nome)}</b><small>${esc(r.texto)}${r.em ? ' · ' + cpDDMM(r.em) : ''}</small></span></div>`).join('') + `</div></section>`;
 
-  h += `<section class="bloco cp-livro"><div class="cab"><h2>O livro</h2><small>a aventura, capítulo por capítulo</small></div>` +
-    (j.livro || []).map((c, i) => `<details ${i === (j.livro.length - 1) ? 'open' : ''}><summary>${esc(c.titulo)}</summary>${c.texto.split(/\n\s*\n/).map(par => `<p>${esc(par)}</p>`).join('')}</details>`).join('') + `</section>`;
+  // "O livro" (só os desfechos) saiu em 02/11: "A história inteira", no topo da aventura, tem tudo em ordem
 
   h += `<section class="bloco cp-regras"><details><summary style="padding:14px 0;font-weight:700;cursor:pointer">Como a Campanha funciona</summary>
     <div class="par">XP só por comportamento, uma vez por dia por tipo, com teto de 250 por dia: sessão de força 100, corrida 80, dia ativo 30, descanso confirmado na estalagem 50, pesagem 20, almoço registrado 20, lanche da tarde registrado 20; a rodada bônus (força curta no dia de corrida, corrida leve no dia de força) vale 50 e não conta como item do dia. Cada missão da semana cumprida vale 50, e o capítulo concluído, 150.</div>

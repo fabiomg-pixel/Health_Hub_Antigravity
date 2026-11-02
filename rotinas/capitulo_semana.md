@@ -35,6 +35,12 @@ dias ou meses no mundo, o que a trama pedir.
    `historia/estado.json`, `semanas.<segunda>.cartas` diz quantas bênçãos, achados, percalços e maldições a parte teve.
    Para a ordem das cartas, rode `python3 -c` sobre `historia.py` ou leia o diário que o painel mostrou durante a semana.
    **Você não decide o desfecho: você conta.** `tier`: triunfo, avanco, sustenta (impasse), reves, crise.
+1b. **Onde paramos** (Fabio, 02/11: ele precisa relembrar a história antes de ver o desfecho), ANTES do encerramento, em
+   `historia/escritos/<segunda desta semana>-onde-paramos.md` (cabeçalho `titulo: Onde paramos`, `subtitulo: Antes do desfecho
+   da Parte <romano>`, `semana:`), 500 a 900 palavras: o mundo em poucas linhas; o que aconteceu em cada parte anterior (uma
+   lista curta); como esta parte começou; as cenas que chegaram no Telegram durante a semana, em ordem e com a data
+   (`historia/despachos.json`); e o que estava em aberto. **Nada do desfecho**, nem o nível, nem consequências, nem
+   segredos das fichas. O painel mostra esse resumo antes de liberar o desfecho; `historia/a_historia_inteira.md` junta tudo.
 2. **Escrever o encerramento** em `historia/escritos/<segunda desta semana>-encerramento.md`:
    ```
    ---
@@ -92,9 +98,9 @@ dias ou meses no mundo, o que a trama pedir.
      `historia/partes/2026-10-26.json`.
 5. **Publicar.** `./publicar_jornada.sh`, commit de `historia/` e `painel/data/historia.json`.
 6. **Avisar** (`./enviar_telegram_saude.py capitulo`), em até 8 linhas (diga também que o capítulo mostra onde cada
-   marco da semana entrou na história): o título da parte que fechou e o desfecho numa
-   frase da história; as consequências que pesam; o título da próxima parte e uma frase de gancho; o link
-   `https://painel-xi-three.vercel.app/#campanha`.
+   marco da semana entrou na história). **Sem revelar o desfecho** (Fabio, 02/11: ele relembra antes de ler): diga só
+   que a parte fechou, o título dela, que o resumo "onde paramos" e o desfecho estão no painel, o título da próxima parte
+   com uma frase de gancho que não dependa do desfecho, e o link `https://painel-xi-three.vercel.app/#campanha`.
 
 ## Durante a semana (despachos e avaliação da noite)
 

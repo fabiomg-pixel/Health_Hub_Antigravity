@@ -466,6 +466,40 @@ if not painel.get('encerramento'):
     com_texto = [s_ for s_ in sorted(E['semanas']) if ler_escrito(f'{s_}-encerramento.md')]
     if com_texto: painel['encerramento'] = encerramento(com_texto[-1], E['semanas'][com_texto[-1]]['tier'])
 
+# ──────────────── o livro inteiro, em ordem (Fabio, 02/11: "é necessário ter acesso a toda a história")
+# Cada parte: premissa, as cenas que chegaram no Telegram durante a semana e o desfecho. A parte fechada mais recente
+# leva também o "onde paramos" (o resumo de tudo até antes do desfecho), escrito pela rotina do capítulo.
+def livro_inteiro():
+    cenas_por = {}
+    for dsp in (ler('historia/despachos.json', {}) or {}).get('despachos', []):
+        sg = dsp['id'].split(':')[1] if dsp['id'].startswith('missao:') else seg(D(dsp['data'])).isoformat()
+        cenas_por.setdefault(sg, []).append({'data': dsp['data'], 'dia': DIAS_PT[D(dsp['data']).weekday()] + ', ' + D(dsp['data']).strftime('%d/%m'), 'tipo': dsp['tipo'], 'texto': dsp['cena']})
+    semanas = sorted(set(list(E['semanas'].keys()) + ([SEG_ATUAL.isoformat()] if SEG_ATUAL >= INICIO else [])))
+    out = []
+    for s_ in semanas:
+        reg = E['semanas'].get(s_); n = n_parte(D(s_)); pr = premissa(D(s_)); enc = encerramento(s_, reg['tier']) if reg else None
+        op = ler_escrito(f'{s_}-onde-paramos.md')
+        out.append({'semana': s_, 'n': n, 'parte': romano(n), 'titulo': (reg or {}).get('titulo') or (pr or {}).get('titulo') or (parte_de(D(s_)) or {}).get('titulo', ''),
+                    'periodo': periodo(D(s_)), 'fechada': bool(reg), 'tier': (reg or {}).get('tier'),
+                    'premissa': ({'texto': pr['texto'], 'minutos': pr['minutos']} if pr else None),
+                    'cenas': sorted(cenas_por.get(s_, []), key=lambda c: c['data']),
+                    'onde_paramos': ({'texto': op[1], 'minutos': minutos(op[1])} if op else None),
+                    'desfecho': ({'texto': enc['texto'], 'minutos': enc['minutos'], 'titulo': enc['titulo']} if enc else None)})
+    return out
+
+
+painel['livro_inteiro'] = livro_inteiro()
+if not DRY:   # a mesma coisa num arquivo só, para ler fora do painel (o desfecho mais recente fica por último, separado)
+    pr0 = prologo(); L = ['# A Semente de Aurora: a história inteira', '']
+    if pr0: L += ['## Prólogo: ' + pr0['subtitulo'], '', pr0['texto'], '']
+    for p_ in painel['livro_inteiro']:
+        L += [f"# Parte {p_['parte']}: {p_['titulo']}", f"*{p_['periodo']}*", '']
+        if p_['premissa']: L += ['## Como a parte começou', '', p_['premissa']['texto'], '']
+        if p_['cenas']: L += ['## As cenas da semana', ''] + [f"**{c['dia']}.** {c['texto']}\n" for c in p_['cenas']]
+        if p_['onde_paramos']: L += ['## Onde paramos (resumo antes do desfecho)', '', p_['onde_paramos']['texto'], '']
+        if p_['desfecho']: L += ['---', '', f"## Desfecho da Parte {p_['parte']}", '', p_['desfecho']['texto'], '']
+    open(os.path.join(AQUI, 'historia', 'a_historia_inteira.md'), 'w', encoding='utf-8').write('\n'.join(L) + '\n')
+
 gravar('historia/estado.json', E)
 gravar('painel/data/historia.json', painel)
 print(f'historia v2: arco {arco["id"]} etapa {E["etapa"]} ({arco["etapas"][E["etapa"]]}); ' + ', '.join(f'{mundo["companhia"][k]["nome"]}={v["estado"]}' for k, v in E['companhia'].items())
