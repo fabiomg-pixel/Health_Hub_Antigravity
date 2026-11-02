@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-31T22:36:10",
+ "gerado_em": "2026-11-01T23:49:37",
  "versao": 2,
  "titulo": "A Semente de Aurora",
  "arco": {
@@ -414,6 +414,21 @@
      ]
     }
    ]
+  },
+  {
+   "data": "2026-11-01",
+   "dia": "domingo",
+   "eventos": [
+    {
+     "tipo": "achado",
+     "texto": "Iara ouviu o menino de Salmoura cantarolar um verso da canção de travessia.",
+     "despacho": "O menino voltou ao pé da colina para devolver a corda de Bram e, esperando ser pago com pão, cantarolou enquanto roía a casca. Iara parou no meio de um passo. Era o primeiro verso da canção de ninar dela, a mesma melodia, com palavras que ela nunca soube de quem eram. — Quem lhe ensinou isso? — perguntou, e a voz saiu mais fina do que pretendia. — A Senhora dos Poços — respondeu o menino. — Ela canta de noite, quando acha que não tem ninguém. Iara apertou o braço esquerdo até a mácula esquentar.",
+     "juramento": null,
+     "marcas": [
+      "+1 pista do Códice"
+     ]
+    }
+   ]
   }
  ],
  "premissa_atual": {
@@ -473,7 +488,7 @@
    ],
    "maldicoes": [],
    "materiais": {
-    "pista": 8,
+    "pista": 9,
     "estilha": 1,
     "desgaste": 1
    }

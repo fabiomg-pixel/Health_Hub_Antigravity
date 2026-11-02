@@ -138,6 +138,16 @@
    "marco": "2 itens no dia (Dia ativo, Almoço registrado) → achado",
    "peso": "+1 pista do Códice (8 na estrada)",
    "enviado": "2026-10-31T22:36"
+  },
+  {
+   "id": "2026-11-01:achado",
+   "data": "2026-11-01",
+   "tipo": "achado",
+   "carta": "Iara ouviu o menino de Salmoura cantarolar um verso da canção de travessia.",
+   "cena": "O menino voltou ao pé da colina para devolver a corda de Bram e, esperando ser pago com pão, cantarolou enquanto roía a casca. Iara parou no meio de um passo. Era o primeiro verso da canção de ninar dela, a mesma melodia, com palavras que ela nunca soube de quem eram. — Quem lhe ensinou isso? — perguntou, e a voz saiu mais fina do que pretendia. — A Senhora dos Poços — respondeu o menino. — Ela canta de noite, quando acha que não tem ninguém. Iara apertou o braço esquerdo até a mácula esquentar.",
+   "marco": "2 itens no dia (Pesagem, Almoço registrado) → achado",
+   "peso": "+1 pista do Códice (9 na estrada)",
+   "enviado": "2026-11-01T13:59"
   }
  ],
  "projecao": {
