@@ -681,6 +681,35 @@ function cpLivroMundo() {
   return `<section class="bloco cp-mundo"><div class="cab"><h2>O Livro do Mundo</h2><small>lugares, gente e forças das Marcas do Sal</small></div>` +
     b.map(x => `<details><summary>${esc(x.titulo)}</summary><div class="cp-leitura">${cpMd(x.texto)}</div></details>`).join('') + `</section>`;
 }
+function cpCaesGaleria() {
+  return `<section class="bloco"><div class="cab"><h2>Sentinelas Caninas · 16-Bit</h2><small>15 rotinas de treino dos cães fiéis</small></div>
+    <div style="border-radius:8px;overflow:hidden;margin:10px 0 14px;border:1.5px solid rgba(255,180,143,0.35);background:#070b14;box-shadow:0 8px 24px rgba(0,0,0,0.55)">
+      <img id="cp-caes-banner" src="art/caes_comemoracao.jpg" alt="Cachorros em Treino Pixel Art" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;image-rendering:pixelated">
+      <div style="display:flex;overflow-x:auto;gap:6px;padding:8px 10px;background:rgba(10,15,28,0.96);border-top:1px solid rgba(255,255,255,0.1);scrollbar-width:none" id="cp-caes-tabs">
+        <button class="cp-cinematica-btn on" data-img="art/caes_comemoracao.jpg" data-desc="<b>High-Five de Celebração (+15 XP):</b> Toca aqui de patas com chuva de corações e confetes após o treino concluído.">🏆 Celebração</button>
+        <button class="cp-cinematica-btn" data-img="art/caes_cardio_cena.jpg" data-desc="<b>Pular Corda no Ginásio:</b> O pretinho e o malhadinho pulando corda sobre o piso quadriculado com HUD retrô.">🪢 Pular Corda</button>
+        <button class="cp-cinematica-btn" data-img="art/caes_cardio_strip.jpg" data-desc="<b>Cardio & Mobilidade:</b> Trote rítmico, sprint veloz, pular corda, downward dog e postura da cobra (upward dog).">🏃 Prancha Cardio</button>
+        <button class="cp-cinematica-btn" data-img="art/caes_forca_strip.jpg" data-desc="<b>Calistenia & Pesos:</b> Flexão com gota de suor, prancha com timer 00:30, abdominais, agachamento, halteres de osso, kettlebell e barra fixa.">💪 Prancha Força</button>
+      </div>
+      <div id="cp-caes-desc" style="padding:10px 14px 12px;font-size:13px;line-height:1.48;color:rgba(255,255,255,0.92);background:rgba(10,15,28,0.96)">
+        <b>High-Five de Celebração (+15 XP):</b> Toca aqui de patas com chuva de corações e confetes após o treino concluído.
+      </div>
+    </div></section>`;
+}
+function cpLigarCaesGaleria() {
+  const tabs = document.querySelectorAll('#cp-caes-tabs button');
+  const img = document.getElementById('cp-caes-banner');
+  const desc = document.getElementById('cp-caes-desc');
+  if (!tabs.length || !img || !desc) return;
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabs.forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      img.src = btn.dataset.img;
+      desc.innerHTML = btn.dataset.desc;
+    });
+  });
+}
 // ───────── a história inteira (Fabio, 02/11) ─────────
 // Desfechos lidos neste aparelho. Na primeira vez, só o desfecho mais recente fica por ler: os anteriores ele já viu.
 function cpLidos() {
@@ -769,7 +798,7 @@ function cpAventura() {
     H.companhia.map(c => `<div class="cp-pers ${c.estado}"><canvas class="cp-mini" data-id="${c.id}" data-estado="${c.estado}"></canvas><b>${esc(c.nome)}</b><span>${esc(c.papel)}</span><em>${esc(cpEstadoDe(c))}</em></div>`).join('') + `</div></section>`;
   h += `<section class="bloco"><div class="cab"><h2>Ferramentas de Sobrevivência</h2><small>${H.mochila.length} de 3</small></div><div class="cp-bag">` +
     [0, 1, 2].map(i => H.mochila[i] ? `<div class="cp-slot cheio"><b>${esc(H.mochila[i].nome)}</b><span>${esc(H.mochila[i].texto)}</span></div>` : `<div class="cp-slot">vazio</div>`).join('') +
-    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende sigilo novo.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + `</div>`;
+    `</div><div class="par" style="padding-top:10px">${esc(H.regra_item)} Parte concluída rende sigilo novo.</div></section>` + cpTesouro() + cpFios() + cpLivroMundo() + cpCaesGaleria() + `</div>`;
   return h;
 }
 const CP_DIORAMA_ITEMS = [
@@ -1169,4 +1198,5 @@ function renderCampanha() {
   cpLigarDiorama();
   cpLigarAudioPlayer();
   cpLigarLeituras();
+  cpLigarCaesGaleria();
 }

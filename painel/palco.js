@@ -339,3 +339,28 @@ function palcoFim(o) {
     pVibrar([40, 60, 40, 60, 160]); pSom(523, 200); setTimeout(() => pSom(659, 220), 140); setTimeout(() => pSom(784, 500), 280);
   });
 }
+
+// ───────── 6. celebração dos cachorros (pixel art 16-bit) ─────────
+// o: { titulo, sub, img, xp }
+function palcoCaes(o) {
+  palco('pcaes', ctl => {
+    const P = typeof JORNADA !== 'undefined' && JORNADA && JORNADA.personagem;
+    const imgUrl = o.img || 'art/caes_comemoracao.jpg';
+    ctl.el.setAttribute('aria-label', `${o.titulo}: ${o.sub}`);
+    ctl.el.innerHTML = `<div class="p-in" style="background:#070b14;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:24px 20px 96px;text-align:center">
+      <div style="font-size:11.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--sol);margin-bottom:8px">🐾 Companheiros Caninos · 16-Bit</div>
+      <h2 style="font-family:var(--display);font-size:26px;line-height:1.15;margin:0 0 6px">${esc(o.titulo)}</h2>
+      <div style="font-size:14px;opacity:0.85;margin-bottom:14px;max-width:320px">${esc(o.sub)}</div>
+      <div style="border-radius:10px;overflow:hidden;border:2px solid rgba(255,180,143,0.45);max-width:440px;width:100%;box-shadow:0 12px 30px rgba(0,0,0,0.7);background:#000">
+        <img src="${imgUrl}" alt="${esc(o.titulo)}" style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover;image-rendering:pixelated">
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-top:16px">
+        <span style="font-family:var(--display);font-weight:800;font-size:32px;color:var(--sol)">+${o.xp || 15} XP</span>
+        <span style="font-size:13px;opacity:0.8">${P ? 'Nível ' + P.nivel : ''}</span>
+      </div>
+      <button type="button" class="p-bt escuro" data-p="ok" style="background:var(--sol);color:var(--tinta);font-weight:800;border-color:var(--sol)">Continuar</button>
+    </div>`;
+    pVibrar([40, 60, 40, 60, 160]);
+    pSom(523, 180); setTimeout(() => pSom(659, 200), 120); setTimeout(() => pSom(784, 400), 240);
+  });
+}

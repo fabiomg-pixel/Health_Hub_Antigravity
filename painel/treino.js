@@ -97,6 +97,14 @@ document.addEventListener('click', async ev => {
     await enviarRegistro({ tipo: 'treino', data: isoLocal(), texto });
     try { REGISTROS.unshift({ id: 'local-' + Date.now(), data: isoLocal(), tipo: 'Treino', texto, foto: false, fotos: 0 }); } catch (e) {}
     st.className = 'msg ok'; st.textContent = 'Registrado. Os cachorros agradecem.'; b.replaceWith(Object.assign(document.createElement('span'), { className: 'num', textContent: 'feito' }));
+    if (typeof palcoCaes === 'function') {
+      palcoCaes({
+        titulo: 'Passeio Concluído!',
+        sub: 'Os cachorros agradecem o trote de hoje (+15 XP) ❤️',
+        img: 'art/caes_comemoracao.jpg',
+        xp: 15
+      });
+    }
   } catch (e) { st.className = 'msg err'; st.textContent = 'Sem sinal: tente de novo daqui a pouco.'; b.disabled = false; }
 });
 document.addEventListener('click', async ev => {   // delegado: o bloco é redesenhado junto com a aba Hoje
@@ -511,9 +519,18 @@ async function terminarTreino(sessao, st, iso, btn) {
   limparEstado(st.chave || iso); pararRelogios(); soltarTela();
   btn.textContent = 'Treino encerrado';
   // palco do fim (palco.js); o XP é o da sessão pelas regras da Campanha (força 100, rodada bônus 50)
-  if (typeof palcoFim === 'function') palcoFim({ titulo: sessao.variante === 'bonus' ? 'Rodada bônus feita' : sessao.variante === 'rotina' ? 'Rotina de casa feita' : 'Treino feito',
-    stats: [{ n: series, rot: 'séries' }, { n: (p._j && p._j.dur) || 0, rot: 'minutos' }, { n: recs, rot: recs === 1 ? 'recorde' : 'recordes', cor: 'var(--sol)' }],
-    xp: sessao.variante === 'bonus' ? 50 : sessao.variante === 'rotina' ? 15 : 100, xpRot: sessao.variante === 'rotina' ? 'da missão paralela' : 'pela sessão' });
+  if (sessao.variante === 'rotina' && typeof palcoCaes === 'function') {
+    palcoCaes({
+      titulo: 'Rotina de Casa Concluída!',
+      sub: 'Alongamento, flexão e prancha com os cachorros (+15 XP) 🐾',
+      img: 'art/caes_cardio_cena.jpg',
+      xp: 15
+    });
+  } else if (typeof palcoFim === 'function') {
+    palcoFim({ titulo: sessao.variante === 'bonus' ? 'Rodada bônus feita' : 'Treino feito',
+      stats: [{ n: series, rot: 'séries' }, { n: (p._j && p._j.dur) || 0, rot: 'minutos' }, { n: recs, rot: recs === 1 ? 'recorde' : 'recordes', cor: 'var(--sol)' }],
+      xp: sessao.variante === 'bonus' ? 50 : 100, xpRot: 'pela sessão' });
+  }
 }
 let T_ESVAZIANDO = false;
 async function esvaziarFila() {
